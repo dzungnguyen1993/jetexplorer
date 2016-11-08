@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28F4415E1DD246FD00902236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4415D1DD246FD00902236 /* AppDelegate.swift */; };
+		28F441601DD246FD00902236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4415F1DD246FD00902236 /* ViewController.swift */; };
+		28F441631DD246FD00902236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F441611DD246FD00902236 /* Main.storyboard */; };
+		28F441651DD246FD00902236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F441641DD246FD00902236 /* Assets.xcassets */; };
+		28F441681DD246FD00902236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F441661DD246FD00902236 /* LaunchScreen.storyboard */; };
+		769440AED940B08BFEFA1C8C /* Pods_JetEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE67D4193D322CA4F69341FA /* Pods_JetEx.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1F40409AAEDCAD0BBE3D89A4 /* Pods-JetEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetEx.release.xcconfig"; path = "Pods/Target Support Files/Pods-JetEx/Pods-JetEx.release.xcconfig"; sourceTree = "<group>"; };
+		28F4415A1DD246FD00902236 /* JetEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28F4415D1DD246FD00902236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28F4415F1DD246FD00902236 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		28F441621DD246FD00902236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		28F441641DD246FD00902236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28F441671DD246FD00902236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		28F441691DD246FD00902236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DDBA045D13B39679A3532A4 /* Pods-JetEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JetEx/Pods-JetEx.debug.xcconfig"; sourceTree = "<group>"; };
+		BE67D4193D322CA4F69341FA /* Pods_JetEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28F441571DD246FC00902236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				769440AED940B08BFEFA1C8C /* Pods_JetEx.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28F441511DD246FC00902236 = {
+			isa = PBXGroup;
+			children = (
+				28F4415C1DD246FD00902236 /* JetEx */,
+				28F4415B1DD246FD00902236 /* Products */,
+				442FCDDEDBA9E9F63B02189F /* Pods */,
+				4ACEF3C21059854A9E7AD358 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		28F4415B1DD246FD00902236 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28F4415A1DD246FD00902236 /* JetEx.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28F4415C1DD246FD00902236 /* JetEx */ = {
+			isa = PBXGroup;
+			children = (
+				28F4415D1DD246FD00902236 /* AppDelegate.swift */,
+				28F4415F1DD246FD00902236 /* ViewController.swift */,
+				28F441611DD246FD00902236 /* Main.storyboard */,
+				28F441641DD246FD00902236 /* Assets.xcassets */,
+				28F441661DD246FD00902236 /* LaunchScreen.storyboard */,
+				28F441691DD246FD00902236 /* Info.plist */,
+			);
+			path = JetEx;
+			sourceTree = "<group>";
+		};
+		442FCDDEDBA9E9F63B02189F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBA045D13B39679A3532A4 /* Pods-JetEx.debug.xcconfig */,
+				1F40409AAEDCAD0BBE3D89A4 /* Pods-JetEx.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4ACEF3C21059854A9E7AD358 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE67D4193D322CA4F69341FA /* Pods_JetEx.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28F441591DD246FC00902236 /* JetEx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28F4416C1DD246FD00902236 /* Build configuration list for PBXNativeTarget "JetEx" */;
+			buildPhases = (
+				001DC3B8C412E984BD403B61 /* [CP] Check Pods Manifest.lock */,
+				28F441561DD246FC00902236 /* Sources */,
+				28F441571DD246FC00902236 /* Frameworks */,
+				28F441581DD246FC00902236 /* Resources */,
+				3B828EB5C07A081D49BF7711 /* [CP] Embed Pods Frameworks */,
+				3B7EBFE29BFCAABB6C12CA45 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JetEx;
+			productName = JetEx;
+			productReference = 28F4415A1DD246FD00902236 /* JetEx.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28F441521DD246FC00902236 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "eKing Freelance Team";
+				TargetAttributes = {
+					28F441591DD246FC00902236 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 28F441551DD246FC00902236 /* Build configuration list for PBXProject "JetEx" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28F441511DD246FC00902236;
+			productRefGroup = 28F4415B1DD246FD00902236 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28F441591DD246FC00902236 /* JetEx */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28F441581DD246FC00902236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28F441681DD246FD00902236 /* LaunchScreen.storyboard in Resources */,
+				28F441651DD246FD00902236 /* Assets.xcassets in Resources */,
+				28F441631DD246FD00902236 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		001DC3B8C412E984BD403B61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3B7EBFE29BFCAABB6C12CA45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JetEx/Pods-JetEx-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B828EB5C07A081D49BF7711 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JetEx/Pods-JetEx-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28F441561DD246FC00902236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28F441601DD246FD00902236 /* ViewController.swift in Sources */,
+				28F4415E1DD246FD00902236 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		28F441611DD246FD00902236 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28F441621DD246FD00902236 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		28F441661DD246FD00902236 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28F441671DD246FD00902236 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28F4416A1DD246FD00902236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		28F4416B1DD246FD00902236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28F4416D1DD246FD00902236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DDBA045D13B39679A3532A4 /* Pods-JetEx.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JetEx/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eKing.JetEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		28F4416E1DD246FD00902236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F40409AAEDCAD0BBE3D89A4 /* Pods-JetEx.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JetEx/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eKing.JetEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28F441551DD246FC00902236 /* Build configuration list for PBXProject "JetEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28F4416A1DD246FD00902236 /* Debug */,
+				28F4416B1DD246FD00902236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28F4416C1DD246FD00902236 /* Build configuration list for PBXNativeTarget "JetEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28F4416D1DD246FD00902236 /* Debug */,
+				28F4416E1DD246FD00902236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28F441521DD246FC00902236 /* Project object */;
+}
