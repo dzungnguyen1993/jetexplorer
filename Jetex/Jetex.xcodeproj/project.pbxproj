@@ -1,0 +1,693 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC671DD18BAB000468EC /* AppDelegate.swift */; };
+		B9E4FC6A1DD18BAB000468EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC691DD18BAB000468EC /* ViewController.swift */; };
+		B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E4FC6B1DD18BAB000468EC /* Main.storyboard */; };
+		B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E4FC6E1DD18BAB000468EC /* Assets.xcassets */; };
+		B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E4FC701DD18BAB000468EC /* LaunchScreen.storyboard */; };
+		B9E4FC7D1DD18BAB000468EC /* JetexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC7C1DD18BAB000468EC /* JetexTests.swift */; };
+		B9E4FC881DD18BAB000468EC /* JetexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC871DD18BAB000468EC /* JetexUITests.swift */; };
+		D481C9F265BD5A5174E9F8DA /* Pods_Jetex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9E4FC791DD18BAB000468EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9E4FC5C1DD18BAB000468EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E4FC631DD18BAB000468EC;
+			remoteInfo = Jetex;
+		};
+		B9E4FC841DD18BAB000468EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9E4FC5C1DD18BAB000468EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E4FC631DD18BAB000468EC;
+			remoteInfo = Jetex;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.debug.xcconfig"; sourceTree = "<group>"; };
+		5F30E1B520C7F45D1DB37729 /* Pods_JetexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E4FC641DD18BAB000468EC /* Jetex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jetex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E4FC671DD18BAB000468EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B9E4FC691DD18BAB000468EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9E4FC6C1DD18BAB000468EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B9E4FC6E1DD18BAB000468EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B9E4FC711DD18BAB000468EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B9E4FC731DD18BAB000468EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9E4FC781DD18BAB000468EC /* JetexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E4FC7C1DD18BAB000468EC /* JetexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetexTests.swift; sourceTree = "<group>"; };
+		B9E4FC7E1DD18BAB000468EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9E4FC831DD18BAB000468EC /* JetexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E4FC871DD18BAB000468EC /* JetexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetexUITests.swift; sourceTree = "<group>"; };
+		B9E4FC891DD18BAB000468EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5C4A86919FBAF16948016C3 /* Pods-Jetex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.release.xcconfig"; sourceTree = "<group>"; };
+		F6AB73EA2D90A2DAB6DFE5FC /* Pods_JetexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B9E4FC611DD18BAB000468EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D481C9F265BD5A5174E9F8DA /* Pods_Jetex.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E4FC751DD18BAB000468EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E4FC801DD18BAB000468EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10CC7F5125CCB7F0B0DFC695 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */,
+				5F30E1B520C7F45D1DB37729 /* Pods_JetexTests.framework */,
+				F6AB73EA2D90A2DAB6DFE5FC /* Pods_JetexUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B08EC1B71264D74AC55D895D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */,
+				C5C4A86919FBAF16948016C3 /* Pods-Jetex.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B9E4FC5B1DD18BAB000468EC = {
+			isa = PBXGroup;
+			children = (
+				B9E4FC661DD18BAB000468EC /* Jetex */,
+				B9E4FC7B1DD18BAB000468EC /* JetexTests */,
+				B9E4FC861DD18BAB000468EC /* JetexUITests */,
+				B9E4FC651DD18BAB000468EC /* Products */,
+				B08EC1B71264D74AC55D895D /* Pods */,
+				10CC7F5125CCB7F0B0DFC695 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B9E4FC651DD18BAB000468EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9E4FC641DD18BAB000468EC /* Jetex.app */,
+				B9E4FC781DD18BAB000468EC /* JetexTests.xctest */,
+				B9E4FC831DD18BAB000468EC /* JetexUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9E4FC661DD18BAB000468EC /* Jetex */ = {
+			isa = PBXGroup;
+			children = (
+				B9E4FC671DD18BAB000468EC /* AppDelegate.swift */,
+				B9E4FC691DD18BAB000468EC /* ViewController.swift */,
+				B9E4FC6B1DD18BAB000468EC /* Main.storyboard */,
+				B9E4FC6E1DD18BAB000468EC /* Assets.xcassets */,
+				B9E4FC701DD18BAB000468EC /* LaunchScreen.storyboard */,
+				B9E4FC731DD18BAB000468EC /* Info.plist */,
+			);
+			path = Jetex;
+			sourceTree = "<group>";
+		};
+		B9E4FC7B1DD18BAB000468EC /* JetexTests */ = {
+			isa = PBXGroup;
+			children = (
+				B9E4FC7C1DD18BAB000468EC /* JetexTests.swift */,
+				B9E4FC7E1DD18BAB000468EC /* Info.plist */,
+			);
+			path = JetexTests;
+			sourceTree = "<group>";
+		};
+		B9E4FC861DD18BAB000468EC /* JetexUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B9E4FC871DD18BAB000468EC /* JetexUITests.swift */,
+				B9E4FC891DD18BAB000468EC /* Info.plist */,
+			);
+			path = JetexUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B9E4FC631DD18BAB000468EC /* Jetex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9E4FC8C1DD18BAB000468EC /* Build configuration list for PBXNativeTarget "Jetex" */;
+			buildPhases = (
+				10A306E0A9CC13BF9950E35A /* [CP] Check Pods Manifest.lock */,
+				B9E4FC601DD18BAB000468EC /* Sources */,
+				B9E4FC611DD18BAB000468EC /* Frameworks */,
+				B9E4FC621DD18BAB000468EC /* Resources */,
+				9BC54AEB1C7F150856199A82 /* [CP] Embed Pods Frameworks */,
+				5FE4FABEEAEB1BED74866B89 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jetex;
+			productName = Jetex;
+			productReference = B9E4FC641DD18BAB000468EC /* Jetex.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B9E4FC771DD18BAB000468EC /* JetexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9E4FC8F1DD18BAB000468EC /* Build configuration list for PBXNativeTarget "JetexTests" */;
+			buildPhases = (
+				76A81B34E47EFF373FBD1785 /* [CP] Check Pods Manifest.lock */,
+				B9E4FC741DD18BAB000468EC /* Sources */,
+				B9E4FC751DD18BAB000468EC /* Frameworks */,
+				B9E4FC761DD18BAB000468EC /* Resources */,
+				0757E441BDEE8ACF07823780 /* [CP] Embed Pods Frameworks */,
+				A4A9A99400E62626CA13A7B7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9E4FC7A1DD18BAB000468EC /* PBXTargetDependency */,
+			);
+			name = JetexTests;
+			productName = JetexTests;
+			productReference = B9E4FC781DD18BAB000468EC /* JetexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B9E4FC821DD18BAB000468EC /* JetexUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9E4FC921DD18BAB000468EC /* Build configuration list for PBXNativeTarget "JetexUITests" */;
+			buildPhases = (
+				82E82CFAA6E86FB713B4E487 /* [CP] Check Pods Manifest.lock */,
+				B9E4FC7F1DD18BAB000468EC /* Sources */,
+				B9E4FC801DD18BAB000468EC /* Frameworks */,
+				B9E4FC811DD18BAB000468EC /* Resources */,
+				E35DAE85AE882706F2C2F8D4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9E4FC851DD18BAB000468EC /* PBXTargetDependency */,
+			);
+			name = JetexUITests;
+			productName = JetexUITests;
+			productReference = B9E4FC831DD18BAB000468EC /* JetexUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B9E4FC5C1DD18BAB000468EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Thanh-Dung Nguyen";
+				TargetAttributes = {
+					B9E4FC631DD18BAB000468EC = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = CB7BJM62E3;
+						ProvisioningStyle = Automatic;
+					};
+					B9E4FC771DD18BAB000468EC = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B9E4FC631DD18BAB000468EC;
+					};
+					B9E4FC821DD18BAB000468EC = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B9E4FC631DD18BAB000468EC;
+					};
+				};
+			};
+			buildConfigurationList = B9E4FC5F1DD18BAB000468EC /* Build configuration list for PBXProject "Jetex" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B9E4FC5B1DD18BAB000468EC;
+			productRefGroup = B9E4FC651DD18BAB000468EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9E4FC631DD18BAB000468EC /* Jetex */,
+				B9E4FC771DD18BAB000468EC /* JetexTests */,
+				B9E4FC821DD18BAB000468EC /* JetexUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B9E4FC621DD18BAB000468EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */,
+				B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */,
+				B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E4FC761DD18BAB000468EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E4FC811DD18BAB000468EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0757E441BDEE8ACF07823780 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JetexTests/Pods-JetexTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		10A306E0A9CC13BF9950E35A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5FE4FABEEAEB1BED74866B89 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jetex/Pods-Jetex-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76A81B34E47EFF373FBD1785 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		82E82CFAA6E86FB713B4E487 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9BC54AEB1C7F150856199A82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jetex/Pods-Jetex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4A9A99400E62626CA13A7B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JetexTests/Pods-JetexTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E35DAE85AE882706F2C2F8D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JetexUITests/Pods-JetexUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B9E4FC601DD18BAB000468EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9E4FC6A1DD18BAB000468EC /* ViewController.swift in Sources */,
+				B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E4FC741DD18BAB000468EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9E4FC7D1DD18BAB000468EC /* JetexTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E4FC7F1DD18BAB000468EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9E4FC881DD18BAB000468EC /* JetexUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B9E4FC7A1DD18BAB000468EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E4FC631DD18BAB000468EC /* Jetex */;
+			targetProxy = B9E4FC791DD18BAB000468EC /* PBXContainerItemProxy */;
+		};
+		B9E4FC851DD18BAB000468EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E4FC631DD18BAB000468EC /* Jetex */;
+			targetProxy = B9E4FC841DD18BAB000468EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B9E4FC6B1DD18BAB000468EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9E4FC6C1DD18BAB000468EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B9E4FC701DD18BAB000468EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9E4FC711DD18BAB000468EC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B9E4FC8A1DD18BAB000468EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B9E4FC8B1DD18BAB000468EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B9E4FC8D1DD18BAB000468EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CB7BJM62E3;
+				INFOPLIST_FILE = Jetex/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.Jetex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B9E4FC8E1DD18BAB000468EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5C4A86919FBAF16948016C3 /* Pods-Jetex.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CB7BJM62E3;
+				INFOPLIST_FILE = Jetex/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.Jetex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B9E4FC901DD18BAB000468EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JetexTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.JetexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jetex.app/Jetex";
+			};
+			name = Debug;
+		};
+		B9E4FC911DD18BAB000468EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JetexTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.JetexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jetex.app/Jetex";
+			};
+			name = Release;
+		};
+		B9E4FC931DD18BAB000468EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = JetexUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.JetexUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Jetex;
+			};
+			name = Debug;
+		};
+		B9E4FC941DD18BAB000468EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = JetexUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.JetexUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Jetex;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9E4FC5F1DD18BAB000468EC /* Build configuration list for PBXProject "Jetex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9E4FC8A1DD18BAB000468EC /* Debug */,
+				B9E4FC8B1DD18BAB000468EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9E4FC8C1DD18BAB000468EC /* Build configuration list for PBXNativeTarget "Jetex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9E4FC8D1DD18BAB000468EC /* Debug */,
+				B9E4FC8E1DD18BAB000468EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9E4FC8F1DD18BAB000468EC /* Build configuration list for PBXNativeTarget "JetexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9E4FC901DD18BAB000468EC /* Debug */,
+				B9E4FC911DD18BAB000468EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9E4FC921DD18BAB000468EC /* Build configuration list for PBXNativeTarget "JetexUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9E4FC931DD18BAB000468EC /* Debug */,
+				B9E4FC941DD18BAB000468EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B9E4FC5C1DD18BAB000468EC /* Project object */;
+}
