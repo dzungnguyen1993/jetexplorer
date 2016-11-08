@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NetworkErrorView" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="dSY-Zl-dJ6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FcP-6m-iiv">
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="FcP-6m-iiv" secondAttribute="height" multiplier="1:1" id="PaQ-lk-AsL"/>
+                        <constraint firstAttribute="width" constant="60" id="bTc-fb-Tjz"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOs-5Y-GkW">
+                    <color key="backgroundColor" red="0.16725743439999999" green="0.67439983810000004" blue="0.32539333920000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="sSW-xg-lrI"/>
+                    </constraints>
+                    <state key="normal" title="RETRY">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your internet connection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3K-XZ-XOe">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Qqj-Ev-2FB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SOs-5Y-GkW" secondAttribute="trailing" constant="50" id="2iV-sd-xnR"/>
+                <constraint firstItem="FcP-6m-iiv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7sD-wQ-Ub3"/>
+                <constraint firstItem="g3K-XZ-XOe" firstAttribute="top" secondItem="FcP-6m-iiv" secondAttribute="bottom" constant="15" id="NEp-1f-CTm"/>
+                <constraint firstItem="g3K-XZ-XOe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-30" id="Ukf-2M-GEg"/>
+                <constraint firstItem="SOs-5Y-GkW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="dIv-i7-aRD"/>
+                <constraint firstItem="SOs-5Y-GkW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="30" id="dYe-ec-0Y8"/>
+                <constraint firstItem="g3K-XZ-XOe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="hKB-AY-QdA"/>
+                <constraint firstAttribute="trailing" secondItem="g3K-XZ-XOe" secondAttribute="trailing" constant="10" id="paE-aF-fkI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
