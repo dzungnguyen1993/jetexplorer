@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC5A1DD1B4AC00AE79AD /* FlightSearchVC.swift */; };
+		B96BAC5D1DD1B4AC00AE79AD /* FlightSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96BAC5B1DD1B4AC00AE79AD /* FlightSearchVC.xib */; };
+		B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */; };
+		B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */; };
 		B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC671DD18BAB000468EC /* AppDelegate.swift */; };
-		B9E4FC6A1DD18BAB000468EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC691DD18BAB000468EC /* ViewController.swift */; };
 		B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E4FC6B1DD18BAB000468EC /* Main.storyboard */; };
 		B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E4FC6E1DD18BAB000468EC /* Assets.xcassets */; };
 		B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E4FC701DD18BAB000468EC /* LaunchScreen.storyboard */; };
@@ -38,9 +41,12 @@
 		3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.debug.xcconfig"; sourceTree = "<group>"; };
 		5F30E1B520C7F45D1DB37729 /* Pods_JetexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B96BAC5A1DD1B4AC00AE79AD /* FlightSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchVC.swift; sourceTree = "<group>"; };
+		B96BAC5B1DD1B4AC00AE79AD /* FlightSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightSearchVC.xib; sourceTree = "<group>"; };
+		B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B9E4FC641DD18BAB000468EC /* Jetex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jetex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E4FC671DD18BAB000468EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B9E4FC691DD18BAB000468EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B9E4FC6C1DD18BAB000468EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9E4FC6E1DD18BAB000468EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9E4FC711DD18BAB000468EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,6 +106,52 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B96BAC551DD1B3A100AE79AD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B96BAC5A1DD1B4AC00AE79AD /* FlightSearchVC.swift */,
+				B96BAC5B1DD1B4AC00AE79AD /* FlightSearchVC.xib */,
+				B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */,
+				B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B96BAC561DD1B3A100AE79AD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B96BAC571DD1B3A100AE79AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B96BAC581DD1B3A100AE79AD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B96BAC591DD1B3A100AE79AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B96BAC641DD1C4AA00AE79AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B9E4FC5B1DD18BAB000468EC = {
 			isa = PBXGroup;
 			children = (
@@ -125,8 +177,13 @@
 		B9E4FC661DD18BAB000468EC /* Jetex */ = {
 			isa = PBXGroup;
 			children = (
+				B96BAC641DD1C4AA00AE79AD /* Resources */,
+				B96BAC551DD1B3A100AE79AD /* Controllers */,
+				B96BAC561DD1B3A100AE79AD /* Helper */,
+				B96BAC571DD1B3A100AE79AD /* Models */,
+				B96BAC581DD1B3A100AE79AD /* Network */,
+				B96BAC591DD1B3A100AE79AD /* Views */,
 				B9E4FC671DD18BAB000468EC /* AppDelegate.swift */,
-				B9E4FC691DD18BAB000468EC /* ViewController.swift */,
 				B9E4FC6B1DD18BAB000468EC /* Main.storyboard */,
 				B9E4FC6E1DD18BAB000468EC /* Assets.xcassets */,
 				B9E4FC701DD18BAB000468EC /* LaunchScreen.storyboard */,
@@ -269,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B96BAC5D1DD1B4AC00AE79AD /* FlightSearchVC.xib in Resources */,
 				B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */,
 				B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */,
 				B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */,
@@ -419,7 +477,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9E4FC6A1DD18BAB000468EC /* ViewController.swift in Sources */,
+				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
+				B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */,
+				B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */,
 				B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,7 +575,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -558,7 +618,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -573,6 +633,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CB7BJM62E3;
 				INFOPLIST_FILE = Jetex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.Jetex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -587,6 +648,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CB7BJM62E3;
 				INFOPLIST_FILE = Jetex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.Jetex;
 				PRODUCT_NAME = "$(TARGET_NAME)";

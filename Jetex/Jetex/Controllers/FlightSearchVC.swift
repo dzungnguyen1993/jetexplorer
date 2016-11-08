@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FlightSearchVC.swift
 //  Jetex
 //
 //  Created by Thanh-Dung Nguyen on 11/8/16.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FlightSearchVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,4 +23,3 @@ class ViewController: UIViewController {
 
 
 }
-

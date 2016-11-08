@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlightSearchVC" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRb-V0-Zi0">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAh-Et-e9P">
+                            <color key="backgroundColor" red="0.16725743439999999" green="0.67439983810000004" blue="0.32539333920000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="EM8-Af-MTO"/>
+                            </constraints>
+                            <state key="normal" title="RETRY">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SAR-P4-5xd">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="hGV-iE-zPn"/>
+                                <constraint firstAttribute="width" secondItem="SAR-P4-5xd" secondAttribute="height" multiplier="1:1" id="xx2-Tu-GXR"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your internet connection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efn-Ki-loK">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="2jc-NZ-RNx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="uAh-Et-e9P" secondAttribute="trailing" constant="50" id="07F-Pl-eR6"/>
+                        <constraint firstItem="efn-Ki-loK" firstAttribute="top" secondItem="SAR-P4-5xd" secondAttribute="bottom" constant="15" id="1lB-hg-E37"/>
+                        <constraint firstItem="uAh-Et-e9P" firstAttribute="centerY" secondItem="oRb-V0-Zi0" secondAttribute="centerY" constant="30" id="ClU-xa-zER"/>
+                        <constraint firstItem="uAh-Et-e9P" firstAttribute="leading" secondItem="oRb-V0-Zi0" secondAttribute="leading" constant="50" id="GNP-ed-xwm"/>
+                        <constraint firstItem="efn-Ki-loK" firstAttribute="leading" secondItem="oRb-V0-Zi0" secondAttribute="leading" constant="10" id="I9B-rf-W6s"/>
+                        <constraint firstItem="efn-Ki-loK" firstAttribute="centerY" secondItem="oRb-V0-Zi0" secondAttribute="centerY" constant="-30" id="LCN-43-3g8"/>
+                        <constraint firstItem="SAR-P4-5xd" firstAttribute="centerX" secondItem="oRb-V0-Zi0" secondAttribute="centerX" id="baS-cP-2qV"/>
+                        <constraint firstAttribute="trailing" secondItem="efn-Ki-loK" secondAttribute="trailing" constant="10" id="zPT-t9-TjO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oRb-V0-Zi0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7Jb-d7-d6z"/>
+                <constraint firstAttribute="bottom" secondItem="oRb-V0-Zi0" secondAttribute="bottom" id="MiF-2r-fXc"/>
+                <constraint firstItem="oRb-V0-Zi0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dwN-PG-TdN"/>
+                <constraint firstAttribute="trailing" secondItem="oRb-V0-Zi0" secondAttribute="trailing" id="yAa-jD-C8z"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="26.5" y="51.5"/>
+        </view>
+    </objects>
+</document>
