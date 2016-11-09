@@ -19,20 +19,13 @@ class TabBarController: UITabBarController {
         self.addTabFlight()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: Tab Flight
     func addTabFlight() {
         let vc = FlightSearchVC(nibName: "FlightSearchVC", bundle: nil)
         let nav = UINavigationController(rootViewController: vc)
-        
         nav.setNavigationBarHidden(true, animated: true)
         
         viewControllers?.append(nav)
-        
         nav.tabBarItem = UITabBarItem(title: "Flight", image: UIImage(), tag: 1)
     }
 }
