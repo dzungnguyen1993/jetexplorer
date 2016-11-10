@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */; };
+		B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */; };
+		B90DDA481DD45F0800AEC1AE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA471DD45F0800AEC1AE /* back.png */; };
+		B9150B941DD4659C00F825DC /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = B9150B921DD4659C00F825DC /* cancel.png */; };
+		B9150B951DD4659C00F825DC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B9150B931DD4659C00F825DC /* search.png */; };
+		B9150B971DD46AEA00F825DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9150B961DD46AEA00F825DC /* City.swift */; };
+		B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9150B981DD46E1B00F825DC /* SearchCityCell.swift */; };
+		B9150B9B1DD46E1B00F825DC /* SearchCityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9150B991DD46E1B00F825DC /* SearchCityCell.xib */; };
 		B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC5A1DD1B4AC00AE79AD /* FlightSearchVC.swift */; };
 		B96BAC5D1DD1B4AC00AE79AD /* FlightSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96BAC5B1DD1B4AC00AE79AD /* FlightSearchVC.xib */; };
 		B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */; };
@@ -43,6 +51,14 @@
 		3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.debug.xcconfig"; sourceTree = "<group>"; };
 		5F30E1B520C7F45D1DB37729 /* Pods_JetexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchVC.swift; sourceTree = "<group>"; };
+		B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationSearchVC.xib; sourceTree = "<group>"; };
+		B90DDA471DD45F0800AEC1AE /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		B9150B921DD4659C00F825DC /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
+		B9150B931DD4659C00F825DC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		B9150B961DD46AEA00F825DC /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		B9150B981DD46E1B00F825DC /* SearchCityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCityCell.swift; sourceTree = "<group>"; };
+		B9150B991DD46E1B00F825DC /* SearchCityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchCityCell.xib; sourceTree = "<group>"; };
 		B96BAC5A1DD1B4AC00AE79AD /* FlightSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchVC.swift; sourceTree = "<group>"; };
 		B96BAC5B1DD1B4AC00AE79AD /* FlightSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightSearchVC.xib; sourceTree = "<group>"; };
 		B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -117,6 +133,8 @@
 				B96BAC5B1DD1B4AC00AE79AD /* FlightSearchVC.xib */,
 				B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */,
 				B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */,
+				B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */,
+				B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -131,6 +149,7 @@
 		B96BAC571DD1B3A100AE79AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B9150B961DD46AEA00F825DC /* City.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +166,8 @@
 			children = (
 				B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */,
 				B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */,
+				B9150B981DD46E1B00F825DC /* SearchCityCell.swift */,
+				B9150B991DD46E1B00F825DC /* SearchCityCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +175,9 @@
 		B96BAC641DD1C4AA00AE79AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9150B921DD4659C00F825DC /* cancel.png */,
+				B9150B931DD4659C00F825DC /* search.png */,
+				B90DDA471DD45F0800AEC1AE /* back.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -333,9 +357,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B96BAC5D1DD1B4AC00AE79AD /* FlightSearchVC.xib in Resources */,
+				B9150B951DD4659C00F825DC /* search.png in Resources */,
 				B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */,
 				B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */,
+				B9150B941DD4659C00F825DC /* cancel.png in Resources */,
+				B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */,
+				B90DDA481DD45F0800AEC1AE /* back.png in Resources */,
 				B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */,
+				B9150B9B1DD46E1B00F825DC /* SearchCityCell.xib in Resources */,
 				B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,8 +516,11 @@
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
 				B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */,
 				B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */,
+				B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */,
 				B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */,
 				B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */,
+				B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */,
+				B9150B971DD46AEA00F825DC /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

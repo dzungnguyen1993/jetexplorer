@@ -13,6 +13,9 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var networkErrorView: UIView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,4 +26,7 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func backNavigationController(_ sender: UIBarButtonItem) {
+        self.navigationController!.popViewController(animated: true)
+    }
 }
