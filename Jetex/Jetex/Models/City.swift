@@ -13,7 +13,7 @@ class City: NSObject {
     var countryName: String
     var countryID: String!
     
-    init(cityName: String, countryName: String, countryID: String! = nil){
+    init(cityName: String, countryName: String,  countryID: String! = nil){
         self.cityName = cityName
         self.countryName = countryName
         self.countryID = countryID

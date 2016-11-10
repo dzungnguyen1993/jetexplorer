@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationSearchVC" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="leftBarButton" destination="aSD-sE-JDY" id="Z1t-cm-0we"/>
+                <outlet property="searchTextField" destination="dqt-Ee-aev" id="tte-MM-na4"/>
                 <outlet property="tableView" destination="WbV-eq-YHD" id="azq-Um-Jep"/>
                 <outlet property="topNavigationItem" destination="Hea-VC-dpp" id="Rp5-iC-yWz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -75,6 +76,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="textFieldDidChanged:" destination="-1" eventType="editingChanged" id="gZQ-YJ-wX2"/>
+                            </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLj-zC-rlR">
                             <rect key="frame" x="337" y="9" width="25" height="25"/>
@@ -83,6 +87,9 @@
                                 <constraint firstAttribute="width" constant="25" id="QmA-Ed-Fan"/>
                             </constraints>
                             <state key="normal" image="search.png"/>
+                            <connections>
+                                <action selector="searchCity:" destination="-1" eventType="touchUpInside" id="RhC-M4-rHT"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nei-VA-QG5">
                             <rect key="frame" x="280" y="11" width="20" height="20"/>
@@ -91,6 +98,9 @@
                                 <constraint firstAttribute="width" constant="20" id="TBn-iR-WDK"/>
                             </constraints>
                             <state key="normal" image="cancel.png"/>
+                            <connections>
+                                <action selector="clearSearchField:" destination="-1" eventType="touchUpInside" id="iOl-Rp-m0E"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

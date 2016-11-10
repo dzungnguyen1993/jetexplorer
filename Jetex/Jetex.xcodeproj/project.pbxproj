@@ -27,6 +27,30 @@
 		B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E4FC701DD18BAB000468EC /* LaunchScreen.storyboard */; };
 		B9E4FC7D1DD18BAB000468EC /* JetexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC7C1DD18BAB000468EC /* JetexTests.swift */; };
 		B9E4FC881DD18BAB000468EC /* JetexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC871DD18BAB000468EC /* JetexUITests.swift */; };
+		B9F445E51DD4D6DF00250D6C /* Gotham-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445D51DD4D6DF00250D6C /* Gotham-Black.otf */; };
+		B9F445E61DD4D6DF00250D6C /* Gotham-BlackIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445D61DD4D6DF00250D6C /* Gotham-BlackIta.otf */; };
+		B9F445E71DD4D6DF00250D6C /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445D71DD4D6DF00250D6C /* Gotham-Bold.otf */; };
+		B9F445E81DD4D6DF00250D6C /* Gotham-BoldIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445D81DD4D6DF00250D6C /* Gotham-BoldIta.otf */; };
+		B9F445E91DD4D6DF00250D6C /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445D91DD4D6DF00250D6C /* Gotham-Book.otf */; };
+		B9F445EA1DD4D6DF00250D6C /* Gotham-BookIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445DA1DD4D6DF00250D6C /* Gotham-BookIta.otf */; };
+		B9F445EB1DD4D6DF00250D6C /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445DB1DD4D6DF00250D6C /* Gotham-Light.otf */; };
+		B9F445EC1DD4D6DF00250D6C /* Gotham-LightIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445DC1DD4D6DF00250D6C /* Gotham-LightIta.otf */; };
+		B9F445ED1DD4D6DF00250D6C /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445DD1DD4D6DF00250D6C /* Gotham-Medium.otf */; };
+		B9F445EE1DD4D6DF00250D6C /* Gotham-MediumIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445DE1DD4D6DF00250D6C /* Gotham-MediumIta.otf */; };
+		B9F445EF1DD4D6DF00250D6C /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445DF1DD4D6DF00250D6C /* Gotham-Thin.otf */; };
+		B9F445F01DD4D6DF00250D6C /* Gotham-ThinIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445E01DD4D6DF00250D6C /* Gotham-ThinIta.otf */; };
+		B9F445F11DD4D6DF00250D6C /* Gotham-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445E11DD4D6DF00250D6C /* Gotham-Ultra.otf */; };
+		B9F445F21DD4D6DF00250D6C /* Gotham-UltraIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445E21DD4D6DF00250D6C /* Gotham-UltraIta.otf */; };
+		B9F445F31DD4D6DF00250D6C /* Gotham-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445E31DD4D6DF00250D6C /* Gotham-XLight.otf */; };
+		B9F445F41DD4D6DF00250D6C /* Gotham-XLightIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = B9F445E41DD4D6DF00250D6C /* Gotham-XLightIta.otf */; };
+		B9F445F61DD4DA1B00250D6C /* GothamFontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F445F51DD4DA1B00250D6C /* GothamFontName.swift */; };
+		B9F445F81DD4DA9700250D6C /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F445F71DD4DA9700250D6C /* Extentions.swift */; };
+		B9F445FB1DD4E11B00250D6C /* GothamBold24Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F445FA1DD4E11B00250D6C /* GothamBold24Label.swift */; };
+		B9F445FD1DD4E16B00250D6C /* GothamBold17Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F445FC1DD4E16B00250D6C /* GothamBold17Label.swift */; };
+		B9F445FF1DD4E17800250D6C /* GothamBold15Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F445FE1DD4E17700250D6C /* GothamBold15Label.swift */; };
+		B9F446011DD4E18D00250D6C /* GothamBook17Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F446001DD4E18D00250D6C /* GothamBook17Label.swift */; };
+		B9F446031DD4E19A00250D6C /* GothamBook15Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F446021DD4E19A00250D6C /* GothamBook15Label.swift */; };
+		B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F446041DD4E2F400250D6C /* GothamBook12Label.swift */; };
 		D481C9F265BD5A5174E9F8DA /* Pods_Jetex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +101,30 @@
 		B9E4FC831DD18BAB000468EC /* JetexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E4FC871DD18BAB000468EC /* JetexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetexUITests.swift; sourceTree = "<group>"; };
 		B9E4FC891DD18BAB000468EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9F445D51DD4D6DF00250D6C /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Black.otf"; sourceTree = "<group>"; };
+		B9F445D61DD4D6DF00250D6C /* Gotham-BlackIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BlackIta.otf"; sourceTree = "<group>"; };
+		B9F445D71DD4D6DF00250D6C /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
+		B9F445D81DD4D6DF00250D6C /* Gotham-BoldIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldIta.otf"; sourceTree = "<group>"; };
+		B9F445D91DD4D6DF00250D6C /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		B9F445DA1DD4D6DF00250D6C /* Gotham-BookIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookIta.otf"; sourceTree = "<group>"; };
+		B9F445DB1DD4D6DF00250D6C /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		B9F445DC1DD4D6DF00250D6C /* Gotham-LightIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-LightIta.otf"; sourceTree = "<group>"; };
+		B9F445DD1DD4D6DF00250D6C /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
+		B9F445DE1DD4D6DF00250D6C /* Gotham-MediumIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-MediumIta.otf"; sourceTree = "<group>"; };
+		B9F445DF1DD4D6DF00250D6C /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.otf"; sourceTree = "<group>"; };
+		B9F445E01DD4D6DF00250D6C /* Gotham-ThinIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-ThinIta.otf"; sourceTree = "<group>"; };
+		B9F445E11DD4D6DF00250D6C /* Gotham-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Ultra.otf"; sourceTree = "<group>"; };
+		B9F445E21DD4D6DF00250D6C /* Gotham-UltraIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-UltraIta.otf"; sourceTree = "<group>"; };
+		B9F445E31DD4D6DF00250D6C /* Gotham-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLight.otf"; sourceTree = "<group>"; };
+		B9F445E41DD4D6DF00250D6C /* Gotham-XLightIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLightIta.otf"; sourceTree = "<group>"; };
+		B9F445F51DD4DA1B00250D6C /* GothamFontName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GothamFontName.swift; sourceTree = "<group>"; };
+		B9F445F71DD4DA9700250D6C /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		B9F445FA1DD4E11B00250D6C /* GothamBold24Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GothamBold24Label.swift; sourceTree = "<group>"; };
+		B9F445FC1DD4E16B00250D6C /* GothamBold17Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GothamBold17Label.swift; sourceTree = "<group>"; };
+		B9F445FE1DD4E17700250D6C /* GothamBold15Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GothamBold15Label.swift; sourceTree = "<group>"; };
+		B9F446001DD4E18D00250D6C /* GothamBook17Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GothamBook17Label.swift; sourceTree = "<group>"; };
+		B9F446021DD4E19A00250D6C /* GothamBook15Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GothamBook15Label.swift; sourceTree = "<group>"; };
+		B9F446041DD4E2F400250D6C /* GothamBook12Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GothamBook12Label.swift; sourceTree = "<group>"; };
 		C5C4A86919FBAF16948016C3 /* Pods-Jetex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.release.xcconfig"; sourceTree = "<group>"; };
 		F6AB73EA2D90A2DAB6DFE5FC /* Pods_JetexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,6 +190,7 @@
 		B96BAC561DD1B3A100AE79AD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B9F445F71DD4DA9700250D6C /* Extentions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -164,6 +213,7 @@
 		B96BAC591DD1B3A100AE79AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B9F445F91DD4E0F600250D6C /* Style Guild */,
 				B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */,
 				B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */,
 				B9150B981DD46E1B00F825DC /* SearchCityCell.swift */,
@@ -175,6 +225,8 @@
 		B96BAC641DD1C4AA00AE79AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9F445F51DD4DA1B00250D6C /* GothamFontName.swift */,
+				B9F445D41DD4D6DF00250D6C /* Fonts */,
 				B9150B921DD4659C00F825DC /* cancel.png */,
 				B9150B931DD4659C00F825DC /* search.png */,
 				B90DDA471DD45F0800AEC1AE /* back.png */,
@@ -238,6 +290,42 @@
 				B9E4FC891DD18BAB000468EC /* Info.plist */,
 			);
 			path = JetexUITests;
+			sourceTree = "<group>";
+		};
+		B9F445D41DD4D6DF00250D6C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B9F445D51DD4D6DF00250D6C /* Gotham-Black.otf */,
+				B9F445D61DD4D6DF00250D6C /* Gotham-BlackIta.otf */,
+				B9F445D71DD4D6DF00250D6C /* Gotham-Bold.otf */,
+				B9F445D81DD4D6DF00250D6C /* Gotham-BoldIta.otf */,
+				B9F445D91DD4D6DF00250D6C /* Gotham-Book.otf */,
+				B9F445DA1DD4D6DF00250D6C /* Gotham-BookIta.otf */,
+				B9F445DB1DD4D6DF00250D6C /* Gotham-Light.otf */,
+				B9F445DC1DD4D6DF00250D6C /* Gotham-LightIta.otf */,
+				B9F445DD1DD4D6DF00250D6C /* Gotham-Medium.otf */,
+				B9F445DE1DD4D6DF00250D6C /* Gotham-MediumIta.otf */,
+				B9F445DF1DD4D6DF00250D6C /* Gotham-Thin.otf */,
+				B9F445E01DD4D6DF00250D6C /* Gotham-ThinIta.otf */,
+				B9F445E11DD4D6DF00250D6C /* Gotham-Ultra.otf */,
+				B9F445E21DD4D6DF00250D6C /* Gotham-UltraIta.otf */,
+				B9F445E31DD4D6DF00250D6C /* Gotham-XLight.otf */,
+				B9F445E41DD4D6DF00250D6C /* Gotham-XLightIta.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B9F445F91DD4E0F600250D6C /* Style Guild */ = {
+			isa = PBXGroup;
+			children = (
+				B9F445FA1DD4E11B00250D6C /* GothamBold24Label.swift */,
+				B9F445FC1DD4E16B00250D6C /* GothamBold17Label.swift */,
+				B9F445FE1DD4E17700250D6C /* GothamBold15Label.swift */,
+				B9F446001DD4E18D00250D6C /* GothamBook17Label.swift */,
+				B9F446021DD4E19A00250D6C /* GothamBook15Label.swift */,
+				B9F446041DD4E2F400250D6C /* GothamBook12Label.swift */,
+			);
+			path = "Style Guild";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,16 +444,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F445F41DD4D6DF00250D6C /* Gotham-XLightIta.otf in Resources */,
+				B9F445F11DD4D6DF00250D6C /* Gotham-Ultra.otf in Resources */,
 				B96BAC5D1DD1B4AC00AE79AD /* FlightSearchVC.xib in Resources */,
 				B9150B951DD4659C00F825DC /* search.png in Resources */,
 				B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */,
+				B9F445EE1DD4D6DF00250D6C /* Gotham-MediumIta.otf in Resources */,
+				B9F445EC1DD4D6DF00250D6C /* Gotham-LightIta.otf in Resources */,
+				B9F445E81DD4D6DF00250D6C /* Gotham-BoldIta.otf in Resources */,
+				B9F445ED1DD4D6DF00250D6C /* Gotham-Medium.otf in Resources */,
+				B9F445EB1DD4D6DF00250D6C /* Gotham-Light.otf in Resources */,
 				B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */,
+				B9F445E71DD4D6DF00250D6C /* Gotham-Bold.otf in Resources */,
+				B9F445E51DD4D6DF00250D6C /* Gotham-Black.otf in Resources */,
 				B9150B941DD4659C00F825DC /* cancel.png in Resources */,
+				B9F445F21DD4D6DF00250D6C /* Gotham-UltraIta.otf in Resources */,
 				B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */,
+				B9F445F01DD4D6DF00250D6C /* Gotham-ThinIta.otf in Resources */,
 				B90DDA481DD45F0800AEC1AE /* back.png in Resources */,
 				B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */,
+				B9F445EF1DD4D6DF00250D6C /* Gotham-Thin.otf in Resources */,
+				B9F445F31DD4D6DF00250D6C /* Gotham-XLight.otf in Resources */,
 				B9150B9B1DD46E1B00F825DC /* SearchCityCell.xib in Resources */,
+				B9F445E91DD4D6DF00250D6C /* Gotham-Book.otf in Resources */,
+				B9F445E61DD4D6DF00250D6C /* Gotham-BlackIta.otf in Resources */,
 				B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */,
+				B9F445EA1DD4D6DF00250D6C /* Gotham-BookIta.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,14 +617,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */,
+				B9F445F61DD4DA1B00250D6C /* GothamFontName.swift in Sources */,
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
+				B9F445F81DD4DA9700250D6C /* Extentions.swift in Sources */,
 				B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */,
 				B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */,
 				B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */,
+				B9F446031DD4E19A00250D6C /* GothamBook15Label.swift in Sources */,
 				B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */,
+				B9F445FD1DD4E16B00250D6C /* GothamBold17Label.swift in Sources */,
+				B9F445FF1DD4E17800250D6C /* GothamBold15Label.swift in Sources */,
+				B9F445FB1DD4E11B00250D6C /* GothamBold24Label.swift in Sources */,
 				B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */,
 				B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */,
 				B9150B971DD46AEA00F825DC /* City.swift in Sources */,
+				B9F446011DD4E18D00250D6C /* GothamBook17Label.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
