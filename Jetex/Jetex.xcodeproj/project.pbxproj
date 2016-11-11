@@ -24,6 +24,8 @@
 		B98B6B6E1DD5B5ED0094FC46 /* SmallParagraphButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98B6B6D1DD5B5ED0094FC46 /* SmallParagraphButton.swift */; };
 		B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */; };
 		B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */; };
+		B9E4453F1DD62FEB002946A0 /* PickInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4453E1DD62FEB002946A0 /* PickInfoView.swift */; };
+		B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E445401DD63009002946A0 /* PickInfoView.xib */; };
 		B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC671DD18BAB000468EC /* AppDelegate.swift */; };
 		B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E4FC6B1DD18BAB000468EC /* Main.storyboard */; };
 		B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E4FC6E1DD18BAB000468EC /* Assets.xcassets */; };
@@ -95,6 +97,8 @@
 		B98B6B6D1DD5B5ED0094FC46 /* SmallParagraphButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallParagraphButton.swift; sourceTree = "<group>"; };
 		B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkErrorView.xib; sourceTree = "<group>"; };
 		B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
+		B9E4453E1DD62FEB002946A0 /* PickInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickInfoView.swift; sourceTree = "<group>"; };
+		B9E445401DD63009002946A0 /* PickInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickInfoView.xib; sourceTree = "<group>"; };
 		B9E4FC641DD18BAB000468EC /* Jetex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jetex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E4FC671DD18BAB000468EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E4FC6C1DD18BAB000468EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 				B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */,
 				B9150B981DD46E1B00F825DC /* SearchCityCell.swift */,
 				B9150B991DD46E1B00F825DC /* SearchCityCell.xib */,
+				B9E4453E1DD62FEB002946A0 /* PickInfoView.swift */,
+				B9E445401DD63009002946A0 /* PickInfoView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 				B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */,
 				B9F445F01DD4D6DF00250D6C /* Gotham-ThinIta.otf in Resources */,
 				B90DDA481DD45F0800AEC1AE /* back.png in Resources */,
+				B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */,
 				B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */,
 				B9F445EF1DD4D6DF00250D6C /* Gotham-Thin.otf in Resources */,
 				B9F445F31DD4D6DF00250D6C /* Gotham-XLight.otf in Resources */,
@@ -548,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */,
+				B9E4453F1DD62FEB002946A0 /* PickInfoView.swift in Sources */,
 				B9F445F61DD4DA1B00250D6C /* GothamFontName.swift in Sources */,
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
 				B9F445F81DD4DA9700250D6C /* Extentions.swift in Sources */,

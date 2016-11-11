@@ -10,17 +10,44 @@ import UIKit
 
 class FlightSearchVC: BaseViewController {
     
-    
-    @IBOutlet weak var viewFrom: UIView!
-    @IBOutlet weak var viewTo: UIView!
-    @IBOutlet weak var viewDepartDay: UIView!
-    @IBOutlet weak var viewReturnDay: UIView!
+    @IBOutlet weak var viewFrom: PickInfoView!
+    @IBOutlet weak var viewTo: PickInfoView!
+    @IBOutlet weak var viewDepartDay: PickInfoView!
+    @IBOutlet weak var viewReturnDay: PickInfoView!
     @IBOutlet weak var viewPassenger: UIView!
+    
+    var cityFrom: City? = nil
+    var cityTo: City? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.addActionForViews()
+        self .loadViewLocation()
+    }
+    
+    func loadViewLocation() {
+        viewFrom.imgView.image = UIImage(named: "")
+        viewFrom.lbTitle.text = "From"
+        
+        if (cityFrom != nil) {
+            viewFrom.lbInfo.text = cityFrom?.countryID
+            viewFrom.lbSubInfo.text = cityFrom?.countryName
+        } else {
+            viewFrom.lbInfo.text = "--"
+            viewFrom.lbSubInfo.text = ""
+        }
+        
+        viewTo.imgView.image = UIImage(named: "")
+        viewTo.lbTitle.text = "To"
+        
+        if (cityTo != nil) {
+            viewTo.lbInfo.text = cityTo?.countryID
+            viewTo.lbSubInfo.text = cityTo?.countryName
+        } else {
+            viewTo.lbInfo.text = "--"
+            viewTo.lbSubInfo.text = ""
+        }
     }
     
     func addActionForViews() {
@@ -49,17 +76,43 @@ class FlightSearchVC: BaseViewController {
         }
     }
     
+    // MARK: Search
+    @IBAction func clickSearch(_ sender: UIButton) {
+    }
+}
+
+extension FlightSearchVC: PickLocationDelegate {
     // MARK: Pick location
     func pickLocationFrom(sender: UITapGestureRecognizer) {
-        let vc = LocationSearchVC(nibName: "LocationSearchVC", bundle: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        pickLocation(isLocationFrom: true)
     }
     
     func pickLocationTo(sender: UITapGestureRecognizer) {
         let vc = LocationSearchVC(nibName: "LocationSearchVC", bundle: nil)
+        vc.isLocationFrom = false
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func pickLocation(isLocationFrom: Bool) {
+        let vc = LocationSearchVC(nibName: "LocationSearchVC", bundle: nil)
+        vc.isLocationFrom = isLocationFrom
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func didPickLocation(city: City, isLocationFrom: Bool) {
+        if (isLocationFrom) {
+            cityFrom = city
+            loadViewLocation()
+        } else {
+            cityTo = city
+            loadViewLocation()
+        }
+    }
+}
+
+extension FlightSearchVC {
     // MARK: Pick date
     func pickDepartDay(sender: UITapGestureRecognizer) {
         print("ngu")
@@ -68,13 +121,11 @@ class FlightSearchVC: BaseViewController {
     func pickReturnDay(sender: UITapGestureRecognizer) {
         print("ngu")
     }
-    
+}
+
+extension FlightSearchVC {
     // MARK: Pick passengers
     func pickPassengers(sender: UITapGestureRecognizer) {
         print("ngu")
-    }
-    
-    // MARK: Search
-    @IBAction func clickSearch(_ sender: UIButton) {
     }
 }

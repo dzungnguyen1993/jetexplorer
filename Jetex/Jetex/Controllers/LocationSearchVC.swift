@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PickLocationDelegate: class {
+    func didPickLocation(city: City, isLocationFrom: Bool)
+}
+
 class LocationSearchVC: BaseViewController {
 
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
@@ -15,9 +19,11 @@ class LocationSearchVC: BaseViewController {
     @IBOutlet weak var topNavigationItem: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
+    weak var delegate: PickLocationDelegate?
     
     var citiesSearchResult: [City] = []
     var cities: [City] = []
+    var isLocationFrom: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,7 +113,9 @@ extension LocationSearchVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let city = citiesSearchResult[indexPath.row]
+        self.delegate?.didPickLocation(city: city, isLocationFrom: isLocationFrom)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
