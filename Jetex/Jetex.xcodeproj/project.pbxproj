@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28AD38EC1DD59F4C0027892C /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD38EB1DD59F4C0027892C /* ProfileVC.xib */; };
+		28AD38EE1DD59F780027892C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD38ED1DD59F780027892C /* ProfileVC.swift */; };
 		B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */; };
 		B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */; };
 		B90DDA481DD45F0800AEC1AE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA471DD45F0800AEC1AE /* back.png */; };
@@ -73,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28AD38EB1DD59F4C0027892C /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		28AD38ED1DD59F780027892C /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.debug.xcconfig"; sourceTree = "<group>"; };
 		5F30E1B520C7F45D1DB37729 /* Pods_JetexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +189,8 @@
 				B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */,
 				B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */,
 				B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */,
+				28AD38EB1DD59F4C0027892C /* ProfileVC.xib */,
+				28AD38ED1DD59F780027892C /* ProfileVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -358,12 +364,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9E4FC8F1DD18BAB000468EC /* Build configuration list for PBXNativeTarget "JetexTests" */;
 			buildPhases = (
-				76A81B34E47EFF373FBD1785 /* [CP] Check Pods Manifest.lock */,
 				B9E4FC741DD18BAB000468EC /* Sources */,
 				B9E4FC751DD18BAB000468EC /* Frameworks */,
 				B9E4FC761DD18BAB000468EC /* Resources */,
-				0757E441BDEE8ACF07823780 /* [CP] Embed Pods Frameworks */,
-				A4A9A99400E62626CA13A7B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,11 +382,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9E4FC921DD18BAB000468EC /* Build configuration list for PBXNativeTarget "JetexUITests" */;
 			buildPhases = (
-				82E82CFAA6E86FB713B4E487 /* [CP] Check Pods Manifest.lock */,
 				B9E4FC7F1DD18BAB000468EC /* Sources */,
 				B9E4FC801DD18BAB000468EC /* Frameworks */,
 				B9E4FC811DD18BAB000468EC /* Resources */,
-				E35DAE85AE882706F2C2F8D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -457,6 +458,7 @@
 				B9F445E81DD4D6DF00250D6C /* Gotham-BoldIta.otf in Resources */,
 				B9F445ED1DD4D6DF00250D6C /* Gotham-Medium.otf in Resources */,
 				B9F445EB1DD4D6DF00250D6C /* Gotham-Light.otf in Resources */,
+				28AD38EC1DD59F4C0027892C /* ProfileVC.xib in Resources */,
 				B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */,
 				B9F445E71DD4D6DF00250D6C /* Gotham-Bold.otf in Resources */,
 				B9F445E51DD4D6DF00250D6C /* Gotham-Black.otf in Resources */,
@@ -493,21 +495,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0757E441BDEE8ACF07823780 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JetexTests/Pods-JetexTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		10A306E0A9CC13BF9950E35A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,7 +507,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5FE4FABEEAEB1BED74866B89 /* [CP] Copy Pods Resources */ = {
@@ -538,36 +525,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jetex/Pods-Jetex-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		76A81B34E47EFF373FBD1785 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		82E82CFAA6E86FB713B4E487 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		9BC54AEB1C7F150856199A82 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -581,36 +538,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jetex/Pods-Jetex-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A4A9A99400E62626CA13A7B7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JetexTests/Pods-JetexTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E35DAE85AE882706F2C2F8D4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JetexUITests/Pods-JetexUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -634,6 +561,7 @@
 				B9F445FF1DD4E17800250D6C /* GothamBold15Label.swift in Sources */,
 				B9F445FB1DD4E11B00250D6C /* GothamBold24Label.swift in Sources */,
 				B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */,
+				28AD38EE1DD59F780027892C /* ProfileVC.swift in Sources */,
 				B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */,
 				B9150B971DD46AEA00F825DC /* City.swift in Sources */,
 				B9F446011DD4E18D00250D6C /* GothamBook17Label.swift in Sources */,
@@ -787,9 +715,10 @@
 			baseConfigurationReference = 55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CB7BJM62E3;
 				INFOPLIST_FILE = Jetex/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.Jetex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -802,9 +731,10 @@
 			baseConfigurationReference = C5C4A86919FBAF16948016C3 /* Pods-Jetex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CB7BJM62E3;
 				INFOPLIST_FILE = Jetex/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.Jetex;
 				PRODUCT_NAME = "$(TARGET_NAME)";

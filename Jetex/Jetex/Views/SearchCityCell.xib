@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh, Vietnam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWG-hS-CgX" customClass="GothamBook12Label" customModule="Jetex" customModuleProvider="target">
-                        <rect key="frame" x="16" y="30.5" width="394" height="21"/>
+                        <rect key="frame" x="16" y="30" width="394" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="e7j-zQ-0eJ"/>
                         </constraints>
