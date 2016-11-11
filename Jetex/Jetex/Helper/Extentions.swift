@@ -20,3 +20,15 @@ extension UIColor {
     }
     
 }
+
+extension UIButton{
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            return UIColor(cgColor: layer.borderColor!)
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+            layer.borderWidth = 1
+        }
+    }
+}
