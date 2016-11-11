@@ -90,7 +90,7 @@
                                                 <constraint firstAttribute="width" secondItem="KSK-It-49q" secondAttribute="height" multiplier="1:1" id="wM6-ww-8oq"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jI2-VW-eFH">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jI2-VW-eFH" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="44.5" y="5" width="91.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="VAu-Bn-QI5"/>
@@ -99,7 +99,7 @@
                                             <color key="textColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLA-8s-USe">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLA-8s-USe" customClass="GothamBold24Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="8" y="31.5" width="128" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="8rj-vQ-VMX"/>
@@ -108,7 +108,7 @@
                                             <color key="textColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1P-o7-3Ki">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1P-o7-3Ki" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="8" y="57.5" width="128" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="13P-Q0-xOP"/>
@@ -142,7 +142,7 @@
                                                 <constraint firstAttribute="width" secondItem="ycF-XM-jf5" secondAttribute="height" multiplier="1:1" id="rw0-m0-0EO"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYh-w1-UdS">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYh-w1-UdS" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="44.5" y="5" width="91.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Ylq-3F-h71"/>
@@ -151,7 +151,7 @@
                                             <color key="textColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BKK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sx5-pY-y1M">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BKK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sx5-pY-y1M" customClass="GothamBold24Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="8" y="31.5" width="128" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="50b-U3-zp7"/>
@@ -160,7 +160,7 @@
                                             <color key="textColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangkok" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-O3-BVd">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangkok" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-O3-BVd" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="8" y="57.5" width="128" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Cef-tQ-KTS"/>
@@ -212,7 +212,7 @@
                                                 <constraint firstAttribute="width" secondItem="eNl-L0-EhT" secondAttribute="height" multiplier="1:1" id="CAi-Fr-A00"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDv-Zs-rXB">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDv-Zs-rXB" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="44.5" y="5" width="91.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Gec-11-CFg"/>
@@ -221,7 +221,7 @@
                                             <color key="textColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBi-0B-9uq">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBi-0B-9uq" customClass="GothamBold24Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="8" y="31.5" width="128" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29" id="HrQ-R1-SyT"/>
@@ -230,7 +230,7 @@
                                             <color key="textColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaX-Iy-aTV">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaX-Iy-aTV" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="8" y="59" width="128" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="N5m-T0-vtS"/>
@@ -264,7 +264,7 @@
                                                 <constraint firstAttribute="width" secondItem="gsB-vx-PfX" secondAttribute="height" multiplier="1:1" id="vq6-To-F3P"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc6-gZ-nF9">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc6-gZ-nF9" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="44.5" y="5" width="91.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="U0o-Gc-5FY"/>
@@ -273,7 +273,7 @@
                                             <color key="textColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtU-5u-Q65">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtU-5u-Q65" customClass="GothamBold24Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="8" y="31.5" width="128" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29" id="wDA-86-JcU"/>
@@ -282,7 +282,7 @@
                                             <color key="textColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBa-Fe-9B2">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBa-Fe-9B2" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
                                             <rect key="frame" x="8" y="59" width="128" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Nxp-u1-L5l"/>
@@ -329,7 +329,7 @@
                                         <constraint firstAttribute="width" secondItem="bvw-ZA-UO9" secondAttribute="height" multiplier="1:1" id="hVk-Of-Q9g"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-vJ-T6V">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-vJ-T6V" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
                                     <rect key="frame" x="44.5" y="3" width="235.5" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="Lja-vJ-g9D"/>
@@ -360,11 +360,25 @@
                                 <constraint firstAttribute="height" constant="60" id="yKN-ku-1km"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVC-m9-80O">
-                            <rect key="frame" x="24" y="420" width="272" height="30"/>
-                            <color key="backgroundColor" red="0.28201574087142944" green="0.82799667119979858" blue="0.62904578447341919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-HX-05A">
+                            <rect key="frame" x="24" y="207" width="272" height="2"/>
+                            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="40B-VE-WHR"/>
+                                <constraint firstAttribute="height" constant="2" id="qFb-TT-wBd"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bix-Uf-YvP">
+                            <rect key="frame" x="24" y="319" width="272" height="2"/>
+                            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="5Dl-Qh-C8O"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVC-m9-80O" customClass="SmallParagraphButton" customModule="Jetex" customModuleProvider="target">
+                            <rect key="frame" x="24" y="420" width="272" height="44"/>
+                            <color key="backgroundColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="40B-VE-WHR"/>
                             </constraints>
                             <state key="normal" title="SEARCH">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -378,9 +392,12 @@
                         <constraint firstAttribute="trailing" secondItem="071-V3-i6B" secondAttribute="trailing" constant="16" id="1iW-4U-5mE"/>
                         <constraint firstItem="KVC-m9-80O" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="24" id="2X7-Ju-1jb"/>
                         <constraint firstItem="I31-Vz-phy" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="16" id="5TF-w8-T3m"/>
+                        <constraint firstItem="mq1-HX-05A" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="24" id="7A0-s3-XuU"/>
+                        <constraint firstAttribute="trailing" secondItem="mq1-HX-05A" secondAttribute="trailing" constant="24" id="8gh-7i-nZ4"/>
                         <constraint firstItem="AdL-IY-5qp" firstAttribute="height" secondItem="pSz-Xt-PPD" secondAttribute="height" id="9mv-Xa-DOB"/>
                         <constraint firstAttribute="trailing" secondItem="I31-Vz-phy" secondAttribute="trailing" constant="16" id="G2q-Aa-7xq"/>
                         <constraint firstAttribute="trailing" secondItem="KVC-m9-80O" secondAttribute="trailing" constant="24" id="KVh-Li-1xR"/>
+                        <constraint firstItem="Bix-Uf-YvP" firstAttribute="top" secondItem="wHv-lB-6XW" secondAttribute="bottom" constant="15" id="Klm-wy-vMk"/>
                         <constraint firstAttribute="trailing" secondItem="pSz-Xt-PPD" secondAttribute="trailing" id="Kmt-U7-Znz"/>
                         <constraint firstAttribute="trailing" secondItem="wHv-lB-6XW" secondAttribute="trailing" constant="16" id="TzY-rX-b1H"/>
                         <constraint firstItem="I31-Vz-phy" firstAttribute="top" secondItem="wHv-lB-6XW" secondAttribute="bottom" constant="32" id="UE8-mq-dgi"/>
@@ -393,8 +410,11 @@
                         <constraint firstItem="AdL-IY-5qp" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" id="a6J-EK-8dd"/>
                         <constraint firstItem="pSz-Xt-PPD" firstAttribute="top" secondItem="7h2-EK-n0M" secondAttribute="top" id="dFu-K4-dH5"/>
                         <constraint firstItem="pSz-Xt-PPD" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" id="eLr-ox-p3i"/>
+                        <constraint firstAttribute="trailing" secondItem="Bix-Uf-YvP" secondAttribute="trailing" constant="24" id="neT-ju-m45"/>
                         <constraint firstItem="wHv-lB-6XW" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="16" id="oih-z3-JpU"/>
+                        <constraint firstItem="Bix-Uf-YvP" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="24" id="pqU-ND-sgt"/>
                         <constraint firstAttribute="trailing" secondItem="AdL-IY-5qp" secondAttribute="trailing" id="ykP-wg-m7m"/>
+                        <constraint firstItem="mq1-HX-05A" firstAttribute="top" secondItem="071-V3-i6B" secondAttribute="bottom" constant="15" id="ztw-JM-E0D"/>
                     </constraints>
                 </view>
             </subviews>

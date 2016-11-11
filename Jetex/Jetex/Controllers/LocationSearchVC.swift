@@ -31,6 +31,7 @@ class LocationSearchVC: BaseViewController {
         self.tableView.register(UINib(nibName: "SearchCityCell", bundle:nil), forCellReuseIdentifier: "SearchCityCell")
         
         self.initSearch()
+        tableView.separatorStyle = .none
     }
     
     func initSearch() {
@@ -55,7 +56,6 @@ class LocationSearchVC: BaseViewController {
             guard sender.text!.characters.count <= city.cityName.characters.count else {
                 return false
             }
-
             let index = city.cityName.index(city.cityName.startIndex, offsetBy: sender.text!.characters.count)
             let prefixCityName = city.cityName.substring(to: index)
             return prefixCityName.lowercased() == cityName.lowercased()
@@ -66,6 +66,10 @@ class LocationSearchVC: BaseViewController {
     }
     
     @IBAction func clearSearchField(_ sender: UIButton) {
+        searchTextField.text = ""
+        citiesSearchResult.removeAll()
+        tableView.separatorStyle = .none
+        tableView.reloadData()
     }
     
     
@@ -91,7 +95,7 @@ extension LocationSearchVC: UITableViewDataSource, UITableViewDelegate {
         let attributes = [NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 17)!]
         let attributedString = NSMutableAttributedString(string: citiesSearchResult[indexPath.row].cityName, attributes: attributes)
         let prefixAttributes = [NSForegroundColorAttributeName: UIColor(hex: 0x674290),
-                                NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 17)!]
+                                NSFontAttributeName: UIFont(name: GothamFontName.Bold.rawValue, size: 17)!]
         attributedString.addAttributes(prefixAttributes, range: NSRange(location: 0, length: searchTextField.text!.characters.count))
         cell.lbCity.attributedText = attributedString
         
@@ -104,5 +108,9 @@ extension LocationSearchVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
     }
 }

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="426" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="426" height="59"/>
+                <rect key="frame" x="0.0" y="0.0" width="426" height="59.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tan Son Nhat Airport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8c9-Tt-hYI" customClass="GothamBold17Label" customModule="Jetex" customModuleProvider="target">
@@ -58,6 +58,7 @@
                     <constraint firstItem="8c9-Tt-hYI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="w0i-Uz-VEB"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="lbAirport" destination="bGo-Bh-s9v" id="Xop-eJ-P2n"/>
                 <outlet property="lbCity" destination="8c9-Tt-hYI" id="huJ-Ut-sjL"/>

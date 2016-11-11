@@ -26,6 +26,8 @@ class TabBarController: UITabBarController {
         nav.setNavigationBarHidden(true, animated: true)
         
         viewControllers?.append(nav)
-        nav.tabBarItem = UITabBarItem(title: "Flight", image: UIImage(), tag: 1)
+        nav.tabBarItem = UITabBarItem(title: "Flights", image: UIImage(), tag: 1)
+        
+        nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x674290), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .normal)
     }
 }
