@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlightSearchVC" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="7h2-EK-n0M" id="2ML-0G-ajL"/>
+                <outlet property="lbNumberPassenger" destination="Go7-Gs-ShP" id="I6k-Hp-dKe"/>
                 <outlet property="networkErrorView" destination="may-rU-JrF" id="Vae-yC-639"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewDepartDay" destination="QEE-Z9-y7l" id="SGx-JK-mNF"/>

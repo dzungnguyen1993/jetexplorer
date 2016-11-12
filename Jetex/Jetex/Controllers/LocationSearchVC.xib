@@ -31,7 +31,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-Wg-kd8">
                     <rect key="frame" x="0.0" y="22" width="375" height="645"/>
                     <subviews>
-                        <navigationBar contentMode="scaleToFill" translucent="NO" backIndicatorImage="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="ia6-4F-yb2">
+                        <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia6-4F-yb2">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="9am-MB-ns3"/>

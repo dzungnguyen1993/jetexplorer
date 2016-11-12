@@ -15,24 +15,25 @@ class FlightSearchVC: BaseViewController {
     @IBOutlet weak var viewDepartDay: PickInfoView!
     @IBOutlet weak var viewReturnDay: PickInfoView!
     @IBOutlet weak var viewPassenger: UIView!
+    @IBOutlet weak var lbNumberPassenger: UILabel!
     
-    var cityFrom: City? = nil
-    var cityTo: City? = nil
+    var passengerInfo: PassengerInfo! = PassengerInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.addActionForViews()
-        self .loadViewLocation()
+        self.loadViewLocation()
+        self.showNumberPassenger()
     }
     
     func loadViewLocation() {
         viewFrom.imgView.image = UIImage(named: "")
         viewFrom.lbTitle.text = "From"
         
-        if (cityFrom != nil) {
-            viewFrom.lbInfo.text = cityFrom?.countryID
-            viewFrom.lbSubInfo.text = cityFrom?.countryName
+        if (passengerInfo.cityFrom != nil) {
+            viewFrom.lbInfo.text = passengerInfo.cityFrom?.countryID
+            viewFrom.lbSubInfo.text = passengerInfo.cityFrom?.countryName
         } else {
             viewFrom.lbInfo.text = "--"
             viewFrom.lbSubInfo.text = ""
@@ -41,9 +42,9 @@ class FlightSearchVC: BaseViewController {
         viewTo.imgView.image = UIImage(named: "")
         viewTo.lbTitle.text = "To"
         
-        if (cityTo != nil) {
-            viewTo.lbInfo.text = cityTo?.countryID
-            viewTo.lbSubInfo.text = cityTo?.countryName
+        if (passengerInfo.cityTo != nil) {
+            viewTo.lbInfo.text = passengerInfo.cityTo?.countryID
+            viewTo.lbSubInfo.text = passengerInfo.cityTo?.countryName
         } else {
             viewTo.lbInfo.text = "--"
             viewTo.lbSubInfo.text = ""
@@ -71,8 +72,10 @@ class FlightSearchVC: BaseViewController {
     @IBAction func switchFlightType(_ sender: UISegmentedControl) {
         if (sender.selectedSegmentIndex == 0) {
             viewReturnDay.isHidden = false
+            passengerInfo.isRoundTrip = true
         } else {
             viewReturnDay.isHidden = true
+            passengerInfo.isRoundTrip = false
         }
     }
     
@@ -103,10 +106,10 @@ extension FlightSearchVC: PickLocationDelegate {
     
     func didPickLocation(city: City, isLocationFrom: Bool) {
         if (isLocationFrom) {
-            cityFrom = city
+            passengerInfo.cityFrom = city
             loadViewLocation()
         } else {
-            cityTo = city
+            passengerInfo.cityTo = city
             loadViewLocation()
         }
     }
@@ -115,17 +118,40 @@ extension FlightSearchVC: PickLocationDelegate {
 extension FlightSearchVC {
     // MARK: Pick date
     func pickDepartDay(sender: UITapGestureRecognizer) {
-        print("ngu")
+        let vc = PickDateVC(nibName: "PickDateVC", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func pickReturnDay(sender: UITapGestureRecognizer) {
-        print("ngu")
+        let vc = PickDateVC(nibName: "PickDateVC", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
-extension FlightSearchVC {
+extension FlightSearchVC: PickPassengerVCDelegate {
     // MARK: Pick passengers
     func pickPassengers(sender: UITapGestureRecognizer) {
-        print("ngu")
+        let vc = PickPassengerVC(nibName: "PickPassengerVC", bundle: nil)
+        vc.passengers = passengerInfo.passengers
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func donePickPassenger(passengers: [Int]) {
+        passengerInfo.passengers = passengers
+        showNumberPassenger()
+    }
+    
+    func showNumberPassenger() {
+        var c = 0
+        for number in passengerInfo.passengers {
+            c += number
+        }
+        
+        var suffix = " Person"
+        if (c > 1) {
+            suffix = " Persons"
+        }
+        self.lbNumberPassenger.text = String(c) + suffix
     }
 }

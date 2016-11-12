@@ -115,7 +115,7 @@ extension LocationSearchVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = citiesSearchResult[indexPath.row]
         self.delegate?.didPickLocation(city: city, isLocationFrom: isLocationFrom)
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController!.popViewController(animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
