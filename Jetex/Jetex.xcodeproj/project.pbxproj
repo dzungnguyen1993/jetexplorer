@@ -31,8 +31,19 @@
 		B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */; };
 		B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */; };
 		B98B6B6E1DD5B5ED0094FC46 /* SmallParagraphButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98B6B6D1DD5B5ED0094FC46 /* SmallParagraphButton.swift */; };
+		B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */; };
+		B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */; };
 		B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */; };
 		B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */; };
+		B9D9045A1DD8C102008C8720 /* EPCalendarCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904531DD8C102008C8720 /* EPCalendarCell1.swift */; };
+		B9D9045B1DD8C102008C8720 /* EPCalendarCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D904541DD8C102008C8720 /* EPCalendarCell1.xib */; };
+		B9D9045C1DD8C103008C8720 /* EPCalendarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904551DD8C102008C8720 /* EPCalendarConstants.swift */; };
+		B9D9045D1DD8C103008C8720 /* EPCalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904561DD8C102008C8720 /* EPCalendarHeaderView.swift */; };
+		B9D9045E1DD8C103008C8720 /* EPCalendarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D904571DD8C102008C8720 /* EPCalendarHeaderView.xib */; };
+		B9D9045F1DD8C103008C8720 /* EPCalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904581DD8C102008C8720 /* EPCalendarPicker.swift */; };
+		B9D904621DD8C14E008C8720 /* MediumParagraphLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904611DD8C14E008C8720 /* MediumParagraphLabel.swift */; };
+		B9D904641DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904631DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift */; };
+		B9D904661DD8C3F3008C8720 /* EPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904651DD8C3F3008C8720 /* EPExtensions.swift */; };
 		B9E4453F1DD62FEB002946A0 /* PickInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4453E1DD62FEB002946A0 /* PickInfoView.swift */; };
 		B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E445401DD63009002946A0 /* PickInfoView.xib */; };
 		B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC671DD18BAB000468EC /* AppDelegate.swift */; };
@@ -113,8 +124,19 @@
 		B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B98B6B6D1DD5B5ED0094FC46 /* SmallParagraphButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallParagraphButton.swift; sourceTree = "<group>"; };
+		B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorStyleKit.swift; sourceTree = "<group>"; };
+		B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorView.swift; sourceTree = "<group>"; };
 		B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkErrorView.xib; sourceTree = "<group>"; };
 		B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
+		B9D904531DD8C102008C8720 /* EPCalendarCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPCalendarCell1.swift; sourceTree = "<group>"; };
+		B9D904541DD8C102008C8720 /* EPCalendarCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPCalendarCell1.xib; sourceTree = "<group>"; };
+		B9D904551DD8C102008C8720 /* EPCalendarConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPCalendarConstants.swift; sourceTree = "<group>"; };
+		B9D904561DD8C102008C8720 /* EPCalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPCalendarHeaderView.swift; sourceTree = "<group>"; };
+		B9D904571DD8C102008C8720 /* EPCalendarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPCalendarHeaderView.xib; sourceTree = "<group>"; };
+		B9D904581DD8C102008C8720 /* EPCalendarPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPCalendarPicker.swift; sourceTree = "<group>"; };
+		B9D904611DD8C14E008C8720 /* MediumParagraphLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumParagraphLabel.swift; sourceTree = "<group>"; };
+		B9D904631DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInAndOutDateStyleKit.swift; sourceTree = "<group>"; };
+		B9D904651DD8C3F3008C8720 /* EPExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPExtensions.swift; sourceTree = "<group>"; };
 		B9E4453E1DD62FEB002946A0 /* PickInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickInfoView.swift; sourceTree = "<group>"; };
 		B9E445401DD63009002946A0 /* PickInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickInfoView.xib; sourceTree = "<group>"; };
 		B9E4FC641DD18BAB000468EC /* Jetex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jetex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +246,8 @@
 		B96BAC561DD1B3A100AE79AD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B9D904361DD8BBB1008C8720 /* EPCalendarPicker */,
+				B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */,
 				B9F445F71DD4DA9700250D6C /* Extentions.swift */,
 			);
 			path = Helper;
@@ -248,6 +272,7 @@
 		B96BAC591DD1B3A100AE79AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */,
 				B9F445F91DD4E0F600250D6C /* Style Guild */,
 				B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */,
 				B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */,
@@ -273,6 +298,20 @@
 				B90DDA471DD45F0800AEC1AE /* back.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B9D904361DD8BBB1008C8720 /* EPCalendarPicker */ = {
+			isa = PBXGroup;
+			children = (
+				B9D904531DD8C102008C8720 /* EPCalendarCell1.swift */,
+				B9D904541DD8C102008C8720 /* EPCalendarCell1.xib */,
+				B9D904551DD8C102008C8720 /* EPCalendarConstants.swift */,
+				B9D904561DD8C102008C8720 /* EPCalendarHeaderView.swift */,
+				B9D904571DD8C102008C8720 /* EPCalendarHeaderView.xib */,
+				B9D904581DD8C102008C8720 /* EPCalendarPicker.swift */,
+				B9D904651DD8C3F3008C8720 /* EPExtensions.swift */,
+			);
+			path = EPCalendarPicker;
 			sourceTree = "<group>";
 		};
 		B9E4FC5B1DD18BAB000468EC = {
@@ -359,6 +398,8 @@
 		B9F445F91DD4E0F600250D6C /* Style Guild */ = {
 			isa = PBXGroup;
 			children = (
+				B9D904631DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift */,
+				B9D904611DD8C14E008C8720 /* MediumParagraphLabel.swift */,
 				B98B6B6D1DD5B5ED0094FC46 /* SmallParagraphButton.swift */,
 				B9F445FA1DD4E11B00250D6C /* GothamBold24Label.swift */,
 				B9F445FC1DD4E16B00250D6C /* GothamBold17Label.swift */,
@@ -485,8 +526,10 @@
 				B9F445F11DD4D6DF00250D6C /* Gotham-Ultra.otf in Resources */,
 				B96BAC5D1DD1B4AC00AE79AD /* FlightSearchVC.xib in Resources */,
 				B95281EA1DD711880041C39B /* PickDateVC.xib in Resources */,
+				B9D9045E1DD8C103008C8720 /* EPCalendarHeaderView.xib in Resources */,
 				B9150B951DD4659C00F825DC /* search.png in Resources */,
 				B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */,
+				B9D9045B1DD8C102008C8720 /* EPCalendarCell1.xib in Resources */,
 				B9F445EE1DD4D6DF00250D6C /* Gotham-MediumIta.otf in Resources */,
 				B9F445EC1DD4D6DF00250D6C /* Gotham-LightIta.otf in Resources */,
 				B963E72B1DD6D3A800A21548 /* add.png in Resources */,
@@ -586,17 +629,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D9045D1DD8C103008C8720 /* EPCalendarHeaderView.swift in Sources */,
+				B9D9045F1DD8C103008C8720 /* EPCalendarPicker.swift in Sources */,
+				B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */,
 				B963E7231DD6BF7400A21548 /* PickPassengerVC.swift in Sources */,
 				B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */,
+				B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */,
 				B9E4453F1DD62FEB002946A0 /* PickInfoView.swift in Sources */,
 				B9F445F61DD4DA1B00250D6C /* GothamFontName.swift in Sources */,
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
 				B9F445F81DD4DA9700250D6C /* Extentions.swift in Sources */,
+				B9D904621DD8C14E008C8720 /* MediumParagraphLabel.swift in Sources */,
 				B963E7271DD6D13300A21548 /* PickPassengerCell.swift in Sources */,
 				B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */,
 				B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */,
+				B9D9045C1DD8C103008C8720 /* EPCalendarConstants.swift in Sources */,
 				B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */,
+				B9D904641DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift in Sources */,
 				B9F446031DD4E19A00250D6C /* GothamBook15Label.swift in Sources */,
+				B9D904661DD8C3F3008C8720 /* EPExtensions.swift in Sources */,
 				B95281E61DD705610041C39B /* PassengerInfo.swift in Sources */,
 				B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */,
 				B9F445FD1DD4E16B00250D6C /* GothamBold17Label.swift in Sources */,
@@ -606,6 +657,7 @@
 				B95281E91DD711880041C39B /* PickDateVC.swift in Sources */,
 				B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */,
 				28AD38EE1DD59F780027892C /* ProfileVC.swift in Sources */,
+				B9D9045A1DD8C102008C8720 /* EPCalendarCell1.swift in Sources */,
 				B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */,
 				B9150B971DD46AEA00F825DC /* City.swift in Sources */,
 				B9F446011DD4E18D00250D6C /* GothamBook17Label.swift in Sources */,

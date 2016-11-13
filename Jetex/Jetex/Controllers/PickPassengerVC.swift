@@ -19,6 +19,8 @@ class PickPassengerVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     weak var delegate: PickPassengerVCDelegate?
     
+    @IBOutlet weak var doneBtn: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +30,7 @@ class PickPassengerVC: BaseViewController {
         self.tableView.register(UINib(nibName: "PickPassengerCell", bundle: nil), forCellReuseIdentifier: "PickPassengerCell")
         tableView.isScrollEnabled = false
         tableView.allowsSelection = false
+        doneBtn.setTitleTextAttributes([NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!], for: .normal)
     }
     
     @IBAction func donePickPassenger(_ sender: UIBarButtonItem) {

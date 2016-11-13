@@ -25,6 +25,7 @@ class FlightSearchVC: BaseViewController {
         self.addActionForViews()
         self.loadViewLocation()
         self.showNumberPassenger()
+        self.loadViewDate()
     }
     
     func loadViewLocation() {
@@ -48,6 +49,26 @@ class FlightSearchVC: BaseViewController {
         } else {
             viewTo.lbInfo.text = "--"
             viewTo.lbSubInfo.text = ""
+        }
+    }
+    
+    func loadViewDate() {
+        viewDepartDay.imgView.image = UIImage(named: "")
+        viewDepartDay.lbTitle.text = "Depart"
+        if (passengerInfo.departDay != nil) {
+            
+        } else {
+            viewDepartDay.lbInfo.text = ""
+            viewDepartDay.lbSubInfo.text = ""
+        }
+        
+        viewReturnDay.imgView.image = UIImage(named: "")
+        viewReturnDay.lbTitle.text = "Return"
+        if (passengerInfo.returnDay != nil) {
+            
+        } else {
+            viewReturnDay.lbInfo.text = ""
+            viewReturnDay.lbSubInfo.text = ""
         }
     }
     
@@ -119,11 +140,13 @@ extension FlightSearchVC {
     // MARK: Pick date
     func pickDepartDay(sender: UITapGestureRecognizer) {
         let vc = PickDateVC(nibName: "PickDateVC", bundle: nil)
+        vc.pickDateType = .Depart
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func pickReturnDay(sender: UITapGestureRecognizer) {
         let vc = PickDateVC(nibName: "PickDateVC", bundle: nil)
+           vc.pickDateType = .Return
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
