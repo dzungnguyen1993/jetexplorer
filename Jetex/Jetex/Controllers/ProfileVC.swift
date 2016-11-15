@@ -36,7 +36,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UITableViewDelegate, UIT
     }
 
     func setUpMainView(){
-        if false {
+        if true {
             // resize mainView
             mainViewHeightLayoutConstraint.constant = LoginView.itsRect.height
             
@@ -76,11 +76,13 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UITableViewDelegate, UIT
     }
     
     func signInWithEmail() {
-    
+        let vc = SignInVC(nibName: "SignInVC", bundle: nil)
+        _ = self.navigationController?.pushViewController(vc, animated: true)
     }
 
     func signUp() {
-        
+        let vc = SignInVC(nibName: "SignUpVC", bundle: nil)
+        _ = self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - App Setting Table View functions

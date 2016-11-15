@@ -27,6 +27,7 @@ class PickPassengerCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        // TODO: You can also use Interface builder to change these attributes.
         buttonView.layer.borderColor = UIColor(hex: 0x642790).cgColor
         buttonView.layer.borderWidth = 1.0
         buttonView.layer.cornerRadius = 5.0

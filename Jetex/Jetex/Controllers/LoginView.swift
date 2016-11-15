@@ -35,19 +35,19 @@ class LoginView: UIView {
     
     // MARK: - Sign In
     @IBAction func signInWithFacebook(_ sender: AnyObject) {
-        
+        delegate.signInWithFacebook()
     }
     
     @IBAction func signInWithGoogle(_ sender: AnyObject) {
-        
+        delegate.signInWithGoogle()
     }
     
     @IBAction func signInWithEmail(_ sender: AnyObject) {
-        
+        delegate.signInWithEmail()
     }
     
     // MARK: - Sign Up
     @IBAction func signUp(_ sender: AnyObject) {
-        
+        delegate.signUp()
     }
 }
