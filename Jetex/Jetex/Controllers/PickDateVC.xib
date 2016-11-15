@@ -31,7 +31,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXl-Ms-frI">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
-                    <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="OBZ-i9-VL9"/>
                     </constraints>
@@ -44,7 +44,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="4eM-3X-Mtb"/>
                             </constraints>
-                            <color key="barTintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textAttributes key="titleTextAttributes">
                                 <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,43 +99,43 @@
                                     <rect key="frame" x="0.0" y="8" width="375" height="45"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcF-hB-1wA">
-                                            <rect key="frame" x="16" y="15.5" width="49" height="15"/>
+                                            <rect key="frame" x="16" y="15" width="49" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYw-Jr-gNp">
-                                            <rect key="frame" x="65" y="15.5" width="49.5" height="15"/>
+                                            <rect key="frame" x="65" y="15" width="49.5" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2y-IR-Klq">
-                                            <rect key="frame" x="114.5" y="15.5" width="49" height="15"/>
+                                            <rect key="frame" x="114.5" y="15" width="49" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLC-8s-iUT">
-                                            <rect key="frame" x="163.5" y="15.5" width="49" height="15"/>
+                                            <rect key="frame" x="163.5" y="15" width="49" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAb-Ap-NNf">
-                                            <rect key="frame" x="212.5" y="15.5" width="49" height="15"/>
+                                            <rect key="frame" x="212.5" y="15" width="49" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKC-sk-vvn">
-                                            <rect key="frame" x="259.5" y="15.5" width="49.5" height="15"/>
+                                            <rect key="frame" x="259.5" y="15" width="49.5" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuS-IH-RhW">
-                                            <rect key="frame" x="310" y="15.5" width="49" height="15"/>
+                                            <rect key="frame" x="310" y="15" width="49" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>

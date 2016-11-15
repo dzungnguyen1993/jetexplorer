@@ -92,6 +92,8 @@ class FlightSearchVC: BaseViewController {
     
     // MARK: Search
     @IBAction func clickSearch(_ sender: UIButton) {
+        let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
+        self.navigationController!.pushViewController(vc, animated: true)
     }
 }
 

@@ -31,7 +31,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnq-fh-CHQ">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
-                    <color key="backgroundColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.32156862745098036" green="0.21568627450980393" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="may-rU-JrF">
                     <rect key="frame" x="0.0" y="22" width="375" height="645"/>
@@ -46,7 +46,7 @@
                                 <constraint firstAttribute="height" constant="44" id="fXB-RM-Adx"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="barTintColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textAttributes key="titleTextAttributes">
                                 <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,7 +74,7 @@
                                     </connections>
                                 </segmentedControl>
                             </subviews>
-                            <color key="backgroundColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="hAv-FA-4pM" firstAttribute="centerY" secondItem="AdL-IY-5qp" secondAttribute="centerY" id="Kqo-of-t3s"/>
                                 <constraint firstItem="hAv-FA-4pM" firstAttribute="centerX" secondItem="AdL-IY-5qp" secondAttribute="centerX" id="T85-Cn-cOH"/>
