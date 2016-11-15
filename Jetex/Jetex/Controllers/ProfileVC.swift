@@ -8,7 +8,14 @@
 
 import UIKit
 
-class ProfileVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+protocol LoginViewDelegate: class {
+    func signInWithFacebook()
+    func signInWithGoogle()
+    func signInWithEmail()
+    func signUp()
+}
+
+class ProfileVC: BaseViewController, LoginViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     let appSettingText = "App Settings"
     let currency = "Currency"
@@ -17,30 +24,62 @@ class ProfileVC: BaseViewController, UITableViewDelegate, UITableViewDataSource 
     
     // MARK: - IBOutlet Variables
     @IBOutlet weak var settingTableView: UITableView!
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var mainViewHeightLayoutConstraint: NSLayoutConstraint!
     
     
     // MARK: - Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setUpMainView()
     }
 
+    func setUpMainView(){
+        if false {
+            // resize mainView
+            mainViewHeightLayoutConstraint.constant = LoginView.itsRect.height
+            
+            UIView.animate(withDuration: 0.01, animations: {
+                self.mainView.layoutIfNeeded()
+                }, completion: { (complete) in
+                    if complete {
+                        // login view
+                        let loginView = LoginView(frame: LoginView.itsRect)
+                        loginView.delegate = self
+                        self.mainView.addSubview(loginView)
+                    }
+            })
+        } else {
+            // resize mainView
+            mainViewHeightLayoutConstraint.constant = UserInfoView.itsRect.height
+            
+            UIView.animate(withDuration: 0.01, animations: {
+                self.mainView.layoutIfNeeded()
+                }, completion: { (complete) in
+                    if complete {
+                        // profile info
+                        let userInfoView = UserInfoView(frame: UserInfoView.itsRect)
+                        self.mainView.addSubview(userInfoView)
+                    }
+            })
+        }
+    }
     
-    // MARK:- Sign In
-    @IBAction func signInWithFacebook(_ sender: AnyObject) {
+    // MARK:- Log In Delegate
+    func signInWithFacebook() {
     
     }
 
-    @IBAction func signInWithGoogle(_ sender: AnyObject) {
+    func signInWithGoogle() {
     
     }
     
-    @IBAction func signInWithEmail(_ sender: AnyObject) {
+    func signInWithEmail() {
     
     }
-    
-    // MARK: - Sign Up
-    @IBAction func signUp(_ sender: AnyObject) {
+
+    func signUp() {
         
     }
     

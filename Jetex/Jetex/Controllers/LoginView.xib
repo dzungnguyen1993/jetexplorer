@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginView" customModule="Jetex" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNc-Fq-Rxm" userLabel="Account View">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBJ-IJ-UH3">
+                            <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="14g-uX-J6A"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Connect with Facebook">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="signInWithFacebook:" destination="-1" eventType="touchUpInside" id="GHz-Y5-Vto"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gr-oB-ApT">
+                            <color key="backgroundColor" red="0.86666666670000003" green="0.29411764709999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Jlj-hu-FMN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Connect with Google">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="signInWithGoogle:" destination="-1" eventType="touchUpInside" id="aQq-vd-Xtg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rx-JP-UNm">
+                            <color key="backgroundColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="wph-dJ-xxm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="SIGN IN">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="signInWithEmail:" destination="-1" eventType="touchUpInside" id="Fmg-Af-mUJ"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGX-mD-xAn" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5x-Ol-EtZ">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="4ai-o0-oY7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="tintColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="CREATE YOUR ACCOUNT">
+                                <color key="titleColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="signUp:" destination="-1" eventType="touchUpInside" id="Rou-Ka-foa"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Z5x-Ol-EtZ" secondAttribute="trailing" constant="24" id="2VP-nC-M59"/>
+                        <constraint firstItem="sGX-mD-xAn" firstAttribute="top" secondItem="3Rx-JP-UNm" secondAttribute="bottom" constant="16" id="789-mP-IeI"/>
+                        <constraint firstAttribute="trailing" secondItem="3Rx-JP-UNm" secondAttribute="trailing" constant="24" id="EhH-35-bkY"/>
+                        <constraint firstItem="JBJ-IJ-UH3" firstAttribute="top" secondItem="RNc-Fq-Rxm" secondAttribute="top" constant="32" id="H7t-70-EBr"/>
+                        <constraint firstAttribute="trailing" secondItem="8gr-oB-ApT" secondAttribute="trailing" constant="24" id="Ssu-D8-lc9"/>
+                        <constraint firstItem="sGX-mD-xAn" firstAttribute="centerX" secondItem="RNc-Fq-Rxm" secondAttribute="centerX" id="ak0-CC-Vs2"/>
+                        <constraint firstItem="Z5x-Ol-EtZ" firstAttribute="leading" secondItem="RNc-Fq-Rxm" secondAttribute="leading" constant="24" id="bN4-8J-OHx"/>
+                        <constraint firstItem="8gr-oB-ApT" firstAttribute="top" secondItem="JBJ-IJ-UH3" secondAttribute="bottom" constant="8" id="deU-xR-Th9"/>
+                        <constraint firstAttribute="trailing" secondItem="JBJ-IJ-UH3" secondAttribute="trailing" constant="24" id="eNC-bq-uS3"/>
+                        <constraint firstItem="3Rx-JP-UNm" firstAttribute="leading" secondItem="RNc-Fq-Rxm" secondAttribute="leading" constant="24" id="v1w-UM-wYc"/>
+                        <constraint firstItem="3Rx-JP-UNm" firstAttribute="top" secondItem="8gr-oB-ApT" secondAttribute="bottom" constant="32" id="xSy-MX-vb8"/>
+                        <constraint firstItem="8gr-oB-ApT" firstAttribute="leading" secondItem="RNc-Fq-Rxm" secondAttribute="leading" constant="24" id="xbw-3z-hKH"/>
+                        <constraint firstItem="JBJ-IJ-UH3" firstAttribute="leading" secondItem="RNc-Fq-Rxm" secondAttribute="leading" constant="24" id="xct-oc-1JW"/>
+                        <constraint firstItem="Z5x-Ol-EtZ" firstAttribute="top" secondItem="sGX-mD-xAn" secondAttribute="bottom" constant="16" id="z8q-lF-CmY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RNc-Fq-Rxm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6C0-sd-85f"/>
+                <constraint firstItem="RNc-Fq-Rxm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BQn-9h-JNv"/>
+                <constraint firstAttribute="trailing" secondItem="RNc-Fq-Rxm" secondAttribute="trailing" id="f21-0z-B6r"/>
+                <constraint firstAttribute="bottom" secondItem="RNc-Fq-Rxm" secondAttribute="bottom" id="sth-t4-PTH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="-120"/>
+        </view>
+    </objects>
+</document>

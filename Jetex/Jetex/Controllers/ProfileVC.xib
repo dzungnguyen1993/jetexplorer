@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="IF8-XF-Lq0" id="L8D-DW-1ZP"/>
+                <outlet property="mainView" destination="f5p-Le-zh9" id="xfy-DQ-Ka6"/>
+                <outlet property="mainViewHeightLayoutConstraint" destination="JpW-5M-Dok" id="YPY-GH-vdJ"/>
                 <outlet property="networkErrorView" destination="mKC-sD-Gw6" id="sqW-Lv-iKA"/>
                 <outlet property="settingTableView" destination="nNA-Hm-3e5" id="fPi-hd-nOV"/>
                 <outlet property="view" destination="BYN-qm-Bcc" id="fVG-uE-O8n"/>
@@ -23,18 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHi-Ft-jRf">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                     <color key="backgroundColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKC-sD-Gw6" userLabel="Network Error View">
-                    <rect key="frame" x="0.0" y="22" width="375" height="645"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IF8-XF-Lq0" userLabel="Content View">
-                    <rect key="frame" x="0.0" y="22" width="375" height="645"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xur-hK-Pz4">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="bht-V9-Hk8"/>
                             </constraints>
@@ -47,100 +42,13 @@
                                 <navigationItem title="Profile" id="u3G-cz-aA0"/>
                             </items>
                         </navigationBar>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5p-Le-zh9" userLabel="Account View">
-                            <rect key="frame" x="0.0" y="44" width="375" height="326"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JO-XQ-4GU">
-                                    <rect key="frame" x="24" y="32" width="327" height="44"/>
-                                    <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="44" id="pOr-Lr-0Ho"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="Connect with Facebook">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="signInWithFacebook:" destination="-1" eventType="touchUpInside" id="xf2-sE-tZ5"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1G-9t-BQk">
-                                    <rect key="frame" x="24" y="84" width="327" height="44"/>
-                                    <color key="backgroundColor" red="0.8666666666666667" green="0.29411764705882354" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="44" id="CIT-03-NFJ"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="Connect with Google">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="signInWithGoogle:" destination="-1" eventType="touchUpInside" id="Dsf-Mk-Rjd"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyq-DC-JRd">
-                                    <rect key="frame" x="24" y="160" width="327" height="44"/>
-                                    <color key="backgroundColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="44" id="DVX-HG-y9G"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="SIGN IN">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="signInWithEmail:" destination="-1" eventType="touchUpInside" id="1LL-F6-c2d"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CW8-Qd-WWg" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
-                                    <rect key="frame" x="179.5" y="220" width="16" height="15"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKf-FC-txf">
-                                    <rect key="frame" x="24" y="251" width="327" height="44"/>
-                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="44" id="DbD-2B-hhZ"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="tintColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" title="CREATE YOUR ACCOUNT">
-                                        <color key="titleColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="signUp:" destination="-1" eventType="touchUpInside" id="G1N-G9-l4s"/>
-                                    </connections>
-                                </button>
-                            </subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5p-Le-zh9" customClass="LoginView" customModule="Jetex" customModuleProvider="target">
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="CW8-Qd-WWg" firstAttribute="top" secondItem="tyq-DC-JRd" secondAttribute="bottom" constant="16" id="3Ks-9g-wlV"/>
-                                <constraint firstAttribute="trailing" secondItem="hKf-FC-txf" secondAttribute="trailing" constant="24" id="4bm-sw-y01"/>
-                                <constraint firstAttribute="height" constant="326" id="JpW-5M-Dok"/>
-                                <constraint firstItem="tyq-DC-JRd" firstAttribute="top" secondItem="H1G-9t-BQk" secondAttribute="bottom" constant="32" id="X7f-1l-7Ji"/>
-                                <constraint firstAttribute="trailing" secondItem="tyq-DC-JRd" secondAttribute="trailing" constant="24" id="YOx-RE-8fX"/>
-                                <constraint firstItem="H1G-9t-BQk" firstAttribute="leading" secondItem="f5p-Le-zh9" secondAttribute="leading" constant="24" id="YcB-2K-RDU"/>
-                                <constraint firstItem="H1G-9t-BQk" firstAttribute="top" secondItem="6JO-XQ-4GU" secondAttribute="bottom" constant="8" id="dJq-X3-rSe"/>
-                                <constraint firstAttribute="trailing" secondItem="6JO-XQ-4GU" secondAttribute="trailing" constant="24" id="fXj-ev-DeI"/>
-                                <constraint firstItem="CW8-Qd-WWg" firstAttribute="centerX" secondItem="f5p-Le-zh9" secondAttribute="centerX" id="m73-4Q-wYq"/>
-                                <constraint firstItem="6JO-XQ-4GU" firstAttribute="top" secondItem="f5p-Le-zh9" secondAttribute="top" constant="32" id="o4H-yl-tLB"/>
-                                <constraint firstItem="tyq-DC-JRd" firstAttribute="leading" secondItem="f5p-Le-zh9" secondAttribute="leading" constant="24" id="tPX-jF-s3q"/>
-                                <constraint firstItem="6JO-XQ-4GU" firstAttribute="leading" secondItem="f5p-Le-zh9" secondAttribute="leading" constant="24" id="unh-43-EFv"/>
-                                <constraint firstItem="hKf-FC-txf" firstAttribute="leading" secondItem="f5p-Le-zh9" secondAttribute="leading" constant="24" id="vTe-aO-YnG"/>
-                                <constraint firstAttribute="trailing" secondItem="H1G-9t-BQk" secondAttribute="trailing" constant="24" id="xuV-0c-whC"/>
-                                <constraint firstItem="hKf-FC-txf" firstAttribute="top" secondItem="CW8-Qd-WWg" secondAttribute="bottom" constant="16" id="ygw-tZ-ZAf"/>
+                                <constraint firstAttribute="height" constant="320" id="JpW-5M-Dok"/>
                             </constraints>
                         </view>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="nNA-Hm-3e5" userLabel="App Settings Table View">
-                            <rect key="frame" x="0.0" y="370" width="375" height="275"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="nNA-Hm-3e5" userLabel="App Settings Table View">
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         </tableView>
                     </subviews>
