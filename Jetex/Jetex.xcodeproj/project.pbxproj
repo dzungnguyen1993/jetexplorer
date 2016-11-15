@@ -17,6 +17,7 @@
 		B9150B971DD46AEA00F825DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9150B961DD46AEA00F825DC /* City.swift */; };
 		B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9150B981DD46E1B00F825DC /* SearchCityCell.swift */; };
 		B9150B9B1DD46E1B00F825DC /* SearchCityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9150B991DD46E1B00F825DC /* SearchCityCell.xib */; };
+		B9418EE11DD99E570094CD12 /* H2Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9418EE01DD99E570094CD12 /* H2Label.swift */; };
 		B95281E61DD705610041C39B /* PassengerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95281E51DD705610041C39B /* PassengerInfo.swift */; };
 		B95281E91DD711880041C39B /* PickDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95281E71DD711880041C39B /* PickDateVC.swift */; };
 		B95281EA1DD711880041C39B /* PickDateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95281E81DD711880041C39B /* PickDateVC.xib */; };
@@ -31,6 +32,7 @@
 		B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */; };
 		B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */; };
 		B98B6B6E1DD5B5ED0094FC46 /* SmallParagraphButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98B6B6D1DD5B5ED0094FC46 /* SmallParagraphButton.swift */; };
+		B98EB1DD1DDACBA500783FB1 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EB1DC1DDACBA500783FB1 /* Utility.swift */; };
 		B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */; };
 		B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */; };
 		B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */; };
@@ -110,6 +112,7 @@
 		B9150B961DD46AEA00F825DC /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		B9150B981DD46E1B00F825DC /* SearchCityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCityCell.swift; sourceTree = "<group>"; };
 		B9150B991DD46E1B00F825DC /* SearchCityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchCityCell.xib; sourceTree = "<group>"; };
+		B9418EE01DD99E570094CD12 /* H2Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H2Label.swift; sourceTree = "<group>"; };
 		B95281E51DD705610041C39B /* PassengerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerInfo.swift; sourceTree = "<group>"; };
 		B95281E71DD711880041C39B /* PickDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickDateVC.swift; sourceTree = "<group>"; };
 		B95281E81DD711880041C39B /* PickDateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickDateVC.xib; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B98B6B6D1DD5B5ED0094FC46 /* SmallParagraphButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallParagraphButton.swift; sourceTree = "<group>"; };
+		B98EB1DC1DDACBA500783FB1 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorStyleKit.swift; sourceTree = "<group>"; };
 		B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorView.swift; sourceTree = "<group>"; };
 		B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkErrorView.xib; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				B9D904361DD8BBB1008C8720 /* EPCalendarPicker */,
 				B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */,
 				B9F445F71DD4DA9700250D6C /* Extentions.swift */,
+				B98EB1DC1DDACBA500783FB1 /* Utility.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 		B9F445F91DD4E0F600250D6C /* Style Guild */ = {
 			isa = PBXGroup;
 			children = (
+				B9418EE01DD99E570094CD12 /* H2Label.swift */,
 				B9D904631DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift */,
 				B9D904611DD8C14E008C8720 /* MediumParagraphLabel.swift */,
 				B98B6B6D1DD5B5ED0094FC46 /* SmallParagraphButton.swift */,
@@ -645,6 +651,7 @@
 				B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */,
 				B9D9045C1DD8C103008C8720 /* EPCalendarConstants.swift in Sources */,
 				B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */,
+				B98EB1DD1DDACBA500783FB1 /* Utility.swift in Sources */,
 				B9D904641DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift in Sources */,
 				B9F446031DD4E19A00250D6C /* GothamBook15Label.swift in Sources */,
 				B9D904661DD8C3F3008C8720 /* EPExtensions.swift in Sources */,
@@ -658,6 +665,7 @@
 				B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */,
 				28AD38EE1DD59F780027892C /* ProfileVC.swift in Sources */,
 				B9D9045A1DD8C102008C8720 /* EPCalendarCell1.swift in Sources */,
+				B9418EE11DD99E570094CD12 /* H2Label.swift in Sources */,
 				B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */,
 				B9150B971DD46AEA00F825DC /* City.swift in Sources */,
 				B9F446011DD4E18D00250D6C /* GothamBook17Label.swift in Sources */,

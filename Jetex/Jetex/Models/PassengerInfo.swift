@@ -12,10 +12,12 @@ class PassengerInfo {
     var cityFrom: City?
     var cityTo: City?
     var passengers: [Int] = [Int](repeating: 0, count: 5)
-    var departDay, returnDay: NSDate?
+    var departDay, returnDay: Date?
     var isRoundTrip: Bool?
     
     init() {
-        
+        self.isRoundTrip = true
+        self.departDay = Utility.initialCheckInDate
+        self.returnDay = Utility.initialCheckOutDate
     }
 }

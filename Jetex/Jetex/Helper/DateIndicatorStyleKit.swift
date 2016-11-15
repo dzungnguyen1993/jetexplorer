@@ -18,7 +18,7 @@ public class DateIndicatorStyleKit : NSObject {
 
     public class func drawDateIndicator(xIndicator: CGFloat = 102, indFrame: CGRect = CGRect(x: 86, y: 28, width: 89, height: 42)) {
         //// Color Declarations
-        let strokeColor = UIColor(red: 0.600, green: 0.600, blue: 0.600, alpha: 1.000)
+        let strokeColor = UIColor.green//UIColor(hex: 0xEFEFEF)
         let fillColor = UIColor(hex: 0xF6F6F6)
 
         //// Variable Declarations

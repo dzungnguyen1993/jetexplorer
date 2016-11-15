@@ -32,3 +32,21 @@ extension UIButton{
         }
     }
 }
+
+extension Date {
+    func toMonthDay() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d"
+        let timeString = formatter.string(from: self)
+        
+        return timeString
+    }
+    
+    func toWeekDay() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        let timeString = formatter.string(from: self)
+        
+        return timeString
+    }
+}

@@ -55,21 +55,11 @@ class FlightSearchVC: BaseViewController {
     func loadViewDate() {
         viewDepartDay.imgView.image = UIImage(named: "")
         viewDepartDay.lbTitle.text = "Depart"
-        if (passengerInfo.departDay != nil) {
-            
-        } else {
-            viewDepartDay.lbInfo.text = ""
-            viewDepartDay.lbSubInfo.text = ""
-        }
         
         viewReturnDay.imgView.image = UIImage(named: "")
         viewReturnDay.lbTitle.text = "Return"
-        if (passengerInfo.returnDay != nil) {
-            
-        } else {
-            viewReturnDay.lbInfo.text = ""
-            viewReturnDay.lbSubInfo.text = ""
-        }
+        
+        showDateInfo()
     }
     
     func addActionForViews() {
@@ -136,18 +126,47 @@ extension FlightSearchVC: PickLocationDelegate {
     }
 }
 
-extension FlightSearchVC {
+extension FlightSearchVC: PickDateVCDelegate {
     // MARK: Pick date
     func pickDepartDay(sender: UITapGestureRecognizer) {
-        let vc = PickDateVC(nibName: "PickDateVC", bundle: nil)
-        vc.pickDateType = .Depart
-        self.navigationController?.pushViewController(vc, animated: true)
+        gotoPickDateVC(indicatorPosition: .checkIn)
     }
     
     func pickReturnDay(sender: UITapGestureRecognizer) {
+        gotoPickDateVC(indicatorPosition: .checkOut)
+    }
+    
+    func gotoPickDateVC(indicatorPosition: IndicatorPosition) {
         let vc = PickDateVC(nibName: "PickDateVC", bundle: nil)
-           vc.pickDateType = .Return
+        vc.indicatorPosition = indicatorPosition
+        vc.checkInDate = passengerInfo.departDay
+        vc.checkOutDate = passengerInfo.returnDay
+        vc.delegate = self
+        
+        if (passengerInfo.isRoundTrip == true) {
+            vc.type = .roundtrip
+        } else {
+            vc.type = .oneway
+        }
+        
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func didFinishPickDate(checkInDate: Date?, checkOutDate: Date?) {
+        passengerInfo.departDay = checkInDate
+        passengerInfo.returnDay = checkOutDate
+        
+        showDateInfo()
+    }
+    
+    func showDateInfo() {
+        guard passengerInfo.departDay != nil else {return}
+        viewDepartDay.lbInfo.text = passengerInfo.departDay?.toMonthDay()
+        viewDepartDay.lbSubInfo.text = passengerInfo.departDay?.toWeekDay()
+        
+        guard passengerInfo.returnDay != nil else {return}
+        viewReturnDay.lbInfo.text = passengerInfo.returnDay?.toMonthDay()
+        viewReturnDay.lbSubInfo.text = passengerInfo.returnDay?.toWeekDay()
     }
 }
 

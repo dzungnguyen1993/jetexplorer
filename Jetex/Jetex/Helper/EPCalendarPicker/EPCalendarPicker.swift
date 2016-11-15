@@ -10,9 +10,12 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+protocol EPCalendarPickDateDelegate: class {
+    func didPickCheckinDate(date: Date)
+    func didPickCheckoutDate(date: Date)
+}
 
-
-public class EPCalendarPicker: UICollectionViewController {
+public class EPCalendarPicker: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
 //    weak var datePickerViewController : DatePickerViewController!
 //    public var multiSelectEnabled: Bool
@@ -38,13 +41,13 @@ public class EPCalendarPicker: UICollectionViewController {
     private(set) public var checkOutIndexPath: IndexPath!
     private(set) public var checkInDate: Date{
         didSet{
-//            datePickerViewController.checkInDate = checkInDate
+            self.delegate?.didPickCheckinDate(date: checkInDate)
         }
     }
     private(set) public var checkInDateComponents: DateComponents
     private(set) public var checkOutDate: Date{
         didSet{
-//            datePickerViewController.checkOutDate = checkOutDate
+            self.delegate?.didPickCheckoutDate(date: checkOutDate)
         }
     }
     private(set) public var checkOutDateComponents: DateComponents
@@ -67,7 +70,8 @@ public class EPCalendarPicker: UICollectionViewController {
         return dateFormatter
     }()
     var heightConstrain: NSLayoutConstraint!
-    
+    weak var delegate: EPCalendarPickDateDelegate?
+    var type: PickDateType!
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -126,8 +130,8 @@ public class EPCalendarPicker: UICollectionViewController {
 //        layout.sectionHeadersPinToVisibleBounds = true  // If you want make a floating header enable this property(Avaialble after iOS9)
         layout.minimumInteritemSpacing = 0
         layout.headerReferenceSize = CGSize(width: 100,height: 44)
+        layout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20)
         super.init(collectionViewLayout: layout)
-        
         
         findMonthsBetweenStartAndEndDate()
     }
@@ -212,24 +216,34 @@ public class EPCalendarPicker: UICollectionViewController {
             return cell
         }
         
-        if currentDate.compare(checkInDate) == .orderedSame{
-            checkInIndexPath = indexPath
-            cell.selectedForLabelColor()
-            if checkInDate.compare(checkOutDate) != .orderedSame{
-                cell.dateCellStyle = .CheckInDate
-            }
-        }
-        if currentDate.compare(checkOutDate) == .orderedSame{
-            checkOutIndexPath = indexPath
-            cell.selectedForLabelColor()
-            if checkInDate.compare(checkOutDate) != .orderedSame{
-                cell.dateCellStyle = .CheckOutDate
-            }
-        }
-        if currentDate.compare(checkInDate) == .orderedDescending && currentDate.compare(checkOutDate) == .orderedAscending{
-            cell.dateCellStyle = .DateBetweenCheckInAndOutDate
+        if (indexPath.row == 16 && indexPath.section == 0) {
+            
         }
         
+        if (type == .oneway) {
+            if currentDate.compare(checkInDate) == .orderedSame{
+                checkInIndexPath = indexPath
+                cell.selectedForLabelColor()
+            }
+        } else {
+            if currentDate.compare(checkInDate) == .orderedSame{
+                checkInIndexPath = indexPath
+                cell.selectedForLabelColor()
+                if checkInDate.compare(checkOutDate) != .orderedSame{
+                    cell.dateCellStyle = .CheckInDate
+                }
+            }
+            if currentDate.compare(checkOutDate) == .orderedSame{
+                checkOutIndexPath = indexPath
+                cell.selectedForLabelColor()
+                if checkInDate.compare(checkOutDate) != .orderedSame{
+                    cell.dateCellStyle = .CheckOutDate
+                }
+            }
+            if currentDate.compare(checkInDate) == .orderedDescending && currentDate.compare(checkOutDate) == .orderedAscending{
+                cell.dateCellStyle = .DateBetweenCheckInAndOutDate
+            }
+        }
 
         return cell
     }
@@ -244,18 +258,18 @@ public class EPCalendarPicker: UICollectionViewController {
     }
     
      public override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        if indicatorPosition == IndicatorPosition.CheckInStackView{
+        if indicatorPosition == IndicatorPosition.checkIn{
             guard let cell = collectionView.cellForItem(at: indexPath) as? EPCalendarCell1 else {return false}
             guard let currentDate = cell.currentDate else {return false}
             if currentDate.compare(startDateCalendar) == .orderedAscending{
                 return false
             }
-            if currentDate.compare(checkOutDate) != .orderedDescending{
+            if currentDate.compare(checkOutDate) != .orderedDescending || self.type == .oneway{
                 return true
             }
             return false
         }
-        if indicatorPosition == IndicatorPosition.CheckOutStackView{
+        if indicatorPosition == IndicatorPosition.checkOut{
             guard let cell = collectionView.cellForItem(at: indexPath) as? EPCalendarCell1 else {return false}
             guard let currentDate = cell.currentDate else {return false}
             if currentDate.compare(checkInDate) != .orderedAscending{
@@ -266,12 +280,13 @@ public class EPCalendarPicker: UICollectionViewController {
         return false
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize{
+
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (view.frame.width - 20 * 2) / 7
         return CGSize(width: width, height: 30)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets{
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
         return UIEdgeInsetsMake(20, 20, 20, 20) //top,left,bottom,right
     }
     
@@ -298,7 +313,7 @@ public class EPCalendarPicker: UICollectionViewController {
     public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath as IndexPath) as! EPCalendarCell1
         guard let indicatorPosition = indicatorPosition else {return}
-        if indicatorPosition == .CheckInStackView &&
+        if indicatorPosition == .checkIn &&
             (indexPath.section != checkInIndexPath.section ||
             indexPath.row != checkInIndexPath.row){
             checkInDate = cell.currentDate
@@ -308,7 +323,7 @@ public class EPCalendarPicker: UICollectionViewController {
             collectionView.reloadData()
             checkInIndexPath = indexPath as IndexPath!
         }
-        if indicatorPosition == .CheckOutStackView &&
+        if indicatorPosition == .checkOut &&
             (indexPath.section != checkOutIndexPath.section ||
             indexPath.row != checkOutIndexPath.row){
             checkOutDate = cell.currentDate
