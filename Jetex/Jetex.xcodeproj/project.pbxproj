@@ -10,6 +10,13 @@
 		284EC7861DDA1C7F001D0892 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284EC7851DDA1C7F001D0892 /* LoginView.swift */; };
 		284EC7881DDA1C91001D0892 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284EC7871DDA1C91001D0892 /* LoginView.xib */; };
 		284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284EC7891DDA22F5001D0892 /* UserInfoView.xib */; };
+		286F62C81DDB385200B26733 /* SignInVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F62C61DDB385200B26733 /* SignInVCViewController.swift */; };
+		286F62C91DDB385200B26733 /* SignInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F62C71DDB385200B26733 /* SignInVC.xib */; };
+		286F62CB1DDB3E6900B26733 /* UIPaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F62CA1DDB3E6900B26733 /* UIPaddingTextField.swift */; };
+		286F62CE1DDB425600B26733 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F62CC1DDB425600B26733 /* SignUpVC.swift */; };
+		286F62CF1DDB425600B26733 /* SignUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F62CD1DDB425600B26733 /* SignUpVC.xib */; };
+		286F62D11DDB445500B26733 /* UICheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F62D01DDB445500B26733 /* UICheckBoxButton.swift */; };
+		286F62D31DDB446300B26733 /* UICheckBoxButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F62D21DDB446300B26733 /* UICheckBoxButton.xib */; };
 		28AD38EC1DD59F4C0027892C /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD38EB1DD59F4C0027892C /* ProfileVC.xib */; };
 		28AD38EE1DD59F780027892C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD38ED1DD59F780027892C /* ProfileVC.swift */; };
 		28C448911DDA24DC00DEBC51 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C448901DDA24DC00DEBC51 /* UserInfoView.swift */; };
@@ -108,6 +115,13 @@
 		284EC7851DDA1C7F001D0892 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		284EC7871DDA1C91001D0892 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		284EC7891DDA22F5001D0892 /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoView.xib; sourceTree = "<group>"; };
+		286F62C61DDB385200B26733 /* SignInVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVCViewController.swift; sourceTree = "<group>"; };
+		286F62C71DDB385200B26733 /* SignInVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInVC.xib; sourceTree = "<group>"; };
+		286F62CA1DDB3E6900B26733 /* UIPaddingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddingTextField.swift; sourceTree = "<group>"; };
+		286F62CC1DDB425600B26733 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		286F62CD1DDB425600B26733 /* SignUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpVC.xib; sourceTree = "<group>"; };
+		286F62D01DDB445500B26733 /* UICheckBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICheckBoxButton.swift; sourceTree = "<group>"; };
+		286F62D21DDB446300B26733 /* UICheckBoxButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICheckBoxButton.xib; sourceTree = "<group>"; };
 		28AD38EB1DD59F4C0027892C /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		28AD38ED1DD59F780027892C /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		28C448901DDA24DC00DEBC51 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
@@ -240,6 +254,10 @@
 				284EC7851DDA1C7F001D0892 /* LoginView.swift */,
 				284EC7891DDA22F5001D0892 /* UserInfoView.xib */,
 				28C448901DDA24DC00DEBC51 /* UserInfoView.swift */,
+				286F62C71DDB385200B26733 /* SignInVC.xib */,
+				286F62C61DDB385200B26733 /* SignInVCViewController.swift */,
+				286F62CD1DDB425600B26733 /* SignUpVC.xib */,
+				286F62CC1DDB425600B26733 /* SignUpVC.swift */,
 			);
 			name = "Profile Tab VCs";
 			sourceTree = "<group>";
@@ -304,6 +322,9 @@
 				B9E445401DD63009002946A0 /* PickInfoView.xib */,
 				B963E7251DD6D13300A21548 /* PickPassengerCell.swift */,
 				B963E7261DD6D13300A21548 /* PickPassengerCell.xib */,
+				286F62CA1DDB3E6900B26733 /* UIPaddingTextField.swift */,
+				286F62D21DDB446300B26733 /* UICheckBoxButton.xib */,
+				286F62D01DDB445500B26733 /* UICheckBoxButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -576,6 +597,7 @@
 				B963E72B1DD6D3A800A21548 /* add.png in Resources */,
 				B9F445E81DD4D6DF00250D6C /* Gotham-BoldIta.otf in Resources */,
 				B9F445ED1DD4D6DF00250D6C /* Gotham-Medium.otf in Resources */,
+				286F62D31DDB446300B26733 /* UICheckBoxButton.xib in Resources */,
 				B9F445EB1DD4D6DF00250D6C /* Gotham-Light.otf in Resources */,
 				28AD38EC1DD59F4C0027892C /* ProfileVC.xib in Resources */,
 				284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */,
@@ -598,6 +620,8 @@
 				B963E72C1DD6D3A800A21548 /* substract.png in Resources */,
 				B9F445E61DD4D6DF00250D6C /* Gotham-BlackIta.otf in Resources */,
 				B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */,
+				286F62C91DDB385200B26733 /* SignInVC.xib in Resources */,
+				286F62CF1DDB425600B26733 /* SignUpVC.xib in Resources */,
 				B963E7241DD6BF7400A21548 /* PickPassengerVC.xib in Resources */,
 				B9F445EA1DD4D6DF00250D6C /* Gotham-BookIta.otf in Resources */,
 			);
@@ -674,6 +698,7 @@
 			files = (
 				B9D9045D1DD8C103008C8720 /* EPCalendarHeaderView.swift in Sources */,
 				B9D9045F1DD8C103008C8720 /* EPCalendarPicker.swift in Sources */,
+				286F62D11DDB445500B26733 /* UICheckBoxButton.swift in Sources */,
 				B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */,
 				B963E7231DD6BF7400A21548 /* PickPassengerVC.swift in Sources */,
 				B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */,
@@ -682,6 +707,7 @@
 				B9F445F61DD4DA1B00250D6C /* GothamFontName.swift in Sources */,
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
 				B9F445F81DD4DA9700250D6C /* Extentions.swift in Sources */,
+				286F62CE1DDB425600B26733 /* SignUpVC.swift in Sources */,
 				B9D904621DD8C14E008C8720 /* MediumParagraphLabel.swift in Sources */,
 				B963E7271DD6D13300A21548 /* PickPassengerCell.swift in Sources */,
 				B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */,
@@ -698,6 +724,7 @@
 				B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */,
 				B9F445FD1DD4E16B00250D6C /* GothamBold17Label.swift in Sources */,
 				B98B6B6E1DD5B5ED0094FC46 /* SmallParagraphButton.swift in Sources */,
+				286F62C81DDB385200B26733 /* SignInVCViewController.swift in Sources */,
 				B9F445FF1DD4E17800250D6C /* GothamBold15Label.swift in Sources */,
 				B9F445FB1DD4E11B00250D6C /* GothamBold24Label.swift in Sources */,
 				B95281E91DD711880041C39B /* PickDateVC.swift in Sources */,
@@ -705,6 +732,7 @@
 				28AD38EE1DD59F780027892C /* ProfileVC.swift in Sources */,
 				B9D9045A1DD8C102008C8720 /* EPCalendarCell1.swift in Sources */,
 				B9418EE11DD99E570094CD12 /* H2Label.swift in Sources */,
+				286F62CB1DDB3E6900B26733 /* UIPaddingTextField.swift in Sources */,
 				B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */,
 				284EC7861DDA1C7F001D0892 /* LoginView.swift in Sources */,
 				B9150B971DD46AEA00F825DC /* City.swift in Sources */,
