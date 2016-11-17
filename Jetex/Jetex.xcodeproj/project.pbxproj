@@ -28,6 +28,11 @@
 		B9150B971DD46AEA00F825DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9150B961DD46AEA00F825DC /* City.swift */; };
 		B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9150B981DD46E1B00F825DC /* SearchCityCell.swift */; };
 		B9150B9B1DD46E1B00F825DC /* SearchCityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9150B991DD46E1B00F825DC /* SearchCityCell.xib */; };
+		B917BC601DDC022200F2DA57 /* transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = B917BC5F1DDC022200F2DA57 /* transfer.png */; };
+		B9289B7D1DDC77FB008012E1 /* FlightResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9289B7B1DDC77FB008012E1 /* FlightResultCell.swift */; };
+		B9289B7E1DDC77FB008012E1 /* FlightResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9289B7C1DDC77FB008012E1 /* FlightResultCell.xib */; };
+		B9289B811DDC780E008012E1 /* FlightResultDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9289B7F1DDC780E008012E1 /* FlightResultDetailsCell.swift */; };
+		B9289B821DDC780E008012E1 /* FlightResultDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9289B801DDC780E008012E1 /* FlightResultDetailsCell.xib */; };
 		B9418EE11DD99E570094CD12 /* H2Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9418EE01DD99E570094CD12 /* H2Label.swift */; };
 		B95281E61DD705610041C39B /* PassengerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95281E51DD705610041C39B /* PassengerInfo.swift */; };
 		B95281E91DD711880041C39B /* PickDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95281E71DD711880041C39B /* PickDateVC.swift */; };
@@ -59,6 +64,13 @@
 		B9D904621DD8C14E008C8720 /* MediumParagraphLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904611DD8C14E008C8720 /* MediumParagraphLabel.swift */; };
 		B9D904641DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904631DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift */; };
 		B9D904661DD8C3F3008C8720 /* EPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904651DD8C3F3008C8720 /* EPExtensions.swift */; };
+		B9D9A2BE1DDB628F007CAB28 /* users.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D9A2BD1DDB628F007CAB28 /* users.png */; };
+		B9D9A2C01DDB672C007CAB28 /* SearchResultDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9A2BF1DDB672C007CAB28 /* SearchResultDateView.swift */; };
+		B9D9A2C21DDB6747007CAB28 /* SearchResultDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D9A2C11DDB6747007CAB28 /* SearchResultDateView.xib */; };
+		B9D9A2C41DDB6B27007CAB28 /* right-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D9A2C31DDB6B27007CAB28 /* right-arrow.png */; };
+		B9DD5B161DDCBDF800612C9B /* airasia.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DD5B141DDCBDF800612C9B /* airasia.png */; };
+		B9DD5B171DDCBDF800612C9B /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DD5B151DDCBDF800612C9B /* dot.png */; };
+		B9DD5B191DDCC41200612C9B /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DD5B181DDCC41200612C9B /* clock.png */; };
 		B9E4453F1DD62FEB002946A0 /* PickInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4453E1DD62FEB002946A0 /* PickInfoView.swift */; };
 		B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E445401DD63009002946A0 /* PickInfoView.xib */; };
 		B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4FC671DD18BAB000468EC /* AppDelegate.swift */; };
@@ -134,16 +146,21 @@
 		B9150B921DD4659C00F825DC /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		B9150B931DD4659C00F825DC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		B9150B961DD46AEA00F825DC /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		B9150B981DD46E1B00F825DC /* SearchCityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCityCell.swift; sourceTree = "<group>"; };
-		B9150B991DD46E1B00F825DC /* SearchCityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchCityCell.xib; sourceTree = "<group>"; };
+		B9150B981DD46E1B00F825DC /* SearchCityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCityCell.swift; path = ../SearchCityCell.swift; sourceTree = "<group>"; };
+		B9150B991DD46E1B00F825DC /* SearchCityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchCityCell.xib; path = ../SearchCityCell.xib; sourceTree = "<group>"; };
+		B917BC5F1DDC022200F2DA57 /* transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer.png; sourceTree = "<group>"; };
+		B9289B7B1DDC77FB008012E1 /* FlightResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightResultCell.swift; sourceTree = "<group>"; };
+		B9289B7C1DDC77FB008012E1 /* FlightResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightResultCell.xib; sourceTree = "<group>"; };
+		B9289B7F1DDC780E008012E1 /* FlightResultDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightResultDetailsCell.swift; sourceTree = "<group>"; };
+		B9289B801DDC780E008012E1 /* FlightResultDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightResultDetailsCell.xib; sourceTree = "<group>"; };
 		B9418EE01DD99E570094CD12 /* H2Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H2Label.swift; sourceTree = "<group>"; };
 		B95281E51DD705610041C39B /* PassengerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerInfo.swift; sourceTree = "<group>"; };
 		B95281E71DD711880041C39B /* PickDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickDateVC.swift; sourceTree = "<group>"; };
 		B95281E81DD711880041C39B /* PickDateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickDateVC.xib; sourceTree = "<group>"; };
 		B963E7211DD6BF7400A21548 /* PickPassengerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickPassengerVC.swift; sourceTree = "<group>"; };
 		B963E7221DD6BF7400A21548 /* PickPassengerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickPassengerVC.xib; sourceTree = "<group>"; };
-		B963E7251DD6D13300A21548 /* PickPassengerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickPassengerCell.swift; sourceTree = "<group>"; };
-		B963E7261DD6D13300A21548 /* PickPassengerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickPassengerCell.xib; sourceTree = "<group>"; };
+		B963E7251DD6D13300A21548 /* PickPassengerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickPassengerCell.swift; path = ../PickPassengerCell.swift; sourceTree = "<group>"; };
+		B963E7261DD6D13300A21548 /* PickPassengerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickPassengerCell.xib; path = ../PickPassengerCell.xib; sourceTree = "<group>"; };
 		B963E7291DD6D3A800A21548 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		B963E72A1DD6D3A800A21548 /* substract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = substract.png; sourceTree = "<group>"; };
 		B96BAC5A1DD1B4AC00AE79AD /* FlightSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchVC.swift; sourceTree = "<group>"; };
@@ -167,6 +184,13 @@
 		B9D904611DD8C14E008C8720 /* MediumParagraphLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumParagraphLabel.swift; sourceTree = "<group>"; };
 		B9D904631DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInAndOutDateStyleKit.swift; sourceTree = "<group>"; };
 		B9D904651DD8C3F3008C8720 /* EPExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPExtensions.swift; sourceTree = "<group>"; };
+		B9D9A2BD1DDB628F007CAB28 /* users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = users.png; sourceTree = "<group>"; };
+		B9D9A2BF1DDB672C007CAB28 /* SearchResultDateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDateView.swift; sourceTree = "<group>"; };
+		B9D9A2C11DDB6747007CAB28 /* SearchResultDateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultDateView.xib; sourceTree = "<group>"; };
+		B9D9A2C31DDB6B27007CAB28 /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow.png"; sourceTree = "<group>"; };
+		B9DD5B141DDCBDF800612C9B /* airasia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airasia.png; sourceTree = "<group>"; };
+		B9DD5B151DDCBDF800612C9B /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
+		B9DD5B181DDCC41200612C9B /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		B9E4453E1DD62FEB002946A0 /* PickInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickInfoView.swift; sourceTree = "<group>"; };
 		B9E445401DD63009002946A0 /* PickInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickInfoView.xib; sourceTree = "<group>"; };
 		B9E4FC641DD18BAB000468EC /* Jetex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jetex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +295,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B9289B7A1DDC77DA008012E1 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				B9150B981DD46E1B00F825DC /* SearchCityCell.swift */,
+				B9150B991DD46E1B00F825DC /* SearchCityCell.xib */,
+				B963E7251DD6D13300A21548 /* PickPassengerCell.swift */,
+				B963E7261DD6D13300A21548 /* PickPassengerCell.xib */,
+				B9289B7B1DDC77FB008012E1 /* FlightResultCell.swift */,
+				B9289B7C1DDC77FB008012E1 /* FlightResultCell.xib */,
+				B9289B7F1DDC780E008012E1 /* FlightResultDetailsCell.swift */,
+				B9289B801DDC780E008012E1 /* FlightResultDetailsCell.xib */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
 		B96BAC551DD1B3A100AE79AD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,19 +351,18 @@
 		B96BAC591DD1B3A100AE79AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B9289B7A1DDC77DA008012E1 /* TableCells */,
 				B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */,
 				B9F445F91DD4E0F600250D6C /* Style Guild */,
 				B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */,
 				B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */,
-				B9150B981DD46E1B00F825DC /* SearchCityCell.swift */,
-				B9150B991DD46E1B00F825DC /* SearchCityCell.xib */,
 				B9E4453E1DD62FEB002946A0 /* PickInfoView.swift */,
 				B9E445401DD63009002946A0 /* PickInfoView.xib */,
-				B963E7251DD6D13300A21548 /* PickPassengerCell.swift */,
-				B963E7261DD6D13300A21548 /* PickPassengerCell.xib */,
 				286F62CA1DDB3E6900B26733 /* UIPaddingTextField.swift */,
 				286F62D21DDB446300B26733 /* UICheckBoxButton.xib */,
 				286F62D01DDB445500B26733 /* UICheckBoxButton.swift */,
+				B9D9A2BF1DDB672C007CAB28 /* SearchResultDateView.swift */,
+				B9D9A2C11DDB6747007CAB28 /* SearchResultDateView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +370,12 @@
 		B96BAC641DD1C4AA00AE79AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9DD5B181DDCC41200612C9B /* clock.png */,
+				B9DD5B141DDCBDF800612C9B /* airasia.png */,
+				B9DD5B151DDCBDF800612C9B /* dot.png */,
+				B917BC5F1DDC022200F2DA57 /* transfer.png */,
+				B9D9A2C31DDB6B27007CAB28 /* right-arrow.png */,
+				B9D9A2BD1DDB628F007CAB28 /* users.png */,
 				B963E7291DD6D3A800A21548 /* add.png */,
 				B963E72A1DD6D3A800A21548 /* substract.png */,
 				B9F445F51DD4DA1B00250D6C /* GothamFontName.swift */,
@@ -591,10 +635,13 @@
 				B9D9045E1DD8C103008C8720 /* EPCalendarHeaderView.xib in Resources */,
 				B9150B951DD4659C00F825DC /* search.png in Resources */,
 				B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */,
+				B9DD5B161DDCBDF800612C9B /* airasia.png in Resources */,
 				B9D9045B1DD8C102008C8720 /* EPCalendarCell1.xib in Resources */,
 				B9F445EE1DD4D6DF00250D6C /* Gotham-MediumIta.otf in Resources */,
 				B9F445EC1DD4D6DF00250D6C /* Gotham-LightIta.otf in Resources */,
 				B963E72B1DD6D3A800A21548 /* add.png in Resources */,
+				B9289B7E1DDC77FB008012E1 /* FlightResultCell.xib in Resources */,
+				B9D9A2BE1DDB628F007CAB28 /* users.png in Resources */,
 				B9F445E81DD4D6DF00250D6C /* Gotham-BoldIta.otf in Resources */,
 				B9F445ED1DD4D6DF00250D6C /* Gotham-Medium.otf in Resources */,
 				286F62D31DDB446300B26733 /* UICheckBoxButton.xib in Resources */,
@@ -602,16 +649,21 @@
 				28AD38EC1DD59F4C0027892C /* ProfileVC.xib in Resources */,
 				284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */,
 				B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */,
+				B9DD5B171DDCBDF800612C9B /* dot.png in Resources */,
 				B9F445E71DD4D6DF00250D6C /* Gotham-Bold.otf in Resources */,
 				B963E7281DD6D13300A21548 /* PickPassengerCell.xib in Resources */,
 				B9F445E51DD4D6DF00250D6C /* Gotham-Black.otf in Resources */,
 				B9150B941DD4659C00F825DC /* cancel.png in Resources */,
+				B9D9A2C41DDB6B27007CAB28 /* right-arrow.png in Resources */,
 				B9F445F21DD4D6DF00250D6C /* Gotham-UltraIta.otf in Resources */,
 				B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */,
+				B9289B821DDC780E008012E1 /* FlightResultDetailsCell.xib in Resources */,
 				B9F445F01DD4D6DF00250D6C /* Gotham-ThinIta.otf in Resources */,
+				B917BC601DDC022200F2DA57 /* transfer.png in Resources */,
 				B90DDA481DD45F0800AEC1AE /* back.png in Resources */,
 				B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */,
 				B98FB6D31DDB1BAA00E615F2 /* FlightResultVC.xib in Resources */,
+				B9DD5B191DDCC41200612C9B /* clock.png in Resources */,
 				B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */,
 				B9F445EF1DD4D6DF00250D6C /* Gotham-Thin.otf in Resources */,
 				B9F445F31DD4D6DF00250D6C /* Gotham-XLight.otf in Resources */,
@@ -619,6 +671,7 @@
 				B9F445E91DD4D6DF00250D6C /* Gotham-Book.otf in Resources */,
 				B963E72C1DD6D3A800A21548 /* substract.png in Resources */,
 				B9F445E61DD4D6DF00250D6C /* Gotham-BlackIta.otf in Resources */,
+				B9D9A2C21DDB6747007CAB28 /* SearchResultDateView.xib in Resources */,
 				B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */,
 				286F62C91DDB385200B26733 /* SignInVC.xib in Resources */,
 				286F62CF1DDB425600B26733 /* SignUpVC.xib in Resources */,
@@ -699,12 +752,15 @@
 				B9D9045D1DD8C103008C8720 /* EPCalendarHeaderView.swift in Sources */,
 				B9D9045F1DD8C103008C8720 /* EPCalendarPicker.swift in Sources */,
 				286F62D11DDB445500B26733 /* UICheckBoxButton.swift in Sources */,
+				B9289B811DDC780E008012E1 /* FlightResultDetailsCell.swift in Sources */,
 				B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */,
 				B963E7231DD6BF7400A21548 /* PickPassengerVC.swift in Sources */,
 				B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */,
 				B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */,
 				B9E4453F1DD62FEB002946A0 /* PickInfoView.swift in Sources */,
+				B9289B7D1DDC77FB008012E1 /* FlightResultCell.swift in Sources */,
 				B9F445F61DD4DA1B00250D6C /* GothamFontName.swift in Sources */,
+				B9D9A2C01DDB672C007CAB28 /* SearchResultDateView.swift in Sources */,
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
 				B9F445F81DD4DA9700250D6C /* Extentions.swift in Sources */,
 				286F62CE1DDB425600B26733 /* SignUpVC.swift in Sources */,
