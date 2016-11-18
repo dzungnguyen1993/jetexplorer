@@ -54,6 +54,8 @@
 		B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */; };
 		B98B6B6E1DD5B5ED0094FC46 /* SmallParagraphButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98B6B6D1DD5B5ED0094FC46 /* SmallParagraphButton.swift */; };
 		B98EB1DD1DDACBA500783FB1 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EB1DC1DDACBA500783FB1 /* Utility.swift */; };
+		B98FB6D21DDB1BAA00E615F2 /* FlightResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FB6D01DDB1BAA00E615F2 /* FlightResultVC.swift */; };
+		B98FB6D31DDB1BAA00E615F2 /* FlightResultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98FB6D11DDB1BAA00E615F2 /* FlightResultVC.xib */; };
 		B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */; };
 		B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */; };
 		B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */; };
@@ -170,6 +172,8 @@
 		B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B98B6B6D1DD5B5ED0094FC46 /* SmallParagraphButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallParagraphButton.swift; sourceTree = "<group>"; };
 		B98EB1DC1DDACBA500783FB1 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		B98FB6D01DDB1BAA00E615F2 /* FlightResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightResultVC.swift; sourceTree = "<group>"; };
+		B98FB6D11DDB1BAA00E615F2 /* FlightResultVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightResultVC.xib; sourceTree = "<group>"; };
 		B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorStyleKit.swift; sourceTree = "<group>"; };
 		B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorView.swift; sourceTree = "<group>"; };
 		B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkErrorView.xib; sourceTree = "<group>"; };
@@ -296,16 +300,9 @@
 		B96BAC551DD1B3A100AE79AD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B96BAC5A1DD1B4AC00AE79AD /* FlightSearchVC.swift */,
-				B96BAC5B1DD1B4AC00AE79AD /* FlightSearchVC.xib */,
+				B98FB6D41DDB1BCE00E615F2 /* Flight VCs */,
 				B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */,
 				B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */,
-				B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */,
-				B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */,
-				B963E7211DD6BF7400A21548 /* PickPassengerVC.swift */,
-				B963E7221DD6BF7400A21548 /* PickPassengerVC.xib */,
-				B95281E71DD711880041C39B /* PickDateVC.swift */,
-				B95281E81DD711880041C39B /* PickDateVC.xib */,
 				284EC7841DDA1C24001D0892 /* Profile Tab VCs */,
 			);
 			path = Controllers;
@@ -374,6 +371,23 @@
 				B90DDA471DD45F0800AEC1AE /* back.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B98FB6D41DDB1BCE00E615F2 /* Flight VCs */ = {
+			isa = PBXGroup;
+			children = (
+				B96BAC5A1DD1B4AC00AE79AD /* FlightSearchVC.swift */,
+				B96BAC5B1DD1B4AC00AE79AD /* FlightSearchVC.xib */,
+				B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */,
+				B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */,
+				B963E7211DD6BF7400A21548 /* PickPassengerVC.swift */,
+				B963E7221DD6BF7400A21548 /* PickPassengerVC.xib */,
+				B95281E71DD711880041C39B /* PickDateVC.swift */,
+				B95281E81DD711880041C39B /* PickDateVC.xib */,
+				B98FB6D01DDB1BAA00E615F2 /* FlightResultVC.swift */,
+				B98FB6D11DDB1BAA00E615F2 /* FlightResultVC.xib */,
+			);
+			name = "Flight VCs";
 			sourceTree = "<group>";
 		};
 		B9D904361DD8BBB1008C8720 /* EPCalendarPicker */ = {
@@ -630,6 +644,7 @@
 				B9F445F01DD4D6DF00250D6C /* Gotham-ThinIta.otf in Resources */,
 				B90DDA481DD45F0800AEC1AE /* back.png in Resources */,
 				B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */,
+				B98FB6D31DDB1BAA00E615F2 /* FlightResultVC.xib in Resources */,
 				B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */,
 				B9F445EF1DD4D6DF00250D6C /* Gotham-Thin.otf in Resources */,
 				B9F445F31DD4D6DF00250D6C /* Gotham-XLight.otf in Resources */,
@@ -734,6 +749,7 @@
 				B9D904621DD8C14E008C8720 /* MediumParagraphLabel.swift in Sources */,
 				B963E7271DD6D13300A21548 /* PickPassengerCell.swift in Sources */,
 				B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */,
+				B98FB6D21DDB1BAA00E615F2 /* FlightResultVC.swift in Sources */,
 				B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */,
 				289192951DDC595C001C064B /* ChangNameVC.swift in Sources */,
 				B9D9045C1DD8C103008C8720 /* EPCalendarConstants.swift in Sources */,
