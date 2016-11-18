@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -30,17 +27,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXl-Ms-frI">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                     <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="OBZ-i9-VL9"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjE-pE-I1f">
-                    <rect key="frame" x="0.0" y="22" width="375" height="645"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPh-Wf-iuA">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="4eM-3X-Mtb"/>
                             </constraints>
@@ -67,14 +61,11 @@
                             </items>
                         </navigationBar>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eA-qS-fRL">
-                            <rect key="frame" x="16" y="68" width="343" height="80"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrO-Vc-5jq" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="171.5" height="80"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8G-W2-vb4" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
-                                    <rect key="frame" x="171.5" y="0.0" width="171.5" height="80"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
@@ -93,49 +84,40 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcU-q5-og1" customClass="DateIndicatorView" customModule="Jetex" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="148" width="375" height="54"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCj-o6-XZ5">
-                                    <rect key="frame" x="0.0" y="8" width="375" height="45"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcF-hB-1wA">
-                                            <rect key="frame" x="16" y="15.5" width="49" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYw-Jr-gNp">
-                                            <rect key="frame" x="65" y="15.5" width="49.5" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2y-IR-Klq">
-                                            <rect key="frame" x="114.5" y="15.5" width="49" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLC-8s-iUT">
-                                            <rect key="frame" x="163.5" y="15.5" width="49" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAb-Ap-NNf">
-                                            <rect key="frame" x="212.5" y="15.5" width="49" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKC-sk-vvn">
-                                            <rect key="frame" x="259.5" y="15.5" width="49.5" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuS-IH-RhW">
-                                            <rect key="frame" x="310" y="15.5" width="49" height="15"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -177,14 +159,10 @@
                             </constraints>
                         </view>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hc8-6m-Qpw">
-                            <rect key="frame" x="0.0" y="202" width="375" height="399"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qih-Bi-jm1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="399"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zlv-UZ-a4L">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="399"/>
-                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zlv-UZ-a4L"/>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>

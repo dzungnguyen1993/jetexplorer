@@ -40,5 +40,7 @@ class TabBarController: UITabBarController {
         
         viewControllers?.append(nav)
         nav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(), tag: 2)
+        
+        nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x674290), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .normal)
     }
 }

@@ -5,6 +5,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Bold.otf">
+            <string>Gotham-Bold</string>
+        </array>
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInVC" customModule="Jetex" customModuleProvider="target">
             <connections>
@@ -21,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AwC-X7-ELP">
-                    <color key="backgroundColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ec-a5-xdf" userLabel="Network Error View">
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,13 +41,14 @@
                                 <constraint firstAttribute="height" constant="44" id="njB-wP-cWo"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="barTintColor" red="0.3159236936" green="0.199475913" blue="0.47957820600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </textAttributes>
                             <items>
                                 <navigationItem title="Sign in" id="9cM-tX-6Ah">
-                                    <barButtonItem key="leftBarButtonItem" image="back.png" style="plain" id="58W-dt-Jtk">
+                                    <barButtonItem key="leftBarButtonItem" image="back.png" id="58W-dt-Jtk">
                                         <connections>
                                             <action selector="backNavigationController:" destination="-1" id="CAN-Z4-a73"/>
                                         </connections>
@@ -52,7 +61,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="RYL-9Z-h3g"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                             <state key="normal" title="SIGN IN">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -61,38 +70,44 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BE7-IL-xv0">
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zs-v8-ans">
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Thisisemail@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GND-zv-Nsc" customClass="UIPaddingTextField" customModule="Jetex" customModuleProvider="target">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Thisisemail@email.com" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="GND-zv-Nsc" customClass="UIPaddingTextField" customModule="Jetex" customModuleProvider="target">
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="4Sp-H7-DPm"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                     <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="**************" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yY-h7-dLy" customClass="UIPaddingTextField" customModule="Jetex" customModuleProvider="target">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="**************" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="3yY-h7-dLy" customClass="UIPaddingTextField" customModule="Jetex" customModuleProvider="target">
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="nHg-I2-vSH"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                     <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </textField>
@@ -100,7 +115,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="160" id="h6D-wq-uU1"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="13"/>
                             <color key="tintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="Forgot your password?"/>
                             <connections>
@@ -108,7 +123,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="BE7-IL-xv0" firstAttribute="leading" secondItem="z2G-b0-Bhh" secondAttribute="leading" constant="24" id="3sp-mN-hBX"/>
                         <constraint firstAttribute="trailing" secondItem="GND-zv-Nsc" secondAttribute="trailing" constant="24" id="5RO-a9-jLf"/>
