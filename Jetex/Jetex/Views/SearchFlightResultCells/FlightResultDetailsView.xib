@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Bold.otf">
+            <string>Gotham-Bold</string>
+        </array>
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlightResultDetailsView" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="14r-6t-drm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xl5-8o-2AW">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYD-we-ASQ">
+                            <rect key="frame" x="16" y="12" width="34" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="4cH-zs-0Z1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
+                            <color key="textColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black-plane.png" translatesAutoresizingMaskIntoConstraints="NO" id="41f-ic-OCX">
+                            <rect key="frame" x="54" y="12" width="40" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="41f-ic-OCX" secondAttribute="height" multiplier="53:28" id="m94-QF-7Rq"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRj-ay-2tm">
+                            <rect key="frame" x="98" y="12" width="32" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="eQm-xH-xTR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
+                            <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue, May 1 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwc-Po-0ua">
+                            <rect key="frame" x="134" y="15" width="92" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="wRl-CF-JUx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
+                            <color key="textColor" red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Cwc-Po-0ua" firstAttribute="leading" secondItem="KRj-ay-2tm" secondAttribute="trailing" constant="4" id="CDL-TY-Qj8"/>
+                        <constraint firstItem="KRj-ay-2tm" firstAttribute="leading" secondItem="41f-ic-OCX" secondAttribute="trailing" constant="4" id="Cak-MA-eTq"/>
+                        <constraint firstItem="41f-ic-OCX" firstAttribute="centerY" secondItem="Xl5-8o-2AW" secondAttribute="centerY" id="ION-WO-OuP"/>
+                        <constraint firstItem="aYD-we-ASQ" firstAttribute="centerY" secondItem="Xl5-8o-2AW" secondAttribute="centerY" id="JOh-Br-lcJ"/>
+                        <constraint firstItem="41f-ic-OCX" firstAttribute="height" secondItem="aYD-we-ASQ" secondAttribute="height" id="MVO-eC-tud"/>
+                        <constraint firstItem="41f-ic-OCX" firstAttribute="leading" secondItem="aYD-we-ASQ" secondAttribute="trailing" constant="4" id="Ov2-kh-9cY"/>
+                        <constraint firstItem="aYD-we-ASQ" firstAttribute="leading" secondItem="Xl5-8o-2AW" secondAttribute="leading" constant="16" id="gar-71-WvD"/>
+                        <constraint firstItem="KRj-ay-2tm" firstAttribute="centerY" secondItem="Xl5-8o-2AW" secondAttribute="centerY" id="j6b-93-3yy"/>
+                        <constraint firstAttribute="height" constant="44" id="kpv-2A-TbJ"/>
+                        <constraint firstItem="Cwc-Po-0ua" firstAttribute="centerY" secondItem="Xl5-8o-2AW" secondAttribute="centerY" id="qU6-w1-go9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Xl5-8o-2AW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3KN-Ea-4nD"/>
+                <constraint firstItem="Xl5-8o-2AW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OiD-Ft-UAg"/>
+                <constraint firstAttribute="trailing" secondItem="Xl5-8o-2AW" secondAttribute="trailing" id="a8q-lM-awi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="-162"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="black-plane.png" width="128" height="128"/>
+    </resources>
+</document>

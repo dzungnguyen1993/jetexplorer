@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Bold.otf">
+            <string>Gotham-Bold</string>
+        </array>
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="228" id="KGk-i7-Jjw" customClass="FlightResultDetailsCell" customModule="Jetex" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="124.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZk-pG-QGP">
+                        <rect key="frame" x="0.0" y="16" width="375" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vietnam Airlines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hj5-up-ZNy">
+                                <rect key="frame" x="16" y="0.0" width="107" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
+                                <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S74734 - 20h 40m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gb7-KC-eip">
+                                <rect key="frame" x="16" y="16" width="99.5" height="14"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
+                                <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Economy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cH-tZ-eoM" customClass="GothamBold15Label" customModule="Jetex" customModuleProvider="target">
+                                <rect key="frame" x="288" y="0.0" width="71" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
+                                <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="3cH-tZ-eoM" firstAttribute="top" secondItem="xZk-pG-QGP" secondAttribute="top" id="EMe-bg-S7e"/>
+                            <constraint firstItem="Gb7-KC-eip" firstAttribute="leading" secondItem="xZk-pG-QGP" secondAttribute="leading" constant="16" id="N1f-Kc-6it"/>
+                            <constraint firstItem="Hj5-up-ZNy" firstAttribute="top" secondItem="xZk-pG-QGP" secondAttribute="top" id="VlG-n2-GIK"/>
+                            <constraint firstAttribute="height" constant="30" id="X6K-WB-yct"/>
+                            <constraint firstAttribute="bottom" secondItem="Gb7-KC-eip" secondAttribute="bottom" id="cTd-AO-R8K"/>
+                            <constraint firstItem="Hj5-up-ZNy" firstAttribute="leading" secondItem="xZk-pG-QGP" secondAttribute="leading" constant="16" id="hvv-dh-Xws"/>
+                            <constraint firstAttribute="trailing" secondItem="3cH-tZ-eoM" secondAttribute="trailing" constant="16" id="lpD-Fu-AoL"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRq-Cg-Cx7">
+                        <rect key="frame" x="0.0" y="62" width="375" height="46.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57b-4M-N4c">
+                                <rect key="frame" x="113" y="14" width="100" height="1"/>
+                                <color key="backgroundColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="0RZ-QG-AtH"/>
+                                    <constraint firstAttribute="width" constant="100" id="pLQ-rV-Asj"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BQ-OY-u7R">
+                                <rect key="frame" x="16" y="8" width="26" height="14"/>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
+                                <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ep3-Za-bTQ">
+                                <rect key="frame" x="16" y="24.5" width="91.5" height="14"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
+                                <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUU-Y1-7oX">
+                                <rect key="frame" x="50" y="8" width="47.5" height="14"/>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
+                                <color key="textColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Ww-sN-Xba">
+                                <rect key="frame" x="113.5" y="10" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="E4T-v4-A2v"/>
+                                    <constraint firstAttribute="width" secondItem="1Ww-sN-Xba" secondAttribute="height" multiplier="1:1" id="hgN-DR-zZh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot.png" translatesAutoresizingMaskIntoConstraints="NO" id="3lR-yI-sBy">
+                                <rect key="frame" x="203" y="9.5" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3lR-yI-sBy" secondAttribute="height" multiplier="1:1" id="ADa-dP-sY7"/>
+                                    <constraint firstAttribute="width" constant="10" id="izK-yA-XNg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cap-HM-XRn">
+                                <rect key="frame" x="229" y="8" width="47.5" height="14"/>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
+                                <color key="textColor" red="0.2784313725" green="0.77647058820000003" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDc-VM-dzB">
+                                <rect key="frame" x="284.5" y="8" width="26" height="14"/>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
+                                <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-ar-hTW">
+                                <rect key="frame" x="219" y="24.5" width="91.5" height="14"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
+                                <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="1Ww-sN-Xba" firstAttribute="leading" secondItem="kUU-Y1-7oX" secondAttribute="trailing" constant="16" id="3dF-op-afY"/>
+                            <constraint firstItem="Cap-HM-XRn" firstAttribute="leading" secondItem="3lR-yI-sBy" secondAttribute="trailing" constant="16" id="7Sc-QO-hgf"/>
+                            <constraint firstItem="kUU-Y1-7oX" firstAttribute="leading" secondItem="4BQ-OY-u7R" secondAttribute="trailing" constant="8" id="IQO-nd-qZb"/>
+                            <constraint firstItem="wDc-VM-dzB" firstAttribute="top" secondItem="GRq-Cg-Cx7" secondAttribute="top" constant="8" id="Jy5-Rs-p4x"/>
+                            <constraint firstItem="zcB-ar-hTW" firstAttribute="trailing" secondItem="wDc-VM-dzB" secondAttribute="trailing" id="P7b-oD-E71"/>
+                            <constraint firstItem="57b-4M-N4c" firstAttribute="leading" secondItem="1Ww-sN-Xba" secondAttribute="leading" id="SXF-MS-l1V"/>
+                            <constraint firstItem="4BQ-OY-u7R" firstAttribute="top" secondItem="GRq-Cg-Cx7" secondAttribute="top" constant="8" id="SZh-aw-pSh"/>
+                            <constraint firstItem="57b-4M-N4c" firstAttribute="centerY" secondItem="1Ww-sN-Xba" secondAttribute="centerY" id="Uqn-ar-yCM"/>
+                            <constraint firstItem="4BQ-OY-u7R" firstAttribute="leading" secondItem="GRq-Cg-Cx7" secondAttribute="leading" constant="16" id="XgT-V7-czB"/>
+                            <constraint firstItem="kUU-Y1-7oX" firstAttribute="top" secondItem="GRq-Cg-Cx7" secondAttribute="top" constant="8" id="aiR-6C-hPy"/>
+                            <constraint firstItem="wDc-VM-dzB" firstAttribute="leading" secondItem="Cap-HM-XRn" secondAttribute="trailing" constant="8" id="ctZ-Nf-6z3"/>
+                            <constraint firstItem="3lR-yI-sBy" firstAttribute="centerY" secondItem="57b-4M-N4c" secondAttribute="centerY" id="dX8-j9-Xpj"/>
+                            <constraint firstItem="3lR-yI-sBy" firstAttribute="trailing" secondItem="57b-4M-N4c" secondAttribute="trailing" id="eEa-6w-9Eg"/>
+                            <constraint firstAttribute="bottom" secondItem="zcB-ar-hTW" secondAttribute="bottom" constant="8" id="jdo-p5-M33"/>
+                            <constraint firstItem="Cap-HM-XRn" firstAttribute="top" secondItem="GRq-Cg-Cx7" secondAttribute="top" constant="8" id="mOW-Rn-NgT"/>
+                            <constraint firstItem="ep3-Za-bTQ" firstAttribute="leading" secondItem="GRq-Cg-Cx7" secondAttribute="leading" constant="16" id="pDf-DA-L8o"/>
+                            <constraint firstItem="1Ww-sN-Xba" firstAttribute="centerY" secondItem="kUU-Y1-7oX" secondAttribute="centerY" id="pIA-qu-L2V"/>
+                            <constraint firstAttribute="bottom" secondItem="ep3-Za-bTQ" secondAttribute="bottom" constant="8" id="sey-A7-3Ij"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="xZk-pG-QGP" secondAttribute="trailing" id="0Uy-Uv-FEB"/>
+                    <constraint firstItem="xZk-pG-QGP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="5Sx-Eo-c04"/>
+                    <constraint firstAttribute="trailing" secondItem="GRq-Cg-Cx7" secondAttribute="trailing" id="D6N-zu-o2D"/>
+                    <constraint firstItem="GRq-Cg-Cx7" firstAttribute="top" secondItem="xZk-pG-QGP" secondAttribute="bottom" constant="16" id="F3N-On-gUW"/>
+                    <constraint firstAttribute="bottom" secondItem="GRq-Cg-Cx7" secondAttribute="bottom" constant="16" id="Qwx-xO-7wx"/>
+                    <constraint firstItem="GRq-Cg-Cx7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ilw-SL-hMd"/>
+                    <constraint firstItem="xZk-pG-QGP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pAz-XP-HJd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="34" y="145.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dot.png" width="10" height="10"/>
+    </resources>
+</document>
