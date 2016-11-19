@@ -15,7 +15,11 @@ protocol LoginViewDelegate: class {
     func signUp()
 }
 
-class ProfileVC: BaseViewController, LoginViewDelegate, UITableViewDelegate, UITableViewDataSource {
+protocol UserInfoViewDelegate: class{
+    func viewAndEditProfile()
+}
+
+class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     let appSettingText = "App Settings"
     let currency = "Currency"
@@ -32,6 +36,11 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         setUpMainView()
     }
 
@@ -39,30 +48,22 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UITableViewDelegate, UIT
         if true {
             // resize mainView
             mainViewHeightLayoutConstraint.constant = LoginView.itsRect.height
+            self.mainView.layoutIfNeeded()
             
-            UIView.animate(withDuration: 0.01, animations: {
-                self.mainView.layoutIfNeeded()
-                }, completion: { (complete) in
-                    if complete {
-                        // login view
-                        let loginView = LoginView(frame: LoginView.itsRect)
-                        loginView.delegate = self
-                        self.mainView.addSubview(loginView)
-                    }
-            })
+            // login view
+            let loginView = LoginView(frame: LoginView.itsRect)
+            loginView.delegate = self
+            self.mainView.addSubview(loginView)
+            
         } else {
             // resize mainView
             mainViewHeightLayoutConstraint.constant = UserInfoView.itsRect.height
+            self.mainView.layoutIfNeeded()
             
-            UIView.animate(withDuration: 0.01, animations: {
-                self.mainView.layoutIfNeeded()
-                }, completion: { (complete) in
-                    if complete {
-                        // profile info
-                        let userInfoView = UserInfoView(frame: UserInfoView.itsRect)
-                        self.mainView.addSubview(userInfoView)
-                    }
-            })
+            // profile info
+            let userInfoView = UserInfoView(frame: UserInfoView.itsRect)
+            userInfoView.delegate = self
+            self.mainView.addSubview(userInfoView)
         }
     }
     
@@ -81,8 +82,17 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UITableViewDelegate, UIT
     }
 
     func signUp() {
-        let vc = SignInVC(nibName: "SignUpVC", bundle: nil)
+        let vc = SignUpVC(nibName: "SignUpVC", bundle: nil)
         _ = self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    // MARK: - User Info Delegate
+    func viewAndEditProfile() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "editProfileVC") as! EditProfileVC
+        
+        _ = self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     // MARK: - App Setting Table View functions
@@ -113,11 +123,14 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UITableViewDelegate, UIT
         switch indexPath.row {
         case 0:
             cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-            cell.textLabel?.text = currency
-            cell.detailTextLabel?.text = currentCurrencyType
+            cell.accessoryType = .disclosureIndicator
+            
+            cell.textLabel?.attributedText = NSAttributedString(string: currency, attributes: [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!])
+            
+            cell.detailTextLabel?.attributedText = NSAttributedString(string: currentCurrencyType, attributes: [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!])
             break
         case 1:
-            cell.textLabel?.text = ratingAndFeedback
+            cell.textLabel?.attributedText = NSAttributedString(string: ratingAndFeedback, attributes: [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!])
             break
         default:
             break
@@ -129,7 +142,8 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            print(currency)
+            let vc = SelectCurrencyVC(nibName: "SelectCurrencyVC", bundle: nil)
+            _ = self.navigationController?.pushViewController(vc, animated: true)
             break
         case 1:
             print(ratingAndFeedback)

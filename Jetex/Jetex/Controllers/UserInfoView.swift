@@ -10,8 +10,10 @@ import UIKit
 
 class UserInfoView: UIView {
 
+    var delegate : UserInfoViewDelegate!
+    
     // its frame
-    static let itsRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120)
+    static let itsRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 150)
     
     
     // MARK: - Init
@@ -31,6 +33,10 @@ class UserInfoView: UIView {
                                                     owner: self, options: nil)![0] as! UIView
         self.addSubview(view)
         view.frame = self.bounds
+    }
+    
+    @IBAction func viewAndEditProfileButtonPressed(_ sender: AnyObject) {
+        delegate.viewAndEditProfile()
     }
 
 

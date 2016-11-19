@@ -17,6 +17,16 @@
 		286F62CF1DDB425600B26733 /* SignUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F62CD1DDB425600B26733 /* SignUpVC.xib */; };
 		286F62D11DDB445500B26733 /* UICheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F62D01DDB445500B26733 /* UICheckBoxButton.swift */; };
 		286F62D31DDB446300B26733 /* UICheckBoxButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F62D21DDB446300B26733 /* UICheckBoxButton.xib */; };
+		2872C5421DDF588900239CF2 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872C5411DDF588900239CF2 /* ChangePasswordVC.swift */; };
+		2872C5451DDF701300239CF2 /* SelectCurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872C5431DDF701300239CF2 /* SelectCurrencyVC.swift */; };
+		2872C5461DDF701300239CF2 /* SelectCurrencyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2872C5441DDF701300239CF2 /* SelectCurrencyVC.xib */; };
+		289192951DDC595C001C064B /* ChangNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289192931DDC595C001C064B /* ChangNameVC.swift */; };
+		289192961DDC595C001C064B /* ChangNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289192941DDC595C001C064B /* ChangNameVC.xib */; };
+		289192991DDDCD7D001C064B /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289192971DDDCD7D001C064B /* ForgotPasswordVC.swift */; };
+		2891929A1DDDCD7D001C064B /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289192981DDDCD7D001C064B /* ForgotPasswordVC.xib */; };
+		2891929E1DDDD358001C064B /* ChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2891929C1DDDD358001C064B /* ChangePasswordVC.xib */; };
+		289192A21DDDEB8C001C064B /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289192A01DDDEB8C001C064B /* EditProfileVC.xib */; };
+		289192A41DDDF3C2001C064B /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289192A31DDDF3C2001C064B /* EditProfileVC.swift */; };
 		28AD38EC1DD59F4C0027892C /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD38EB1DD59F4C0027892C /* ProfileVC.xib */; };
 		28AD38EE1DD59F780027892C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD38ED1DD59F780027892C /* ProfileVC.swift */; };
 		28C448911DDA24DC00DEBC51 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C448901DDA24DC00DEBC51 /* UserInfoView.swift */; };
@@ -134,9 +144,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		284EC7851DDA1C7F001D0892 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		284EC7871DDA1C91001D0892 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
-		284EC7891DDA22F5001D0892 /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoView.xib; sourceTree = "<group>"; };
+		284EC7851DDA1C7F001D0892 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ../Controllers/LoginView.swift; sourceTree = "<group>"; };
+		284EC7871DDA1C91001D0892 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginView.xib; path = ../Controllers/LoginView.xib; sourceTree = "<group>"; };
+		284EC7891DDA22F5001D0892 /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoView.xib; path = ../Controllers/UserInfoView.xib; sourceTree = "<group>"; };
 		286F62C61DDB385200B26733 /* SignInVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVCViewController.swift; sourceTree = "<group>"; };
 		286F62C71DDB385200B26733 /* SignInVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInVC.xib; sourceTree = "<group>"; };
 		286F62CA1DDB3E6900B26733 /* UIPaddingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddingTextField.swift; sourceTree = "<group>"; };
@@ -144,9 +154,19 @@
 		286F62CD1DDB425600B26733 /* SignUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpVC.xib; sourceTree = "<group>"; };
 		286F62D01DDB445500B26733 /* UICheckBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICheckBoxButton.swift; sourceTree = "<group>"; };
 		286F62D21DDB446300B26733 /* UICheckBoxButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICheckBoxButton.xib; sourceTree = "<group>"; };
+		2872C5411DDF588900239CF2 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		2872C5431DDF701300239CF2 /* SelectCurrencyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCurrencyVC.swift; sourceTree = "<group>"; };
+		2872C5441DDF701300239CF2 /* SelectCurrencyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectCurrencyVC.xib; sourceTree = "<group>"; };
+		289192931DDC595C001C064B /* ChangNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangNameVC.swift; sourceTree = "<group>"; };
+		289192941DDC595C001C064B /* ChangNameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangNameVC.xib; sourceTree = "<group>"; };
+		289192971DDDCD7D001C064B /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		289192981DDDCD7D001C064B /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
+		2891929C1DDDD358001C064B /* ChangePasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordVC.xib; sourceTree = "<group>"; };
+		289192A01DDDEB8C001C064B /* EditProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
+		289192A31DDDF3C2001C064B /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		28AD38EB1DD59F4C0027892C /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		28AD38ED1DD59F780027892C /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		28C448901DDA24DC00DEBC51 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		28C448901DDA24DC00DEBC51 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoView.swift; path = ../Controllers/UserInfoView.swift; sourceTree = "<group>"; };
 		3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.debug.xcconfig"; sourceTree = "<group>"; };
 		5F30E1B520C7F45D1DB37729 /* Pods_JetexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,14 +314,20 @@
 			children = (
 				28AD38EB1DD59F4C0027892C /* ProfileVC.xib */,
 				28AD38ED1DD59F780027892C /* ProfileVC.swift */,
-				284EC7871DDA1C91001D0892 /* LoginView.xib */,
-				284EC7851DDA1C7F001D0892 /* LoginView.swift */,
-				284EC7891DDA22F5001D0892 /* UserInfoView.xib */,
-				28C448901DDA24DC00DEBC51 /* UserInfoView.swift */,
 				286F62C71DDB385200B26733 /* SignInVC.xib */,
 				286F62C61DDB385200B26733 /* SignInVCViewController.swift */,
 				286F62CD1DDB425600B26733 /* SignUpVC.xib */,
 				286F62CC1DDB425600B26733 /* SignUpVC.swift */,
+				289192941DDC595C001C064B /* ChangNameVC.xib */,
+				289192931DDC595C001C064B /* ChangNameVC.swift */,
+				289192971DDDCD7D001C064B /* ForgotPasswordVC.swift */,
+				289192981DDDCD7D001C064B /* ForgotPasswordVC.xib */,
+				2891929C1DDDD358001C064B /* ChangePasswordVC.xib */,
+				2872C5411DDF588900239CF2 /* ChangePasswordVC.swift */,
+				289192A01DDDEB8C001C064B /* EditProfileVC.xib */,
+				289192A31DDDF3C2001C064B /* EditProfileVC.swift */,
+				2872C5431DDF701300239CF2 /* SelectCurrencyVC.swift */,
+				2872C5441DDF701300239CF2 /* SelectCurrencyVC.xib */,
 			);
 			name = "Profile Tab VCs";
 			sourceTree = "<group>";
@@ -370,6 +396,10 @@
 			children = (
 				B9EE7A6E1DDDECB700A82AEE /* SearchFlightResultCells */,
 				B9289B7A1DDC77DA008012E1 /* TableCells */,
+				284EC7871DDA1C91001D0892 /* LoginView.xib */,
+				284EC7851DDA1C7F001D0892 /* LoginView.swift */,
+				284EC7891DDA22F5001D0892 /* UserInfoView.xib */,
+				28C448901DDA24DC00DEBC51 /* UserInfoView.swift */,
 				B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */,
 				B9F445F91DD4E0F600250D6C /* Style Guild */,
 				B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */,
@@ -671,6 +701,7 @@
 				284EC7881DDA1C91001D0892 /* LoginView.xib in Resources */,
 				B96BAC5D1DD1B4AC00AE79AD /* FlightSearchVC.xib in Resources */,
 				B95281EA1DD711880041C39B /* PickDateVC.xib in Resources */,
+				289192961DDC595C001C064B /* ChangNameVC.xib in Resources */,
 				B9D9045E1DD8C103008C8720 /* EPCalendarHeaderView.xib in Resources */,
 				B9150B951DD4659C00F825DC /* search.png in Resources */,
 				B9EE7A7C1DDDEF4400A82AEE /* black-plane.png in Resources */,
@@ -682,9 +713,11 @@
 				B9EE7A7A1DDDED8100A82AEE /* FlightResultDetailsView.xib in Resources */,
 				B963E72B1DD6D3A800A21548 /* add.png in Resources */,
 				B9D9A2BE1DDB628F007CAB28 /* users.png in Resources */,
+				2891929E1DDDD358001C064B /* ChangePasswordVC.xib in Resources */,
 				B9F445E81DD4D6DF00250D6C /* Gotham-BoldIta.otf in Resources */,
 				B9F445ED1DD4D6DF00250D6C /* Gotham-Medium.otf in Resources */,
 				286F62D31DDB446300B26733 /* UICheckBoxButton.xib in Resources */,
+				2891929A1DDDCD7D001C064B /* ForgotPasswordVC.xib in Resources */,
 				B9F445EB1DD4D6DF00250D6C /* Gotham-Light.otf in Resources */,
 				28AD38EC1DD59F4C0027892C /* ProfileVC.xib in Resources */,
 				284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */,
@@ -714,6 +747,8 @@
 				B9F445E61DD4D6DF00250D6C /* Gotham-BlackIta.otf in Resources */,
 				B9D9A2C21DDB6747007CAB28 /* SearchResultDateView.xib in Resources */,
 				B9EE7A861DDE1F1900A82AEE /* red clock.png in Resources */,
+				289192A21DDDEB8C001C064B /* EditProfileVC.xib in Resources */,
+				2872C5461DDF701300239CF2 /* SelectCurrencyVC.xib in Resources */,
 				B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */,
 				286F62C91DDB385200B26733 /* SignInVC.xib in Resources */,
 				286F62CF1DDB425600B26733 /* SignUpVC.xib in Resources */,
@@ -796,6 +831,7 @@
 				B9D9045F1DD8C103008C8720 /* EPCalendarPicker.swift in Sources */,
 				286F62D11DDB445500B26733 /* UICheckBoxButton.swift in Sources */,
 				B9EE7A751DDDECB700A82AEE /* FlightResultDetailsCell.swift in Sources */,
+				2872C5421DDF588900239CF2 /* ChangePasswordVC.swift in Sources */,
 				B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */,
 				B963E7231DD6BF7400A21548 /* PickPassengerVC.swift in Sources */,
 				B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */,
@@ -804,6 +840,8 @@
 				B9EE7A731DDDECB700A82AEE /* FlightResultCell.swift in Sources */,
 				B9F445F61DD4DA1B00250D6C /* GothamFontName.swift in Sources */,
 				B9D9A2C01DDB672C007CAB28 /* SearchResultDateView.swift in Sources */,
+				289192991DDDCD7D001C064B /* ForgotPasswordVC.swift in Sources */,
+				289192A41DDDF3C2001C064B /* EditProfileVC.swift in Sources */,
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
 				B9EE7A781DDDED7000A82AEE /* FlightResultDetailsView.swift in Sources */,
 				B9F445F81DD4DA9700250D6C /* Extentions.swift in Sources */,
@@ -814,6 +852,7 @@
 				B98FB6D21DDB1BAA00E615F2 /* FlightResultVC.swift in Sources */,
 				B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */,
 				B92507B61DDF0F7D0036866D /* FlightInfo.swift in Sources */,
+				289192951DDC595C001C064B /* ChangNameVC.swift in Sources */,
 				B9D9045C1DD8C103008C8720 /* EPCalendarConstants.swift in Sources */,
 				28C448911DDA24DC00DEBC51 /* UserInfoView.swift in Sources */,
 				B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */,
@@ -833,6 +872,7 @@
 				B95281E91DD711880041C39B /* PickDateVC.swift in Sources */,
 				B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */,
 				28AD38EE1DD59F780027892C /* ProfileVC.swift in Sources */,
+				2872C5451DDF701300239CF2 /* SelectCurrencyVC.swift in Sources */,
 				B9D9045A1DD8C102008C8720 /* EPCalendarCell1.swift in Sources */,
 				B9418EE11DD99E570094CD12 /* H2Label.swift in Sources */,
 				286F62CB1DDB3E6900B26733 /* UIPaddingTextField.swift in Sources */,

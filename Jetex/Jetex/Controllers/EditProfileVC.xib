@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+            <connections>
+                <outlet property="contentView" destination="QrP-qG-ATS" id="wbA-F7-nhD"/>
+                <outlet property="networkErrorView" destination="d3d-di-rLJ" id="gOb-LS-Oli"/>
+                <outlet property="view" destination="NV0-yq-fMy" id="5ob-c1-icA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="NV0-yq-fMy">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsU-Dh-JXM">
+                    <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-di-rLJ" userLabel="Network Error View">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrP-qG-ATS" userLabel="Content View">
+                    <subviews>
+                        <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbs-PJ-A05">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="hn3-W0-c91"/>
+                            </constraints>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                            <items>
+                                <navigationItem title="Edit Profile" id="pAf-Bw-c1O">
+                                    <barButtonItem key="leftBarButtonItem" image="back.png" id="92z-IZ-yX4">
+                                        <connections>
+                                            <action selector="backNavigationController:" destination="-1" id="tqU-ym-fnt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="dbs-PJ-A05" firstAttribute="leading" secondItem="QrP-qG-ATS" secondAttribute="leading" id="PHB-2q-CYV"/>
+                        <constraint firstAttribute="trailing" secondItem="dbs-PJ-A05" secondAttribute="trailing" id="Pq7-dm-pLZ"/>
+                        <constraint firstItem="dbs-PJ-A05" firstAttribute="top" secondItem="QrP-qG-ATS" secondAttribute="top" id="Tp2-hP-acI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rsU-Dh-JXM" firstAttribute="leading" secondItem="NV0-yq-fMy" secondAttribute="leading" id="1GX-OG-Fyp"/>
+                <constraint firstAttribute="bottom" secondItem="QrP-qG-ATS" secondAttribute="bottom" id="20v-Te-S9d"/>
+                <constraint firstItem="QrP-qG-ATS" firstAttribute="top" secondItem="rsU-Dh-JXM" secondAttribute="bottom" constant="1" id="ISe-dK-jlq"/>
+                <constraint firstItem="QrP-qG-ATS" firstAttribute="top" secondItem="NV0-yq-fMy" secondAttribute="top" constant="22" id="TeJ-hx-dgO"/>
+                <constraint firstItem="d3d-di-rLJ" firstAttribute="leading" secondItem="NV0-yq-fMy" secondAttribute="leading" id="UeC-jj-1LY"/>
+                <constraint firstAttribute="trailing" secondItem="d3d-di-rLJ" secondAttribute="trailing" id="ceh-JD-d4j"/>
+                <constraint firstItem="d3d-di-rLJ" firstAttribute="top" secondItem="NV0-yq-fMy" secondAttribute="top" constant="22" id="hEA-Wa-Pvm"/>
+                <constraint firstAttribute="trailing" secondItem="rsU-Dh-JXM" secondAttribute="trailing" id="kqv-KR-x4S"/>
+                <constraint firstItem="QrP-qG-ATS" firstAttribute="leading" secondItem="NV0-yq-fMy" secondAttribute="leading" id="pKA-u3-noB"/>
+                <constraint firstAttribute="trailing" secondItem="QrP-qG-ATS" secondAttribute="trailing" id="wMv-gW-QVq"/>
+                <constraint firstItem="rsU-Dh-JXM" firstAttribute="top" secondItem="NV0-yq-fMy" secondAttribute="top" id="wrD-uN-WNg"/>
+                <constraint firstAttribute="bottom" secondItem="d3d-di-rLJ" secondAttribute="bottom" id="xDe-xd-mNb"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="49.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back.png" width="22" height="22"/>
+    </resources>
+</document>
