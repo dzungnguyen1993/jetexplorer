@@ -10,11 +10,105 @@ import UIKit
 
 class FlightResultVC: BaseViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var arrayResult: [FlightInfo]!
+    
+    var showDetailsIndex: Int = -1
+    var detailsCellHeight: Int = 50
+    var cellDefaultHeight: Int = 152
+    var cellDefaultHeaderHeight: Int = 90
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        self.tableView.register(UINib(nibName: "FlightResultCell", bundle: nil), forCellReuseIdentifier: "FlightResultCell")
+        
+        self.tableView.separatorStyle = .none
+        
+        initMockData()
+    }
+    
+    func initMockData() {
+        let flightInfo = FlightInfo()
+        
+        self.arrayResult = [FlightInfo]()
+        self.arrayResult.append(flightInfo)
+        self.arrayResult.append(flightInfo)
+        self.arrayResult.append(flightInfo)
+        self.arrayResult.append(flightInfo)
+        self.arrayResult.append(flightInfo)
+    }
+}
+
+extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // remember indexpath.section instead of indexpath.row
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FlightResultCell", for: indexPath) as! FlightResultCell
+        
+        if (indexPath.section == showDetailsIndex) {
+            cell.viewInfoGeneral.isHidden = true
+            cell.viewDetails.isHidden = false
+            
+            cell.addViewDetails(flightInfo: arrayResult[indexPath.section])
+        } else {
+            cell.viewInfoGeneral.isHidden = false
+            cell.viewDetails.isHidden = true
+        }
+        
+        // set border
+        cell.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
+        cell.layer.borderWidth = 1.0
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath.section == showDetailsIndex) {
+            return CGFloat(cellDefaultHeaderHeight + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: arrayResult[indexPath.section]))
+        }
+        return CGFloat(cellDefaultHeight)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return arrayResult.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (section == 0) {
+            return 16
+        }
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        if (section == 0) {
+            view.backgroundColor = UIColor.white
+        } else {
+            view.backgroundColor = UIColor(hex: 0xF6F6F6)
+        }
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
     }
 
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (showDetailsIndex != indexPath.section) {
+            showDetailsIndex = indexPath.section
+        } else {
+            showDetailsIndex = -1
+        }
+        
+        tableView.reloadData()
+    }
+    
 }

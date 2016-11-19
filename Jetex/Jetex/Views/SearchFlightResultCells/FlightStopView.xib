@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlightStopView" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Wpi-yL-ZjJ"/>
+                <outlet property="viewTime" destination="7ka-KP-TYT" id="Ghs-BR-J4y"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ls3-ik-xkk">
+                    <rect key="frame" x="0.0" y="15" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="xu5-eu-bYJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ka-KP-TYT">
+                    <rect key="frame" x="68" y="0.0" width="240" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18h 05m stop in Tokyo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYh-Ex-nb8">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
+                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
+                            <color key="textColor" red="0.90980392156862744" green="0.38039215686274508" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="JYh-Ex-nb8" firstAttribute="leading" secondItem="7ka-KP-TYT" secondAttribute="leading" id="B4M-mA-4ZR"/>
+                        <constraint firstAttribute="width" constant="240" id="YXQ-o8-xuE"/>
+                        <constraint firstAttribute="trailing" secondItem="JYh-Ex-nb8" secondAttribute="trailing" id="ZTr-uQ-0F3"/>
+                        <constraint firstItem="JYh-Ex-nb8" firstAttribute="top" secondItem="7ka-KP-TYT" secondAttribute="top" id="aRu-gd-etc"/>
+                        <constraint firstAttribute="bottom" secondItem="JYh-Ex-nb8" secondAttribute="bottom" id="oNg-SM-apV"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="YqV-Gk-8Zs">
+                    <rect key="frame" x="58" y="5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="YqV-Gk-8Zs" secondAttribute="height" multiplier="1:1" id="KXe-FB-vP8"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="YqV-Gk-8Zs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="12A-sF-BVB"/>
+                <constraint firstAttribute="bottom" secondItem="YqV-Gk-8Zs" secondAttribute="bottom" constant="5" id="B8l-9a-PKj"/>
+                <constraint firstItem="YqV-Gk-8Zs" firstAttribute="leading" secondItem="7ka-KP-TYT" secondAttribute="leading" constant="-10" id="DOE-ul-jTO"/>
+                <constraint firstItem="ls3-ik-xkk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="J1T-PS-Zgt"/>
+                <constraint firstItem="7ka-KP-TYT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Uhx-rG-umD"/>
+                <constraint firstItem="7ka-KP-TYT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="j7K-IZ-oJb"/>
+                <constraint firstAttribute="trailing" secondItem="ls3-ik-xkk" secondAttribute="trailing" id="jYe-ga-Rf0"/>
+                <constraint firstItem="ls3-ik-xkk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jef-zr-h2k"/>
+                <constraint firstAttribute="bottom" secondItem="7ka-KP-TYT" secondAttribute="bottom" id="mhB-nN-x3Z"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-197.5" y="-219"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="red clock.png" width="128" height="128"/>
+    </resources>
+</document>
