@@ -29,17 +29,19 @@
 		289192A41DDDF3C2001C064B /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289192A31DDDF3C2001C064B /* EditProfileVC.swift */; };
 		28AD38EC1DD59F4C0027892C /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD38EB1DD59F4C0027892C /* ProfileVC.xib */; };
 		28AD38EE1DD59F780027892C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD38ED1DD59F780027892C /* ProfileVC.swift */; };
-		28BAD0021DE0D8120008032D /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BAD0011DE0D8120008032D /* profile.png */; };
+		28BAD0041DE0DF000008032D /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BAD0031DE0DF000008032D /* profile.png */; };
+		28BAD0061DE0DF090008032D /* JetExplorer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28BAD0051DE0DF090008032D /* JetExplorer.ttf */; };
+		28BAD00B1DE0DFCA0008032D /* PickPassengerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28BAD0071DE0DFCA0008032D /* PickPassengerCell.xib */; };
+		28BAD00C1DE0DFCA0008032D /* SearchCityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28BAD0081DE0DFCA0008032D /* SearchCityCell.xib */; };
+		28BAD00D1DE0DFCA0008032D /* PickPassengerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BAD0091DE0DFCA0008032D /* PickPassengerCell.swift */; };
+		28BAD00E1DE0DFCA0008032D /* SearchCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BAD00A1DE0DFCA0008032D /* SearchCityCell.swift */; };
 		28C448911DDA24DC00DEBC51 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C448901DDA24DC00DEBC51 /* UserInfoView.swift */; };
-		28FB84A41DE08B3A0076129A /* JetExplorer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28FB84A31DE08B3A0076129A /* JetExplorer.ttf */; };
 		B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */; };
 		B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */; };
 		B90DDA481DD45F0800AEC1AE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA471DD45F0800AEC1AE /* back.png */; };
 		B9150B941DD4659C00F825DC /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = B9150B921DD4659C00F825DC /* cancel.png */; };
 		B9150B951DD4659C00F825DC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B9150B931DD4659C00F825DC /* search.png */; };
 		B9150B971DD46AEA00F825DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9150B961DD46AEA00F825DC /* City.swift */; };
-		B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9150B981DD46E1B00F825DC /* SearchCityCell.swift */; };
-		B9150B9B1DD46E1B00F825DC /* SearchCityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9150B991DD46E1B00F825DC /* SearchCityCell.xib */; };
 		B917BC601DDC022200F2DA57 /* transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = B917BC5F1DDC022200F2DA57 /* transfer.png */; };
 		B92507B61DDF0F7D0036866D /* FlightInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92507B51DDF0F7D0036866D /* FlightInfo.swift */; };
 		B9418EE11DD99E570094CD12 /* H2Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9418EE01DD99E570094CD12 /* H2Label.swift */; };
@@ -51,8 +53,6 @@
 		B956E23B1DE0C724000A86A0 /* FlightTransitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B956E23A1DE0C724000A86A0 /* FlightTransitView.xib */; };
 		B963E7231DD6BF7400A21548 /* PickPassengerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B963E7211DD6BF7400A21548 /* PickPassengerVC.swift */; };
 		B963E7241DD6BF7400A21548 /* PickPassengerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B963E7221DD6BF7400A21548 /* PickPassengerVC.xib */; };
-		B963E7271DD6D13300A21548 /* PickPassengerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B963E7251DD6D13300A21548 /* PickPassengerCell.swift */; };
-		B963E7281DD6D13300A21548 /* PickPassengerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B963E7261DD6D13300A21548 /* PickPassengerCell.xib */; };
 		B963E72B1DD6D3A800A21548 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = B963E7291DD6D3A800A21548 /* add.png */; };
 		B963E72C1DD6D3A800A21548 /* substract.png in Resources */ = {isa = PBXBuildFile; fileRef = B963E72A1DD6D3A800A21548 /* substract.png */; };
 		B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BAC5A1DD1B4AC00AE79AD /* FlightSearchVC.swift */; };
@@ -168,9 +168,13 @@
 		289192A31DDDF3C2001C064B /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		28AD38EB1DD59F4C0027892C /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		28AD38ED1DD59F780027892C /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		28BAD0011DE0D8120008032D /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		28BAD0031DE0DF000008032D /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		28BAD0051DE0DF090008032D /* JetExplorer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JetExplorer.ttf; sourceTree = "<group>"; };
+		28BAD0071DE0DFCA0008032D /* PickPassengerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickPassengerCell.xib; path = Jetex/Views/PickPassengerCell.xib; sourceTree = SOURCE_ROOT; };
+		28BAD0081DE0DFCA0008032D /* SearchCityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchCityCell.xib; path = Jetex/Views/SearchCityCell.xib; sourceTree = SOURCE_ROOT; };
+		28BAD0091DE0DFCA0008032D /* PickPassengerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickPassengerCell.swift; path = Jetex/Views/PickPassengerCell.swift; sourceTree = SOURCE_ROOT; };
+		28BAD00A1DE0DFCA0008032D /* SearchCityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCityCell.swift; path = Jetex/Views/SearchCityCell.swift; sourceTree = SOURCE_ROOT; };
 		28C448901DDA24DC00DEBC51 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoView.swift; path = ../Controllers/UserInfoView.swift; sourceTree = "<group>"; };
-		28FB84A31DE08B3A0076129A /* JetExplorer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JetExplorer.ttf; sourceTree = "<group>"; };
 		3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.debug.xcconfig"; sourceTree = "<group>"; };
 		5F30E1B520C7F45D1DB37729 /* Pods_JetexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,8 +184,6 @@
 		B9150B921DD4659C00F825DC /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		B9150B931DD4659C00F825DC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		B9150B961DD46AEA00F825DC /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		B9150B981DD46E1B00F825DC /* SearchCityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCityCell.swift; path = ../SearchCityCell.swift; sourceTree = "<group>"; };
-		B9150B991DD46E1B00F825DC /* SearchCityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchCityCell.xib; path = ../SearchCityCell.xib; sourceTree = "<group>"; };
 		B917BC5F1DDC022200F2DA57 /* transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer.png; sourceTree = "<group>"; };
 		B92507B51DDF0F7D0036866D /* FlightInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInfo.swift; sourceTree = "<group>"; };
 		B9418EE01DD99E570094CD12 /* H2Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H2Label.swift; sourceTree = "<group>"; };
@@ -193,8 +195,6 @@
 		B956E23A1DE0C724000A86A0 /* FlightTransitView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightTransitView.xib; sourceTree = "<group>"; };
 		B963E7211DD6BF7400A21548 /* PickPassengerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickPassengerVC.swift; sourceTree = "<group>"; };
 		B963E7221DD6BF7400A21548 /* PickPassengerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickPassengerVC.xib; sourceTree = "<group>"; };
-		B963E7251DD6D13300A21548 /* PickPassengerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickPassengerCell.swift; path = ../PickPassengerCell.swift; sourceTree = "<group>"; };
-		B963E7261DD6D13300A21548 /* PickPassengerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickPassengerCell.xib; path = ../PickPassengerCell.xib; sourceTree = "<group>"; };
 		B963E7291DD6D3A800A21548 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		B963E72A1DD6D3A800A21548 /* substract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = substract.png; sourceTree = "<group>"; };
 		B96BAC5A1DD1B4AC00AE79AD /* FlightSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchVC.swift; sourceTree = "<group>"; };
@@ -348,10 +348,10 @@
 		B9289B7A1DDC77DA008012E1 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
-				B9150B981DD46E1B00F825DC /* SearchCityCell.swift */,
-				B9150B991DD46E1B00F825DC /* SearchCityCell.xib */,
-				B963E7251DD6D13300A21548 /* PickPassengerCell.swift */,
-				B963E7261DD6D13300A21548 /* PickPassengerCell.xib */,
+				28BAD0071DE0DFCA0008032D /* PickPassengerCell.xib */,
+				28BAD0081DE0DFCA0008032D /* SearchCityCell.xib */,
+				28BAD0091DE0DFCA0008032D /* PickPassengerCell.swift */,
+				28BAD00A1DE0DFCA0008032D /* SearchCityCell.swift */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -422,9 +422,7 @@
 		B96BAC641DD1C4AA00AE79AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				28BAD0011DE0D8120008032D /* profile.png */,
-=======
+				28BAD0031DE0DF000008032D /* profile.png */,
 				B9EE7A851DDE1F1900A82AEE /* red clock.png */,
 				B9EE7A7B1DDDEF4400A82AEE /* black-plane.png */,
 				B9DD5B181DDCC41200612C9B /* clock.png */,
@@ -433,7 +431,6 @@
 				B917BC5F1DDC022200F2DA57 /* transfer.png */,
 				B9D9A2C31DDB6B27007CAB28 /* right-arrow.png */,
 				B9D9A2BD1DDB628F007CAB28 /* users.png */,
->>>>>>> origin/develop
 				B963E7291DD6D3A800A21548 /* add.png */,
 				B963E72A1DD6D3A800A21548 /* substract.png */,
 				B9F445F51DD4DA1B00250D6C /* GothamFontName.swift */,
@@ -555,7 +552,7 @@
 		B9F445D41DD4D6DF00250D6C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				28FB84A31DE08B3A0076129A /* JetExplorer.ttf */,
+				28BAD0051DE0DF090008032D /* JetExplorer.ttf */,
 				B9F445D51DD4D6DF00250D6C /* Gotham-Black.otf */,
 				B9F445D61DD4D6DF00250D6C /* Gotham-BlackIta.otf */,
 				B9F445D71DD4D6DF00250D6C /* Gotham-Bold.otf */,
@@ -716,6 +713,8 @@
 				B9EE7A7C1DDDEF4400A82AEE /* black-plane.png in Resources */,
 				B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */,
 				B9DD5B161DDCBDF800612C9B /* airasia.png in Resources */,
+				28BAD0041DE0DF000008032D /* profile.png in Resources */,
+				28BAD00B1DE0DFCA0008032D /* PickPassengerCell.xib in Resources */,
 				B9D9045B1DD8C102008C8720 /* EPCalendarCell1.xib in Resources */,
 				B9F445EE1DD4D6DF00250D6C /* Gotham-MediumIta.otf in Resources */,
 				B9F445EC1DD4D6DF00250D6C /* Gotham-LightIta.otf in Resources */,
@@ -726,6 +725,7 @@
 				B9F445E81DD4D6DF00250D6C /* Gotham-BoldIta.otf in Resources */,
 				B9F445ED1DD4D6DF00250D6C /* Gotham-Medium.otf in Resources */,
 				286F62D31DDB446300B26733 /* UICheckBoxButton.xib in Resources */,
+				28BAD0061DE0DF090008032D /* JetExplorer.ttf in Resources */,
 				2891929A1DDDCD7D001C064B /* ForgotPasswordVC.xib in Resources */,
 				B9F445EB1DD4D6DF00250D6C /* Gotham-Light.otf in Resources */,
 				28AD38EC1DD59F4C0027892C /* ProfileVC.xib in Resources */,
@@ -733,7 +733,6 @@
 				B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */,
 				B9DD5B171DDCBDF800612C9B /* dot.png in Resources */,
 				B9F445E71DD4D6DF00250D6C /* Gotham-Bold.otf in Resources */,
-				B963E7281DD6D13300A21548 /* PickPassengerCell.xib in Resources */,
 				B9F445E51DD4D6DF00250D6C /* Gotham-Black.otf in Resources */,
 				B9150B941DD4659C00F825DC /* cancel.png in Resources */,
 				B9D9A2C41DDB6B27007CAB28 /* right-arrow.png in Resources */,
@@ -745,13 +744,12 @@
 				B90DDA481DD45F0800AEC1AE /* back.png in Resources */,
 				B956E23B1DE0C724000A86A0 /* FlightTransitView.xib in Resources */,
 				B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */,
-				28BAD0021DE0D8120008032D /* profile.png in Resources */,
 				B98FB6D31DDB1BAA00E615F2 /* FlightResultVC.xib in Resources */,
 				B9DD5B191DDCC41200612C9B /* clock.png in Resources */,
 				B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */,
 				B9F445EF1DD4D6DF00250D6C /* Gotham-Thin.otf in Resources */,
 				B9F445F31DD4D6DF00250D6C /* Gotham-XLight.otf in Resources */,
-				B9150B9B1DD46E1B00F825DC /* SearchCityCell.xib in Resources */,
+				28BAD00C1DE0DFCA0008032D /* SearchCityCell.xib in Resources */,
 				B9F445E91DD4D6DF00250D6C /* Gotham-Book.otf in Resources */,
 				B963E72C1DD6D3A800A21548 /* substract.png in Resources */,
 				B9F445E61DD4D6DF00250D6C /* Gotham-BlackIta.otf in Resources */,
@@ -762,7 +760,6 @@
 				B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */,
 				286F62C91DDB385200B26733 /* SignInVC.xib in Resources */,
 				286F62CF1DDB425600B26733 /* SignUpVC.xib in Resources */,
-				28FB84A41DE08B3A0076129A /* JetExplorer.ttf in Resources */,
 				B963E7241DD6BF7400A21548 /* PickPassengerVC.xib in Resources */,
 				B9F445EA1DD4D6DF00250D6C /* Gotham-BookIta.otf in Resources */,
 				B9EE7A761DDDECB700A82AEE /* FlightResultDetailsCell.xib in Resources */,
@@ -858,7 +855,6 @@
 				B9F445F81DD4DA9700250D6C /* Extentions.swift in Sources */,
 				286F62CE1DDB425600B26733 /* SignUpVC.swift in Sources */,
 				B9D904621DD8C14E008C8720 /* MediumParagraphLabel.swift in Sources */,
-				B963E7271DD6D13300A21548 /* PickPassengerCell.swift in Sources */,
 				B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */,
 				B98FB6D21DDB1BAA00E615F2 /* FlightResultVC.swift in Sources */,
 				B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */,
@@ -874,6 +870,7 @@
 				B95281E61DD705610041C39B /* PassengerInfo.swift in Sources */,
 				B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */,
 				B956E2371DE0C20E000A86A0 /* FlightCellUtils.swift in Sources */,
+				28BAD00D1DE0DFCA0008032D /* PickPassengerCell.swift in Sources */,
 				B9F445FD1DD4E16B00250D6C /* GothamBold17Label.swift in Sources */,
 				B98B6B6E1DD5B5ED0094FC46 /* SmallParagraphButton.swift in Sources */,
 				286F62C81DDB385200B26733 /* SignInVCViewController.swift in Sources */,
@@ -887,10 +884,10 @@
 				B9D9045A1DD8C102008C8720 /* EPCalendarCell1.swift in Sources */,
 				B9418EE11DD99E570094CD12 /* H2Label.swift in Sources */,
 				286F62CB1DDB3E6900B26733 /* UIPaddingTextField.swift in Sources */,
-				B9150B9A1DD46E1B00F825DC /* SearchCityCell.swift in Sources */,
 				284EC7861DDA1C7F001D0892 /* LoginView.swift in Sources */,
 				B9150B971DD46AEA00F825DC /* City.swift in Sources */,
 				B956E2391DE0C715000A86A0 /* FlightTransitView.swift in Sources */,
+				28BAD00E1DE0DFCA0008032D /* SearchCityCell.swift in Sources */,
 				B9F446011DD4E18D00250D6C /* GothamBook17Label.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
