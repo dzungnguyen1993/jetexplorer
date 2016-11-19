@@ -11,7 +11,7 @@ import UIKit
 class UICheckBoxButton: UIView {
 
     @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var checkBoxLabel: UILabel!
     
     var isChecked : Bool = false
     
@@ -30,6 +30,9 @@ class UICheckBoxButton: UIView {
         view.frame = self.bounds
         self.addSubview(view)
         
+        checkBoxLabel.font = UIFont(name: "JetExplorer", size:44.0);
+        checkBoxLabel.text = "\(NSString.init(utf8String: "\u{e906}")!)"
+        
         let tapView = UITapGestureRecognizer(target: self, action: #selector(selfPressed(sender:)))
         view.addGestureRecognizer(tapView)
     }
@@ -38,11 +41,11 @@ class UICheckBoxButton: UIView {
         isChecked = !isChecked
         if isChecked {
             // change image
-            checkImage.image = UIImage(named: "search")
+            checkBoxLabel.text = "\(NSString.init(utf8String: "\u{e907}")!)"
             print("checked")
         } else {
             // change image
-            checkImage.image = UIImage(named: "cancel")
+            checkBoxLabel.text = "\(NSString.init(utf8String: "\u{e906}")!)"
             print("un checked")
         }
     }

@@ -9,11 +9,14 @@
         <array key="Gotham-Book.otf">
             <string>Gotham-Book</string>
         </array>
+        <array key="JetExplorer.ttf">
+            <string>JetExplorer</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UICheckBoxButton" customModule="Jetex" customModuleProvider="target">
             <connections>
-                <outlet property="checkImage" destination="LKq-Ur-St5" id="adT-tm-Sq3"/>
+                <outlet property="checkBoxLabel" destination="IGA-Or-Kll" id="dc7-Bs-USx"/>
                 <outlet property="textLabel" destination="8j0-aQ-030" id="aOl-Z9-Ebu"/>
             </connections>
         </placeholder>
@@ -31,26 +34,25 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancel.png" translatesAutoresizingMaskIntoConstraints="NO" id="LKq-Ur-St5">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-Or-Kll">
                     <constraints>
-                        <constraint firstAttribute="width" constant="44" id="5Ce-xu-ThK"/>
-                        <constraint firstAttribute="height" constant="44" id="MxX-wL-X7J"/>
+                        <constraint firstAttribute="height" constant="44" id="58A-y5-wc6"/>
+                        <constraint firstAttribute="width" constant="44" id="ZkN-YF-Xgc"/>
                     </constraints>
-                </imageView>
+                    <fontDescription key="fontDescription" name="JetExplorer" family="JetExplorer" pointSize="17"/>
+                    <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="8j0-aQ-030" firstAttribute="leading" secondItem="LKq-Ur-St5" secondAttribute="trailing" constant="24" id="Z9t-1v-wff"/>
-                <constraint firstItem="LKq-Ur-St5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bSz-J4-YCM"/>
-                <constraint firstItem="LKq-Ur-St5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cVD-55-uYX"/>
+                <constraint firstItem="IGA-Or-Kll" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZhS-LG-bVQ"/>
                 <constraint firstItem="8j0-aQ-030" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hxL-8x-Vsf"/>
+                <constraint firstItem="IGA-Or-Kll" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="puj-Gb-w5I"/>
                 <constraint firstAttribute="trailing" secondItem="8j0-aQ-030" secondAttribute="trailing" id="whr-wr-T7b"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="33.5" y="-238.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="cancel.png" width="128" height="128"/>
-    </resources>
 </document>

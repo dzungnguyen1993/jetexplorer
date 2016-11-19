@@ -39,8 +39,10 @@ class TabBarController: UITabBarController {
         nav.setNavigationBarHidden(true, animated: true)
         
         viewControllers?.append(nav)
-        nav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(), tag: 2)
+        nav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile")?.resize(newSize: (width: 22, height: 22)), tag: 2)
         
-        nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x674290), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .normal)
+        nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x706F73), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .normal)
+        
+        nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x674290), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .selected)
     }
 }

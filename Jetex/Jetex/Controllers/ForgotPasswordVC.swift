@@ -21,7 +21,10 @@ class ForgotPasswordVC: BaseViewController {
     
     // MARK:- send
     @IBAction func sendButtonPressed(_ sender: AnyObject) {
+        // request server to send email reseting password
         
+        // back to setting
+        _ = self.navigationController?.popViewController(animated: true)
     }
 
     /*

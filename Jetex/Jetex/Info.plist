@@ -52,6 +52,7 @@
 		<string>Gotham-UltraIta.otf</string>
 		<string>Gotham-XLight.otf</string>
 		<string>Gotham-XLightIta.otf</string>
+		<string>JetExplorer.ttf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

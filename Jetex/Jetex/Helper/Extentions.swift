@@ -21,17 +21,15 @@ extension UIColor {
     
 }
 
-//extension UIButton{
-//    @IBInspectable var borderColor: UIColor? {
-//        get {
-//            return UIColor(cgColor: layer.borderColor!)
-//        }
-//        set {
-//            layer.borderColor = newValue?.cgColor
-//            layer.borderWidth = 1
-//        }
-//    }
-//}
+extension UIImage {
+    func resize(newSize: (width: Int, height: Int)) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(CGSize.init(width: newSize.width, height: newSize.height), false, 0.0);
+        self.draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: newSize.width, height: newSize.height)))
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+}
 
 extension Date {
     func toMonthDay() -> String {

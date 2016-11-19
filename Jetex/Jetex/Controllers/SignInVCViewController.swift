@@ -22,10 +22,12 @@ class SignInVC: BaseViewController {
     
     // MARK: - Sign In
     @IBAction func signInButtonPressed(_ sender: AnyObject) {
-        
+        ProfileVC.isUserLogined = true
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func forgetButtonPressed(_ sender: AnyObject) {
-        
+        let vc = ForgotPasswordVC(nibName: "ForgotPasswordVC", bundle: nil)
+        _ = self.navigationController?.pushViewController(vc, animated: true)
     }
 }

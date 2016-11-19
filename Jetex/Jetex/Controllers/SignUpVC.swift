@@ -25,6 +25,7 @@ class SignUpVC: BaseViewController {
 
     // MARK: - IBActions - sign up
     @IBAction func signUpButtonPressed(_ sender: AnyObject) {
-        
+        ProfileVC.isUserLogined = true
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }

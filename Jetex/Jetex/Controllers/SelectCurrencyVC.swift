@@ -11,11 +11,11 @@ import UIKit
 class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDelegate {
 
     let currencyList = [("US","USD"), ("Singapore", "SGP")]
+    var selectedCurrency = "USD"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        selectedCurrency = ProfileVC.currentCurrencyType
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,10 +33,16 @@ class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDe
         
         cell.detailTextLabel?.attributedText = NSAttributedString(string: currencyList[indexPath.row].1, attributes: [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!])
         
+        if currencyList[indexPath.row].1 == selectedCurrency {
+            cell.accessoryType = .checkmark
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCurrency = currencyList[indexPath.row].1
+        ProfileVC.currentCurrencyType = selectedCurrency
         _ = self.navigationController?.popViewController(animated: true)
     }
     

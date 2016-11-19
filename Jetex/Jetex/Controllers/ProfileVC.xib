@@ -40,13 +40,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </textAttributes>
                             <items>
-                                <navigationItem title="Profile" id="OIc-7x-PO6">
-                                    <barButtonItem key="leftBarButtonItem" image="back.png" id="0UA-pf-y0H">
-                                        <connections>
-                                            <action selector="backNavigationController:" destination="-1" id="s6Q-pg-i6D"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
+                                <navigationItem title="Profile" id="OIc-7x-PO6"/>
                             </items>
                         </navigationBar>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5p-Le-zh9" customClass="LoginView" customModule="Jetex" customModuleProvider="target">
@@ -93,7 +87,4 @@
             <point key="canvasLocation" x="238" y="62"/>
         </view>
     </objects>
-    <resources>
-        <image name="back.png" width="22" height="22"/>
-    </resources>
 </document>

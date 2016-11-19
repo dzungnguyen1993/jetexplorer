@@ -23,8 +23,12 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
     
     let appSettingText = "App Settings"
     let currency = "Currency"
-    let currentCurrencyType = "USD"
     let ratingAndFeedback = "Rating & Feedback"
+    
+    // MARK: - Hard code for testing UI -> TODO: check it before release
+    static var currentCurrencyType = "USD"
+    static var isUserLogined = false
+    
     
     // MARK: - IBOutlet Variables
     @IBOutlet weak var settingTableView: UITableView!
@@ -42,10 +46,11 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         super.viewWillAppear(animated)
         
         setUpMainView()
+        refreshSettingTableView()
     }
 
     func setUpMainView(){
-        if true {
+        if !ProfileVC.isUserLogined {
             // resize mainView
             mainViewHeightLayoutConstraint.constant = LoginView.itsRect.height
             self.mainView.layoutIfNeeded()
@@ -101,6 +106,10 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         settingTableView.dataSource = self
     }
     
+    func refreshSettingTableView(){
+        settingTableView.reloadData()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -127,7 +136,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             
             cell.textLabel?.attributedText = NSAttributedString(string: currency, attributes: [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!])
             
-            cell.detailTextLabel?.attributedText = NSAttributedString(string: currentCurrencyType, attributes: [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!])
+            cell.detailTextLabel?.attributedText = NSAttributedString(string: ProfileVC.currentCurrencyType, attributes: [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!])
             break
         case 1:
             cell.textLabel?.attributedText = NSAttributedString(string: ratingAndFeedback, attributes: [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!])

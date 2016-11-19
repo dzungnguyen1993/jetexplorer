@@ -9,29 +9,14 @@
 import UIKit
 
 class EditProfileVC: UITableViewController {
-
+    
+    @IBOutlet weak var emailUpdateTextField: UIPaddingTextField!
+    @IBOutlet weak var emailSubscriptionSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-//        let view = UIView(frame:
-//            CGRect(x: 0.0, y: -20.0, width: UIScreen.main.bounds.size.width, height: 20.0)
-//        )
-//        view.backgroundColor = UIColor.orange
-//        
-//        self.view.addSubview(view)
-        super.viewWillAppear(animated)
-    }
-
     @IBAction func backButtonPressed(_ sender: AnyObject) {
         _ = navigationController?.popViewController(animated: true)
     }
@@ -49,6 +34,7 @@ class EditProfileVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        textFieldResign()
         switch indexPath.section {
         case 0:
             let vc = ChangNameVC(nibName: "ChangNameVC", bundle: nil)
@@ -60,26 +46,29 @@ class EditProfileVC: UITableViewController {
             break
         case 2:
             print("email")
+            emailUpdateTextField.becomeFirstResponder()
             break
         case 3:
             print("subscription")
+            emailSubscriptionSwitch.setOn(!emailSubscriptionSwitch.isOn, animated: true)
             break
         case 4:
             print("sign out")
+            ProfileVC.isUserLogined = false
+            _ = self.navigationController?.popViewController(animated: true)
             break
         default:
             break
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func saveButtonPressed(_ sender: AnyObject) {
+        textFieldResign()
+        _ = self.navigationController?.popViewController(animated: true)
     }
-    */
+    
+    func textFieldResign() {
+        emailUpdateTextField.resignFirstResponder()
+    }
 
 }

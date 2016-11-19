@@ -26,6 +26,11 @@ class ChangePasswordVC: BaseViewController {
     
     // MARK: - Save
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
+        
+        // update info
+        
+        // back to setting
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     
