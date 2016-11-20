@@ -24,27 +24,27 @@
             <rect key="frame" x="0.0" y="0.0" width="350" height="182"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="350" height="181.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="350" height="181"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Origin  Airports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJP-T1-1Qe">
-                        <rect key="frame" x="0.0" y="16" width="101.5" height="17.5"/>
+                        <rect key="frame" x="0.0" y="16" width="102" height="18"/>
                         <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                         <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIZ-FU-rfX">
-                        <rect key="frame" x="0.0" y="49.5" width="350" height="44"/>
+                        <rect key="frame" x="0.0" y="50" width="350" height="44"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck rect.png" translatesAutoresizingMaskIntoConstraints="NO" id="frn-Li-m5B">
-                                <rect key="frame" x="0.0" y="9.5" width="25" height="25"/>
+                                <rect key="frame" x="0.0" y="10" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Lu3-Yw-2BV"/>
                                     <constraint firstAttribute="width" secondItem="frn-Li-m5B" secondAttribute="height" multiplier="1:1" id="Ntc-9K-437"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN - Tan Son Nhat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVY-Lt-5Zg">
-                                <rect key="frame" x="41" y="13.5" width="136.5" height="17.5"/>
+                                <rect key="frame" x="41" y="13" width="137" height="18"/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                                 <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -69,22 +69,22 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Airports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg8-QM-PCv">
-                        <rect key="frame" x="0.0" y="109.5" width="133" height="17.5"/>
+                        <rect key="frame" x="0.0" y="110" width="133" height="18"/>
                         <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                         <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5it-RN-gDs">
-                        <rect key="frame" x="0.0" y="143" width="350" height="44"/>
+                        <rect key="frame" x="0.0" y="144" width="350" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN- Tan Son Nhat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0d-4i-7JX">
-                                <rect key="frame" x="41" y="14" width="132.5" height="17.5"/>
+                                <rect key="frame" x="41" y="14" width="133" height="18"/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                                 <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck rect.png" translatesAutoresizingMaskIntoConstraints="NO" id="SKR-4b-bwL">
-                                <rect key="frame" x="0.0" y="9.5" width="25" height="25"/>
+                                <rect key="frame" x="0.0" y="10" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="gRX-GE-LSb"/>
                                     <constraint firstAttribute="width" secondItem="SKR-4b-bwL" secondAttribute="height" multiplier="1:1" id="yaW-3i-PQR"/>

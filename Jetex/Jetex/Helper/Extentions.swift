@@ -29,6 +29,30 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return newImage
     }
+    
+    convenience init(fromLabel: UILabel) {
+        UIGraphicsBeginImageContextWithOptions(fromLabel.bounds.size, false, 0.0)
+        fromLabel.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.init(cgImage: img!.cgImage!)
+    }
+    
+    convenience init(fromHex: UnsafePointer<Int8>, withColor: UIColor = .darkGray) {
+        let textlabel = UILabel(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        textlabel.font = UIFont(name: "JetExplorer", size: 36.0)
+        textlabel.textColor = withColor
+        textlabel.adjustsFontSizeToFitWidth = true
+        
+        textlabel.text = "\(NSString.init(utf8String: fromHex)!)"
+        
+        self.init(fromLabel: textlabel)
+    }
+    
+    static func generateTabBarImageFromHex(fromHex: UnsafePointer<Int8>) -> UIImage {
+        return UIImage(fromHex: fromHex).resize(newSize: (width: 22, height: 22))
+    }
 }
 
 extension Date {

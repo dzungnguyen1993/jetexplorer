@@ -10,5 +10,32 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "ProfileVC.imagePickerController(UIImagePickerController, didFinishPickingMediaWithInfo : [String : Any]) -&gt; ():ProfileVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "mainView.subviews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UIImage.init(fromHex : UnsafePointer&lt;Int8&gt;) -&gt; UIImage:Extentions.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textlabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserInfoView.initializeSubviews() -&gt; ():UserInfoView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "view.subviews.first.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "userAvatar.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
