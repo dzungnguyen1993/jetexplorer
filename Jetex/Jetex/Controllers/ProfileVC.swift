@@ -17,9 +17,10 @@ protocol LoginViewDelegate: class {
 
 protocol UserInfoViewDelegate: class{
     func viewAndEditProfile()
+    func userAvatarPressed()
 }
 
-class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     let appSettingText = "App Settings"
     let currency = "Currency"
@@ -35,6 +36,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var mainViewHeightLayoutConstraint: NSLayoutConstraint!
     
+    var userInfoView: UserInfoView? = nil
     
     // MARK: - Override functions
     override func viewDidLoad() {
@@ -61,14 +63,16 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             self.mainView.addSubview(loginView)
             
         } else {
-            // resize mainView
-            mainViewHeightLayoutConstraint.constant = UserInfoView.itsRect.height
-            self.mainView.layoutIfNeeded()
+            if userInfoView == nil {
+                // resize mainView
+                mainViewHeightLayoutConstraint.constant = UserInfoView.itsRect.height
+                self.mainView.layoutIfNeeded()
             
-            // profile info
-            let userInfoView = UserInfoView(frame: UserInfoView.itsRect)
-            userInfoView.delegate = self
-            self.mainView.addSubview(userInfoView)
+                // profile info
+                userInfoView = UserInfoView(frame: UserInfoView.itsRect)
+                userInfoView!.delegate = self
+                self.mainView.addSubview(userInfoView!)
+            }
         }
     }
     
@@ -98,6 +102,33 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         
         _ = self.navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    func userAvatarPressed() {
+        let pickervc = UIImagePickerController()
+        pickervc.allowsEditing = false
+        pickervc.delegate = self
+        pickervc.sourceType = .photoLibrary
+        self.present(pickervc, animated: true) { 
+            // done showing picker, what's next?
+        }
+    }
+    
+    // MARK: - Picture Picker Delegate
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // cancel
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            // change the picture
+            if userInfoView != nil {
+                userInfoView!.userAvatar.image = image
+            }
+        }
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - App Setting Table View functions

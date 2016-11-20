@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchHistoryVC" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="Nwo-j4-Ati" id="eIO-rX-Sz9"/>
+                <outlet property="networkErrorView" destination="suw-KI-rys" id="VPf-ZC-wUc"/>
+                <outlet property="view" destination="I9Z-S0-9kI" id="iQs-hA-LI1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="I9Z-S0-9kI">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0v-ef-bqa">
+                    <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suw-KI-rys">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwo-j4-Ati">
+                    <subviews>
+                        <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-DS-s2B">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="qZN-V1-osF"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="barTintColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </textAttributes>
+                            <items>
+                                <navigationItem title="Search history" id="dqN-dL-gCa"/>
+                            </items>
+                        </navigationBar>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ka-Sm-lAd" userLabel="Segment Control View">
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qks-Iz-ySx">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="KwZ-K8-55t"/>
+                                        <constraint firstAttribute="width" constant="259.5" id="Tok-HE-4tb"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="All Searches"/>
+                                        <segment title="Flights"/>
+                                        <segment title="Hotels"/>
+                                    </segments>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="qks-Iz-ySx" firstAttribute="centerX" secondItem="5Ka-Sm-lAd" secondAttribute="centerX" id="3jF-PA-eZA"/>
+                                <constraint firstItem="qks-Iz-ySx" firstAttribute="centerY" secondItem="5Ka-Sm-lAd" secondAttribute="centerY" id="UgH-tH-ila"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-VZ-Fhx" userLabel="Sign In View">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to create trips, save flights &amp; hotels, and access searches across devices" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xl-xA-3Vc">
+                                    <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVZ-0y-rXD">
+                                    <color key="backgroundColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="hYI-f3-2WJ"/>
+                                        <constraint firstAttribute="height" constant="44" id="iPb-t3-pnv"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
+                                    <state key="normal" title="SIGN IN">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="1pz-z3-O9M"/>
+                                <constraint firstItem="8Xl-xA-3Vc" firstAttribute="top" secondItem="YcB-VZ-Fhx" secondAttribute="top" constant="16" id="7yk-r7-efu"/>
+                                <constraint firstAttribute="trailing" secondItem="8Xl-xA-3Vc" secondAttribute="trailing" constant="16" id="WQE-gx-3Z3"/>
+                                <constraint firstAttribute="bottom" secondItem="SVZ-0y-rXD" secondAttribute="bottom" constant="16" id="fBc-2m-q10"/>
+                                <constraint firstItem="8Xl-xA-3Vc" firstAttribute="leading" secondItem="YcB-VZ-Fhx" secondAttribute="leading" constant="16" id="kru-a5-XBx"/>
+                                <constraint firstItem="SVZ-0y-rXD" firstAttribute="centerX" secondItem="YcB-VZ-Fhx" secondAttribute="centerX" id="yL6-LH-wnz"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="mzB-DS-s2B" firstAttribute="leading" secondItem="Nwo-j4-Ati" secondAttribute="leading" id="4Kk-4d-eiz"/>
+                        <constraint firstItem="5Ka-Sm-lAd" firstAttribute="height" secondItem="mzB-DS-s2B" secondAttribute="height" id="CXt-ad-Gei"/>
+                        <constraint firstItem="5Ka-Sm-lAd" firstAttribute="top" secondItem="mzB-DS-s2B" secondAttribute="bottom" id="Opn-gN-N2p"/>
+                        <constraint firstItem="mzB-DS-s2B" firstAttribute="top" secondItem="Nwo-j4-Ati" secondAttribute="top" id="SlY-F1-TOe"/>
+                        <constraint firstAttribute="trailing" secondItem="mzB-DS-s2B" secondAttribute="trailing" id="YMe-q0-tQT"/>
+                        <constraint firstAttribute="trailing" secondItem="YcB-VZ-Fhx" secondAttribute="trailing" id="acx-y3-dS7"/>
+                        <constraint firstAttribute="trailing" secondItem="5Ka-Sm-lAd" secondAttribute="trailing" id="gxI-uU-XB3"/>
+                        <constraint firstItem="5Ka-Sm-lAd" firstAttribute="leading" secondItem="Nwo-j4-Ati" secondAttribute="leading" id="jnr-p9-Tq5"/>
+                        <constraint firstItem="YcB-VZ-Fhx" firstAttribute="top" secondItem="5Ka-Sm-lAd" secondAttribute="bottom" id="seX-kK-FzA"/>
+                        <constraint firstItem="YcB-VZ-Fhx" firstAttribute="leading" secondItem="Nwo-j4-Ati" secondAttribute="leading" id="yWQ-l2-kwB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="s0v-ef-bqa" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" id="5QE-Hq-yyJ"/>
+                <constraint firstAttribute="bottom" secondItem="Nwo-j4-Ati" secondAttribute="bottom" id="DHi-8e-H1F"/>
+                <constraint firstItem="Nwo-j4-Ati" firstAttribute="top" secondItem="s0v-ef-bqa" secondAttribute="bottom" constant="1" id="Knz-av-7YN"/>
+                <constraint firstAttribute="trailing" secondItem="s0v-ef-bqa" secondAttribute="trailing" id="LkC-Ny-NSN"/>
+                <constraint firstItem="suw-KI-rys" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="22" id="Og0-8h-g3S"/>
+                <constraint firstItem="s0v-ef-bqa" firstAttribute="leading" secondItem="I9Z-S0-9kI" secondAttribute="leading" id="UWH-N7-nPD"/>
+                <constraint firstAttribute="bottom" secondItem="suw-KI-rys" secondAttribute="bottom" id="gqk-d7-og1"/>
+                <constraint firstItem="Nwo-j4-Ati" firstAttribute="leading" secondItem="I9Z-S0-9kI" secondAttribute="leading" id="hUv-ea-Vss"/>
+                <constraint firstAttribute="trailing" secondItem="suw-KI-rys" secondAttribute="trailing" id="hty-y5-xjt"/>
+                <constraint firstItem="Nwo-j4-Ati" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="22" id="rXV-Vo-orH"/>
+                <constraint firstAttribute="trailing" secondItem="Nwo-j4-Ati" secondAttribute="trailing" id="srW-i6-9P0"/>
+                <constraint firstItem="suw-KI-rys" firstAttribute="leading" secondItem="I9Z-S0-9kI" secondAttribute="leading" id="zen-qL-aiK"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="49.5"/>
+        </view>
+    </objects>
+</document>
