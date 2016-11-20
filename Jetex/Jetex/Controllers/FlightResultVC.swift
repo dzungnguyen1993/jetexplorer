@@ -11,13 +11,22 @@ import UIKit
 class FlightResultVC: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewOptions: UIView!
+    @IBOutlet weak var viewFilterContainer: UIView!
+    var viewFilter: FilterFlightView!
     
     var arrayResult: [FlightInfo]!
     
     var showDetailsIndex: Int = -1
     var detailsCellHeight: Int = 50
-    var cellDefaultHeight: Int = 152
+    var cellDefaultHeight: Int = 118
     var cellDefaultHeaderHeight: Int = 90
+    
+    @IBOutlet weak var btnCheapest: UIButton!
+    @IBOutlet weak var viewUnderCheapest: UIView!
+    
+    @IBOutlet weak var btnFastest: UIButton!
+    @IBOutlet weak var viewUnderFastest: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +39,18 @@ class FlightResultVC: BaseViewController {
         self.tableView.separatorStyle = .none
         
         initMockData()
+        
+        viewOptions.layer.borderWidth = 1.0
+        viewOptions.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        if (viewFilter == nil) {
+            // add view filter
+            viewFilter = FilterFlightView(frame: CGRect(x: 0, y: 0, width: viewFilterContainer.frame.size.width, height: viewFilterContainer.frame.size.height))
+            viewFilterContainer.addSubview(viewFilter)
+            viewFilter.delegate = self
+        }
     }
     
     func initMockData() {
@@ -41,6 +62,34 @@ class FlightResultVC: BaseViewController {
         self.arrayResult.append(flightInfo)
         self.arrayResult.append(flightInfo)
         self.arrayResult.append(flightInfo)
+    }
+    
+    @IBAction func back(_ sender: UIButton) {
+        self.navigationController!.popViewController(animated: true)
+    }
+    
+    @IBAction func showCheapestTrip(_ sender: UIButton) {
+        btnCheapest.alpha = 1.0
+        viewUnderCheapest.isHidden = false
+        
+        btnFastest.alpha = 0.6
+        viewUnderFastest.isHidden = true
+        // do something
+    }
+    
+    @IBAction func showFastestTrip(_ sender: UIButton) {
+        btnCheapest.alpha = 0.6
+        viewUnderCheapest.isHidden = true
+        
+        btnFastest.alpha = 1.0
+        viewUnderFastest.isHidden = false
+        // do something
+    }
+    
+    @IBAction func showFilter(_ sender: UIButton) {
+        viewFilterContainer.isHidden = false
+        viewOptions.isHidden = true
+        tableView.isHidden = true
     }
 }
 
@@ -71,7 +120,7 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == showDetailsIndex) {
-            return CGFloat(cellDefaultHeaderHeight + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: arrayResult[indexPath.section]))
+            return CGFloat(cellDefaultHeaderHeight + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: arrayResult[indexPath.section]))
         }
         return CGFloat(cellDefaultHeight)
     }
@@ -82,7 +131,7 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (section == 0) {
-            return 16
+            return 0
         }
         return 8
     }
@@ -111,4 +160,12 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         tableView.reloadData()
     }
     
+}
+
+extension FlightResultVC: FilterFlightViewDelegate {
+    func hideFilter() {
+        viewFilterContainer.isHidden = true
+        viewOptions.isHidden = false
+        tableView.isHidden = false
+    }
 }

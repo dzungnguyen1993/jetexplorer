@@ -44,6 +44,10 @@
 		B9150B971DD46AEA00F825DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9150B961DD46AEA00F825DC /* City.swift */; };
 		B917BC601DDC022200F2DA57 /* transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = B917BC5F1DDC022200F2DA57 /* transfer.png */; };
 		B92507B61DDF0F7D0036866D /* FlightInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92507B51DDF0F7D0036866D /* FlightInfo.swift */; };
+		B92F8BC91DE1FE0C0039C153 /* ApplyFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92F8BC71DE1FE0C0039C153 /* ApplyFilterView.swift */; };
+		B92F8BCA1DE1FE0C0039C153 /* ApplyFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92F8BC81DE1FE0C0039C153 /* ApplyFilterView.xib */; };
+		B92F8BCC1DE207EB0039C153 /* straight plane.png in Resources */ = {isa = PBXBuildFile; fileRef = B92F8BCB1DE207EB0039C153 /* straight plane.png */; };
+		B92F8BCE1DE20A810039C153 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = B92F8BCD1DE20A810039C153 /* filter.png */; };
 		B9418EE11DD99E570094CD12 /* H2Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9418EE01DD99E570094CD12 /* H2Label.swift */; };
 		B95281E61DD705610041C39B /* PassengerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95281E51DD705610041C39B /* PassengerInfo.swift */; };
 		B95281E91DD711880041C39B /* PickDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95281E71DD711880041C39B /* PickDateVC.swift */; };
@@ -63,10 +67,29 @@
 		B98EB1DD1DDACBA500783FB1 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EB1DC1DDACBA500783FB1 /* Utility.swift */; };
 		B98FB6D21DDB1BAA00E615F2 /* FlightResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FB6D01DDB1BAA00E615F2 /* FlightResultVC.swift */; };
 		B98FB6D31DDB1BAA00E615F2 /* FlightResultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98FB6D11DDB1BAA00E615F2 /* FlightResultVC.xib */; };
+		B99F82C01DE1C7FF00DA8B37 /* check round.png in Resources */ = {isa = PBXBuildFile; fileRef = B99F82BE1DE1C7FF00DA8B37 /* check round.png */; };
+		B99F82C11DE1C7FF00DA8B37 /* uncheck round.png in Resources */ = {isa = PBXBuildFile; fileRef = B99F82BF1DE1C7FF00DA8B37 /* uncheck round.png */; };
+		B99F82C41DE1C99100DA8B37 /* check rect.png in Resources */ = {isa = PBXBuildFile; fileRef = B99F82C21DE1C99100DA8B37 /* check rect.png */; };
+		B99F82C51DE1C99100DA8B37 /* uncheck rect.png in Resources */ = {isa = PBXBuildFile; fileRef = B99F82C31DE1C99100DA8B37 /* uncheck rect.png */; };
+		B99F82C81DE1D73300DA8B37 /* RoundCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F82C61DE1D73300DA8B37 /* RoundCheckCell.swift */; };
+		B99F82C91DE1D73300DA8B37 /* RoundCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99F82C71DE1D73300DA8B37 /* RoundCheckCell.xib */; };
+		B99F82CC1DE1DAC500DA8B37 /* StopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F82CA1DE1DAC500DA8B37 /* StopCell.swift */; };
+		B99F82CD1DE1DAC500DA8B37 /* StopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99F82CB1DE1DAC500DA8B37 /* StopCell.xib */; };
+		B99F82D01DE1DD2000DA8B37 /* StopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F82CE1DE1DD2000DA8B37 /* StopView.swift */; };
+		B99F82D11DE1DD2000DA8B37 /* StopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99F82CF1DE1DD2000DA8B37 /* StopView.xib */; };
+		B99F82D41DE1E82E00DA8B37 /* AirlinesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F82D21DE1E82E00DA8B37 /* AirlinesCell.swift */; };
+		B99F82D51DE1E82E00DA8B37 /* AirlinesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99F82D31DE1E82E00DA8B37 /* AirlinesCell.xib */; };
+		B99F82D81DE1E83C00DA8B37 /* AirlinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F82D61DE1E83C00DA8B37 /* AirlinesView.swift */; };
+		B99F82D91DE1E83C00DA8B37 /* AirlinesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99F82D71DE1E83C00DA8B37 /* AirlinesView.xib */; };
 		B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */; };
 		B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */; };
 		B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */; };
 		B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */; };
+		B9C197741DE1F4900084B8BF /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C197721DE1F4900084B8BF /* DestinationView.swift */; };
+		B9C197751DE1F4900084B8BF /* DestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C197731DE1F4900084B8BF /* DestinationView.xib */; };
+		B9CAE9CA1DE1973300A149BD /* FilterFlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CAE9C91DE1973300A149BD /* FilterFlightView.swift */; };
+		B9CAE9CC1DE1973F00A149BD /* FilterFlightView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9CAE9CB1DE1973F00A149BD /* FilterFlightView.xib */; };
+		B9CAE9CE1DE197D600A149BD /* letter-x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9CAE9CD1DE197D600A149BD /* letter-x.png */; };
 		B9D9045A1DD8C102008C8720 /* EPCalendarCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904531DD8C102008C8720 /* EPCalendarCell1.swift */; };
 		B9D9045B1DD8C102008C8720 /* EPCalendarCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D904541DD8C102008C8720 /* EPCalendarCell1.xib */; };
 		B9D9045C1DD8C103008C8720 /* EPCalendarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D904551DD8C102008C8720 /* EPCalendarConstants.swift */; };
@@ -186,6 +209,10 @@
 		B9150B961DD46AEA00F825DC /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		B917BC5F1DDC022200F2DA57 /* transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer.png; sourceTree = "<group>"; };
 		B92507B51DDF0F7D0036866D /* FlightInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInfo.swift; sourceTree = "<group>"; };
+		B92F8BC71DE1FE0C0039C153 /* ApplyFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyFilterView.swift; sourceTree = "<group>"; };
+		B92F8BC81DE1FE0C0039C153 /* ApplyFilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyFilterView.xib; sourceTree = "<group>"; };
+		B92F8BCB1DE207EB0039C153 /* straight plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "straight plane.png"; sourceTree = "<group>"; };
+		B92F8BCD1DE20A810039C153 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
 		B9418EE01DD99E570094CD12 /* H2Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H2Label.swift; sourceTree = "<group>"; };
 		B95281E51DD705610041C39B /* PassengerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerInfo.swift; sourceTree = "<group>"; };
 		B95281E71DD711880041C39B /* PickDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickDateVC.swift; sourceTree = "<group>"; };
@@ -205,10 +232,29 @@
 		B98EB1DC1DDACBA500783FB1 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B98FB6D01DDB1BAA00E615F2 /* FlightResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightResultVC.swift; sourceTree = "<group>"; };
 		B98FB6D11DDB1BAA00E615F2 /* FlightResultVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightResultVC.xib; sourceTree = "<group>"; };
+		B99F82BE1DE1C7FF00DA8B37 /* check round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check round.png"; sourceTree = "<group>"; };
+		B99F82BF1DE1C7FF00DA8B37 /* uncheck round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uncheck round.png"; sourceTree = "<group>"; };
+		B99F82C21DE1C99100DA8B37 /* check rect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check rect.png"; sourceTree = "<group>"; };
+		B99F82C31DE1C99100DA8B37 /* uncheck rect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uncheck rect.png"; sourceTree = "<group>"; };
+		B99F82C61DE1D73300DA8B37 /* RoundCheckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCheckCell.swift; sourceTree = "<group>"; };
+		B99F82C71DE1D73300DA8B37 /* RoundCheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundCheckCell.xib; sourceTree = "<group>"; };
+		B99F82CA1DE1DAC500DA8B37 /* StopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopCell.swift; sourceTree = "<group>"; };
+		B99F82CB1DE1DAC500DA8B37 /* StopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopCell.xib; sourceTree = "<group>"; };
+		B99F82CE1DE1DD2000DA8B37 /* StopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopView.swift; sourceTree = "<group>"; };
+		B99F82CF1DE1DD2000DA8B37 /* StopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopView.xib; sourceTree = "<group>"; };
+		B99F82D21DE1E82E00DA8B37 /* AirlinesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirlinesCell.swift; sourceTree = "<group>"; };
+		B99F82D31DE1E82E00DA8B37 /* AirlinesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AirlinesCell.xib; sourceTree = "<group>"; };
+		B99F82D61DE1E83C00DA8B37 /* AirlinesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirlinesView.swift; sourceTree = "<group>"; };
+		B99F82D71DE1E83C00DA8B37 /* AirlinesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AirlinesView.xib; sourceTree = "<group>"; };
 		B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorStyleKit.swift; sourceTree = "<group>"; };
 		B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorView.swift; sourceTree = "<group>"; };
 		B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkErrorView.xib; sourceTree = "<group>"; };
 		B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
+		B9C197721DE1F4900084B8BF /* DestinationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
+		B9C197731DE1F4900084B8BF /* DestinationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationView.xib; sourceTree = "<group>"; };
+		B9CAE9C91DE1973300A149BD /* FilterFlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterFlightView.swift; sourceTree = "<group>"; };
+		B9CAE9CB1DE1973F00A149BD /* FilterFlightView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterFlightView.xib; sourceTree = "<group>"; };
+		B9CAE9CD1DE197D600A149BD /* letter-x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "letter-x.png"; sourceTree = "<group>"; };
 		B9D904531DD8C102008C8720 /* EPCalendarCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPCalendarCell1.swift; sourceTree = "<group>"; };
 		B9D904541DD8C102008C8720 /* EPCalendarCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPCalendarCell1.xib; sourceTree = "<group>"; };
 		B9D904551DD8C102008C8720 /* EPCalendarConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPCalendarConstants.swift; sourceTree = "<group>"; };
@@ -398,6 +444,7 @@
 		B96BAC591DD1B3A100AE79AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B9CAE9C81DE1972400A149BD /* Filter */,
 				B9EE7A6E1DDDECB700A82AEE /* SearchFlightResultCells */,
 				B9289B7A1DDC77DA008012E1 /* TableCells */,
 				284EC7871DDA1C91001D0892 /* LoginView.xib */,
@@ -422,6 +469,13 @@
 		B96BAC641DD1C4AA00AE79AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B92F8BCD1DE20A810039C153 /* filter.png */,
+				B92F8BCB1DE207EB0039C153 /* straight plane.png */,
+				B99F82C21DE1C99100DA8B37 /* check rect.png */,
+				B99F82C31DE1C99100DA8B37 /* uncheck rect.png */,
+				B99F82BE1DE1C7FF00DA8B37 /* check round.png */,
+				B99F82BF1DE1C7FF00DA8B37 /* uncheck round.png */,
+				B9CAE9CD1DE197D600A149BD /* letter-x.png */,
 				28BAD0031DE0DF000008032D /* profile.png */,
 				B9EE7A851DDE1F1900A82AEE /* red clock.png */,
 				B9EE7A7B1DDDEF4400A82AEE /* black-plane.png */,
@@ -457,6 +511,29 @@
 				B98FB6D11DDB1BAA00E615F2 /* FlightResultVC.xib */,
 			);
 			name = "Flight VCs";
+			sourceTree = "<group>";
+		};
+		B9CAE9C81DE1972400A149BD /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				B9CAE9C91DE1973300A149BD /* FilterFlightView.swift */,
+				B9CAE9CB1DE1973F00A149BD /* FilterFlightView.xib */,
+				B99F82C61DE1D73300DA8B37 /* RoundCheckCell.swift */,
+				B99F82C71DE1D73300DA8B37 /* RoundCheckCell.xib */,
+				B99F82CA1DE1DAC500DA8B37 /* StopCell.swift */,
+				B99F82CB1DE1DAC500DA8B37 /* StopCell.xib */,
+				B99F82CE1DE1DD2000DA8B37 /* StopView.swift */,
+				B99F82CF1DE1DD2000DA8B37 /* StopView.xib */,
+				B99F82D21DE1E82E00DA8B37 /* AirlinesCell.swift */,
+				B99F82D31DE1E82E00DA8B37 /* AirlinesCell.xib */,
+				B99F82D61DE1E83C00DA8B37 /* AirlinesView.swift */,
+				B99F82D71DE1E83C00DA8B37 /* AirlinesView.xib */,
+				B9C197721DE1F4900084B8BF /* DestinationView.swift */,
+				B9C197731DE1F4900084B8BF /* DestinationView.xib */,
+				B92F8BC71DE1FE0C0039C153 /* ApplyFilterView.swift */,
+				B92F8BC81DE1FE0C0039C153 /* ApplyFilterView.xib */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		B9D904361DD8BBB1008C8720 /* EPCalendarPicker */ = {
@@ -702,6 +779,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F445F41DD4D6DF00250D6C /* Gotham-XLightIta.otf in Resources */,
+				B99F82D91DE1E83C00DA8B37 /* AirlinesView.xib in Resources */,
 				B9F445F11DD4D6DF00250D6C /* Gotham-Ultra.otf in Resources */,
 				B9EE7A741DDDECB700A82AEE /* FlightResultCell.xib in Resources */,
 				284EC7881DDA1C91001D0892 /* LoginView.xib in Resources */,
@@ -711,11 +789,14 @@
 				B9D9045E1DD8C103008C8720 /* EPCalendarHeaderView.xib in Resources */,
 				B9150B951DD4659C00F825DC /* search.png in Resources */,
 				B9EE7A7C1DDDEF4400A82AEE /* black-plane.png in Resources */,
+				B99F82C41DE1C99100DA8B37 /* check rect.png in Resources */,
+				B92F8BCA1DE1FE0C0039C153 /* ApplyFilterView.xib in Resources */,
 				B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */,
 				B9DD5B161DDCBDF800612C9B /* airasia.png in Resources */,
 				28BAD0041DE0DF000008032D /* profile.png in Resources */,
 				28BAD00B1DE0DFCA0008032D /* PickPassengerCell.xib in Resources */,
 				B9D9045B1DD8C102008C8720 /* EPCalendarCell1.xib in Resources */,
+				B9C197751DE1F4900084B8BF /* DestinationView.xib in Resources */,
 				B9F445EE1DD4D6DF00250D6C /* Gotham-MediumIta.otf in Resources */,
 				B9F445EC1DD4D6DF00250D6C /* Gotham-LightIta.otf in Resources */,
 				B9EE7A7A1DDDED8100A82AEE /* FlightResultDetailsView.xib in Resources */,
@@ -724,6 +805,7 @@
 				2891929E1DDDD358001C064B /* ChangePasswordVC.xib in Resources */,
 				B9F445E81DD4D6DF00250D6C /* Gotham-BoldIta.otf in Resources */,
 				B9F445ED1DD4D6DF00250D6C /* Gotham-Medium.otf in Resources */,
+				B92F8BCC1DE207EB0039C153 /* straight plane.png in Resources */,
 				286F62D31DDB446300B26733 /* UICheckBoxButton.xib in Resources */,
 				28BAD0061DE0DF090008032D /* JetExplorer.ttf in Resources */,
 				2891929A1DDDCD7D001C064B /* ForgotPasswordVC.xib in Resources */,
@@ -732,6 +814,8 @@
 				284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */,
 				B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */,
 				B9DD5B171DDCBDF800612C9B /* dot.png in Resources */,
+				B99F82D51DE1E82E00DA8B37 /* AirlinesCell.xib in Resources */,
+				B99F82C11DE1C7FF00DA8B37 /* uncheck round.png in Resources */,
 				B9F445E71DD4D6DF00250D6C /* Gotham-Bold.otf in Resources */,
 				B9F445E51DD4D6DF00250D6C /* Gotham-Black.otf in Resources */,
 				B9150B941DD4659C00F825DC /* cancel.png in Resources */,
@@ -739,6 +823,7 @@
 				B9F445F21DD4D6DF00250D6C /* Gotham-UltraIta.otf in Resources */,
 				B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */,
 				B9F445F01DD4D6DF00250D6C /* Gotham-ThinIta.otf in Resources */,
+				B9CAE9CC1DE1973F00A149BD /* FilterFlightView.xib in Resources */,
 				B917BC601DDC022200F2DA57 /* transfer.png in Resources */,
 				B9EE7A841DDE1D8D00A82AEE /* FlightStopView.xib in Resources */,
 				B90DDA481DD45F0800AEC1AE /* back.png in Resources */,
@@ -752,13 +837,20 @@
 				28BAD00C1DE0DFCA0008032D /* SearchCityCell.xib in Resources */,
 				B9F445E91DD4D6DF00250D6C /* Gotham-Book.otf in Resources */,
 				B963E72C1DD6D3A800A21548 /* substract.png in Resources */,
+				B9CAE9CE1DE197D600A149BD /* letter-x.png in Resources */,
+				B99F82C91DE1D73300DA8B37 /* RoundCheckCell.xib in Resources */,
 				B9F445E61DD4D6DF00250D6C /* Gotham-BlackIta.otf in Resources */,
 				B9D9A2C21DDB6747007CAB28 /* SearchResultDateView.xib in Resources */,
 				B9EE7A861DDE1F1900A82AEE /* red clock.png in Resources */,
+				B99F82CD1DE1DAC500DA8B37 /* StopCell.xib in Resources */,
+				B92F8BCE1DE20A810039C153 /* filter.png in Resources */,
+				B99F82C51DE1C99100DA8B37 /* uncheck rect.png in Resources */,
 				289192A21DDDEB8C001C064B /* EditProfileVC.xib in Resources */,
+				B99F82D11DE1DD2000DA8B37 /* StopView.xib in Resources */,
 				2872C5461DDF701300239CF2 /* SelectCurrencyVC.xib in Resources */,
 				B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */,
 				286F62C91DDB385200B26733 /* SignInVC.xib in Resources */,
+				B99F82C01DE1C7FF00DA8B37 /* check round.png in Resources */,
 				286F62CF1DDB425600B26733 /* SignUpVC.xib in Resources */,
 				B963E7241DD6BF7400A21548 /* PickPassengerVC.xib in Resources */,
 				B9F445EA1DD4D6DF00250D6C /* Gotham-BookIta.otf in Resources */,
@@ -843,7 +935,9 @@
 				B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */,
 				B963E7231DD6BF7400A21548 /* PickPassengerVC.swift in Sources */,
 				B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */,
+				B99F82CC1DE1DAC500DA8B37 /* StopCell.swift in Sources */,
 				B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */,
+				B9CAE9CA1DE1973300A149BD /* FilterFlightView.swift in Sources */,
 				B9E4453F1DD62FEB002946A0 /* PickInfoView.swift in Sources */,
 				B9EE7A731DDDECB700A82AEE /* FlightResultCell.swift in Sources */,
 				B9F445F61DD4DA1B00250D6C /* GothamFontName.swift in Sources */,
@@ -852,6 +946,7 @@
 				289192A41DDDF3C2001C064B /* EditProfileVC.swift in Sources */,
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
 				B9EE7A781DDDED7000A82AEE /* FlightResultDetailsView.swift in Sources */,
+				B9C197741DE1F4900084B8BF /* DestinationView.swift in Sources */,
 				B9F445F81DD4DA9700250D6C /* Extentions.swift in Sources */,
 				286F62CE1DDB425600B26733 /* SignUpVC.swift in Sources */,
 				B9D904621DD8C14E008C8720 /* MediumParagraphLabel.swift in Sources */,
@@ -868,18 +963,22 @@
 				B9F446031DD4E19A00250D6C /* GothamBook15Label.swift in Sources */,
 				B9D904661DD8C3F3008C8720 /* EPExtensions.swift in Sources */,
 				B95281E61DD705610041C39B /* PassengerInfo.swift in Sources */,
+				B99F82D81DE1E83C00DA8B37 /* AirlinesView.swift in Sources */,
 				B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */,
 				B956E2371DE0C20E000A86A0 /* FlightCellUtils.swift in Sources */,
 				28BAD00D1DE0DFCA0008032D /* PickPassengerCell.swift in Sources */,
+				B99F82C81DE1D73300DA8B37 /* RoundCheckCell.swift in Sources */,
 				B9F445FD1DD4E16B00250D6C /* GothamBold17Label.swift in Sources */,
 				B98B6B6E1DD5B5ED0094FC46 /* SmallParagraphButton.swift in Sources */,
 				286F62C81DDB385200B26733 /* SignInVCViewController.swift in Sources */,
 				B9F445FF1DD4E17800250D6C /* GothamBold15Label.swift in Sources */,
+				B99F82D41DE1E82E00DA8B37 /* AirlinesCell.swift in Sources */,
 				B9EE7A7E1DDE1CD700A82AEE /* FlightStopView.swift in Sources */,
 				B9F445FB1DD4E11B00250D6C /* GothamBold24Label.swift in Sources */,
 				B95281E91DD711880041C39B /* PickDateVC.swift in Sources */,
 				B9E4FC681DD18BAB000468EC /* AppDelegate.swift in Sources */,
 				28AD38EE1DD59F780027892C /* ProfileVC.swift in Sources */,
+				B99F82D01DE1DD2000DA8B37 /* StopView.swift in Sources */,
 				2872C5451DDF701300239CF2 /* SelectCurrencyVC.swift in Sources */,
 				B9D9045A1DD8C102008C8720 /* EPCalendarCell1.swift in Sources */,
 				B9418EE11DD99E570094CD12 /* H2Label.swift in Sources */,
@@ -889,6 +988,7 @@
 				B956E2391DE0C715000A86A0 /* FlightTransitView.swift in Sources */,
 				28BAD00E1DE0DFCA0008032D /* SearchCityCell.swift in Sources */,
 				B9F446011DD4E18D00250D6C /* GothamBook17Label.swift in Sources */,
+				B92F8BC91DE1FE0C0039C153 /* ApplyFilterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

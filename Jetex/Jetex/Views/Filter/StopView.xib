@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Bold.otf">
+            <string>Gotham-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="235" id="KGk-i7-Jjw" customClass="StopView" customModule="Jetex" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="341" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="341" height="179.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stops" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIA-jI-QOZ">
+                        <rect key="frame" x="0.0" y="16" width="43.5" height="15"/>
+                        <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
+                        <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hd1-PA-7E2">
+                        <rect key="frame" x="0.0" y="47" width="341" height="132"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="132" id="mng-xd-lnQ"/>
+                        </constraints>
+                    </tableView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="biQ-6Z-HuG">
+                        <rect key="frame" x="0.0" y="178.5" width="341" height="1"/>
+                        <color key="backgroundColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="SHC-zc-wtY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Hd1-PA-7E2" firstAttribute="top" secondItem="xIA-jI-QOZ" secondAttribute="bottom" constant="16" id="DJ7-V2-nDF"/>
+                    <constraint firstAttribute="trailing" secondItem="biQ-6Z-HuG" secondAttribute="trailing" id="DgC-Wx-hf6"/>
+                    <constraint firstItem="xIA-jI-QOZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="LNY-ka-UZH"/>
+                    <constraint firstItem="xIA-jI-QOZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="OnB-7d-8TH"/>
+                    <constraint firstItem="Hd1-PA-7E2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Qq8-LR-dr6"/>
+                    <constraint firstAttribute="trailing" secondItem="Hd1-PA-7E2" secondAttribute="trailing" id="jPM-HO-gyZ"/>
+                    <constraint firstAttribute="bottom" secondItem="biQ-6Z-HuG" secondAttribute="bottom" id="nxn-mF-FkK"/>
+                    <constraint firstItem="biQ-6Z-HuG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zmv-jZ-5lh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="tableView" destination="Hd1-PA-7E2" id="6R4-0t-evf"/>
+            </connections>
+            <point key="canvasLocation" x="31.5" y="146"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="StopCell" customModule="Jetex" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Non-stop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67C-Bs-2kO">
+                        <rect key="frame" x="41" y="14.5" width="70" height="15"/>
+                        <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
+                        <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck round.png" translatesAutoresizingMaskIntoConstraints="NO" id="yV1-4G-sfl">
+                        <rect key="frame" x="0.0" y="9.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="yV1-4G-sfl" secondAttribute="height" multiplier="1:1" id="Ai8-oF-kBn"/>
+                            <constraint firstAttribute="width" constant="25" id="mZv-hd-7x1"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yV1-4G-sfl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Dux-gX-ZBr"/>
+                    <constraint firstItem="67C-Bs-2kO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Rac-9C-yDM"/>
+                    <constraint firstItem="yV1-4G-sfl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="X39-xp-lQf"/>
+                    <constraint firstItem="67C-Bs-2kO" firstAttribute="leading" secondItem="yV1-4G-sfl" secondAttribute="trailing" constant="16" id="cXe-VV-8Av"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btnCheck" destination="yV1-4G-sfl" id="20A-gU-Wtp"/>
+                <outlet property="lbTitle" destination="67C-Bs-2kO" id="m8U-3m-a2A"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="uncheck round.png" width="101" height="101"/>
+    </resources>
+</document>
