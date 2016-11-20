@@ -39,9 +39,11 @@ extension UIImage {
         self.init(cgImage: img!.cgImage!)
     }
     
-    convenience init(fromHex: UnsafePointer<Int8>) {
+    convenience init(fromHex: UnsafePointer<Int8>, withColor: UIColor = .darkGray) {
         let textlabel = UILabel(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
         textlabel.font = UIFont(name: "JetExplorer", size: 36.0)
+        textlabel.textColor = withColor
+        textlabel.adjustsFontSizeToFitWidth = true
         
         textlabel.text = "\(NSString.init(utf8String: fromHex)!)"
         

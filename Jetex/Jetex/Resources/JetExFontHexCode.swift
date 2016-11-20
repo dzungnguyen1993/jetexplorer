@@ -9,7 +9,18 @@
 import Foundation
 
 enum JetExFontHexCode : String{
-    case userCircle = "\u{e942}"
-    case plane = "\u{e921}"
-    case history = "\u{e916}"
+    case profileEmpty = "\u{e942}"
+    case profileFulfill = "\u{e941}"
+    
+    case planeEmpty = "\u{e921}"
+    case planeFulfill = "\u{e91e}"
+    
+    case historyEmpty = "\u{e916}"
+    case historyFulfill = "\u{e92d}"
+    
+    case exchange = "\u{e913}"
+    case oneWay = "\u{e917}"
+    
+    case bedEmpty = "\u{e905}"
+    case bedFulfill = "\u{e904}"
 }

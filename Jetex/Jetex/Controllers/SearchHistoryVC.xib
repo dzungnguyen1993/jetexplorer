@@ -14,7 +14,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchHistoryVC" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="Nwo-j4-Ati" id="eIO-rX-Sz9"/>
+                <outlet property="historyTypeSegmentControl" destination="qks-Iz-ySx" id="OFb-Gm-efW"/>
                 <outlet property="networkErrorView" destination="suw-KI-rys" id="VPf-ZC-wUc"/>
+                <outlet property="resultTableView" destination="igg-dq-Qg4" id="iSs-Ub-JJy"/>
+                <outlet property="signInView" destination="YcB-VZ-Fhx" id="CZX-Rt-uUX"/>
+                <outlet property="signInViewHeightConstraint" destination="1pz-z3-O9M" id="8W3-tT-5YR"/>
                 <outlet property="view" destination="I9Z-S0-9kI" id="iQs-hA-LI1"/>
             </connections>
         </placeholder>
@@ -58,6 +62,9 @@
                                         <segment title="Hotels"/>
                                     </segments>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="historyTypesSegmentValueChanged:" destination="-1" eventType="valueChanged" id="evr-SL-90N"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,6 +90,9 @@
                                     <state key="normal" title="SIGN IN">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="signInButtonPressed:" destination="-1" eventType="touchUpInside" id="YZC-JM-sdB"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -95,16 +105,27 @@
                                 <constraint firstItem="SVZ-0y-rXD" firstAttribute="centerX" secondItem="YcB-VZ-Fhx" secondAttribute="centerX" id="yL6-LH-wnz"/>
                             </constraints>
                         </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="igg-dq-Qg4">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="f2z-gB-ADb"/>
+                                <outlet property="delegate" destination="-1" id="7w8-r2-CcK"/>
+                            </connections>
+                        </tableView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="mzB-DS-s2B" firstAttribute="leading" secondItem="Nwo-j4-Ati" secondAttribute="leading" id="4Kk-4d-eiz"/>
+                        <constraint firstItem="igg-dq-Qg4" firstAttribute="leading" secondItem="Nwo-j4-Ati" secondAttribute="leading" id="4hi-A8-f9h"/>
                         <constraint firstItem="5Ka-Sm-lAd" firstAttribute="height" secondItem="mzB-DS-s2B" secondAttribute="height" id="CXt-ad-Gei"/>
                         <constraint firstItem="5Ka-Sm-lAd" firstAttribute="top" secondItem="mzB-DS-s2B" secondAttribute="bottom" id="Opn-gN-N2p"/>
+                        <constraint firstAttribute="trailing" secondItem="igg-dq-Qg4" secondAttribute="trailing" id="RTX-D2-Ln7"/>
                         <constraint firstItem="mzB-DS-s2B" firstAttribute="top" secondItem="Nwo-j4-Ati" secondAttribute="top" id="SlY-F1-TOe"/>
+                        <constraint firstItem="igg-dq-Qg4" firstAttribute="top" secondItem="YcB-VZ-Fhx" secondAttribute="bottom" id="U7d-a3-WCM"/>
                         <constraint firstAttribute="trailing" secondItem="mzB-DS-s2B" secondAttribute="trailing" id="YMe-q0-tQT"/>
                         <constraint firstAttribute="trailing" secondItem="YcB-VZ-Fhx" secondAttribute="trailing" id="acx-y3-dS7"/>
                         <constraint firstAttribute="trailing" secondItem="5Ka-Sm-lAd" secondAttribute="trailing" id="gxI-uU-XB3"/>
                         <constraint firstItem="5Ka-Sm-lAd" firstAttribute="leading" secondItem="Nwo-j4-Ati" secondAttribute="leading" id="jnr-p9-Tq5"/>
+                        <constraint firstAttribute="bottom" secondItem="igg-dq-Qg4" secondAttribute="bottom" id="sC6-8E-2sB"/>
                         <constraint firstItem="YcB-VZ-Fhx" firstAttribute="top" secondItem="5Ka-Sm-lAd" secondAttribute="bottom" id="seX-kK-FzA"/>
                         <constraint firstItem="YcB-VZ-Fhx" firstAttribute="leading" secondItem="Nwo-j4-Ati" secondAttribute="leading" id="yWQ-l2-kwB"/>
                     </constraints>
@@ -113,7 +134,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="s0v-ef-bqa" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" id="5QE-Hq-yyJ"/>
-                <constraint firstAttribute="bottom" secondItem="Nwo-j4-Ati" secondAttribute="bottom" id="DHi-8e-H1F"/>
+                <constraint firstAttribute="bottom" secondItem="Nwo-j4-Ati" secondAttribute="bottom" constant="49" id="DHi-8e-H1F"/>
                 <constraint firstItem="Nwo-j4-Ati" firstAttribute="top" secondItem="s0v-ef-bqa" secondAttribute="bottom" constant="1" id="Knz-av-7YN"/>
                 <constraint firstAttribute="trailing" secondItem="s0v-ef-bqa" secondAttribute="trailing" id="LkC-Ny-NSN"/>
                 <constraint firstItem="suw-KI-rys" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="22" id="Og0-8h-g3S"/>

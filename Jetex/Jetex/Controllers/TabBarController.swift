@@ -28,7 +28,9 @@ class TabBarController: UITabBarController {
         nav.setNavigationBarHidden(true, animated: true)
         
         viewControllers?.append(nav)
-        nav.tabBarItem = UITabBarItem(title: "Flights", image: UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.plane.rawValue), tag: 1)
+        nav.tabBarItem = UITabBarItem(title: "Flights", image: UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.planeEmpty.rawValue), tag: 1)
+        
+        nav.tabBarItem.selectedImage = UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.planeFulfill.rawValue)
         
         nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x706F73), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .normal)
         
@@ -42,7 +44,9 @@ class TabBarController: UITabBarController {
         nav.setNavigationBarHidden(true, animated: true)
         
         viewControllers?.append(nav)
-        nav.tabBarItem = UITabBarItem(title: "Searches", image: UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.history.rawValue), tag: 2)
+        nav.tabBarItem = UITabBarItem(title: "Searches", image: UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.historyEmpty.rawValue), tag: 2)
+        
+        nav.tabBarItem.selectedImage = UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.historyFulfill.rawValue)
         
         nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x706F73), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .normal)
         
@@ -57,7 +61,9 @@ class TabBarController: UITabBarController {
         nav.setNavigationBarHidden(true, animated: true)
         
         viewControllers?.append(nav)
-        nav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.userCircle.rawValue), tag: 2)
+        nav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.profileEmpty.rawValue), tag: 2)
+        
+        nav.tabBarItem.selectedImage = UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.profileFulfill.rawValue)
         
         nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x706F73), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .normal)
         
