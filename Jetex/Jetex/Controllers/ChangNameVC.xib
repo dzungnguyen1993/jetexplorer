@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -29,14 +32,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOj-R4-F5Y">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                     <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEW-ri-QXp" userLabel="Network Error View">
+                    <rect key="frame" x="0.0" y="21" width="375" height="646"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1Q-wW-KMJ" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="21" width="375" height="646"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUq-Ku-qvS">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="Hci-Du-YKe"/>
                             </constraints>
@@ -57,6 +64,7 @@
                             </items>
                         </navigationBar>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDR-Qd-Lw5">
+                            <rect key="frame" x="24" y="266" width="327" height="44"/>
                             <color key="backgroundColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="O75-bM-2Ik"/>
@@ -70,20 +78,23 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pG-aF-0l9">
+                            <rect key="frame" x="24" y="76" width="327" height="15"/>
                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkM-Ql-x0X">
+                            <rect key="frame" x="24" y="167" width="327" height="15"/>
                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your first name" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="fvx-eG-bam" customClass="UIPaddingTextField" customModule="Jetex" customModuleProvider="target">
+                            <rect key="frame" x="24" y="99" width="327" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="nIb-vs-6di"/>
                             </constraints>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                             <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                             <userDefinedRuntimeAttributes>
@@ -96,10 +107,11 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your last name" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="S7K-V2-050" customClass="UIPaddingTextField" customModule="Jetex" customModuleProvider="target">
+                            <rect key="frame" x="24" y="190" width="327" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="tpC-HS-CHj"/>
                             </constraints>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                             <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                             <userDefinedRuntimeAttributes>
@@ -141,11 +153,11 @@
                 <constraint firstItem="HOj-R4-F5Y" firstAttribute="top" secondItem="cZA-cP-GJU" secondAttribute="top" id="0bp-YF-Qt8"/>
                 <constraint firstItem="HOj-R4-F5Y" firstAttribute="leading" secondItem="cZA-cP-GJU" secondAttribute="leading" id="1p0-gW-rvx"/>
                 <constraint firstItem="NEW-ri-QXp" firstAttribute="leading" secondItem="cZA-cP-GJU" secondAttribute="leading" id="5sW-nI-06l"/>
-                <constraint firstItem="o1Q-wW-KMJ" firstAttribute="top" secondItem="cZA-cP-GJU" secondAttribute="top" constant="22" id="6OL-sP-J5O"/>
+                <constraint firstItem="o1Q-wW-KMJ" firstAttribute="top" secondItem="cZA-cP-GJU" secondAttribute="top" constant="21" id="6OL-sP-J5O"/>
                 <constraint firstAttribute="bottom" secondItem="o1Q-wW-KMJ" secondAttribute="bottom" id="9Y9-UB-AMK"/>
-                <constraint firstItem="o1Q-wW-KMJ" firstAttribute="top" secondItem="HOj-R4-F5Y" secondAttribute="bottom" constant="1" id="C1h-7M-wqx"/>
+                <constraint firstItem="o1Q-wW-KMJ" firstAttribute="top" secondItem="HOj-R4-F5Y" secondAttribute="bottom" id="C1h-7M-wqx"/>
                 <constraint firstAttribute="trailing" secondItem="NEW-ri-QXp" secondAttribute="trailing" id="JZW-uz-UPy"/>
-                <constraint firstItem="NEW-ri-QXp" firstAttribute="top" secondItem="cZA-cP-GJU" secondAttribute="top" constant="22" id="MpN-fg-oDM"/>
+                <constraint firstItem="NEW-ri-QXp" firstAttribute="top" secondItem="cZA-cP-GJU" secondAttribute="top" constant="21" id="MpN-fg-oDM"/>
                 <constraint firstAttribute="trailing" secondItem="o1Q-wW-KMJ" secondAttribute="trailing" id="O3h-wq-HAb"/>
                 <constraint firstAttribute="bottom" secondItem="NEW-ri-QXp" secondAttribute="bottom" id="ljs-E4-sHf"/>
                 <constraint firstItem="o1Q-wW-KMJ" firstAttribute="leading" secondItem="cZA-cP-GJU" secondAttribute="leading" id="x1E-2q-ufZ"/>

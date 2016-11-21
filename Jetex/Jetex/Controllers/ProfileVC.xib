@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,19 +25,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SV7-ri-Yfz">
-                    <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                    <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28T-yj-icC" userLabel="Network Error View">
+                    <rect key="frame" x="0.0" y="22" width="375" height="645"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSc-Zr-oFo" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="22" width="375" height="645"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nh-0c-1Hy">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="aXE-Ik-EiN"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="barTintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textAttributes key="titleTextAttributes">
                                 <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,12 +51,14 @@
                             </items>
                         </navigationBar>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5p-Le-zh9" customClass="LoginView" customModule="Jetex" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="44" width="375" height="320"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="320" id="JpW-5M-Dok"/>
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="nNA-Hm-3e5" userLabel="App Settings Table View">
+                            <rect key="frame" x="0.0" y="364" width="375" height="281"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         </tableView>
                     </subviews>
@@ -71,15 +80,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="TSc-Zr-oFo" firstAttribute="top" secondItem="EDL-MU-QMD" secondAttribute="top" constant="22" id="18z-iu-pSB"/>
+                <constraint firstItem="TSc-Zr-oFo" firstAttribute="top" secondItem="EDL-MU-QMD" secondAttribute="top" constant="21" id="18z-iu-pSB"/>
                 <constraint firstItem="SV7-ri-Yfz" firstAttribute="leading" secondItem="EDL-MU-QMD" secondAttribute="leading" id="3PE-FB-dsc"/>
                 <constraint firstAttribute="bottom" secondItem="TSc-Zr-oFo" secondAttribute="bottom" id="3fc-zr-ALv"/>
                 <constraint firstItem="SV7-ri-Yfz" firstAttribute="top" secondItem="EDL-MU-QMD" secondAttribute="top" id="6SY-4K-fQN"/>
                 <constraint firstAttribute="trailing" secondItem="TSc-Zr-oFo" secondAttribute="trailing" id="9Zo-cY-gpE"/>
                 <constraint firstAttribute="bottom" secondItem="28T-yj-icC" secondAttribute="bottom" id="AN8-9G-jRc"/>
                 <constraint firstAttribute="trailing" secondItem="28T-yj-icC" secondAttribute="trailing" id="J13-On-DHQ"/>
-                <constraint firstItem="TSc-Zr-oFo" firstAttribute="top" secondItem="SV7-ri-Yfz" secondAttribute="bottom" constant="1" id="KHf-tk-wAh"/>
-                <constraint firstItem="28T-yj-icC" firstAttribute="top" secondItem="EDL-MU-QMD" secondAttribute="top" constant="22" id="Uo1-Rq-Bzg"/>
+                <constraint firstItem="TSc-Zr-oFo" firstAttribute="top" secondItem="SV7-ri-Yfz" secondAttribute="bottom" id="KHf-tk-wAh"/>
+                <constraint firstItem="28T-yj-icC" firstAttribute="top" secondItem="EDL-MU-QMD" secondAttribute="top" constant="21" id="Uo1-Rq-Bzg"/>
                 <constraint firstAttribute="trailing" secondItem="SV7-ri-Yfz" secondAttribute="trailing" id="oOe-Cl-nLe"/>
                 <constraint firstItem="TSc-Zr-oFo" firstAttribute="leading" secondItem="EDL-MU-QMD" secondAttribute="leading" id="tIv-ss-81Y"/>
                 <constraint firstItem="28T-yj-icC" firstAttribute="leading" secondItem="EDL-MU-QMD" secondAttribute="leading" id="ywv-KQ-Lfd"/>

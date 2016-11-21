@@ -48,6 +48,7 @@ class HistoryCell: UITableViewCell {
         }
         
         // TODO : show start - end day
+        timeLabel.resizeToFitText()
         
         // TODO: show options
         
@@ -58,13 +59,16 @@ class HistoryCell: UITableViewCell {
         historyTypeImageView.image = UIImage(fromHex: JetExFontHexCode.planeEmpty.rawValue, withColor: UIColor(hex: 0x674290))
         
         fromLabel.text = data.from.cityName
+        fromLabel.resizeToFitText()
         toLabel.text = data.to.cityName
+        toLabel.resizeToFitText()
         
         if data.isRoundTrip != nil && data.isRoundTrip == true {
             exchangeLabel.text = "\(NSString.init(utf8String: JetExFontHexCode.exchange.rawValue)!)"
         } else {
             exchangeLabel.text = "\(NSString.init(utf8String: JetExFontHexCode.oneWay.rawValue)!)"
         }
+        exchangeLabel.resizeToFitText()
     }
     
     func fillDataForHotel(data: HotelHistorySearch) {

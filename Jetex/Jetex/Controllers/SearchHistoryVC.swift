@@ -47,6 +47,10 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        // edit segment control font
+        let attributes = [NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!]
+        self.historyTypeSegmentControl.setTitleTextAttributes(attributes, for: .normal)
+        
         if ProfileVC.isUserLogined {
             signInViewHeightConstraint.constant = 0.0
         } else {

@@ -55,6 +55,13 @@ extension UIImage {
     }
 }
 
+extension UILabel {
+    func resizeToFitText() {
+        self.numberOfLines = 0
+        self.sizeToFit()
+    }
+}
+
 extension Date {
     func toMonthDay() -> String {
         let formatter = DateFormatter()

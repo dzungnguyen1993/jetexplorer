@@ -29,13 +29,15 @@ class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         
-        cell.textLabel?.attributedText = NSAttributedString(string: currencyList[indexPath.row].0, attributes: [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!])
-        
-        cell.detailTextLabel?.attributedText = NSAttributedString(string: currencyList[indexPath.row].1, attributes: [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!])
+        var attributes = [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!]
         
         if currencyList[indexPath.row].1 == selectedCurrency {
-            cell.accessoryType = .checkmark
+            attributes = [NSForegroundColorAttributeName : UIColor(hex: 0x674290), NSFontAttributeName: UIFont(name: GothamFontName.Bold.rawValue, size: 15)!]
         }
+        
+        cell.textLabel?.attributedText = NSAttributedString(string: currencyList[indexPath.row].0, attributes: attributes)
+        
+        cell.detailTextLabel?.attributedText = NSAttributedString(string: currencyList[indexPath.row].1, attributes:attributes)
         
         return cell
     }
