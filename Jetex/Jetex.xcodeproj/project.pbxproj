@@ -764,7 +764,7 @@
 				TargetAttributes = {
 					B9E4FC631DD18BAB000468EC = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = CB7BJM62E3;
+						DevelopmentTeam = 4N7S923G73;
 						ProvisioningStyle = Automatic;
 					};
 					B9E4FC771DD18BAB000468EC = {
@@ -1172,11 +1172,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CB7BJM62E3;
+				DEVELOPMENT_TEAM = 4N7S923G73;
 				INFOPLIST_FILE = Jetex/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.Jetex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.p5.ios.Jetex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1188,11 +1188,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CB7BJM62E3;
+				DEVELOPMENT_TEAM = 4N7S923G73;
 				INFOPLIST_FILE = Jetex/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dz.ios.Jetex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.p5.ios.Jetex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

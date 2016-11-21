@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Gotham-Book.otf">
             <string>Gotham-Book</string>
         </array>
+        <array key="JetExplorer.ttf">
+            <string>JetExplorer</string>
+        </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginView" customModule="Jetex" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginView" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="facebookLabel" destination="T8o-yM-S2X" id="yfL-zZ-4P3"/>
+                <outlet property="googleLabel" destination="3qQ-zu-mLr" id="tPf-Vq-3OJ"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNc-Fq-Rxm" userLabel="Account View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBJ-IJ-UH3">
+                            <rect key="frame" x="69" y="32" width="282" height="44"/>
                             <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="14g-uX-J6A"/>
@@ -33,6 +46,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gr-oB-ApT">
+                            <rect key="frame" x="69" y="84" width="282" height="44"/>
                             <color key="backgroundColor" red="0.86666666670000003" green="0.29411764709999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="Jlj-hu-FMN"/>
@@ -46,6 +60,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rx-JP-UNm">
+                            <rect key="frame" x="24" y="160" width="327" height="44"/>
                             <color key="backgroundColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="wph-dJ-xxm"/>
@@ -59,11 +74,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGX-mD-xAn" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
+                            <rect key="frame" x="180" y="220" width="16" height="15"/>
                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5x-Ol-EtZ">
+                            <rect key="frame" x="24" y="251" width="327" height="44"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="4ai-o0-oY7"/>
@@ -86,45 +103,49 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="T8o-yM-S2X">
+                            <rect key="frame" x="24" y="32" width="44" height="44"/>
+                            <color key="backgroundColor" red="0.22997209429740906" green="0.34899154305458069" blue="0.53576785326004028" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="WgV-hP-Yjd"/>
                                 <constraint firstAttribute="height" constant="44" id="xX1-Ve-ouY"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="JetExplorer" family="JetExplorer" pointSize="22"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="3qQ-zu-mLr">
+                            <rect key="frame" x="24" y="84" width="44" height="44"/>
+                            <color key="backgroundColor" red="0.86666666670000003" green="0.29411764709999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="cFz-c8-uu0"/>
                                 <constraint firstAttribute="height" constant="44" id="eJs-2m-lYV"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="JetExplorer" family="JetExplorer" pointSize="22"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="T8o-yM-S2X" firstAttribute="leading" secondItem="RNc-Fq-Rxm" secondAttribute="leading" constant="24" id="07a-tS-Ef7"/>
                         <constraint firstAttribute="trailing" secondItem="Z5x-Ol-EtZ" secondAttribute="trailing" constant="24" id="2VP-nC-M59"/>
                         <constraint firstItem="sGX-mD-xAn" firstAttribute="top" secondItem="3Rx-JP-UNm" secondAttribute="bottom" constant="16" id="789-mP-IeI"/>
-                        <constraint firstItem="T8o-yM-S2X" firstAttribute="leading" secondItem="JBJ-IJ-UH3" secondAttribute="leading" id="9Hp-bD-5yf"/>
                         <constraint firstItem="3qQ-zu-mLr" firstAttribute="bottom" secondItem="8gr-oB-ApT" secondAttribute="bottom" id="Ccf-Wk-wIb"/>
                         <constraint firstAttribute="trailing" secondItem="3Rx-JP-UNm" secondAttribute="trailing" constant="24" id="EhH-35-bkY"/>
                         <constraint firstItem="JBJ-IJ-UH3" firstAttribute="top" secondItem="RNc-Fq-Rxm" secondAttribute="top" constant="32" id="H7t-70-EBr"/>
-                        <constraint firstItem="3qQ-zu-mLr" firstAttribute="leading" secondItem="8gr-oB-ApT" secondAttribute="leading" id="RvS-Gt-v7x"/>
                         <constraint firstAttribute="trailing" secondItem="8gr-oB-ApT" secondAttribute="trailing" constant="24" id="Ssu-D8-lc9"/>
+                        <constraint firstItem="JBJ-IJ-UH3" firstAttribute="leading" secondItem="T8o-yM-S2X" secondAttribute="trailing" constant="1" id="UFi-uM-k22"/>
                         <constraint firstItem="sGX-mD-xAn" firstAttribute="centerX" secondItem="RNc-Fq-Rxm" secondAttribute="centerX" id="ak0-CC-Vs2"/>
                         <constraint firstItem="Z5x-Ol-EtZ" firstAttribute="leading" secondItem="RNc-Fq-Rxm" secondAttribute="leading" constant="24" id="bN4-8J-OHx"/>
+                        <constraint firstItem="3qQ-zu-mLr" firstAttribute="leading" secondItem="RNc-Fq-Rxm" secondAttribute="leading" constant="24" id="bUp-VQ-PUf"/>
                         <constraint firstItem="8gr-oB-ApT" firstAttribute="top" secondItem="JBJ-IJ-UH3" secondAttribute="bottom" constant="8" id="deU-xR-Th9"/>
                         <constraint firstAttribute="trailing" secondItem="JBJ-IJ-UH3" secondAttribute="trailing" constant="24" id="eNC-bq-uS3"/>
                         <constraint firstItem="T8o-yM-S2X" firstAttribute="top" secondItem="JBJ-IJ-UH3" secondAttribute="top" id="fG7-Sd-0GQ"/>
                         <constraint firstItem="3qQ-zu-mLr" firstAttribute="top" secondItem="8gr-oB-ApT" secondAttribute="top" id="gU5-b2-urP"/>
+                        <constraint firstItem="8gr-oB-ApT" firstAttribute="leading" secondItem="3qQ-zu-mLr" secondAttribute="trailing" constant="1" id="pea-YP-Sdh"/>
                         <constraint firstItem="T8o-yM-S2X" firstAttribute="bottom" secondItem="JBJ-IJ-UH3" secondAttribute="bottom" id="r7f-of-GkI"/>
                         <constraint firstItem="3Rx-JP-UNm" firstAttribute="leading" secondItem="RNc-Fq-Rxm" secondAttribute="leading" constant="24" id="v1w-UM-wYc"/>
                         <constraint firstItem="3Rx-JP-UNm" firstAttribute="top" secondItem="8gr-oB-ApT" secondAttribute="bottom" constant="32" id="xSy-MX-vb8"/>
-                        <constraint firstItem="8gr-oB-ApT" firstAttribute="leading" secondItem="RNc-Fq-Rxm" secondAttribute="leading" constant="24" id="xbw-3z-hKH"/>
-                        <constraint firstItem="JBJ-IJ-UH3" firstAttribute="leading" secondItem="RNc-Fq-Rxm" secondAttribute="leading" constant="24" id="xct-oc-1JW"/>
                         <constraint firstItem="Z5x-Ol-EtZ" firstAttribute="top" secondItem="sGX-mD-xAn" secondAttribute="bottom" constant="16" id="z8q-lF-CmY"/>
                     </constraints>
                 </view>

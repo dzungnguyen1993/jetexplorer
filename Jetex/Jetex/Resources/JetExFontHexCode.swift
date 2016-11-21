@@ -23,4 +23,7 @@ enum JetExFontHexCode : String{
     
     case bedEmpty = "\u{e905}"
     case bedFulfill = "\u{e904}"
+    
+    case facebookIcon = "\u{e940}"
+    case googleIcon = "\u{e932}"
 }

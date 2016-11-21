@@ -100,9 +100,9 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
         // mock up flights
         flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [2, 0, 1, 0, 0], departAt: Date().addingTimeInterval(-10000), returnAt: Date()))
         
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [1, 0, 1, 0, 0], departAt: Date().addingTimeInterval(-8000), returnAt: Date()))
+        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Bangkok", countryName: "Thailand"), isRoundTrip: true, passengers: [1, 0, 1, 0, 0], departAt: Date().addingTimeInterval(-8000), returnAt: Date()))
         
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [1, 1, 1, 0, 0], departAt: Date().addingTimeInterval(-6000), returnAt: Date()))
+        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Sysney", countryName: "Australia"), isRoundTrip: true, passengers: [1, 1, 1, 0, 0], departAt: Date().addingTimeInterval(-6000), returnAt: Date()))
         
         flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [1, 0, 0, 0, 0], departAt: Date().addingTimeInterval(-4000), returnAt: Date()))
         
@@ -171,4 +171,31 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
         return HistoryCell.CellHeight
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var selectedCell: HistorySearch!
+        
+        if filter == .All {
+            // all searches
+            selectedCell = allHistory[indexPath.row]
+        }
+        else if filter == .Flights {
+            // flights searches
+            selectedCell = flightHistory[indexPath.row]
+        }
+        else if filter == .Hotels {
+            // hotels searches
+            selectedCell = hotelHistory[indexPath.row]
+        }
+        else {
+            return
+        }
+        
+        // Configure the view for the selected state
+        if selectedCell.searchType == .Flight {
+            let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
+            _ = self.navigationController?.pushViewController(vc, animated: true)
+        } else if selectedCell.searchType == .Hotel {
+            
+        }
+    }
 }

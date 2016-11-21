@@ -12,6 +12,7 @@ class HistoryCell: UITableViewCell {
     
     static let CellHeight : CGFloat = 92.0
     
+    var data : HistorySearch!
     var searchedType : HistorySearchType!
     
     @IBOutlet weak var historyTypeImageView: UIImageView!
@@ -36,11 +37,10 @@ class HistoryCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-        
     }
     
     func fillData(data: HistorySearch) {
+        self.data = data
         if data.searchType == .Flight {
             self.fillDataForFlight(data: data as! FlightHistorySearch)
         } else if data.searchType == .Hotel {

@@ -77,4 +77,9 @@ class FlightResultCell: UITableViewCell {
         self.viewReturn.addSubview(viewReturnDetails)
         constraintReturnHeight.constant = CGFloat(height)
     }
+    
+    @IBAction func goToExpediaButtonPressed(_ sender: Any) {
+        let cellURL = "https://www.expedia.com/"
+        UIApplication.shared.open(URL(string: cellURL)!, options: [:], completionHandler: nil)
+    }
 }
