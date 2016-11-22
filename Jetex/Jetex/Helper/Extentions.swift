@@ -51,7 +51,14 @@ extension UIImage {
     }
     
     static func generateTabBarImageFromHex(fromHex: UnsafePointer<Int8>) -> UIImage {
-        return UIImage(fromHex: fromHex).resize(newSize: (width: 22, height: 22))
+        return UIImage(fromHex: fromHex).resize(newSize: (width: 24, height: 24))
+    }
+}
+
+extension UILabel {
+    func resizeToFitText() {
+        self.numberOfLines = 0
+        self.sizeToFit()
     }
 }
 

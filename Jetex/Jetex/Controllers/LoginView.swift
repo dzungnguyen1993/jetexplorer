@@ -14,6 +14,9 @@ class LoginView: UIView {
     
     var delegate: LoginViewDelegate!
     
+    @IBOutlet weak var facebookLabel: UILabel!
+    @IBOutlet weak var googleLabel: UILabel!
+    
     // MARK: - Init
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -31,6 +34,9 @@ class LoginView: UIView {
                                                               owner: self, options: nil)![0] as! UIView
         self.addSubview(view)
         view.frame = self.bounds
+        
+        facebookLabel.text = "\(NSString.init(utf8String: JetExFontHexCode.facebookIcon.rawValue)!)"
+        googleLabel.text = "\(NSString.init(utf8String: JetExFontHexCode.googleIcon.rawValue)!)"
     }
     
     // MARK: - Sign In

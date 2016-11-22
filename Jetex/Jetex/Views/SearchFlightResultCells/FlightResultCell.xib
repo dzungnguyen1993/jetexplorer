@@ -186,6 +186,9 @@
                                 <state key="normal" title="Go to Expedia.com">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="goToExpediaButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CFa-6U-SWt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

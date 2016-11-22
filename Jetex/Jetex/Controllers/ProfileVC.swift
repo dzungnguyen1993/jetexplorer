@@ -78,11 +78,13 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
     
     // MARK:- Log In Delegate
     func signInWithFacebook() {
-    
+        let cellURL = "https://www.facebook.com"
+        UIApplication.shared.open(URL(string: cellURL)!, options: [:], completionHandler: nil)
     }
 
     func signInWithGoogle() {
-    
+        let cellURL = "https://plus.google.com"
+        UIApplication.shared.open(URL(string: cellURL)!, options: [:], completionHandler: nil)
     }
     
     func signInWithEmail() {
@@ -186,7 +188,10 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             _ = self.navigationController?.pushViewController(vc, animated: true)
             break
         case 1:
-            print(ratingAndFeedback)
+            // TODO: update the appId here
+            let appId = 1159421121
+            let reviewURL = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=\(appId)&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
+            UIApplication.shared.open(URL(string: reviewURL)!, options: [:], completionHandler: nil)
             break
         default:
             break

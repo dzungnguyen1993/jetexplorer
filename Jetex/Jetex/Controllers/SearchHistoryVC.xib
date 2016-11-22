@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -28,14 +31,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0v-ef-bqa">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                     <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suw-KI-rys">
+                    <rect key="frame" x="0.0" y="21" width="375" height="646"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwo-j4-Ati">
+                    <rect key="frame" x="0.0" y="21" width="375" height="597"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-DS-s2B">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="qZN-V1-osF"/>
                             </constraints>
@@ -50,8 +57,10 @@
                             </items>
                         </navigationBar>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ka-Sm-lAd" userLabel="Segment Control View">
+                            <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qks-Iz-ySx">
+                                    <rect key="frame" x="58" y="7.5" width="259.5" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="KwZ-K8-55t"/>
                                         <constraint firstAttribute="width" constant="259.5" id="Tok-HE-4tb"/>
@@ -74,13 +83,16 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-VZ-Fhx" userLabel="Sign In View">
+                            <rect key="frame" x="0.0" y="88" width="375" height="120"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to create trips, save flights &amp; hotels, and access searches across devices" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xl-xA-3Vc">
+                                    <rect key="frame" x="16" y="16" width="343" height="30"/>
                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVZ-0y-rXD">
+                                    <rect key="frame" x="87.5" y="60" width="200" height="44"/>
                                     <color key="backgroundColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="200" id="hYI-f3-2WJ"/>
@@ -106,6 +118,7 @@
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="igg-dq-Qg4">
+                            <rect key="frame" x="0.0" y="208" width="375" height="389"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="f2z-gB-ADb"/>
@@ -135,14 +148,14 @@
             <constraints>
                 <constraint firstItem="s0v-ef-bqa" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" id="5QE-Hq-yyJ"/>
                 <constraint firstAttribute="bottom" secondItem="Nwo-j4-Ati" secondAttribute="bottom" constant="49" id="DHi-8e-H1F"/>
-                <constraint firstItem="Nwo-j4-Ati" firstAttribute="top" secondItem="s0v-ef-bqa" secondAttribute="bottom" constant="1" id="Knz-av-7YN"/>
+                <constraint firstItem="Nwo-j4-Ati" firstAttribute="top" secondItem="s0v-ef-bqa" secondAttribute="bottom" id="Knz-av-7YN"/>
                 <constraint firstAttribute="trailing" secondItem="s0v-ef-bqa" secondAttribute="trailing" id="LkC-Ny-NSN"/>
-                <constraint firstItem="suw-KI-rys" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="22" id="Og0-8h-g3S"/>
+                <constraint firstItem="suw-KI-rys" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="21" id="Og0-8h-g3S"/>
                 <constraint firstItem="s0v-ef-bqa" firstAttribute="leading" secondItem="I9Z-S0-9kI" secondAttribute="leading" id="UWH-N7-nPD"/>
                 <constraint firstAttribute="bottom" secondItem="suw-KI-rys" secondAttribute="bottom" id="gqk-d7-og1"/>
                 <constraint firstItem="Nwo-j4-Ati" firstAttribute="leading" secondItem="I9Z-S0-9kI" secondAttribute="leading" id="hUv-ea-Vss"/>
                 <constraint firstAttribute="trailing" secondItem="suw-KI-rys" secondAttribute="trailing" id="hty-y5-xjt"/>
-                <constraint firstItem="Nwo-j4-Ati" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="22" id="rXV-Vo-orH"/>
+                <constraint firstItem="Nwo-j4-Ati" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="21" id="rXV-Vo-orH"/>
                 <constraint firstAttribute="trailing" secondItem="Nwo-j4-Ati" secondAttribute="trailing" id="srW-i6-9P0"/>
                 <constraint firstItem="suw-KI-rys" firstAttribute="leading" secondItem="I9Z-S0-9kI" secondAttribute="leading" id="zen-qL-aiK"/>
             </constraints>

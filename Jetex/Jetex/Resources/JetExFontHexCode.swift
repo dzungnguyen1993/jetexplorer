@@ -37,4 +37,6 @@ enum JetExFontHexCode : String{
     case jetexSliders = "\u{e924}"
     case jetexCross = "\u{e912}"
     
+    case facebookIcon = "\u{e940}"
+    case googleIcon = "\u{e932}"
 }
