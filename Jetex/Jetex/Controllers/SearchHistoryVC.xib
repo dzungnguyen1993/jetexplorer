@@ -31,15 +31,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0v-ef-bqa">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
-                    <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                    <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suw-KI-rys">
-                    <rect key="frame" x="0.0" y="21" width="375" height="646"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwo-j4-Ati">
-                    <rect key="frame" x="0.0" y="21" width="375" height="597"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-DS-s2B">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -47,7 +47,7 @@
                                 <constraint firstAttribute="height" constant="44" id="qZN-V1-osF"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="barTintColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textAttributes key="titleTextAttributes">
                                 <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,7 +76,7 @@
                                     </connections>
                                 </segmentedControl>
                             </subviews>
-                            <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="qks-Iz-ySx" firstAttribute="centerX" secondItem="5Ka-Sm-lAd" secondAttribute="centerX" id="3jF-PA-eZA"/>
                                 <constraint firstItem="qks-Iz-ySx" firstAttribute="centerY" secondItem="5Ka-Sm-lAd" secondAttribute="centerY" id="UgH-tH-ila"/>
@@ -118,7 +118,7 @@
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="igg-dq-Qg4">
-                            <rect key="frame" x="0.0" y="208" width="375" height="389"/>
+                            <rect key="frame" x="0.0" y="208" width="375" height="390"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="f2z-gB-ADb"/>
@@ -150,12 +150,12 @@
                 <constraint firstAttribute="bottom" secondItem="Nwo-j4-Ati" secondAttribute="bottom" constant="49" id="DHi-8e-H1F"/>
                 <constraint firstItem="Nwo-j4-Ati" firstAttribute="top" secondItem="s0v-ef-bqa" secondAttribute="bottom" id="Knz-av-7YN"/>
                 <constraint firstAttribute="trailing" secondItem="s0v-ef-bqa" secondAttribute="trailing" id="LkC-Ny-NSN"/>
-                <constraint firstItem="suw-KI-rys" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="21" id="Og0-8h-g3S"/>
+                <constraint firstItem="suw-KI-rys" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="20" id="Og0-8h-g3S"/>
                 <constraint firstItem="s0v-ef-bqa" firstAttribute="leading" secondItem="I9Z-S0-9kI" secondAttribute="leading" id="UWH-N7-nPD"/>
                 <constraint firstAttribute="bottom" secondItem="suw-KI-rys" secondAttribute="bottom" id="gqk-d7-og1"/>
                 <constraint firstItem="Nwo-j4-Ati" firstAttribute="leading" secondItem="I9Z-S0-9kI" secondAttribute="leading" id="hUv-ea-Vss"/>
                 <constraint firstAttribute="trailing" secondItem="suw-KI-rys" secondAttribute="trailing" id="hty-y5-xjt"/>
-                <constraint firstItem="Nwo-j4-Ati" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="21" id="rXV-Vo-orH"/>
+                <constraint firstItem="Nwo-j4-Ati" firstAttribute="top" secondItem="I9Z-S0-9kI" secondAttribute="top" constant="20" id="rXV-Vo-orH"/>
                 <constraint firstAttribute="trailing" secondItem="Nwo-j4-Ati" secondAttribute="trailing" id="srW-i6-9P0"/>
                 <constraint firstItem="suw-KI-rys" firstAttribute="leading" secondItem="I9Z-S0-9kI" secondAttribute="leading" id="zen-qL-aiK"/>
             </constraints>

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,14 +22,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsU-Dh-JXM">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                     <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-di-rLJ" userLabel="Network Error View">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrP-qG-ATS" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbs-PJ-A05">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="hn3-W0-c91"/>
                             </constraints>
@@ -58,11 +65,11 @@
             <constraints>
                 <constraint firstItem="rsU-Dh-JXM" firstAttribute="leading" secondItem="NV0-yq-fMy" secondAttribute="leading" id="1GX-OG-Fyp"/>
                 <constraint firstAttribute="bottom" secondItem="QrP-qG-ATS" secondAttribute="bottom" id="20v-Te-S9d"/>
-                <constraint firstItem="QrP-qG-ATS" firstAttribute="top" secondItem="rsU-Dh-JXM" secondAttribute="bottom" constant="1" id="ISe-dK-jlq"/>
-                <constraint firstItem="QrP-qG-ATS" firstAttribute="top" secondItem="NV0-yq-fMy" secondAttribute="top" constant="22" id="TeJ-hx-dgO"/>
+                <constraint firstItem="QrP-qG-ATS" firstAttribute="top" secondItem="rsU-Dh-JXM" secondAttribute="bottom" id="ISe-dK-jlq"/>
+                <constraint firstItem="QrP-qG-ATS" firstAttribute="top" secondItem="NV0-yq-fMy" secondAttribute="top" constant="20" id="TeJ-hx-dgO"/>
                 <constraint firstItem="d3d-di-rLJ" firstAttribute="leading" secondItem="NV0-yq-fMy" secondAttribute="leading" id="UeC-jj-1LY"/>
                 <constraint firstAttribute="trailing" secondItem="d3d-di-rLJ" secondAttribute="trailing" id="ceh-JD-d4j"/>
-                <constraint firstItem="d3d-di-rLJ" firstAttribute="top" secondItem="NV0-yq-fMy" secondAttribute="top" constant="22" id="hEA-Wa-Pvm"/>
+                <constraint firstItem="d3d-di-rLJ" firstAttribute="top" secondItem="NV0-yq-fMy" secondAttribute="top" constant="20" id="hEA-Wa-Pvm"/>
                 <constraint firstAttribute="trailing" secondItem="rsU-Dh-JXM" secondAttribute="trailing" id="kqv-KR-x4S"/>
                 <constraint firstItem="QrP-qG-ATS" firstAttribute="leading" secondItem="NV0-yq-fMy" secondAttribute="leading" id="pKA-u3-noB"/>
                 <constraint firstAttribute="trailing" secondItem="QrP-qG-ATS" secondAttribute="trailing" id="wMv-gW-QVq"/>
