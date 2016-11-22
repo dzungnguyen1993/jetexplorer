@@ -20,7 +20,7 @@ class FilterFlightView: UIView {
     var stopViewHeight = 180
     var airlinesViewHeight = 280
     var destinationViewHeight = 182
-    var applyViewHeight = 44
+    var applyViewHeight = 60
     @IBOutlet weak var imgCancel: UIImageView!
     
     required init(coder aDecoder: NSCoder) {
