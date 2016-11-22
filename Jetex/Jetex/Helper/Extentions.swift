@@ -58,7 +58,7 @@ extension UIImage {
 extension Date {
     func toMonthDay() -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM d"
+        formatter.dateFormat = "MMM d"
         let timeString = formatter.string(from: self)
         
         return timeString

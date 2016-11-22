@@ -13,6 +13,7 @@ private let reuseIdentifier = "Cell"
 protocol EPCalendarPickDateDelegate: class {
     func didPickCheckinDate(date: Date)
     func didPickCheckoutDate(date: Date)
+    func pickCheckinDate()
 }
 
 public class EPCalendarPicker: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -264,10 +265,11 @@ public class EPCalendarPicker: UICollectionViewController, UICollectionViewDeleg
             if currentDate.compare(startDateCalendar) == .orderedAscending{
                 return false
             }
-            if currentDate.compare(checkOutDate) != .orderedDescending || self.type == .oneway{
-                return true
-            }
-            return false
+//            if currentDate.compare(checkOutDate) != .orderedDescending || self.type == .oneway{
+//                return true
+//            }
+//            return false
+            return true
         }
         if indicatorPosition == IndicatorPosition.checkOut{
             guard let cell = collectionView.cellForItem(at: indexPath) as? EPCalendarCell1 else {return false}
@@ -320,6 +322,11 @@ public class EPCalendarPicker: UICollectionViewController, UICollectionViewDeleg
             checkInDateComponents = cell.currentDateComponents
 //            let previousIndexpath = NSIndexPath(forItem: checkInIndexPath.item, inSection: checkInIndexPath.section)
 //            collectionView.reloadItemsAtIndexPaths([previousIndexpath, indexPath])
+            
+            // checkOutDate = checkInDate + 1
+            checkOutDate = Calendar.current.date(byAdding: Calendar.Component.day, value: 1, to: checkInDate)!
+            self.indicatorPosition = .checkOut
+            self.delegate?.pickCheckinDate()
             collectionView.reloadData()
             checkInIndexPath = indexPath as IndexPath!
         }

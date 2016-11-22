@@ -52,7 +52,7 @@ class PickDateVC: BaseViewController {
     }
     
     func loadViewDates() {
-        viewDepart.imgView.image = UIImage(named: "")
+        viewDepart.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexCheckin.rawValue, withColor: UIColor(hex: 0x674290))
         viewDepart.lbTitle.text = "Depart"
         
         var dayString = checkInDate?.toMonthDay()
@@ -61,7 +61,7 @@ class PickDateVC: BaseViewController {
         viewDepart.lbSubInfo.text = weekday
         
         
-        viewReturn.imgView.image = UIImage(named: "")
+        viewReturn.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexCheckout.rawValue, withColor: UIColor(hex: 0x674290))
         viewReturn.lbTitle.text = "Return"
         
         dayString = checkOutDate?.toMonthDay()
@@ -139,6 +139,10 @@ extension PickDateVC: EPCalendarPickDateDelegate {
     func didPickCheckoutDate(date: Date) {
         checkOutDate = date
         loadViewDates()
+    }
+    
+    func pickCheckinDate() {
+        loadWeekdayIndicator(view: viewReturn)
     }
 }
 

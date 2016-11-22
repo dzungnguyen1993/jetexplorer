@@ -19,5 +19,6 @@ class PassengerInfo {
         self.isRoundTrip = true
         self.departDay = Utility.initialCheckInDate
         self.returnDay = Utility.initialCheckOutDate
+        self.passengers[0] = 1
     }
 }

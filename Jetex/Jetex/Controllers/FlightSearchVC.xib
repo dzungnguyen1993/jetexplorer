@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,8 +14,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlightSearchVC" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="7h2-EK-n0M" id="2ML-0G-ajL"/>
+                <outlet property="imgPassenger" destination="bvw-ZA-UO9" id="sT3-Cu-1LM"/>
                 <outlet property="lbNumberPassenger" destination="Go7-Gs-ShP" id="I6k-Hp-dKe"/>
                 <outlet property="networkErrorView" destination="may-rU-JrF" id="Vae-yC-639"/>
+                <outlet property="segmentFlightType" destination="hAv-FA-4pM" id="4Fe-oI-Xc7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewDepartDay" destination="QEE-Z9-y7l" id="SGx-JK-mNF"/>
                 <outlet property="viewFrom" destination="4Nm-Qg-kcO" id="DhA-fa-4Rt"/>
@@ -27,19 +32,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnq-fh-CHQ">
-                    <color key="backgroundColor" red="0.32156862745098036" green="0.21568627450980393" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                    <color key="backgroundColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="may-rU-JrF">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7h2-EK-n0M">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSz-Xt-PPD">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="fXB-RM-Adx"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="barTintColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textAttributes key="titleTextAttributes">
                                 <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,8 +58,10 @@
                             </items>
                         </navigationBar>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdL-IY-5qp">
+                            <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hAv-FA-4pM">
+                                    <rect key="frame" x="101" y="7.5" width="173" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="s9m-vV-GuW"/>
                                         <constraint firstAttribute="width" constant="173" id="w2k-4M-aGg"/>
@@ -65,16 +76,20 @@
                                     </connections>
                                 </segmentedControl>
                             </subviews>
-                            <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="hAv-FA-4pM" firstAttribute="centerY" secondItem="AdL-IY-5qp" secondAttribute="centerY" id="Kqo-of-t3s"/>
                                 <constraint firstItem="hAv-FA-4pM" firstAttribute="centerX" secondItem="AdL-IY-5qp" secondAttribute="centerX" id="T85-Cn-cOH"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="071-V3-i6B">
+                            <rect key="frame" x="16" y="112" width="343" height="80"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-Qg-kcO" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-Qg-kcO" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="171.5" height="80"/>
+                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adl-uU-hrY" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
+                                    <rect key="frame" x="171.5" y="0.0" width="171.5" height="80"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
@@ -92,9 +107,14 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-lB-6XW">
+                            <rect key="frame" x="16" y="224" width="343" height="80"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEE-Z9-y7l" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target"/>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rac-BR-woo" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEE-Z9-y7l" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="171.5" height="80"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rac-BR-woo" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
+                                    <rect key="frame" x="171.5" y="0.0" width="171.5" height="80"/>
+                                </view>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="QEE-Z9-y7l" firstAttribute="leading" secondItem="wHv-lB-6XW" secondAttribute="leading" id="0gn-zG-gf8"/>
@@ -109,13 +129,16 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I31-Vz-phy">
+                            <rect key="frame" x="16" y="336" width="343" height="60"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bvw-ZA-UO9">
+                                    <rect key="frame" x="8" y="0.0" width="26.5" height="26.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="bvw-ZA-UO9" secondAttribute="height" multiplier="1:1" id="hVk-Of-Q9g"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-vJ-T6V" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
+                                    <rect key="frame" x="44.5" y="3" width="290.5" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="Lja-vJ-g9D"/>
                                     </constraints>
@@ -124,6 +147,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Go7-Gs-ShP">
+                                    <rect key="frame" x="8" y="31" width="325" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="Ejv-Ht-M0j"/>
                                     </constraints>
@@ -145,18 +169,21 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-HX-05A">
+                            <rect key="frame" x="24" y="207" width="327" height="2"/>
                             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="qFb-TT-wBd"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bix-Uf-YvP">
+                            <rect key="frame" x="24" y="319" width="327" height="2"/>
                             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="5Dl-Qh-C8O"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVC-m9-80O" customClass="SmallParagraphButton" customModule="Jetex" customModuleProvider="target">
+                            <rect key="frame" x="24" y="420" width="327" height="44"/>
                             <color key="backgroundColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="40B-VE-WHR"/>
@@ -206,12 +233,12 @@
                 <constraint firstAttribute="trailing" secondItem="7h2-EK-n0M" secondAttribute="trailing" id="Emu-Oe-fm1"/>
                 <constraint firstItem="dnq-fh-CHQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RdT-DP-eeD"/>
                 <constraint firstAttribute="trailing" secondItem="may-rU-JrF" secondAttribute="trailing" id="Tkg-Qu-b1d"/>
-                <constraint firstItem="7h2-EK-n0M" firstAttribute="top" secondItem="dnq-fh-CHQ" secondAttribute="bottom" constant="1" id="Wpu-dr-FQE"/>
+                <constraint firstItem="7h2-EK-n0M" firstAttribute="top" secondItem="dnq-fh-CHQ" secondAttribute="bottom" id="Wpu-dr-FQE"/>
                 <constraint firstItem="may-rU-JrF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Y36-ZG-QzD"/>
                 <constraint firstItem="dnq-fh-CHQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bsY-oS-d0k"/>
-                <constraint firstItem="7h2-EK-n0M" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="i0M-QL-HiF"/>
+                <constraint firstItem="7h2-EK-n0M" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="i0M-QL-HiF"/>
                 <constraint firstAttribute="bottom" secondItem="may-rU-JrF" secondAttribute="bottom" id="nZn-LS-pRn"/>
-                <constraint firstItem="may-rU-JrF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="qBT-2s-7W6"/>
+                <constraint firstItem="may-rU-JrF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="qBT-2s-7W6"/>
                 <constraint firstItem="7h2-EK-n0M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yOg-Pj-lBz"/>
                 <constraint firstAttribute="trailing" secondItem="dnq-fh-CHQ" secondAttribute="trailing" id="ye9-GZ-J7m"/>
             </constraints>

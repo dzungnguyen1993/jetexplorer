@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterFlightView" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="TKJ-gc-Hl6"/>
+                <outlet property="imgCancel" destination="MaF-P6-Zrt" id="zMt-lS-Zho"/>
                 <outlet property="tableView" destination="yO1-Ih-Ijw" id="VRS-30-mcg"/>
             </connections>
         </placeholder>
@@ -36,9 +37,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letter-x.png" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-P6-Zrt">
-                            <rect key="frame" x="338" y="12" width="21" height="21"/>
+                            <rect key="frame" x="329" y="7.5" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="21" id="elo-br-rek"/>
+                                <constraint firstAttribute="width" constant="30" id="elo-br-rek"/>
                                 <constraint firstAttribute="width" secondItem="MaF-P6-Zrt" secondAttribute="height" multiplier="1:1" id="rzc-fv-J9n"/>
                             </constraints>
                         </imageView>

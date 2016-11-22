@@ -21,6 +21,7 @@ class FilterFlightView: UIView {
     var airlinesViewHeight = 280
     var destinationViewHeight = 182
     var applyViewHeight = 44
+    @IBOutlet weak var imgCancel: UIImageView!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -52,6 +53,8 @@ class FilterFlightView: UIView {
         tableView.register(UINib(nibName: "ApplyFilterView", bundle:nil), forCellReuseIdentifier: "ApplyFilterView")
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        
+        imgCancel.image = UIImage(fromHex: JetExFontHexCode.jetexCross.rawValue, withColor: UIColor(hex: 0x515151))
     }
   
     @IBAction func hideFilter(_ sender: UIButton) {

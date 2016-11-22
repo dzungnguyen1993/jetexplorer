@@ -13,6 +13,8 @@ class FlightResultVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewOptions: UIView!
     @IBOutlet weak var viewFilterContainer: UIView!
+    @IBOutlet weak var viewError: UIView!
+    
     var viewFilter: FilterFlightView!
     
     var arrayResult: [FlightInfo]!
@@ -28,6 +30,10 @@ class FlightResultVC: BaseViewController {
     @IBOutlet weak var btnFastest: UIButton!
     @IBOutlet weak var viewUnderFastest: UIView!
     
+    @IBOutlet weak var imgFilter: UIImageView!
+    @IBOutlet weak var imgPassenger: UIImageView!
+    @IBOutlet weak var imgRightArrow: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +48,8 @@ class FlightResultVC: BaseViewController {
         
         viewOptions.layer.borderWidth = 1.0
         viewOptions.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
+        
+        setupImages()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -107,20 +115,26 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
             cell.viewDetails.isHidden = false
             
             cell.addViewDetails(flightInfo: arrayResult[indexPath.section])
+            
+            // set border
+            cell.layer.borderColor = UIColor(hex: 0x674290).cgColor
+            cell.layer.borderWidth = 1.0
         } else {
             cell.viewInfoGeneral.isHidden = false
             cell.viewDetails.isHidden = true
+            
+            // set border
+            cell.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
+            cell.layer.borderWidth = 1.0
         }
         
-        // set border
-        cell.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
-        cell.layer.borderWidth = 1.0
+       
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == showDetailsIndex) {
-            return CGFloat(cellDefaultHeaderHeight + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: arrayResult[indexPath.section]))
+            return CGFloat(56 + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: arrayResult[indexPath.section]))
         }
         return CGFloat(cellDefaultHeight)
     }
@@ -167,5 +181,13 @@ extension FlightResultVC: FilterFlightViewDelegate {
         viewFilterContainer.isHidden = true
         viewOptions.isHidden = false
         tableView.isHidden = false
+    }
+}
+
+extension FlightResultVC {
+    func setupImages() {
+        imgFilter.image = UIImage(fromHex: JetExFontHexCode.jetexSliders.rawValue, withColor: UIColor(hex: 0x674290))
+        imgPassenger.image = UIImage(fromHex: JetExFontHexCode.jetexPassengers.rawValue, withColor: UIColor.white)
+        imgRightArrow.image = UIImage(fromHex: JetExFontHexCode.oneWay.rawValue, withColor: UIColor.white)
     }
 }

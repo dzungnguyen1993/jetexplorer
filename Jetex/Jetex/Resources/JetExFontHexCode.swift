@@ -23,4 +23,18 @@ enum JetExFontHexCode : String{
     
     case bedEmpty = "\u{e905}"
     case bedFulfill = "\u{e904}"
+    
+    case jetexPin = "\u{e91d}"
+    
+    case jetexCheckin = "\u{e909}"
+    
+    case jetexCheckout = "\u{e90b}"
+    
+    case jetexPassengers = "\u{e91b}"
+    
+    case jetexChevronLeft = "\u{e90c}"
+    
+    case jetexSliders = "\u{e924}"
+    case jetexCross = "\u{e912}"
+    
 }

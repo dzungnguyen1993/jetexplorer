@@ -16,8 +16,11 @@ class FlightSearchVC: BaseViewController {
     @IBOutlet weak var viewReturnDay: PickInfoView!
     @IBOutlet weak var viewPassenger: UIView!
     @IBOutlet weak var lbNumberPassenger: UILabel!
+    @IBOutlet weak var segmentFlightType: UISegmentedControl!
     
     var passengerInfo: PassengerInfo! = PassengerInfo()
+    
+    @IBOutlet weak var imgPassenger: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +29,13 @@ class FlightSearchVC: BaseViewController {
         self.loadViewLocation()
         self.showNumberPassenger()
         self.loadViewDate()
+        
+        self.setImages()
+        let attributes = [NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!]
+        self.segmentFlightType.setTitleTextAttributes(attributes, for: .normal)
     }
     
     func loadViewLocation() {
-        viewFrom.imgView.image = UIImage(named: "")
         viewFrom.lbTitle.text = "From"
         
         if (passengerInfo.cityFrom != nil) {
@@ -40,7 +46,6 @@ class FlightSearchVC: BaseViewController {
             viewFrom.lbSubInfo.text = ""
         }
         
-        viewTo.imgView.image = UIImage(named: "")
         viewTo.lbTitle.text = "To"
         
         if (passengerInfo.cityTo != nil) {
@@ -53,10 +58,8 @@ class FlightSearchVC: BaseViewController {
     }
     
     func loadViewDate() {
-        viewDepartDay.imgView.image = UIImage(named: "")
         viewDepartDay.lbTitle.text = "Depart"
         
-        viewReturnDay.imgView.image = UIImage(named: "")
         viewReturnDay.lbTitle.text = "Return"
         
         showDateInfo()
@@ -197,5 +200,16 @@ extension FlightSearchVC: PickPassengerVCDelegate {
             suffix = " Persons"
         }
         self.lbNumberPassenger.text = String(c) + suffix
+    }
+}
+
+// setup layout
+extension FlightSearchVC {
+    func setImages() {
+        self.viewFrom.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexPin.rawValue, withColor: UIColor(hex: 0x674290))
+        self.viewTo.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexPin.rawValue, withColor: UIColor(hex: 0x674290))
+        self.viewDepartDay.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexCheckin.rawValue, withColor: UIColor(hex: 0x674290))
+        self.viewReturnDay.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexCheckout.rawValue, withColor: UIColor(hex: 0x674290))
+        self.imgPassenger.image = UIImage(fromHex: JetExFontHexCode.jetexPassengers.rawValue, withColor: UIColor(hex: 0x674290))
     }
 }

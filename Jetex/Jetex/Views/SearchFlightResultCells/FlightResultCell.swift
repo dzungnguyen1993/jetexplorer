@@ -57,7 +57,7 @@ class FlightResultCell: UITableViewCell {
         
         viewDetailsDepart.addDetails(flightInfo: flightInfo)
         // add border
-        viewDetailsDepart.layer.borderColor = UIColor(hex: 0x515151).cgColor
+        viewDetailsDepart.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
         viewDetailsDepart.layer.borderWidth = 1.0
         
         self.viewDepart.addSubview(viewDetailsDepart)
@@ -71,7 +71,7 @@ class FlightResultCell: UITableViewCell {
         
         viewReturnDetails.addDetails(flightInfo: flightInfo)
         // add border
-        viewReturnDetails.layer.borderColor = UIColor(hex: 0x515151).cgColor
+        viewReturnDetails.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
         viewReturnDetails.layer.borderWidth = 1.0
         
         self.viewReturn.addSubview(viewReturnDetails)

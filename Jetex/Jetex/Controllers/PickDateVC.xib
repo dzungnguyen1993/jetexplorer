@@ -31,9 +31,9 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXl-Ms-frI">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
-                    <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="OBZ-i9-VL9"/>
+                        <constraint firstAttribute="height" constant="20" id="OBZ-i9-VL9"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjE-pE-I1f">
@@ -44,7 +44,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="4eM-3X-Mtb"/>
                             </constraints>
-                            <color key="barTintColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textAttributes key="titleTextAttributes">
                                 <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -225,8 +225,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="MXl-Ms-frI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EJH-uY-mrm"/>
-                <constraint firstItem="BjE-pE-I1f" firstAttribute="top" secondItem="MXl-Ms-frI" secondAttribute="bottom" constant="1" id="Oa1-Ak-OGg"/>
-                <constraint firstItem="BjE-pE-I1f" firstAttribute="top" secondItem="MXl-Ms-frI" secondAttribute="bottom" constant="1" id="Rve-KX-xe4"/>
+                <constraint firstItem="BjE-pE-I1f" firstAttribute="top" secondItem="MXl-Ms-frI" secondAttribute="bottom" id="Rve-KX-xe4"/>
                 <constraint firstItem="BjE-pE-I1f" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="chC-5I-MsZ"/>
                 <constraint firstItem="MXl-Ms-frI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dYv-Zz-jpa"/>
                 <constraint firstAttribute="trailing" secondItem="BjE-pE-I1f" secondAttribute="trailing" id="sgI-7a-YvE"/>

@@ -29,7 +29,9 @@ class TabBarController: UITabBarController {
         
         viewControllers?.append(nav)
 
-        nav.tabBarItem = UITabBarItem(title: "Flights", image: UIImage(named: "straight plane")?.resize(newSize: (width: 22, height: 22)), tag: 1)
+        nav.tabBarItem = UITabBarItem(title: "Flights", image: UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.planeEmpty.rawValue), tag: 1)
+        
+        nav.tabBarItem.selectedImage = UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.planeFulfill.rawValue)
         
         nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x706F73), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .normal)
         

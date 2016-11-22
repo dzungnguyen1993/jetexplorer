@@ -18,7 +18,7 @@ class FlightCellUtils: NSObject {
         let heightReturn = heightForReturnOfFlight(flightInfo: flightInfo)
         
         // heightDepart + space + heightReturn + space + heightOfButton
-        return heightDepart + 8 + heightReturn + 16 + 44 + 16
+        return heightDepart + 8 + heightReturn + 16 + 44 + 32
     }
     
     static func heightForDepartOfFlight(flightInfo: FlightInfo) -> Int {
