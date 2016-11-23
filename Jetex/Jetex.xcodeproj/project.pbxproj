@@ -43,6 +43,7 @@
 		28BAD0161DE18B1E0008032D /* SearchHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BAD0141DE18B1E0008032D /* SearchHistoryVC.swift */; };
 		28BAD0171DE18B1E0008032D /* SearchHistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28BAD0151DE18B1E0008032D /* SearchHistoryVC.xib */; };
 		28C448911DDA24DC00DEBC51 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C448901DDA24DC00DEBC51 /* UserInfoView.swift */; };
+		28E62C4C1DE597CF00E41D44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E62C4B1DE597CF00E41D44 /* User.swift */; };
 		B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */; };
 		B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */; };
 		B90DDA481DD45F0800AEC1AE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA471DD45F0800AEC1AE /* back.png */; };
@@ -212,6 +213,7 @@
 		28BAD0141DE18B1E0008032D /* SearchHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryVC.swift; sourceTree = "<group>"; };
 		28BAD0151DE18B1E0008032D /* SearchHistoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchHistoryVC.xib; sourceTree = "<group>"; };
 		28C448901DDA24DC00DEBC51 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoView.swift; path = ../Controllers/UserInfoView.swift; sourceTree = "<group>"; };
+		28E62C4B1DE597CF00E41D44 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.debug.xcconfig"; sourceTree = "<group>"; };
 		5F30E1B520C7F45D1DB37729 /* Pods_JetexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -457,6 +459,7 @@
 				B95281E51DD705610041C39B /* PassengerInfo.swift */,
 				B92507B51DDF0F7D0036866D /* FlightInfo.swift */,
 				2830E9031DE1DCE2001A76F9 /* HistorySearch.swift */,
+				28E62C4B1DE597CF00E41D44 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1004,6 +1007,7 @@
 				28BAD00D1DE0DFCA0008032D /* PickPassengerCell.swift in Sources */,
 				B99F82C81DE1D73300DA8B37 /* RoundCheckCell.swift in Sources */,
 				B9F445FD1DD4E16B00250D6C /* GothamBold17Label.swift in Sources */,
+				28E62C4C1DE597CF00E41D44 /* User.swift in Sources */,
 				B98B6B6E1DD5B5ED0094FC46 /* SmallParagraphButton.swift in Sources */,
 				28BAD0121DE1628E0008032D /* JetExFontHexCode.swift in Sources */,
 				286F62C81DDB385200B26733 /* SignInVCViewController.swift in Sources */,

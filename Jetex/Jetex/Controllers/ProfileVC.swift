@@ -22,13 +22,13 @@ protocol UserInfoViewDelegate: class{
 
 class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    let appSettingText = "App Settings"
-    let currency = "Currency"
-    let ratingAndFeedback = "Rating & Feedback"
+    let appSettingText             = "App Settings"
+    let currency                   = "Currency"
+    let ratingAndFeedback          = "Rating & Feedback"
     
     // MARK: - Hard code for testing UI -> TODO: check it before release
     static var currentCurrencyType = "USD"
-    static var isUserLogined = false
+    static var isUserLogined       = false
     
     
     // MARK: - IBOutlet Variables
@@ -196,6 +196,17 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         default:
             break
         }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.font = UIFont(name: GothamFontName.Book.rawValue, size: 13)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.font = UIFont(name: GothamFontName.Book.rawValue, size: 13)
     }
     
     /*

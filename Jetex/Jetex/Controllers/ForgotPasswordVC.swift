@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ForgotPasswordVC: BaseViewController {
 
     // MARK: - IBOutlet variables
-    @IBOutlet weak var emailTextField: UIView!
+    @IBOutlet weak var emailTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let realm = try! Realm()
+        if let lastUser = realm.objects(User.self).filter("isCurrentUser == true").first {
+            emailTextField.text = lastUser.email
+        } else {
+            emailTextField.becomeFirstResponder()
+        }
     }
     
     // MARK:- send

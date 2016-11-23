@@ -20,9 +20,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInVC" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="z2G-b0-Bhh" id="Sdz-tk-RK9"/>
-                <outlet property="emailTextField" destination="z2G-b0-Bhh" id="U6U-ct-ZRW"/>
+                <outlet property="emailTextField" destination="GND-zv-Nsc" id="0ry-L2-AKh"/>
                 <outlet property="networkErrorView" destination="1Ec-a5-xdf" id="VzW-C5-0R6"/>
-                <outlet property="passwordTextField" destination="z2G-b0-Bhh" id="GlB-8l-fgi"/>
+                <outlet property="passwordTextField" destination="3yY-h7-dLy" id="Trs-4X-u2S"/>
                 <outlet property="view" destination="d0i-yK-ZdD" id="Zdw-Wq-vNA"/>
             </connections>
         </placeholder>
@@ -89,7 +89,7 @@
                             <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Thisisemail@email.com" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="GND-zv-Nsc" customClass="UIPaddingTextField" customModule="Jetex" customModuleProvider="target">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Thisisemail@email.com" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GND-zv-Nsc" customClass="UIPaddingTextField" customModule="Jetex" customModuleProvider="target">
                             <rect key="frame" x="24" y="99" width="327" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="4Sp-H7-DPm"/>

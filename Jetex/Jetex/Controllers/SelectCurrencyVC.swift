@@ -10,7 +10,7 @@ import UIKit
 
 class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDelegate {
 
-    let currencyList = [("US","USD"), ("Singapore", "SGP")]
+    let currencyList     = [("US","USD"), ("Singapore", "SGP")]
     var selectedCurrency = "USD"
     
     override func viewDidLoad() {

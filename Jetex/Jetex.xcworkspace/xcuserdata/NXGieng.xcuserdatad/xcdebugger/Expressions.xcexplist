@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "UserInfoView.initializeSubviews() -&gt; ():UserInfoView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "view.subviews.first.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "userAvatar.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "UICheckBoxButton.selfPressed(sender : AnyObject) -&gt; ():UICheckBoxButton.swift">
          <PersistentStrings>
             <PersistentString
@@ -27,13 +38,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "UserInfoView.initializeSubviews() -&gt; ():UserInfoView.swift">
+         contextName = "SignUpVC.(signUpButtonPressed(AnyObject) -&gt; ()).(closure #1):SignUpVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "view.subviews.first.subviews">
+               value = "response.result">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SignInVC.(signInButtonPressed(AnyObject) -&gt; ()).(closure #1):SignInVCViewController.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "userAvatar.image">
+               value = "currentUser as! [String: Any]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
