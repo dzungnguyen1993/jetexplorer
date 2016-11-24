@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol NetworkErrorViewDelegate: class {
+    func retryInternetConnection()
+}
+
 class NetworkErrorView: UIView {
     
     @IBOutlet var contentView: UIView!
+    weak var delegate: NetworkErrorViewDelegate?
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -21,5 +26,10 @@ class NetworkErrorView: UIView {
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options:NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": self.contentView]))
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options:NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": self.contentView]))
+    }
+    
+    
+    @IBAction func retryInternetConnection(_ sender: Any) {
+        self.delegate?.retryInternetConnection()
     }
 }

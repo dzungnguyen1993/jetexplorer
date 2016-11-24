@@ -36,6 +36,9 @@
                     <state key="normal" title="RETRY">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="retryInternetConnection:" destination="-1" eventType="touchUpInside" id="y46-Kv-r63"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your internet connection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3K-XZ-XOe">
                     <rect key="frame" x="10" y="293" width="355" height="21"/>

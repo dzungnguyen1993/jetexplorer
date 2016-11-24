@@ -11,7 +11,7 @@ import UIKit
 class BaseViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var networkErrorView: UIView!
+    @IBOutlet weak var networkErrorView: NetworkErrorView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

@@ -24,7 +24,7 @@
                 <outlet property="contentView" destination="7h2-EK-n0M" id="2ML-0G-ajL"/>
                 <outlet property="imgPassenger" destination="bvw-ZA-UO9" id="sT3-Cu-1LM"/>
                 <outlet property="lbNumberPassenger" destination="Go7-Gs-ShP" id="I6k-Hp-dKe"/>
-                <outlet property="networkErrorView" destination="may-rU-JrF" id="Vae-yC-639"/>
+                <outlet property="networkErrorView" destination="may-rU-JrF" id="oo3-YQ-oQD"/>
                 <outlet property="segmentFlightType" destination="hAv-FA-4pM" id="4Fe-oI-Xc7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewDepartDay" destination="QEE-Z9-y7l" id="SGx-JK-mNF"/>
@@ -43,7 +43,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                     <color key="backgroundColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="may-rU-JrF">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="may-rU-JrF" customClass="NetworkErrorView" customModule="Jetex" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
