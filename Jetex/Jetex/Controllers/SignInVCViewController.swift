@@ -48,17 +48,22 @@ class SignInVC: BaseViewController {
             "password": passwordTextField.text!
         ]
         
+        // TOTO: check if user are offline, then get offline information
+        
+        
         // request to server
-        Alamofire.request("https://jetexplorer.com/api/auth/signin", method: .post, parameters: userInfo, encoding: JSONEncoding.default).responseJSON { response in
+        let requestURL = APIURL.JetExAPI.base + APIURL.JetExAPI.signIn
+        Alamofire.request(requestURL, method: .post, parameters: userInfo, encoding: JSONEncoding.default).responseJSON { response in
             if let currentUser = response.result.value as? [String: Any] {
                 if let user = User(JSON: currentUser) {
                     print(user)
+                    // update this user is current user
+                    user.isCurrentUser = true
+                    
                     // success get user info
                     let realm = try! Realm()
                 
                     func updateCurrentUser () {
-                        // update this user is current user
-                        user.isCurrentUser = true
                         // save/update it to Realm
                         try! realm.write {
                             realm.add(user, update: true)

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDelegate {
 
-    let currencyList     = [("US","USD"), ("Singapore", "SGP")]
+    let currencyList     = [("US","USD"), ("Singapore", "SGP"), ("Australia", "AUD")]
     var selectedCurrency = "USD"
     
     override func viewDidLoad() {
@@ -44,7 +45,17 @@ class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCurrency = currencyList[indexPath.row].1
-        ProfileVC.currentCurrencyType = selectedCurrency
+        
+        // update it offline
+        let realm = try! Realm()
+        if let currentUser = realm.objects(User.self).filter("isCurrentUser == true").first {
+            try! realm.write {
+                currentUser.currency = selectedCurrency
+            }
+        }
+        
+        // update it to server
+        
         _ = self.navigationController?.popViewController(animated: true)
     }
     

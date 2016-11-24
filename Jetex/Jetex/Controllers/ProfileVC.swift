@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
+import Alamofire
+import FacebookCore
+import FacebookLogin
+import FacebookShare
+import GoogleSignIn
 
 protocol LoginViewDelegate: class {
     func signInWithFacebook()
@@ -20,7 +26,7 @@ protocol UserInfoViewDelegate: class{
     func userAvatarPressed()
 }
 
-class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, GIDSignInDelegate, GIDSignInUIDelegate {
     
     let appSettingText             = "App Settings"
     let currency                   = "Currency"
@@ -36,12 +42,16 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var mainViewHeightLayoutConstraint: NSLayoutConstraint!
     
-    var userInfoView: UserInfoView? = nil
+    var userInfoView: UserInfoView?  = nil
+    var loginView: LoginView?        = nil
+    var currentUser: User?           = nil
+    var realm : Realm!
     
     // MARK: - Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        realm = try! Realm()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,38 +63,170 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
 
     func setUpMainView(){
         if !ProfileVC.isUserLogined {
+            // remove
+            self.userInfoView?.removeFromSuperview()
+            
             // resize mainView
             mainViewHeightLayoutConstraint.constant = LoginView.itsRect.height
             self.mainView.layoutIfNeeded()
             
             // login view
-            let loginView = LoginView(frame: LoginView.itsRect)
-            loginView.delegate = self
-            self.mainView.addSubview(loginView)
+            if loginView == nil {
+                loginView = LoginView(frame: LoginView.itsRect)
+                loginView!.delegate = self
+            }
+            self.mainView.addSubview(loginView!)
             
         } else {
-            if userInfoView == nil {
-                // resize mainView
-                mainViewHeightLayoutConstraint.constant = UserInfoView.itsRect.height
-                self.mainView.layoutIfNeeded()
             
+            self.loginView?.removeFromSuperview()
+            
+            // resize mainView
+            mainViewHeightLayoutConstraint.constant = UserInfoView.itsRect.height
+            self.mainView.layoutIfNeeded()
+            
+            if userInfoView == nil {
                 // profile info
                 userInfoView = UserInfoView(frame: UserInfoView.itsRect)
                 userInfoView!.delegate = self
-                self.mainView.addSubview(userInfoView!)
             }
+            self.mainView.addSubview(userInfoView!)
+            
+            // get current user
+            currentUser = realm.objects(User.self).filter("isCurrentUser == true").first
+            if currentUser == nil {
+                // if current User is not exist, login again
+                ProfileVC.isUserLogined = false
+                setUpMainView()
+                return
+            }
+            
+            // show user name
+            if let displayName = currentUser!.displayName, displayName.characters.count > 0 {
+                userInfoView!.userName.text = displayName
+            } else if let firstName = currentUser!.firstName, firstName.characters.count > 0, let lastName = currentUser!.lastName, lastName.characters.count > 0 {
+                userInfoView!.userName.text = "\(firstName) \(lastName)"
+            } else {
+                userInfoView!.userName.text = currentUser!.username
+            }
+            
+            // show user Avatar
+            let avatarURL = "\(APIURL.JetExAPI.base)/\(currentUser!.profileURL)"
+            Alamofire.request(avatarURL).responseData(completionHandler: { (response) in
+                if let data = response.result.value {
+                    UIView.animate(withDuration: 0.1, animations: {
+                        self.userInfoView!.userAvatar.image = UIImage(data: data)
+                    })
+                }
+            })
+            
+            // update the currency
+            ProfileVC.currentCurrencyType = currentUser!.currency
         }
     }
     
     // MARK:- Log In Delegate
+    
+    func signInUsingAccessToken (accessToken: String, atAPI apiLink: String) {
+        // TODO: show loading adicator
+        
+        // TODO: request to server
+        let requestURL = APIURL.JetExAPI.base + apiLink
+        let token = ["token" : accessToken]
+        
+        Alamofire.request(requestURL, method: .post, parameters: token, encoding: JSONEncoding.default).responseJSON { response in
+            if let currentUser = response.result.value as? [String: Any] {
+                if let user = User(JSON: currentUser) {
+                    print(user)
+                    // update this user is current user
+                    user.isCurrentUser = true
+                    
+                    // success get user info
+                    let realm = try! Realm()
+                    
+                    func updateCurrentUser () {
+                        // save/update it to Realm
+                        try! realm.write {
+                            realm.add(user, update: true)
+                        }
+                    }
+                    
+                    // get the current user
+                    if let lastUser = realm.objects(User.self).filter("isCurrentUser == true").first {
+                        if lastUser.id == user.id {
+                            // same user login, nothing happen
+                        } else {
+                            // set it to not be
+                            try! realm.write{
+                                lastUser.isCurrentUser = false
+                            }
+                            updateCurrentUser()
+                        }
+                    } else {
+                        updateCurrentUser()
+                    }
+                    
+                    // back to previous screen
+                    ProfileVC.isUserLogined = true
+                    self.setUpMainView()
+                }
+            } else {
+                print("Wrong info!")
+                return
+            }
+        }
+    }
+    
     func signInWithFacebook() {
-        let cellURL = "https://www.facebook.com"
-        UIApplication.shared.open(URL(string: cellURL)!, options: [:], completionHandler: nil)
+        
+        let loginManager = LoginManager()
+        // check if user alreay loged in
+        if let accessToken = AccessToken.current {
+            signInUsingAccessToken(accessToken: accessToken.authenticationToken, atAPI: APIURL.JetExAPI.signInWithFacebook)
+            return
+        }
+        
+        // if not, login
+        loginManager.logIn([ReadPermission.publicProfile], viewController: self, completion:
+            { loginResult in
+                switch loginResult {
+                case .failed(let error):
+                    print(error)
+                    break
+                case .cancelled:
+                    print("User cancelled login.")
+                    break
+                case .success(_, _, let accessToken):
+                    print("Logged in! accessToken: \(accessToken)")
+                    self.signInUsingAccessToken(accessToken: accessToken.authenticationToken, atAPI: APIURL.JetExAPI.signInWithFacebook)
+                    break
+                }
+        })
     }
 
     func signInWithGoogle() {
-        let cellURL = "https://plus.google.com"
-        UIApplication.shared.open(URL(string: cellURL)!, options: [:], completionHandler: nil)
+        if let googleSignIn = GIDSignIn.sharedInstance() {
+            googleSignIn.uiDelegate = self
+            googleSignIn.scopes = ["https://www.googleapis.com/auth/plus.login"]
+            googleSignIn.delegate = self
+            googleSignIn.signIn()
+        }
+    }
+    
+    
+    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error == nil) {
+            // Perform any operations on signed in user here.
+//            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+//            let fullName = user.profile.name
+//            let givenName = user.profile.givenName
+//            let familyName = user.profile.familyName
+//            let email = user.profile.email
+            self.signInUsingAccessToken(accessToken: idToken!, atAPI: APIURL.JetExAPI.signInWithGoogle)
+        } else {
+            print("\(error.localizedDescription)")
+        }
     }
     
     func signInWithEmail() {
@@ -188,10 +330,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             _ = self.navigationController?.pushViewController(vc, animated: true)
             break
         case 1:
-            // TODO: update the appId here
-            let appId = 1159421121
-            let reviewURL = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=\(appId)&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
-            UIApplication.shared.open(URL(string: reviewURL)!, options: [:], completionHandler: nil)
+            UIApplication.shared.open(URL(string: APIURL.JetExAPI.review)!, options: [:], completionHandler: nil)
             break
         default:
             break
@@ -208,15 +347,5 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.font = UIFont(name: GothamFontName.Book.rawValue, size: 13)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 

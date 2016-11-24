@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+        // for Google login
+        GIDSignIn.sharedInstance().clientID = APIURL.GoogleAPI.clientID
+        
+        // for Facebook login
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.absoluteString.contains("facebook") {
+            return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        } else {
+            return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
