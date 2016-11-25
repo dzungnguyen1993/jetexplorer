@@ -102,15 +102,15 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
     func initMockData() {
         
         // mock up flights
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [2, 0, 1, 0, 0], departAt: Date().addingTimeInterval(-10000), returnAt: Date()))
-        
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Bangkok", countryName: "Thailand"), isRoundTrip: true, passengers: [1, 0, 1, 0, 0], departAt: Date().addingTimeInterval(-8000), returnAt: Date()))
-        
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Sysney", countryName: "Australia"), isRoundTrip: true, passengers: [1, 1, 1, 0, 0], departAt: Date().addingTimeInterval(-6000), returnAt: Date()))
-        
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [1, 0, 0, 0, 0], departAt: Date().addingTimeInterval(-4000), returnAt: Date()))
-        
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [2, 0, 0, 0, 0], departAt: Date().addingTimeInterval(-2000), returnAt: Date()))
+//        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [2, 0, 1, 0, 0], departAt: Date().addingTimeInterval(-10000), returnAt: Date()))
+//        
+//        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Bangkok", countryName: "Thailand"), isRoundTrip: true, passengers: [1, 0, 1, 0, 0], departAt: Date().addingTimeInterval(-8000), returnAt: Date()))
+//        
+//        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Sysney", countryName: "Australia"), isRoundTrip: true, passengers: [1, 1, 1, 0, 0], departAt: Date().addingTimeInterval(-6000), returnAt: Date()))
+//        
+//        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [1, 0, 0, 0, 0], departAt: Date().addingTimeInterval(-4000), returnAt: Date()))
+//        
+//        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [2, 0, 0, 0, 0], departAt: Date().addingTimeInterval(-2000), returnAt: Date()))
         
         // mock up hotels
         hotelHistory.append(HotelHistorySearch(hotelName: "The Imperial", passengers: [2,0], checkInOn: Date().addingTimeInterval(-40000), checkOutOn: Date()))

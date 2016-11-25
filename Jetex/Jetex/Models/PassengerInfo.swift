@@ -9,8 +9,8 @@
 import UIKit
 
 class PassengerInfo {
-    var cityFrom: City?
-    var cityTo: City?
+    var airportFrom: Airport?
+    var airportTo: Airport?
     var passengers: [Int] = [Int](repeating: 0, count: 5)
     var departDay, returnDay: Date?
     var isRoundTrip: Bool?

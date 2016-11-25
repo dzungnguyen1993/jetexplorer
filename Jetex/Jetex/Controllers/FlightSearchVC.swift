@@ -41,9 +41,9 @@ class FlightSearchVC: BaseViewController {
     func loadViewLocation() {
         viewFrom.lbTitle.text = "From"
         
-        if (passengerInfo.cityFrom != nil) {
-            viewFrom.lbInfo.text = passengerInfo.cityFrom?.countryID
-            viewFrom.lbSubInfo.text = passengerInfo.cityFrom?.countryName
+        if (passengerInfo.airportFrom != nil) {
+            viewFrom.lbInfo.text = passengerInfo.airportFrom?.id
+            viewFrom.lbSubInfo.text = passengerInfo.airportFrom?.name
         } else {
             viewFrom.lbInfo.text = "--"
             viewFrom.lbSubInfo.text = ""
@@ -51,9 +51,9 @@ class FlightSearchVC: BaseViewController {
         
         viewTo.lbTitle.text = "To"
         
-        if (passengerInfo.cityTo != nil) {
-            viewTo.lbInfo.text = passengerInfo.cityTo?.countryID
-            viewTo.lbSubInfo.text = passengerInfo.cityTo?.countryName
+        if (passengerInfo.airportTo != nil) {
+            viewTo.lbInfo.text = passengerInfo.airportTo?.id
+            viewTo.lbSubInfo.text = passengerInfo.airportTo?.name
         } else {
             viewTo.lbInfo.text = "--"
             viewTo.lbSubInfo.text = ""
@@ -123,12 +123,12 @@ extension FlightSearchVC: PickLocationDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func didPickLocation(city: City, isLocationFrom: Bool) {
+    func didPickLocation(airport: Airport, isLocationFrom: Bool) {
         if (isLocationFrom) {
-            passengerInfo.cityFrom = city
+            passengerInfo.airportFrom = airport
             loadViewLocation()
         } else {
-            passengerInfo.cityTo = city
+            passengerInfo.airportTo = airport
             loadViewLocation()
         }
     }

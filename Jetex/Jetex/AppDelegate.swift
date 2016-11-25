@@ -9,6 +9,8 @@
 import UIKit
 import FBSDKCoreKit
 import GoogleSignIn
+import RealmSwift
+import Realm
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +20,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // for Google login
         GIDSignIn.sharedInstance().clientID = APIURL.GoogleAPI.clientID
+//        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+//        print(documentsPath)
+
+        // get list airport
+        let defaults = UserDefaults.standard
+        let isInstalled = defaults.bool(forKey: "isInstalled")
+        
+        if (!isInstalled) {
+            DispatchQueue.global().sync {
+                NetworkManager.shared.requestGetAllAirport { (isSuccess, response) in
+                    // fetch list successfully
+                    if (isSuccess) {
+                        DBManager.shared.parseListAirportJSON(data: response as! NSDictionary)
+                        defaults.set(true, forKey: "isInstalled")
+                        print("Finish sync")
+                    } else {
+                        
+                    }
+                }
+            }
+        }
         
         // for Facebook login
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -54,5 +77,92 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+// parse json
+extension AppDelegate {
+//    func parseListAirportJSON(data: NSDictionary) {
+//        realm = try! Realm()
+//        
+//        var continents = [Continent]()
+//        
+//        let continentsDict = data["Continents"] as! [NSDictionary]
+//        for continentDict in continentsDict {
+//            let continent = Continent()
+//            continent.name = continentDict["Name"] as! String
+//            continent.id = continentDict["Id"] as! String
+//            
+//            let countriesDict = continentDict["Countries"] as! [NSDictionary]
+//            
+//            continent.countries = self.parseListCountries(countriesDict: countriesDict)
+//            try! realm.write {
+//                realm.add(continent, update: true)
+//            }
+//            continents.append(continent)
+//        }
+//    }
+//    
+//    func parseListCountries(countriesDict: [NSDictionary]) -> List<Country> {
+//        let listCountries = List<Country>()
+//        
+//        for countryDict in countriesDict {
+//            let country = Country()
+//            country.id = countryDict["Id"] as! String
+//            country.name = countryDict["Name"] as! String
+//            
+//            let citiesDict = countryDict["Cities"] as! [NSDictionary]
+//            
+//            country.cities = self.parseListCities(citiesDict: citiesDict)
+//            try! realm.write {
+//                realm.add(country, update: true)
+//            }
+//            
+//            listCountries.append(country)
+//        }
+//        
+//        return listCountries
+//    }
+//    
+//    func parseListCities(citiesDict: [NSDictionary]) -> List<City> {
+//        let listCities = List<City>()
+//        
+//        for cityDict in citiesDict {
+//            let city = City()
+//            
+//            city.id = cityDict["Id"] as! String
+//            city.name = cityDict["Name"] as! String
+//            
+//            let airportsDict = cityDict["Airports"] as! [NSDictionary]
+//            
+//            city.airports = self.parseListAirports(airportsDict: airportsDict)
+//            try! realm.write {
+//                realm.add(city, update: true)
+//            }
+//            
+//            listCities.append(city)
+//            
+//        }
+//        
+//        return listCities
+//    }
+//    
+//    func parseListAirports(airportsDict: [NSDictionary]) -> List<Airport> {
+//        let listAirports = List<Airport>()
+//        
+//        for airportDict in airportsDict {
+//            let airport = Airport()
+//            
+//            airport.id = airportDict["Id"] as! String
+//            airport.name = airportDict["Name"] as! String
+//            airport.cityId = airportDict["CityId"] as! String
+//            airport.countryId = airportDict["CountryId"] as! String
+//            try! realm.write {
+//                realm.add(airport, update: true)
+//            }
+//            listAirports.append(airport)
+//        }
+//        
+//        return listAirports
+//    }
 }
 

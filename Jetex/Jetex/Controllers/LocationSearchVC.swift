@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol PickLocationDelegate: class {
-    func didPickLocation(city: City, isLocationFrom: Bool)
+    func didPickLocation(airport: Airport, isLocationFrom: Bool)
 }
 
 class LocationSearchVC: BaseViewController {
@@ -21,9 +22,10 @@ class LocationSearchVC: BaseViewController {
     @IBOutlet weak var searchTextField: UITextField!
     weak var delegate: PickLocationDelegate?
     
-    var citiesSearchResult: [City] = []
-    var cities: [City] = []
+    var airportsSearchResult: Results<Airport>! = nil
+    
     var isLocationFrom: Bool!
+    var realm : Realm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,44 +38,21 @@ class LocationSearchVC: BaseViewController {
         
         self.tableView.register(UINib(nibName: "SearchCityCell", bundle:nil), forCellReuseIdentifier: "SearchCityCell")
         
-        self.initSearch()
+        realm = try! Realm()
         tableView.separatorStyle = .none
     }
     
-    func initSearch() {
-        let city1 = City(cityName: "Tan Son Nhat Airport", countryName: "Ho Chi Minh, Vietnam", countryID: "SGN")
-        
-        let city2 = City(cityName: "Tan Tan", countryName: "Morocco", countryID: "TTA")
-        
-        cities.append(city1)
-        cities.append(city2)
-    }
-    
     @IBAction func textFieldDidChanged(_ sender: UITextField) {
-        citiesSearchResult.removeAll()
-        guard let cityName = sender.text else {return}
-        guard cityName.characters.count > 0 else {
-            tableView.reloadData()
-            return
-        }
+        let predicate = NSPredicate(format: "name BEGINSWITH %@", sender.text!)
+        airportsSearchResult = realm.objects(Airport.self).filter(predicate)
         
-        citiesSearchResult += cities
-        citiesSearchResult = citiesSearchResult.filter { (city) -> Bool in
-            guard sender.text!.characters.count <= city.cityName.characters.count else {
-                return false
-            }
-            let index = city.cityName.index(city.cityName.startIndex, offsetBy: sender.text!.characters.count)
-            let prefixCityName = city.cityName.substring(to: index)
-            return prefixCityName.lowercased() == cityName.lowercased()
-        }
-        
-        tableView.separatorStyle = citiesSearchResult.count == 0 ? .none : .singleLine
+        tableView.separatorStyle = airportsSearchResult.count == 0 ? .none : .singleLine
         tableView.reloadData()
     }
     
     @IBAction func clearSearchField(_ sender: UIButton) {
         searchTextField.text = ""
-        citiesSearchResult.removeAll()
+        airportsSearchResult = nil
         tableView.separatorStyle = .none
         tableView.reloadData()
     }
@@ -87,19 +66,23 @@ extension LocationSearchVC: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return citiesSearchResult.count
+        guard airportsSearchResult != nil else {
+            return 0
+        }
+        return airportsSearchResult.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCityCell", for: indexPath) as! SearchCityCell
         
-        let city = citiesSearchResult[indexPath.row]
+        let airport = airportsSearchResult[indexPath.row]
         
-        cell.lbCountry.text = city.countryName
-        cell.lbAirport.text = city.countryID
+        cell.lbCountry.text = self.getCountryName(fromAirport: airport)
+        cell.lbAirport.text = airport.id
+        
         
         let attributes = [NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 17)!]
-        let attributedString = NSMutableAttributedString(string: citiesSearchResult[indexPath.row].cityName, attributes: attributes)
+        let attributedString = NSMutableAttributedString(string: airport.name, attributes: attributes)
         let prefixAttributes = [NSForegroundColorAttributeName: UIColor(hex: 0x674290),
                                 NSFontAttributeName: UIFont(name: GothamFontName.Bold.rawValue, size: 17)!]
         attributedString.addAttributes(prefixAttributes, range: NSRange(location: 0, length: searchTextField.text!.characters.count))
@@ -108,13 +91,33 @@ extension LocationSearchVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func getCountryName(fromAirport airport: Airport) -> String {
+        let cityId = airport.cityId
+        var predicate = NSPredicate(format: "id == %@", cityId)
+        let city = realm.objects(City.self).filter(predicate).first
+        
+        guard city != nil else {
+            return ""
+        }
+        
+        let countryId = airport.countryId
+        predicate = NSPredicate(format: "id == %@", countryId)
+        let country = realm.objects(Country.self).filter(predicate).first
+        
+        guard country != nil else {
+            return ""
+        }
+        
+        return (city?.name)! + ", " + (country?.name)!
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let city = citiesSearchResult[indexPath.row]
-        self.delegate?.didPickLocation(city: city, isLocationFrom: isLocationFrom)
+        let airport = airportsSearchResult[indexPath.row]
+        self.delegate?.didPickLocation(airport: airport, isLocationFrom: isLocationFrom)
         self.navigationController!.popViewController(animated: true)
     }
     

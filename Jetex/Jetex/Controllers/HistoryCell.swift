@@ -58,9 +58,9 @@ class HistoryCell: UITableViewCell {
     func fillDataForFlight(data: FlightHistorySearch) {
         historyTypeImageView.image = UIImage(fromHex: JetExFontHexCode.planeEmpty.rawValue, withColor: UIColor(hex: 0x674290))
         
-        fromLabel.text = data.from.cityName
+        fromLabel.text = data.from.name
         fromLabel.resizeToFitText()
-        toLabel.text = data.to.cityName
+        toLabel.text = data.to.name
         toLabel.resizeToFitText()
         
         if data.isRoundTrip != nil && data.isRoundTrip == true {
