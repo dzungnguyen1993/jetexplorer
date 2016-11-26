@@ -36,12 +36,15 @@ class SplashVC: UIViewController {
                     }
                 }
             }
+        } else {
+            self.gotoMainScreen()
         }
     }
     
     func gotoMainScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! TabBarController
+        controller.modalTransitionStyle = .crossDissolve
         self.present(controller, animated: true, completion: nil)
     }
 }
