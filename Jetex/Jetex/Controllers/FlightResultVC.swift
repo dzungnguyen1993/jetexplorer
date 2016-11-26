@@ -33,6 +33,13 @@ class FlightResultVC: BaseViewController {
     @IBOutlet weak var imgFilter: UIImageView!
     @IBOutlet weak var imgPassenger: UIImageView!
     @IBOutlet weak var imgRightArrow: UIImageView!
+    var passengerInfo: PassengerInfo! = PassengerInfo()
+    
+    @IBOutlet weak var lbOrigin: UILabel!
+    @IBOutlet weak var lbDestination: UILabel!
+    @IBOutlet weak var viewDateDepart: SearchResultDateView!
+    @IBOutlet weak var viewDateReturn: SearchResultDateView!
+    @IBOutlet weak var lbNumberPassenger: GothamBold17Label!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +57,23 @@ class FlightResultVC: BaseViewController {
         viewOptions.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
         
         setupImages()
+        
+        // show header info
+        showHeaderInfo()
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
     }
 
+    func showHeaderInfo() {
+        lbOrigin.text = passengerInfo.airportFrom?.id
+        lbDestination.text = passengerInfo.airportTo?.id
+        lbNumberPassenger.text = String(passengerInfo.numberOfPassenger())
+        viewDateDepart.lbDate.text = passengerInfo.departDay?.toDay()
+        viewDateDepart.lbMonth.text = passengerInfo.departDay?.toMonth()
+        viewDateReturn.lbDate.text = passengerInfo.returnDay?.toDay()
+        viewDateReturn.lbMonth.text = passengerInfo.returnDay?.toMonth()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         if (viewFilter == nil) {
             // add view filter
@@ -157,6 +179,7 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         } else {
             view.backgroundColor = UIColor(hex: 0xF6F6F6)
         }
+//        self.tableView.tableHeaderView = view;
         return view
     }
     

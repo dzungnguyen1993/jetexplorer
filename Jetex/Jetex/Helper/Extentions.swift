@@ -78,6 +78,22 @@ extension Date {
         
         return timeString
     }
+    
+    func toMonth() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM"
+        let timeString = formatter.string(from: self)
+        
+        return timeString
+    }
+    
+    func toDay() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d"
+        let timeString = formatter.string(from: self)
+        
+        return timeString
+    }
 }
 
 @IBDesignable extension UIView {

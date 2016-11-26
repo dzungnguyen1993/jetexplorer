@@ -98,7 +98,25 @@ class FlightSearchVC: BaseViewController {
     
     // MARK: Search
     @IBAction func clickSearch(_ sender: UIButton) {
+        // check if info is valid
+        if (passengerInfo.airportFrom == nil || passengerInfo.airportTo == nil) {
+            showAlert(message: "You didn't choose the location.", andTitle: "Error")
+            return
+        }
+        
+        if (passengerInfo.airportFrom == passengerInfo.airportTo && passengerInfo.isRoundTrip == true) {
+            showAlert(message: "You chose the same airport.", andTitle: "Error")
+            return
+        }
+        
+        if (passengerInfo.numberOfPassenger() == 0) {
+            showAlert(message: "You didn't choose the number of passengers.", andTitle: "Error")
+            return
+        }
+        
+        
         let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
+        vc.passengerInfo = self.passengerInfo
         self.navigationController!.pushViewController(vc, animated: true)
     }
 }

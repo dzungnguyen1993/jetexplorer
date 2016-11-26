@@ -21,4 +21,12 @@ class PassengerInfo {
         self.returnDay = Utility.initialCheckOutDate
         self.passengers[0] = 1
     }
+    
+    func numberOfPassenger() -> Int {
+        var c = 0
+        for passenger in self.passengers {
+            c = c + passenger
+        }
+        return c
+    }
 }

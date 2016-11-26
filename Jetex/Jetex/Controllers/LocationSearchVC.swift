@@ -43,8 +43,10 @@ class LocationSearchVC: BaseViewController {
     }
     
     @IBAction func textFieldDidChanged(_ sender: UITextField) {
-        let predicate = NSPredicate(format: "name BEGINSWITH %@", sender.text!)
+        let predicate = NSPredicate(format: "name BEGINSWITH[c] %@", sender.text!)
+        
         airportsSearchResult = realm.objects(Airport.self).filter(predicate)
+        
         
         tableView.separatorStyle = airportsSearchResult.count == 0 ? .none : .singleLine
         tableView.reloadData()

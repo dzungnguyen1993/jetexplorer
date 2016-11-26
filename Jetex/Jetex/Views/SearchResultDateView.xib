@@ -20,6 +20,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultDateView" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="zWH-5y-YYx"/>
+                <outlet property="lbDate" destination="CZN-cC-msd" id="WU8-Lz-qCl"/>
+                <outlet property="lbMonth" destination="FJg-tv-u3l" id="Fjb-gL-T8h"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
