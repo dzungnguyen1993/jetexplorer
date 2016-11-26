@@ -135,40 +135,45 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         let token = ["token" : accessToken]
         
         Alamofire.request(requestURL, method: .post, parameters: token, encoding: JSONEncoding.default).responseJSON { response in
-            if let currentUser = response.result.value as? [String: Any] {
-                if let user = User(JSON: currentUser) {
-                    print(user)
-                    // update this user is current user
-                    user.isCurrentUser = true
-                    
-                    // success get user info
-                    let realm = try! Realm()
-                    
-                    func updateCurrentUser () {
-                        // save/update it to Realm
-                        try! realm.write {
-                            realm.add(user, update: true)
-                        }
-                    }
-                    
-                    // get the current user
-                    if let lastUser = realm.objects(User.self).filter("isCurrentUser == true").first {
-                        if lastUser.id == user.id {
-                            // same user login, nothing happen
-                        } else {
-                            // set it to not be
-                            try! realm.write{
-                                lastUser.isCurrentUser = false
+            if let value = response.result.value as? NSDictionary {
+                if let id = value.value(forKey: "_id") as? String, id != "" {
+                    if let user = User(JSON: value as! [String: Any]) {
+                        print(user)
+                        // update this user is current user
+                        user.isCurrentUser = true
+                        
+                        // success get user info
+                        let realm = try! Realm()
+                        
+                        func updateCurrentUser () {
+                            // save/update it to Realm
+                            try! realm.write {
+                                realm.add(user, update: true)
                             }
+                        }
+                        
+                        // get the current user
+                        if let lastUser = realm.objects(User.self).filter("isCurrentUser == true").first {
+                            if lastUser.id == user.id {
+                                // same user login, nothing happen
+                            } else {
+                                // set it to not be
+                                try! realm.write{
+                                    lastUser.isCurrentUser = false
+                                }
+                                updateCurrentUser()
+                            }
+                        } else {
                             updateCurrentUser()
                         }
-                    } else {
-                        updateCurrentUser()
+                        
+                        // back to previous screen
+                        ProfileVC.isUserLogined = true
+                        _ = self.navigationController?.popViewController(animated: true)
                     }
-                    
-                    // back to previous screen
-                    ProfileVC.isUserLogined = true
-                    self.setUpMainView()
+                } else if let message = value.value(forKey: "message") as? String {
+                    // TODO: Show notification here
+                    print(message)
                 }
             } else {
                 print("Wrong info!")
@@ -267,10 +272,13 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            // change the picture
+            // change the picture in UI
             if userInfoView != nil {
                 userInfoView!.userAvatar.image = image
             }
+            
+            // update to server
+            
         }
         dismiss(animated: true, completion: nil)
     }

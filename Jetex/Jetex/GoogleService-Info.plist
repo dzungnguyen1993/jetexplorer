@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>372612069534-rs25sfhnlj60tdqroeenmvrt5i50p3a1.apps.googleusercontent.com</string>
+	<string>514456118871-qcmqqechijrvbm44jf6nhn83pgh8mt6l.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.372612069534-rs25sfhnlj60tdqroeenmvrt5i50p3a1</string>
+	<string>com.googleusercontent.apps.514456118871-qcmqqechijrvbm44jf6nhn83pgh8mt6l</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.p5.ios.Jetex</string>
 	<key>PROJECT_ID</key>
-	<string>jetex-dev</string>
+	<string>jetexplorer-1314</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -23,6 +23,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:372612069534:ios:5e0d44fd269ebeb0</string>
+	<string>1:514456118871:ios:5e0d44fd269ebeb0</string>
 </dict>
 </plist>

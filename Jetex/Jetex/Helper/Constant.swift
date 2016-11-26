@@ -17,6 +17,10 @@ struct APIURL {
         static let signInWithGoogle = "/api/auth/mgoogle"
         static let signOut = "/api/auth/signout"
         static let history = "/api/users/history"
+        static let updateUserData = "/api/users"
+        static let changePassword = "/api/users/password"
+        static let changeAvatar = "/api/users/picture"
+        static let changeCurrency = "/api/users/currency"
         
         // TODO: update the appId here
         static let appId = 1159421121
@@ -24,7 +28,7 @@ struct APIURL {
     }
     
     struct GoogleAPI {
-        static let clientID = "372612069534-rs25sfhnlj60tdqroeenmvrt5i50p3a1.apps.googleusercontent.com"
+        static let clientID = "514456118871-qcmqqechijrvbm44jf6nhn83pgh8mt6l.apps.googleusercontent.com"
     }
     
 }

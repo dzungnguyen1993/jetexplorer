@@ -54,7 +54,7 @@ class SignUpVC: BaseViewController {
         // request to server
         let requestURL = APIURL.JetExAPI.base + APIURL.JetExAPI.signUp
         Alamofire.request(requestURL, method: .post, parameters: userInfo, encoding: JSONEncoding.default).responseJSON { response in
-            if let currentUser = response.result.value as? [String: Any] {
+            if let currentUser = response.result.value as? [String: Any], (currentUser["_id"] as! String) != "" {
                 if let user = User(JSON: currentUser) {
                     // success get user info
                     let realm = try! Realm()

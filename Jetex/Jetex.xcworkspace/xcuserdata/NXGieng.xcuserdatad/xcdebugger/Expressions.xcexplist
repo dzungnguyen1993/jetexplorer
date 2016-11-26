@@ -3,6 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ProfileVC.(setUpMainView() -&gt; ()).(closure #1):ProfileVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.result">
+            </PersistentString>
+            <PersistentString
+               value = "avatarURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChangNameVC.(saveButtonPressed(AnyObject) -&gt; ()).(closure #2):ChangNameVC.swift">
+      </ContextState>
+      <ContextState
          contextName = "UICheckBoxButton.selfPressed(sender : AnyObject) -&gt; ():UICheckBoxButton.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,26 +25,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ProfileVC.imagePickerController(UIImagePickerController, didFinishPickingMediaWithInfo : [String : Any]) -&gt; ():ProfileVC.swift">
+         contextName = "SignInVC.(signInButtonPressed(AnyObject) -&gt; ()).(closure #1):SignInVCViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "mainView.subviews">
+               value = "response.header">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "UIImage.init(fromHex : UnsafePointer&lt;Int8&gt;) -&gt; UIImage:Extentions.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "textlabel.text">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ProfileVC.(signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ()).(closure #1):ProfileVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "response.result.value ">
+               value = "currentUser as! [String: Any]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -43,21 +44,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SignInVC.(signInButtonPressed(AnyObject) -&gt; ()).(closure #1):SignInVCViewController.swift">
+         contextName = "ProfileVC.signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ():ProfileVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProfileVC.(signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ()).(closure #1):ProfileVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "currentUser as! [String: Any]">
+               value = "response.result.value ">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ProfileVC.(setUpMainView() -&gt; ()).(closure #1):ProfileVC.swift">
+         contextName = "UIImage.init(fromHex : UnsafePointer&lt;Int8&gt;) -&gt; UIImage:Extentions.swift">
          <PersistentStrings>
             <PersistentString
-               value = "response.result">
-            </PersistentString>
-            <PersistentString
-               value = "avatarURL">
+               value = "textlabel.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -65,7 +66,26 @@
          contextName = "ProfileVC.signInWithFacebook() -&gt; ():ProfileVC.swift">
       </ContextState>
       <ContextState
-         contextName = "ProfileVC.signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ():ProfileVC.swift">
+         contextName = "ChangePasswordVC.(saveButtonPressed(AnyObject) -&gt; ()).(closure #1):ChangePasswordVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentUser[&quot;message&quot;] as String">
+            </PersistentString>
+            <PersistentString
+               value = "response.result.value as NSDictionary">
+            </PersistentString>
+            <PersistentString
+               value = "currentUser">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProfileVC.imagePickerController(UIImagePickerController, didFinishPickingMediaWithInfo : [String : Any]) -&gt; ():ProfileVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "mainView.subviews">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "UserInfoView.initializeSubviews() -&gt; ():UserInfoView.swift">

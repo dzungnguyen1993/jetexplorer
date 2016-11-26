@@ -53,3 +53,8 @@ class HotelHistorySearch : HistorySearch {
 enum HistorySearchType {
     case Flight, Hotel
 }
+
+
+/*
+ 
+ */

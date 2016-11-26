@@ -21,9 +21,11 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb986545708069926</string>
+				<string>fb1164273536919011</string>
 			</array>
 		</dict>
 		<dict>
@@ -31,16 +33,16 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.372612069534-rs25sfhnlj60tdqroeenmvrt5i50p3a1</string>
+				<string>com.googleusercontent.apps.514456118871-qcmqqechijrvbm44jf6nhn83pgh8mt6l</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>986545708069926</string>
+	<string>1164273536919011</string>
 	<key>FacebookDisplayName</key>
-	<string>TriFellow</string>
+	<string>JetE­x­p­l­orer</string>
 	<key>FirebaseAutomaticScreenReportingEnabled</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
