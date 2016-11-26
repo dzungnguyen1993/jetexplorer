@@ -45,7 +45,7 @@
 		28C448911DDA24DC00DEBC51 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C448901DDA24DC00DEBC51 /* UserInfoView.swift */; };
 		28E62C4C1DE597CF00E41D44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E62C4B1DE597CF00E41D44 /* User.swift */; };
 		28E62C4E1DE68ACC00E41D44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E62C4D1DE68ACC00E41D44 /* Constant.swift */; };
-		28E62C501DE6AACE00E41D44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E62C4F1DE6AACE00E41D44 /* GoogleService-Info.plist */; };
+		28E62C531DE6F23D00E41D44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E62C521DE6F23D00E41D44 /* GoogleService-Info.plist */; };
 		B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */; };
 		B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */; };
 		B90DDA481DD45F0800AEC1AE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA471DD45F0800AEC1AE /* back.png */; };
@@ -222,8 +222,8 @@
 		28C448901DDA24DC00DEBC51 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoView.swift; path = ../Controllers/UserInfoView.swift; sourceTree = "<group>"; };
 		28E62C4B1DE597CF00E41D44 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28E62C4D1DE68ACC00E41D44 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		28E62C4F1DE6AACE00E41D44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28E62C511DE6AC4100E41D44 /* JetEx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JetEx-Bridging-Header.h"; sourceTree = "<group>"; };
+		28E62C521DE6F23D00E41D44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.debug.xcconfig"; sourceTree = "<group>"; };
 		5F30E1B520C7F45D1DB37729 /* Pods_JetexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -638,7 +638,7 @@
 				B9E4FC6B1DD18BAB000468EC /* Main.storyboard */,
 				B9E4FC6E1DD18BAB000468EC /* Assets.xcassets */,
 				B9E4FC701DD18BAB000468EC /* LaunchScreen.storyboard */,
-				28E62C4F1DE6AACE00E41D44 /* GoogleService-Info.plist */,
+				28E62C521DE6F23D00E41D44 /* GoogleService-Info.plist */,
 				B9E4FC731DD18BAB000468EC /* Info.plist */,
 				28E62C511DE6AC4100E41D44 /* JetEx-Bridging-Header.h */,
 			);
@@ -898,7 +898,7 @@
 				B99F82C91DE1D73300DA8B37 /* RoundCheckCell.xib in Resources */,
 				B9F445E61DD4D6DF00250D6C /* Gotham-BlackIta.otf in Resources */,
 				B9D9A2C21DDB6747007CAB28 /* SearchResultDateView.xib in Resources */,
-				28E62C501DE6AACE00E41D44 /* GoogleService-Info.plist in Resources */,
+				28E62C531DE6F23D00E41D44 /* GoogleService-Info.plist in Resources */,
 				B9EE7A861DDE1F1900A82AEE /* red clock.png in Resources */,
 				B99F82CD1DE1DAC500DA8B37 /* StopCell.xib in Resources */,
 				B92F8BCE1DE20A810039C153 /* filter.png in Resources */,

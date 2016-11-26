@@ -7,14 +7,31 @@
 //
 
 import UIKit
+import RealmSwift
+import Alamofire
 
 class EditProfileVC: UITableViewController {
     
+    @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var emailUpdateTextField: UIPaddingTextField!
     @IBOutlet weak var emailSubscriptionSwitch: UISwitch!
     
+    let realm = try! Realm()
+    var currentUser: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let currentUser = realm.objects(User.self).filter("isCurrentUser == true").first {
+            self.currentUser = currentUser
+            
+            displayNameLabel.text = currentUser.displayName
+            emailUpdateTextField.text = currentUser.email
+            // TODO: Ask Duy API to get/set news letter
+            emailSubscriptionSwitch.setOn(true, animated: true)
+        }
     }
     
     @IBAction func backButtonPressed(_ sender: AnyObject) {
@@ -74,6 +91,24 @@ class EditProfileVC: UITableViewController {
     
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
         textFieldResign()
+        // save & update email
+        try! realm.write {
+            currentUser.email = emailUpdateTextField.text!
+        }
+        
+        // update info to server
+        let newInfo = ["email": currentUser.email]
+        
+        let requestURL = APIURL.JetExAPI.base + APIURL.JetExAPI.updateUserData
+        Alamofire.request(requestURL, method: .post, parameters: newInfo, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+            if let currentUser = response.result.value as? [String: Any] {
+                // update successfully
+                // TODO: show popup?
+            } else {
+                print("Wrong info!")
+                return
+            }
+        })
         _ = self.navigationController?.popViewController(animated: true)
     }
     

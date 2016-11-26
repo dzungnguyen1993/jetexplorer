@@ -260,6 +260,7 @@
                     </tableView>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="displayNameLabel" destination="l9d-Vu-bq0" id="uvh-G8-01N"/>
                         <outlet property="emailSubscriptionSwitch" destination="bRH-vM-dEf" id="Sfx-f7-BEw"/>
                         <outlet property="emailUpdateTextField" destination="HGU-Gq-rG3" id="LEW-aA-lMa"/>
                     </connections>
