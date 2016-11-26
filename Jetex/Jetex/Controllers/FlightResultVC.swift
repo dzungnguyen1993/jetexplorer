@@ -60,8 +60,6 @@ class FlightResultVC: BaseViewController {
         
         // show header info
         showHeaderInfo()
-        
-        self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
     }
 
     func showHeaderInfo() {
@@ -125,29 +123,28 @@ class FlightResultVC: BaseViewController {
 
 extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return arrayResult.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // remember indexpath.section instead of indexpath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightResultCell", for: indexPath) as! FlightResultCell
         
-        if (indexPath.section == showDetailsIndex) {
+        if (indexPath.row == showDetailsIndex) {
             cell.viewInfoGeneral.isHidden = true
             cell.viewDetails.isHidden = false
             
-            cell.addViewDetails(flightInfo: arrayResult[indexPath.section])
+            cell.addViewDetails(flightInfo: arrayResult[indexPath.row])
             
             // set border
-            cell.layer.borderColor = UIColor(hex: 0x674290).cgColor
-            cell.layer.borderWidth = 1.0
+            cell.containerView.layer.borderColor = UIColor(hex: 0x674290).cgColor
+            cell.containerView.layer.borderWidth = 1.0
         } else {
             cell.viewInfoGeneral.isHidden = false
             cell.viewDetails.isHidden = true
             
             // set border
-            cell.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
-            cell.layer.borderWidth = 1.0
+            cell.containerView.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
+            cell.containerView.layer.borderWidth = 1.0
         }
         
        
@@ -155,32 +152,15 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (indexPath.section == showDetailsIndex) {
-            return CGFloat(56 + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: arrayResult[indexPath.section]))
+        var footerSize = 8
+        if (indexPath.row == arrayResult.count - 1) {
+            footerSize = 0
         }
-        return CGFloat(cellDefaultHeight)
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return arrayResult.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (section == 0) {
-            return 0
+        
+        if (indexPath.row == showDetailsIndex) {
+            return CGFloat(56 + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: arrayResult[indexPath.row]) + footerSize)
         }
-        return 8
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        if (section == 0) {
-            view.backgroundColor = UIColor.white
-        } else {
-            view.backgroundColor = UIColor(hex: 0xF6F6F6)
-        }
-//        self.tableView.tableHeaderView = view;
-        return view
+        return CGFloat(cellDefaultHeight + footerSize)
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -188,15 +168,15 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (showDetailsIndex != indexPath.section) {
-            showDetailsIndex = indexPath.section
+        if (showDetailsIndex != indexPath.row) {
+            showDetailsIndex = indexPath.row
         } else {
             showDetailsIndex = -1
         }
-        
+     
         tableView.reloadData()
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
-    
 }
 
 extension FlightResultVC: FilterFlightViewDelegate {

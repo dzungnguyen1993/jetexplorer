@@ -69,7 +69,7 @@
                             <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hAv-FA-4pM">
-                                    <rect key="frame" x="101" y="7.5" width="173" height="29"/>
+                                    <rect key="frame" x="101" y="8" width="173" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="s9m-vV-GuW"/>
                                         <constraint firstAttribute="width" constant="173" id="w2k-4M-aGg"/>
@@ -94,10 +94,10 @@
                             <rect key="frame" x="16" y="112" width="343" height="80"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-Qg-kcO" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="171.5" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="172" height="80"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adl-uU-hrY" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
-                                    <rect key="frame" x="171.5" y="0.0" width="171.5" height="80"/>
+                                    <rect key="frame" x="172" y="0.0" width="171" height="80"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
@@ -118,10 +118,10 @@
                             <rect key="frame" x="16" y="224" width="343" height="80"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEE-Z9-y7l" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="171.5" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="172" height="80"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rac-BR-woo" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
-                                    <rect key="frame" x="171.5" y="0.0" width="171.5" height="80"/>
+                                    <rect key="frame" x="172" y="0.0" width="171" height="80"/>
                                 </view>
                             </subviews>
                             <constraints>
@@ -140,13 +140,13 @@
                             <rect key="frame" x="16" y="336" width="343" height="60"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bvw-ZA-UO9">
-                                    <rect key="frame" x="8" y="0.0" width="26.5" height="26.5"/>
+                                    <rect key="frame" x="8" y="0.0" width="27" height="27"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="bvw-ZA-UO9" secondAttribute="height" multiplier="1:1" id="hVk-Of-Q9g"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-vJ-T6V" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
-                                    <rect key="frame" x="44.5" y="3" width="290.5" height="21"/>
+                                    <rect key="frame" x="45" y="3" width="290" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="Lja-vJ-g9D"/>
                                     </constraints>

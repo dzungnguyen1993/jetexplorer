@@ -19,6 +19,7 @@ class FlightResultCell: UITableViewCell {
     @IBOutlet weak var constraintReturnHeight: NSLayoutConstraint!
     @IBOutlet weak var constraintDetailsHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var containerView: UIView!
  
     
     override func awakeFromNib() {
