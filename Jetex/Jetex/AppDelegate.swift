@@ -20,27 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // for Google login
         GIDSignIn.sharedInstance().clientID = APIURL.GoogleAPI.clientID
-//        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-//        print(documentsPath)
-
-        // get list airport
-        let defaults = UserDefaults.standard
-        let isInstalled = defaults.bool(forKey: "isInstalled")
-        
-        if (!isInstalled) {
-            DispatchQueue.global().sync {
-                NetworkManager.shared.requestGetAllAirport { (isSuccess, response) in
-                    // fetch list successfully
-                    if (isSuccess) {
-                        DBManager.shared.parseListAirportJSON(data: response as! NSDictionary)
-                        defaults.set(true, forKey: "isInstalled")
-                        print("Finish sync")
-                    } else {
-                        
-                    }
-                }
-            }
-        }
         
         // for Facebook login
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
