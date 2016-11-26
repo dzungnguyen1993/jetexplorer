@@ -74,6 +74,7 @@ PODS:
   - ObjectMapper+Realm (0.2):
     - ObjectMapper
     - RealmSwift
+  - PopupDialog (0.5.0)
   - Realm (2.0.3):
     - Realm/Headers (= 2.0.3)
   - Realm/Headers (2.0.3)
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - FacebookShare
   - Google/SignIn
   - ObjectMapper+Realm
+  - PopupDialog (~> 0.5)
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -112,9 +114,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   ObjectMapper+Realm: 8b45dbfa1be145e311a6f93a306c183d630b40a9
+  PopupDialog: 9890441b81105b9076757af2afe2b037be682f3e
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
 
-PODFILE CHECKSUM: f37c49475d3e90edd2e281be0734604ad6b211d5
+PODFILE CHECKSUM: bd077aea35901bcf3847580ed9930a3de5db9047
 
 COCOAPODS: 1.2.0.beta.1

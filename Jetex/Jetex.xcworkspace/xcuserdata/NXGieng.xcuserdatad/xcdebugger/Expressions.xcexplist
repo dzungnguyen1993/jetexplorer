@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "WarningView.initializeSubviews() -&gt; ():WarningView.swift">
+      </ContextState>
+      <ContextState
          contextName = "ProfileVC.(setUpMainView() -&gt; ()).(closure #1):ProfileVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -45,6 +48,14 @@
       </ContextState>
       <ContextState
          contextName = "ProfileVC.signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ():ProfileVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WarningForInput.hideWarning(animated : Bool) -&gt; ():WarningView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.inputTextField?.layer.borderColor">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "ProfileVC.(signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ()).(closure #1):ProfileVC.swift">

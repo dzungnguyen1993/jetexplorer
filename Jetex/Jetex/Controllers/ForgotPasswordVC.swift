@@ -8,11 +8,15 @@
 
 import UIKit
 import RealmSwift
+import PopupDialog
 
 class ForgotPasswordVC: BaseViewController {
 
     // MARK: - IBOutlet variables
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
+    
+    var emailWarning: WarningForInput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +28,30 @@ class ForgotPasswordVC: BaseViewController {
         } else {
             emailTextField.becomeFirstResponder()
         }
+        
+        emailWarning = WarningForInput(setWarning: "Your email is not correct", for: emailTextField, withTitle: emailLabel)
     }
     
     // MARK:- send
     @IBAction func sendButtonPressed(_ sender: AnyObject) {
-        // request server to send email reseting password
+        guard (emailTextField.text != nil && emailTextField.text!.contains("@")) else {
+            print("email is not right!")
+            self.emailWarning.showWarning(animated: true, autoHide: true, after: 5)
+            return
+        }
         
-        // back to setting
-        _ = self.navigationController?.popViewController(animated: true)
+        // TODO: request server to send email reseting password
+        
+        
+        // Show Loading Pop up view
+        let popup = PopupDialog(title: "Go check your inbox", message: "We sent an email for you!", image: UIImage(named: "loading.jpg"))
+        
+        popup.addButton(DefaultButton(title: "Back") {
+            // back to setting
+            _ = self.navigationController?.popViewController(animated: true)
+        })
+        
+        self.present(popup, animated: true, completion: nil)
     }
 
     /*

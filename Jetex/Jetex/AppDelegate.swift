@@ -11,6 +11,7 @@ import FBSDKCoreKit
 import GoogleSignIn
 import RealmSwift
 import Realm
+import PopupDialog
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // for Google login
         GIDSignIn.sharedInstance().clientID = APIURL.GoogleAPI.clientID
+        
+        // set up pop up appearance
+        let dialogAppearance = PopupDialogDefaultView.appearance()
+        
+        dialogAppearance.backgroundColor      = UIColor.white
+        dialogAppearance.titleFont            = UIFont(name: GothamFontName.Bold.rawValue, size: 15.0)!
+        dialogAppearance.titleColor           = UIColor(white: 0.4, alpha: 1)
+        dialogAppearance.titleTextAlignment   = .center
+        dialogAppearance.messageFont          = UIFont(name: GothamFontName.Book.rawValue, size: 15.0)!
+        dialogAppearance.messageColor         = UIColor(white: 0.6, alpha: 1)
+        dialogAppearance.messageTextAlignment = .center
+        dialogAppearance.cornerRadius         = 4
+        
+        let buttonAppearance = DefaultButton.appearance()
+        
+        // Default button
+        buttonAppearance.titleFont      = UIFont(name: GothamFontName.Bold.rawValue, size: 15.0)
+        buttonAppearance.titleColor     = UIColor(hex: 0x674290)
+        buttonAppearance.buttonColor    = UIColor.clear
+        buttonAppearance.separatorColor = UIColor(hex: 0x674290)
+        
+        // Below, only the differences are highlighted
+        
+        // Cancel button
+        CancelButton.appearance().titleFont       = UIFont(name: GothamFontName.Book.rawValue, size: 15.0)
+        CancelButton.appearance().titleColor      = UIColor(hex: 0x999999)
+        
+        // Destructive button
+        DestructiveButton.appearance().titleFont  = UIFont(name: GothamFontName.Book.rawValue, size: 15.0)
+        DestructiveButton.appearance().titleColor = UIColor(hex: 0xE8615B)
         
         // for Facebook login
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

@@ -9,17 +9,28 @@
 import UIKit
 import Alamofire
 import RealmSwift
+import PopupDialog
 
 class SignInVC: BaseViewController {
 
     // MARK: - IBOutlet Variables
+    
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    var emailWarning, passwordWarning: WarningForInput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // add the warning 
+        emailWarning = WarningForInput(setWarning: "Your email is not correct", for: emailTextField, withTitle: emailLabel)
+        passwordWarning = WarningForInput(setWarning: "Your password is not correct", for: passwordTextField, withTitle: passwordLabel)
+        
         // get the last user info to fill up
         let realm = try! Realm()
         if let lastUser = realm.objects(User.self).filter("isCurrentUser == true").first {
@@ -34,11 +45,13 @@ class SignInVC: BaseViewController {
     @IBAction func signInButtonPressed(_ sender: AnyObject) {
         guard (emailTextField.text != nil && emailTextField.text!.contains("@")) else {
             print("email is not right!")
+            self.emailWarning.showWarning(animated: true, autoHide: true, after: 5)
             return
         }
         
         guard (passwordTextField.text != nil && passwordTextField.text!.characters.count >= 6) else {
             print("password is not valid")
+            self.passwordWarning.showWarning(animated: true, autoHide: true, after: 5)
             return
         }
         
@@ -48,8 +61,12 @@ class SignInVC: BaseViewController {
             "password": passwordTextField.text!
         ]
         
-        // TOTO: check if user are offline, then get offline information
+        // Show Loading Pop up view
+        let popup = PopupDialog(title: "Signing In ...", message: "Please wait!", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
         
+        self.present(popup, animated: true, completion: nil)
+        
+        // TOTO: check if user are offline, then get offline information
         
         // request to server
         let requestURL = APIURL.JetExAPI.base + APIURL.JetExAPI.signIn
@@ -86,20 +103,31 @@ class SignInVC: BaseViewController {
                             updateCurrentUser()
                         }
                         
-                        // back to previous screen
-                        ProfileVC.isUserLogined = true
-                        _ = self.navigationController?.popViewController(animated: true)
+                        popup.dismiss({
+                            // back to previous screen
+                            ProfileVC.isUserLogined = true
+                            _ = self.navigationController?.popViewController(animated: true)
+                        })
+                        
+                        return
                     }
                 } else if let message = value.value(forKey: "message") as? String {
-                    // TODO: Show notification here
+                    // hide pop up
                     print(message)
+                    popup.dismiss()
+                    
+                    // Show notification
+                    self.emailWarning.showWarning(animated: true, autoHide: true, after: 5)
+                    self.passwordWarning.showWarning(animated: true, autoHide: true, after: 5)
                 }
             } else {
-                print("Wrong info!")
-                return
+                popup.dismiss({
+                    let newPopup = PopupDialog(title: "Cannot sign in", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
+                    newPopup.addButton(CancelButton(title: "Try again", action: nil))
+                    self.present(newPopup, animated: true, completion: nil)
+                })
             }
         }
-        
     }
     
     @IBAction func forgetButtonPressed(_ sender: AnyObject) {

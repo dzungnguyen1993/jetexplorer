@@ -20,7 +20,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangNameVC" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="o1Q-wW-KMJ" id="i4K-q6-F8f"/>
+                <outlet property="firstNameLabel" destination="4pG-aF-0l9" id="hq1-0e-LcE"/>
                 <outlet property="firstNameTextField" destination="fvx-eG-bam" id="xlV-VP-Tzc"/>
+                <outlet property="lastNameLabel" destination="QkM-Ql-x0X" id="ZPz-WU-f9F"/>
                 <outlet property="lastNameTextField" destination="S7K-V2-050" id="xzL-QO-B1O"/>
                 <outlet property="networkErrorView" destination="NEW-ri-QXp" id="VDX-wT-3Lj"/>
                 <outlet property="view" destination="cZA-cP-GJU" id="vgU-o7-HOF"/>
@@ -116,7 +118,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                     <real key="value" value="1"/>

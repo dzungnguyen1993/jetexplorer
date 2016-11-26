@@ -11,6 +11,7 @@
 		2830E9021DE1C7A7001A76F9 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2830E9001DE1C7A7001A76F9 /* HistoryCell.xib */; };
 		2830E9041DE1DCE2001A76F9 /* HistorySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830E9031DE1DCE2001A76F9 /* HistorySearch.swift */; };
 		2831EB1F1DE40EA5003EEB07 /* handsomeGieng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2831EB1E1DE40EA5003EEB07 /* handsomeGieng.jpg */; };
+		2847E67F1DE95F7B00B69216 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2847E67E1DE95F7B00B69216 /* loading.jpg */; };
 		284EC7861DDA1C7F001D0892 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284EC7851DDA1C7F001D0892 /* LoginView.swift */; };
 		284EC7881DDA1C91001D0892 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284EC7871DDA1C91001D0892 /* LoginView.xib */; };
 		284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284EC7891DDA22F5001D0892 /* UserInfoView.xib */; };
@@ -24,6 +25,9 @@
 		2872C5421DDF588900239CF2 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872C5411DDF588900239CF2 /* ChangePasswordVC.swift */; };
 		2872C5451DDF701300239CF2 /* SelectCurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872C5431DDF701300239CF2 /* SelectCurrencyVC.swift */; };
 		2872C5461DDF701300239CF2 /* SelectCurrencyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2872C5441DDF701300239CF2 /* SelectCurrencyVC.xib */; };
+		28811F871DE9A12C00BB0ADA /* WarningView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28811F861DE9A12C00BB0ADA /* WarningView.xib */; };
+		28811F891DE9A78100BB0ADA /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 28811F881DE9A78100BB0ADA /* triangle.png */; };
+		28811F8B1DE9C5D500BB0ADA /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28811F8A1DE9C5D500BB0ADA /* WarningView.swift */; };
 		289192951DDC595C001C064B /* ChangNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289192931DDC595C001C064B /* ChangNameVC.swift */; };
 		289192961DDC595C001C064B /* ChangNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289192941DDC595C001C064B /* ChangNameVC.xib */; };
 		289192991DDDCD7D001C064B /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289192971DDDCD7D001C064B /* ForgotPasswordVC.swift */; };
@@ -189,6 +193,7 @@
 		2830E9001DE1C7A7001A76F9 /* HistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HistoryCell.xib; path = Jetex/Controllers/HistoryCell.xib; sourceTree = SOURCE_ROOT; };
 		2830E9031DE1DCE2001A76F9 /* HistorySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorySearch.swift; sourceTree = "<group>"; };
 		2831EB1E1DE40EA5003EEB07 /* handsomeGieng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = handsomeGieng.jpg; sourceTree = "<group>"; };
+		2847E67E1DE95F7B00B69216 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
 		284EC7851DDA1C7F001D0892 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ../Controllers/LoginView.swift; sourceTree = "<group>"; };
 		284EC7871DDA1C91001D0892 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginView.xib; path = ../Controllers/LoginView.xib; sourceTree = "<group>"; };
 		284EC7891DDA22F5001D0892 /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoView.xib; path = ../Controllers/UserInfoView.xib; sourceTree = "<group>"; };
@@ -202,6 +207,9 @@
 		2872C5411DDF588900239CF2 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		2872C5431DDF701300239CF2 /* SelectCurrencyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCurrencyVC.swift; sourceTree = "<group>"; };
 		2872C5441DDF701300239CF2 /* SelectCurrencyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectCurrencyVC.xib; sourceTree = "<group>"; };
+		28811F861DE9A12C00BB0ADA /* WarningView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WarningView.xib; sourceTree = "<group>"; };
+		28811F881DE9A78100BB0ADA /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
+		28811F8A1DE9C5D500BB0ADA /* WarningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
 		289192931DDC595C001C064B /* ChangNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangNameVC.swift; sourceTree = "<group>"; };
 		289192941DDC595C001C064B /* ChangNameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangNameVC.xib; sourceTree = "<group>"; };
 		289192971DDDCD7D001C064B /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
@@ -516,6 +524,8 @@
 				286F62D01DDB445500B26733 /* UICheckBoxButton.swift */,
 				B9D9A2BF1DDB672C007CAB28 /* SearchResultDateView.swift */,
 				B9D9A2C11DDB6747007CAB28 /* SearchResultDateView.xib */,
+				28811F861DE9A12C00BB0ADA /* WarningView.xib */,
+				28811F8A1DE9C5D500BB0ADA /* WarningView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -523,6 +533,7 @@
 		B96BAC641DD1C4AA00AE79AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2847E67E1DE95F7B00B69216 /* loading.jpg */,
 				2831EB1E1DE40EA5003EEB07 /* handsomeGieng.jpg */,
 				B92F8BCD1DE20A810039C153 /* filter.png */,
 				B92F8BCB1DE207EB0039C153 /* straight plane.png */,
@@ -541,6 +552,7 @@
 				B9D9A2C31DDB6B27007CAB28 /* right-arrow.png */,
 				B9D9A2BD1DDB628F007CAB28 /* users.png */,
 				B963E7291DD6D3A800A21548 /* add.png */,
+				28811F881DE9A78100BB0ADA /* triangle.png */,
 				B963E72A1DD6D3A800A21548 /* substract.png */,
 				B9F445F51DD4DA1B00250D6C /* GothamFontName.swift */,
 				28BAD0111DE1628E0008032D /* JetExFontHexCode.swift */,
@@ -890,12 +902,14 @@
 				B956E23B1DE0C724000A86A0 /* FlightTransitView.xib in Resources */,
 				B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */,
 				B98FB6D31DDB1BAA00E615F2 /* FlightResultVC.xib in Resources */,
+				28811F871DE9A12C00BB0ADA /* WarningView.xib in Resources */,
 				B9DD5B191DDCC41200612C9B /* clock.png in Resources */,
 				B9E4FC6D1DD18BAB000468EC /* Main.storyboard in Resources */,
 				B9F445EF1DD4D6DF00250D6C /* Gotham-Thin.otf in Resources */,
 				B9F445F31DD4D6DF00250D6C /* Gotham-XLight.otf in Resources */,
 				28BAD00C1DE0DFCA0008032D /* SearchCityCell.xib in Resources */,
 				B9F445E91DD4D6DF00250D6C /* Gotham-Book.otf in Resources */,
+				28811F891DE9A78100BB0ADA /* triangle.png in Resources */,
 				B963E72C1DD6D3A800A21548 /* substract.png in Resources */,
 				B9CAE9CE1DE197D600A149BD /* letter-x.png in Resources */,
 				B99F82C91DE1D73300DA8B37 /* RoundCheckCell.xib in Resources */,
@@ -913,6 +927,7 @@
 				28BAD0171DE18B1E0008032D /* SearchHistoryVC.xib in Resources */,
 				286F62C91DDB385200B26733 /* SignInVC.xib in Resources */,
 				B99F82C01DE1C7FF00DA8B37 /* check round.png in Resources */,
+				2847E67F1DE95F7B00B69216 /* loading.jpg in Resources */,
 				286F62CF1DDB425600B26733 /* SignUpVC.xib in Resources */,
 				B963E7241DD6BF7400A21548 /* PickPassengerVC.xib in Resources */,
 				B9F445EA1DD4D6DF00250D6C /* Gotham-BookIta.otf in Resources */,
@@ -1003,6 +1018,7 @@
 				B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */,
 				B9CAE9CA1DE1973300A149BD /* FilterFlightView.swift in Sources */,
 				B9E4453F1DD62FEB002946A0 /* PickInfoView.swift in Sources */,
+				28811F8B1DE9C5D500BB0ADA /* WarningView.swift in Sources */,
 				B9EE7A731DDDECB700A82AEE /* FlightResultCell.swift in Sources */,
 				B9FFD12F1DE6C43A0040F6DB /* Continent.swift in Sources */,
 				2830E9041DE1DCE2001A76F9 /* HistorySearch.swift in Sources */,

@@ -9,11 +9,16 @@
 import UIKit
 import RealmSwift
 import Alamofire
+import PopupDialog
 
 class ChangNameVC: BaseViewController {
     
     // MARK: - IBOutlet Variables
+    
+    @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var firstNameTextField: UIPaddingTextField!
+    
+    @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var lastNameTextField: UIPaddingTextField!
     
     override func viewDidLoad() {
@@ -35,6 +40,11 @@ class ChangNameVC: BaseViewController {
             return
         }
         
+        // Show loading
+        let popup = PopupDialog(title: "Updating ...", message: "Please wait!", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+        
+        self.present(popup, animated: true, completion: nil)
+        
         // update info to db
         let realm = try! Realm()
         if let currentUser = realm.objects(User.self).filter("isCurrentUser == true").first {
@@ -51,17 +61,26 @@ class ChangNameVC: BaseViewController {
         
             let requestURL = APIURL.JetExAPI.base + APIURL.JetExAPI.updateUserData
             Alamofire.request(requestURL, method: .put, parameters: newInfo, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
-                if let currentUser = response.result.value as? [String: Any] {
+                if let _ = response.result.value as? [String: Any] {
                     // update successfully
-                    // TODO: show popup?
+                    popup.dismiss({
+                        let newPopup = PopupDialog(title: "Updated!", message: "Now you are \(self.firstNameTextField.text!) \(self.lastNameTextField.text!)", image: UIImage(named: "loading.jpg"))
+                        newPopup.addButton(CancelButton(title: "Back", action: {
+                            // back to setting
+                            _ = self.navigationController?.popViewController(animated: true)
+                        }))
+                        self.present(newPopup, animated: true, completion: nil)
+                    })
                 } else {
                     print("Wrong info!")
+                    popup.dismiss({
+                        let newPopup = PopupDialog(title: "Cannot update!", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
+                        newPopup.addButton(CancelButton(title: "Try again", action: nil))
+                        self.present(newPopup, animated: true, completion: nil)
+                    })
                     return
                 }
             })
-        
-            // back to setting
-            _ = self.navigationController?.popViewController(animated: true)
         } else {
                 print("error: no user!")
         }

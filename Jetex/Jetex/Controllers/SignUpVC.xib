@@ -19,10 +19,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpVC" customModule="Jetex" customModuleProvider="target">
             <connections>
+                <outlet property="confirmLabel" destination="dla-tz-mPj" id="Vzu-v7-Edm"/>
                 <outlet property="confirmPasswordTextField" destination="cD1-P5-Gdw" id="ZiL-Z0-jDZ"/>
                 <outlet property="contentView" destination="6zo-VZ-BOa" id="zS0-Fc-p5i"/>
+                <outlet property="emailLabel" destination="6FY-L3-EGh" id="uAZ-IF-cdX"/>
                 <outlet property="emailTextField" destination="7Ju-ni-JzU" id="33C-WA-NmE"/>
                 <outlet property="networkErrorView" destination="y4z-pC-aPp" id="v4h-rd-pkg"/>
+                <outlet property="passwordLabel" destination="Nsp-P2-eLj" id="apY-9K-OAz"/>
                 <outlet property="passwordTextField" destination="74V-W8-Scs" id="Hs0-FL-fG6"/>
                 <outlet property="view" destination="dJh-KT-H6k" id="0Wj-NA-TAO"/>
             </connections>
@@ -37,11 +40,11 @@
                     <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4z-pC-aPp" userLabel="Network Error View">
-                    <rect key="frame" x="0.0" y="21" width="375" height="646"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zo-VZ-BOa" userLabel="Content View">
-                    <rect key="frame" x="0.0" y="21" width="375" height="646"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sk-ga-m7f">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
