@@ -58,6 +58,8 @@ class NetworkManager: NSObject {
         // add return day
         if (info.isRoundTrip)! {
             requestString.append("/" + (info.returnDay?.toYYYYMMDDString())!)
+        } else {
+            requestString.append("/" + "0")
         }
 
         // add adult

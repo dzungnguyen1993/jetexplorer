@@ -88,7 +88,9 @@ class FlightResultVC: BaseViewController {
         
         NetworkManager.shared.requestGetFlightSearchResult(info: passengerInfo) { (isSuccess, data) in
             popup.dismiss()
-            
+            if (isSuccess) {
+                ResponseParser.shared.parseFlightSearchResponse(data: data as! NSDictionary)
+            }
         }
     }
     

@@ -1,5 +1,5 @@
 //
-//  Carrier.swift
+//  SearchFlightResult.swift
 //  Jetex
 //
 //  Created by Thanh-Dung Nguyen on 11/27/16.
@@ -10,26 +10,25 @@ import ObjectMapper
 import RealmSwift
 import ObjectMapper_Realm
 
-class Carrier: Mappable {
-    dynamic var id: Int = 0
-    dynamic var code: String = ""
-    dynamic var name: String = ""
-    dynamic var imageUrl: String = ""
-    dynamic var displayCode: String = ""
+class SearchFlightResult: Mappable {
+    
+    var carriers = [Carrier]()//List<Carrier>()
+    var places = [Place]()
+    var segments = [Segment]()
+    var legs = [Leg]()
     
     required convenience init?(map: Map) {
         self.init()
     }
-//    
+    
 //    override class func primaryKey() -> String? {
 //        return "id"
 //    }
     
     func mapping(map: Map) {
-        id <- map["Id"]
-        code <- map["Code"]
-        name <- map["Name"]
-        imageUrl <- map["ImageUrl"]
-        displayCode <- map["DisplayCode"]
+        carriers <- map["Carriers"]
+        places <- map["Places"]
+        segments <- map["Segments"]
+        legs <- map["Legs"]
     }
 }
