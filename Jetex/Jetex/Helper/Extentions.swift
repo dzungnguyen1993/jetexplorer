@@ -94,6 +94,14 @@ extension Date {
         
         return timeString
     }
+    
+    func toYYYYMMDDString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd"
+        let timeString = formatter.string(from: self)
+        
+        return timeString
+    }
 }
 
 @IBDesignable extension UIView {
@@ -128,5 +136,11 @@ extension Date {
         get {
             return layer.cornerRadius
         }
+    }
+}
+
+extension Int {
+    func toString() -> String {
+        return String(self)
     }
 }

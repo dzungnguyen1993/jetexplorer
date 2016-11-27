@@ -58,12 +58,15 @@
 		B9150B971DD46AEA00F825DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9150B961DD46AEA00F825DC /* City.swift */; };
 		B917BC601DDC022200F2DA57 /* transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = B917BC5F1DDC022200F2DA57 /* transfer.png */; };
 		B92507B61DDF0F7D0036866D /* FlightInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92507B51DDF0F7D0036866D /* FlightInfo.swift */; };
+		B926C1B41DEAD16C0058ADEA /* NetworkErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B926C1B21DEAD16C0058ADEA /* NetworkErrorVC.swift */; };
+		B926C1B51DEAD16C0058ADEA /* NetworkErrorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B926C1B31DEAD16C0058ADEA /* NetworkErrorVC.xib */; };
 		B92F8BC91DE1FE0C0039C153 /* ApplyFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92F8BC71DE1FE0C0039C153 /* ApplyFilterView.swift */; };
 		B92F8BCA1DE1FE0C0039C153 /* ApplyFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92F8BC81DE1FE0C0039C153 /* ApplyFilterView.xib */; };
 		B92F8BCC1DE207EB0039C153 /* straight plane.png in Resources */ = {isa = PBXBuildFile; fileRef = B92F8BCB1DE207EB0039C153 /* straight plane.png */; };
 		B92F8BCE1DE20A810039C153 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = B92F8BCD1DE20A810039C153 /* filter.png */; };
 		B9418EE11DD99E570094CD12 /* H2Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9418EE01DD99E570094CD12 /* H2Label.swift */; };
 		B947B2C31DE9CE8C00A794BE /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B947B2C11DE9CE8C00A794BE /* SplashVC.swift */; };
+		B947B2C61DE9FCCD00A794BE /* Carrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B947B2C51DE9FCCD00A794BE /* Carrier.swift */; };
 		B95281E61DD705610041C39B /* PassengerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95281E51DD705610041C39B /* PassengerInfo.swift */; };
 		B95281E91DD711880041C39B /* PickDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95281E71DD711880041C39B /* PickDateVC.swift */; };
 		B95281EA1DD711880041C39B /* PickDateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95281E81DD711880041C39B /* PickDateVC.xib */; };
@@ -244,12 +247,15 @@
 		B9150B961DD46AEA00F825DC /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		B917BC5F1DDC022200F2DA57 /* transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer.png; sourceTree = "<group>"; };
 		B92507B51DDF0F7D0036866D /* FlightInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInfo.swift; sourceTree = "<group>"; };
+		B926C1B21DEAD16C0058ADEA /* NetworkErrorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorVC.swift; sourceTree = "<group>"; };
+		B926C1B31DEAD16C0058ADEA /* NetworkErrorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkErrorVC.xib; sourceTree = "<group>"; };
 		B92F8BC71DE1FE0C0039C153 /* ApplyFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyFilterView.swift; sourceTree = "<group>"; };
 		B92F8BC81DE1FE0C0039C153 /* ApplyFilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyFilterView.xib; sourceTree = "<group>"; };
 		B92F8BCB1DE207EB0039C153 /* straight plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "straight plane.png"; sourceTree = "<group>"; };
 		B92F8BCD1DE20A810039C153 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
 		B9418EE01DD99E570094CD12 /* H2Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H2Label.swift; sourceTree = "<group>"; };
 		B947B2C11DE9CE8C00A794BE /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		B947B2C51DE9FCCD00A794BE /* Carrier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carrier.swift; sourceTree = "<group>"; };
 		B95281E51DD705610041C39B /* PassengerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerInfo.swift; sourceTree = "<group>"; };
 		B95281E71DD711880041C39B /* PickDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickDateVC.swift; sourceTree = "<group>"; };
 		B95281E81DD711880041C39B /* PickDateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickDateVC.xib; sourceTree = "<group>"; };
@@ -463,6 +469,8 @@
 				28BAD0131DE18AEA0008032D /* History VCs */,
 				284EC7841DDA1C24001D0892 /* Profile Tab VCs */,
 				B947B2C11DE9CE8C00A794BE /* SplashVC.swift */,
+				B926C1B21DEAD16C0058ADEA /* NetworkErrorVC.swift */,
+				B926C1B31DEAD16C0058ADEA /* NetworkErrorVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -491,6 +499,7 @@
 				B9FFD1301DE6C4490040F6DB /* Country.swift */,
 				B9FFD1321DE6C46E0040F6DB /* Airport.swift */,
 				B9DC5DA41DE834120025D650 /* DBManager.swift */,
+				B947B2C51DE9FCCD00A794BE /* Carrier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -931,6 +940,7 @@
 				286F62CF1DDB425600B26733 /* SignUpVC.xib in Resources */,
 				B963E7241DD6BF7400A21548 /* PickPassengerVC.xib in Resources */,
 				B9F445EA1DD4D6DF00250D6C /* Gotham-BookIta.otf in Resources */,
+				B926C1B51DEAD16C0058ADEA /* NetworkErrorVC.xib in Resources */,
 				B9EE7A761DDDECB700A82AEE /* FlightResultDetailsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1047,6 +1057,7 @@
 				28E62C4E1DE68ACC00E41D44 /* Constant.swift in Sources */,
 				B9D904641DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift in Sources */,
 				B9F446031DD4E19A00250D6C /* GothamBook15Label.swift in Sources */,
+				B947B2C61DE9FCCD00A794BE /* Carrier.swift in Sources */,
 				B9D904661DD8C3F3008C8720 /* EPExtensions.swift in Sources */,
 				B95281E61DD705610041C39B /* PassengerInfo.swift in Sources */,
 				B99F82D81DE1E83C00DA8B37 /* AirlinesView.swift in Sources */,
@@ -1055,6 +1066,7 @@
 				28BAD00D1DE0DFCA0008032D /* PickPassengerCell.swift in Sources */,
 				B99F82C81DE1D73300DA8B37 /* RoundCheckCell.swift in Sources */,
 				B9F445FD1DD4E16B00250D6C /* GothamBold17Label.swift in Sources */,
+				B926C1B41DEAD16C0058ADEA /* NetworkErrorVC.swift in Sources */,
 				28E62C4C1DE597CF00E41D44 /* User.swift in Sources */,
 				B98B6B6E1DD5B5ED0094FC46 /* SmallParagraphButton.swift in Sources */,
 				28BAD0121DE1628E0008032D /* JetExFontHexCode.swift in Sources */,

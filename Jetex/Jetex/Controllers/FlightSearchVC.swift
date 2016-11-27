@@ -33,9 +33,6 @@ class FlightSearchVC: BaseViewController {
         self.setImages()
         let attributes = [NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!]
         self.segmentFlightType.setTitleTextAttributes(attributes, for: .normal)
-        
-        self.networkErrorView.delegate = self
-        checkInternetConnection()
     }
     
     func loadViewLocation() {
@@ -114,7 +111,10 @@ class FlightSearchVC: BaseViewController {
             return
         }
         
-        
+        gotoResultVC()
+    }
+    
+    func gotoResultVC() {
         let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
         vc.passengerInfo = self.passengerInfo
         self.navigationController!.pushViewController(vc, animated: true)
@@ -233,23 +233,5 @@ extension FlightSearchVC {
         self.viewDepartDay.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexCheckin.rawValue, withColor: UIColor(hex: 0x674290))
         self.viewReturnDay.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexCheckout.rawValue, withColor: UIColor(hex: 0x674290))
         self.imgPassenger.image = UIImage(fromHex: JetExFontHexCode.jetexPassengers.rawValue, withColor: UIColor(hex: 0x674290))
-    }
-}
-
-// check internet connection
-extension FlightSearchVC: NetworkErrorViewDelegate {
-    func checkInternetConnection() {
-        
-        if (Utility.isConnectedToNetwork()) {
-            self.networkErrorView.isHidden = true
-            self.contentView.isHidden = false
-        } else {
-            self.networkErrorView.isHidden = false
-            self.contentView.isHidden = true
-        }
-    }
-    
-    func retryInternetConnection() {
-        checkInternetConnection()
     }
 }
