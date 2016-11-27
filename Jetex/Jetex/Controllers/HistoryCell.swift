@@ -10,7 +10,7 @@ import UIKit
 
 class HistoryCell: UITableViewCell {
     
-    static let CellHeight : CGFloat = 92.0
+    static let CellHeight : CGFloat = 88.0
     
     var data : HistorySearch!
     var searchedType : HistorySearchType!
@@ -41,16 +41,11 @@ class HistoryCell: UITableViewCell {
     
     func fillData(data: HistorySearch) {
         self.data = data
-        if data.searchType == .Flight {
-            self.fillDataForFlight(data: data as! FlightHistorySearch)
-        } else if data.searchType == .Hotel {
-            self.fillDataForHotel(data: data as! HotelHistorySearch)
+        if data.dataType == .Flight {
+            self.fillDataForFlight(data: data.flightHistory!)
+        } else if data.dataType == .Hotel {
+            self.fillDataForHotel(data: data.hotelHistory!)
         }
-        
-        // TODO : show start - end day
-        timeLabel.resizeToFitText()
-        
-        // TODO: show options
         
         // TODO: show searching time
     }
@@ -58,17 +53,32 @@ class HistoryCell: UITableViewCell {
     func fillDataForFlight(data: FlightHistorySearch) {
         historyTypeImageView.image = UIImage(fromHex: JetExFontHexCode.planeEmpty.rawValue, withColor: UIColor(hex: 0x674290))
         
-        fromLabel.text = data.from.name
+        fromLabel.text = data.departAirport
         fromLabel.resizeToFitText()
-        toLabel.text = data.to.name
+        toLabel.text = data.arrivalAirport
         toLabel.resizeToFitText()
         
-        if data.isRoundTrip != nil && data.isRoundTrip == true {
+        if data.isRoundTrip == true {
             exchangeLabel.text = "\(NSString.init(utf8String: JetExFontHexCode.exchange.rawValue)!)"
         } else {
             exchangeLabel.text = "\(NSString.init(utf8String: JetExFontHexCode.oneWay.rawValue)!)"
         }
         exchangeLabel.resizeToFitText()
+        
+        // TODO : show start - end day
+        timeLabel.resizeToFitText()
+        timeLabel.text = "\(Date.shorterlizeFullMonthDay(data.departDateText)) - \(Date.shorterlizeFullMonthDay(data.returnDateText))"
+        
+        // TODO: show options
+        var option = ""
+        option += (data.adult > 0 ? ", \(data.adult) adult\(data.adult > 1 ? "s" : "")" : "")
+        option += (data.children > 0 ? ", \(data.children) child\(data.adult > 1 ? "ren" : "")" : "")
+        option += (data.infant > 0 ? ", \(data.infant) infrant\(data.infant > 1 ? "s" : "")" : "")
+        option += (data.flightClass != "" ? ", \(data.flightClass)" : "")
+        option += (data.flightType != "" ? ", \(data.flightType)" : "")
+        
+        optionsLabel.text = option
+        optionsLabel.resizeToFitText()
     }
     
     func fillDataForHotel(data: HotelHistorySearch) {

@@ -41,7 +41,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - Tab History
     func addTabHistory() {
-        let vc = SearchHistoryVC(nibName: "SearchHistoryVC", bundle: nil)
+        let vc = FlightSearchHistoryVC(nibName: "FlightSearchHistoryVC", bundle: nil)
         let nav = UINavigationController(rootViewController: vc)
         nav.setNavigationBarHidden(true, animated: true)
         

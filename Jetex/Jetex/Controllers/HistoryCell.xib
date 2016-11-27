@@ -24,51 +24,51 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="92" id="KGk-i7-Jjw" customClass="HistoryCell" customModule="Jetex" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black-plane.png" translatesAutoresizingMaskIntoConstraints="NO" id="W4l-vl-Or5">
-                        <rect key="frame" x="24" y="24" width="32" height="43.5"/>
+                        <rect key="frame" x="24" y="16" width="32" height="47.5"/>
                         <color key="tintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="Q08-hF-kiE"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangkok" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ib6-R0-Nqf">
-                        <rect key="frame" x="72" y="24" width="67" height="15"/>
+                        <rect key="frame" x="72" y="16" width="67" height="15"/>
                         <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                         <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="&lt;-&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="y09-H4-Fep">
-                        <rect key="frame" x="147" y="24" width="23" height="15"/>
-                        <fontDescription key="fontDescription" name="JetExplorer" family="JetExplorer" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="&lt;-&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="y09-H4-Fep">
+                        <rect key="frame" x="147" y="16" width="23" height="15"/>
+                        <fontDescription key="fontDescription" name="JetExplorer" family="JetExplorer" pointSize="15"/>
                         <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="May 10 - Jun 22" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orP-kR-wwv">
-                        <rect key="frame" x="72" y="47" width="100" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 10 - Jun 22" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orP-kR-wwv">
+                        <rect key="frame" x="72" y="39" width="94.5" height="12"/>
                         <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text=", 1 adult, Economy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJG-mq-F0n">
-                        <rect key="frame" x="172" y="47" width="124" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=", 1 adult, Economy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJG-mq-F0n">
+                        <rect key="frame" x="166.5" y="39" width="129.5" height="12"/>
                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A moment ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gk-PU-cJI">
-                        <rect key="frame" x="72" y="67" width="224" height="12"/>
+                        <rect key="frame" x="72" y="59" width="224" height="12"/>
                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" misplaced="YES" text="Tokyo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IRM-fJ-nXP">
-                        <rect key="frame" x="178" y="24" width="118" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Tokyo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IRM-fJ-nXP">
+                        <rect key="frame" x="178" y="16" width="118" height="15"/>
                         <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                         <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -78,20 +78,20 @@
                     <constraint firstAttribute="trailingMargin" secondItem="CJG-mq-F0n" secondAttribute="trailing" constant="16" id="2LY-ut-MIx"/>
                     <constraint firstItem="ib6-R0-Nqf" firstAttribute="leading" secondItem="W4l-vl-Or5" secondAttribute="trailing" constant="16" id="8lX-Kl-F4I"/>
                     <constraint firstItem="CJG-mq-F0n" firstAttribute="leading" secondItem="orP-kR-wwv" secondAttribute="trailing" id="9cZ-6f-P9U"/>
-                    <constraint firstItem="IRM-fJ-nXP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="AWT-0k-omf"/>
+                    <constraint firstItem="IRM-fJ-nXP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="AWT-0k-omf"/>
                     <constraint firstAttribute="bottomMargin" secondItem="W4l-vl-Or5" secondAttribute="bottom" constant="16" id="KCT-Or-Guu"/>
                     <constraint firstItem="3gk-PU-cJI" firstAttribute="leading" secondItem="orP-kR-wwv" secondAttribute="leading" id="Rh8-WG-ajE"/>
                     <constraint firstItem="orP-kR-wwv" firstAttribute="leading" secondItem="W4l-vl-Or5" secondAttribute="trailing" constant="16" id="a5r-LJ-b4p"/>
                     <constraint firstItem="IRM-fJ-nXP" firstAttribute="leading" secondItem="y09-H4-Fep" secondAttribute="trailing" constant="8" id="cBc-CQ-zsI"/>
                     <constraint firstAttribute="trailingMargin" secondItem="3gk-PU-cJI" secondAttribute="trailing" constant="16" id="kB6-ck-nfb"/>
-                    <constraint firstItem="ib6-R0-Nqf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="kOk-6g-ymt"/>
-                    <constraint firstItem="y09-H4-Fep" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="kWK-fd-Mky"/>
+                    <constraint firstItem="ib6-R0-Nqf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="kOk-6g-ymt"/>
+                    <constraint firstItem="y09-H4-Fep" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="kWK-fd-Mky"/>
                     <constraint firstAttribute="trailingMargin" secondItem="IRM-fJ-nXP" secondAttribute="trailing" constant="16" id="liQ-Jb-Zdc"/>
                     <constraint firstItem="orP-kR-wwv" firstAttribute="top" secondItem="ib6-R0-Nqf" secondAttribute="bottom" constant="8" id="ljr-Rn-0qZ"/>
                     <constraint firstItem="3gk-PU-cJI" firstAttribute="top" secondItem="orP-kR-wwv" secondAttribute="bottom" constant="8" id="o5q-An-4lX"/>
                     <constraint firstItem="CJG-mq-F0n" firstAttribute="baseline" secondItem="orP-kR-wwv" secondAttribute="baseline" id="oUW-jx-V3c"/>
                     <constraint firstItem="W4l-vl-Or5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="qoA-tZ-LDP"/>
-                    <constraint firstItem="W4l-vl-Or5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="rho-yq-mSE"/>
+                    <constraint firstItem="W4l-vl-Or5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="rho-yq-mSE"/>
                     <constraint firstItem="y09-H4-Fep" firstAttribute="leading" secondItem="ib6-R0-Nqf" secondAttribute="trailing" constant="8" id="xJh-oB-lND"/>
                 </constraints>
             </tableViewCellContentView>

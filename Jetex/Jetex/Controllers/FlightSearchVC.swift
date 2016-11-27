@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FlightSearchVC: BaseViewController {
     
@@ -114,11 +115,25 @@ class FlightSearchVC: BaseViewController {
             return
         }
         
+        // save searching info into history
+        saveSearchingInfoIntoHistory()
         
         let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
         vc.passengerInfo = self.passengerInfo
         self.navigationController!.pushViewController(vc, animated: true)
     }
+    
+    func saveSearchingInfoIntoHistory() {
+        let flightInfo = FlightHistorySearch(info: self.passengerInfo, searchAt: Date())
+        let searchingHistory = HistorySearch(type: .Flight, flight: flightInfo, hotel: nil)
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(searchingHistory)
+        }
+    }
+    
 }
 
 extension FlightSearchVC: PickLocationDelegate {

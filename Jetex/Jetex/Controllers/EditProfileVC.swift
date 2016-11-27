@@ -168,7 +168,7 @@ class EditProfileVC: UITableViewController {
                     // hide pop up
                     print(message)
                     popup.dismiss({
-                        let newPopup = PopupDialog(title: "Cannot sign in", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
+                        let newPopup = PopupDialog(title: "Cannot Update", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
                         newPopup.addButton(CancelButton(title: "Try again", action: {
                             self.emailUpdateTextField.text = self.currentUser.email
                             self.emailUpdateTextField.becomeFirstResponder()
@@ -178,7 +178,7 @@ class EditProfileVC: UITableViewController {
                 }
             } else {
                 popup.dismiss({
-                    let newPopup = PopupDialog(title: "Cannot sign in", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
+                    let newPopup = PopupDialog(title: "Cannot Update", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
                     newPopup.addButton(CancelButton(title: "Try again", action: {
                         self.emailUpdateTextField.text = self.currentUser.email
                         self.emailUpdateTextField.becomeFirstResponder()

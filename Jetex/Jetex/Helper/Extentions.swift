@@ -94,6 +94,36 @@ extension Date {
         
         return timeString
     }
+    
+    func toNumberOnly() -> String {
+        let forrmater = DateFormatter()
+        forrmater.dateFormat = "yyyy-MM-dd"
+        let timeString = forrmater.string(from: self)
+        
+        return timeString
+    }
+    
+    func toFullMonthDay() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d"
+        let timeString = formatter.string(from: self)
+        
+        return timeString
+    }
+    
+    func toFullMonthDayAndYear() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d, yyyy"
+        let timeString = formatter.string(from: self)
+        
+        return timeString
+    }
+    
+    static func shorterlizeFullMonthDay(_ string: String) -> String {
+        let first = string.substring(to: string.characters.index(string.startIndex, offsetBy: 3))
+        let last = string.substring(from: string.characters.index(of: " ")!)
+        return first + last
+    }
 }
 
 @IBDesignable extension UIView {

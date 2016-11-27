@@ -44,7 +44,7 @@ class ForgotPasswordVC: BaseViewController {
         
         
         // Show Loading Pop up view
-        let popup = PopupDialog(title: "Go check your inbox", message: "We sent an email for you!", image: UIImage(named: "loading.jpg"))
+        let popup = PopupDialog(title: "Go check your inbox", message: "We sent an email to you!", image: UIImage(named: "loading.jpg"))
         
         popup.addButton(DefaultButton(title: "Back") {
             // back to setting

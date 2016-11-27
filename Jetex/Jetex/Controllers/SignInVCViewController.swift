@@ -108,7 +108,6 @@ class SignInVC: BaseViewController {
                             ProfileVC.isUserLogined = true
                             _ = self.navigationController?.popViewController(animated: true)
                         })
-                        
                         return
                     }
                 } else if let message = value.value(forKey: "message") as? String {
