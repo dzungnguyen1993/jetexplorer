@@ -48,6 +48,7 @@ class HistoryCell: UITableViewCell {
         }
         
         // TODO: show searching time
+        searchedTimeLabel.text = data.createTime.howlongago()
     }
     
     func fillDataForFlight(data: FlightHistorySearch) {

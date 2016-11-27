@@ -110,8 +110,8 @@ class FlightHistorySearch: Object, Mappable {
         
         departCity = info.airportFrom!.cityId
         arrivalCity = info.airportTo!.cityId
-        departDate = info.departDay!.toNumberOnly()
-        returnDate = info.isRoundTrip == true ? info.returnDay!.toNumberOnly() : ""
+        departDate = info.departDay!.toYYYYMMDDString()
+        returnDate = info.isRoundTrip == true ? info.returnDay!.toYYYYMMDDString() : ""
         adult = info.passengers[0]
         children = info.passengers[1]
         infant = info.passengers[2]
