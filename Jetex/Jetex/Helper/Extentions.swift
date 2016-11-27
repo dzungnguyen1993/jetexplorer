@@ -96,11 +96,7 @@ extension Date {
     }
     
     func toNumberOnly() -> String {
-        let forrmater = DateFormatter()
-        forrmater.dateFormat = "yyyy-MM-dd"
-        let timeString = forrmater.string(from: self)
-        
-        return timeString
+        return toYYYYMMDDString(self)
     }
     
     func toFullMonthDay() -> String {
@@ -114,6 +110,14 @@ extension Date {
     func toFullMonthDayAndYear() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d, yyyy"
+        let timeString = formatter.string(from: self)
+        
+        return timeString
+    }
+    
+    func toYYYYMMDDString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd"
         let timeString = formatter.string(from: self)
         
         return timeString
@@ -158,5 +162,11 @@ extension Date {
         get {
             return layer.cornerRadius
         }
+    }
+}
+
+extension Int {
+    func toString() -> String {
+        return String(self)
     }
 }

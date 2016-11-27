@@ -8,6 +8,14 @@
 
 import UIKit
 
+enum PassengerType: Int {
+    case adult = 0
+    case children = 1
+    case senior = 2
+    case infant = 3
+    case lapInfant = 4
+}
+
 class PassengerInfo {
     var airportFrom: Airport?
     var airportTo: Airport?

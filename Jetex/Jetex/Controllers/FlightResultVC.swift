@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 class FlightResultVC: BaseViewController {
 
@@ -51,7 +52,7 @@ class FlightResultVC: BaseViewController {
         
         self.tableView.separatorStyle = .none
         
-        initMockData()
+//        initMockData()
         
         viewOptions.layer.borderWidth = 1.0
         viewOptions.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
@@ -78,6 +79,18 @@ class FlightResultVC: BaseViewController {
             viewFilter = FilterFlightView(frame: CGRect(x: 0, y: 0, width: viewFilterContainer.frame.size.width, height: viewFilterContainer.frame.size.height))
             viewFilterContainer.addSubview(viewFilter)
             viewFilter.delegate = self
+        }
+        
+        
+        let popup = PopupDialog(title: "Please wait, I am searching ...", message: "", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+        
+        self.present(popup, animated: true, completion: nil)
+        
+        NetworkManager.shared.requestGetFlightSearchResult(info: passengerInfo) { (isSuccess, data) in
+            popup.dismiss()
+            if (isSuccess) {
+                ResponseParser.shared.parseFlightSearchResponse(data: data as! NSDictionary)
+            }
         }
     }
     
@@ -123,6 +136,9 @@ class FlightResultVC: BaseViewController {
 
 extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard arrayResult != nil else {
+            return 0
+        }
         return arrayResult.count
     }
     

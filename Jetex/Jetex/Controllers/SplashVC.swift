@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 class SplashVC: UIViewController {
 
@@ -22,17 +23,26 @@ class SplashVC: UIViewController {
         let isInstalled = defaults.bool(forKey: "isInstalled")
         
         if (!isInstalled) {
+            // Show Loading Pop up view
+            let popup = PopupDialog(title: "Downloading initial data ...", message: "Please wait!", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+            
+            self.present(popup, animated: true, completion: nil)
+            
             DispatchQueue.global().sync {
                 NetworkManager.shared.requestGetAllAirport { (isSuccess, response) in
                     // fetch list successfully
+                    
                     if (isSuccess) {
                         DBManager.shared.parseListAirportJSON(data: response as! NSDictionary)
                         defaults.set(true, forKey: "isInstalled")
                         print("Finish sync")
-                        
-                        self.gotoMainScreen()
+                        popup.dismiss({
+                            self.gotoMainScreen()
+                        })
                     } else {
-                        self.showAlert(message: "The app needs to connect to the internet to finish installing!", andTitle: "Error")
+                        popup.dismiss({ 
+                            self.showAlert(message: "The app needs to connect to the internet to finish installing!", andTitle: "Error")
+                        })
                     }
                 }
             }
@@ -42,9 +52,16 @@ class SplashVC: UIViewController {
     }
     
     func gotoMainScreen() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! TabBarController
-        controller.modalTransitionStyle = .crossDissolve
-        self.present(controller, animated: true, completion: nil)
+        // check internet connection
+        if (Utility.isConnectedToNetwork()) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! TabBarController
+            controller.modalTransitionStyle = .crossDissolve
+            self.present(controller, animated: true, completion: nil)
+        } else {
+            let vc = NetworkErrorVC(nibName: "NetworkErrorVC", bundle: nil)
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }

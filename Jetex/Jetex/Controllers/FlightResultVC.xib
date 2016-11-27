@@ -84,13 +84,6 @@
                                         <constraint firstAttribute="bottom" secondItem="VLe-ED-PPz" secondAttribute="bottom" id="w5R-cP-8mQ"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-M2-4se">
-                                    <rect key="frame" x="46" y="5" width="1" height="34"/>
-                                    <color key="backgroundColor" red="0.32156862745098036" green="0.21568627450980393" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="1" id="B6Z-Q9-cdd"/>
-                                    </constraints>
-                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPY-d8-WcG">
                                     <rect key="frame" x="54" y="0.0" width="159" height="44"/>
                                     <subviews>
@@ -129,13 +122,6 @@
                                         <constraint firstItem="ojr-ld-OUP" firstAttribute="centerY" secondItem="tPY-d8-WcG" secondAttribute="centerY" id="zNy-Iu-AWi"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zjc-9F-JPJ">
-                                    <rect key="frame" x="221" y="5" width="1" height="34"/>
-                                    <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="1" id="blm-FA-eEK"/>
-                                    </constraints>
-                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhc-TZ-NeN">
                                     <rect key="frame" x="230" y="0.0" width="80" height="44"/>
                                     <subviews>
@@ -171,13 +157,6 @@
                                         <constraint firstItem="GIo-fa-CUb" firstAttribute="top" secondItem="Rhc-TZ-NeN" secondAttribute="top" id="siH-dg-cnD"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="of0-5Y-AsC">
-                                    <rect key="frame" x="318" y="5" width="1" height="34"/>
-                                    <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="1" id="CBP-ri-cne"/>
-                                    </constraints>
-                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6e9-gB-Pw1">
                                     <rect key="frame" x="327" y="0.0" width="40" height="44"/>
                                     <subviews>
@@ -201,6 +180,27 @@
                                         <constraint firstItem="Jdk-ye-iCs" firstAttribute="leading" secondItem="6e9-gB-Pw1" secondAttribute="leading" id="RER-Is-9tB"/>
                                         <constraint firstItem="Jdk-ye-iCs" firstAttribute="centerY" secondItem="p39-LZ-NnK" secondAttribute="centerY" constant="-4" id="RRc-zM-OdK"/>
                                         <constraint firstAttribute="width" constant="40" id="oAd-od-QyW"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-M2-4se">
+                                    <rect key="frame" x="46" y="5" width="1" height="34"/>
+                                    <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="B6Z-Q9-cdd"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zjc-9F-JPJ">
+                                    <rect key="frame" x="221" y="5" width="1" height="34"/>
+                                    <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="blm-FA-eEK"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="of0-5Y-AsC">
+                                    <rect key="frame" x="318" y="5" width="1" height="34"/>
+                                    <color key="backgroundColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="CBP-ri-cne"/>
                                     </constraints>
                                 </view>
                             </subviews>
