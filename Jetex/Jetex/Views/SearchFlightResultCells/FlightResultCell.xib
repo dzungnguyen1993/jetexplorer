@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTc-id-sTf">
@@ -49,7 +49,7 @@
                                         <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airasia.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jwr-A8-5ZM">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jwr-A8-5ZM">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Jwr-A8-5ZM" secondAttribute="height" multiplier="1:1" id="Ah0-8R-QBt"/>
@@ -236,6 +236,15 @@
                 <outlet property="constraintDetailsHeight" destination="adZ-zK-5KR" id="kEg-uJ-Bsu"/>
                 <outlet property="constraintReturnHeight" destination="R15-if-rxX" id="wD4-Nt-B6u"/>
                 <outlet property="containerView" destination="TTc-id-sTf" id="Yv1-q2-fvn"/>
+                <outlet property="imgCarrier" destination="Jwr-A8-5ZM" id="aPc-T0-Yxg"/>
+                <outlet property="lbArrivalTime" destination="GBb-G1-9Ac" id="Xy6-mC-qsN"/>
+                <outlet property="lbCarrier" destination="ACq-q3-uan" id="jz9-uV-1FO"/>
+                <outlet property="lbDepartureTime" destination="kBM-q9-4wz" id="dhT-Rn-1mB"/>
+                <outlet property="lbDestinationCode" destination="p8p-0U-7x7" id="UQw-2v-9wg"/>
+                <outlet property="lbDuration" destination="JPV-QC-LLb" id="S5E-ha-sGB"/>
+                <outlet property="lbFlightType" destination="eWM-aI-R4k" id="UcH-GT-nuh"/>
+                <outlet property="lbOriginCode" destination="FRa-7K-Igi" id="duq-8R-G2X"/>
+                <outlet property="lbPrice" destination="C7A-NW-JNm" id="Ewl-LI-ICU"/>
                 <outlet property="viewDepart" destination="ePc-44-65l" id="D4j-fF-rRc"/>
                 <outlet property="viewDetails" destination="bXQ-AO-HNU" id="4YN-5Q-ma0"/>
                 <outlet property="viewInfoGeneral" destination="ykZ-ek-30o" id="Csf-G3-PzH"/>
@@ -245,7 +254,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="airasia.png" width="64" height="64"/>
         <image name="clock.png" width="64" height="64"/>
         <image name="dot.png" width="10" height="10"/>
     </resources>

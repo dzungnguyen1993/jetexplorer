@@ -10,16 +10,14 @@ import UIKit
 
 class ResponseParser {
     static let shared = ResponseParser()
+    var result: SearchFlightResult!
     
     private init() {
-        
+        result = SearchFlightResult()
     }
     
-    func parseFlightSearchResponse(data: NSDictionary) {
-        var result: SearchFlightResult = SearchFlightResult(JSON: data as! [String: Any])!
-        
-        
-        print("aaa")
-        
+    func parseFlightSearchResponse(data: NSDictionary) -> SearchFlightResult {
+        self.result = SearchFlightResult(JSON: data as! [String: Any])!
+        return self.result
     }
 }

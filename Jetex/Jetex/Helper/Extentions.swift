@@ -188,6 +188,17 @@ extension Date {
         let last = string.substring(from: string.characters.index(of: " ")!)
         return first + last
     }
+   
+    func toShortTimeString() -> String
+    {
+        //Get Short Time String
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        let timeString = formatter.string(from: self)
+        
+        //Return Short Time String
+        return timeString
+    }
 }
 
 @IBDesignable extension UIView {
@@ -228,5 +239,33 @@ extension Date {
 extension Int {
     func toString() -> String {
         return String(self)
+    }
+    
+    func toHourAndMinute() -> String {
+        let hour = self / 60
+        let minute = self % 60
+        
+        if (minute > 0) {
+            return hour.toString() + "h " + minute.toString() + "m"
+        }
+        return hour.toString() + "h"
+    }
+}
+
+extension String {
+    func toDateTimeUTC() -> Date
+    {
+        //Create Date Formatter
+        let dateFormatter = DateFormatter()
+        
+        //Specify Format of String to Parse
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        
+        //Parse into NSDate
+        let dateFromString : Date = dateFormatter.date(from: self)!
+        
+        //Return Parsed Date
+        return dateFromString
     }
 }

@@ -16,6 +16,11 @@ class SearchFlightResult: Mappable {
     var places = [Place]()
     var segments = [Segment]()
     var legs = [Leg]()
+    var itineraries = [Itinerary]()
+    var agents = [Agent]()
+    
+    var cheapestTrips = [Itinerary]()
+    var fastestTrips = [Itinerary]()
     
     required convenience init?(map: Map) {
         self.init()
@@ -30,5 +35,48 @@ class SearchFlightResult: Mappable {
         places <- map["Places"]
         segments <- map["Segments"]
         legs <- map["Legs"]
+        itineraries <- map["Itineraries"]
+        agents <- map["Agents"]
+    }
+    
+    // sort cheapest
+    func sortCheapest() {
+        self.cheapestTrips = itineraries
+    }
+    
+    // sort fastest
+    func sortFastest() {
+        self.fastestTrips = itineraries
+    }
+    
+    // MARK: Query info
+    func getLeg(withId id: String) -> Leg? {
+        for leg in legs {
+            if leg.id == id {
+                return leg
+            }
+        }
+        
+        return nil
+    }
+    
+    func getStation(withId id: Int) -> Place? {
+        for place in places {
+            if place.id == id {
+                return place
+            }
+        }
+        
+        return nil
+    }
+    
+    func getCarrier(withId id: Int) -> Carrier? {
+        for carrier in carriers {
+            if carrier.id == id {
+                return carrier
+            }
+        }
+        
+        return nil
     }
 }

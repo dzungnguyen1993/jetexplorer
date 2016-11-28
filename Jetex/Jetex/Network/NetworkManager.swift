@@ -44,7 +44,7 @@ class NetworkManager: NSObject {
         
         // create request string
         var requestString = hostAddress + RequestType.getFlightSearchResult.rawValue
-        requestString.append("/VN/VND/vi")
+        requestString.append("/UK/USD/en-GB")
         
         // add origin
         requestString.append("/" + (info.airportFrom?.id)!)
@@ -75,6 +75,8 @@ class NetworkManager: NSObject {
         requestString.append("/" + "Economy")
         
         let parameters = Parameters()
+        
+        print(requestString)
         Alamofire.request(requestString, method: .get, parameters: parameters).responseJSON { (response) in
             completion(response.result.isSuccess, response.result.value)
         }

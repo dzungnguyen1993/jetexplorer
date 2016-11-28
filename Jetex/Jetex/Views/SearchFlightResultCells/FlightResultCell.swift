@@ -21,6 +21,16 @@ class FlightResultCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView!
  
+    @IBOutlet weak var lbPrice: UILabel!
+    @IBOutlet weak var lbFlightType: UILabel!
+    @IBOutlet weak var imgCarrier: UIImageView!
+    @IBOutlet weak var lbCarrier: GothamBold17Label!
+    
+    @IBOutlet weak var lbOriginCode: UILabel!
+    @IBOutlet weak var lbDestinationCode: UILabel!
+    @IBOutlet weak var lbDepartureTime: UILabel!
+    @IBOutlet weak var lbArrivalTime: UILabel!
+    @IBOutlet weak var lbDuration: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -82,5 +92,49 @@ class FlightResultCell: UITableViewCell {
     @IBAction func goToExpediaButtonPressed(_ sender: Any) {
         let cellURL = "https://www.expedia.com/"
         UIApplication.shared.open(URL(string: cellURL)!, options: [:], completionHandler: nil)
+    }
+}
+
+// show info
+
+extension FlightResultCell {
+    func showInfo(ofSearchResult searchResult: SearchFlightResult, forItinerary itinerary: Itinerary) {
+       showInfoGeneral(ofSearchResult: searchResult, forItinerary: itinerary)
+        
+    }
+    
+    func showInfoGeneral(ofSearchResult searchResult: SearchFlightResult, forItinerary itinerary: Itinerary) {
+        self.lbPrice.text = "USD" + 100.toString()
+        
+        if (itinerary.inboundLegId != "") {
+            self.lbFlightType.text = "Roundtrip"
+        } else {
+            self.lbFlightType.text = "One-way"
+        }
+        
+        let leg = searchResult.getLeg(withId: itinerary.outboundLegId)
+        guard leg != nil else {return}
+        
+        // show origin
+        let origin = searchResult.getStation(withId: leg!.originStation)
+        guard origin != nil else {return}
+        lbOriginCode.text = origin?.code
+        lbDepartureTime.text = leg?.departure.toDateTimeUTC().toShortTimeString()
+        
+        // show destination
+        let destination = searchResult.getStation(withId: leg!.destinationStation)
+        guard destination != nil else {return}
+        lbDestinationCode.text = destination?.code
+        lbArrivalTime.text = leg?.arrival.toDateTimeUTC().toShortTimeString()
+        
+        // show duration
+        lbDuration.text = leg?.duration.toHourAndMinute()
+        
+        // show price
+        lbPrice.text = "USD " + Int(itinerary.getSmallestPrice()).toString()
+        
+        // show carrier
+        let carrier = searchResult.getCarrier(withId: (leg?.carriers.first)!)
+        lbCarrier.text = carrier?.name
     }
 }

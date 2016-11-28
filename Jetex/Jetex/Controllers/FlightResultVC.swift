@@ -18,8 +18,7 @@ class FlightResultVC: BaseViewController {
     
     var viewFilter: FilterFlightView!
     
-    var arrayResult: [FlightInfo]!
-    
+//    var arrayResult: [FlightInfo]!
     var showDetailsIndex: Int = -1
     var detailsCellHeight: Int = 50
     var cellDefaultHeight: Int = 118
@@ -42,6 +41,11 @@ class FlightResultVC: BaseViewController {
     @IBOutlet weak var viewDateReturn: SearchResultDateView!
     @IBOutlet weak var lbNumberPassenger: GothamBold17Label!
     
+    var searchFlightResult: SearchFlightResult!
+    var itineraries: [Itinerary]! = nil
+    
+    var isShowCheapest: Bool!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,16 +65,7 @@ class FlightResultVC: BaseViewController {
         
         // show header info
         showHeaderInfo()
-    }
-
-    func showHeaderInfo() {
-        lbOrigin.text = passengerInfo.airportFrom?.id
-        lbDestination.text = passengerInfo.airportTo?.id
-        lbNumberPassenger.text = String(passengerInfo.numberOfPassenger())
-        viewDateDepart.lbDate.text = passengerInfo.departDay?.toDay()
-        viewDateDepart.lbMonth.text = passengerInfo.departDay?.toMonth()
-        viewDateReturn.lbDate.text = passengerInfo.returnDay?.toDay()
-        viewDateReturn.lbMonth.text = passengerInfo.returnDay?.toMonth()
+        isShowCheapest = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,20 +84,23 @@ class FlightResultVC: BaseViewController {
         NetworkManager.shared.requestGetFlightSearchResult(info: passengerInfo) { (isSuccess, data) in
             popup.dismiss()
             if (isSuccess) {
-                ResponseParser.shared.parseFlightSearchResponse(data: data as! NSDictionary)
+                self.searchFlightResult = ResponseParser.shared.parseFlightSearchResponse(data: data as! NSDictionary)
+                self.searchFlightResult.sortCheapest()
+                self.searchFlightResult.sortFastest()
+                self.loadResultData()
             }
         }
     }
     
     func initMockData() {
-        let flightInfo = FlightInfo()
+//        let flightInfo = FlightInfo()
         
-        self.arrayResult = [FlightInfo]()
-        self.arrayResult.append(flightInfo)
-        self.arrayResult.append(flightInfo)
-        self.arrayResult.append(flightInfo)
-        self.arrayResult.append(flightInfo)
-        self.arrayResult.append(flightInfo)
+//        self.arrayResult = [FlightInfo]()
+//        self.arrayResult.append(flightInfo)
+//        self.arrayResult.append(flightInfo)
+//        self.arrayResult.append(flightInfo)
+//        self.arrayResult.append(flightInfo)
+//        self.arrayResult.append(flightInfo)
     }
     
     @IBAction func back(_ sender: UIButton) {
@@ -115,7 +113,10 @@ class FlightResultVC: BaseViewController {
         
         btnFastest.alpha = 0.6
         viewUnderFastest.isHidden = true
-        // do something
+        
+        // load result
+        isShowCheapest = true
+        loadResultData()
     }
     
     @IBAction func showFastestTrip(_ sender: UIButton) {
@@ -124,7 +125,10 @@ class FlightResultVC: BaseViewController {
         
         btnFastest.alpha = 1.0
         viewUnderFastest.isHidden = false
-        // do something
+        
+        // load result
+        isShowCheapest = false
+        loadResultData()
     }
     
     @IBAction func showFilter(_ sender: UIButton) {
@@ -134,12 +138,36 @@ class FlightResultVC: BaseViewController {
     }
 }
 
+// MARK: Setup UI
+extension FlightResultVC {
+    func showHeaderInfo() {
+        lbOrigin.text = passengerInfo.airportFrom?.id
+        lbDestination.text = passengerInfo.airportTo?.id
+        lbNumberPassenger.text = String(passengerInfo.numberOfPassenger())
+        viewDateDepart.lbDate.text = passengerInfo.departDay?.toDay()
+        viewDateDepart.lbMonth.text = passengerInfo.departDay?.toMonth()
+        viewDateReturn.lbDate.text = passengerInfo.returnDay?.toDay()
+        viewDateReturn.lbMonth.text = passengerInfo.returnDay?.toMonth()
+    }
+    
+    func setupImages() {
+        imgFilter.image = UIImage(fromHex: JetExFontHexCode.jetexSliders.rawValue, withColor: UIColor(hex: 0x674290))
+        imgPassenger.image = UIImage(fromHex: JetExFontHexCode.jetexPassengers.rawValue, withColor: UIColor.white)
+        imgRightArrow.image = UIImage(fromHex: JetExFontHexCode.oneWay.rawValue, withColor: UIColor.white)
+    }
+}
+
+// MARK: Table view
 extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard arrayResult != nil else {
+//        guard arrayResult != nil else {
+//            return 0
+//        }
+//        return arrayResult.count
+        guard itineraries != nil else {
             return 0
         }
-        return arrayResult.count
+        return itineraries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -148,8 +176,7 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         if (indexPath.row == showDetailsIndex) {
             cell.viewInfoGeneral.isHidden = true
             cell.viewDetails.isHidden = false
-            
-            cell.addViewDetails(flightInfo: arrayResult[indexPath.row])
+//            cell.addViewDetails(flightInfo: arrayResult[indexPath.row])
             
             // set border
             cell.containerView.layer.borderColor = UIColor(hex: 0x674290).cgColor
@@ -163,18 +190,21 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
             cell.containerView.layer.borderWidth = 1.0
         }
         
+        cell.showInfo(ofSearchResult: searchFlightResult, forItinerary: itineraries[indexPath.row])
        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var footerSize = 8
-        if (indexPath.row == arrayResult.count - 1) {
+        if (indexPath.row == itineraries.count - 1) {
             footerSize = 0
         }
         
+        let flightInfo = FlightInfo()
         if (indexPath.row == showDetailsIndex) {
-            return CGFloat(56 + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: arrayResult[indexPath.row]) + footerSize)
+//            return CGFloat(56 + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: arrayResult[indexPath.row]) + footerSize)
+            return CGFloat(56 + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: flightInfo) + footerSize)
         }
         return CGFloat(cellDefaultHeight + footerSize)
     }
@@ -195,6 +225,7 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+// MARK: Filter
 extension FlightResultVC: FilterFlightViewDelegate {
     func hideFilter() {
         viewFilterContainer.isHidden = true
@@ -203,10 +234,15 @@ extension FlightResultVC: FilterFlightViewDelegate {
     }
 }
 
+// load data
 extension FlightResultVC {
-    func setupImages() {
-        imgFilter.image = UIImage(fromHex: JetExFontHexCode.jetexSliders.rawValue, withColor: UIColor(hex: 0x674290))
-        imgPassenger.image = UIImage(fromHex: JetExFontHexCode.jetexPassengers.rawValue, withColor: UIColor.white)
-        imgRightArrow.image = UIImage(fromHex: JetExFontHexCode.oneWay.rawValue, withColor: UIColor.white)
+    func loadResultData() {
+        if (isShowCheapest == true) {
+            itineraries = self.searchFlightResult.cheapestTrips
+        } else {
+            itineraries = self.searchFlightResult.fastestTrips
+        }
+        
+        self.tableView.reloadData()
     }
 }

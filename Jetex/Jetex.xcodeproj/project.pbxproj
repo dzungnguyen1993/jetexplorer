@@ -104,6 +104,9 @@
 		B99F82D91DE1E83C00DA8B37 /* AirlinesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99F82D71DE1E83C00DA8B37 /* AirlinesView.xib */; };
 		B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */; };
 		B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */; };
+		B9BA75CA1DEBCC52003393D7 /* PricingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BA75C91DEBCC52003393D7 /* PricingOption.swift */; };
+		B9BA75CC1DEBD2DE003393D7 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BA75CB1DEBD2DE003393D7 /* Agent.swift */; };
+		B9BA75CE1DEBD4D2003393D7 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BA75CD1DEBD4D2003393D7 /* Itinerary.swift */; };
 		B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */; };
 		B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */; };
 		B9C197741DE1F4900084B8BF /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C197721DE1F4900084B8BF /* DestinationView.swift */; };
@@ -170,7 +173,6 @@
 		B9F446011DD4E18D00250D6C /* GothamBook17Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F446001DD4E18D00250D6C /* GothamBook17Label.swift */; };
 		B9F446031DD4E19A00250D6C /* GothamBook15Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F446021DD4E19A00250D6C /* GothamBook15Label.swift */; };
 		B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F446041DD4E2F400250D6C /* GothamBook12Label.swift */; };
-		B9FAA4701DEB1D29000F87D7 /* Itenerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FAA46F1DEB1D29000F87D7 /* Itenerary.swift */; };
 		B9FAA4721DEB2713000F87D7 /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FAA4711DEB2713000F87D7 /* Leg.swift */; };
 		B9FAA4761DEB2F10000F87D7 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FAA4751DEB2F10000F87D7 /* ResponseParser.swift */; };
 		B9FAA4781DEB3051000F87D7 /* SearchFlightResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FAA4771DEB3051000F87D7 /* SearchFlightResult.swift */; };
@@ -302,6 +304,9 @@
 		B99F82D71DE1E83C00DA8B37 /* AirlinesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AirlinesView.xib; sourceTree = "<group>"; };
 		B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorStyleKit.swift; sourceTree = "<group>"; };
 		B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorView.swift; sourceTree = "<group>"; };
+		B9BA75C91DEBCC52003393D7 /* PricingOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PricingOption.swift; sourceTree = "<group>"; };
+		B9BA75CB1DEBD2DE003393D7 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		B9BA75CD1DEBD4D2003393D7 /* Itinerary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkErrorView.xib; sourceTree = "<group>"; };
 		B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
 		B9C197721DE1F4900084B8BF /* DestinationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
@@ -374,7 +379,6 @@
 		B9F446001DD4E18D00250D6C /* GothamBook17Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GothamBook17Label.swift; sourceTree = "<group>"; };
 		B9F446021DD4E19A00250D6C /* GothamBook15Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GothamBook15Label.swift; sourceTree = "<group>"; };
 		B9F446041DD4E2F400250D6C /* GothamBook12Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GothamBook12Label.swift; sourceTree = "<group>"; };
-		B9FAA46F1DEB1D29000F87D7 /* Itenerary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itenerary.swift; sourceTree = "<group>"; };
 		B9FAA4711DEB2713000F87D7 /* Leg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		B9FAA4751DEB2F10000F87D7 /* ResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
 		B9FAA4771DEB3051000F87D7 /* SearchFlightResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFlightResult.swift; sourceTree = "<group>"; };
@@ -768,12 +772,14 @@
 			isa = PBXGroup;
 			children = (
 				B947B2C51DE9FCCD00A794BE /* Carrier.swift */,
-				B9FAA46F1DEB1D29000F87D7 /* Itenerary.swift */,
 				B9FAA4711DEB2713000F87D7 /* Leg.swift */,
 				B9FAA4771DEB3051000F87D7 /* SearchFlightResult.swift */,
 				B9FAA47B1DEB3ED4000F87D7 /* Place.swift */,
 				B9FAA47D1DEB4682000F87D7 /* Segment.swift */,
 				B9FAA47F1DEB4B0F000F87D7 /* FlightNumber.swift */,
+				B9BA75C91DEBCC52003393D7 /* PricingOption.swift */,
+				B9BA75CB1DEBD2DE003393D7 /* Agent.swift */,
+				B9BA75CD1DEBD4D2003393D7 /* Itinerary.swift */,
 			);
 			name = SearchFlight;
 			sourceTree = "<group>";
@@ -1064,7 +1070,6 @@
 				B9FAA4781DEB3051000F87D7 /* SearchFlightResult.swift in Sources */,
 				B9EE7A751DDDECB700A82AEE /* FlightResultDetailsCell.swift in Sources */,
 				2872C5421DDF588900239CF2 /* ChangePasswordVC.swift in Sources */,
-				B9FAA4701DEB1D29000F87D7 /* Itenerary.swift in Sources */,
 				B947B2C31DE9CE8C00A794BE /* SplashVC.swift in Sources */,
 				B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */,
 				B9FAA4761DEB2F10000F87D7 /* ResponseParser.swift in Sources */,
@@ -1086,6 +1091,7 @@
 				289192A41DDDF3C2001C064B /* EditProfileVC.swift in Sources */,
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
 				B9EE7A781DDDED7000A82AEE /* FlightResultDetailsView.swift in Sources */,
+				B9BA75CA1DEBCC52003393D7 /* PricingOption.swift in Sources */,
 				B9C197741DE1F4900084B8BF /* DestinationView.swift in Sources */,
 				B9FAA47C1DEB3ED4000F87D7 /* Place.swift in Sources */,
 				B9F445F81DD4DA9700250D6C /* Extentions.swift in Sources */,
@@ -1099,6 +1105,7 @@
 				B92507B61DDF0F7D0036866D /* FlightInfo.swift in Sources */,
 				289192951DDC595C001C064B /* ChangNameVC.swift in Sources */,
 				28BAD0161DE18B1E0008032D /* SearchHistoryVC.swift in Sources */,
+				B9BA75CC1DEBD2DE003393D7 /* Agent.swift in Sources */,
 				B9D9045C1DD8C103008C8720 /* EPCalendarConstants.swift in Sources */,
 				28C448911DDA24DC00DEBC51 /* UserInfoView.swift in Sources */,
 				B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */,
@@ -1109,6 +1116,7 @@
 				B9F446031DD4E19A00250D6C /* GothamBook15Label.swift in Sources */,
 				B947B2C61DE9FCCD00A794BE /* Carrier.swift in Sources */,
 				B9D904661DD8C3F3008C8720 /* EPExtensions.swift in Sources */,
+				B9BA75CE1DEBD4D2003393D7 /* Itinerary.swift in Sources */,
 				B95281E61DD705610041C39B /* PassengerInfo.swift in Sources */,
 				B99F82D81DE1E83C00DA8B37 /* AirlinesView.swift in Sources */,
 				B9FAA4801DEB4B0F000F87D7 /* FlightNumber.swift in Sources */,

@@ -49,5 +49,4 @@ class Leg: Mappable {
         directionality <- map["Directionality"]
         flightNumbers <- map["FlightNumbers"]
     }
-    
 }
