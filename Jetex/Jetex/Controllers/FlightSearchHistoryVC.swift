@@ -45,7 +45,8 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
         }
         
         // load data
-        historyList = realm.objects(HistorySearch.self).sorted(byProperty: "createTime", ascending: true)
+        historyList = realm.objects(HistorySearch.self).sorted(byProperty: "createTime", ascending: false)
+        self.resultTableView.separatorStyle = historyList.count == 0 ? .none : .singleLine
         self.resultTableView.reloadData()
     }
 
@@ -87,6 +88,7 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
         // Configure the view for the selected state
         if selectedCell.dataType == .Flight {
             let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
+            vc.passengerInfo = selectedCell.flightHistory!.passengerInfo!
             _ = self.navigationController?.pushViewController(vc, animated: true)
         } else if selectedCell.dataType == .Hotel {
             

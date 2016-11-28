@@ -7,34 +7,70 @@
 //
 
 import UIKit
+import RealmSwift
+import ObjectMapper
+import ObjectMapper_Realm
 
 enum PassengerType: Int {
-    case adult = 0
-    case children = 1
-    case senior = 2
-    case infant = 3
+    case adult     = 0
+    case children  = 1
+    case senior    = 2
+    case infant    = 3
     case lapInfant = 4
 }
 
-class PassengerInfo {
-    var airportFrom: Airport?
-    var airportTo: Airport?
-    var passengers: [Int] = [Int](repeating: 0, count: 5)
-    var departDay, returnDay: Date?
-    var isRoundTrip: Bool?
+class PassengerInfo: Object, Mappable {
+    dynamic var airportFrom: Airport?
+    dynamic var airportTo: Airport?
+    dynamic var departDay: Date?
+    dynamic var returnDay: Date?
+    dynamic var isRoundTrip: Bool = true
+    let passengers = List<IntObject>()
     
-    init() {
+    func initialize() {
         self.isRoundTrip = true
         self.departDay = Utility.initialCheckInDate
         self.returnDay = Utility.initialCheckOutDate
-        self.passengers[0] = 1
+        
+        let adult     = IntObject(); adult.value     = 1; self.passengers.append(adult)
+        let children  = IntObject(); children.value  = 0; self.passengers.append(children)
+        let senior    = IntObject(); senior.value    = 0; self.passengers.append(senior)
+        let infant    = IntObject(); infant.value    = 0; self.passengers.append(infant)
+        let lapInfant = IntObject(); lapInfant.value = 0; self.passengers.append(lapInfant)
+    }
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
     }
     
     func numberOfPassenger() -> Int {
         var c = 0
         for passenger in self.passengers {
-            c = c + passenger
+            c = c + passenger.value
         }
         return c
     }
+    
+    func toArrayOfPassengers() -> [Int] {
+        var c = [Int]()
+        for passenger in self.passengers {
+            c.append(passenger.value)
+        }
+        return c
+    }
+    
+    func fromArrayOfPassengers(passengers: [Int]) {
+        self.passengers.removeAll()
+        
+        for value in passengers {
+            let passenger = IntObject(); passenger.value = value; self.passengers.append(passenger)
+        }
+    }
+}
+
+public class IntObject: Object {
+    dynamic var value : Int = 0
 }

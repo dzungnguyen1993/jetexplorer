@@ -56,20 +56,20 @@ class NetworkManager: NSObject {
         requestString.append("/" + (info.departDay?.toYYYYMMDDString())!)
         
         // add return day
-        if (info.isRoundTrip)! {
+        if (info.isRoundTrip) {
             requestString.append("/" + (info.returnDay?.toYYYYMMDDString())!)
         } else {
             requestString.append("/" + "0")
         }
 
         // add adult
-        requestString.append("/" + info.passengers[PassengerType.adult.rawValue].toString())
+        requestString.append("/" + info.passengers[PassengerType.adult.rawValue].value.toString())
   
         // add children
-        requestString.append("/" + info.passengers[PassengerType.children.rawValue].toString())
+        requestString.append("/" + info.passengers[PassengerType.children.rawValue].value.toString())
         
         // add infant
-        requestString.append("/" + info.passengers[PassengerType.infant.rawValue].toString())
+        requestString.append("/" + info.passengers[PassengerType.infant.rawValue].value.toString())
         
         // add cabin class
         requestString.append("/" + "Economy")

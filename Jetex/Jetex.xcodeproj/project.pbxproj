@@ -488,13 +488,13 @@
 			isa = PBXGroup;
 			children = (
 				B98FB6D41DDB1BCE00E615F2 /* Flight VCs */,
+				B926C1B31DEAD16C0058ADEA /* NetworkErrorVC.xib */,
+				B926C1B21DEAD16C0058ADEA /* NetworkErrorVC.swift */,
 				B96BAC601DD1BF4B00AE79AD /* TabBarController.swift */,
 				B96BAC651DD1E68B00AE79AD /* BaseViewController.swift */,
 				B947B2C11DE9CE8C00A794BE /* SplashVC.swift */,
 				28BAD0131DE18AEA0008032D /* History VCs */,
 				284EC7841DDA1C24001D0892 /* Profile Tab VCs */,
-				B926C1B21DEAD16C0058ADEA /* NetworkErrorVC.swift */,
-				B926C1B31DEAD16C0058ADEA /* NetworkErrorVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

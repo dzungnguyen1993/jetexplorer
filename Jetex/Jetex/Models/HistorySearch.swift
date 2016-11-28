@@ -87,7 +87,7 @@ class HistorySearch: Object, Mappable {
  */
 
 class FlightHistorySearch: Object, Mappable {
-    private var passengerInfo: PassengerInfo!
+    dynamic var passengerInfo: PassengerInfo? = nil
     
     dynamic var departCity: String     = ""
     dynamic var arrivalCity: String    = ""
@@ -112,16 +112,16 @@ class FlightHistorySearch: Object, Mappable {
         arrivalCity = info.airportTo!.cityId
         departDate = info.departDay!.toYYYYMMDDString()
         returnDate = info.isRoundTrip == true ? info.returnDay!.toYYYYMMDDString() : ""
-        adult = info.passengers[0]
-        children = info.passengers[1]
-        infant = info.passengers[2]
+        adult = info.passengers[0].value
+        children = info.passengers[1].value
+        infant = info.passengers[2].value
         flightType = "" // where's flight type?
         flightClass = "" // where?
         departAirport = info.airportFrom!.id
         arrivalAirport = info.airportTo!.id
         departDateText = info.departDay!.toFullMonthDay()
-        returnDateText = info.isRoundTrip! == true ? info.returnDay!.toFullMonthDay() : ""
-        isRoundTrip = info.isRoundTrip!
+        returnDateText = info.isRoundTrip == true ? info.returnDay!.toFullMonthDay() : ""
+        isRoundTrip = info.isRoundTrip
     }
     
     required convenience init?(map: Map) {
@@ -143,6 +143,7 @@ class FlightHistorySearch: Object, Mappable {
         arrivalAirport      <- map["arrivalAirport"]
         departDateText      <- map["departDateText"]
         returnDateText      <- map["returnDateText"]
+        
     }
 }
 

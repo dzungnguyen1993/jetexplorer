@@ -19,12 +19,15 @@ class FlightSearchVC: BaseViewController {
     @IBOutlet weak var lbNumberPassenger: UILabel!
     @IBOutlet weak var segmentFlightType: UISegmentedControl!
     
-    var passengerInfo: PassengerInfo! = PassengerInfo()
+    var passengerInfo: PassengerInfo!
     
     @IBOutlet weak var imgPassenger: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.passengerInfo = PassengerInfo()
+        self.passengerInfo.initialize()
 
         self.addActionForViews()
         self.loadViewLocation()
@@ -216,20 +219,20 @@ extension FlightSearchVC: PickPassengerVCDelegate {
     // MARK: Pick passengers
     func pickPassengers(sender: UITapGestureRecognizer) {
         let vc = PickPassengerVC(nibName: "PickPassengerVC", bundle: nil)
-        vc.passengers = passengerInfo.passengers
+        vc.passengers = passengerInfo.toArrayOfPassengers()
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func donePickPassenger(passengers: [Int]) {
-        passengerInfo.passengers = passengers
+        passengerInfo.fromArrayOfPassengers(passengers: passengers)
         showNumberPassenger()
     }
     
     func showNumberPassenger() {
         var c = 0
         for number in passengerInfo.passengers {
-            c += number
+            c += number.value
         }
         
         var suffix = " Person"
