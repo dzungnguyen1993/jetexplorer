@@ -12,6 +12,9 @@ class FlightResultDetailsView: UIView {
 
     @IBOutlet var contentView: UIView!
     let headerHeight = 44
+    @IBOutlet weak var lbOrigin: UILabel!
+    @IBOutlet weak var lbDestination: UILabel!
+    @IBOutlet weak var lbDepart: UILabel!
  
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -58,5 +61,41 @@ class FlightResultDetailsView: UIView {
         let transitView = FlightTransitView(frame: CGRect(x: x, y: y , width: Int(self.frame.width), height: FlightCellUtils.heightOfEachTransit))
         
         self.addSubview(transitView)
+    }
+    
+    func addDetails(ofSearchResult searchResult: SearchFlightResult, forLeg leg: Leg) {
+        // set header
+        let origin = searchResult.getStation(withId: leg.originStation)
+        let destination = searchResult.getStation(withId: leg.destinationStation)
+        lbOrigin.text = origin?.code
+        lbDestination.text = destination?.code
+        lbDepart.text = leg.departure.toDateTimeUTC().toFullWeekMonthDayAndYear()
+
+        for i in 0..<leg.segmentIds.count {
+            let currentSegment = searchResult.getSegment(withId: leg.segmentIds[i])
+            
+            // add transit view
+            let x = 0
+            var y = FlightCellUtils.headerDetailsHeight + i*(FlightCellUtils.heightOfEachTransit + FlightCellUtils.heightOfStopView)
+            let transitView = FlightTransitView(frame: CGRect(x: x, y: y , width: Int(self.frame.width), height: FlightCellUtils.heightOfEachTransit))
+            transitView.showDetails(ofSearchResult: searchResult, forSegment: currentSegment!)
+            self.addSubview(transitView)
+            
+            // add stop view
+            // not add stop view at the last segment
+            if (i == leg.segmentIds.count - 1) {
+                continue
+            }
+            
+            y = y + FlightCellUtils.heightOfEachTransit
+            let stopView = FlightStopView(frame: CGRect(x: x, y: y, width: Int(self.frame.width), height: FlightCellUtils.heightOfStopView))
+            
+            let stop = searchResult.getStation(withId: leg.stops[i])
+            let nextSegment = searchResult.getSegment(withId: leg.segmentIds[i+1])
+            
+            stopView.showDetails(ofSearchResult: searchResult, forSegmentBefore: currentSegment!, andSegmentAfter: nextSegment!, withStop: stop!)
+            
+            self.addSubview(stopView)
+        }
     }
 }

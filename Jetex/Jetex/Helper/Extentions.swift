@@ -63,6 +63,7 @@ extension UILabel {
 }
 
 extension Date {
+    // Ex: Jun 01
     func toMonthDay() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d"
@@ -71,6 +72,7 @@ extension Date {
         return timeString
     }
     
+    // Ex: Tuesday
     func toWeekDay() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE"
@@ -79,6 +81,7 @@ extension Date {
         return timeString
     }
     
+    // Ex: Nov
     func toMonth() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM"
@@ -87,6 +90,7 @@ extension Date {
         return timeString
     }
     
+    // Ex: 31
     func toDay() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "d"
@@ -111,6 +115,7 @@ extension Date {
         return timeString
     }
     
+    // Ex: 2016-12-31
     func toYYYYMMDDString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "YYYY-MM-dd"
@@ -189,6 +194,7 @@ extension Date {
         return first + last
     }
    
+    // Ex: 11:59PM
     func toShortTimeString() -> String
     {
         //Get Short Time String
@@ -197,6 +203,15 @@ extension Date {
         let timeString = formatter.string(from: self)
         
         //Return Short Time String
+        return timeString
+    }
+    
+    // Ex: Tue Nov 29, 2016
+    func toFullWeekMonthDayAndYear() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE MMM d, yyyy"
+        let timeString = formatter.string(from: self)
+        
         return timeString
     }
 }

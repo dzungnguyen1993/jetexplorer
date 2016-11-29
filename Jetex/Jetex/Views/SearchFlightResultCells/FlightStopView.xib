@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlightStopView" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Wpi-yL-ZjJ"/>
+                <outlet property="lbTime" destination="JYh-Ex-nb8" id="YTc-RR-mkw"/>
                 <outlet property="viewTime" destination="7ka-KP-TYT" id="Ghs-BR-J4y"/>
             </connections>
         </placeholder>

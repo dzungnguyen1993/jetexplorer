@@ -21,6 +21,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlightTransitView" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="8kK-Z7-KeI"/>
+                <outlet property="lbArrive" destination="Ld4-wb-eHT" id="nFs-th-Ntm"/>
+                <outlet property="lbCabinClass" destination="omb-kp-lTn" id="uJ3-to-TBe"/>
+                <outlet property="lbCarrier" destination="O7U-Zq-ncA" id="Ihl-Uy-JNJ"/>
+                <outlet property="lbDepart" destination="fJA-bz-ggA" id="Ex1-TF-q4c"/>
+                <outlet property="lbDestinationAirport" destination="R7I-VW-oSC" id="uA1-ai-7rD"/>
+                <outlet property="lbDestinationCity" destination="Pu8-sT-wpL" id="iP1-Pu-6uv"/>
+                <outlet property="lbFlightNumber" destination="eRc-ei-uNh" id="0Kr-K7-rd8"/>
+                <outlet property="lbOriginAirport" destination="pLQ-0Q-yZy" id="UvU-n7-X2E"/>
+                <outlet property="lbOriginCity" destination="Kfo-rF-Jvs" id="Btp-uf-zMU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

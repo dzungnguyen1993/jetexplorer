@@ -18,7 +18,6 @@ class FlightResultVC: BaseViewController {
     
     var viewFilter: FilterFlightView!
     
-//    var arrayResult: [FlightInfo]!
     var showDetailsIndex: Int = -1
     var detailsCellHeight: Int = 50
     var cellDefaultHeight: Int = 118
@@ -41,6 +40,10 @@ class FlightResultVC: BaseViewController {
     @IBOutlet weak var viewDateReturn: SearchResultDateView!
     @IBOutlet weak var lbNumberPassenger: GothamBold17Label!
     
+    @IBOutlet weak var viewRoundtrip: UIView!
+    @IBOutlet weak var viewOneway: UIView!
+    @IBOutlet weak var viewDepartOneway: SearchResultDateView!
+    
     var searchFlightResult: SearchFlightResult!
     var itineraries: [Itinerary]! = nil
     
@@ -55,8 +58,6 @@ class FlightResultVC: BaseViewController {
         self.tableView.register(UINib(nibName: "FlightResultCell", bundle: nil), forCellReuseIdentifier: "FlightResultCell")
         
         self.tableView.separatorStyle = .none
-        
-//        initMockData()
         
         viewOptions.layer.borderWidth = 1.0
         viewOptions.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
@@ -91,18 +92,7 @@ class FlightResultVC: BaseViewController {
             }
         }
     }
-    
-    func initMockData() {
-//        let flightInfo = FlightInfo()
-        
-//        self.arrayResult = [FlightInfo]()
-//        self.arrayResult.append(flightInfo)
-//        self.arrayResult.append(flightInfo)
-//        self.arrayResult.append(flightInfo)
-//        self.arrayResult.append(flightInfo)
-//        self.arrayResult.append(flightInfo)
-    }
-    
+   
     @IBAction func back(_ sender: UIButton) {
         self.navigationController!.popViewController(animated: true)
     }
@@ -144,10 +134,22 @@ extension FlightResultVC {
         lbOrigin.text = passengerInfo.airportFrom?.id
         lbDestination.text = passengerInfo.airportTo?.id
         lbNumberPassenger.text = String(passengerInfo.numberOfPassenger())
-        viewDateDepart.lbDate.text = passengerInfo.departDay?.toDay()
-        viewDateDepart.lbMonth.text = passengerInfo.departDay?.toMonth()
-        viewDateReturn.lbDate.text = passengerInfo.returnDay?.toDay()
-        viewDateReturn.lbMonth.text = passengerInfo.returnDay?.toMonth()
+    
+        if (!passengerInfo.isRoundTrip) {
+            viewRoundtrip.isHidden = true
+            viewOneway.isHidden = false
+            
+            viewDepartOneway.lbDate.text = passengerInfo.departDay?.toDay()
+            viewDepartOneway.lbMonth.text = passengerInfo.departDay?.toMonth()
+        } else {
+            viewRoundtrip.isHidden = false
+            viewOneway.isHidden = true
+            
+            viewDateDepart.lbDate.text = passengerInfo.departDay?.toDay()
+            viewDateDepart.lbMonth.text = passengerInfo.departDay?.toMonth()
+            viewDateReturn.lbDate.text = passengerInfo.returnDay?.toDay()
+            viewDateReturn.lbMonth.text = passengerInfo.returnDay?.toMonth()
+        }
     }
     
     func setupImages() {
@@ -160,10 +162,6 @@ extension FlightResultVC {
 // MARK: Table view
 extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        guard arrayResult != nil else {
-//            return 0
-//        }
-//        return arrayResult.count
         guard itineraries != nil else {
             return 0
         }
@@ -176,7 +174,7 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         if (indexPath.row == showDetailsIndex) {
             cell.viewInfoGeneral.isHidden = true
             cell.viewDetails.isHidden = false
-//            cell.addViewDetails(flightInfo: arrayResult[indexPath.row])
+            cell.addDetails(ofSearchResult: searchFlightResult, forItinerary: itineraries[indexPath.row])
             
             // set border
             cell.containerView.layer.borderColor = UIColor(hex: 0x674290).cgColor
@@ -201,11 +199,10 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
             footerSize = 0
         }
         
-        let flightInfo = FlightInfo()
         if (indexPath.row == showDetailsIndex) {
-//            return CGFloat(56 + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: arrayResult[indexPath.row]) + footerSize)
-            return CGFloat(56 + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: flightInfo) + footerSize)
+            return CGFloat(56 + 8 + FlightCellUtils.heightForDetailsOfFlightInfo(ofSearchResult: searchFlightResult, forItinerary: itineraries[indexPath.row]) + footerSize)
         }
+        
         return CGFloat(cellDefaultHeight + footerSize)
     }
     

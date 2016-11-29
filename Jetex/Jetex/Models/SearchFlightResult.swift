@@ -79,4 +79,14 @@ class SearchFlightResult: Mappable {
         
         return nil
     }
+    
+    func getSegment(withId id: Int) -> Segment? {
+        for segment in segments {
+            if segment.id == id {
+                return segment
+            }
+        }
+        
+        return nil
+    }
 }

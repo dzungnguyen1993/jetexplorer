@@ -43,64 +43,16 @@ class FlightResultCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func addViewDetails(flightInfo: FlightInfo) {
-        // remove sub view
-        for view in self.subviews {
-            if (view.isKind(of: FlightResultDetailsView.self)) {
-                view.removeFromSuperview()
-            }
-        }
-        
-        // add view depart
-        addViewDepart(flightInfo: flightInfo)
-        
-        // add view return
-        addViewReturn(flightInfo: flightInfo)
-        
-        // set height
-        constraintDetailsHeight.constant = CGFloat(FlightCellUtils.heightForDetailsOfFlightInfo(flightInfo: flightInfo))
-    }
-    
-    private func addViewDepart(flightInfo: FlightInfo) {
-        let height = FlightCellUtils.heightForDepartOfFlight(flightInfo: flightInfo)
-        
-        let viewDetailsDepart = FlightResultDetailsView(frame: CGRect(x: 0, y: 0, width: Int(self.viewDepart.frame.width), height: height))
-        
-        viewDetailsDepart.addDetails(flightInfo: flightInfo)
-        // add border
-        viewDetailsDepart.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
-        viewDetailsDepart.layer.borderWidth = 1.0
-        
-        self.viewDepart.addSubview(viewDetailsDepart)
-        constraintDepartHeight.constant = CGFloat(height)
-    }
-    
-    private func addViewReturn(flightInfo: FlightInfo) {
-        let height = FlightCellUtils.heightForReturnOfFlight(flightInfo: flightInfo)
-        
-        let viewReturnDetails = FlightResultDetailsView(frame: CGRect(x: 0, y: 0, width: Int(self.viewReturn.frame.width), height: height))
-        
-        viewReturnDetails.addDetails(flightInfo: flightInfo)
-        // add border
-        viewReturnDetails.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
-        viewReturnDetails.layer.borderWidth = 1.0
-        
-        self.viewReturn.addSubview(viewReturnDetails)
-        constraintReturnHeight.constant = CGFloat(height)
-    }
-    
     @IBAction func goToExpediaButtonPressed(_ sender: Any) {
         let cellURL = "https://www.expedia.com/"
         UIApplication.shared.open(URL(string: cellURL)!, options: [:], completionHandler: nil)
     }
 }
 
-// show info
-
+// MARK: show info
 extension FlightResultCell {
     func showInfo(ofSearchResult searchResult: SearchFlightResult, forItinerary itinerary: Itinerary) {
-       showInfoGeneral(ofSearchResult: searchResult, forItinerary: itinerary)
-        
+        showInfoGeneral(ofSearchResult: searchResult, forItinerary: itinerary)
     }
     
     func showInfoGeneral(ofSearchResult searchResult: SearchFlightResult, forItinerary itinerary: Itinerary) {
@@ -136,5 +88,56 @@ extension FlightResultCell {
         // show carrier
         let carrier = searchResult.getCarrier(withId: (leg?.carriers.first)!)
         lbCarrier.text = carrier?.name
+    }
+}
+
+// MARK: show details
+extension FlightResultCell {
+    func addDetails(ofSearchResult searchResult: SearchFlightResult, forItinerary itinerary: Itinerary) {
+        // remove sub view
+        for view in self.subviews {
+            if (view.isKind(of: FlightResultDetailsView.self)) {
+                view.removeFromSuperview()
+            }
+        }
+        
+        // add view depart
+        let legDepart = searchResult.getLeg(withId: itinerary.outboundLegId)
+        guard legDepart != nil else {
+            constraintDepartHeight.constant = 0
+            return
+        }
+        
+        let departHeight = FlightCellUtils.heightForLeg(leg: legDepart)
+        constraintDepartHeight.constant = CGFloat(departHeight)
+        addViewDetails(ofSearchResult: searchResult, forLeg: legDepart!, forView: viewDepart)
+        
+        // add view return
+        let legReturn = searchResult.getLeg(withId: itinerary.inboundLegId)
+        guard legReturn != nil else {
+            constraintReturnHeight.constant = 0
+            constraintDetailsHeight.constant = CGFloat(FlightCellUtils.heightForDetailsOfFlightInfo(legDepart: legDepart, legReturn: legReturn))
+            return
+        }
+        
+        let returnHeight = FlightCellUtils.heightForLeg(leg: legReturn)
+        constraintReturnHeight.constant = CGFloat(returnHeight)
+        addViewDetails(ofSearchResult: searchResult, forLeg: legReturn!, forView: viewReturn)
+        
+        constraintDetailsHeight.constant = CGFloat(FlightCellUtils.heightForDetailsOfFlightInfo(legDepart: legDepart, legReturn: legReturn))
+    }
+    
+    private func addViewDetails(ofSearchResult searchResult: SearchFlightResult, forLeg leg: Leg, forView view: UIView) {
+        let height = FlightCellUtils.heightForLeg(leg: leg)
+        
+        let viewDetailsDepart = FlightResultDetailsView(frame: CGRect(x: 0, y: 0, width: Int(view.frame.width), height: height))
+        
+        viewDetailsDepart.addDetails(ofSearchResult: searchResult, forLeg: leg)
+        
+        // add border
+        viewDetailsDepart.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
+        viewDetailsDepart.layer.borderWidth = 1.0
+        
+        view.addSubview(viewDetailsDepart)
     }
 }

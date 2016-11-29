@@ -21,6 +21,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlightResultDetailsView" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="14r-6t-drm"/>
+                <outlet property="lbDepart" destination="Cwc-Po-0ua" id="DtJ-fW-prp"/>
+                <outlet property="lbDestination" destination="KRj-ay-2tm" id="C7A-1Y-kbL"/>
+                <outlet property="lbOrigin" destination="aYD-we-ASQ" id="QVo-Cg-UNX"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

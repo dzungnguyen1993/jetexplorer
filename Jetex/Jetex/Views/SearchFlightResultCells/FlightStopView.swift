@@ -12,6 +12,7 @@ class FlightStopView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var viewTime: UIView!
+    @IBOutlet weak var lbTime: UILabel!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -36,5 +37,26 @@ class FlightStopView: UIView {
         
         viewTime.layer.borderColor = UIColor(hex: 0xE8615B).cgColor
         viewTime.layer.borderWidth = 1.0
+    }
+    
+    func showDetails(ofSearchResult searchResult: SearchFlightResult, forSegmentBefore segmentBefore: Segment, andSegmentAfter segmentAfter: Segment, withStop stop: Place) {
+        let dateArrive = segmentBefore.arrivalDateTime.toDateTimeUTC()
+        let dateLeave = segmentAfter.departureDateTime.toDateTimeUTC()
+        
+        let diff = Calendar.current.dateComponents([Calendar.Component.hour, Calendar.Component.minute], from: dateArrive, to: dateLeave)
+        
+        var strTime = ""
+        
+        let minute = diff.minute
+        
+        let hour = diff.hour
+        
+        if (minute! > 0) {
+            strTime = (hour?.toString())! + "h" + (minute?.toString())! + "m"
+        } else {
+            strTime = (hour?.toString())! + "h"
+        }
+        
+        lbTime.text = strTime + " stop in " + stop.name
     }
 }
