@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTc-id-sTf">
@@ -235,6 +235,7 @@
                 <outlet property="btnDeeplink" destination="LSo-QE-MVN" id="RUC-WH-LzV"/>
                 <outlet property="constraintDepartHeight" destination="dYM-of-zyO" id="pIP-Rc-2De"/>
                 <outlet property="constraintDetailsHeight" destination="adZ-zK-5KR" id="kEg-uJ-Bsu"/>
+                <outlet property="constraintLogoRatio" destination="Ah0-8R-QBt" id="DfN-uR-Qww"/>
                 <outlet property="constraintReturnHeight" destination="R15-if-rxX" id="wD4-Nt-B6u"/>
                 <outlet property="containerView" destination="TTc-id-sTf" id="Yv1-q2-fvn"/>
                 <outlet property="imgCarrier" destination="Jwr-A8-5ZM" id="aPc-T0-Yxg"/>

@@ -15,6 +15,7 @@ target 'Jetex' do
  pod 'FacebookShare'
  pod 'Google/SignIn'
  pod 'PopupDialog', '~> 0.5'
+ pod 'AlamofireImage'
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
