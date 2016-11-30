@@ -93,7 +93,7 @@ extension Date {
     // Ex: 31
     func toDay() -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "d"
+        formatter.dateFormat = "dd"
         let timeString = formatter.string(from: self)
         
         return timeString

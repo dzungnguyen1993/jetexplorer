@@ -325,7 +325,9 @@ public class EPCalendarPicker: UICollectionViewController, UICollectionViewDeleg
             
             // checkOutDate = checkInDate + 1
             checkOutDate = Calendar.current.date(byAdding: Calendar.Component.day, value: 1, to: checkInDate)!
-            self.indicatorPosition = .checkOut
+            if (self.type == .roundtrip) {
+                self.indicatorPosition = .checkOut
+            }
             self.delegate?.pickCheckinDate()
             collectionView.reloadData()
             checkInIndexPath = indexPath as IndexPath!

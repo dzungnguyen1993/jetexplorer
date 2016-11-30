@@ -29,17 +29,4 @@ class Itinerary: Mappable {
         inboundLegId <- map["InboundLegId"]
         pricingOptions <- map["PricingOptions"]
     }
-    
-    func getSmallestPrice() -> Double {
-        guard pricingOptions.count > 0 else {return 0}
-        
-        var min = pricingOptions[0].price
-        
-        for pricingOption in pricingOptions {
-            if pricingOption.price < min {
-                min = pricingOption.price
-            }
-        }
-        return min
-    }
 }

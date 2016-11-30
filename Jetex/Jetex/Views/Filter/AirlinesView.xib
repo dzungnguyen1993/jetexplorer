@@ -72,6 +72,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="btnShowAll" destination="VXd-4F-Bql" id="L0e-1v-Qr5"/>
+                <outlet property="constraintBtnShowAllHeight" destination="dFY-gN-mDK" id="e67-T3-3Lq"/>
                 <outlet property="constraintTableHeight" destination="O4z-TC-77i" id="oGQ-Qs-WQu"/>
                 <outlet property="tableView" destination="o95-0Z-nRZ" id="OZa-f2-3vd"/>
             </connections>

@@ -52,6 +52,9 @@
 		28E62C4C1DE597CF00E41D44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E62C4B1DE597CF00E41D44 /* User.swift */; };
 		28E62C4E1DE68ACC00E41D44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E62C4D1DE68ACC00E41D44 /* Constant.swift */; };
 		28E62C531DE6F23D00E41D44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E62C521DE6F23D00E41D44 /* GoogleService-Info.plist */; };
+		B90544AA1DEEBAAB008FF60D /* FilterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90544A91DEEBAAB008FF60D /* FilterObject.swift */; };
+		B90544AC1DEEE833008FF60D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90544AB1DEEE833008FF60D /* Currency.swift */; };
+		B90544AE1DEEEB9B008FF60D /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90544AD1DEEEB9B008FF60D /* Query.swift */; };
 		B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */; };
 		B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */; };
 		B90DDA481DD45F0800AEC1AE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA471DD45F0800AEC1AE /* back.png */; };
@@ -252,6 +255,9 @@
 		3E5CF66A38583E9E938BCD7C /* Pods_Jetex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetex/Pods-Jetex.debug.xcconfig"; sourceTree = "<group>"; };
 		5F30E1B520C7F45D1DB37729 /* Pods_JetexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90544A91DEEBAAB008FF60D /* FilterObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterObject.swift; sourceTree = "<group>"; };
+		B90544AB1DEEE833008FF60D /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		B90544AD1DEEEB9B008FF60D /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchVC.swift; sourceTree = "<group>"; };
 		B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationSearchVC.xib; sourceTree = "<group>"; };
 		B90DDA471DD45F0800AEC1AE /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
@@ -631,6 +637,7 @@
 				B9C197731DE1F4900084B8BF /* DestinationView.xib */,
 				B92F8BC71DE1FE0C0039C153 /* ApplyFilterView.swift */,
 				B92F8BC81DE1FE0C0039C153 /* ApplyFilterView.xib */,
+				B90544A91DEEBAAB008FF60D /* FilterObject.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -780,6 +787,8 @@
 				B9BA75C91DEBCC52003393D7 /* PricingOption.swift */,
 				B9BA75CB1DEBD2DE003393D7 /* Agent.swift */,
 				B9BA75CD1DEBD4D2003393D7 /* Itinerary.swift */,
+				B90544AB1DEEE833008FF60D /* Currency.swift */,
+				B90544AD1DEEEB9B008FF60D /* Query.swift */,
 			);
 			name = SearchFlight;
 			sourceTree = "<group>";
@@ -1066,6 +1075,7 @@
 			files = (
 				B9D9045D1DD8C103008C8720 /* EPCalendarHeaderView.swift in Sources */,
 				B9D9045F1DD8C103008C8720 /* EPCalendarPicker.swift in Sources */,
+				B90544AA1DEEBAAB008FF60D /* FilterObject.swift in Sources */,
 				286F62D11DDB445500B26733 /* UICheckBoxButton.swift in Sources */,
 				B9FAA4781DEB3051000F87D7 /* SearchFlightResult.swift in Sources */,
 				B9EE7A751DDDECB700A82AEE /* FlightResultDetailsCell.swift in Sources */,
@@ -1073,6 +1083,7 @@
 				B947B2C31DE9CE8C00A794BE /* SplashVC.swift in Sources */,
 				B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */,
 				B9FAA4761DEB2F10000F87D7 /* ResponseParser.swift in Sources */,
+				B90544AE1DEEEB9B008FF60D /* Query.swift in Sources */,
 				B963E7231DD6BF7400A21548 /* PickPassengerVC.swift in Sources */,
 				B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */,
 				B99F82CC1DE1DAC500DA8B37 /* StopCell.swift in Sources */,
@@ -1090,6 +1101,7 @@
 				289192991DDDCD7D001C064B /* ForgotPasswordVC.swift in Sources */,
 				289192A41DDDF3C2001C064B /* EditProfileVC.swift in Sources */,
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
+				B90544AC1DEEE833008FF60D /* Currency.swift in Sources */,
 				B9EE7A781DDDED7000A82AEE /* FlightResultDetailsView.swift in Sources */,
 				B9BA75CA1DEBCC52003393D7 /* PricingOption.swift in Sources */,
 				B9C197741DE1F4900084B8BF /* DestinationView.swift in Sources */,

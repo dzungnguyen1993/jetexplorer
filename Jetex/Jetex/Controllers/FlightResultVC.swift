@@ -86,11 +86,18 @@ class FlightResultVC: BaseViewController {
             popup.dismiss()
             if (isSuccess) {
                 self.searchFlightResult = ResponseParser.shared.parseFlightSearchResponse(data: data as! NSDictionary)
-                self.searchFlightResult.sortCheapest()
-                self.searchFlightResult.sortFastest()
-                self.loadResultData()
+                
+                self.loadResult()
             }
         }
+    }
+    
+    func loadResult() {
+        self.searchFlightResult.initSort()
+        self.loadResultData()
+        
+        // load filter view
+        self.viewFilter.setFilterInfo(searchResult: self.searchFlightResult)
     }
    
     @IBAction func back(_ sender: UIButton) {
@@ -125,6 +132,9 @@ class FlightResultVC: BaseViewController {
         viewFilterContainer.isHidden = false
         viewOptions.isHidden = true
         tableView.isHidden = true
+        
+        
+        viewFilter.tableView.reloadData()
     }
 }
 
@@ -228,6 +238,14 @@ extension FlightResultVC: FilterFlightViewDelegate {
         viewFilterContainer.isHidden = true
         viewOptions.isHidden = false
         tableView.isHidden = false
+    }
+    
+    func applyFilter(filterObject: FilterObject) {
+        searchFlightResult.applyFilter(filterObject: filterObject)
+    
+        hideFilter()
+        
+        loadResultData()
     }
 }
 

@@ -31,6 +31,8 @@ class FlightResultCell: UITableViewCell {
     @IBOutlet weak var lbDepartureTime: UILabel!
     @IBOutlet weak var lbArrivalTime: UILabel!
     @IBOutlet weak var lbDuration: UILabel!
+    @IBOutlet weak var btnDeeplink: SmallParagraphButton!
+    var deepLink: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,8 +46,8 @@ class FlightResultCell: UITableViewCell {
     }
     
     @IBAction func goToExpediaButtonPressed(_ sender: Any) {
-        let cellURL = "https://www.expedia.com/"
-        UIApplication.shared.open(URL(string: cellURL)!, options: [:], completionHandler: nil)
+//        let cellURL = "https://www.expedia.com/"
+        UIApplication.shared.open(URL(string: deepLink)!, options: [:], completionHandler: nil)
     }
 }
 
@@ -56,8 +58,6 @@ extension FlightResultCell {
     }
     
     func showInfoGeneral(ofSearchResult searchResult: SearchFlightResult, forItinerary itinerary: Itinerary) {
-        self.lbPrice.text = "USD" + 100.toString()
-        
         if (itinerary.inboundLegId != "") {
             self.lbFlightType.text = "Roundtrip"
         } else {
@@ -83,7 +83,7 @@ extension FlightResultCell {
         lbDuration.text = leg?.duration.toHourAndMinute()
         
         // show price
-        lbPrice.text = "USD " + Int(itinerary.getSmallestPrice()).toString()
+        lbPrice.text = searchResult.query.currency + " " + String(format: "%.1f", (itinerary.pricingOptions.first?.price)!)
         
         // show carrier
         let carrier = searchResult.getCarrier(withId: (leg?.carriers.first)!)
@@ -94,8 +94,20 @@ extension FlightResultCell {
 // MARK: show details
 extension FlightResultCell {
     func addDetails(ofSearchResult searchResult: SearchFlightResult, forItinerary itinerary: Itinerary) {
+        // add btnDeeplink
+        let pricingOption = itinerary.pricingOptions.first
+        deepLink = (pricingOption?.deeplinkUrl)!
+        let agent = searchResult.getAgent(withId: (pricingOption?.agents.first)!)
+        btnDeeplink.setTitle("Go to " + (agent?.name)!, for: .normal)
+        
         // remove sub view
-        for view in self.subviews {
+        for view in self.viewDepart.subviews {
+            if (view.isKind(of: FlightResultDetailsView.self)) {
+                view.removeFromSuperview()
+            }
+        }
+        
+        for view in self.viewReturn.subviews {
             if (view.isKind(of: FlightResultDetailsView.self)) {
                 view.removeFromSuperview()
             }

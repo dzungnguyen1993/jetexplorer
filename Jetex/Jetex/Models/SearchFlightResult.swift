@@ -12,15 +12,20 @@ import ObjectMapper_Realm
 
 class SearchFlightResult: Mappable {
     
-    var carriers = [Carrier]()//List<Carrier>()
+    var carriers = [Carrier]()
     var places = [Place]()
     var segments = [Segment]()
     var legs = [Leg]()
     var itineraries = [Itinerary]()
     var agents = [Agent]()
+    var currencies = [Currency]()
     
     var cheapestTrips = [Itinerary]()
     var fastestTrips = [Itinerary]()
+    
+    var filteredCheapTrip = [Itinerary]()
+    var filteredFastTrip = [Itinerary]()
+    var query: Query = Query()
     
     required convenience init?(map: Map) {
         self.init()
@@ -37,16 +42,41 @@ class SearchFlightResult: Mappable {
         legs <- map["Legs"]
         itineraries <- map["Itineraries"]
         agents <- map["Agents"]
+        currencies <- map["Currencies"]
+        query <- map["Query"]
+    }
+    
+    func initSort() {
+        sortCheapest(itineraries: itineraries)
+        sortFastest(itineraries: itineraries)
     }
     
     // sort cheapest
-    func sortCheapest() {
+    func sortCheapest(itineraries: [Itinerary]) {
         self.cheapestTrips = itineraries
+        
+        cheapestTrips.sort { (item1, item2) -> Bool in
+            let pricingOption1 = item1.pricingOptions.first
+            
+            let pricingOption2 = item2.pricingOptions.first
+            
+            return pricingOption1!.price <= (pricingOption2!.price)
+        }
     }
     
     // sort fastest
-    func sortFastest() {
+    func sortFastest(itineraries: [Itinerary]) {
         self.fastestTrips = itineraries
+        
+        fastestTrips.sort { (item1, item2) -> Bool in
+            let leg1 = self.getLeg(withId: item1.outboundLegId)
+            let duration1 = leg1?.duration
+            
+            let leg2 = self.getLeg(withId: item2.outboundLegId)
+            let duration2 = leg2?.duration
+            
+            return duration1! <= duration2!
+        }
     }
     
     // MARK: Query info
@@ -88,5 +118,70 @@ class SearchFlightResult: Mappable {
         }
         
         return nil
+    }
+    
+    func getAgent(withId id: Int) -> Agent? {
+        for agent in agents {
+            if agent.id == id {
+                return agent
+            }
+        }
+        
+        return nil
+    }
+    
+    // MARK: Filtered
+    func filterCheap() {
+        
+    }
+    
+    func filterFast() {
+        
+    }
+    
+    func applyFilter(filterObject: FilterObject) {
+        var result = [Itinerary]()
+        
+        for item in self.itineraries {
+            let leg = self.getLeg(withId: item.outboundLegId)
+            
+            var isValidStop = false
+            
+            let numberOfStop = leg?.stops.count
+            
+            // filter stops
+            switch filterObject.stopType {
+            case .none:
+                isValidStop = numberOfStop == 0
+                break
+            case .one:
+                isValidStop = numberOfStop! <= 1
+                break
+            default:
+                isValidStop = true
+            }
+            
+            
+            // filter carriers
+            var isValidCarrier = false
+            
+            let carrier = self.getCarrier(withId: (leg?.carriers.first)!)
+            
+            for index in filterObject.checkedCarriers {
+                let checkCarrier = self.carriers[index]
+                
+                if carrier?.id == checkCarrier.id {
+                    isValidCarrier = true
+                    break
+                }
+            }
+            
+            if isValidStop && isValidCarrier {
+                result.append(item)
+            }
+        }
+        
+        self.sortCheapest(itineraries: result)
+        self.sortFastest(itineraries: result)
     }
 }

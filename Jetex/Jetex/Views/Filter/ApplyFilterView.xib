@@ -29,6 +29,9 @@
                         <state key="normal" title="APPLY">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="applyFilter:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mcx-wz-KVJ"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

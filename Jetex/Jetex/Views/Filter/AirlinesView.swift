@@ -11,16 +11,19 @@ import UIKit
 protocol AirlinesViewDelegate: class {
     func showAllAirlines()
     func hideAirlines()
+    func didCheck(index: Int)
 }
 
 class AirlinesView: UITableViewCell {
 
     @IBOutlet weak var tableView: UITableView!
-    var arrayTitles = ["All Nippon Airways", "Cathay Pacific Airways", "China Southern Airlines", "China Airlines", "Vietnam Airlines", "Vietjet Air"]
     var arrayChecked = [Int]()
     var isShowAll = false
     weak var delegate: AirlinesViewDelegate?
     @IBOutlet weak var constraintTableHeight: NSLayoutConstraint!
+    var carriers: [Carrier]?
+    @IBOutlet weak var btnShowAll: UIButton!
+    @IBOutlet weak var constraintBtnShowAllHeight: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,11 +48,12 @@ class AirlinesView: UITableViewCell {
         if (isShowAll) {
             sender.setTitle("Hide", for: .normal)
             self.delegate?.showAllAirlines()
-            constraintTableHeight.constant = 6 * 44
+
+            constraintTableHeight.constant = CGFloat((carriers?.count)! * 44)
         } else {
             sender.setTitle("Show all 6 airlines", for: .normal)
             self.delegate?.hideAirlines()
-            constraintTableHeight.constant = 4 * 44
+            constraintTableHeight.constant = CGFloat(min((carriers?.count)!, 4) * 44)
         }
         
         self.tableView.reloadData()
@@ -58,10 +62,14 @@ class AirlinesView: UITableViewCell {
 
 extension AirlinesView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (!isShowAll) {
-            return 4
+        guard carriers != nil else {
+            return 0
         }
-        return arrayTitles.count
+        
+        if (!isShowAll) {
+            return min((carriers?.count)!, 4)
+        }
+        return (carriers?.count)!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,7 +87,7 @@ extension AirlinesView: UITableViewDelegate, UITableViewDataSource {
             cell.lbTitle.textColor = UIColor(hex: 0x515151)
         }
         
-        cell.lbTitle.text = arrayTitles[indexPath.row]
+        cell.lbTitle.text = carriers?[indexPath.row].name
         
         return cell
     }
@@ -93,6 +101,8 @@ extension AirlinesView: UITableViewDelegate, UITableViewDataSource {
         }
         
         tableView.reloadData()
+        
+        delegate?.didCheck(index: indexPath.row)
     }
     
 //    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

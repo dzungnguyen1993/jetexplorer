@@ -8,12 +8,24 @@
 
 import UIKit
 
+enum StopCheckType: Int {
+    case none = 0
+    case one = 1
+    case any = 2
+}
+
+protocol StopViewDelegate: class {
+    func didChooseStopType(type: StopCheckType)
+}
+
 class StopView: UITableViewCell {
 
     @IBOutlet weak var tableView: UITableView!
     
     var arrayTitles = ["Non-stop", "Max. 1 stop", "Any stop"]
     var checkedIndex = -1
+    var type: StopCheckType! = nil
+    weak var delegate: StopViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -63,6 +75,21 @@ extension StopView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         checkedIndex = indexPath.row
         tableView.reloadData()
+        
+        var type: StopCheckType = .none
+        switch checkedIndex {
+        case StopCheckType.none.rawValue:
+            type = .none
+            break
+        case StopCheckType.one.rawValue:
+            type = .one
+            break
+        default:
+            type = .any
+            break
+        }
+        
+        delegate?.didChooseStopType(type: type)
     }
     
 //    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
