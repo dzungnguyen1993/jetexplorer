@@ -55,7 +55,7 @@
                                 <navigationItem title="Search history" id="dqN-dL-gCa"/>
                             </items>
                         </navigationBar>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-VZ-Fhx" userLabel="Sign In View">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-VZ-Fhx" userLabel="Sign In View">
                             <rect key="frame" x="0.0" y="44" width="375" height="120"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to create trips, save flights &amp; hotels, and access searches across devices" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xl-xA-3Vc">
@@ -65,7 +65,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVZ-0y-rXD">
-                                    <rect key="frame" x="87.5" y="60" width="200" height="44"/>
+                                    <rect key="frame" x="88" y="60" width="200" height="44"/>
                                     <color key="backgroundColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="200" id="hYI-f3-2WJ"/>
@@ -90,7 +90,7 @@
                                 <constraint firstItem="SVZ-0y-rXD" firstAttribute="centerX" secondItem="YcB-VZ-Fhx" secondAttribute="centerX" id="yL6-LH-wnz"/>
                             </constraints>
                         </view>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="igg-dq-Qg4">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="igg-dq-Qg4">
                             <rect key="frame" x="0.0" y="164" width="375" height="434"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>

@@ -59,16 +59,17 @@ class HistoryCell: UITableViewCell {
         toLabel.text = data.arrivalAirport
         toLabel.resizeToFitText()
         
+        
+        //show start - end day
+        timeLabel.resizeToFitText()
         if data.isRoundTrip == true {
             exchangeLabel.text = "\(NSString.init(utf8String: JetExFontHexCode.exchange.rawValue)!)"
+            timeLabel.text = "\(Date.shorterlizeFullMonthDay(data.departDateText)) - \(Date.shorterlizeFullMonthDay(data.returnDateText))"
         } else {
             exchangeLabel.text = "\(NSString.init(utf8String: JetExFontHexCode.oneWay.rawValue)!)"
+            timeLabel.text = "\(Date.shorterlizeFullMonthDay(data.departDateText))"
         }
         exchangeLabel.resizeToFitText()
-        
-        // TODO : show start - end day
-        timeLabel.resizeToFitText()
-        timeLabel.text = "\(Date.shorterlizeFullMonthDay(data.departDateText)) - \(Date.shorterlizeFullMonthDay(data.returnDateText))"
         
         // TODO: show options
         var option = ""

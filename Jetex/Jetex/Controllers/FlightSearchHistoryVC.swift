@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import Alamofire
+import PopupDialog
 
 class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,15 +18,13 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var signInView: UIView!
     
     // MARK: - Data lists
-    var historyList: Results<HistorySearch>!
+    var historyList: Array<HistorySearch>!
+    var unSyncHistoryList : Results<HistorySearch>!
     let realm = try! Realm()
     
     // MARK: - override functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // set search all data as default
-        historyList = nil
         
         // register cell prototype
         self.resultTableView.register(UINib(nibName: "HistoryCell", bundle: nil), forCellReuseIdentifier: "HistoryCell")
@@ -33,33 +33,76 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        if ProfileVC.isUserLogined {
-            signInViewHeightConstraint.constant = 0.0
-        } else {
-            signInViewHeightConstraint.constant = 120.0
+        if (!Utility.isConnectedToNetwork()) {
+            // no network
+            let vc = NetworkErrorVC(nibName: "NetworkErrorVC", bundle: nil)
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+            return
         }
         
+        // load data from local that is unsynced
+        unSyncHistoryList = realm.objects(HistorySearch.self).filter("isSynced == false")
+        
+        // load all data
+        historyList = Array(realm.objects(HistorySearch.self))
+        
+        if ProfileVC.isUserLogined {
+            // User is loged in
+            signInViewHeightConstraint.constant = 0.0
+            
+            // check if there is any searchHistory in nowhere, then sync
+            if unSyncHistoryList.count > 0 {
+                let dict = HistorySearch.historyListToJSON(historyList: self.historyList)
+                NetworkManager.shared.syncHistoryToServer(historyData: dict, atView: self, showPopup: true, completion: { (success, searchesHistory) in
+                    if success {
+                        // delete all local history
+                        let realm = try! Realm()
+                        try! realm.write {
+                            for unsyncedSearch in self.unSyncHistoryList {
+                                unsyncedSearch.isSynced = true
+                            }
+                        }
+                        
+                        // reload data
+                        for search in searchesHistory! {
+                            if self.historyList.contains(search) {
+                                continue
+                            } else {
+                                self.historyList.append(search)
+                            }
+                        }
+                        self.resultTableView.reloadData()
+                    }
+                })
+            }
+            
+        } else {
+            // User is not loged in, ask them to login
+            signInViewHeightConstraint.constant = 120.0
+//            // show the unsynced ones
+//            historyList = Array(unSyncHistoryList)
+        }
+        
+        // do a simple animation
         UIView.animate(withDuration: 0.25) {
             self.signInView.layoutIfNeeded()
             self.signInView.isHidden = ProfileVC.isUserLogined
+            self.signInView.alpha = ProfileVC.isUserLogined ? 0.0 : 1.0
         }
         
-        // load data
-        historyList = realm.objects(HistorySearch.self).sorted(byProperty: "createTime", ascending: false)
-        self.resultTableView.separatorStyle = historyList.count == 0 ? .none : .singleLine
+        // reload table view
+        self.historyList = self.historyList.sorted(by: { $0.id > $1.id })
         self.resultTableView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     // MARK: - Sign In if dont login yet.
     @IBAction func signInButtonPressed(_ sender: AnyObject) {
-        let vc = SignInVC(nibName: "SignInVC", bundle: nil)
-        _ = self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = SignInVC(nibName: "SignInVC", bundle: nil)
+//        _ = self.navigationController?.pushViewController(vc, animated: true)
+        
+        // go to profile vc
+        _ = (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 2)
     }
     
     // MARK: - result table
@@ -88,7 +131,11 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
         // Configure the view for the selected state
         if selectedCell.dataType == .Flight {
             let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
-            vc.passengerInfo = selectedCell.flightHistory!.passengerInfo!
+            
+            try! realm.write {
+                vc.passengerInfo = selectedCell.flightHistory!.requestInfoFromPassenger()
+            }
+            
             _ = self.navigationController?.pushViewController(vc, animated: true)
         } else if selectedCell.dataType == .Hotel {
             

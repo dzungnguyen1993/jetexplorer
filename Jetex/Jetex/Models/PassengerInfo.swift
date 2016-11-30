@@ -43,6 +43,23 @@ class PassengerInfo: Object, Mappable {
         self.init()
     }
     
+    convenience init (passengerInfo: PassengerInfo) {
+        self.init()
+        
+        self.airportFrom = passengerInfo.airportFrom
+        self.airportTo = passengerInfo.airportTo
+        self.isRoundTrip = passengerInfo.isRoundTrip
+        self.departDay = passengerInfo.departDay
+        self.returnDay = passengerInfo.returnDay
+        
+        for passenger in passengerInfo.passengers {
+            var obj = IntObject()
+            obj.value = passenger.value
+            self.passengers.append(obj)
+        }
+        
+    }
+    
     func mapping(map: Map) {
     }
     

@@ -13,6 +13,7 @@ import FacebookCore
 import FacebookLogin
 import FacebookShare
 import GoogleSignIn
+import PopupDialog
 
 protocol LoginViewDelegate: class {
     func signInWithFacebook()
@@ -44,8 +45,12 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
     
     var userInfoView: UserInfoView?  = nil
     var loginView: LoginView?        = nil
-    var currentUser: User?           = nil
     var realm : Realm!
+    
+    static var currentUser : User? = {
+        let realm = try! Realm()
+        return realm.objects(User.self).filter("isCurrentUser == true").first
+    }()
     
     // MARK: - Override functions
     override func viewDidLoad() {
@@ -93,7 +98,8 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             self.mainView.addSubview(userInfoView!)
             
             // get current user
-            currentUser = realm.objects(User.self).filter("isCurrentUser == true").first
+            //currentUser = realm.objects(User.self).filter("isCurrentUser == true").first
+            let currentUser = ProfileVC.currentUser
             if currentUser == nil {
                 // if current User is not exist, login again
                 ProfileVC.isUserLogined = false
@@ -127,14 +133,17 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
     
     // MARK:- Log In Delegate
     
-    func signInUsingAccessToken (accessToken: String, atAPI apiLink: String) {
+    func signInUsingAccessToken (accessToken: String, atAPI apiLink: String, withPreLink: String = "") {
         // TODO: show loading adicator
-        
+        let popup = PopupDialog(title: "Connecting...", message: "Please wait, we are trying to connect.", image: nil, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+        self.present(popup, animated: true, completion: nil)
+
         // TODO: request to server
         let requestURL = APIURL.JetExAPI.base + apiLink
-        let token = ["token" : accessToken]
+        let params = ["token" : accessToken,
+                      "link" : withPreLink]
         
-        Alamofire.request(requestURL, method: .post, parameters: token, encoding: JSONEncoding.default).responseJSON { response in
+        Alamofire.request(requestURL, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
             if let value = response.result.value as? NSDictionary {
                 if let id = value.value(forKey: "_id") as? String, id != "" {
                     if let user = User(JSON: value as! [String: Any]) {
@@ -167,18 +176,20 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
                             updateCurrentUser()
                         }
                         
-                        // back to previous screen
+                        // set up main view
                         ProfileVC.isUserLogined = true
-                        _ = self.navigationController?.popViewController(animated: true)
+                        self.setUpMainView()
+                        popup.dismiss()
+                        return
                     }
-                } else if let message = value.value(forKey: "message") as? String {
-                    // TODO: Show notification here
-                    print(message)
                 }
-            } else {
-                print("Wrong info!")
-                return
             }
+            
+            popup.dismiss({ 
+                let newPopup = PopupDialog(title: "Can't Sign In!", message: "Please check your information/internet connection!")
+                newPopup.addButton(CancelButton(title: "Try again", action: nil))
+                self.present(newPopup, animated: true, completion: nil)
+            })
         }
     }
     
@@ -187,7 +198,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         let loginManager = LoginManager()
         // check if user alreay loged in
         if let accessToken = AccessToken.current {
-            signInUsingAccessToken(accessToken: accessToken.authenticationToken, atAPI: APIURL.JetExAPI.signInWithFacebook)
+            signInUsingAccessToken(accessToken: accessToken.authenticationToken, atAPI: APIURL.JetExAPI.signInWithFacebook, withPreLink: APIURL.FacebookAPI.prelink)
             return
         }
         
@@ -195,15 +206,14 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         loginManager.logIn([ReadPermission.publicProfile], viewController: self, completion:
             { loginResult in
                 switch loginResult {
-                case .failed(let error):
-                    print(error)
-                    break
-                case .cancelled:
-                    print("User cancelled login.")
+                case .failed, .cancelled:
+                    let popup = PopupDialog(title: "Can't Sign In!", message: "Cannot connect to your Facebook.")
+                    popup.addButton(CancelButton(title: "Try again", action: nil))
+                    self.present(popup, animated: true, completion: nil)
                     break
                 case .success(_, _, let accessToken):
                     print("Logged in! accessToken: \(accessToken)")
-                    self.signInUsingAccessToken(accessToken: accessToken.authenticationToken, atAPI: APIURL.JetExAPI.signInWithFacebook)
+                    self.signInUsingAccessToken(accessToken: accessToken.authenticationToken, atAPI: APIURL.JetExAPI.signInWithFacebook, withPreLink: APIURL.FacebookAPI.prelink)
                     break
                 }
         })
@@ -218,19 +228,16 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         }
     }
     
-    
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
             // Perform any operations on signed in user here.
-//            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-//            let fullName = user.profile.name
-//            let givenName = user.profile.givenName
-//            let familyName = user.profile.familyName
-//            let email = user.profile.email
-            self.signInUsingAccessToken(accessToken: idToken!, atAPI: APIURL.JetExAPI.signInWithGoogle)
+            let idToken = user.authentication.idToken
+            self.signInUsingAccessToken(accessToken: idToken!, atAPI: APIURL.JetExAPI.signInWithGoogle, withPreLink: APIURL.GoogleAPI.prelink)
         } else {
             print("\(error.localizedDescription)")
+            let popup = PopupDialog(title: "Can't Sign In!", message: "Cannot connect your Google account.")
+            popup.addButton(CancelButton(title: "Try again", action: nil))
+                self.present(popup, animated: true, completion: nil)
         }
     }
     
@@ -276,7 +283,6 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             if userInfoView != nil {
                 userInfoView!.userAvatar.image = image
             }
-            
             // update to server
             
         }
@@ -344,7 +350,6 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             break
         }
     }
-    
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }

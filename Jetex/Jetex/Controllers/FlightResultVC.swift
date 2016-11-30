@@ -32,7 +32,7 @@ class FlightResultVC: BaseViewController {
     @IBOutlet weak var imgFilter: UIImageView!
     @IBOutlet weak var imgPassenger: UIImageView!
     @IBOutlet weak var imgRightArrow: UIImageView!
-    var passengerInfo: PassengerInfo! = PassengerInfo()
+    var passengerInfo: PassengerInfo! // = PassengerInfo() no need
     
     @IBOutlet weak var lbOrigin: UILabel!
     @IBOutlet weak var lbDestination: UILabel!

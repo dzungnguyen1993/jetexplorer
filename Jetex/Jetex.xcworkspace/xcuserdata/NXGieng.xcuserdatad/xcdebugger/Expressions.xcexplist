@@ -3,57 +3,61 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "WarningView.initializeSubviews() -&gt; ():WarningView.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ProfileVC.(setUpMainView() -&gt; ()).(closure #1):ProfileVC.swift">
+         contextName = "NetworkManager.(syncHistoryToServer(historyData : [[String : Any]], atView : UIViewController, completion : (Bool, List&lt;HistorySearch&gt;?) -&gt; ()?) -&gt; ()).(closure #1):NetworkManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "response.result">
-            </PersistentString>
-            <PersistentString
-               value = "avatarURL">
+               value = "response.result.value as [String: Any?]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChangNameVC.(saveButtonPressed(AnyObject) -&gt; ()).(closure #2):ChangNameVC.swift">
-      </ContextState>
-      <ContextState
-         contextName = "UICheckBoxButton.selfPressed(sender : AnyObject) -&gt; ():UICheckBoxButton.swift">
+         contextName = "ProfileVC.imagePickerController(UIImagePickerController, didFinishPickingMediaWithInfo : [String : Any]) -&gt; ():ProfileVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "checkBoxLabel.text">
+               value = "mainView.subviews">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SignInVC.(signInButtonPressed(AnyObject) -&gt; ()).(closure #1):SignInVCViewController.swift">
+         contextName = "NetworkManager.(syncHistoryToServer(historyData : [[String : Any]], atView : UIViewController, completion : (Bool, List&lt;HistorySearch&gt;?) -&gt; ()?) -&gt; ()).(closure #1).(closure #3):NetworkManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "response.header">
-            </PersistentString>
-            <PersistentString
-               value = "currentUser as! [String: Any]">
+               value = "currentUser.searchesHistory.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SignUpVC.(signUpButtonPressed(AnyObject) -&gt; ()).(closure #1):SignUpVC.swift">
+         contextName = "NetworkManager.syncHistoryToServer(historyData : String, atView : UIViewController, completion : (Bool, List&lt;HistorySearch&gt;?) -&gt; ()?) -&gt; ():NetworkManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HistorySearch.toJSON() -&gt; [String : Any]:HistorySearch.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Mapper.toJSONString(A, prettyPrint : Bool) -&gt; String?:Mapper.swift">
+      </ContextState>
+      <ContextState
+         contextName = "NetworkManager.syncHistoryToServer(historyData : [String : Any?], atView : UIViewController, completion : (Bool, List&lt;HistorySearch&gt;?) -&gt; ()?) -&gt; ():NetworkManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "&lt;- infix&lt;A where ...&gt; (inout A.Object, (Map, A)) -&gt; ():TransformOperators.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HistorySearch.init(type : HistorySearchType, flight : FlightHistorySearch?, hotel : HotelHistorySearch?) -&gt; HistorySearch:HistorySearch.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Mapper.map(JSONObject : Any?) -&gt; A?:Mapper.swift">
+      </ContextState>
+      <ContextState
+         contextName = "FlightSearchHistoryVC.(viewWillAppear(Bool) -&gt; ()).(closure #1).(closure #1):FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "response.result">
+               value = "self.historyList.count">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ProfileVC.signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ():ProfileVC.swift">
-      </ContextState>
-      <ContextState
-         contextName = "WarningForInput.hideWarning(animated : Bool) -&gt; ():WarningView.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "self.inputTextField?.layer.borderColor">
+               value = "searchesHistory.count">
+            </PersistentString>
+            <PersistentString
+               value = "self.unSyncHistoryList[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -61,20 +65,23 @@
          contextName = "ProfileVC.(signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ()).(closure #1):ProfileVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "response.result.value ">
+               value = "response.result.value as [String : String]">
+            </PersistentString>
+            <PersistentString
+               value = "">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "UIImage.init(fromHex : UnsafePointer&lt;Int8&gt;) -&gt; UIImage:Extentions.swift">
+         contextName = "static DataRequest.(ObjectMapperSerializer&lt;A where ...&gt; (String?, mapToObject : A?, context : MapContext?) -&gt; DataResponseSerializer&lt;A&gt;).(closure #1):AlamofireObjectMapper.swift">
+      </ContextState>
+      <ContextState
+         contextName = "NetworkManager.(syncHistoryToServer(historyData : [String : Any?], atView : UIViewController, completion : (Bool, List&lt;HistorySearch&gt;?) -&gt; ()?) -&gt; ()).(closure #1):NetworkManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "textlabel.text">
+               value = "response.result.value">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ProfileVC.signInWithFacebook() -&gt; ():ProfileVC.swift">
       </ContextState>
       <ContextState
          contextName = "ChangePasswordVC.(saveButtonPressed(AnyObject) -&gt; ()).(closure #1):ChangePasswordVC.swift">
@@ -91,12 +98,107 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ProfileVC.imagePickerController(UIImagePickerController, didFinishPickingMediaWithInfo : [String : Any]) -&gt; ():ProfileVC.swift">
+         contextName = "ProfileVC.(setUpMainView() -&gt; ()).(closure #1):ProfileVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "mainView.subviews">
+               value = "response.result">
+            </PersistentString>
+            <PersistentString
+               value = "avatarURL">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Map.subscript.getter:Map.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "object as [String: Any]">
+            </PersistentString>
+            <PersistentString
+               value = "isKeyPresent">
+            </PersistentString>
+            <PersistentString
+               value = "currentValue as [String: Any]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "User.mapping(map : Map) -&gt; ():User.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProfileVC.(signInWithFacebook() -&gt; ()).(closure #1):ProfileVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProfileVC.(signInUsingAccessToken(accessToken : String, atAPI : String, withPreLink : String) -&gt; ()).(closure #1):ProfileVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SignInVC.(signInButtonPressed(AnyObject) -&gt; ()).(closure #1):SignInVCViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.header">
+            </PersistentString>
+            <PersistentString
+               value = "currentUser as! [String: Any]">
+            </PersistentString>
+            <PersistentString
+               value = "value as! [String: Any]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FlightSearchVC.saveSearchingInfoIntoHistory() -&gt; ():FlightSearchVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "passengerInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FlightSearchHistoryVC.viewDidLoad() -&gt; ():FlightSearchHistoryVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "UIImage.init(fromHex : UnsafePointer&lt;Int8&gt;) -&gt; UIImage:Extentions.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textlabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NetworkManager.syncHistoryToServer(historyData : [[String : Any]], atView : UIViewController, completion : (Bool, List&lt;HistorySearch&gt;?) -&gt; ()?) -&gt; ():NetworkManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ListTransform.transformFromJSON(Any?) -&gt; List&lt;A&gt;?:ListTransform.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "value ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FlightSearchHistoryVC.viewWillAppear(Bool) -&gt; ():FlightSearchHistoryVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "unSyncHistoryList.count">
+            </PersistentString>
+            <PersistentString
+               value = "unSyncHistoryList[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UICheckBoxButton.selfPressed(sender : AnyObject) -&gt; ():UICheckBoxButton.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "checkBoxLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProfileVC.signInWithFacebook() -&gt; ():ProfileVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProfileVC.signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ():ProfileVC.swift">
       </ContextState>
       <ContextState
          contextName = "UserInfoView.initializeSubviews() -&gt; ():UserInfoView.swift">
@@ -108,6 +210,78 @@
                value = "userAvatar.image">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EditProfileVC.(tableView(UITableView, didSelectRowAt : IndexPath) -&gt; ()).(closure #1).(closure #1):EditProfileVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SignUpVC.(signUpButtonPressed(AnyObject) -&gt; ()).(closure #1):SignUpVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.result">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FlightSearchHistoryVC.(viewWillAppear(Bool) -&gt; ()).(closure #1):FlightSearchHistoryVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.unSyncHistoryList.count">
+            </PersistentString>
+            <PersistentString
+               value = "searchesHistory.count">
+            </PersistentString>
+            <PersistentString
+               value = "self.historyList.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FlightHistorySearch.init(info : PassengerInfo, searchAt : Date?) -&gt; FlightHistorySearch:HistorySearch.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WarningForInput.hideWarning(animated : Bool) -&gt; ():WarningView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.inputTextField?.layer.borderColor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WarningView.initializeSubviews() -&gt; ():WarningView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "NetworkManager.(syncHistoryToServer(historyData : String, atView : UIViewController, completion : (Bool, List&lt;HistorySearch&gt;?) -&gt; ()?) -&gt; ()).(closure #1):NetworkManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.result">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Mapper.mapArray(JSONObject : Any?) -&gt; [A]?:Mapper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "JSONObject">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseMappable.init(JSON : [String : Any], context : MapContext?) -&gt; A?:Mappable.swift">
+      </ContextState>
+      <ContextState
+         contextName = "FlightSearchHistoryVC.historyListToJSON() -&gt; String:FlightSearchHistoryVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "historyList[0].flightHistory">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChangNameVC.(saveButtonPressed(AnyObject) -&gt; ()).(closure #2):ChangNameVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProfileVC.signInUsingAccessToken(accessToken : String, atAPI : String, withPreLink : String) -&gt; ():ProfileVC.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

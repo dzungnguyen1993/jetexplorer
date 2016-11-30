@@ -56,7 +56,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=", 1 adult, Economy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJG-mq-F0n">
-                        <rect key="frame" x="166.5" y="39" width="129.5" height="12"/>
+                        <rect key="frame" x="166" y="39" width="129.5" height="12"/>
                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -73,6 +73,13 @@
                         <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKh-9a-Yjc">
+                        <rect key="frame" x="24" y="87" width="296" height="1"/>
+                        <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="ML9-ac-iiC"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="CJG-mq-F0n" secondAttribute="trailing" constant="16" id="2LY-ut-MIx"/>
@@ -82,7 +89,9 @@
                     <constraint firstAttribute="bottomMargin" secondItem="W4l-vl-Or5" secondAttribute="bottom" constant="16" id="KCT-Or-Guu"/>
                     <constraint firstItem="3gk-PU-cJI" firstAttribute="leading" secondItem="orP-kR-wwv" secondAttribute="leading" id="Rh8-WG-ajE"/>
                     <constraint firstItem="orP-kR-wwv" firstAttribute="leading" secondItem="W4l-vl-Or5" secondAttribute="trailing" constant="16" id="a5r-LJ-b4p"/>
+                    <constraint firstItem="cKh-9a-Yjc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="brv-fz-BNs"/>
                     <constraint firstItem="IRM-fJ-nXP" firstAttribute="leading" secondItem="y09-H4-Fep" secondAttribute="trailing" constant="8" id="cBc-CQ-zsI"/>
+                    <constraint firstAttribute="trailing" secondItem="cKh-9a-Yjc" secondAttribute="trailing" id="fp4-gs-6eU"/>
                     <constraint firstAttribute="trailingMargin" secondItem="3gk-PU-cJI" secondAttribute="trailing" constant="16" id="kB6-ck-nfb"/>
                     <constraint firstItem="ib6-R0-Nqf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="kOk-6g-ymt"/>
                     <constraint firstItem="y09-H4-Fep" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="kWK-fd-Mky"/>
@@ -91,6 +100,7 @@
                     <constraint firstItem="3gk-PU-cJI" firstAttribute="top" secondItem="orP-kR-wwv" secondAttribute="bottom" constant="8" id="o5q-An-4lX"/>
                     <constraint firstItem="CJG-mq-F0n" firstAttribute="baseline" secondItem="orP-kR-wwv" secondAttribute="baseline" id="oUW-jx-V3c"/>
                     <constraint firstItem="W4l-vl-Or5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="qoA-tZ-LDP"/>
+                    <constraint firstAttribute="bottom" secondItem="cKh-9a-Yjc" secondAttribute="bottom" id="r6v-Lt-HQi"/>
                     <constraint firstItem="W4l-vl-Or5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="rho-yq-mSE"/>
                     <constraint firstItem="y09-H4-Fep" firstAttribute="leading" secondItem="ib6-R0-Nqf" secondAttribute="trailing" constant="8" id="xJh-oB-lND"/>
                 </constraints>
@@ -105,7 +115,7 @@
                 <outlet property="timeLabel" destination="orP-kR-wwv" id="tX2-0W-1Jp"/>
                 <outlet property="toLabel" destination="IRM-fJ-nXP" id="Ltd-Y3-foK"/>
             </connections>
-            <point key="canvasLocation" x="56" y="46"/>
+            <point key="canvasLocation" x="56" y="51"/>
         </tableViewCell>
     </objects>
     <resources>

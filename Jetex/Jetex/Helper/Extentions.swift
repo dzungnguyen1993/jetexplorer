@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 extension UIColor {
     
@@ -124,6 +125,17 @@ extension Date {
         return timeString
     }
     
+    func toDateTimeUTCString() -> String
+    {
+        let formatter = DateFormatter()
+        //Specify Format of String to Parse
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let timeString = formatter.string(from: self)
+        
+        return timeString
+    }
+    
     func howlongago(numericDates: Bool = false) -> String {
         let calendar = Calendar.current
         let now = NSDate()
@@ -189,6 +201,9 @@ extension Date {
     }
     
     static func shorterlizeFullMonthDay(_ string: String) -> String {
+        if string == "" {
+            return string
+        }
         let first = string.substring(to: string.characters.index(string.startIndex, offsetBy: 3))
         let last = string.substring(from: string.characters.index(of: " ")!)
         return first + last
@@ -282,5 +297,26 @@ extension String {
         
         //Return Parsed Date
         return dateFromString
+    }
+    
+    func toYYYYMMDD() -> Date {
+        
+        //Create Date Formatter
+        let dateFormatter = DateFormatter()
+        
+        //Specify Format of String to Parse
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        
+        //Parse into NSDate
+        let dateFromString : Date? = dateFormatter.date(from: self)
+        
+        //Return Parsed Date
+        return (dateFromString != nil ? dateFromString! : Date())
+    }
+}
+
+extension List{
+    func toResult() -> Results<T> {
+        return self.filter(NSPredicate.init(value: true))
     }
 }

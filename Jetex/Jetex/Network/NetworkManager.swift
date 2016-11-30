@@ -8,6 +8,9 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
+import PopupDialog
+import AlamofireObjectMapper
 
 enum RequestType: String {
     case getAllAirport = "/flights/api/get/all_airport_sky"
@@ -83,4 +86,78 @@ class NetworkManager: NSObject {
             completion(response.result.isSuccess, response.result.value)
         }
     }
+    
+    // Sync history
+    func syncHistoryToServer (historyData: [[String: Any]], atView: UIViewController? = nil, showPopup: Bool = true, completion: ((_ success: Bool, _ searchHistory: List<HistorySearch>?) -> Void)?) {
+        var popup: PopupDialog? = nil
+        if showPopup {
+            // Show Loading Pop up view
+            popup = PopupDialog(title: "Syncing...", message: "We are syncing your data, Please wait!", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+            
+            atView?.present(popup!, animated: true, completion: nil)
+        }
+        
+        func onErrorOcurs() {
+            if let completion = completion {
+                completion(false, nil)
+            } else if showPopup {
+                let newPopup = PopupDialog(title: "Cannot sync", message: "Please check your internet connection.", image: nil)
+                newPopup.addButton(CancelButton(title: "Try again", action: nil))
+                atView?.present(newPopup, animated: true, completion: nil)
+            }
+        }
+        
+        // sync with server
+        let request = APIURL.JetExAPI.base + APIURL.JetExAPI.history
+        let parameter : Parameters = ["listHistorySearch" : historyData ]
+        
+        Alamofire.request(request, method: .post, parameters: parameter, encoding: JSONEncoding.default).responseObject { (response: DataResponse<User>) in
+            if let currentUser = response.result.value {
+                print(currentUser)
+                // update this user is current user
+                currentUser.isCurrentUser = true
+                
+                // success get user info
+                let realm = try! Realm()
+                
+                // get the current user
+                if let lastUser = realm.objects(User.self).filter("isCurrentUser == true").first {
+                    if lastUser.id == currentUser.id {
+                        // same user login, nothing happen
+                    } else {
+                        // set it to not be
+                        try! realm.write{
+                            lastUser.isCurrentUser = false
+                        }
+                    }
+                }
+                
+                // save/update it to Realm
+                try! realm.write {
+                    realm.add(currentUser, update: true)
+                }
+                
+                if showPopup {
+                    popup?.dismiss({
+                        if let completion = completion {
+                            completion(true, currentUser.searchesHistory)
+                        }
+                    })
+                } else {
+                    if let completion = completion {
+                        completion(true, currentUser.searchesHistory)
+                    }
+                }
+            } else {
+                if showPopup {
+                    popup?.dismiss({
+                        onErrorOcurs()
+                    })
+                } else {
+                    onErrorOcurs()
+                }
+            }
+        }
+    }
+
 }

@@ -96,12 +96,19 @@ class EditProfileVC: UITableViewController {
             break
         case 4:
             print("sign out")
-            let newPopup = PopupDialog(title: "Are you sure?", message: "You are about to log out...", image: UIImage(named: "loading.jpg"), buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+            let newPopup = PopupDialog(title: "Are you sure?", message: "You are about to log out...", image: nil, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
             
             newPopup.addButton(CancelButton(title: "No", action: nil))
             newPopup.addButton(DefaultButton(title: "Yes", action: {
-                ProfileVC.isUserLogined = false
-                _ = self.navigationController?.popViewController(animated: true)
+                let request = APIURL.JetExAPI.base + APIURL.JetExAPI.signOut
+                Alamofire.request(request).responseString(completionHandler: { (response) in
+                    if response.result.isSuccess {
+                        ProfileVC.isUserLogined = false
+                        _ = self.navigationController?.popViewController(animated: true)
+                    } else {
+                        
+                    }
+                })
             }))
             
             self.present(newPopup, animated: true, completion: nil)

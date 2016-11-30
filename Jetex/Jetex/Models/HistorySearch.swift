@@ -12,10 +12,11 @@ import RealmSwift
 import ObjectMapper_Realm
 
 class HistorySearch: Object, Mappable {
-    
-    dynamic var createTime : Date    = Date()
+    dynamic var id : Int               = 0
+    dynamic var createTime : Date      = Date()
     dynamic var createTimeText: String = ""
-    dynamic var _dataType      = HistorySearchType.Flight.rawValue
+    dynamic var _dataType              = HistorySearchType.Flight.rawValue
+    dynamic var isSynced : Bool        = false
     
     dynamic var flightHistory: FlightHistorySearch?
     dynamic var hotelHistory:  HotelHistorySearch?
@@ -40,8 +41,10 @@ class HistorySearch: Object, Mappable {
             flightHistory = flight
         }
         
+        isSynced = false
         dataType = type
         createTime = Date()
+        id = Int(createTime.timeIntervalSince1970)
         createTimeText = createTime.toFullMonthDayAndYear()
     }
     
@@ -49,42 +52,60 @@ class HistorySearch: Object, Mappable {
         self.init()
     }
     
-//    override class func primaryKey() -> String? {
-//        return "createTime"
-//    }
+    override class func primaryKey() -> String? {
+        return "id"
+    }
     
     func mapping(map: Map) {
         createTime      <- map["createTime"]
         createTimeText  <- map["createTimeText"]
         dataType        <- map["dataType"]
         
+        id = Int(createTime.timeIntervalSince1970)
+        isSynced = true
+        
         if dataType == .Flight {
             flightHistory = FlightHistorySearch(map: map)
+            
         } else {
             hotelHistory = HotelHistorySearch(map: map)
         }
     }
+    
+    func toJSON() -> [String : Any] {
+        var json : [String: Any] = [:]
+        json["dataType"] = _dataType
+        json["createTime"] = createTime.toDateTimeUTCString()
+        json["createTimeText"] = createTimeText
+        
+        if dataType == .Flight {
+            let flightInfoDict = self.flightHistory!.toJSON()
+            for (key, value) in flightInfoDict {
+                json.updateValue(value, forKey: key)
+            }
+        } else if dataType == .Hotel {
+            //let hotelDict = self.hotelHistory!.toJSON()
+//            for (key, value) in hotelDict {
+//                json.updateValue(value, forKey: key)
+//            }
+        }
+        return json
+    }
+    
+    // Build JSON from list
+    static func historyListToJSON(historyList: Array<HistorySearch>!) -> [[String: Any]] {
+        var JSONList: [[String: Any]] = []
+        let realm = try! Realm()
+        
+        try! realm.write {
+            for history in historyList {
+                JSONList.append(history.toJSON())
+            }
+        }
+        
+        return JSONList
+    }
 }
-/*
- {
-    "dataType": "flight",
-    "departCity": "Ho Chi Minh City",
-    "arrivalCity": "Hanoi",
-    "departDate": "2016-11-18",
-    "returnDate": "2016-11-19",
-    "adult": 1,
-    "children": 0,
-    "infant": 0,
-    "flightType": "Round Trip",
-    "class": "",
-    "departAirport": "SGN",
-    "arrivalAirport": "HAN",
-    "createTime": "Fri Nov 18 2016 02:15:09 GMT-0500 (EST)",
-    "createTimeText": "November 18, 2016",
-    "departDateText": "November 18",
-    "returnDateText": "November 19"
- }
- */
 
 class FlightHistorySearch: Object, Mappable {
     dynamic var passengerInfo: PassengerInfo? = nil
@@ -143,7 +164,37 @@ class FlightHistorySearch: Object, Mappable {
         arrivalAirport      <- map["arrivalAirport"]
         departDateText      <- map["departDateText"]
         returnDateText      <- map["returnDateText"]
-        
+    }
+    
+    func requestInfoFromPassenger() -> PassengerInfo {
+        if self.passengerInfo != nil {
+            return self.passengerInfo!
+        } else {
+            self.passengerInfo = PassengerInfo()
+            self.passengerInfo!.initialize()
+
+            let realm = try! Realm()
+            
+            self.passengerInfo!.airportFrom = realm.object(ofType: Airport.self, forPrimaryKey: departAirport)
+            self.passengerInfo!.airportTo = realm.object(ofType: Airport.self, forPrimaryKey: arrivalAirport)
+            
+//            self.passengerInfo!.airportFrom = Airport(JSON: ["Id" : departAirport, "CityId" : departCity])
+////            self.passengerInfo!.airportFrom!.id = departAirport
+//            
+//            self.passengerInfo!.airportTo = Airport(JSON: ["Id" : arrivalAirport, "CityId" : arrivalCity])
+////            self.passengerInfo!.airportTo!.id = arrivalAirport
+//            
+////            self.passengerInfo!.airportFrom!.cityId = departCity
+////            self.passengerInfo!.airportTo!.cityId = arrivalCity
+            self.passengerInfo!.departDay = departDate.toYYYYMMDD()
+            self.passengerInfo!.isRoundTrip = isRoundTrip
+            self.passengerInfo!.returnDay = isRoundTrip ? returnDate.toYYYYMMDD() : nil
+            self.passengerInfo!.passengers[0].value = adult
+            self.passengerInfo!.passengers[1].value = children
+            self.passengerInfo!.passengers[2].value = infant
+            
+            return self.passengerInfo!
+        }
     }
 }
 

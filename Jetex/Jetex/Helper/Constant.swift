@@ -27,8 +27,13 @@ struct APIURL {
         static let review = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=\(appId)&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
     }
     
+    struct FacebookAPI {
+        static let prelink = "https://graph.facebook.com/me?fields=email,name,first_name,last_name,gender,birthday,picture.type(large),cover&access_token="
+    }
+    
     struct GoogleAPI {
         static let clientID = "514456118871-qcmqqechijrvbm44jf6nhn83pgh8mt6l.apps.googleusercontent.com"
+        static let prelink = "https://www.googleapis.com/oauth2/v3/tokeninfo?id_token="
     }
     
 }

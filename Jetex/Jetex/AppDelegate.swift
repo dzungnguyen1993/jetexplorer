@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         buttonAppearance.titleFont      = UIFont(name: GothamFontName.Bold.rawValue, size: 15.0)
         buttonAppearance.titleColor     = UIColor(hex: 0x674290)
         buttonAppearance.buttonColor    = UIColor.clear
-        buttonAppearance.separatorColor = UIColor(hex: 0x674290)
+        buttonAppearance.separatorColor = UIColor(hex: 0xD6D6D6)
         
         // Below, only the differences are highlighted
         

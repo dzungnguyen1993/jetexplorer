@@ -20,6 +20,7 @@ class FlightSearchVC: BaseViewController {
     @IBOutlet weak var segmentFlightType: UISegmentedControl!
     
     var passengerInfo: PassengerInfo!
+    let realm = try! Realm()
     
     @IBOutlet weak var imgPassenger: UIImageView!
     
@@ -90,10 +91,14 @@ class FlightSearchVC: BaseViewController {
     @IBAction func switchFlightType(_ sender: UISegmentedControl) {
         if (sender.selectedSegmentIndex == 0) {
             viewReturnDay.isHidden = false
-            passengerInfo.isRoundTrip = true
+            try! realm.write {
+               self.passengerInfo.isRoundTrip = true
+            }
         } else {
             viewReturnDay.isHidden = true
-            passengerInfo.isRoundTrip = false
+            try! realm.write {
+                self.passengerInfo.isRoundTrip = false
+            }
         }
     }
     
@@ -128,7 +133,8 @@ class FlightSearchVC: BaseViewController {
     }
     
     func saveSearchingInfoIntoHistory() {
-        let flightInfo = FlightHistorySearch(info: self.passengerInfo, searchAt: Date())
+        let currentPassengerInfo = PassengerInfo(passengerInfo: self.passengerInfo)
+        let flightInfo = FlightHistorySearch(info: currentPassengerInfo, searchAt: Date())
         let searchingHistory = HistorySearch(type: .Flight, flight: flightInfo, hotel: nil)
         
         let realm = try! Realm()
@@ -136,8 +142,31 @@ class FlightSearchVC: BaseViewController {
         try! realm.write {
             realm.add(searchingHistory)
         }
+        
+        let historyList = Array(realm.objects(HistorySearch.self))
+        
+        if ProfileVC.isUserLogined {
+            // user login, sync to server and save to current user
+            let JSONlist = HistorySearch.historyListToJSON(historyList: historyList)
+         
+            NetworkManager.shared.syncHistoryToServer(historyData: JSONlist, completion: { (success, result) in
+                if success {
+                    // sync success.
+                    let realm = try! Realm()
+                    try! realm.write {
+                        searchingHistory.isSynced = true
+                    }
+                } else {
+                    // sync fail, saved it to nowhere in local.
+                }
+            })
+        } else {
+            // user is not loged in, save it o nowhere in local
+            try! realm.write {
+                realm.add(searchingHistory)
+            }
+        }
     }
-    
 }
 
 extension FlightSearchVC: PickLocationDelegate {
