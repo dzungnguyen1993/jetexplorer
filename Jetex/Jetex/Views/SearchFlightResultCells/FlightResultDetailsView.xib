@@ -35,7 +35,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYD-we-ASQ">
-                            <rect key="frame" x="16" y="12" width="34" height="21"/>
+                            <rect key="frame" x="16" y="12" width="33.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="4cH-zs-0Z1"/>
                             </constraints>
@@ -44,13 +44,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black-plane.png" translatesAutoresizingMaskIntoConstraints="NO" id="41f-ic-OCX">
-                            <rect key="frame" x="54" y="12" width="40" height="21"/>
+                            <rect key="frame" x="53.5" y="12" width="40" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="41f-ic-OCX" secondAttribute="height" multiplier="53:28" id="m94-QF-7Rq"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRj-ay-2tm">
-                            <rect key="frame" x="98" y="12" width="32" height="21"/>
+                            <rect key="frame" x="97.5" y="12" width="32" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="eQm-xH-xTR"/>
                             </constraints>
@@ -59,7 +59,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue, May 1 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwc-Po-0ua">
-                            <rect key="frame" x="134" y="15" width="92" height="15"/>
+                            <rect key="frame" x="133.5" y="15" width="91.5" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="wRl-CF-JUx"/>
                             </constraints>

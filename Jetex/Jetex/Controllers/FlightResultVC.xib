@@ -311,7 +311,7 @@
                                             <rect key="frame" x="0.0" y="41" width="149" height="3"/>
                                             <color key="backgroundColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="3" id="UYx-RL-Pkf"/>
+                                                <constraint firstAttribute="height" constant="5" id="UYx-RL-Pkf"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -342,7 +342,7 @@
                                             <rect key="frame" x="0.0" y="41" width="149" height="3"/>
                                             <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="3" id="Ghj-fb-kZK"/>
+                                                <constraint firstAttribute="height" constant="5" id="Ghj-fb-kZK"/>
                                             </constraints>
                                         </view>
                                     </subviews>

@@ -43,32 +43,37 @@ class LocationSearchVC: BaseViewController {
     }
     
     @IBAction func textFieldDidChanged(_ sender: UITextField) {
-        let allAirports = realm.objects(Airport.self)
-        
-        self.airportsSearchResult = allAirports.filter { (airport) -> Bool in
+        if sender.text == "" {
+            airportsSearchResult.removeAll()
+        } else {
             
-            let name = airport.name
+            let allAirports = realm.objects(Airport.self)
             
-            let id = airport.id
-            
-            if ((sender.text?.characters.count)! < name.characters.count) {
-                let startIndex = name.startIndex
-                let endIndex = name.index(startIndex, offsetBy: (sender.text?.characters.count)!)
+            self.airportsSearchResult = allAirports.filter { (airport) -> Bool in
                 
-                let substr = name.substring(to: endIndex)
+                let name = airport.name
                 
-                if (substr.lowercased() == sender.text?.lowercased()) {
-                    return true
+                let id = airport.id
+                
+                if ((sender.text?.characters.count)! <= name.characters.count) {
+                    let startIndex = name.startIndex
+                    let endIndex = name.index(startIndex, offsetBy: (sender.text?.characters.count)!)
+                    
+                    let substr = name.substring(to: endIndex)
+                    
+                    if (substr.lowercased() == sender.text?.lowercased()) {
+                        return true
+                    }
                 }
-            }
-            
-            if ((sender.text?.characters.count)! <= id.characters.count) {
-                if (id.lowercased().contains(sender.text!.lowercased())) {
-                    return true
+                
+                if ((sender.text?.characters.count)! <= id.characters.count) {
+                    if (id.lowercased().contains(sender.text!.lowercased())) {
+                        return true
+                    }
                 }
+                
+                return false
             }
-            
-            return false
         }
         
         tableView.separatorStyle = airportsSearchResult.count == 0 ? .none : .singleLine

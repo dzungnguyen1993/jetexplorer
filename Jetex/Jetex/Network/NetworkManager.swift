@@ -66,14 +66,14 @@ class NetworkManager: NSObject {
         }
 
         // add adult
-        let adult = info.passengers[PassengerType.adult.rawValue].value + info.passengers[PassengerType.senior.rawValue].value
+        let adult = info.passengers[PassengerType.adult.rawValue].value //+ info.passengers[PassengerType.senior.rawValue].value
         requestString.append("/" + adult.toString())
   
         // add children
         requestString.append("/" + info.passengers[PassengerType.children.rawValue].value.toString())
         
         // add infant
-        let infant = info.passengers[PassengerType.infant.rawValue].value + info.passengers[PassengerType.lapInfant.rawValue].value
+        let infant = info.passengers[PassengerType.infant.rawValue].value //+ info.passengers[PassengerType.lapInfant.rawValue].value
         requestString.append("/" + infant.toString())
         
         // add cabin class

@@ -14,9 +14,9 @@ import ObjectMapper_Realm
 enum PassengerType: Int {
     case adult     = 0
     case children  = 1
-    case senior    = 2
-    case infant    = 3
-    case lapInfant = 4
+//    case senior    = 2
+    case infant    = 2
+//    case lapInfant = 4
 }
 
 class PassengerInfo: Object, Mappable {
@@ -34,9 +34,9 @@ class PassengerInfo: Object, Mappable {
         
         let adult     = IntObject(); adult.value     = 1; self.passengers.append(adult)
         let children  = IntObject(); children.value  = 0; self.passengers.append(children)
-        let senior    = IntObject(); senior.value    = 0; self.passengers.append(senior)
+//        let senior    = IntObject(); senior.value    = 0; self.passengers.append(senior)
         let infant    = IntObject(); infant.value    = 0; self.passengers.append(infant)
-        let lapInfant = IntObject(); lapInfant.value = 0; self.passengers.append(lapInfant)
+//        let lapInfant = IntObject(); lapInfant.value = 0; self.passengers.append(lapInfant)
     }
     
     required convenience init?(map: Map) {

@@ -71,6 +71,12 @@ class FlightResultDetailsView: UIView {
         lbDestination.text = destination?.code
         lbDepart.text = leg.departure.toDateTimeUTC().toFullWeekMonthDayAndYear()
 
+        var maxDurationSegment = 0
+        for i in 0..<leg.segmentIds.count {
+            let currentSegment = searchResult.getSegment(withId: leg.segmentIds[i])
+            maxDurationSegment = max(maxDurationSegment, (currentSegment?.duration)!)
+        }
+        
         for i in 0..<leg.segmentIds.count {
             let currentSegment = searchResult.getSegment(withId: leg.segmentIds[i])
             
@@ -79,6 +85,10 @@ class FlightResultDetailsView: UIView {
             var y = FlightCellUtils.headerDetailsHeight + i*(FlightCellUtils.heightOfEachTransit + FlightCellUtils.heightOfStopView)
             let transitView = FlightTransitView(frame: CGRect(x: x, y: y , width: Int(self.frame.width), height: FlightCellUtils.heightOfEachTransit))
             transitView.showDetails(ofSearchResult: searchResult, forSegment: currentSegment!)
+            
+            let ratio = CGFloat((currentSegment?.duration)!) / CGFloat(maxDurationSegment)
+            transitView.constraintWidth.constant = ratio * (self.frame.size.width - 230)
+        
             self.addSubview(transitView)
             
             // add stop view

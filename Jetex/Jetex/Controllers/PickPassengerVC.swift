@@ -14,7 +14,7 @@ protocol PickPassengerVCDelegate: class {
 
 class PickPassengerVC: BaseViewController {
 
-    let listPassengerType = ["Adult", "Children", "Senior", "Infant", "Lap infant"]
+    let listPassengerType = ["Adult", "Children", "Infant"]
     var passengers: [Int]!
     @IBOutlet weak var tableView: UITableView!
     weak var delegate: PickPassengerVCDelegate?
@@ -41,7 +41,7 @@ class PickPassengerVC: BaseViewController {
 
 extension PickPassengerVC: UITableViewDataSource, UITableViewDelegate, PickPassengerDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5;
+        return 3;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

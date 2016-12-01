@@ -21,6 +21,7 @@ class FlightTransitView: UIView {
     @IBOutlet weak var lbArrive: UILabel!
     @IBOutlet weak var lbDestinationAirport: UILabel!
     @IBOutlet weak var lbDestinationCity: UILabel!
+    @IBOutlet weak var constraintWidth: NSLayoutConstraint!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
