@@ -107,6 +107,8 @@
 		B99F82D91DE1E83C00DA8B37 /* AirlinesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99F82D71DE1E83C00DA8B37 /* AirlinesView.xib */; };
 		B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */; };
 		B9A1EE741DD782EE005140BC /* DateIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */; };
+		B9AB823F1DF08410009F6603 /* StopViewSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AB823E1DF08410009F6603 /* StopViewSmall.swift */; };
+		B9AB82411DF08424009F6603 /* StopViewSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AB82401DF08424009F6603 /* StopViewSmall.xib */; };
 		B9BA75CA1DEBCC52003393D7 /* PricingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BA75C91DEBCC52003393D7 /* PricingOption.swift */; };
 		B9BA75CC1DEBD2DE003393D7 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BA75CB1DEBD2DE003393D7 /* Agent.swift */; };
 		B9BA75CE1DEBD4D2003393D7 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BA75CD1DEBD4D2003393D7 /* Itinerary.swift */; };
@@ -311,6 +313,8 @@
 		B99F82D71DE1E83C00DA8B37 /* AirlinesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AirlinesView.xib; sourceTree = "<group>"; };
 		B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorStyleKit.swift; sourceTree = "<group>"; };
 		B9A1EE731DD782EE005140BC /* DateIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateIndicatorView.swift; sourceTree = "<group>"; };
+		B9AB823E1DF08410009F6603 /* StopViewSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopViewSmall.swift; sourceTree = "<group>"; };
+		B9AB82401DF08424009F6603 /* StopViewSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopViewSmall.xib; sourceTree = "<group>"; };
 		B9BA75C91DEBCC52003393D7 /* PricingOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PricingOption.swift; sourceTree = "<group>"; };
 		B9BA75CB1DEBD2DE003393D7 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		B9BA75CD1DEBD4D2003393D7 /* Itinerary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
@@ -732,6 +736,8 @@
 				B956E2361DE0C20E000A86A0 /* FlightCellUtils.swift */,
 				B956E2381DE0C715000A86A0 /* FlightTransitView.swift */,
 				B956E23A1DE0C724000A86A0 /* FlightTransitView.xib */,
+				B9AB823E1DF08410009F6603 /* StopViewSmall.swift */,
+				B9AB82401DF08424009F6603 /* StopViewSmall.xib */,
 			);
 			path = SearchFlightResultCells;
 			sourceTree = "<group>";
@@ -934,6 +940,7 @@
 				B9150B951DD4659C00F825DC /* search.png in Resources */,
 				2831EB1F1DE40EA5003EEB07 /* handsomeGieng.jpg in Resources */,
 				B9EE7A7C1DDDEF4400A82AEE /* black-plane.png in Resources */,
+				B9AB82411DF08424009F6603 /* StopViewSmall.xib in Resources */,
 				B99F82C41DE1C99100DA8B37 /* check rect.png in Resources */,
 				B92F8BCA1DE1FE0C0039C153 /* ApplyFilterView.xib in Resources */,
 				B9E4FC721DD18BAB000468EC /* LaunchScreen.storyboard in Resources */,
@@ -1144,6 +1151,7 @@
 				28BAD00D1DE0DFCA0008032D /* PickPassengerCell.swift in Sources */,
 				B99F82C81DE1D73300DA8B37 /* RoundCheckCell.swift in Sources */,
 				B9F445FD1DD4E16B00250D6C /* GothamBold17Label.swift in Sources */,
+				B9AB823F1DF08410009F6603 /* StopViewSmall.swift in Sources */,
 				B926C1B41DEAD16C0058ADEA /* NetworkErrorVC.swift in Sources */,
 				28E62C4C1DE597CF00E41D44 /* User.swift in Sources */,
 				B98B6B6E1DD5B5ED0094FC46 /* SmallParagraphButton.swift in Sources */,

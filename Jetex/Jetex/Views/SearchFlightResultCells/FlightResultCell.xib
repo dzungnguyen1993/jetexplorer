@@ -56,7 +56,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Asia Airlines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACq-q3-uan" customClass="GothamBold17Label" customModule="Jetex" customModuleProvider="target">
-                                        <rect key="frame" x="28" y="0.0" width="118" height="20.5"/>
+                                        <rect key="frame" x="28" y="1.5" width="139" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -250,6 +250,7 @@
                 <outlet property="viewDepart" destination="ePc-44-65l" id="D4j-fF-rRc"/>
                 <outlet property="viewDetails" destination="bXQ-AO-HNU" id="4YN-5Q-ma0"/>
                 <outlet property="viewInfoGeneral" destination="ykZ-ek-30o" id="Csf-G3-PzH"/>
+                <outlet property="viewLine" destination="JSI-gt-FM7" id="k9E-NX-Pc2"/>
                 <outlet property="viewReturn" destination="aet-cN-9v3" id="xyi-3M-Gsj"/>
             </connections>
             <point key="canvasLocation" x="50.5" y="110.5"/>

@@ -21,7 +21,7 @@ class FilterFlightView: UIView {
     var stopViewHeight = 180
     var airlinesViewHeight = 104
     var destinationViewHeight = 94
-    var applyViewHeight = 60
+    var applyViewHeight = 76
     @IBOutlet weak var imgCancel: UIImageView!
     var searchResult: SearchFlightResult! = nil
     var isShowAllAirlines: Bool = false

@@ -36,6 +36,8 @@ class FlightResultCell: UITableViewCell {
     @IBOutlet weak var lbDuration: UILabel!
     @IBOutlet weak var btnDeeplink: SmallParagraphButton!
     var deepLink: String = ""
+    @IBOutlet weak var viewLine: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -77,10 +79,24 @@ extension FlightResultCell {
         lbDepartureTime.text = leg?.departure.toDateTimeUTC().toShortTimeString()
         
         // show destination
-        let destination = searchResult.getStation(withId: leg!.destinationStation)
-        guard destination != nil else {return}
-        lbDestinationCode.text = destination?.code
-        lbArrivalTime.text = leg?.arrival.toDateTimeUTC().toShortTimeString()
+        if (leg?.stops.count == 0) {
+            lbArrivalTime.text = leg?.arrival.toDateTimeUTC().toShortTimeString()
+        } else {
+            let arrivalTime = leg?.arrival.toDateTimeUTC().toShortTimeString()
+            let arrivalText = arrivalTime! + " +" + (leg?.stops.count.toString())!
+            
+            let destination = searchResult.getStation(withId: leg!.destinationStation)
+            guard destination != nil else {return}
+            lbDestinationCode.text = destination?.code
+            
+            let attributes = [NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!]
+            let attributedString = NSMutableAttributedString(string: arrivalText, attributes: attributes)
+            let suffixAttributes = [NSForegroundColorAttributeName: UIColor(hex: 0xE8615B),
+                                    NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!]
+            attributedString.addAttributes(suffixAttributes, range: NSRange(location: (arrivalTime?.characters.count)!, length: arrivalText.characters.count - (arrivalTime?.characters.count)!))
+            
+            lbArrivalTime.attributedText = attributedString     
+        }
         
         // show duration
         lbDuration.text = leg?.duration.toHourAndMinute()
@@ -105,6 +121,40 @@ extension FlightResultCell {
                 
                 self.imgCarrier.image = image
             }
+        }
+        
+        // add stop
+        for view in self.viewInfoGeneral.subviews {
+            if view.isKind(of: StopViewSmall.self) {
+                view.removeFromSuperview()
+            }
+        }
+        
+        var totalDuration = 0
+        for segmentId in (leg?.segmentIds)! {
+            let segment = searchResult.getSegment(withId: segmentId)
+            
+            totalDuration = totalDuration + (segment?.duration)!
+        }
+        
+        if (leg?.stops.count == 2 ){
+            print("")
+        }
+        var sum = 0
+        for i in 0..<(leg?.stops.count)! {
+            let stopId = leg?.stops[i]
+            
+            let place = searchResult.getStation(withId: stopId!)
+            
+            let segment = searchResult.getSegment(withId: (leg?.segmentIds[i])!)
+            let ratio = CGFloat((segment?.duration)! + sum) / CGFloat(totalDuration)
+            sum = sum + (segment?.duration)!
+            
+            let rect = CGRect(x: self.viewLine.frame.origin.x + self.viewLine.frame.size.width * ratio , y: self.viewLine.frame.origin.y - 20, width: 34, height: 25)
+            
+            let stopView = StopViewSmall(frame: rect, airportName: (place?.code)!)
+            
+            self.viewInfoGeneral.addSubview(stopView)
         }
     }
 }

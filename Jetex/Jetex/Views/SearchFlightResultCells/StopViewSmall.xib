@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Bold.otf">
+            <string>Gotham-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StopViewSmall" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="iBh-Kw-wV3"/>
+                <outlet property="lbAirport" destination="ZBW-wf-r1q" id="8Qq-gk-a5Z"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="35" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot.png" translatesAutoresizingMaskIntoConstraints="NO" id="nZk-MC-KXW">
+                    <rect key="frame" x="13" y="30" width="10" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="10" id="2g6-dU-FZj"/>
+                        <constraint firstAttribute="width" secondItem="nZk-MC-KXW" secondAttribute="height" multiplier="1:1" id="gOU-11-IyJ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBW-wf-r1q">
+                    <rect key="frame" x="0.0" y="0.0" width="35" height="12"/>
+                    <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
+                    <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="nZk-MC-KXW" secondAttribute="bottom" id="6WZ-vv-Ydo"/>
+                <constraint firstItem="ZBW-wf-r1q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TE8-wa-waU"/>
+                <constraint firstItem="ZBW-wf-r1q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YUb-lj-UNy"/>
+                <constraint firstItem="nZk-MC-KXW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gg7-YX-hJJ"/>
+                <constraint firstAttribute="trailing" secondItem="ZBW-wf-r1q" secondAttribute="trailing" id="nEX-FX-3ry"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-22.5" y="-96"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dot.png" width="10" height="10"/>
+    </resources>
+</document>

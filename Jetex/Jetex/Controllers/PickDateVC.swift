@@ -142,7 +142,9 @@ extension PickDateVC: EPCalendarPickDateDelegate {
     }
     
     func pickCheckinDate() {
-        loadWeekdayIndicator(view: viewReturn)
+        if (self.type == .roundtrip) {
+            loadWeekdayIndicator(view: viewReturn)
+        }
     }
 }
 

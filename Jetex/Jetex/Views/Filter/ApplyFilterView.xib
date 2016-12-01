@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ5-YH-vZP" customClass="SmallParagraphButton" customModule="Jetex" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="16" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="16" width="320" height="27.5"/>
                         <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                         <state key="normal" title="APPLY">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,7 +37,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="PQ5-YH-vZP" secondAttribute="trailing" id="4uP-Lx-OGz"/>
                     <constraint firstItem="PQ5-YH-vZP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="j6x-vq-SHr"/>
-                    <constraint firstAttribute="bottom" secondItem="PQ5-YH-vZP" secondAttribute="bottom" id="wMK-fK-MQA"/>
+                    <constraint firstAttribute="bottom" secondItem="PQ5-YH-vZP" secondAttribute="bottom" constant="16" id="wMK-fK-MQA"/>
                     <constraint firstItem="PQ5-YH-vZP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="zJJ-Hv-Qzj"/>
                 </constraints>
             </tableViewCellContentView>
