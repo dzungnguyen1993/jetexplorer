@@ -15,6 +15,7 @@ class FlightResultVC: BaseViewController {
     @IBOutlet weak var viewOptions: UIView!
     @IBOutlet weak var viewFilterContainer: UIView!
     @IBOutlet weak var viewError: UIView!
+    @IBOutlet weak var viewNoResult: UIView!
     
     var viewFilter: FilterFlightView!
     
@@ -70,6 +71,10 @@ class FlightResultVC: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        guard searchFlightResult == nil else {
+            return
+        }
+        
         if (viewFilter == nil) {
             // add view filter
             viewFilter = FilterFlightView(frame: CGRect(x: 0, y: 0, width: viewFilterContainer.frame.size.width, height: viewFilterContainer.frame.size.height))
@@ -77,7 +82,7 @@ class FlightResultVC: BaseViewController {
             viewFilter.delegate = self
         }
         
-        
+
         let popup = PopupDialog(title: "Please wait, I am searching ...", message: "", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
         
         self.present(popup, animated: true, completion: nil)
@@ -88,6 +93,14 @@ class FlightResultVC: BaseViewController {
                 self.searchFlightResult = ResponseParser.shared.parseFlightSearchResponse(data: data as! NSDictionary)
                 
                 self.loadResult()
+                
+                if self.searchFlightResult.itineraries.count != 0 {
+                    self.viewNoResult.isHidden = true
+                } else {
+                    self.viewNoResult.isHidden = false
+                }
+            } else {
+                self.viewNoResult.isHidden = false
             }
         }
     }
@@ -97,7 +110,7 @@ class FlightResultVC: BaseViewController {
         self.loadResultData()
         
         // load filter view
-        self.viewFilter.setFilterInfo(searchResult: self.searchFlightResult)
+        self.viewFilter.setFilterInfo(searchResult: self.searchFlightResult, origin: passengerInfo.airportFrom!, destination: passengerInfo.airportTo!)
     }
    
     @IBAction func back(_ sender: UIButton) {
@@ -133,8 +146,12 @@ class FlightResultVC: BaseViewController {
         viewOptions.isHidden = true
         tableView.isHidden = true
         
-        
+        viewFilter.tmpFilterObject = viewFilter.filterObject.copyFilter()
         viewFilter.tableView.reloadData()
+    }
+    
+    @IBAction func backToSearch(_ sender: Any) {
+        self.navigationController!.popViewController(animated: true)
     }
 }
 

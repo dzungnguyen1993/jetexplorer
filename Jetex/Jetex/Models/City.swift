@@ -24,6 +24,8 @@ class City: Object, Mappable {
     /////
     dynamic var id: String = ""
     dynamic var name: String = ""
+    dynamic var iataCode: String = ""
+    dynamic var countryId: String = ""
     var airports = List<Airport>()
     
     required convenience init?(map: Map) {
@@ -38,6 +40,8 @@ class City: Object, Mappable {
         id <- map["Id"]
         name <- map["Name"]
         airports <- map["Airport"]
+        iataCode <- map["IataCode"]
+        countryId <- map["CountryId"]
     }
 
 }

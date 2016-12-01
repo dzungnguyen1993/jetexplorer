@@ -67,10 +67,31 @@ class DBManager: NSObject {
             
             city.id = cityDict["Id"] as! String
             city.name = cityDict["Name"] as! String
+            city.iataCode = cityDict["IataCode"] as! String
+            city.countryId = cityDict["CountryId"] as! String
             
             let airportsDict = cityDict["Airports"] as! [NSDictionary]
             
+            let singleAirportCity = cityDict["SingleAirportCity"] as! Bool
+            let airportAll = Airport()
+            
+            if (!singleAirportCity) {
+                airportAll.id = city.iataCode
+                airportAll.name = city.name + " All Airports"
+                airportAll.cityId = city.id
+                airportAll.countryId = city.countryId
+                
+                try! realm.write {
+                    realm.add(airportAll, update: true)
+                }
+            }
+            
             city.airports = self.parseListAirports(airportsDict: airportsDict)
+            
+            if (!singleAirportCity) {
+                city.airports.append(airportAll)
+            }
+            
             try! realm.write {
                 realm.add(city, update: true)
             }
@@ -100,5 +121,27 @@ class DBManager: NSObject {
         }
         
         return listAirports
+    }
+    
+    func getCity(withIataCode code: String) -> City? {
+        realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "iataCode == %@", code)
+        let city = realm.objects(City.self).filter(predicate).first
+        
+        return city
+    }
+    
+    func convertListAirportToArray(list: List<Airport>) -> [Airport] {
+        var array = [Airport]()
+        
+        for i in 0..<list.count {
+            let airport = list[i]
+            if !airport.name.contains("All Airports") {
+                array.append(airport)
+            }
+        }
+        
+        return array
     }
 }

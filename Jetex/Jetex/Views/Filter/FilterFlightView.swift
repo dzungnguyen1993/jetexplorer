@@ -20,7 +20,7 @@ class FilterFlightView: UIView {
     weak var delegate: FilterFlightViewDelegate?
     var stopViewHeight = 180
     var airlinesViewHeight = 104
-    var destinationViewHeight = 182
+    var destinationViewHeight = 94
     var applyViewHeight = 60
     @IBOutlet weak var imgCancel: UIImageView!
     var searchResult: SearchFlightResult! = nil
@@ -32,6 +32,13 @@ class FilterFlightView: UIView {
     //
     var filterObject: FilterObject = FilterObject()
     var tmpFilterObject: FilterObject = FilterObject()
+    
+    var origin: Airport! = Airport()
+    var destination: Airport! = Airport()
+    var arrayOrigin: [Airport] = [Airport]()
+    var arrayDestination: [Airport] = [Airport]()
+    var arrayCheckOrigin: [Airport] = [Airport]()
+    var arrayCheckDestination: [Airport] = [Airport]()
     
     // MARK: Initialization
     required init(coder aDecoder: NSCoder) {
@@ -72,8 +79,39 @@ class FilterFlightView: UIView {
         delegate?.hideFilter()
     }
     
-    func setFilterInfo(searchResult: SearchFlightResult) {
+    func setFilterInfo(searchResult: SearchFlightResult, origin: Airport, destination: Airport) {
         self.searchResult = searchResult
+        self.origin = origin
+        self.destination = destination
+        
+        let cityOrigin = DBManager.shared.getCity(withIataCode: origin.id)
+        
+        if (cityOrigin != nil && (cityOrigin?.airports.count)! > 0) {
+            arrayOrigin = DBManager.shared.convertListAirportToArray(list: (cityOrigin?.airports)!)
+        } else {
+            arrayOrigin = [origin]
+        }
+        
+        let cityDestination = DBManager.shared.getCity(withIataCode: destination.id)
+        
+        if (cityDestination != nil && (cityDestination?.airports.count)! > 0) {
+            arrayDestination = DBManager.shared.convertListAirportToArray(list: (cityDestination?.airports)!)
+        } else {
+            arrayDestination = [destination]
+        }
+        
+        for i in 0..<searchResult.carriers.count {
+            self.filterObject.checkedCarriers.append(i)
+        }
+        
+        for airport in arrayOrigin {
+            self.filterObject.checkedOrigin.append(airport)
+        }
+        
+        for airport in arrayDestination {
+            self.filterObject.checkedDestination.append(airport)
+        }
+        
         self.tableView.reloadData()
     }
 }
@@ -99,13 +137,17 @@ extension FilterFlightView: UITableViewDelegate, UITableViewDataSource {
             if (searchResult != nil) {
                 cell.carriers = searchResult.carriers
                 
-                if (searchResult.carriers.count < 4) {
+                if (searchResult.carriers.count <= 4) {
                     // hide button show all
                     cell.constraintBtnShowAllHeight.constant = 0
                     cell.constraintTableHeight.constant = CGFloat(searchResult.carriers.count * 44)
                     cell.btnShowAll.isHidden = true
                 } else {
-                    cell.btnShowAll.setTitle("Show all " + (cell.carriers?.count.toString())! + " Airlines", for: .normal)
+                    if (isShowAllAirlines) {
+                        cell.btnShowAll.setTitle("Hide", for: .normal)
+                    } else {
+                        cell.btnShowAll.setTitle("Show all " + (cell.carriers?.count.toString())! + " Airlines", for: .normal)
+                    }
                 }
             }
             
@@ -116,6 +158,18 @@ extension FilterFlightView: UITableViewDelegate, UITableViewDataSource {
         
         if (indexPath.row == 2) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DestinationView", for: indexPath) as! DestinationView
+            cell.arrayCheckedOrigin = filterObject.checkedOrigin
+            cell.arrayCheckedDestination = filterObject.checkedDestination
+            
+            cell.airportOrigin = self.arrayOrigin
+            cell.airportDestination = self.arrayDestination
+            
+            cell.constraintOrigin.constant = CGFloat(44 * cell.airportOrigin.count)
+            cell.constraintDestination.constant = CGFloat(44 * cell.airportDestination.count)
+            
+            cell.tableviewOrigin.reloadData()
+            cell.tableviewDestination.reloadData()
+            cell.delegate = self
             
             return cell
         }
@@ -137,17 +191,17 @@ extension FilterFlightView: UITableViewDelegate, UITableViewDataSource {
                 return CGFloat(airlinesViewHeight)
             }
             
-            if (searchResult.carriers.count < 4) {
+            if (searchResult.carriers.count <= 4) {
                 // hide button show all
                 return CGFloat(airlinesViewHeight + 44 * searchResult.carriers.count) - 30
             }
             
             if (isShowAllAirlines == false) {
-                
                 return CGFloat(airlinesViewHeight) + CGFloat(44) * CGFloat(min(searchResult.carriers.count, 4))
             }
             return CGFloat(airlinesViewHeight + 44 * searchResult.carriers.count)
-        case 2: return CGFloat(destinationViewHeight)
+        case 2:
+            return CGFloat(destinationViewHeight + 44 * (arrayOrigin.count + arrayDestination.count))
         default: return CGFloat(applyViewHeight)
         }
     }
@@ -179,6 +233,32 @@ extension FilterFlightView: AirlinesViewDelegate {
     }
 }
 
+extension FilterFlightView: StopViewDelegate {
+    func didChooseStopType(type: StopCheckType) {
+        tmpFilterObject.stopType = type
+    }
+}
+
+extension FilterFlightView: DestinationViewDelegate {
+    func didCheckOrigin(airport: Airport) {
+        if (self.tmpFilterObject.checkedOrigin.contains(airport)) {
+            let index = self.tmpFilterObject.checkedOrigin.index(of: airport)
+            self.tmpFilterObject.checkedOrigin.remove(at: index!)
+        } else {
+            self.tmpFilterObject.checkedOrigin.append(airport)
+        }
+    }
+    
+    func didCheckDestination(airport: Airport) {
+        if (self.tmpFilterObject.checkedOrigin.contains(airport)) {
+            let index = self.tmpFilterObject.checkedDestination.index(of: airport)
+            self.tmpFilterObject.checkedDestination.remove(at: index!)
+        } else {
+            self.tmpFilterObject.checkedDestination.append(airport)
+        }
+    }
+}
+
 extension FilterFlightView: ApplyFilterViewDelegate {
     func clickApply() {
         applyFilter()
@@ -186,13 +266,8 @@ extension FilterFlightView: ApplyFilterViewDelegate {
     }
     
     func applyFilter() {
-        filterObject = tmpFilterObject
+        filterObject = tmpFilterObject.copyFilter()
+        
         self.delegate?.applyFilter(filterObject: filterObject)
-    }
-}
-
-extension FilterFlightView: StopViewDelegate {
-    func didChooseStopType(type: StopCheckType) {
-        tmpFilterObject.stopType = type
     }
 }

@@ -11,4 +11,26 @@ import UIKit
 class FilterObject: NSObject {
     var stopType: StopCheckType = .any
     var checkedCarriers: [Int] = [Int]()
+    
+    var checkedOrigin: [Airport] = [Airport]()
+    var checkedDestination: [Airport] = [Airport]()
+    
+    func copyFilter() -> FilterObject {
+        let filterObject = FilterObject()
+        filterObject.stopType = self.stopType
+        
+        for checkedIndex in self.checkedCarriers {
+            filterObject.checkedCarriers.append(checkedIndex)
+        }
+        
+        for airport in self.checkedOrigin {
+            filterObject.checkedOrigin.append(airport)
+        }
+        
+        for airport in self.checkedDestination {
+            filterObject.checkedDestination.append(airport)
+        }
+        
+        return filterObject
+    }
 }

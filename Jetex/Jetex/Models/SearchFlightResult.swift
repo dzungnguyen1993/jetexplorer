@@ -176,7 +176,30 @@ class SearchFlightResult: Mappable {
                 }
             }
             
-            if isValidStop && isValidCarrier {
+            
+            // filter origin
+            var isValidOrigin = false
+            
+            let origin = self.getStation(withId: (leg?.originStation)!)
+            for airport in filterObject.checkedOrigin {
+                if airport.id == origin?.code {
+                    isValidOrigin = true
+                    break
+                }
+            }
+            
+            // filter destination
+            var isValidDestination = false
+            
+            let destination = self.getStation(withId: (leg?.destinationStation)!)
+            for airport in filterObject.checkedDestination {
+                if airport.id == destination?.code {
+                    isValidDestination = true
+                    break
+                }
+            }
+            
+            if isValidStop && isValidCarrier && isValidOrigin && isValidDestination{
                 result.append(item)
             }
         }

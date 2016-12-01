@@ -47,7 +47,7 @@ class NetworkManager: NSObject {
         
         // create request string
         var requestString = hostAddress + RequestType.getFlightSearchResult.rawValue
-        requestString.append("/UK/USD/en-GB")
+        requestString.append("/UK/" + ProfileVC.currentCurrencyType + "/en-GB")
         
         // add origin
         requestString.append("/" + (info.airportFrom?.id)!)

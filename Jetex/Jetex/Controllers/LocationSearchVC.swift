@@ -47,7 +47,6 @@ class LocationSearchVC: BaseViewController {
         
         airportsSearchResult = realm.objects(Airport.self).filter(predicate)
         
-        
         tableView.separatorStyle = airportsSearchResult.count == 0 ? .none : .singleLine
         tableView.reloadData()
     }
@@ -58,7 +57,6 @@ class LocationSearchVC: BaseViewController {
         tableView.separatorStyle = .none
         tableView.reloadData()
     }
-    
     
     @IBAction func searchCity(_ sender: UIButton) {
     }

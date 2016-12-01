@@ -6,15 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Gotham-Bold.otf">
             <string>Gotham-Bold</string>
-        </array>
-        <array key="Gotham-Book.otf">
-            <string>Gotham-Book</string>
         </array>
     </customFonts>
     <objects>
@@ -36,36 +32,17 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIZ-FU-rfX">
                         <rect key="frame" x="0.0" y="47" width="350" height="44"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck rect.png" translatesAutoresizingMaskIntoConstraints="NO" id="frn-Li-m5B">
-                                <rect key="frame" x="0.0" y="10" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Lu3-Yw-2BV"/>
-                                    <constraint firstAttribute="width" secondItem="frn-Li-m5B" secondAttribute="height" multiplier="1:1" id="Ntc-9K-437"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN - Tan Son Nhat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVY-Lt-5Zg">
-                                <rect key="frame" x="41" y="14.5" width="147.5" height="15"/>
-                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
-                                <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-By-YWd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ezI-dv-nrK">
                                 <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
-                                <connections>
-                                    <action selector="checkOrigin:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ae0-c9-egM"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="wXu-By-YWd" secondAttribute="trailing" id="5px-Nl-Si0"/>
-                            <constraint firstItem="frn-Li-m5B" firstAttribute="centerY" secondItem="fIZ-FU-rfX" secondAttribute="centerY" id="LVm-6L-DlS"/>
-                            <constraint firstItem="oVY-Lt-5Zg" firstAttribute="leading" secondItem="frn-Li-m5B" secondAttribute="trailing" constant="16" id="Tdf-5g-KI4"/>
+                            <constraint firstItem="ezI-dv-nrK" firstAttribute="top" secondItem="fIZ-FU-rfX" secondAttribute="top" id="2Eo-9q-hra"/>
                             <constraint firstAttribute="height" constant="44" id="Voq-6w-SWF"/>
-                            <constraint firstItem="frn-Li-m5B" firstAttribute="leading" secondItem="fIZ-FU-rfX" secondAttribute="leading" id="arN-aX-Nyv"/>
-                            <constraint firstAttribute="bottom" secondItem="wXu-By-YWd" secondAttribute="bottom" id="b75-9R-uDC"/>
-                            <constraint firstItem="wXu-By-YWd" firstAttribute="top" secondItem="fIZ-FU-rfX" secondAttribute="top" id="fKq-ip-LgQ"/>
-                            <constraint firstItem="oVY-Lt-5Zg" firstAttribute="centerY" secondItem="fIZ-FU-rfX" secondAttribute="centerY" id="oJd-E8-fyw"/>
-                            <constraint firstItem="wXu-By-YWd" firstAttribute="leading" secondItem="fIZ-FU-rfX" secondAttribute="leading" id="paA-p9-Ynd"/>
+                            <constraint firstItem="ezI-dv-nrK" firstAttribute="leading" secondItem="fIZ-FU-rfX" secondAttribute="leading" id="ggS-9d-MI7"/>
+                            <constraint firstAttribute="trailing" secondItem="ezI-dv-nrK" secondAttribute="trailing" id="gvd-BX-FtO"/>
+                            <constraint firstAttribute="bottom" secondItem="ezI-dv-nrK" secondAttribute="bottom" id="ipy-ch-ebn"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Airports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg8-QM-PCv">
@@ -77,36 +54,17 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5it-RN-gDs">
                         <rect key="frame" x="0.0" y="138" width="350" height="44"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN- Tan Son Nhat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0d-4i-7JX">
-                                <rect key="frame" x="41" y="14.5" width="143" height="15"/>
-                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
-                                <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck rect.png" translatesAutoresizingMaskIntoConstraints="NO" id="SKR-4b-bwL">
-                                <rect key="frame" x="0.0" y="10" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="gRX-GE-LSb"/>
-                                    <constraint firstAttribute="width" secondItem="SKR-4b-bwL" secondAttribute="height" multiplier="1:1" id="yaW-3i-PQR"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4x-XR-j3z">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1rC-hb-lh0">
                                 <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
-                                <connections>
-                                    <action selector="checkDestination:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6dY-mh-WW4"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="N4x-XR-j3z" firstAttribute="leading" secondItem="5it-RN-gDs" secondAttribute="leading" id="Cq4-rF-QRr"/>
-                            <constraint firstItem="a0d-4i-7JX" firstAttribute="leading" secondItem="SKR-4b-bwL" secondAttribute="trailing" constant="16" id="Dsl-KB-NVt"/>
-                            <constraint firstAttribute="trailing" secondItem="N4x-XR-j3z" secondAttribute="trailing" id="KSP-Cq-qIp"/>
+                            <constraint firstAttribute="bottom" secondItem="1rC-hb-lh0" secondAttribute="bottom" id="6GE-Vm-oy3"/>
+                            <constraint firstAttribute="trailing" secondItem="1rC-hb-lh0" secondAttribute="trailing" id="Ijh-1L-3Rr"/>
                             <constraint firstAttribute="height" constant="44" id="OD4-tF-XBJ"/>
-                            <constraint firstAttribute="bottom" secondItem="N4x-XR-j3z" secondAttribute="bottom" id="ZTZ-sv-RA7"/>
-                            <constraint firstItem="a0d-4i-7JX" firstAttribute="centerY" secondItem="5it-RN-gDs" secondAttribute="centerY" id="fN2-oV-6jV"/>
-                            <constraint firstItem="SKR-4b-bwL" firstAttribute="leading" secondItem="5it-RN-gDs" secondAttribute="leading" id="fxb-Cf-qhZ"/>
-                            <constraint firstItem="N4x-XR-j3z" firstAttribute="top" secondItem="5it-RN-gDs" secondAttribute="top" id="gT5-ei-A03"/>
-                            <constraint firstItem="SKR-4b-bwL" firstAttribute="centerY" secondItem="5it-RN-gDs" secondAttribute="centerY" id="t6f-uf-rwa"/>
+                            <constraint firstItem="1rC-hb-lh0" firstAttribute="leading" secondItem="5it-RN-gDs" secondAttribute="leading" id="laR-gD-g48"/>
+                            <constraint firstItem="1rC-hb-lh0" firstAttribute="top" secondItem="5it-RN-gDs" secondAttribute="top" id="zgK-bC-5wY"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -124,15 +82,12 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="checkDestinationBtn" destination="SKR-4b-bwL" id="vhG-Qk-JtR"/>
-                <outlet property="checkDestinationLb" destination="a0d-4i-7JX" id="46T-8f-phU"/>
-                <outlet property="checkOriginBtn" destination="frn-Li-m5B" id="iHx-YL-hHe"/>
-                <outlet property="checkOriginLb" destination="oVY-Lt-5Zg" id="4uN-Oj-aS2"/>
+                <outlet property="constraintDestination" destination="OD4-tF-XBJ" id="woA-Td-rGn"/>
+                <outlet property="constraintOrigin" destination="Voq-6w-SWF" id="5Aj-4E-Fqy"/>
+                <outlet property="tableviewDestination" destination="1rC-hb-lh0" id="1KA-7g-uXY"/>
+                <outlet property="tableviewOrigin" destination="ezI-dv-nrK" id="RgX-Df-4aD"/>
             </connections>
             <point key="canvasLocation" x="40" y="128"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="uncheck rect.png" width="100" height="100"/>
-    </resources>
 </document>
