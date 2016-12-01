@@ -11,7 +11,7 @@ import RealmSwift
 
 class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDelegate {
 
-    let currencyList     = [("US","USD"), ("Singapore", "SGP"), ("Australia", "AUD")]
+    let currencyList     = [("Australia", "AUD"), ("Singapore", "SGP"), ("US","USD") ]
     var selectedCurrency = "USD"
     
     override func viewDidLoad() {

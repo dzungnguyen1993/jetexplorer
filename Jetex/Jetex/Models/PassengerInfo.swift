@@ -53,7 +53,7 @@ class PassengerInfo: Object, Mappable {
         self.returnDay = passengerInfo.returnDay
         
         for passenger in passengerInfo.passengers {
-            var obj = IntObject()
+            let obj = IntObject()
             obj.value = passenger.value
             self.passengers.append(obj)
         }

@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/UserInfoView.swift"
-            timestampString = "501320329.082926"
+            timestampString = "502287057.095986"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "updateUserName(userName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -209,6 +209,38 @@
             endingLineNumber = "147"
             landmarkName = "signInUsingAccessToken(accessToken:atAPI:withPreLink:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Jetex.ProfileVC.(signInUsingAccessToken (accessToken : Swift.String, atAPI : Swift.String, withPreLink : Swift.String) -&gt; ()).(closure #1)"
+                  moduleName = "Jetex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/ProfileVC.swift"
+                  timestampString = "502287721.633258"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Jetex.ProfileVC.(signInUsingAccessToken (accessToken : Swift.String, atAPI : Swift.String, withPreLink : Swift.String) -&gt; ()).(closure #1)"
+                  moduleName = "Jetex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/ProfileVC.swift"
+                  timestampString = "502287721.634463"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "472">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -218,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/ChangePasswordVC.swift"
-            timestampString = "501877051.136603"
+            timestampString = "502287057.095986"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "saveButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/ChangNameVC.swift"
-            timestampString = "501876274.071261"
+            timestampString = "502287057.095986"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "saveButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/EditProfileVC.swift"
-            timestampString = "502183885.760434"
+            timestampString = "502287057.095986"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "saveButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -369,6 +401,38 @@
             endingLineNumber = "113"
             landmarkName = "syncHistoryToServer(historyData:atView:showPopup:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Jetex.NetworkManager.syncHistoryToServer (historyData : Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, atView : Swift.Optional&lt;__ObjC.UIViewController&gt;, showPopup : Swift.Bool, completion : Swift.Optional&lt;(Swift.Bool, Swift.Optional&lt;RealmSwift.List&lt;Jetex.HistorySearch&gt;&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Jetex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
+                  timestampString = "502287721.646427"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "1128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Jetex.NetworkManager.(syncHistoryToServer (historyData : Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, atView : Swift.Optional&lt;__ObjC.UIViewController&gt;, showPopup : Swift.Bool, completion : Swift.Optional&lt;(Swift.Bool, Swift.Optional&lt;RealmSwift.List&lt;Jetex.HistorySearch&gt;&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "Jetex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
+                  timestampString = "502287721.647582"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -474,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/EditProfileVC.swift"
-            timestampString = "502183982.234141"
+            timestampString = "502287057.095986"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -490,12 +554,12 @@
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/EditProfileVC.swift"
-                  timestampString = "502225796.20422"
+                  timestampString = "502287721.656395"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "176">
+                  startingLineNumber = "210"
+                  endingLineNumber = "210"
+                  offsetFromSymbolStart = "144">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -505,12 +569,12 @@
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/EditProfileVC.swift"
-                  timestampString = "502225796.205637"
+                  timestampString = "502287721.657513"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "165">
+                  startingLineNumber = "211"
+                  endingLineNumber = "211"
+                  offsetFromSymbolStart = "180">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -522,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/EditProfileVC.swift"
-            timestampString = "502183992.953674"
+            timestampString = "502287057.095986"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -624,6 +688,118 @@
             startingLineNumber = "136"
             endingLineNumber = "136"
             landmarkName = "saveSearchingInfoIntoHistory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Controllers/EditProfileVC.swift"
+            timestampString = "502271757.16866"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Controllers/EditProfileVC.swift"
+            timestampString = "502287057.095986"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Controllers/EditProfileVC.swift"
+            timestampString = "502287057.095986"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Jetex.EditProfileVC.viewDidLoad () -&gt; ()"
+                  moduleName = "Jetex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/EditProfileVC.swift"
+                  timestampString = "502287721.679229"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1176">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Jetex.EditProfileVC.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "Jetex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/EditProfileVC.swift"
+                  timestampString = "502287721.680458"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Controllers/EditProfileVC.swift"
+            timestampString = "502287057.095986"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Controllers/UserInfoView.swift"
+            timestampString = "502287647.421529"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "initializeSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

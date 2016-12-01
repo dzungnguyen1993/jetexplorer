@@ -40,10 +40,8 @@ class ChangNameVC: BaseViewController {
             return
         }
         
-        // Show loading
-        let popup = PopupDialog(title: "Updating ...", message: "Please wait!", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
-        
-        self.present(popup, animated: true, completion: nil)
+        // block the view
+        self.view.isUserInteractionEnabled = false
         
         // update info to db
         let realm = try! Realm()
@@ -63,23 +61,22 @@ class ChangNameVC: BaseViewController {
             Alamofire.request(requestURL, method: .put, parameters: newInfo, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
                 if let _ = response.result.value as? [String: Any] {
                     // update successfully
-                    popup.dismiss({
-                        let newPopup = PopupDialog(title: "Updated!", message: "Now you are \(self.firstNameTextField.text!) \(self.lastNameTextField.text!)", image: UIImage(named: "loading.jpg"))
-                        newPopup.addButton(CancelButton(title: "Back", action: {
+                    
+                    let newPopup = PopupDialog(title: "Updated!", message: "Now you are \(self.firstNameTextField.text!) \(self.lastNameTextField.text!)", image: nil)
+                        newPopup.addButton(DefaultButton(title: "Done", action: {
                             // back to setting
                             _ = self.navigationController?.popViewController(animated: true)
                         }))
                         self.present(newPopup, animated: true, completion: nil)
-                    })
+                    
                 } else {
-                    print("Wrong info!")
-                    popup.dismiss({
-                        let newPopup = PopupDialog(title: "Cannot update!", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
-                        newPopup.addButton(CancelButton(title: "Try again", action: nil))
+                        let newPopup = PopupDialog(title: "Cannot update!", message: "Please check your internet connection or your information.", image: nil)
+                        newPopup.addButton(DefaultButton(title: "Try again", action: nil))
                         self.present(newPopup, animated: true, completion: nil)
-                    })
-                    return
                 }
+                
+                // release the view
+                self.view.isUserInteractionEnabled = true
             })
         } else {
                 print("error: no user!")

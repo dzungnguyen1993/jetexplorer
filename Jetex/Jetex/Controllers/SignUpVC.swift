@@ -71,7 +71,7 @@ class SignUpVC: BaseViewController {
         ]
         
         // show Popup
-        let popup = PopupDialog(title: "Signing Up ...", message: "Please wait!", image: UIImage(named: "loading.jpg"))
+        let popup = PopupDialog(title: "Signing Up ...", message: "Please wait!", image: nil)
         self.present(popup, animated: true, completion: nil)
         
         // request to server
@@ -99,8 +99,26 @@ class SignUpVC: BaseViewController {
                         realm.add(user, update: true)
                     }
                     
+                    if self.subscriptionCheckBox.isChecked {
+                        // request subscribe status
+                        let request = APIURL.JetExAPI.base + APIURL.JetExAPI.createSubscribe
+                        
+                        let params : [String : Any] = ["listCat": "newsletter",
+                                      "email": [
+                                        "email_address": user.email,
+                                        "status": "subscribed"
+                            ]
+                        ]
+                        
+                        Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).response(completionHandler: { (response) in
+                            if response.error != nil {
+                                print(response.error!)
+                            }
+                        })
+                    }
+                    
                     popup.dismiss({
-                        let newPopup = PopupDialog(title: "Great", message: "Your account is created!", image: UIImage(named: "loading.jpg"))
+                        let newPopup = PopupDialog(title: "Great", message: "Your account is created!", image: nil)
                         newPopup.addButton(DefaultButton(title: "Continue") {
                             //Remove current view in stack, Go to sign in view, fill the info up
                             if let navController = self.navigationController {
@@ -117,8 +135,8 @@ class SignUpVC: BaseViewController {
                 }
             } else {
                 popup.dismiss({
-                    let newPopup = PopupDialog(title: "Cannot sign up", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
-                    newPopup.addButton(CancelButton(title: "Try again", action: nil))
+                    let newPopup = PopupDialog(title: "Cannot sign up", message: "Please check your internet connection or your information.", image: nil)
+                    newPopup.addButton(DefaultButton(title: "Try again", action: nil))
                     self.present(newPopup, animated: true, completion: nil)
                 })
             }

@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import PopupDialog
+import Alamofire
 
 class ForgotPasswordVC: BaseViewController {
 
@@ -41,17 +42,29 @@ class ForgotPasswordVC: BaseViewController {
         }
         
         // TODO: request server to send email reseting password
-        
-        
-        // Show Loading Pop up view
-        let popup = PopupDialog(title: "Go check your inbox", message: "We sent an email to you!", image: UIImage(named: "loading.jpg"))
-        
-        popup.addButton(DefaultButton(title: "Back") {
-            // back to setting
-            _ = self.navigationController?.popViewController(animated: true)
-        })
-        
-        self.present(popup, animated: true, completion: nil)
+        let request = APIURL.JetExAPI.base + APIURL.JetExAPI.forgotPassword
+        Alamofire.request(request, method: .post, parameters: ["email" : emailTextField.text!], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if response.result.isSuccess {
+                if let value = response.result.value as? [String: Any], let message = value["message"] as? String {
+                    // Show Loading Pop up view
+                    let popup = PopupDialog(title: "Go check your inbox", message: message, image: nil)
+                    
+                    popup.addButton(DefaultButton(title: "Done") {
+                        // back to setting
+                        _ = self.navigationController?.popViewController(animated: true)
+                    })
+                    
+                    self.present(popup, animated: true, completion: nil)
+                    return
+                }
+            }
+            // error
+            // Show Loading Pop up view
+            let popup = PopupDialog(title: "Cannot reset your password", message: "Please check your information/internet connection.", image: nil)
+            popup.addButton(DefaultButton(title: "Try again") {
+            })
+            self.present(popup, animated: true, completion: nil)
+        }
     }
 
     /*

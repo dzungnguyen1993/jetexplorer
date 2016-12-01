@@ -62,7 +62,7 @@ class SignInVC: BaseViewController {
         ]
         
         // Show Loading Pop up view
-        let popup = PopupDialog(title: "Signing In ...", message: "Please wait!", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+        let popup = PopupDialog(title: "Signing In ...", message: "Please wait!", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
         
         self.present(popup, animated: true, completion: nil)
         
@@ -121,8 +121,8 @@ class SignInVC: BaseViewController {
                 }
             } else {
                 popup.dismiss({
-                    let newPopup = PopupDialog(title: "Cannot sign in", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
-                    newPopup.addButton(CancelButton(title: "Try again", action: nil))
+                    let newPopup = PopupDialog(title: "Cannot sign in", message: "Please check your internet connection or your information.", image: nil)
+                    newPopup.addButton(DefaultButton(title: "Try again", action: nil))
                     self.present(newPopup, animated: true, completion: nil)
                 })
             }

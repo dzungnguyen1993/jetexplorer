@@ -18,9 +18,14 @@ struct APIURL {
         static let signOut = "/api/auth/signout"
         static let history = "/api/users/history"
         static let updateUserData = "/api/users"
+        static let getUserInfo = "/api/users/me"
         static let changePassword = "/api/users/password"
+        static let forgotPassword = "/api/auth/forgot"
         static let changeAvatar = "/api/users/picture"
         static let changeCurrency = "/api/users/currency"
+        static let createSubscribe = "/api/subscribe-email"
+        static let checkSubscribe = "/api/check-subscribed-email"
+        static let editSubscribe = "/api/edit-status-subscribe-email"
         
         // TODO: update the appId here
         static let appId = 1159421121

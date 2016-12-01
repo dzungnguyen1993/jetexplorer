@@ -58,10 +58,8 @@ class ChangePasswordVC: BaseViewController {
             return
         }
         
-        // Show Loading Pop up view
-        let popup = PopupDialog(title: "Updating...", message: "Please wait!", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
-        
-        self.present(popup, animated: true, completion: nil)
+        // block the view
+        self.view.isUserInteractionEnabled = false
         
         // update info to server
         let newInfo = ["currentPassword": oldPasswordTextField.text!,
@@ -73,38 +71,27 @@ class ChangePasswordVC: BaseViewController {
             if let currentUserJSON = response.result.value as? [String: Any] {
                 if let message = currentUserJSON["message"] as? String, message.contains("Password changed successfully")   {
                     // update successfully
-                    popup.dismiss({
-                        let newPopup = PopupDialog(title: "Updated!", message: "Your password is changed", image: UIImage(named: "loading.jpg"))
-                        newPopup.addButton(DefaultButton(title: "Sign In") {
-                            ProfileVC.isUserLogined = false
-                            //Remove 2 current views in stack, Go to sign in view, fill the info up
-                            if let navController = self.navigationController {
-                                let signInVC = SignInVC(nibName: "SignInVC", bundle: nil)
-                                
-                                var stack = navController.viewControllers
-                                stack.remove(at: stack.count - 1)
-                                stack.remove(at: stack.count - 1)
-                                stack.insert(signInVC, at: stack.count)
-                                navController.setViewControllers(stack, animated: true)
-                            }
+                        let newPopup = PopupDialog(title: "Updated!", message: "Your password is changed", image: nil)
+                        newPopup.addButton(DefaultButton(title: "Done") {
+                            // back to setting
+                            _ = self.navigationController?.popViewController(animated: true)
                         })
                         self.present(newPopup, animated: true, completion: nil)
-                    })
                     
                 } else {
-                    popup.dismiss({
-                        let newPopup = PopupDialog(title: "Cannot change password", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
-                        newPopup.addButton(CancelButton(title: "Try again", action: nil))
+                        let newPopup = PopupDialog(title: "Cannot change password", message: "Please check your internet connection or your information.", image: nil)
+                        newPopup.addButton(DefaultButton(title: "Try again", action: nil))
                         self.present(newPopup, animated: true, completion: nil)
-                    })
                 }
             } else {
-                popup.dismiss({
-                    let newPopup = PopupDialog(title: "Cannot change password", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
-                    newPopup.addButton(CancelButton(title: "Try again", action: nil))
+                    let newPopup = PopupDialog(title: "Cannot change password", message: "Please check your internet connection or your information.", image: nil)
+                    newPopup.addButton(DefaultButton(title: "Try again", action: nil))
                     self.present(newPopup, animated: true, completion: nil)
-                })
+                
             }
+            
+            // release the view
+            self.view.isUserInteractionEnabled = true
         })
         
     }

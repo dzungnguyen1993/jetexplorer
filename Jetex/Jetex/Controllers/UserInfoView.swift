@@ -39,6 +39,9 @@ class UserInfoView: UIView {
         
         let tapAvatarView = UITapGestureRecognizer(target: self, action: #selector(userAvatarPressed(sender:)))
         userAvatar.addGestureRecognizer(tapAvatarView)
+        
+        let tapUserName = UITapGestureRecognizer(target: self, action: #selector(viewAndEditProfileButtonPressed(_ :)))
+        userName.addGestureRecognizer(tapUserName)
     }
     
     @IBAction func viewAndEditProfileButtonPressed(_ sender: AnyObject) {

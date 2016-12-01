@@ -27,27 +27,133 @@ class EditProfileVC: UITableViewController {
         
         needToResizeEmailTextField = false
         emailWarning = WarningForInput(setWarning: "Your email is not correct", for: emailUpdateTextField, withTitle: nil)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        
         if let currentUser = realm.objects(User.self).filter("isCurrentUser == true").first {
             self.currentUser = currentUser
             
-            emailUpdateTextField.text = currentUser.email
+            //  request to API here, check if user is subcribed
+            let request = APIURL.JetExAPI.base + APIURL.JetExAPI.checkSubscribe
+            let params = [
+                "listCat": "newsletter",
+                "email_address": currentUser.email
+            ]
             
-            // show user name
-            if let displayName = currentUser.displayName, displayName.characters.count > 0 {
-                displayNameLabel.text = displayName
-            } else if let firstName = currentUser.firstName, firstName.characters.count >= 0, let lastName = currentUser.lastName, lastName.characters.count >= 0, firstName.characters.count != lastName.characters.count {
-                displayNameLabel.text = "\(firstName) \(lastName)"
-            } else {
-                displayNameLabel.text = currentUser.username
-            }
-
-            // TODO: Ask Duy API to get/set news letter
-            emailSubscriptionSwitch.setOn(true, animated: true)
+            // set unsubscribed as default
+            emailSubscriptionSwitch.setOn(false, animated: true)
+            Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+                print(response.result)
+            })
+            
+            Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseString(completionHandler: { response in
+                if let value = response.result.value {
+                    if value  == "subscribed" {
+                        self.emailSubscriptionSwitch.setOn(true, animated: true)
+                        return
+                    }
+                }
+                // register
+                let request = APIURL.JetExAPI.base + APIURL.JetExAPI.createSubscribe
+                let params : [String : Any] = ["listCat": "newsletter",
+                                               "email": [
+                                                "email_address": currentUser.email,
+                                                "status": "unsubscribed"
+                    ]
+                ]
+                
+                Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).response(completionHandler: { (response) in
+                    if response.error != nil {
+                        print(response.error!)
+                    }
+                })
+                
+            })
+            
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.updateUserInfoOnUI()
+    }
+    
+    // update user info to UI
+    func updateUserInfoOnUI() {
+        if self.currentUser == nil {
+            if let currentUser = realm.objects(User.self).filter("isCurrentUser == true").first {
+                self.currentUser = currentUser
+            } else {
+                return
+            }
+        }
+        
+        emailUpdateTextField.text = currentUser.email
+        
+        // show user name
+        if let displayName = currentUser.displayName, displayName.characters.count > 0 {
+            displayNameLabel.text = displayName
+        } else if let firstName = currentUser.firstName, firstName.characters.count >= 0, let lastName = currentUser.lastName, lastName.characters.count >= 0, firstName.characters.count != lastName.characters.count {
+            displayNameLabel.text = "\(firstName) \(lastName)"
+        } else {
+            displayNameLabel.text = currentUser.username
+        }
+
+    }
+    
+    // refresh to get latest user information
+    func refreshUserInformation() {
+        
+        // check
+        if self.currentUser == nil {
+            if let currentUser = realm.objects(User.self).filter("isCurrentUser == true").first {
+                self.currentUser = currentUser
+            } else {
+                return
+            }
+        }
+        
+        // request to server
+        let requestURL = APIURL.JetExAPI.base + APIURL.JetExAPI.getUserInfo
+        Alamofire.request(requestURL, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
+            if let value = response.result.value as? NSDictionary {
+                if let id = value.value(forKey: "_id") as? String, id != "" {
+                    if let user = User(JSON: value as! [String: Any]) {
+                        // update this user is current user
+                        user.isCurrentUser = true
+                        
+                        // success get user info
+                        let realm = try! Realm()
+                        
+                        func updateCurrentUser () {
+                            // save/update it to Realm
+                            try! realm.write {
+                                realm.add(user, update: true)
+                            }
+                        }
+                        
+                        // get the current user
+                        if let lastUser = realm.objects(User.self).filter("isCurrentUser == true").first {
+                            if lastUser.id == user.id {
+                                // same user login, nothing happen
+                            } else {
+                                // set it to not be
+                                try! realm.write{
+                                    lastUser.isCurrentUser = false
+                                }
+                                updateCurrentUser()
+                            }
+                        } else {
+                            updateCurrentUser()
+                        }
+                        
+                        self.updateUserInfoOnUI()
+                        return
+                    }
+                }
+            }
+        }
+    }
+    
     
     @IBAction func backButtonPressed(_ sender: AnyObject) {
         _ = navigationController?.popViewController(animated: true)
@@ -143,9 +249,40 @@ class EditProfileVC: UITableViewController {
         }
         
         // show pop up
-        let popup = PopupDialog(title: "Updating...", message: "Please wait", image: UIImage(named: "loading.jpg"), buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+        let popup = PopupDialog(title: "Updating...", message: "Please wait", image: nil, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
         
         self.present(popup, animated: true, completion: nil)
+        
+        // update Subscribe first
+        let request = APIURL.JetExAPI.base + APIURL.JetExAPI.editSubscribe
+        let params : [String : Any] = ["listCat": "newsletter",
+                                       "email": [
+                                        "email_address": self.emailUpdateTextField.text!,
+                                        "status": self.emailSubscriptionSwitch.isOn ? "subscribed" : "unsubscribed"
+            ]
+        ]
+        
+        Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseString { (response) in
+            if let value = response.result.value {
+                if value == "Not Found" {
+                    
+                    // register again
+                    let request = APIURL.JetExAPI.base + APIURL.JetExAPI.createSubscribe
+                    let params : [String : Any] = ["listCat": "newsletter",
+                                                   "email": [
+                                                    "email_address": self.emailUpdateTextField.text!,
+                                                    "status": self.emailSubscriptionSwitch.isOn ? "subscribed" : "unsubscribed"
+                        ]
+                    ]
+                    
+                    Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).response(completionHandler: { (response) in
+                        if response.error != nil {
+                            print(response.error!)
+                        }
+                    })
+                }
+            }
+        }
         
         // update info to server
         let newInfo = ["email": self.emailUpdateTextField.text!]
@@ -175,20 +312,20 @@ class EditProfileVC: UITableViewController {
                     // hide pop up
                     print(message)
                     popup.dismiss({
-                        let newPopup = PopupDialog(title: "Cannot Update", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
+                        let newPopup = PopupDialog(title: "Cannot Update", message: "Please check your internet connection or your information.", image: nil)
                         newPopup.addButton(CancelButton(title: "Try again", action: {
                             self.emailUpdateTextField.text = self.currentUser.email
-                            self.emailUpdateTextField.becomeFirstResponder()
+//                            self.emailUpdateTextField.becomeFirstResponder()
                         }))
                         self.present(newPopup, animated: true, completion: nil)
                     })
                 }
             } else {
                 popup.dismiss({
-                    let newPopup = PopupDialog(title: "Cannot Update", message: "Please check your internet connection or your information.", image: UIImage(named: "loading.jpg"))
+                    let newPopup = PopupDialog(title: "Cannot Update", message: "Please check your internet connection or your information.", image: nil)
                     newPopup.addButton(CancelButton(title: "Try again", action: {
                         self.emailUpdateTextField.text = self.currentUser.email
-                        self.emailUpdateTextField.becomeFirstResponder()
+//                        self.emailUpdateTextField.becomeFirstResponder()
                     }))
                     self.present(newPopup, animated: true, completion: nil)
                 })
