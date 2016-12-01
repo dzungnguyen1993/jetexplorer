@@ -244,7 +244,13 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
             showDetailsIndex = -1
         }
      
-        tableView.reloadData()
+//        tableView.beginUpdates()
+        
+        let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
+        tableView.reloadSections(sections as IndexSet, with: .automatic)
+        
+//        tableView.endUpdates()
+//        tableView.reloadData()
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 }
@@ -275,6 +281,8 @@ extension FlightResultVC {
             itineraries = self.searchFlightResult.fastestTrips
         }
         
-        self.tableView.reloadData()
+        let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
+        tableView.reloadSections(sections as IndexSet, with: .automatic)
+//        self.tableView.reloadData()
     }
 }

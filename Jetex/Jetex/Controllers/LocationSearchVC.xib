@@ -67,7 +67,7 @@
                                         <action selector="textFieldDidChanged:" destination="-1" eventType="editingChanged" id="gZQ-YJ-wX2"/>
                                     </connections>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLj-zC-rlR">
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLj-zC-rlR">
                                     <rect key="frame" x="337" y="9" width="25" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="GLj-zC-rlR" secondAttribute="height" multiplier="1:1" id="BJO-Dk-GMc"/>
@@ -78,7 +78,7 @@
                                         <action selector="searchCity:" destination="-1" eventType="touchUpInside" id="RhC-M4-rHT"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nei-VA-QG5">
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nei-VA-QG5">
                                     <rect key="frame" x="280" y="11" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Nei-VA-QG5" secondAttribute="height" multiplier="1:1" id="MQA-9I-7s6"/>
