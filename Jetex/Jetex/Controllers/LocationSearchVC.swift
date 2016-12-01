@@ -22,7 +22,7 @@ class LocationSearchVC: BaseViewController {
     @IBOutlet weak var searchTextField: UITextField!
     weak var delegate: PickLocationDelegate?
     
-    var airportsSearchResult: Results<Airport>! = nil
+    var airportsSearchResult: [Airport] = [Airport]()
     
     var isLocationFrom: Bool!
     var realm : Realm!
@@ -43,9 +43,33 @@ class LocationSearchVC: BaseViewController {
     }
     
     @IBAction func textFieldDidChanged(_ sender: UITextField) {
-        let predicate = NSPredicate(format: "name BEGINSWITH[c] %@", sender.text!)
+        let allAirports = realm.objects(Airport.self)
         
-        airportsSearchResult = realm.objects(Airport.self).filter(predicate)
+        self.airportsSearchResult = allAirports.filter { (airport) -> Bool in
+            
+            let name = airport.name
+            
+            let id = airport.id
+            
+            if ((sender.text?.characters.count)! < name.characters.count) {
+                let startIndex = name.startIndex
+                let endIndex = name.index(startIndex, offsetBy: (sender.text?.characters.count)!)
+                
+                let substr = name.substring(to: endIndex)
+                
+                if (substr.lowercased() == sender.text?.lowercased()) {
+                    return true
+                }
+            }
+            
+            if ((sender.text?.characters.count)! <= id.characters.count) {
+                if (id.lowercased().contains(sender.text!.lowercased())) {
+                    return true
+                }
+            }
+            
+            return false
+        }
         
         tableView.separatorStyle = airportsSearchResult.count == 0 ? .none : .singleLine
         tableView.reloadData()
@@ -53,7 +77,7 @@ class LocationSearchVC: BaseViewController {
     
     @IBAction func clearSearchField(_ sender: UIButton) {
         searchTextField.text = ""
-        airportsSearchResult = nil
+        airportsSearchResult.removeAll()
         tableView.separatorStyle = .none
         tableView.reloadData()
     }
@@ -66,9 +90,6 @@ extension LocationSearchVC: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard airportsSearchResult != nil else {
-            return 0
-        }
         return airportsSearchResult.count
     }
     
@@ -76,17 +97,34 @@ extension LocationSearchVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCityCell", for: indexPath) as! SearchCityCell
         
         let airport = airportsSearchResult[indexPath.row]
-        
+    
         cell.lbCountry.text = self.getCountryName(fromAirport: airport)
-        cell.lbAirport.text = airport.id
+    
+        // text for airport name
+        if (airport.name.lowercased().isContainsAtBeginning(of: searchTextField.text!.lowercased()) == true) {
+            let attributes = [NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 17)!]
+            let attributedString = NSMutableAttributedString(string: airport.name, attributes: attributes)
+            let prefixAttributes = [NSForegroundColorAttributeName: UIColor(hex: 0x674290),
+                                    NSFontAttributeName: UIFont(name: GothamFontName.Bold.rawValue, size: 17)!]
+            attributedString.addAttributes(prefixAttributes, range: NSRange(location: 0, length: searchTextField.text!.characters.count))
+            cell.lbCity.attributedText = attributedString
+        } else {
+            cell.lbCity.text = airport.name
+        }
         
-        
-        let attributes = [NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 17)!]
-        let attributedString = NSMutableAttributedString(string: airport.name, attributes: attributes)
-        let prefixAttributes = [NSForegroundColorAttributeName: UIColor(hex: 0x674290),
-                                NSFontAttributeName: UIFont(name: GothamFontName.Bold.rawValue, size: 17)!]
-        attributedString.addAttributes(prefixAttributes, range: NSRange(location: 0, length: searchTextField.text!.characters.count))
-        cell.lbCity.attributedText = attributedString
+        // text for airport code
+        let start = airport.id.lowercased().index(of: (searchTextField.text)!)
+        if (start != -1) {
+            let attributes = [NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!]
+            let attributedString = NSMutableAttributedString(string: airport.id, attributes: attributes)
+            let prefixAttributes = [NSForegroundColorAttributeName: UIColor(hex: 0x674290),
+                                NSFontAttributeName: UIFont(name: GothamFontName.Bold.rawValue, size: 15)!]
+            attributedString.addAttributes(prefixAttributes, range: NSRange(location: start, length: searchTextField.text!.characters.count))
+            
+            cell.lbAirport.attributedText = attributedString
+        } else {
+            cell.lbAirport.text = airport.id
+        }
         
         return cell
     }

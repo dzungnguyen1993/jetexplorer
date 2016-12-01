@@ -313,6 +313,39 @@ extension String {
         //Return Parsed Date
         return (dateFromString != nil ? dateFromString! : Date())
     }
+    
+    func index(of string: String) -> Int {
+        var i = 0
+        while i + string.characters.count <= self.characters.count {
+            let startIndex = self.index(self.startIndex, offsetBy: i)
+            let endIndex = self.index(startIndex, offsetBy: string.characters.count)
+            
+            let substr = self.substring(to: endIndex)
+            
+            if (substr == string) {
+                return i
+            }
+            
+            i = i + 1
+            
+        }
+        
+        return -1
+    }
+    
+    func isContainsAtBeginning(of string: String) -> Bool {
+        let startIndex = self.startIndex
+        let endIndex = self.index(startIndex, offsetBy: string.characters.count)
+        
+        let substr = self.substring(to: endIndex)
+        
+        if (substr == string) {
+            return true
+        }
+        
+        return false
+    }
+    
 }
 
 extension List{

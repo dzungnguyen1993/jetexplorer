@@ -32,7 +32,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZG-Ll-6C1" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
-                    <rect key="frame" x="44.5" y="5" width="119.5" height="21"/>
+                    <rect key="frame" x="44.5" y="5" width="119.5" height="20.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="eIL-eR-rV1"/>
                     </constraints>
@@ -41,7 +41,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ov-ov-qbW" customClass="GothamBold24Label" customModule="Jetex" customModuleProvider="target">
-                    <rect key="frame" x="8" y="31.5" width="156" height="21"/>
+                    <rect key="frame" x="8" y="31.5" width="156" height="20.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="GbF-JP-NoR"/>
                     </constraints>
@@ -50,7 +50,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64X-wA-Ybn" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
-                    <rect key="frame" x="8" y="57.5" width="156" height="21"/>
+                    <rect key="frame" x="8" y="57.5" width="156" height="20.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="AU1-xR-762"/>
                     </constraints>
