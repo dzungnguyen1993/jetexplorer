@@ -224,25 +224,32 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         
         let leg = searchFlightResult.getLeg(withId: itineraries[indexPath.row].outboundLegId)
         
-        let carrier = searchFlightResult.getCarrier(withId: (leg?.carriers.first)!)
-        
-        Alamofire.request((carrier?.imageUrl)!).responseImage { response in
-            if let image = response.result.value {
-                let ratio = image.size.width / image.size.height
-                
-                // remove old constraint
-                let cell = self.tableView.cellForRow(at: indexPath) as! FlightResultCell
-                DispatchQueue.main.async {
-                    cell.imgCarrier.removeConstraint(cell.constraintLogoRatio)
-                    
-                    cell.constraintLogoRatio = NSLayoutConstraint(item: cell.imgCarrier, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: cell.imgCarrier, attribute: NSLayoutAttribute.height, multiplier: ratio, constant: 0)
-                    cell.imgCarrier.addConstraint(cell.constraintLogoRatio)
-                    
-                    cell.imgCarrier.image = image
+        if (leg != nil) {
+            let carrier = searchFlightResult.getCarrier(withId: (leg?.carriers.first)!)
+            
+            if (carrier != nil) {
+                Alamofire.request((carrier?.imageUrl)!).responseImage { response in
+                    if let image = response.result.value {
+                        let ratio = image.size.width / image.size.height
+                        
+                        // remove old constraint
+                        let cell = self.tableView.cellForRow(at: indexPath) as? FlightResultCell
+                        if cell != nil {
+                            DispatchQueue.main.async {
+                                cell?.imgCarrier.removeConstraint((cell?.constraintLogoRatio)!)
+                                
+                                cell?.constraintLogoRatio = NSLayoutConstraint(item: (cell?.imgCarrier)!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: cell?.imgCarrier, attribute: NSLayoutAttribute.height, multiplier: ratio, constant: 0)
+                                cell?.imgCarrier.addConstraint((cell?.constraintLogoRatio)!)
+                                
+                                cell?.imgCarrier.image = image
+                            }
+
+                        }
+                    }
                 }
+
             }
         }
-
        
         return cell
     }
