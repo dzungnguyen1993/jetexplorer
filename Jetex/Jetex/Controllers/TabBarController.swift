@@ -84,7 +84,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         return true
     }
     
-    func animateToTab(toIndex: Int) {
+    func animateToTab(toIndex: Int, needResetToRootView: Bool = false, completion: ((UIViewController) -> Void)? = nil) {
         let tabViewControllers = viewControllers!
         let fromView = selectedViewController!.view!
         let toView = tabViewControllers[toIndex].view!
@@ -110,12 +110,21 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             fromView.center = CGPoint(x: fromView.center.x - offset, y: fromView.center.y);
             toView.center   = CGPoint(x: toView.center.x - offset, y: toView.center.y);
             
+            if needResetToRootView {
+                _ = (tabViewControllers[toIndex] as! UINavigationController).popToRootViewController(animated: true)
+            }
+            
         }, completion: { finished in
             
             // Remove the old view from the tabbar view.
             fromView.removeFromSuperview()
             self.selectedIndex = toIndex
             self.view.isUserInteractionEnabled = true
+            
+            if let completion = completion {
+                let vc = (tabViewControllers[self.selectedIndex] as! UINavigationController).viewControllers.first!
+                completion(vc)
+            }
         })
     }
 

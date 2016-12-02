@@ -887,7 +887,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -1328,6 +1328,7 @@
 			baseConfigurationReference = 55289637828EFDBD50A9E480 /* Pods-Jetex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jetex/Jetex.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4N7S923G73;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1345,6 +1346,7 @@
 			baseConfigurationReference = C5C4A86919FBAF16948016C3 /* Pods-Jetex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jetex/Jetex.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4N7S923G73;
 				INFOPLIST_FILE = Jetex/Info.plist;

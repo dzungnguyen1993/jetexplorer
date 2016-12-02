@@ -60,6 +60,8 @@ class FlightSearchVC: BaseViewController {
             viewTo.lbInfo.text = "--"
             viewTo.lbSubInfo.text = ""
         }
+        
+        viewReturnDay.isHidden = !passengerInfo.isRoundTrip
     }
     
     func loadViewDate() {

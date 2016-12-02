@@ -13,6 +13,7 @@ import PopupDialog
 
 class EditProfileVC: UITableViewController {
     
+    @IBOutlet weak var saveNavButton: UIBarButtonItem!
     @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var emailUpdateTextField: UIPaddingTextField!
     @IBOutlet weak var emailSubscriptionSwitch: UISwitch!
@@ -27,6 +28,7 @@ class EditProfileVC: UITableViewController {
         
         needToResizeEmailTextField = false
         emailWarning = WarningForInput(setWarning: "Your email is not correct", for: emailUpdateTextField, withTitle: nil)
+        saveNavButton.isEnabled = false
         
         if let currentUser = realm.objects(User.self).filter("isCurrentUser == true").first {
             self.currentUser = currentUser
@@ -195,10 +197,12 @@ class EditProfileVC: UITableViewController {
         case 2:
             print("email")
             emailUpdateTextField.becomeFirstResponder()
+            saveNavButton.isEnabled = true
             break
         case 3:
             print("subscription")
             emailSubscriptionSwitch.setOn(!emailSubscriptionSwitch.isOn, animated: true)
+            saveNavButton.isEnabled = true
             break
         case 4:
             print("sign out")
@@ -247,6 +251,8 @@ class EditProfileVC: UITableViewController {
             })
             return
         }
+        
+        saveNavButton.isEnabled = false
         
         // show pop up
         let popup = PopupDialog(title: "Updating...", message: "Please wait", image: nil, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
@@ -315,6 +321,8 @@ class EditProfileVC: UITableViewController {
                         let newPopup = PopupDialog(title: "Cannot Update", message: "Please check your internet connection or your information.", image: nil)
                         newPopup.addButton(CancelButton(title: "Try again", action: {
                             self.emailUpdateTextField.text = self.currentUser.email
+                            
+                            self.saveNavButton.isEnabled = true
 //                            self.emailUpdateTextField.becomeFirstResponder()
                         }))
                         self.present(newPopup, animated: true, completion: nil)
@@ -325,6 +333,8 @@ class EditProfileVC: UITableViewController {
                     let newPopup = PopupDialog(title: "Cannot Update", message: "Please check your internet connection or your information.", image: nil)
                     newPopup.addButton(CancelButton(title: "Try again", action: {
                         self.emailUpdateTextField.text = self.currentUser.email
+                        
+                        self.saveNavButton.isEnabled = true
 //                        self.emailUpdateTextField.becomeFirstResponder()
                     }))
                     self.present(newPopup, animated: true, completion: nil)
@@ -337,4 +347,7 @@ class EditProfileVC: UITableViewController {
         emailUpdateTextField.resignFirstResponder()
     }
 
+    @IBAction func emailSubscribeSwitchValueChanged(_ sender: Any) {
+        saveNavButton.isEnabled = true
+    }
 }

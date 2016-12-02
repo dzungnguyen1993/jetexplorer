@@ -128,15 +128,45 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell: HistorySearch! = historyList[indexPath.row]
         
+        
         // Configure the view for the selected state
         if selectedCell.dataType == .Flight {
-            let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
+            var passengerInfo : PassengerInfo? = nil
             
             try! realm.write {
-                vc.passengerInfo = selectedCell.flightHistory!.requestInfoFromPassenger()
+                passengerInfo = selectedCell.flightHistory!.requestInfoFromPassenger()
             }
             
-            _ = self.navigationController?.pushViewController(vc, animated: true)
+            if passengerInfo?.departDay?.compare(Date().dateByAddingDays(days: -1)) == ComparisonResult.orderedAscending {
+                // depart day is overdue. session expired.
+                let popup = PopupDialog(title: "Session expired!", message: "Do you want to search it in another day?", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+                let cancel = CancelButton(title: "No, I don't", dismissOnTap: true, action: nil)
+                popup.addButton(cancel)
+                let search = DefaultButton(title: "Yes, search for me", dismissOnTap: true, action: {
+                    // go to searching vc
+                    (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 0, needResetToRootView: true, completion: { vc in
+                        if vc is FlightSearchVC {
+                            (vc as! FlightSearchVC).passengerInfo.airportFrom = passengerInfo?.airportFrom
+                            (vc as! FlightSearchVC).passengerInfo.airportTo = passengerInfo?.airportTo
+                            (vc as! FlightSearchVC).passengerInfo.isRoundTrip = (passengerInfo?.isRoundTrip)!
+                            (vc as! FlightSearchVC).passengerInfo.passengers[0].value = (passengerInfo?.passengers[0].value)!
+                            (vc as! FlightSearchVC).passengerInfo.passengers[1].value = (passengerInfo?.passengers[1].value)!
+                            (vc as! FlightSearchVC).passengerInfo.passengers[2].value = (passengerInfo?.passengers[2].value)!
+                            (vc as! FlightSearchVC).passengerInfo.passengers[3].value = (passengerInfo?.passengers[3].value)!
+                            (vc as! FlightSearchVC).passengerInfo.passengers[4].value = (passengerInfo?.passengers[4].value)!
+                            
+                            (vc as! FlightSearchVC).loadViewLocation()
+                        }
+                    })
+                })
+                popup.addButton(search)
+                self.present(popup, animated: true, completion: nil)
+                
+            } else {
+                let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
+                vc.passengerInfo = passengerInfo!
+                _ = self.navigationController?.pushViewController(vc, animated: true)
+            }
         } else if selectedCell.dataType == .Hotel {
             
         }
