@@ -224,6 +224,12 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         
         let leg = searchFlightResult.getLeg(withId: itineraries[indexPath.row].outboundLegId)
         
+        // update constraint when there's no image
+        cell.imgCarrier.removeConstraint((cell.constraintLogoRatio)!)
+        
+        cell.constraintLogoRatio = NSLayoutConstraint(item: (cell.imgCarrier)!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: cell.imgCarrier, attribute: NSLayoutAttribute.height, multiplier: 0, constant: 0)
+        cell.imgCarrier.addConstraint((cell.constraintLogoRatio)!)
+        
         if (leg != nil) {
             let carrier = searchFlightResult.getCarrier(withId: (leg?.carriers.first)!)
             
@@ -251,6 +257,9 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
             }
         }
        
+        cell.setNeedsUpdateConstraints()
+        cell.setNeedsLayout()
+        
         return cell
     }
     
@@ -284,7 +293,7 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         tableView.reloadSections(sections as IndexSet, with: .automatic)
         
 //        tableView.endUpdates()
-//        tableView.reloadData()
+        tableView.reloadData()
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 }
@@ -314,7 +323,7 @@ extension FlightResultVC {
         } else {
             itineraries = self.searchFlightResult.fastestTrips
         }
-        
+        showDetailsIndex = -1
         let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
         tableView.reloadSections(sections as IndexSet, with: .automatic)
 //        self.tableView.reloadData()

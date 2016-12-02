@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import PopupDialog
 
 class FlightSearchVC: BaseViewController {
     
@@ -108,21 +109,37 @@ class FlightSearchVC: BaseViewController {
     @IBAction func clickSearch(_ sender: UIButton) {
         // check if info is valid
         if (passengerInfo.airportFrom == nil || passengerInfo.airportTo == nil) {
-            showAlert(message: "You didn't choose the location.", andTitle: "Error")
+//            showAlert(message: "You didn't choose the location.", andTitle: "Error")
+
+            self.showErrorAlert(message: "You didn't choose the location.")
             return
         }
         
         if (passengerInfo.airportFrom == passengerInfo.airportTo && passengerInfo.isRoundTrip == true) {
-            showAlert(message: "You chose the same airport.", andTitle: "Error")
+//            showAlert(message: "You chose the same airport.", andTitle: "Error")
+            
+            self.showErrorAlert(message: "You chose the same airport.")
             return
         }
         
         if (passengerInfo.numberOfPassenger() == 0) {
-            showAlert(message: "You didn't choose the number of passengers.", andTitle: "Error")
+//            showAlert(message: "You didn't choose the number of passengers.", andTitle: "Error")
+            
+            self.showErrorAlert(message: "You didn't choose the number of passengers.")
             return
         }
         
         gotoResultVC()
+    }
+    
+    func showErrorAlert(message: String) {
+        let popup = PopupDialog(title: message, message: "", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+        let buttonOne = CancelButton(title: "CANCEL") {
+            popup.dismiss()
+        }
+        
+        popup.addButton(buttonOne)
+        self.present(popup, animated: true, completion: nil)
     }
     
     func gotoResultVC() {

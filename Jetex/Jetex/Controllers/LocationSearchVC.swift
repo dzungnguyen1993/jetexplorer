@@ -26,6 +26,7 @@ class LocationSearchVC: BaseViewController {
     
     var isLocationFrom: Bool!
     var realm : Realm!
+    var allAirports: Results<Airport>! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +39,22 @@ class LocationSearchVC: BaseViewController {
         
         self.tableView.register(UINib(nibName: "SearchCityCell", bundle:nil), forCellReuseIdentifier: "SearchCityCell")
         
-        realm = try! Realm()
         tableView.separatorStyle = .none
+        
+        if (isLocationFrom == true) {
+            topNavigationItem.title = "Flight From"
+        } else {
+            topNavigationItem.title = "Flight To"
+        }
+     
+        realm = try! Realm()
+        self.allAirports = realm.objects(Airport.self)
     }
     
     @IBAction func textFieldDidChanged(_ sender: UITextField) {
         if sender.text == "" {
             airportsSearchResult.removeAll()
         } else {
-            
-            let allAirports = realm.objects(Airport.self)
-            
             self.airportsSearchResult = allAirports.filter { (airport) -> Bool in
                 
                 let name = airport.name
