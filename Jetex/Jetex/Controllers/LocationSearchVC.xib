@@ -55,8 +55,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HK2-Nx-7c7">
                             <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqt-Ee-aev">
-                                    <rect key="frame" x="16" y="6" width="289" height="30"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dqt-Ee-aev">
+                                    <rect key="frame" x="16" y="6" width="343" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="JRh-Wb-H0J"/>
                                     </constraints>
@@ -93,10 +93,10 @@
                             <constraints>
                                 <constraint firstItem="GLj-zC-rlR" firstAttribute="centerY" secondItem="HK2-Nx-7c7" secondAttribute="centerY" id="62Y-e0-kBw"/>
                                 <constraint firstAttribute="height" constant="44" id="9am-dU-c7Q"/>
-                                <constraint firstItem="GLj-zC-rlR" firstAttribute="leading" secondItem="dqt-Ee-aev" secondAttribute="trailing" constant="32" id="LOK-jm-1ML"/>
                                 <constraint firstItem="Nei-VA-QG5" firstAttribute="centerY" secondItem="HK2-Nx-7c7" secondAttribute="centerY" constant="-1" id="NA3-rr-dfY"/>
                                 <constraint firstAttribute="trailing" secondItem="GLj-zC-rlR" secondAttribute="trailing" constant="13" id="Ssy-ej-aOY"/>
                                 <constraint firstItem="GLj-zC-rlR" firstAttribute="leading" secondItem="Nei-VA-QG5" secondAttribute="trailing" constant="37" id="Yiv-Mx-DL8"/>
+                                <constraint firstAttribute="trailing" secondItem="dqt-Ee-aev" secondAttribute="trailing" constant="16" id="YsL-bn-Pfv"/>
                                 <constraint firstItem="dqt-Ee-aev" firstAttribute="leading" secondItem="HK2-Nx-7c7" secondAttribute="leading" constant="16" id="n75-vq-hY2"/>
                                 <constraint firstItem="dqt-Ee-aev" firstAttribute="centerY" secondItem="HK2-Nx-7c7" secondAttribute="centerY" constant="-1" id="zzu-II-tmj"/>
                             </constraints>

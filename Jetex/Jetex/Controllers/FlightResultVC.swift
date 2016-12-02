@@ -8,6 +8,7 @@
 
 import UIKit
 import PopupDialog
+import Alamofire
 
 class FlightResultVC: BaseViewController {
 
@@ -216,6 +217,32 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         cell.showInfo(ofSearchResult: searchFlightResult, forItinerary: itineraries[indexPath.row])
+        
+        // download cell image
+        cell.imgCarrier.image = nil
+        // download carrier image
+        
+        let leg = searchFlightResult.getLeg(withId: itineraries[indexPath.row].outboundLegId)
+        
+        let carrier = searchFlightResult.getCarrier(withId: (leg?.carriers.first)!)
+        
+        Alamofire.request((carrier?.imageUrl)!).responseImage { response in
+            if let image = response.result.value {
+                let ratio = image.size.width / image.size.height
+                
+                // remove old constraint
+                let cell = self.tableView.cellForRow(at: indexPath) as! FlightResultCell
+                DispatchQueue.main.async {
+                    cell.imgCarrier.removeConstraint(cell.constraintLogoRatio)
+                    
+                    cell.constraintLogoRatio = NSLayoutConstraint(item: cell.imgCarrier, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: cell.imgCarrier, attribute: NSLayoutAttribute.height, multiplier: ratio, constant: 0)
+                    cell.imgCarrier.addConstraint(cell.constraintLogoRatio)
+                    
+                    cell.imgCarrier.image = image
+                }
+            }
+        }
+
        
         return cell
     }
