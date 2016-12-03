@@ -92,7 +92,7 @@
                                     <rect key="frame" x="54" y="0.0" width="159" height="44"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojr-ld-OUP">
-                                            <rect key="frame" x="0.0" y="12" width="38" height="21"/>
+                                            <rect key="frame" x="0.0" y="12" width="36.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="eJU-yL-1xv"/>
                                             </constraints>
@@ -101,13 +101,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transfer.png" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-9l-STO">
-                                            <rect key="frame" x="46" y="0.0" width="15" height="44"/>
+                                            <rect key="frame" x="44.5" y="0.0" width="15" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="15" id="ce0-N1-EaP"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iv-Rx-t7W">
-                                            <rect key="frame" x="69" y="12" width="36.5" height="21"/>
+                                            <rect key="frame" x="67.5" y="12" width="31" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="LXC-pk-riK"/>
                                             </constraints>
@@ -270,7 +270,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="45" height="22"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4T-eo-S5S">
-                                            <rect key="frame" x="0.0" y="27" width="45" height="12"/>
+                                            <rect key="frame" x="0.0" y="25" width="45" height="14"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -283,8 +283,8 @@
                                         <constraint firstAttribute="width" constant="45" id="SeN-kt-1vw"/>
                                         <constraint firstItem="VyI-5e-CmG" firstAttribute="height" secondItem="5QF-lB-ead" secondAttribute="height" multiplier="1:2" id="UX4-Cf-2BA"/>
                                         <constraint firstItem="p4T-eo-S5S" firstAttribute="leading" secondItem="5QF-lB-ead" secondAttribute="leading" id="V2g-ve-LPH"/>
-                                        <constraint firstAttribute="bottom" secondItem="p4T-eo-S5S" secondAttribute="bottom" constant="5" id="eQL-ma-xjD"/>
-                                        <constraint firstItem="VyI-5e-CmG" firstAttribute="top" secondItem="5QF-lB-ead" secondAttribute="top" id="gKc-JA-G5z"/>
+                                        <constraint firstAttribute="bottom" secondItem="p4T-eo-S5S" secondAttribute="bottom" constant="7" id="eQL-ma-xjD"/>
+                                        <constraint firstItem="VyI-5e-CmG" firstAttribute="top" secondItem="5QF-lB-ead" secondAttribute="top" constant="2" id="gKc-JA-G5z"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hc-S4-xiq">
@@ -298,7 +298,7 @@
                                     <rect key="frame" x="77" y="0.0" width="149" height="44"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtj-xx-D9H">
-                                            <rect key="frame" x="0.0" y="0.0" width="149" height="41"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="149" height="39"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <state key="normal" title="Cheapest trip">
                                                 <color key="titleColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -308,7 +308,7 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uwi-sJ-Lwb">
-                                            <rect key="frame" x="0.0" y="41" width="149" height="3"/>
+                                            <rect key="frame" x="0.0" y="39" width="149" height="5"/>
                                             <color key="backgroundColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="5" id="UYx-RL-Pkf"/>
@@ -329,7 +329,7 @@
                                     <rect key="frame" x="226" y="0.0" width="149" height="44"/>
                                     <subviews>
                                         <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iG-7V-QwB">
-                                            <rect key="frame" x="0.0" y="0.0" width="149" height="41"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="149" height="39"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                                             <state key="normal" title="Fastest trip">
                                                 <color key="titleColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -339,7 +339,7 @@
                                             </connections>
                                         </button>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PuY-bD-2xo">
-                                            <rect key="frame" x="0.0" y="41" width="149" height="3"/>
+                                            <rect key="frame" x="0.0" y="39" width="149" height="5"/>
                                             <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="5" id="Ghj-fb-kZK"/>
@@ -406,7 +406,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find properties that match your search" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gC7-4x-dTj">
-                                    <rect key="frame" x="52.5" y="201" width="270" height="30"/>
+                                    <rect key="frame" x="52.5" y="196" width="270" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="270" id="h6y-GA-P0T"/>
                                     </constraints>

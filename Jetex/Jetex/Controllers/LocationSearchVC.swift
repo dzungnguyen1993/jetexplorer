@@ -42,6 +42,16 @@ class LocationSearchVC: BaseViewController {
         tableView.separatorStyle = .none
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchTextField.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        searchTextField.resignFirstResponder()
+    }
+    
     @IBAction func textFieldDidChanged(_ sender: UITextField) {
         if sender.text == "" {
             airportsSearchResult.removeAll()
@@ -77,13 +87,6 @@ class LocationSearchVC: BaseViewController {
         }
         
         tableView.separatorStyle = airportsSearchResult.count == 0 ? .none : .singleLine
-        tableView.reloadData()
-    }
-    
-    @IBAction func clearSearchField(_ sender: UIButton) {
-        searchTextField.text = ""
-        airportsSearchResult.removeAll()
-        tableView.separatorStyle = .none
         tableView.reloadData()
     }
     
@@ -166,5 +169,9 @@ extension LocationSearchVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchTextField.resignFirstResponder()
     }
 }

@@ -82,7 +82,11 @@ class FlightResultVC: BaseViewController {
             viewFilter.delegate = self
         }
         
-
+        searchForFlights()
+    }
+    
+    func searchForFlights() {
+        
         let popup = PopupDialog(title: "Please wait, I am searching ...", message: "", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
         
         self.present(popup, animated: true, completion: nil)
@@ -96,6 +100,8 @@ class FlightResultVC: BaseViewController {
                 
                 if self.searchFlightResult.itineraries.count != 0 {
                     self.viewNoResult.isHidden = true
+                    //TODO: start checking for session timer here
+                    
                 } else {
                     self.viewNoResult.isHidden = false
                 }
@@ -142,9 +148,12 @@ class FlightResultVC: BaseViewController {
     }
     
     @IBAction func showFilter(_ sender: UIButton) {
-        viewFilterContainer.isHidden = false
-        viewOptions.isHidden = true
-        tableView.isHidden = true
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.viewFilterContainer.isHidden = false
+            self.viewOptions.isHidden = true
+            self.tableView.isHidden = true
+        })
         
         viewFilter.tmpFilterObject = viewFilter.filterObject.copyFilter()
         viewFilter.tableView.reloadData()
@@ -258,9 +267,11 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
 // MARK: Filter
 extension FlightResultVC: FilterFlightViewDelegate {
     func hideFilter() {
-        viewFilterContainer.isHidden = true
-        viewOptions.isHidden = false
-        tableView.isHidden = false
+        UIView.animate(withDuration: 0.25, animations: {
+            self.viewFilterContainer.isHidden = true
+            self.viewOptions.isHidden = false
+            self.tableView.isHidden = false
+        })
     }
     
     func applyFilter(filterObject: FilterObject) {
