@@ -47,7 +47,7 @@ class HistoryCell: UITableViewCell {
             self.fillDataForHotel(data: data.hotelHistory!)
         }
         
-        // TODO: show searching time
+        // Show searching time
         searchedTimeLabel.text = data.createTime.howlongago()
     }
     
@@ -62,6 +62,8 @@ class HistoryCell: UITableViewCell {
         
         //show start - end day
         timeLabel.resizeToFitText()
+        exchangeLabel.resizeToFitText()
+        
         if data.isRoundTrip == true {
             exchangeLabel.text = "\(NSString.init(utf8String: JetExFontHexCode.exchange.rawValue)!)"
             timeLabel.text = "\(Date.shorterlizeFullMonthDay(data.departDateText)) - \(Date.shorterlizeFullMonthDay(data.returnDateText))"
@@ -69,7 +71,6 @@ class HistoryCell: UITableViewCell {
             exchangeLabel.text = "\(NSString.init(utf8String: JetExFontHexCode.oneWay.rawValue)!)"
             timeLabel.text = "\(Date.shorterlizeFullMonthDay(data.departDateText))"
         }
-        exchangeLabel.resizeToFitText()
         
         // TODO: show options
         var option = ""

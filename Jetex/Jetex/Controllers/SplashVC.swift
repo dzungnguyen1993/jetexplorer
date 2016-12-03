@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
 import PopupDialog
+import Alamofire
 
 class SplashVC: UIViewController {
 
@@ -54,6 +56,10 @@ class SplashVC: UIViewController {
     func gotoMainScreen() {
         // check internet connection
         if (Utility.isConnectedToNetwork()) {
+            
+            // login in silient
+            self.loginInsilient()
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! TabBarController
             controller.modalTransitionStyle = .crossDissolve
@@ -62,6 +68,38 @@ class SplashVC: UIViewController {
             let vc = NetworkErrorVC(nibName: "NetworkErrorVC", bundle: nil)
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    func loginInsilient() {
+        let request = APIURL.JetExAPI.base + APIURL.JetExAPI.getUserInfo
+        Alamofire.request(request).responseObject { (response: DataResponse<User>) in
+            if let currentUser = response.result.value {
+                print(currentUser)
+                // update this user is current user
+                currentUser.isCurrentUser = true
+                
+                // success get user info
+                let realm = try! Realm()
+                
+                // get the current user
+                if let lastUser = realm.objects(User.self).filter("isCurrentUser == true").first {
+                    if lastUser.id == currentUser.id {
+                        // same user login, nothing happen
+                    } else {
+                        // set it to not be
+                        try! realm.write{
+                            lastUser.isCurrentUser = false
+                        }
+                    }
+                }
+                
+                // save/update it to Realm
+                try! realm.write {
+                    realm.add(currentUser, update: true)
+                }
+                ProfileVC.isUserLogined = true
+            }
         }
     }
 }

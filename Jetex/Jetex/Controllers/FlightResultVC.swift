@@ -8,6 +8,7 @@
 
 import UIKit
 import PopupDialog
+import Alamofire
 
 class FlightResultVC: BaseViewController {
 
@@ -225,7 +226,49 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         cell.showInfo(ofSearchResult: searchFlightResult, forItinerary: itineraries[indexPath.row])
+        
+        // download cell image
+        cell.imgCarrier.image = nil
+        // download carrier image
+        
+        let leg = searchFlightResult.getLeg(withId: itineraries[indexPath.row].outboundLegId)
+        
+        // update constraint when there's no image
+        cell.imgCarrier.removeConstraint((cell.constraintLogoRatio)!)
+        
+        cell.constraintLogoRatio = NSLayoutConstraint(item: (cell.imgCarrier)!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: cell.imgCarrier, attribute: NSLayoutAttribute.height, multiplier: 0, constant: 0)
+        cell.imgCarrier.addConstraint((cell.constraintLogoRatio)!)
+        
+        if (leg != nil) {
+            let carrier = searchFlightResult.getCarrier(withId: (leg?.carriers.first)!)
+            
+            if (carrier != nil) {
+                Alamofire.request((carrier?.imageUrl)!).responseImage { response in
+                    if let image = response.result.value {
+                        let ratio = image.size.width / image.size.height
+                        
+                        // remove old constraint
+                        let cell = self.tableView.cellForRow(at: indexPath) as? FlightResultCell
+                        if cell != nil {
+                            DispatchQueue.main.async {
+                                cell?.imgCarrier.removeConstraint((cell?.constraintLogoRatio)!)
+                                
+                                cell?.constraintLogoRatio = NSLayoutConstraint(item: (cell?.imgCarrier)!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: cell?.imgCarrier, attribute: NSLayoutAttribute.height, multiplier: ratio, constant: 0)
+                                cell?.imgCarrier.addConstraint((cell?.constraintLogoRatio)!)
+                                
+                                cell?.imgCarrier.image = image
+                            }
+
+                        }
+                    }
+                }
+
+            }
+        }
        
+        cell.setNeedsUpdateConstraints()
+        cell.setNeedsLayout()
+        
         return cell
     }
     
@@ -259,7 +302,7 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         tableView.reloadSections(sections as IndexSet, with: .automatic)
         
 //        tableView.endUpdates()
-//        tableView.reloadData()
+        tableView.reloadData()
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 }
@@ -291,7 +334,7 @@ extension FlightResultVC {
         } else {
             itineraries = self.searchFlightResult.fastestTrips
         }
-        
+        showDetailsIndex = -1
         let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
         tableView.reloadSections(sections as IndexSet, with: .automatic)
 //        self.tableView.reloadData()

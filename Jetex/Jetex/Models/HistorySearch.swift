@@ -57,7 +57,8 @@ class HistorySearch: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        createTime      <- map["createTime"]
+        
+        createTime      <- (map["createTime"], FullDateTransform())
         createTimeText  <- map["createTimeText"]
         dataType        <- map["dataType"]
         
@@ -136,8 +137,8 @@ class FlightHistorySearch: Object, Mappable {
         adult = info.passengers[0].value
         children = info.passengers[1].value
         infant = info.passengers[2].value
-        flightType = "" // where's flight type?
-        flightClass = "" // where?
+        flightType = info.isRoundTrip == true ? FlightType.RoundTrip.rawValue : FlightType.OneWay.rawValue
+        flightClass = FlightClass.Economy.rawValue
         departAirport = info.airportFrom!.id
         arrivalAirport = info.airportTo!.id
         departDateText = info.departDay!.toFullMonthDay()
@@ -159,11 +160,12 @@ class FlightHistorySearch: Object, Mappable {
         children            <- map["children"]
         infant              <- map["infant"]
         flightType          <- map["flightType"]
-        flightClass         <- map["flightClass"]
+        flightClass         <- map["class"]
         departAirport       <- map["departAirport"]
         arrivalAirport      <- map["arrivalAirport"]
         departDateText      <- map["departDateText"]
         returnDateText      <- map["returnDateText"]
+        isRoundTrip = (flightType == FlightType.RoundTrip.rawValue)
     }
     
     func requestInfoFromPassenger() -> PassengerInfo {
@@ -178,14 +180,6 @@ class FlightHistorySearch: Object, Mappable {
             self.passengerInfo!.airportFrom = realm.object(ofType: Airport.self, forPrimaryKey: departAirport)
             self.passengerInfo!.airportTo = realm.object(ofType: Airport.self, forPrimaryKey: arrivalAirport)
             
-//            self.passengerInfo!.airportFrom = Airport(JSON: ["Id" : departAirport, "CityId" : departCity])
-////            self.passengerInfo!.airportFrom!.id = departAirport
-//            
-//            self.passengerInfo!.airportTo = Airport(JSON: ["Id" : arrivalAirport, "CityId" : arrivalCity])
-////            self.passengerInfo!.airportTo!.id = arrivalAirport
-//            
-////            self.passengerInfo!.airportFrom!.cityId = departCity
-////            self.passengerInfo!.airportTo!.cityId = arrivalCity
             self.passengerInfo!.departDay = departDate.toYYYYMMDD()
             self.passengerInfo!.isRoundTrip = isRoundTrip
             self.passengerInfo!.returnDay = isRoundTrip ? returnDate.toYYYYMMDD() : nil
@@ -226,5 +220,14 @@ class HotelHistorySearch : Object {
 enum HistorySearchType: String {
     case Flight = "flight"
     case Hotel = "hotel"
+}
+
+enum FlightType : String {
+    case RoundTrip = "Round Trip"
+    case OneWay = "One Way"
+}
+
+enum FlightClass : String {
+    case Economy = "Economy"
 }
 

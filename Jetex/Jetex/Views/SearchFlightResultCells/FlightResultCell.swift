@@ -108,20 +108,20 @@ extension FlightResultCell {
         let carrier = searchResult.getCarrier(withId: (leg?.carriers.first)!)
         lbCarrier.text = carrier?.name
         
-        // download carrier image
-        Alamofire.request((carrier?.imageUrl)!).responseImage { response in
-            if let image = response.result.value {
-                let ratio = image.size.width / image.size.height
-                
-                // remove old constraint
-                self.imgCarrier.removeConstraint(self.constraintLogoRatio)
-                
-                self.constraintLogoRatio = NSLayoutConstraint(item: self.imgCarrier, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self.imgCarrier, attribute: NSLayoutAttribute.height, multiplier: ratio, constant: 0)
-                self.imgCarrier.addConstraint(self.constraintLogoRatio)
-                
-                self.imgCarrier.image = image
-            }
-        }
+//        // download carrier image
+//        Alamofire.request((carrier?.imageUrl)!).responseImage { response in
+//            if let image = response.result.value {
+//                let ratio = image.size.width / image.size.height
+//             
+//                // remove old constraint
+//                self.imgCarrier.removeConstraint(self.constraintLogoRatio)
+//                
+//                self.constraintLogoRatio = NSLayoutConstraint(item: self.imgCarrier, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self.imgCarrier, attribute: NSLayoutAttribute.height, multiplier: ratio, constant: 0)
+//                self.imgCarrier.addConstraint(self.constraintLogoRatio)
+//                
+//                self.imgCarrier.image = image
+//            }
+//        }
         
         // add stop
         for view in self.viewInfoGeneral.subviews {
