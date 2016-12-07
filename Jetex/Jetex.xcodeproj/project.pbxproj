@@ -115,6 +115,7 @@
 		B9BA75CE1DEBD4D2003393D7 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BA75CD1DEBD4D2003393D7 /* Itinerary.swift */; };
 		B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */; };
 		B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */; };
+		B9BF3F341DF7F26100FFE064 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BF3F331DF7F26100FFE064 /* dot.png */; };
 		B9C197741DE1F4900084B8BF /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C197721DE1F4900084B8BF /* DestinationView.swift */; };
 		B9C197751DE1F4900084B8BF /* DestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C197731DE1F4900084B8BF /* DestinationView.xib */; };
 		B9CAE9CA1DE1973300A149BD /* FilterFlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CAE9C91DE1973300A149BD /* FilterFlightView.swift */; };
@@ -135,7 +136,6 @@
 		B9D9A2C41DDB6B27007CAB28 /* right-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D9A2C31DDB6B27007CAB28 /* right-arrow.png */; };
 		B9DC5DA51DE834120025D650 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DC5DA41DE834120025D650 /* DBManager.swift */; };
 		B9DD5B161DDCBDF800612C9B /* airasia.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DD5B141DDCBDF800612C9B /* airasia.png */; };
-		B9DD5B171DDCBDF800612C9B /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DD5B151DDCBDF800612C9B /* dot.png */; };
 		B9DD5B191DDCC41200612C9B /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DD5B181DDCC41200612C9B /* clock.png */; };
 		B9E4453F1DD62FEB002946A0 /* PickInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4453E1DD62FEB002946A0 /* PickInfoView.swift */; };
 		B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E445401DD63009002946A0 /* PickInfoView.xib */; };
@@ -322,6 +322,7 @@
 		B9BA75CD1DEBD4D2003393D7 /* Itinerary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkErrorView.xib; sourceTree = "<group>"; };
 		B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
+		B9BF3F331DF7F26100FFE064 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		B9C197721DE1F4900084B8BF /* DestinationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		B9C197731DE1F4900084B8BF /* DestinationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationView.xib; sourceTree = "<group>"; };
 		B9CAE9C91DE1973300A149BD /* FilterFlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterFlightView.swift; sourceTree = "<group>"; };
@@ -342,7 +343,6 @@
 		B9D9A2C31DDB6B27007CAB28 /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow.png"; sourceTree = "<group>"; };
 		B9DC5DA41DE834120025D650 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		B9DD5B141DDCBDF800612C9B /* airasia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airasia.png; sourceTree = "<group>"; };
-		B9DD5B151DDCBDF800612C9B /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		B9DD5B181DDCC41200612C9B /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		B9E4453E1DD62FEB002946A0 /* PickInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickInfoView.swift; sourceTree = "<group>"; };
 		B9E445401DD63009002946A0 /* PickInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickInfoView.xib; sourceTree = "<group>"; };
@@ -578,6 +578,7 @@
 		B96BAC641DD1C4AA00AE79AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9BF3F331DF7F26100FFE064 /* dot.png */,
 				2847E67E1DE95F7B00B69216 /* loading.jpg */,
 				2831EB1E1DE40EA5003EEB07 /* handsomeGieng.jpg */,
 				B92F8BCD1DE20A810039C153 /* filter.png */,
@@ -592,7 +593,6 @@
 				B9EE7A7B1DDDEF4400A82AEE /* black-plane.png */,
 				B9DD5B181DDCC41200612C9B /* clock.png */,
 				B9DD5B141DDCBDF800612C9B /* airasia.png */,
-				B9DD5B151DDCBDF800612C9B /* dot.png */,
 				B917BC5F1DDC022200F2DA57 /* transfer.png */,
 				B9D9A2C31DDB6B27007CAB28 /* right-arrow.png */,
 				B9D9A2BD1DDB628F007CAB28 /* users.png */,
@@ -969,7 +969,6 @@
 				28AD38EC1DD59F4C0027892C /* ProfileVC.xib in Resources */,
 				284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */,
 				B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */,
-				B9DD5B171DDCBDF800612C9B /* dot.png in Resources */,
 				B99F82D51DE1E82E00DA8B37 /* AirlinesCell.xib in Resources */,
 				B99F82C11DE1C7FF00DA8B37 /* uncheck round.png in Resources */,
 				B9F445E71DD4D6DF00250D6C /* Gotham-Bold.otf in Resources */,
@@ -986,6 +985,7 @@
 				B90DDA481DD45F0800AEC1AE /* back.png in Resources */,
 				B956E23B1DE0C724000A86A0 /* FlightTransitView.xib in Resources */,
 				B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */,
+				B9BF3F341DF7F26100FFE064 /* dot.png in Resources */,
 				B98FB6D31DDB1BAA00E615F2 /* FlightResultVC.xib in Resources */,
 				28811F871DE9A12C00BB0ADA /* WarningView.xib in Resources */,
 				B9DD5B191DDCC41200612C9B /* clock.png in Resources */,

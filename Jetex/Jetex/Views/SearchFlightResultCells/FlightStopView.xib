@@ -38,7 +38,7 @@
                     <rect key="frame" x="68" y="0.0" width="240" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18h 05m stop in Tokyo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYh-Ex-nb8">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
+                            <rect key="frame" x="20" y="0.0" width="200" height="30"/>
                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                             <color key="textColor" red="0.90980392156862744" green="0.38039215686274508" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -46,9 +46,9 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="JYh-Ex-nb8" firstAttribute="leading" secondItem="7ka-KP-TYT" secondAttribute="leading" id="B4M-mA-4ZR"/>
+                        <constraint firstItem="JYh-Ex-nb8" firstAttribute="leading" secondItem="7ka-KP-TYT" secondAttribute="leading" constant="20" id="B4M-mA-4ZR"/>
                         <constraint firstAttribute="width" constant="240" id="YXQ-o8-xuE"/>
-                        <constraint firstAttribute="trailing" secondItem="JYh-Ex-nb8" secondAttribute="trailing" id="ZTr-uQ-0F3"/>
+                        <constraint firstAttribute="trailing" secondItem="JYh-Ex-nb8" secondAttribute="trailing" constant="20" id="ZTr-uQ-0F3"/>
                         <constraint firstItem="JYh-Ex-nb8" firstAttribute="top" secondItem="7ka-KP-TYT" secondAttribute="top" id="aRu-gd-etc"/>
                         <constraint firstAttribute="bottom" secondItem="JYh-Ex-nb8" secondAttribute="bottom" id="oNg-SM-apV"/>
                     </constraints>
