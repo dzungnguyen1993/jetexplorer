@@ -59,7 +59,7 @@
                             </textAttributes>
                             <items>
                                 <navigationItem title="Create your account" id="3cD-6S-FMB">
-                                    <barButtonItem key="leftBarButtonItem" image="back.png" id="qg7-am-hre">
+                                    <barButtonItem key="leftBarButtonItem" image="back" id="qg7-am-hre">
                                         <connections>
                                             <action selector="backNavigationController:" destination="-1" id="Y9K-Ph-wPn"/>
                                         </connections>
@@ -209,6 +209,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back.png" width="22" height="22"/>
+        <image name="back" width="24" height="24"/>
     </resources>
 </document>

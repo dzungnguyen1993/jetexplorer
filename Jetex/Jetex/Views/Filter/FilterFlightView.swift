@@ -18,7 +18,7 @@ class FilterFlightView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var tableView: UITableView!
     weak var delegate: FilterFlightViewDelegate?
-    var stopViewHeight = 180
+    var stopViewHeight = 180 + 12 // + 12 for bottom padding
     var airlinesViewHeight = 104
     var destinationViewHeight = 94
     var applyViewHeight = 76

@@ -45,7 +45,7 @@
                             </textAttributes>
                             <items>
                                 <navigationItem title="Change Your Currency" id="hRn-BD-fS9">
-                                    <barButtonItem key="leftBarButtonItem" image="back.png" id="GLz-Ih-v5S">
+                                    <barButtonItem key="leftBarButtonItem" image="back" id="GLz-Ih-v5S">
                                         <connections>
                                             <action selector="backNavigationController:" destination="-1" id="hpL-Mw-P58"/>
                                         </connections>
@@ -92,6 +92,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back.png" width="22" height="22"/>
+        <image name="back" width="24" height="24"/>
     </resources>
 </document>

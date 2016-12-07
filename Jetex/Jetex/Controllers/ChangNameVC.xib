@@ -57,7 +57,7 @@
                             </textAttributes>
                             <items>
                                 <navigationItem title="Change Name" id="LAd-aw-OI0">
-                                    <barButtonItem key="leftBarButtonItem" image="back.png" id="7bi-hj-cUF">
+                                    <barButtonItem key="leftBarButtonItem" image="back" id="7bi-hj-cUF">
                                         <connections>
                                             <action selector="backNavigationController:" destination="-1" id="RRa-xO-11b"/>
                                         </connections>
@@ -168,6 +168,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back.png" width="22" height="22"/>
+        <image name="back" width="24" height="24"/>
     </resources>
 </document>

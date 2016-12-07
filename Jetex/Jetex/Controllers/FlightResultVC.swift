@@ -90,6 +90,10 @@ class FlightResultVC: BaseViewController {
         
         let popup = PopupDialog(title: "Please wait, I am searching ...", message: "", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
         
+        popup.addButton(CancelButton(title: "Cancel", action: {
+            _ = self.navigationController?.popViewController(animated: true)
+        }))
+        
         self.present(popup, animated: true, completion: nil)
         
         NetworkManager.shared.requestGetFlightSearchResult(info: passengerInfo) { (isSuccess, data) in

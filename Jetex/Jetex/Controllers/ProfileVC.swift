@@ -116,15 +116,15 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
                 userInfoView!.userName.text = currentUser!.username
             }
             
-            // show user Avatar
-            let avatarURL = "\(APIURL.JetExAPI.base)/\(currentUser!.profileURL)"
-            Alamofire.request(avatarURL).responseData(completionHandler: { (response) in
-                if let data = response.result.value {
-                    UIView.animate(withDuration: 0.1, animations: {
-                        self.userInfoView!.userAvatar.image = UIImage(data: data)
-                    })
-                }
-            })
+            // show user Avatar ->> no need for now
+//            let avatarURL = "\(APIURL.JetExAPI.base)/\(currentUser!.profileURL)"
+//            Alamofire.request(avatarURL).responseData(completionHandler: { (response) in
+//                if let data = response.result.value {
+//                    UIView.animate(withDuration: 0.1, animations: {
+//                        self.userInfoView!.userAvatar.image = UIImage(data: data)
+//                    })
+//                }
+//            })
             
             // update the currency
             ProfileVC.currentCurrencyType = currentUser!.currency
@@ -203,7 +203,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         }
         
         // if not, login
-        loginManager.logIn([ReadPermission.publicProfile], viewController: self, completion:
+        loginManager.logIn([ReadPermission.publicProfile, ReadPermission.email], viewController: self, completion:
             { loginResult in
                 switch loginResult {
                 case .failed, .cancelled:

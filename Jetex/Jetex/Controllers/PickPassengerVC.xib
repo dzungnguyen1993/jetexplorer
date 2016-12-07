@@ -44,7 +44,7 @@
                             </textAttributes>
                             <items>
                                 <navigationItem title="Select Passengers" id="qcd-K1-ScZ">
-                                    <barButtonItem key="leftBarButtonItem" image="back.png" id="Z8O-JG-08x">
+                                    <barButtonItem key="leftBarButtonItem" image="back" id="Z8O-JG-08x">
                                         <connections>
                                             <action selector="backNavigationController:" destination="-1" id="5Fw-LE-JL4"/>
                                         </connections>
@@ -87,6 +87,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back.png" width="22" height="22"/>
+        <image name="back" width="24" height="24"/>
     </resources>
 </document>

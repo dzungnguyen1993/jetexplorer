@@ -146,6 +146,12 @@ extension PickDateVC: EPCalendarPickDateDelegate {
             loadWeekdayIndicator(view: viewReturn)
         }
     }
+    
+    func repickCheckinDate() {
+        if (self.type == .roundtrip) {
+            loadWeekdayIndicator(view: viewDepart)
+        }
+    }
 }
 
 public enum IndicatorPosition {

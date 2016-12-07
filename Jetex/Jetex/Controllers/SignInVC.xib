@@ -57,7 +57,7 @@
                             </textAttributes>
                             <items>
                                 <navigationItem title="Sign in" id="9cM-tX-6Ah">
-                                    <barButtonItem key="leftBarButtonItem" image="back.png" id="58W-dt-Jtk">
+                                    <barButtonItem key="leftBarButtonItem" image="back" id="58W-dt-Jtk">
                                         <connections>
                                             <action selector="backNavigationController:" destination="-1" id="CAN-Z4-a73"/>
                                         </connections>
@@ -188,6 +188,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back.png" width="22" height="22"/>
+        <image name="back" width="24" height="24"/>
     </resources>
 </document>

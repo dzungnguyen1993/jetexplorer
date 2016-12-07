@@ -31,7 +31,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
                     <rect key="frame" x="0.0" y="34" width="375" height="116"/>
                     <subviews>
-                        <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="handsomeGieng.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="q03-we-2qp">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="q03-we-2qp">
                             <rect key="frame" x="24" y="23" width="70" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="BBb-qd-3K4"/>
@@ -52,7 +52,7 @@
                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xuan-Gieng Nguyen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyB-r6-ovX">
                             <rect key="frame" x="110" y="38" width="249" height="17"/>
                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hv-OO-Ae1">
@@ -91,6 +91,6 @@
         </view>
     </objects>
     <resources>
-        <image name="handsomeGieng.jpg" width="978" height="978"/>
+        <image name="profile.png" width="77" height="77"/>
     </resources>
 </document>

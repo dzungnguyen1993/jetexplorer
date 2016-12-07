@@ -49,7 +49,7 @@
                             </textAttributes>
                             <items>
                                 <navigationItem title="Flight From" id="Hea-VC-dpp">
-                                    <barButtonItem key="leftBarButtonItem" image="back.png" id="aSD-sE-JDY">
+                                    <barButtonItem key="leftBarButtonItem" image="back" id="aSD-sE-JDY">
                                         <connections>
                                             <action selector="backNavigationController:" destination="-1" id="Pvu-Uv-g8l"/>
                                         </connections>
@@ -60,7 +60,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HK2-Nx-7c7">
                             <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dqt-Ee-aev">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dqt-Ee-aev">
                                     <rect key="frame" x="16" y="6" width="319" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="JRh-Wb-H0J"/>
@@ -129,7 +129,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back.png" width="22" height="22"/>
+        <image name="back" width="24" height="24"/>
         <image name="search.png" width="128" height="128"/>
     </resources>
 </document>

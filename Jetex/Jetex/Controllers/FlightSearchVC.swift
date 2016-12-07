@@ -63,6 +63,7 @@ class FlightSearchVC: BaseViewController {
         }
         
         viewReturnDay.isHidden = !passengerInfo.isRoundTrip
+        segmentFlightType.selectedSegmentIndex = passengerInfo.isRoundTrip ? 0 : 1
     }
     
     func loadViewDate() {
@@ -109,22 +110,16 @@ class FlightSearchVC: BaseViewController {
     @IBAction func clickSearch(_ sender: UIButton) {
         // check if info is valid
         if (passengerInfo.airportFrom == nil || passengerInfo.airportTo == nil) {
-//            showAlert(message: "You didn't choose the location.", andTitle: "Error")
-
             self.showErrorAlert(message: "You didn't choose the location.")
             return
         }
         
         if (passengerInfo.airportFrom == passengerInfo.airportTo && passengerInfo.isRoundTrip == true) {
-//            showAlert(message: "You chose the same airport.", andTitle: "Error")
-            
             self.showErrorAlert(message: "You chose the same airport.")
             return
         }
         
         if (passengerInfo.numberOfPassenger() == 0) {
-//            showAlert(message: "You didn't choose the number of passengers.", andTitle: "Error")
-            
             self.showErrorAlert(message: "You didn't choose the number of passengers.")
             return
         }
@@ -133,7 +128,7 @@ class FlightSearchVC: BaseViewController {
     }
     
     func showErrorAlert(message: String) {
-        let popup = PopupDialog(title: message, message: "", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+        let popup = PopupDialog(title: message, message: "", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: true, completion: nil)
         let buttonOne = CancelButton(title: "CANCEL") {
             popup.dismiss()
         }
@@ -198,6 +193,7 @@ extension FlightSearchVC: PickLocationDelegate {
         let vc = LocationSearchVC(nibName: "LocationSearchVC", bundle: nil)
         vc.isLocationFrom = false
         vc.delegate = self
+        vc.currentAirPort = self.passengerInfo.airportTo
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -205,6 +201,7 @@ extension FlightSearchVC: PickLocationDelegate {
         let vc = LocationSearchVC(nibName: "LocationSearchVC", bundle: nil)
         vc.isLocationFrom = isLocationFrom
         vc.delegate = self
+        vc.currentAirPort = isLocationFrom ? self.passengerInfo.airportFrom : self.passengerInfo.airportTo
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

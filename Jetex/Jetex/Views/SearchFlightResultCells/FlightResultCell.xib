@@ -109,14 +109,14 @@
                                         <color key="textColor" red="0.2784313725" green="0.77647058820000003" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot.png" translatesAutoresizingMaskIntoConstraints="NO" id="gys-Oe-uGj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="gys-Oe-uGj">
                                         <rect key="frame" x="38.5" y="18" width="10" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="YQc-XX-Nio"/>
                                             <constraint firstAttribute="width" secondItem="gys-Oe-uGj" secondAttribute="height" multiplier="1:1" id="kgR-lX-o9g"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot.png" translatesAutoresizingMaskIntoConstraints="NO" id="dyS-Ff-vaY">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="dyS-Ff-vaY">
                                         <rect key="frame" x="291" y="18" width="10" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dyS-Ff-vaY" secondAttribute="height" multiplier="1:1" id="2Rt-ad-eW8"/>
@@ -258,6 +258,6 @@
     </objects>
     <resources>
         <image name="clock.png" width="64" height="64"/>
-        <image name="dot.png" width="10" height="10"/>
+        <image name="dot" width="10" height="10"/>
     </resources>
 </document>

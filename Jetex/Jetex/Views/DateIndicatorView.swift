@@ -17,8 +17,8 @@ class DateIndicatorView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        let strokeColor = UIColor(hex: 0xEFEFEF)
-        let fillColor = UIColor(hex: 0xF6F6F6)
+        let strokeColor = UIColor(hex: 0xD6D6D6)
+        let fillColor = UIColor(hex: 0xEFEFEF)
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0,y: 8))
         path.addLine(to: CGPoint(x: xIndicator, y: 8))

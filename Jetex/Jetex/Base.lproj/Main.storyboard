@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome-screen" translatesAutoresizingMaskIntoConstraints="NO" id="1H0-9B-QIT">
-                                <rect key="frame" x="88.5" y="220.5" width="198" height="226"/>
+                                <rect key="frame" x="89" y="221" width="198" height="226"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="198" id="GiX-zx-i7x"/>
                                     <constraint firstAttribute="height" constant="226" id="YSV-Fx-iY1"/>
@@ -137,7 +137,7 @@
                                     </textAttributes>
                                     <items>
                                         <navigationItem title="Edit Profile" id="9Sc-hq-ctA">
-                                            <barButtonItem key="leftBarButtonItem" image="back.png" id="r69-Zf-rTk">
+                                            <barButtonItem key="leftBarButtonItem" image="back" id="r69-Zf-rTk">
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="backButtonPressed:" destination="CIo-TK-ZAS" id="hyZ-uX-dch"/>
@@ -218,7 +218,7 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Thisisemail@email.com" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="HGU-Gq-rG3" customClass="UIPaddingTextField" customModule="Jetex" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="6" width="359" height="31"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -243,7 +243,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Subscription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTn-YW-HPv">
-                                                    <rect key="frame" x="16" y="11" width="139.5" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="140" height="21"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                                                     <color key="textColor" red="0.43921568630000002" green="0.43529411759999997" blue="0.45098039220000002" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -277,7 +277,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSi-3X-UUc">
-                                                    <rect key="frame" x="16" y="13.5" width="335" height="17"/>
+                                                    <rect key="frame" x="16" y="14" width="335" height="17"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <color key="textColor" red="0.92941176889999999" green="0.30980393290000002" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -312,7 +312,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back.png" width="22" height="22"/>
+        <image name="back" width="24" height="24"/>
         <image name="welcome-screen" width="700" height="1086"/>
     </resources>
 </document>

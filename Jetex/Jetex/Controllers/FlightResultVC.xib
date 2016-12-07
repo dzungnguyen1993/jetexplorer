@@ -64,11 +64,8 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-0q-Vjk">
                                     <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="VLe-ED-PPz">
-                                            <rect key="frame" x="0.0" y="0.0" width="14" height="44"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="14" id="uVo-re-0cj"/>
-                                            </constraints>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="VLe-ED-PPz">
+                                            <rect key="frame" x="0.0" y="0.0" width="24" height="44"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clw-tJ-Zhf">
                                             <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
@@ -92,7 +89,7 @@
                                     <rect key="frame" x="54" y="0.0" width="159" height="44"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojr-ld-OUP">
-                                            <rect key="frame" x="0.0" y="12" width="36.5" height="21"/>
+                                            <rect key="frame" x="0.0" y="12" width="38" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="eJU-yL-1xv"/>
                                             </constraints>
@@ -101,13 +98,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transfer.png" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-9l-STO">
-                                            <rect key="frame" x="44.5" y="0.0" width="15" height="44"/>
+                                            <rect key="frame" x="46" y="0.0" width="15" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="15" id="ce0-N1-EaP"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iv-Rx-t7W">
-                                            <rect key="frame" x="67.5" y="12" width="31" height="21"/>
+                                            <rect key="frame" x="69" y="12" width="36.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="LXC-pk-riK"/>
                                             </constraints>
@@ -267,10 +264,10 @@
                                     <rect key="frame" x="16" y="0.0" width="45" height="44"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VyI-5e-CmG">
-                                            <rect key="frame" x="0.0" y="0.0" width="45" height="22"/>
+                                            <rect key="frame" x="0.0" y="2" width="45" height="22"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4T-eo-S5S">
-                                            <rect key="frame" x="0.0" y="25" width="45" height="14"/>
+                                            <rect key="frame" x="0.0" y="25" width="45" height="12"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -406,7 +403,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We couldn't find properties that match your search" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gC7-4x-dTj">
-                                    <rect key="frame" x="52.5" y="196" width="270" height="35"/>
+                                    <rect key="frame" x="52.5" y="201" width="270" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="270" id="h6y-GA-P0T"/>
                                     </constraints>
@@ -461,7 +458,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back.png" width="22" height="22"/>
+        <image name="back" width="24" height="24"/>
         <image name="right-arrow.png" width="128" height="128"/>
         <image name="transfer.png" width="128" height="128"/>
     </resources>

@@ -69,7 +69,8 @@ class ChangePasswordVC: BaseViewController {
         let requestURL = APIURL.JetExAPI.base + APIURL.JetExAPI.changePassword
         Alamofire.request(requestURL, method: .post, parameters: newInfo, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
             if let currentUserJSON = response.result.value as? [String: Any] {
-                if let message = currentUserJSON["message"] as? String, message.contains("Password changed successfully")   {
+                if let message = currentUserJSON["message"] as? String   {
+                    if message.contains("Password changed successfully") {
                     // update successfully
                         let newPopup = PopupDialog(title: "Updated!", message: "Your password is changed", image: nil)
                         newPopup.addButton(DefaultButton(title: "Done") {
@@ -78,16 +79,16 @@ class ChangePasswordVC: BaseViewController {
                         })
                         self.present(newPopup, animated: true, completion: nil)
                     
-                } else {
-                        let newPopup = PopupDialog(title: "Cannot change password", message: "Please check your internet connection or your information.", image: nil)
+                    } else {
+                        let newPopup = PopupDialog(title: "Cannot change password", message: message, image: nil)
                         newPopup.addButton(DefaultButton(title: "Try again", action: nil))
                         self.present(newPopup, animated: true, completion: nil)
+                    }
                 }
             } else {
                     let newPopup = PopupDialog(title: "Cannot change password", message: "Please check your internet connection or your information.", image: nil)
                     newPopup.addButton(DefaultButton(title: "Try again", action: nil))
                     self.present(newPopup, animated: true, completion: nil)
-                
             }
             
             // release the view

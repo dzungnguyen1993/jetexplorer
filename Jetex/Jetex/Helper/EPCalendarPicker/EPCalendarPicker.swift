@@ -14,6 +14,7 @@ protocol EPCalendarPickDateDelegate: class {
     func didPickCheckinDate(date: Date)
     func didPickCheckoutDate(date: Date)
     func pickCheckinDate()
+    func repickCheckinDate()
 }
 
 public class EPCalendarPicker: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -277,7 +278,15 @@ public class EPCalendarPicker: UICollectionViewController, UICollectionViewDeleg
             if currentDate.compare(checkInDate) != .orderedAscending{
                 return true
             }
-            return false
+            // if user select the date before depart date, then reset it
+            self.indicatorPosition = .checkIn
+            if indexPath.row > 1 {
+                checkInIndexPath.row = indexPath.row - 1
+            } else {
+                checkInIndexPath.row = indexPath.row + 1
+            }
+            self.delegate?.repickCheckinDate()
+            return true
         }
         return false
     }

@@ -21,6 +21,7 @@ class LocationSearchVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     weak var delegate: PickLocationDelegate?
+    weak var currentAirPort: Airport?
     
     var airportsSearchResult: [Airport] = [Airport]()
     
@@ -46,6 +47,11 @@ class LocationSearchVC: BaseViewController {
         } else {
             topNavigationItem.title = "Flight To"
         }
+        
+        // update current airport to UI
+        if let currentAirPort = currentAirPort {
+            searchTextField.text = currentAirPort.name
+        }
      
         realm = try! Realm()
         self.allAirports = realm.objects(Airport.self)
@@ -54,6 +60,7 @@ class LocationSearchVC: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         searchTextField.becomeFirstResponder()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

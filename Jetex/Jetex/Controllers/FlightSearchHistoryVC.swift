@@ -139,10 +139,10 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
             
             if passengerInfo?.departDay?.compare(Date().dateByAddingDays(days: -1)) == ComparisonResult.orderedAscending {
                 // depart day is overdue. session expired.
-                let popup = PopupDialog(title: "Session expired!", message: "Do you want to search it in another day?", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
-                let cancel = CancelButton(title: "No, I don't", dismissOnTap: true, action: nil)
+                let popup = PopupDialog(title: "Your search is too old!", message: "", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+                let cancel = CancelButton(title: "Okay", dismissOnTap: true, action: nil)
                 popup.addButton(cancel)
-                let search = DefaultButton(title: "Yes, search for me", dismissOnTap: true, action: {
+                let search = DefaultButton(title: "Update the dates", dismissOnTap: true, action: {
                     // go to searching vc
                     (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 0, needResetToRootView: true, completion: { vc in
                         if vc is FlightSearchVC {
