@@ -317,12 +317,12 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         }
      
         tableView.beginUpdates()
+        tableView.reloadRows(at: [indexPath], with: .middle)
+        tableView.endUpdates()
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
         
 //        let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
 //        tableView.reloadSections(sections as IndexSet, with: .automatic)
-        tableView.reloadRows(at: [indexPath], with: .middle)
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-        tableView.endUpdates()
 //        tableView.reloadData()
     }
 }

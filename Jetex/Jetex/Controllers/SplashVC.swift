@@ -63,13 +63,13 @@ class SplashVC: UIViewController {
         }
     }
     
-    func updateMessageForPopup(popup: PopupDialog) {
-        popup.changeMessage(to: animatedString[animatedIndex], animated: true)
-        animatedIndex += 1
-        if animatedIndex >= animatedString.count {
-            animatedIndex = 0
-        }
-    }
+//    func updateMessageForPopup(popup: PopupDialog) {
+//        popup.changeMessage(to: animatedString[animatedIndex], animated: true)
+//        animatedIndex += 1
+//        if animatedIndex >= animatedString.count {
+//            animatedIndex = 0
+//        }
+//    }
     
     func gotoMainScreen() {
         // check internet connection

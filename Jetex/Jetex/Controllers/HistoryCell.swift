@@ -74,9 +74,11 @@ class HistoryCell: UITableViewCell {
         
         // TODO: show options
         var option = ""
-        option += (data.adult > 0 ? ", \(data.adult) adult\(data.adult > 1 ? "s" : "")" : "")
-        option += (data.children > 0 ? ", \(data.children) child\(data.adult > 1 ? "ren" : "")" : "")
-        option += (data.infant > 0 ? ", \(data.infant) infrant\(data.infant > 1 ? "s" : "")" : "")
+        let passenger = data.adult + data.children + data.infant
+        option += ", \(passenger) \(passenger > 1 ? "people" : "person")"
+//        option += (data.adult > 0 ? ", \(data.adult) adult\(data.adult > 1 ? "s" : "")" : "")
+//        option += (data.children > 0 ? ", \(data.children) child\(data.adult > 1 ? "ren" : "")" : "")
+//        option += (data.infant > 0 ? ", \(data.infant) infrant\(data.infant > 1 ? "s" : "")" : "")
         option += (data.flightClass != "" ? ", \(data.flightClass)" : "")
         option += (data.flightType != "" ? ", \(data.flightType)" : "")
         

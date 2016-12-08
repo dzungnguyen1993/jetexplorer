@@ -55,7 +55,7 @@
                         <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=", 1 adult, Economy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJG-mq-F0n">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=", 1 adult, Economy" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJG-mq-F0n">
                         <rect key="frame" x="166" y="39" width="129.5" height="12"/>
                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,6 +86,7 @@
                     <constraint firstItem="ib6-R0-Nqf" firstAttribute="leading" secondItem="W4l-vl-Or5" secondAttribute="trailing" constant="16" id="8lX-Kl-F4I"/>
                     <constraint firstItem="CJG-mq-F0n" firstAttribute="leading" secondItem="orP-kR-wwv" secondAttribute="trailing" id="9cZ-6f-P9U"/>
                     <constraint firstItem="IRM-fJ-nXP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="AWT-0k-omf"/>
+                    <constraint firstItem="CJG-mq-F0n" firstAttribute="top" secondItem="orP-kR-wwv" secondAttribute="top" id="Fwt-er-Q6r"/>
                     <constraint firstAttribute="bottomMargin" secondItem="W4l-vl-Or5" secondAttribute="bottom" constant="16" id="KCT-Or-Guu"/>
                     <constraint firstItem="3gk-PU-cJI" firstAttribute="leading" secondItem="orP-kR-wwv" secondAttribute="leading" id="Rh8-WG-ajE"/>
                     <constraint firstItem="orP-kR-wwv" firstAttribute="leading" secondItem="W4l-vl-Or5" secondAttribute="trailing" constant="16" id="a5r-LJ-b4p"/>
@@ -98,7 +99,6 @@
                     <constraint firstAttribute="trailingMargin" secondItem="IRM-fJ-nXP" secondAttribute="trailing" constant="16" id="liQ-Jb-Zdc"/>
                     <constraint firstItem="orP-kR-wwv" firstAttribute="top" secondItem="ib6-R0-Nqf" secondAttribute="bottom" constant="8" id="ljr-Rn-0qZ"/>
                     <constraint firstItem="3gk-PU-cJI" firstAttribute="top" secondItem="orP-kR-wwv" secondAttribute="bottom" constant="8" id="o5q-An-4lX"/>
-                    <constraint firstItem="CJG-mq-F0n" firstAttribute="baseline" secondItem="orP-kR-wwv" secondAttribute="baseline" id="oUW-jx-V3c"/>
                     <constraint firstItem="W4l-vl-Or5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="qoA-tZ-LDP"/>
                     <constraint firstAttribute="bottom" secondItem="cKh-9a-Yjc" secondAttribute="bottom" id="r6v-Lt-HQi"/>
                     <constraint firstItem="W4l-vl-Or5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="rho-yq-mSE"/>
