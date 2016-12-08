@@ -13,11 +13,12 @@ import Alamofire
 
 class SplashVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+//    // for making animation loading texts
+//    var timer: Timer?
+//    var animatedIndex = 0
+//    let animatedString = ["Downloading information for Countries",
+//                          "Downloading information for Cities",
+//                          "Downloading information for Airports"]
 
     override func viewDidAppear(_ animated: Bool) {
         // get list airport
@@ -26,9 +27,14 @@ class SplashVC: UIViewController {
         
         if (!isInstalled) {
             // Show Loading Pop up view
-            let popup = PopupDialog(title: "Downloading initial data ...", message: "Only for the first time. Please wait!", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+            let popup = PopupDialog(title: "Optimising your experience. Please wait...", message: "Downloading initial data on the first usage.", image: UIImage(named: "loading"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
             
             self.present(popup, animated: true, completion: nil)
+            
+//            // to run time async
+//            DispatchQueue.global().async {
+//                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateMessageForPopup(popup:)), userInfo: popup, repeats: true)
+//            }
             
             DispatchQueue.global().sync {
                 NetworkManager.shared.requestGetAllAirport { (isSuccess, response) in
@@ -39,17 +45,29 @@ class SplashVC: UIViewController {
                         defaults.set(true, forKey: "isInstalled")
                         print("Finish sync")
                         popup.dismiss({
+//                            self.timer?.invalidate()
+//                            self.timer = nil
                             self.gotoMainScreen()
                         })
                     } else {
                         popup.dismiss({ 
                             self.showAlert(message: "The app needs to connect to the internet to finish installing!", andTitle: "Error")
+//                            self.timer?.invalidate()
+//                            self.timer = nil
                         })
                     }
                 }
             }
         } else {
             self.gotoMainScreen()
+        }
+    }
+    
+    func updateMessageForPopup(popup: PopupDialog) {
+        popup.changeMessage(to: animatedString[animatedIndex], animated: true)
+        animatedIndex += 1
+        if animatedIndex >= animatedString.count {
+            animatedIndex = 0
         }
     }
     

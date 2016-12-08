@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Bold.otf">
+            <string>Gotham-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingPopupVC" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="image" destination="jWE-dA-sKn" id="K0d-yn-bns"/>
+                <outlet property="progressView" destination="QHl-x7-Iwh" id="PdY-xC-3bQ"/>
+                <outlet property="titleLabel" destination="ZuI-zi-jMU" id="Efq-zw-W6N"/>
+                <outlet property="view" destination="2n1-Lb-m64" id="Gdj-AB-r3A"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2n1-Lb-m64">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="jWE-dA-sKn">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="209"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="jWE-dA-sKn" secondAttribute="height" multiplier="377:210" id="fYc-C8-vLQ"/>
+                            </constraints>
+                        </imageView>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QHl-x7-Iwh">
+                            <rect key="frame" x="-1" y="209" width="377" height="5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="5" id="t6O-B0-Z7N"/>
+                            </constraints>
+                            <color key="progressTintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </progressView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am searching, please wait..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuI-zi-jMU">
+                            <rect key="frame" x="16" y="230" width="343" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="0sl-c4-RBZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
+                            <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="jWE-dA-sKn" secondAttribute="trailing" id="46y-W3-1rk"/>
+                        <constraint firstAttribute="height" constant="286" id="I2l-uj-Jzr"/>
+                        <constraint firstItem="ZuI-zi-jMU" firstAttribute="top" secondItem="QHl-x7-Iwh" secondAttribute="bottom" constant="16" id="KgG-2X-DeS"/>
+                        <constraint firstAttribute="width" constant="375" id="M2q-c7-VAQ"/>
+                        <constraint firstItem="ZuI-zi-jMU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Wd1-E8-aan"/>
+                        <constraint firstItem="QHl-x7-Iwh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-1" id="Zp9-X7-O7D"/>
+                        <constraint firstAttribute="trailing" secondItem="QHl-x7-Iwh" secondAttribute="trailing" constant="-1" id="ctZ-XF-9si"/>
+                        <constraint firstAttribute="trailing" secondItem="ZuI-zi-jMU" secondAttribute="trailing" constant="16" id="gJA-ns-fJN"/>
+                        <constraint firstItem="jWE-dA-sKn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hiu-ih-su7"/>
+                        <constraint firstItem="jWE-dA-sKn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="n0T-Vg-Jbd"/>
+                        <constraint firstItem="QHl-x7-Iwh" firstAttribute="bottom" secondItem="jWE-dA-sKn" secondAttribute="bottom" constant="5" id="pBL-GJ-VyR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="i5M-Pr-FkT" firstAttribute="top" secondItem="2n1-Lb-m64" secondAttribute="top" id="8mJ-wl-jec"/>
+                <constraint firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="HfS-Cr-GXa"/>
+                <constraint firstItem="i5M-Pr-FkT" firstAttribute="leading" secondItem="2n1-Lb-m64" secondAttribute="leading" id="cWp-J3-aBU"/>
+                <constraint firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="mnP-U2-fUW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="26" y="231"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="loading" width="500" height="278"/>
+    </resources>
+</document>

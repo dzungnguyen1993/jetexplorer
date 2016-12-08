@@ -87,19 +87,30 @@ class FlightResultVC: BaseViewController {
     }
     
     func searchForFlights() {
+        let loadingVC = LoadingPopupVC(nibName: "LoadingPopupVC", bundle: nil)
         
-        let popup = PopupDialog(title: "Please wait, I am searching ...", message: "", image: UIImage(named: "loading.jpg"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+        let popup = PopupDialog(viewController: loadingVC, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+        loadingVC.titleLabel.text = "Please wait, I am searching..."
+        loadingVC.updateProgress(percent: 0)
         
         popup.addButton(CancelButton(title: "Cancel", action: {
+            loadingVC.updateProgress(percent: 0, completion: {
+                print("cancel")
+            })
             _ = self.navigationController?.popViewController(animated: true)
         }))
         
         self.present(popup, animated: true, completion: nil)
+        loadingVC.startProgress()
         
         NetworkManager.shared.requestGetFlightSearchResult(info: passengerInfo) { (isSuccess, data) in
-            popup.dismiss()
+            
             if (isSuccess) {
+                loadingVC.updateProgress(percent: 90)
                 self.searchFlightResult = ResponseParser.shared.parseFlightSearchResponse(data: data as! NSDictionary)
+                loadingVC.updateProgress(percent: 100, completion: {
+                    popup.dismiss()
+                })
                 
                 self.loadResult()
                 
@@ -111,6 +122,9 @@ class FlightResultVC: BaseViewController {
                     self.viewNoResult.isHidden = false
                 }
             } else {
+                loadingVC.updateProgress(percent: 0, completion: {
+                    popup.dismiss()
+                })
                 self.viewNoResult.isHidden = false
             }
         }
@@ -302,13 +316,14 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
             showDetailsIndex = -1
         }
      
-//        tableView.beginUpdates()
+        tableView.beginUpdates()
         
-        let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
-        tableView.reloadSections(sections as IndexSet, with: .automatic)
-//        tableView.endUpdates()
-        tableView.reloadData()
+//        let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
+//        tableView.reloadSections(sections as IndexSet, with: .automatic)
+        tableView.reloadRows(at: [indexPath], with: .middle)
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        tableView.endUpdates()
+//        tableView.reloadData()
     }
 }
 
