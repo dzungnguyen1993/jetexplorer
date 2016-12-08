@@ -378,7 +378,7 @@
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
-                  timestampString = "502845886.541449"
+                  timestampString = "502848050.636734"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
@@ -393,7 +393,7 @@
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
-                  timestampString = "502845886.542651"
+                  timestampString = "502848050.637937"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "92"
@@ -746,7 +746,7 @@
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/FlightSearchVC.swift"
-                  timestampString = "502845886.561361"
+                  timestampString = "502848050.653467"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "156"
@@ -761,7 +761,7 @@
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/FlightSearchVC.swift"
-                  timestampString = "502845886.562557"
+                  timestampString = "502848050.654675"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "157"
@@ -980,7 +980,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Network/NetworkManager.swift"
@@ -993,14 +993,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Jetex.NetworkManager.requestGetFlightSearchResult (info : Jetex.PassengerInfo, completion : (Swift.Bool, Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
-                  timestampString = "502845886.573533"
+                  timestampString = "502847436.119841"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -1008,14 +1008,14 @@
                   offsetFromSymbolStart = "3114">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Jetex.NetworkManager.(requestGetFlightSearchResult (info : Jetex.PassengerInfo, completion : (Swift.Bool, Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()).(closure #1)"
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
-                  timestampString = "502845886.574849"
+                  timestampString = "502847436.120962"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
@@ -1054,6 +1054,38 @@
             startingLineNumber = "325"
             endingLineNumber = "325"
             landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Views/SearchFlightResultCells/FlightResultCell.swift"
+            timestampString = "502847691.242995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "showInfoGeneral(ofSearchResult:forItinerary:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Views/SearchFlightResultCells/FlightResultCell.swift"
+            timestampString = "502847691.242995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "showInfoGeneral(ofSearchResult:forItinerary:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

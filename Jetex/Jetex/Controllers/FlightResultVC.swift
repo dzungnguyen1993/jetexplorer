@@ -228,6 +228,8 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
             cell.containerView.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
             cell.containerView.layer.borderWidth = 1.0
         }
+        // selecting color -> default
+        cell.selectionStyle = .none
         
         cell.showInfo(ofSearchResult: searchFlightResult, forItinerary: itineraries[indexPath.row])
         
@@ -304,7 +306,6 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
         
         let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
         tableView.reloadSections(sections as IndexSet, with: .automatic)
-        
 //        tableView.endUpdates()
         tableView.reloadData()
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
@@ -341,6 +342,6 @@ extension FlightResultVC {
         showDetailsIndex = -1
         let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
         tableView.reloadSections(sections as IndexSet, with: .automatic)
-//        self.tableView.reloadData()
+        self.tableView.reloadData()
     }
 }

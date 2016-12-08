@@ -37,11 +37,12 @@ class FlightResultCell: UITableViewCell {
     @IBOutlet weak var btnDeeplink: SmallParagraphButton!
     var deepLink: String = ""
     @IBOutlet weak var viewLine: UIView!
-    
+    @IBOutlet weak var imgClock: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imgClock.image = UIImage(fromHex: JetExFontHexCode.jetexClock.rawValue, withColor: UIColor(hex: 0x515151))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -79,6 +80,10 @@ extension FlightResultCell {
         lbDepartureTime.text = leg?.departure.toDateTimeUTC().toShortTimeString()
         
         // show destination
+        let destination = searchResult.getStation(withId: leg!.destinationStation)
+        guard destination != nil else {return}
+        lbDestinationCode.text = destination?.code
+        
         if (leg?.stops.count == 0) {
             lbArrivalTime.text = leg?.arrival.toDateTimeUTC().toShortTimeString()
         } else {
@@ -102,7 +107,7 @@ extension FlightResultCell {
         lbDuration.text = leg?.duration.toHourAndMinute()
         
         // show price
-        lbPrice.text = searchResult.query.currency + " " + String(format: "%.1f", (itinerary.pricingOptions.first?.price)!)
+        lbPrice.text = searchResult.query.currency + " " + String(format: "%.0f", (itinerary.pricingOptions.first?.price)!)
         
         // show carrier
         let carrier = searchResult.getCarrier(withId: (leg?.carriers.first)!)
@@ -137,13 +142,17 @@ extension FlightResultCell {
             totalDuration = totalDuration + (segment?.duration)!
         }
         
-        if (leg?.stops.count == 2 ){
-            print("")
-        }
         var sum = 0
-        for i in 0..<(leg?.stops.count)! {
+
+        var minStop = leg?.stops.count
+        if minStop! > 3 {
+            minStop = 3
+        }
+        
+        for i in 0..<minStop! {
+//        for i in 0..<(leg?.stops.count)! {
             let stopId = leg?.stops[i]
-            
+        
             let place = searchResult.getStation(withId: stopId!)
             
             let segment = searchResult.getSegment(withId: (leg?.segmentIds[i])!)

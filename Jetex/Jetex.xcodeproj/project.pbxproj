@@ -114,6 +114,7 @@
 		B9BA75CE1DEBD4D2003393D7 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BA75CD1DEBD4D2003393D7 /* Itinerary.swift */; };
 		B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */; };
 		B9BDDCE01DD239980008B0A1 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */; };
+		B9BF3F341DF7F26100FFE064 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BF3F331DF7F26100FFE064 /* dot.png */; };
 		B9C197741DE1F4900084B8BF /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C197721DE1F4900084B8BF /* DestinationView.swift */; };
 		B9C197751DE1F4900084B8BF /* DestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C197731DE1F4900084B8BF /* DestinationView.xib */; };
 		B9CAE9CA1DE1973300A149BD /* FilterFlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CAE9C91DE1973300A149BD /* FilterFlightView.swift */; };
@@ -319,6 +320,7 @@
 		B9BA75CD1DEBD4D2003393D7 /* Itinerary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		B9BDDCDD1DD239870008B0A1 /* NetworkErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkErrorView.xib; sourceTree = "<group>"; };
 		B9BDDCDF1DD239980008B0A1 /* NetworkErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
+		B9BF3F331DF7F26100FFE064 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		B9C197721DE1F4900084B8BF /* DestinationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		B9C197731DE1F4900084B8BF /* DestinationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationView.xib; sourceTree = "<group>"; };
 		B9CAE9C91DE1973300A149BD /* FilterFlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterFlightView.swift; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 		B96BAC641DD1C4AA00AE79AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9BF3F331DF7F26100FFE064 /* dot.png */,
 				2847E67E1DE95F7B00B69216 /* loading.jpg */,
 				2831EB1E1DE40EA5003EEB07 /* handsomeGieng.jpg */,
 				B92F8BCD1DE20A810039C153 /* filter.png */,
@@ -978,6 +981,7 @@
 				B9EE7A841DDE1D8D00A82AEE /* FlightStopView.xib in Resources */,
 				B956E23B1DE0C724000A86A0 /* FlightTransitView.xib in Resources */,
 				B9E445411DD63009002946A0 /* PickInfoView.xib in Resources */,
+				B9BF3F341DF7F26100FFE064 /* dot.png in Resources */,
 				B98FB6D31DDB1BAA00E615F2 /* FlightResultVC.xib in Resources */,
 				28811F871DE9A12C00BB0ADA /* WarningView.xib in Resources */,
 				B9DD5B191DDCC41200612C9B /* clock.png in Resources */,

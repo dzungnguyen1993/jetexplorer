@@ -79,7 +79,7 @@ class PickDateVC: BaseViewController {
     }
     
     func loadWeekdayIndicator(view: UIView) {
-        dateIndicatorView.xIndicator = view.center.x - view.frame.width * 0.1
+        dateIndicatorView.xIndicator = view.center.x - view.frame.width * 0.2
         dateIndicatorView.setNeedsDisplay()
     }
     

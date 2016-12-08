@@ -55,9 +55,9 @@
                                             <constraint firstAttribute="width" secondItem="Jwr-A8-5ZM" secondAttribute="height" multiplier="1:1" id="Ah0-8R-QBt"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Asia Airlines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACq-q3-uan" customClass="GothamBold17Label" customModule="Jetex" customModuleProvider="target">
-                                        <rect key="frame" x="28" y="1.5" width="139" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Asia Airlines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACq-q3-uan">
+                                        <rect key="frame" x="28" y="2" width="139" height="17"/>
+                                        <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                         <color key="textColor" red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -131,8 +131,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="IW4-ag-8k6">
-                                        <rect key="frame" x="125.5" y="28" width="15" height="15"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IW4-ag-8k6">
+                                        <rect key="frame" x="127.5" y="29" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IW4-ag-8k6" secondAttribute="height" multiplier="1:1" id="7Ef-32-xhT"/>
                                         </constraints>
@@ -147,14 +147,14 @@
                                     <constraint firstItem="gys-Oe-uGj" firstAttribute="trailing" secondItem="kBM-q9-4wz" secondAttribute="trailing" id="I3t-59-dQd"/>
                                     <constraint firstItem="gys-Oe-uGj" firstAttribute="centerY" secondItem="ykZ-ek-30o" secondAttribute="centerY" id="JJG-kc-W6x"/>
                                     <constraint firstItem="dyS-Ff-vaY" firstAttribute="height" secondItem="gys-Oe-uGj" secondAttribute="height" id="LzM-h9-GV1"/>
-                                    <constraint firstItem="JPV-QC-LLb" firstAttribute="leading" secondItem="IW4-ag-8k6" secondAttribute="trailing" constant="5" id="M7U-rN-tGC"/>
+                                    <constraint firstItem="JPV-QC-LLb" firstAttribute="leading" secondItem="IW4-ag-8k6" secondAttribute="trailing" constant="3" id="M7U-rN-tGC"/>
                                     <constraint firstItem="JSI-gt-FM7" firstAttribute="leading" secondItem="gys-Oe-uGj" secondAttribute="leading" id="Ogx-7Q-Oev"/>
                                     <constraint firstItem="dyS-Ff-vaY" firstAttribute="leading" secondItem="GBb-G1-9Ac" secondAttribute="leading" id="VfM-1C-zEQ"/>
                                     <constraint firstAttribute="bottom" secondItem="kBM-q9-4wz" secondAttribute="bottom" id="Ytd-Qg-vvt"/>
                                     <constraint firstAttribute="height" constant="46" id="ZrS-1N-DFv"/>
                                     <constraint firstItem="JSI-gt-FM7" firstAttribute="centerY" secondItem="ykZ-ek-30o" secondAttribute="centerY" id="bzV-XL-oh8"/>
                                     <constraint firstAttribute="trailing" secondItem="p8p-0U-7x7" secondAttribute="trailing" id="h03-Zk-SGY"/>
-                                    <constraint firstAttribute="bottom" secondItem="IW4-ag-8k6" secondAttribute="bottom" constant="3" id="jZr-fh-waq"/>
+                                    <constraint firstAttribute="bottom" secondItem="IW4-ag-8k6" secondAttribute="bottom" constant="2" id="jZr-fh-waq"/>
                                     <constraint firstItem="dyS-Ff-vaY" firstAttribute="centerY" secondItem="ykZ-ek-30o" secondAttribute="centerY" id="lca-wA-67R"/>
                                     <constraint firstItem="p8p-0U-7x7" firstAttribute="centerY" secondItem="ykZ-ek-30o" secondAttribute="centerY" id="oza-gO-RHk"/>
                                     <constraint firstItem="JPV-QC-LLb" firstAttribute="centerX" secondItem="ykZ-ek-30o" secondAttribute="centerX" id="qj6-Bf-X90"/>
@@ -239,6 +239,7 @@
                 <outlet property="constraintReturnHeight" destination="R15-if-rxX" id="wD4-Nt-B6u"/>
                 <outlet property="containerView" destination="TTc-id-sTf" id="Yv1-q2-fvn"/>
                 <outlet property="imgCarrier" destination="Jwr-A8-5ZM" id="aPc-T0-Yxg"/>
+                <outlet property="imgClock" destination="IW4-ag-8k6" id="3Tx-6g-qBf"/>
                 <outlet property="lbArrivalTime" destination="GBb-G1-9Ac" id="Xy6-mC-qsN"/>
                 <outlet property="lbCarrier" destination="ACq-q3-uan" id="jz9-uV-1FO"/>
                 <outlet property="lbDepartureTime" destination="kBM-q9-4wz" id="dhT-Rn-1mB"/>
@@ -257,7 +258,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="clock.png" width="64" height="64"/>
         <image name="dot" width="10" height="10"/>
     </resources>
 </document>
