@@ -11,7 +11,7 @@ import Alamofire
 import RealmSwift
 import PopupDialog
 
-class SignUpVC: BaseViewController {
+class SignUpVC: BaseViewController, UITextFieldDelegate, UICheckBoxButtonDelegate {
     
     // MARK: - IBOutlet variables
     
@@ -31,6 +31,11 @@ class SignUpVC: BaseViewController {
     // MARK: - override functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        subscriptionCheckBox.delegate = self
         
         // add warning views
         emailWarning = WarningForInput(setWarning: "Your email is not valid", for: emailTextField, withTitle: emailLabel)
@@ -100,7 +105,7 @@ class SignUpVC: BaseViewController {
                         realm.add(user, update: true)
                     }
                     
-                    if let checkbox = self.subscriptionCheckBox, checkbox.isChecked == true {
+                    if self.subscriptionCheckBox.isChecked == true {
                         // request subscribe status
                         let request = APIURL.JetExAPI.base + APIURL.JetExAPI.createSubscribe
                         
@@ -152,5 +157,27 @@ class SignUpVC: BaseViewController {
         
 //        ProfileVC.isUserLogined = true
 //        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK:- textfield resign
+    @IBAction func resignTextField() {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        confirmPasswordTextField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.emailTextField {
+            self.passwordTextField.becomeFirstResponder()
+        } else if textField == self.passwordTextField {
+            self.confirmPasswordTextField.becomeFirstResponder()
+        } else if textField == self.confirmPasswordTextField{
+            signUpButtonPressed(textField) // textfield is just a nonsense object here
+        }
+        return true
+    }
+    
+    func checkboxPressed() {
+        resignTextField()
     }
 }

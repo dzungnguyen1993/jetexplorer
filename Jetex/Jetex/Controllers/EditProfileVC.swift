@@ -65,7 +65,7 @@ class EditProfileVC: UITableViewController, UITextFieldDelegate {
                 let params : [String : Any] = ["listCat": "newsletter",
                                                "email": [
                                                 "email_address": currentUser.email,
-                                                "status": "subscribed"
+                                                "status": "unsubscribed"
                     ]
                 ]
                 
@@ -382,7 +382,7 @@ class EditProfileVC: UITableViewController, UITextFieldDelegate {
     func textFieldResign() {
         emailUpdateTextField.resignFirstResponder()
     }
-
+    
     @IBAction func emailSubscribeSwitchValueChanged(_ sender: Any) {
         saveNavButton.isEnabled = true
         needToUpdateSubscribe = true

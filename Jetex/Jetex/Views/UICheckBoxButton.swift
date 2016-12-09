@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol UICheckBoxButtonDelegate: class {
+    func checkboxPressed()
+}
+
 class UICheckBoxButton: UIView {
 
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var checkBoxLabel: UILabel!
     
+    var delegate: UICheckBoxButtonDelegate?
     var isChecked : Bool = false
     
     required init(coder aDecoder: NSCoder) {
@@ -48,5 +53,6 @@ class UICheckBoxButton: UIView {
             checkBoxLabel.text = "\(NSString.init(utf8String: "\u{e906}")!)"
             print("un checked")
         }
+        delegate?.checkboxPressed()
     }
 }
