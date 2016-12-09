@@ -53,7 +53,12 @@ class FlightResultCell: UITableViewCell {
     
     @IBAction func goToExpediaButtonPressed(_ sender: Any) {
 //        let cellURL = "https://www.expedia.com/"
-        UIApplication.shared.open(URL(string: deepLink)!, options: [:], completionHandler: nil)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(URL(string: deepLink)!, options: [:], completionHandler: nil)
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.openURL(URL(string: deepLink)!)
+        }
     }
 }
 

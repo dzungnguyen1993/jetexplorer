@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,7 +55,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=", 1 adult, Economy" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJG-mq-F0n">
-                        <rect key="frame" x="166" y="39" width="129.5" height="12"/>
+                        <rect key="frame" x="166" y="39" width="138" height="12"/>
                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -82,7 +81,7 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="CJG-mq-F0n" secondAttribute="trailing" constant="16" id="2LY-ut-MIx"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="CJG-mq-F0n" secondAttribute="trailing" constant="8" id="2LY-ut-MIx"/>
                     <constraint firstItem="ib6-R0-Nqf" firstAttribute="leading" secondItem="W4l-vl-Or5" secondAttribute="trailing" constant="16" id="8lX-Kl-F4I"/>
                     <constraint firstItem="CJG-mq-F0n" firstAttribute="leading" secondItem="orP-kR-wwv" secondAttribute="trailing" id="9cZ-6f-P9U"/>
                     <constraint firstItem="IRM-fJ-nXP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="AWT-0k-omf"/>

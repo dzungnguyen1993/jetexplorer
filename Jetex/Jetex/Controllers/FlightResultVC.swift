@@ -37,6 +37,7 @@ class FlightResultVC: BaseViewController {
     var passengerInfo: PassengerInfo! // = PassengerInfo() no need
     
     @IBOutlet weak var lbOrigin: UILabel!
+    @IBOutlet weak var transferImage: UIImageView!
     @IBOutlet weak var lbDestination: UILabel!
     @IBOutlet weak var viewDateDepart: SearchResultDateView!
     @IBOutlet weak var viewDateReturn: SearchResultDateView!
@@ -122,7 +123,7 @@ class FlightResultVC: BaseViewController {
                     self.viewNoResult.isHidden = false
                 }
             } else {
-                loadingVC.updateProgress(percent: 0, completion: {
+                loadingVC.updateProgress(percent: 100, completion: {
                     popup.dismiss()
                 })
                 self.viewNoResult.isHidden = false
@@ -196,6 +197,8 @@ extension FlightResultVC {
             
             viewDepartOneway.lbDate.text = passengerInfo.departDay?.toDay()
             viewDepartOneway.lbMonth.text = passengerInfo.departDay?.toMonth()
+            
+            transferImage.image = UIImage(named: "right-arrow.png")
         } else {
             viewRoundtrip.isHidden = false
             viewOneway.isHidden = true
@@ -204,6 +207,7 @@ extension FlightResultVC {
             viewDateDepart.lbMonth.text = passengerInfo.departDay?.toMonth()
             viewDateReturn.lbDate.text = passengerInfo.returnDay?.toDay()
             viewDateReturn.lbMonth.text = passengerInfo.returnDay?.toMonth()
+            transferImage.image = UIImage(named: "transfer.png")
         }
     }
     

@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // for Google login
         GIDSignIn.sharedInstance().clientID = APIURL.GoogleAPI.clientID
         
+        UITabBar.appearance().tintColor = UIColor(hex: 0x674290)
+        
         // set up pop up appearance
         let dialogAppearance = PopupDialogDefaultView.appearance()
         

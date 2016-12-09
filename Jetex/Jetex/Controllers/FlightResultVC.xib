@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -30,6 +29,7 @@
                 <outlet property="lbNumberPassenger" destination="p39-LZ-NnK" id="1ho-JQ-Hwk"/>
                 <outlet property="lbOrigin" destination="ojr-ld-OUP" id="9Ha-Eh-clt"/>
                 <outlet property="tableView" destination="QVy-Oa-ddb" id="guF-Ke-EsB"/>
+                <outlet property="transferImage" destination="oCA-9l-STO" id="0Nc-Nd-r8l"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewDateDepart" destination="iHS-oi-Jnf" id="qOt-rS-i8C"/>
                 <outlet property="viewDateReturn" destination="GIo-fa-CUb" id="tvs-P1-9Oy"/>
@@ -169,7 +169,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p39-LZ-NnK" customClass="GothamBold17Label" customModule="Jetex" customModuleProvider="target">
-                                            <rect key="frame" x="25" y="13.5" width="11.5" height="17"/>
+                                            <rect key="frame" x="25" y="12" width="10.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>

@@ -113,11 +113,11 @@ class SignInVC: BaseViewController {
                 } else if let message = value.value(forKey: "message") as? String {
                     // hide pop up
                     print(message)
-                    popup.dismiss()
-                    
-                    // Show notification
-                    self.emailWarning.showWarning(animated: true, autoHide: true, after: 5)
-                    self.passwordWarning.showWarning(animated: true, autoHide: true, after: 5)
+                    popup.dismiss({
+                        let newPopup = PopupDialog(title: "Email/Password is incorrent", message: "Please check your information again.", image: nil)
+                        newPopup.addButton(DefaultButton(title: "Try again", action: nil))
+                        self.present(newPopup, animated: true, completion: nil)
+                    })
                 }
             } else {
                 popup.dismiss({

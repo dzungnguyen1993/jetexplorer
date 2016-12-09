@@ -11,7 +11,7 @@ import RealmSwift
 import Alamofire
 import PopupDialog
 
-class EditProfileVC: UITableViewController {
+class EditProfileVC: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var saveNavButton: UIBarButtonItem!
     @IBOutlet weak var displayNameLabel: UILabel!
@@ -22,10 +22,17 @@ class EditProfileVC: UITableViewController {
     var emailWarning, passwordWarning: WarningForInput!
     var currentUser: User!
     var needToResizeEmailTextField: Bool!
+    var needToUpdateSubscribe = false
+    var needToUpdateEmail = false
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        needToUpdateEmail = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailUpdateTextField.delegate = self
         needToResizeEmailTextField = false
         emailWarning = WarningForInput(setWarning: "Your email is not correct", for: emailUpdateTextField, withTitle: nil)
         saveNavButton.isEnabled = false
@@ -58,7 +65,7 @@ class EditProfileVC: UITableViewController {
                 let params : [String : Any] = ["listCat": "newsletter",
                                                "email": [
                                                 "email_address": currentUser.email,
-                                                "status": "unsubscribed"
+                                                "status": "subscribed"
                     ]
                 ]
                 
@@ -173,6 +180,23 @@ class EditProfileVC: UITableViewController {
         return 1
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 3 {
+            return CGFloat(40)
+        }
+        if section == 4 {
+            return CGFloat(26)
+        }
+        return CGFloat(56)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 3 {
+            return CGFloat(32)
+        }
+        return CGFloat(1)
+    }
+    
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.font = UIFont(name: GothamFontName.Book.rawValue, size: 13)
@@ -196,13 +220,15 @@ class EditProfileVC: UITableViewController {
             break
         case 2:
             print("email")
-            emailUpdateTextField.becomeFirstResponder()
-            saveNavButton.isEnabled = true
+//            emailUpdateTextField.becomeFirstResponder()
+//            saveNavButton.isEnabled = true
+//            needToUpdateEmail = true
             break
         case 3:
             print("subscription")
             emailSubscriptionSwitch.setOn(!emailSubscriptionSwitch.isOn, animated: true)
             saveNavButton.isEnabled = true
+            needToUpdateSubscribe = true
             break
         case 4:
             print("sign out")
@@ -230,9 +256,9 @@ class EditProfileVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if needToResizeEmailTextField == true && indexPath.section == 2 {
-            return 76.0
+            return 84.0
         }
-        return 44.0
+        return 52.0
     }
     
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
@@ -259,6 +285,7 @@ class EditProfileVC: UITableViewController {
         
         self.present(popup, animated: true, completion: nil)
         
+        if needToUpdateSubscribe {
         // update Subscribe first
         let request = APIURL.JetExAPI.base + APIURL.JetExAPI.editSubscribe
         let params : [String : Any] = ["listCat": "newsletter",
@@ -282,14 +309,23 @@ class EditProfileVC: UITableViewController {
                     ]
                     
                     Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).response(completionHandler: { (response) in
+                        popup.dismiss({
+                            self.needToUpdateSubscribe = false
+                        })
                         if response.error != nil {
                             print(response.error!)
                         }
                     })
+                } else {
+                    popup.dismiss({
+                        self.needToUpdateSubscribe = false
+                    })
                 }
             }
         }
+        }
         
+        if needToUpdateEmail {
         // update info to server
         let newInfo = ["email": self.emailUpdateTextField.text!]
         
@@ -308,6 +344,7 @@ class EditProfileVC: UITableViewController {
                         
                         popup.dismiss({
                             // back to previous screen
+                            self.needToUpdateEmail = false
                             ProfileVC.isUserLogined = true
                             _ = self.navigationController?.popViewController(animated: true)
                         })
@@ -318,12 +355,11 @@ class EditProfileVC: UITableViewController {
                     // hide pop up
                     print(message)
                     popup.dismiss({
-                        let newPopup = PopupDialog(title: "Cannot Update", message: "Please check your internet connection or your information.", image: nil)
+                        let newPopup = PopupDialog(title: "Cannot Update", message: message, image: nil)
                         newPopup.addButton(CancelButton(title: "Try again", action: {
                             self.emailUpdateTextField.text = self.currentUser.email
                             
                             self.saveNavButton.isEnabled = true
-//                            self.emailUpdateTextField.becomeFirstResponder()
                         }))
                         self.present(newPopup, animated: true, completion: nil)
                     })
@@ -335,12 +371,12 @@ class EditProfileVC: UITableViewController {
                         self.emailUpdateTextField.text = self.currentUser.email
                         
                         self.saveNavButton.isEnabled = true
-//                        self.emailUpdateTextField.becomeFirstResponder()
                     }))
                     self.present(newPopup, animated: true, completion: nil)
                 })
             }
         })
+        }
     }
     
     func textFieldResign() {
@@ -349,5 +385,6 @@ class EditProfileVC: UITableViewController {
 
     @IBAction func emailSubscribeSwitchValueChanged(_ sender: Any) {
         saveNavButton.isEnabled = true
+        needToUpdateSubscribe = true
     }
 }

@@ -80,7 +80,7 @@ class HistoryCell: UITableViewCell {
 //        option += (data.children > 0 ? ", \(data.children) child\(data.adult > 1 ? "ren" : "")" : "")
 //        option += (data.infant > 0 ? ", \(data.infant) infrant\(data.infant > 1 ? "s" : "")" : "")
         option += (data.flightClass != "" ? ", \(data.flightClass)" : "")
-        option += (data.flightType != "" ? ", \(data.flightType)" : "")
+//        option += (data.flightType != "" ? ", \(data.flightType)" : "")
         
         optionsLabel.text = option
         optionsLabel.resizeToFitText()

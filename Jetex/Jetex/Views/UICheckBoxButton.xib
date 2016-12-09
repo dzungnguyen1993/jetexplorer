@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email me news and deals from JetExplorer" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j0-aQ-030">
-                    <rect key="frame" x="57.5" y="18.5" width="317.5" height="44"/>
+                    <rect key="frame" x="52" y="19" width="323" height="44"/>
                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="9Of-Qa-rtU"/>
@@ -39,7 +39,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-Or-Kll">
-                    <rect key="frame" x="0.0" y="18.5" width="44" height="44"/>
+                    <rect key="frame" x="0.0" y="19" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="58A-y5-wc6"/>
                         <constraint firstAttribute="width" constant="44" id="ZkN-YF-Xgc"/>
@@ -51,6 +51,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="8j0-aQ-030" firstAttribute="leading" secondItem="IGA-Or-Kll" secondAttribute="trailing" constant="8" id="Ygd-li-4Br"/>
                 <constraint firstItem="IGA-Or-Kll" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZhS-LG-bVQ"/>
                 <constraint firstItem="8j0-aQ-030" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hxL-8x-Vsf"/>
                 <constraint firstItem="IGA-Or-Kll" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="puj-Gb-w5I"/>

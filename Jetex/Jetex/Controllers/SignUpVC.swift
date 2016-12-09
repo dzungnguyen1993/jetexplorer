@@ -77,7 +77,8 @@ class SignUpVC: BaseViewController {
         // request to server
         let requestURL = APIURL.JetExAPI.base + APIURL.JetExAPI.signUp
         Alamofire.request(requestURL, method: .post, parameters: userInfo, encoding: JSONEncoding.default).responseJSON { response in
-            if let currentUser = response.result.value as? [String: Any], (currentUser["_id"] as! String) != "" {
+            if let currentUser = response.result.value as? [String: Any]{
+                if let _ = currentUser["_id"] as? String {
                 if let user = User(JSON: currentUser) {
                     // success get user info
                     let realm = try! Realm()
@@ -99,7 +100,7 @@ class SignUpVC: BaseViewController {
                         realm.add(user, update: true)
                     }
                     
-                    if self.subscriptionCheckBox.isChecked {
+                    if let checkbox = self.subscriptionCheckBox, checkbox.isChecked == true {
                         // request subscribe status
                         let request = APIURL.JetExAPI.base + APIURL.JetExAPI.createSubscribe
                         
@@ -130,6 +131,13 @@ class SignUpVC: BaseViewController {
                                 navController.setViewControllers(stack, animated: true)
                             }
                         })
+                        self.present(newPopup, animated: true, completion: nil)
+                    })
+                    }
+                } else if let message = currentUser["message"] as? String {
+                    popup.dismiss({
+                        let newPopup = PopupDialog(title: "Cannot sign up", message: message , image: nil)
+                        newPopup.addButton(DefaultButton(title: "Try again", action: nil))
                         self.present(newPopup, animated: true, completion: nil)
                     })
                 }

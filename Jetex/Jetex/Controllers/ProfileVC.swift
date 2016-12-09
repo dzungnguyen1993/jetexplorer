@@ -47,11 +47,6 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
     var loginView: LoginView?        = nil
     var realm : Realm!
     
-    static var currentUser : User? = {
-        let realm = try! Realm()
-        return realm.objects(User.self).filter("isCurrentUser == true").first
-    }()
-    
     // MARK: - Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,8 +93,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             self.mainView.addSubview(userInfoView!)
             
             // get current user
-            //currentUser = realm.objects(User.self).filter("isCurrentUser == true").first
-            let currentUser = ProfileVC.currentUser
+            let currentUser = realm.objects(User.self).filter("isCurrentUser == true").first
             if currentUser == nil {
                 // if current User is not exist, login again
                 ProfileVC.isUserLogined = false
@@ -182,11 +176,18 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
                         popup.dismiss()
                         return
                     }
+                } else {
+                    popup.dismiss({
+                        let newPopup = PopupDialog(title: "Can't Sign In!", message: "We cannot connect to your account.")
+                        newPopup.addButton(CancelButton(title: "Try again", action: nil))
+                        self.present(newPopup, animated: true, completion: nil)
+                    })
+                    return
                 }
             }
             
             popup.dismiss({ 
-                let newPopup = PopupDialog(title: "Can't Sign In!", message: "Please check your information/internet connection!")
+                let newPopup = PopupDialog(title: "Can't Sign In!", message: "Please check your information again!")
                 newPopup.addButton(CancelButton(title: "Try again", action: nil))
                 self.present(newPopup, animated: true, completion: nil)
             })
@@ -344,7 +345,12 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             _ = self.navigationController?.pushViewController(vc, animated: true)
             break
         case 1:
-            UIApplication.shared.open(URL(string: APIURL.JetExAPI.review)!, options: [:], completionHandler: nil)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(URL(string: APIURL.JetExAPI.review)!, options: [:], completionHandler: nil)
+            } else {
+                // Fallback on earlier versions
+                UIApplication.shared.openURL(URL(string: APIURL.JetExAPI.review)!)
+            }
             break
         default:
             break
