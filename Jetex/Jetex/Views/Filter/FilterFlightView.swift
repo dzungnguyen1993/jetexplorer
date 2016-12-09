@@ -137,7 +137,7 @@ extension FilterFlightView: UITableViewDelegate, UITableViewDataSource {
             if (searchResult != nil) {
                 cell.carriers = searchResult.carriers
                 
-                if (searchResult.carriers.count <= 4) {
+                if (searchResult.carriers.count < 4) {
                     // hide button show all
                     cell.constraintBtnShowAllHeight.constant = 0
                     cell.constraintTableHeight.constant = CGFloat(searchResult.carriers.count * 44)
@@ -191,15 +191,16 @@ extension FilterFlightView: UITableViewDelegate, UITableViewDataSource {
                 return CGFloat(airlinesViewHeight)
             }
             
-            if (searchResult.carriers.count <= 4) {
+            if (searchResult.carriers.count < 4) {
                 // hide button show all
-                return CGFloat(airlinesViewHeight + 44 * searchResult.carriers.count) - 30
+                return CGFloat(airlinesViewHeight + 44 * (searchResult.carriers.count + 1)) - 30
             }
             
             if (isShowAllAirlines == false) {
-                return CGFloat(airlinesViewHeight) + CGFloat(44) * CGFloat(min(searchResult.carriers.count, 4))
+                // +1 for check all
+                return CGFloat(airlinesViewHeight) + CGFloat(44) * CGFloat(min(searchResult.carriers.count + 1, 4))
             }
-            return CGFloat(airlinesViewHeight + 44 * searchResult.carriers.count)
+            return CGFloat(airlinesViewHeight + 44 * (searchResult.carriers.count + 1))
         case 2:
             return CGFloat(destinationViewHeight + 44 * (arrayOrigin.count + arrayDestination.count))
         default: return CGFloat(applyViewHeight)
@@ -229,6 +230,16 @@ extension FilterFlightView: AirlinesViewDelegate {
             self.tmpFilterObject.checkedCarriers.remove(at: index!)
         } else {
             self.tmpFilterObject.checkedCarriers.append(index)
+        }
+    }
+    
+    func didCheckAll(isChecked: Bool) {
+        self.tmpFilterObject.checkedCarriers.removeAll()
+        
+        if (isChecked == true) {
+            for i in 0..<searchResult.carriers.count {
+                tmpFilterObject.checkedCarriers.append(i)
+            }
         }
     }
 }

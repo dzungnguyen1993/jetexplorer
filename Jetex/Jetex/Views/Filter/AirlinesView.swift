@@ -12,6 +12,7 @@ protocol AirlinesViewDelegate: class {
     func showAllAirlines()
     func hideAirlines()
     func didCheck(index: Int)
+    func didCheckAll(isChecked: Bool)
 }
 
 class AirlinesView: UITableViewCell {
@@ -49,11 +50,11 @@ class AirlinesView: UITableViewCell {
             sender.setTitle("Hide", for: .normal)
             self.delegate?.showAllAirlines()
 
-            constraintTableHeight.constant = CGFloat((carriers?.count)! * 44)
+            constraintTableHeight.constant = CGFloat(((carriers?.count)! + 1) * 44)
         } else {
             sender.setTitle("Show all 6 airlines", for: .normal)
             self.delegate?.hideAirlines()
-            constraintTableHeight.constant = CGFloat(min((carriers?.count)!, 4) * 44)
+            constraintTableHeight.constant = CGFloat(min((carriers?.count)! + 1, 4) * 44)
         }
         
         self.tableView.reloadData()
@@ -67,9 +68,9 @@ extension AirlinesView: UITableViewDelegate, UITableViewDataSource {
         }
         
         if (!isShowAll) {
-            return min((carriers?.count)!, 4)
+            return min((carriers?.count)! + 1, 4)
         }
-        return (carriers?.count)!
+        return (carriers?.count)! + 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,30 +80,62 @@ extension AirlinesView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AirlinesCell", for: indexPath) as! AirlinesCell
         
-        if (arrayChecked.contains(indexPath.row)) {
-            cell.btnCheck.image = UIImage(named: "check rect")
-            cell.lbTitle.textColor = UIColor(hex: 0x674290)
+        if indexPath.row == 0 {
+            // add 1 for row check all
+            if arrayChecked.count == (self.carriers?.count)! {
+                cell.btnCheck.image = UIImage(named: "check rect")
+                cell.lbTitle.textColor = UIColor(hex: 0x674290)
+            } else {
+                cell.btnCheck.image = UIImage(named: "uncheck rect")
+                cell.lbTitle.textColor = UIColor(hex: 0x515151)
+            }
+            
+            cell.lbTitle.text = "All"
+            
         } else {
-            cell.btnCheck.image = UIImage(named: "uncheck rect")
-            cell.lbTitle.textColor = UIColor(hex: 0x515151)
+            if (arrayChecked.contains(indexPath.row - 1)) {
+                cell.btnCheck.image = UIImage(named: "check rect")
+                cell.lbTitle.textColor = UIColor(hex: 0x674290)
+            } else {
+                cell.btnCheck.image = UIImage(named: "uncheck rect")
+                cell.lbTitle.textColor = UIColor(hex: 0x515151)
+            }
+            
+            cell.lbTitle.text = carriers?[indexPath.row - 1].name
         }
-        
-        cell.lbTitle.text = carriers?[indexPath.row].name
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (arrayChecked.contains(indexPath.row)) {
-            let index = arrayChecked.index(of: indexPath.row)
-            arrayChecked.remove(at: index!)
+        if indexPath.row == 0 {
+            if arrayChecked.count == (self.carriers?.count)! {
+                // remove all
+                arrayChecked.removeAll()
+                
+                delegate?.didCheckAll(isChecked: false)
+            } else {
+                // add all
+                arrayChecked.removeAll()
+                
+                for i in 0..<(self.carriers?.count)! {
+                    arrayChecked.append(i)
+                }
+                
+                delegate?.didCheckAll(isChecked: true)
+            }
         } else {
-            arrayChecked.append(indexPath.row)
+            if (arrayChecked.contains(indexPath.row - 1)) {
+                let index = arrayChecked.index(of: indexPath.row - 1)
+                arrayChecked.remove(at: index!)
+            } else {
+                arrayChecked.append(indexPath.row - 1)
+            }
+            
+            delegate?.didCheck(index: indexPath.row - 1)
         }
         
         tableView.reloadData()
-        
-        delegate?.didCheck(index: indexPath.row)
     }
     
 //    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
