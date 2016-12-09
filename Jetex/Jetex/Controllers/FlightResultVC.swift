@@ -358,5 +358,8 @@ extension FlightResultVC {
         let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
         tableView.reloadSections(sections as IndexSet, with: .automatic)
         self.tableView.reloadData()
+        
+        guard self.itineraries.count > 0 else {return}
+        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
 }

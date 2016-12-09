@@ -21,7 +21,7 @@ class FilterFlightView: UIView {
     var stopViewHeight = 180 + 12 // + 12 for bottom padding
     var airlinesViewHeight = 104
     var destinationViewHeight = 94
-    var applyViewHeight = 76
+    var applyViewHeight = 136
     @IBOutlet weak var imgCancel: UIImageView!
     var searchResult: SearchFlightResult! = nil
     var isShowAllAirlines: Bool = false
@@ -124,7 +124,7 @@ extension FilterFlightView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.row == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "StopView", for: indexPath) as! StopView
-            cell.checkedIndex = filterObject.stopType.rawValue
+            cell.checkedIndex = tmpFilterObject.stopType.rawValue
             cell.tableView.reloadData()
             cell.delegate = self
             return cell
@@ -132,7 +132,7 @@ extension FilterFlightView: UITableViewDelegate, UITableViewDataSource {
         
         if (indexPath.row == 1) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AirlinesView", for: indexPath) as! AirlinesView
-            cell.arrayChecked = filterObject.checkedCarriers
+            cell.arrayChecked = tmpFilterObject.checkedCarriers
             
             if (searchResult != nil) {
                 cell.carriers = searchResult.carriers
@@ -158,8 +158,8 @@ extension FilterFlightView: UITableViewDelegate, UITableViewDataSource {
         
         if (indexPath.row == 2) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DestinationView", for: indexPath) as! DestinationView
-            cell.arrayCheckedOrigin = filterObject.checkedOrigin
-            cell.arrayCheckedDestination = filterObject.checkedDestination
+            cell.arrayCheckedOrigin = tmpFilterObject.checkedOrigin
+            cell.arrayCheckedDestination = tmpFilterObject.checkedDestination
             
             cell.airportOrigin = self.arrayOrigin
             cell.airportDestination = self.arrayDestination
@@ -269,5 +269,27 @@ extension FilterFlightView: ApplyFilterViewDelegate {
         filterObject = tmpFilterObject.copyFilter()
         
         self.delegate?.applyFilter(filterObject: filterObject)
+    }
+    
+    func resetFilter() {
+        tmpFilterObject.stopType = .any
+        
+        tmpFilterObject.checkedCarriers.removeAll()
+        for i in 0..<searchResult.carriers.count {
+            tmpFilterObject.checkedCarriers.append(i)
+        }
+        
+        tmpFilterObject.checkedOrigin.removeAll()
+        tmpFilterObject.checkedDestination.removeAll()
+        
+        for airport in self.arrayOrigin {
+            tmpFilterObject.checkedOrigin.append(airport)
+        }
+        
+        for airport in self.arrayDestination {
+            tmpFilterObject.checkedDestination.append(airport)
+        }
+        
+        self.tableView.reloadData()
     }
 }

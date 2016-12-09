@@ -10,6 +10,7 @@ import UIKit
 
 protocol ApplyFilterViewDelegate: class {
     func clickApply()
+    func resetFilter()
 }
 
 class ApplyFilterView: UITableViewCell {
@@ -29,5 +30,9 @@ class ApplyFilterView: UITableViewCell {
     
     @IBAction func applyFilter(_ sender: UIButton) {
         delegate?.clickApply()
+    }
+    
+    @IBAction func resetFilter(_ sender: UIButton) {
+        delegate?.resetFilter()
     }
 }
