@@ -51,6 +51,7 @@ class FlightResultVC: BaseViewController {
     var itineraries: [Itinerary]! = nil
     
     var isShowCheapest: Bool!
+    var isShowDetailsBefore: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +71,7 @@ class FlightResultVC: BaseViewController {
         // show header info
         showHeaderInfo()
         isShowCheapest = true
+        isShowDetailsBefore = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -152,6 +154,7 @@ class FlightResultVC: BaseViewController {
         
         // load result
         isShowCheapest = true
+        isShowDetailsBefore = false
         loadResultData()
     }
     
@@ -164,6 +167,7 @@ class FlightResultVC: BaseViewController {
         
         // load result
         isShowCheapest = false
+        isShowDetailsBefore = false
         loadResultData()
     }
     
@@ -320,6 +324,10 @@ extension FlightResultVC: UITableViewDataSource, UITableViewDelegate {
             showDetailsIndex = -1
         }
      
+        if (self.isShowDetailsBefore == false) {
+            self.isShowDetailsBefore = true
+            self.tableView.reloadData()
+        }
         tableView.beginUpdates()
         tableView.reloadRows(at: [indexPath], with: .middle)
         tableView.endUpdates()
