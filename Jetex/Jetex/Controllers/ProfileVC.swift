@@ -34,7 +34,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
     let ratingAndFeedback          = "Rating & Feedback"
     
     // MARK: - Hard code for testing UI -> TODO: check it before release
-    static var currentCurrencyType = "USD"
+    static var currentCurrencyType = "SGD"
     static var isUserLogined       = false
     
     
@@ -52,6 +52,21 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         super.viewDidLoad()
         setupTableView()
         realm = try! Realm()
+        
+        // set the currency based on the location
+        let locale = Locale.current
+        if let region = locale.regionCode {
+            switch region {
+            case "SG":
+                ProfileVC.currentCurrencyType = "SGD"
+                break
+            case "AU":
+                ProfileVC.currentCurrencyType = "AUD"
+                break
+            default:
+                ProfileVC.currentCurrencyType = "USD"
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
