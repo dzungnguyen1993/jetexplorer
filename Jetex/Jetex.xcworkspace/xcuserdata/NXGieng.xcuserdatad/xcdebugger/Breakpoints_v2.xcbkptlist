@@ -209,6 +209,38 @@
             endingLineNumber = "156"
             landmarkName = "signInUsingAccessToken(accessToken:atAPI:withPreLink:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Jetex.ProfileVC.(signInUsingAccessToken (accessToken : Swift.String, atAPI : Swift.String, withPreLink : Swift.String) -&gt; ()).(closure #1)"
+                  moduleName = "Jetex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/ProfileVC.swift"
+                  timestampString = "503319658.713504"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Jetex.ProfileVC.(signInUsingAccessToken (accessToken : Swift.String, atAPI : Swift.String, withPreLink : Swift.String) -&gt; ()).(closure #1)"
+                  moduleName = "Jetex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/ProfileVC.swift"
+                  timestampString = "503319658.71476"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "472">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -378,12 +410,12 @@
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
-                  timestampString = "503132002.364692"
+                  timestampString = "503319658.72798"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
                   endingLineNumber = "114"
-                  offsetFromSymbolStart = "1477">
+                  offsetFromSymbolStart = "1128">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -393,12 +425,12 @@
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
-                  timestampString = "503132002.366872"
+                  timestampString = "503319658.729766"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "92"
                   endingLineNumber = "92"
-                  offsetFromSymbolStart = "191">
+                  offsetFromSymbolStart = "152">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -730,12 +762,12 @@
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/FlightSearchVC.swift"
-                  timestampString = "503132002.383128"
+                  timestampString = "503319658.742669"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "156"
                   endingLineNumber = "156"
-                  offsetFromSymbolStart = "323">
+                  offsetFromSymbolStart = "328">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -745,12 +777,12 @@
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/FlightSearchVC.swift"
-                  timestampString = "503132002.384829"
+                  timestampString = "503319658.743815"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "157"
                   endingLineNumber = "157"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1076,7 +1108,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/FlightResultVC.swift"
@@ -1262,6 +1294,70 @@
             startingLineNumber = "103"
             endingLineNumber = "103"
             landmarkName = "setUpMainView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Helper/AImage/AImageView.swift"
+            timestampString = "503318264.786771"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "UIImageView"
+            landmarkType = "4">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Helper/LoadingPopupVC.swift"
+            timestampString = "503328849.378901"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "startProgress()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Helper/AImage/AImageView.swift"
+            timestampString = "503318726.628902"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "SetAImage(AImage:MemoryLimit_MB:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Helper/AImage/AImageView.swift"
+            timestampString = "503318728.40893"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "init(AImage:MemoryLimit_MB:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

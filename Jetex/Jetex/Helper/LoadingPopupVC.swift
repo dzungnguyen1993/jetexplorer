@@ -14,10 +14,23 @@ class LoadingPopupVC: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        
+        /* Load gif or apng image as NSData */
+        let imageData = NSData(contentsOf:Bundle.main.url(forResource: "loading-Animation", withExtension: "gif")!)
+        
+        /*  Pass NSData into UIImage  */
+        image.SetAImage(AImage: UIImage(AImageData:imageData!))
+    }
+    
     var timer: Timer?
     
     func startProgress(){
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.fakeUpdatingProgress), userInfo: nil, repeats: true)
+        
+        /* Start displaying animated image */
+        image.APlay()
     }
     
     func updateProgress(percent: Int, completion: (() -> Void)? = nil) {
@@ -26,6 +39,7 @@ class LoadingPopupVC: UIViewController {
         }, completion: { (completed) in
             if let completion = completion {
                 // complete
+                self.image.AStop()
                 self.timer?.invalidate() // stop timer
                 self.timer = nil
                 

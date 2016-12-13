@@ -19,6 +19,9 @@
 		284EC7861DDA1C7F001D0892 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284EC7851DDA1C7F001D0892 /* LoginView.swift */; };
 		284EC7881DDA1C91001D0892 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284EC7871DDA1C91001D0892 /* LoginView.xib */; };
 		284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284EC7891DDA22F5001D0892 /* UserInfoView.xib */; };
+		2855DF041DFFE2E400D45883 /* loading-Animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2855DF031DFFE2E400D45883 /* loading-Animation.gif */; };
+		2855DF0A1DFFF93500D45883 /* AImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2855DF081DFFF93500D45883 /* AImage.swift */; };
+		2855DF0B1DFFF93500D45883 /* AImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2855DF091DFFF93500D45883 /* AImageView.swift */; };
 		286F62C81DDB385200B26733 /* SignInVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F62C61DDB385200B26733 /* SignInVCViewController.swift */; };
 		286F62C91DDB385200B26733 /* SignInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F62C71DDB385200B26733 /* SignInVC.xib */; };
 		286F62CB1DDB3E6900B26733 /* UIPaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F62CA1DDB3E6900B26733 /* UIPaddingTextField.swift */; };
@@ -222,6 +225,9 @@
 		284EC7851DDA1C7F001D0892 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ../Controllers/LoginView.swift; sourceTree = "<group>"; };
 		284EC7871DDA1C91001D0892 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginView.xib; path = ../Controllers/LoginView.xib; sourceTree = "<group>"; };
 		284EC7891DDA22F5001D0892 /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoView.xib; path = ../Controllers/UserInfoView.xib; sourceTree = "<group>"; };
+		2855DF031DFFE2E400D45883 /* loading-Animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading-Animation.gif"; sourceTree = "<group>"; };
+		2855DF081DFFF93500D45883 /* AImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AImage.swift; path = AImage/AImage.swift; sourceTree = "<group>"; };
+		2855DF091DFFF93500D45883 /* AImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AImageView.swift; path = AImage/AImageView.swift; sourceTree = "<group>"; };
 		286F62C61DDB385200B26733 /* SignInVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVCViewController.swift; sourceTree = "<group>"; };
 		286F62C71DDB385200B26733 /* SignInVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInVC.xib; sourceTree = "<group>"; };
 		286F62CA1DDB3E6900B26733 /* UIPaddingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddingTextField.swift; sourceTree = "<group>"; };
@@ -473,6 +479,15 @@
 			name = "Profile Tab VCs";
 			sourceTree = "<group>";
 		};
+		2855DF0C1DFFF94000D45883 /* AImage */ = {
+			isa = PBXGroup;
+			children = (
+				2855DF081DFFF93500D45883 /* AImage.swift */,
+				2855DF091DFFF93500D45883 /* AImageView.swift */,
+			);
+			name = AImage;
+			sourceTree = "<group>";
+		};
 		28BAD0131DE18AEA0008032D /* History VCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +539,7 @@
 		B96BAC561DD1B3A100AE79AD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2855DF0C1DFFF94000D45883 /* AImage */,
 				2830E42C1DF9D1B200DF3E0A /* Loading Popup */,
 				B9D904361DD8BBB1008C8720 /* EPCalendarPicker */,
 				B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */,
@@ -607,6 +623,7 @@
 				B9D9A2BD1DDB628F007CAB28 /* users.png */,
 				B963E7291DD6D3A800A21548 /* add.png */,
 				28811F881DE9A78100BB0ADA /* triangle.png */,
+				2855DF031DFFE2E400D45883 /* loading-Animation.gif */,
 				B963E72A1DD6D3A800A21548 /* substract.png */,
 				B9F445F51DD4DA1B00250D6C /* GothamFontName.swift */,
 				28BAD0111DE1628E0008032D /* JetExFontHexCode.swift */,
@@ -1017,6 +1034,7 @@
 				B99F82D11DE1DD2000DA8B37 /* StopView.xib in Resources */,
 				2872C5461DDF701300239CF2 /* SelectCurrencyVC.xib in Resources */,
 				B9BDDCDE1DD239870008B0A1 /* NetworkErrorView.xib in Resources */,
+				2855DF041DFFE2E400D45883 /* loading-Animation.gif in Resources */,
 				28BAD0171DE18B1E0008032D /* SearchHistoryVC.xib in Resources */,
 				286F62C91DDB385200B26733 /* SignInVC.xib in Resources */,
 				B99F82C01DE1C7FF00DA8B37 /* check round.png in Resources */,
@@ -1057,7 +1075,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5FE4FABEEAEB1BED74866B89 /* [CP] Copy Pods Resources */ = {
@@ -1170,6 +1188,7 @@
 				28BAD0121DE1628E0008032D /* JetExFontHexCode.swift in Sources */,
 				286F62C81DDB385200B26733 /* SignInVCViewController.swift in Sources */,
 				B9DC5DA51DE834120025D650 /* DBManager.swift in Sources */,
+				2855DF0B1DFFF93500D45883 /* AImageView.swift in Sources */,
 				B9F445FF1DD4E17800250D6C /* GothamBold15Label.swift in Sources */,
 				B9FAA47E1DEB4682000F87D7 /* Segment.swift in Sources */,
 				B99F82D41DE1E82E00DA8B37 /* AirlinesCell.swift in Sources */,
@@ -1189,6 +1208,7 @@
 				B956E2391DE0C715000A86A0 /* FlightTransitView.swift in Sources */,
 				28BAD00E1DE0DFCA0008032D /* SearchCityCell.swift in Sources */,
 				B9F446011DD4E18D00250D6C /* GothamBook17Label.swift in Sources */,
+				2855DF0A1DFFF93500D45883 /* AImage.swift in Sources */,
 				B92F8BC91DE1FE0C0039C153 /* ApplyFilterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
