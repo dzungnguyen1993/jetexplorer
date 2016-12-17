@@ -245,6 +245,8 @@ extension FlightSearchVC: PickDateVCDelegate {
         vc.indicatorPosition = indicatorPosition
         vc.checkInDate = passengerInfo.departDay
         vc.checkOutDate = passengerInfo.returnDay
+        vc.viewCheckinTitle = "Depart"
+        vc.viewCheckoutTitle = "Return"
         vc.delegate = self
         
         if (passengerInfo.isRoundTrip == true) {

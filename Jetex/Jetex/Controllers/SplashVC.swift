@@ -19,13 +19,20 @@ class SplashVC: UIViewController {
 //    let animatedString = ["Downloading information for Countries",
 //                          "Downloading information for Cities",
 //                          "Downloading information for Airports"]
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.indicator.startAnimating()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         // get list airport
         let defaults = UserDefaults.standard
         let isInstalled = defaults.bool(forKey: "isInstalled")
         
-        if (!isInstalled) {
+        if (isInstalled) {
             // Show Loading Pop up view
             
             let loadingVC = InitialLoadingPopupVC(nibName: "InitialLoadingPopupVC", bundle: nil)

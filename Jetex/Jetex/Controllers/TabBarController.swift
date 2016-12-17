@@ -18,6 +18,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         viewControllers = [UIViewController]()
         self.addTabFlight()
+        self.addTabHotel()
         self.addTabHistory()
         self.addTabProfile()
     }
@@ -33,6 +34,23 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         nav.tabBarItem = UITabBarItem(title: "Flights", image: UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.planeEmpty.rawValue), tag: 1)
         
         nav.tabBarItem.selectedImage = UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.planeFulfill.rawValue)
+        
+        nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x706F73), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .normal)
+        
+        nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x674290), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .selected)
+    }
+    
+    // MARK: - Tab Hotel
+    func addTabHotel() {
+        let vc = HotelSearchVC(nibName: "HotelSearchVC", bundle: nil)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.setNavigationBarHidden(true, animated: true)
+        
+        viewControllers?.append(nav)
+        
+        nav.tabBarItem = UITabBarItem(title: "Hotels", image: UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.bedEmpty.rawValue), tag: 1)
+        
+        nav.tabBarItem.selectedImage = UIImage.generateTabBarImageFromHex(fromHex: JetExFontHexCode.bedFulfill.rawValue)
         
         nav.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hex: 0x706F73), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!], for: .normal)
         

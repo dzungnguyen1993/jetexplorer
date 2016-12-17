@@ -27,6 +27,8 @@ class PickDateVC: BaseViewController {
     var calendarPickerVC: EPCalendarPicker!
     @IBOutlet weak var calendarStackView: UIStackView!
     var type: PickDateType!
+    var viewCheckinTitle: String = ""
+    var viewCheckoutTitle: String = ""
     
     var indicatorPosition: IndicatorPosition! {
         didSet {
@@ -53,7 +55,7 @@ class PickDateVC: BaseViewController {
     
     func loadViewDates() {
         viewDepart.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexCheckin.rawValue, withColor: UIColor(hex: 0x674290))
-        viewDepart.lbTitle.text = "Depart"
+        viewDepart.lbTitle.text = viewCheckinTitle
         
         var dayString = checkInDate?.toMonthDay()
         var weekday = checkInDate?.toWeekDay()
@@ -62,7 +64,7 @@ class PickDateVC: BaseViewController {
         
         
         viewReturn.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexCheckout.rawValue, withColor: UIColor(hex: 0x674290))
-        viewReturn.lbTitle.text = "Return"
+        viewReturn.lbTitle.text = viewCheckoutTitle
         
         dayString = checkOutDate?.toMonthDay()
         weekday = checkOutDate?.toWeekDay()
