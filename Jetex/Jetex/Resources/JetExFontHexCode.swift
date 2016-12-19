@@ -41,4 +41,7 @@ enum JetExFontHexCode : String{
     case googleIcon = "\u{e932}"
     
     case jetexClock = "\u{e90f}"
+    
+    case jetexMapFulfill = "\u{e919}"
+    case jetexMap = "\u{e91a}"
 }

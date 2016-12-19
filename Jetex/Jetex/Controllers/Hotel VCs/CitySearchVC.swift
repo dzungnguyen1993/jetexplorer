@@ -106,7 +106,12 @@ extension CitySearchVC: UITableViewDataSource, UITableViewDelegate {
         
         let city = citiesSearchResult[indexPath.row]
     
-        cell.lbCountry.text = self.getCountryName(fromCity: city)
+        let country = DBManager.shared.getCountry(fromCity: city)
+        if (country != nil) {
+            cell.lbCountry.text = country?.name
+        } else {
+            cell.lbCountry.text = ""
+        }
     
         // text for airport name
         if (city.name.lowercased().isContainsAtBeginning(of: searchTextField.text!.lowercased()) == true) {
@@ -121,18 +126,6 @@ extension CitySearchVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         return cell
-    }
-    
-    func getCountryName(fromCity city: City) -> String {
-        let countryId = city.countryId
-        let predicate = NSPredicate(format: "id == %@", countryId)
-        let country = realm.objects(Country.self).filter(predicate).first
-        
-        guard country != nil else {
-            return ""
-        }
-        
-        return (country?.name)!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

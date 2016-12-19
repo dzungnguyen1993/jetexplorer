@@ -64,6 +64,8 @@
 		B90544AA1DEEBAAB008FF60D /* FilterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90544A91DEEBAAB008FF60D /* FilterObject.swift */; };
 		B90544AC1DEEE833008FF60D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90544AB1DEEE833008FF60D /* Currency.swift */; };
 		B90544AE1DEEEB9B008FF60D /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90544AD1DEEEB9B008FF60D /* Query.swift */; };
+		B90A62FD1E068335007EB3C8 /* HotelResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A62FB1E068335007EB3C8 /* HotelResultVC.swift */; };
+		B90A63001E06836E007EB3C8 /* HotelResultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90A62FF1E06836E007EB3C8 /* HotelResultVC.xib */; };
 		B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */; };
 		B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */; };
 		B9150B941DD4659C00F825DC /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = B9150B921DD4659C00F825DC /* cancel.png */; };
@@ -283,6 +285,8 @@
 		B90544A91DEEBAAB008FF60D /* FilterObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterObject.swift; sourceTree = "<group>"; };
 		B90544AB1DEEE833008FF60D /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B90544AD1DEEEB9B008FF60D /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		B90A62FB1E068335007EB3C8 /* HotelResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelResultVC.swift; sourceTree = "<group>"; };
+		B90A62FF1E06836E007EB3C8 /* HotelResultVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotelResultVC.xib; sourceTree = "<group>"; };
 		B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchVC.swift; sourceTree = "<group>"; };
 		B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationSearchVC.xib; sourceTree = "<group>"; };
 		B9150B921DD4659C00F825DC /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
@@ -548,6 +552,8 @@
 				B95E12BA1E03D3D700AB3989 /* HotelSearchVC.xib */,
 				B9D152701E03EC2A00AFDB1D /* CitySearchVC.swift */,
 				B9D152711E03EC2A00AFDB1D /* CitySearchVC.xib */,
+				B90A62FB1E068335007EB3C8 /* HotelResultVC.swift */,
+				B90A62FF1E06836E007EB3C8 /* HotelResultVC.xib */,
 			);
 			path = "Hotel VCs";
 			sourceTree = "<group>";
@@ -1043,6 +1049,7 @@
 				B99F82C11DE1C7FF00DA8B37 /* uncheck round.png in Resources */,
 				B9F445E71DD4D6DF00250D6C /* Gotham-Bold.otf in Resources */,
 				B9F445E51DD4D6DF00250D6C /* Gotham-Black.otf in Resources */,
+				B90A63001E06836E007EB3C8 /* HotelResultVC.xib in Resources */,
 				B9150B941DD4659C00F825DC /* cancel.png in Resources */,
 				28DAF8821E0A7064006A2406 /* SelectCabinClassVC.xib in Resources */,
 				281114F21DEAEE51008A1A7E /* FlightSearchHistoryVC.xib in Resources */,
@@ -1217,6 +1224,7 @@
 				B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */,
 				B983ADA21DE7369A00D3F583 /* NetworkManager.swift in Sources */,
 				B98EB1DD1DDACBA500783FB1 /* Utility.swift in Sources */,
+				B90A62FD1E068335007EB3C8 /* HotelResultVC.swift in Sources */,
 				28E62C4E1DE68ACC00E41D44 /* Constant.swift in Sources */,
 				B9D904641DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift in Sources */,
 				B9F446031DD4E19A00250D6C /* GothamBook15Label.swift in Sources */,

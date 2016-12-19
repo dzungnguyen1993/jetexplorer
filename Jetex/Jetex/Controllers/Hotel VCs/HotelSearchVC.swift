@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import PopupDialog
 
-class HotelSearchVC: UIViewController {
+class HotelSearchVC: BaseViewController {
 
     // MARK: Initialization
     @IBOutlet weak var viewLocation: PickInfoView!
@@ -47,6 +48,32 @@ class HotelSearchVC: UIViewController {
     }
     
     @IBAction func search(_ sender: Any) {
+        // check if info is valid
+//        if (searchHotelInfo.city == nil) {
+//            self.showErrorAlert(message: "You didn't choose the location.")
+//            return
+//        }
+        
+        gotoResultVC()
+    }
+    
+    func showErrorAlert(message: String) {
+        let popup = PopupDialog(title: message, message: "", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: true, completion: nil)
+        let buttonOne = CancelButton(title: "CANCEL") {
+            popup.dismiss()
+        }
+        
+        popup.addButton(buttonOne)
+        self.present(popup, animated: true, completion: nil)
+    }
+    
+    func gotoResultVC() {
+        // save searching info into history
+//        saveSearchingInfoIntoHistory()
+        
+        let vc = HotelResultVC(nibName: "HotelResultVC", bundle: nil)
+        vc.searchInfo = self.searchHotelInfo
+        self.navigationController!.pushViewController(vc, animated: true)
     }
     
     func addActionForViews() {
