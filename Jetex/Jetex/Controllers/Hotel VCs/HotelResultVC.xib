@@ -126,7 +126,7 @@
                                     <rect key="frame" x="54" y="0.0" width="139" height="44"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEx-tv-jvV">
-                                            <rect key="frame" x="0.0" y="10" width="33" height="17"/>
+                                            <rect key="frame" x="0.0" y="10" width="131" height="17"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -141,6 +141,7 @@
                                     <constraints>
                                         <constraint firstItem="jEx-tv-jvV" firstAttribute="leading" secondItem="tPY-d8-WcG" secondAttribute="leading" id="14D-Ph-pRe"/>
                                         <constraint firstItem="qMJ-T0-jiR" firstAttribute="leading" secondItem="tPY-d8-WcG" secondAttribute="leading" id="F8g-QB-GsI"/>
+                                        <constraint firstAttribute="trailing" secondItem="jEx-tv-jvV" secondAttribute="trailing" constant="8" id="TPX-vB-6Bu"/>
                                         <constraint firstItem="qMJ-T0-jiR" firstAttribute="top" secondItem="jEx-tv-jvV" secondAttribute="bottom" id="j2O-Yh-qVi"/>
                                         <constraint firstAttribute="bottom" secondItem="qMJ-T0-jiR" secondAttribute="bottom" constant="5" id="wE3-YO-gfi"/>
                                     </constraints>
@@ -207,32 +208,21 @@
                                                 <constraint firstItem="a7f-dt-0YJ" firstAttribute="centerX" secondItem="Kam-2N-a6V" secondAttribute="centerX" constant="-12.5" id="thl-Rw-VJ4"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dZ-c5-402">
-                                            <rect key="frame" x="0.0" y="22" width="60" height="22"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-F2-TWZ">
-                                                    <rect key="frame" x="10.5" y="4.5" width="39.5" height="12"/>
-                                                    <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="6VX-F2-TWZ" firstAttribute="centerY" secondItem="9dZ-c5-402" secondAttribute="centerY" id="X21-fk-xtV"/>
-                                                <constraint firstItem="6VX-F2-TWZ" firstAttribute="centerX" secondItem="9dZ-c5-402" secondAttribute="centerX" id="fnf-u4-2hr"/>
-                                            </constraints>
-                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-F2-TWZ">
+                                            <rect key="frame" x="10" y="16" width="39.5" height="12"/>
+                                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="9dZ-c5-402" secondAttribute="trailing" id="1CS-hW-pyM"/>
-                                        <constraint firstItem="9dZ-c5-402" firstAttribute="top" secondItem="Kam-2N-a6V" secondAttribute="bottom" id="GQN-oT-i6o"/>
                                         <constraint firstItem="Kam-2N-a6V" firstAttribute="height" secondItem="6e9-gB-Pw1" secondAttribute="height" multiplier="1:2" id="Jwu-rY-Toz"/>
-                                        <constraint firstAttribute="bottom" secondItem="9dZ-c5-402" secondAttribute="bottom" id="QYq-eZ-THP"/>
-                                        <constraint firstItem="9dZ-c5-402" firstAttribute="leading" secondItem="6e9-gB-Pw1" secondAttribute="leading" id="jAV-qh-0sN"/>
+                                        <constraint firstItem="6VX-F2-TWZ" firstAttribute="centerX" secondItem="6e9-gB-Pw1" secondAttribute="centerX" id="b6q-bM-Dfz"/>
+                                        <constraint firstAttribute="bottom" secondItem="6VX-F2-TWZ" secondAttribute="bottom" constant="5" id="lcU-e1-gRV"/>
                                         <constraint firstAttribute="width" constant="60" id="oAd-od-QyW"/>
                                         <constraint firstItem="Kam-2N-a6V" firstAttribute="leading" secondItem="6e9-gB-Pw1" secondAttribute="leading" id="p67-a1-0DJ"/>
                                         <constraint firstAttribute="trailing" secondItem="Kam-2N-a6V" secondAttribute="trailing" id="tS1-3Y-y2l"/>
-                                        <constraint firstItem="Kam-2N-a6V" firstAttribute="top" secondItem="6e9-gB-Pw1" secondAttribute="top" id="zyq-mb-ztd"/>
+                                        <constraint firstItem="6VX-F2-TWZ" firstAttribute="top" secondItem="Kam-2N-a6V" secondAttribute="bottom" id="vVu-Jz-NEW"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-M2-4se">
@@ -402,7 +392,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-Ya-exi">
-                                            <rect key="frame" x="17.5" y="24" width="26" height="12"/>
+                                            <rect key="frame" x="18" y="24" width="25.5" height="12"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" red="0.40392156862745099" green="0.25882352941176467" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>

@@ -32,7 +32,7 @@ class SplashVC: UIViewController {
         let defaults = UserDefaults.standard
         let isInstalled = defaults.bool(forKey: "isInstalled")
         
-        if (isInstalled) {
+        if (!isInstalled) {
             // Show Loading Pop up view
             
             let loadingVC = InitialLoadingPopupVC(nibName: "InitialLoadingPopupVC", bundle: nil)

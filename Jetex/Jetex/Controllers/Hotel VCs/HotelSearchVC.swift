@@ -49,10 +49,10 @@ class HotelSearchVC: BaseViewController {
     
     @IBAction func search(_ sender: Any) {
         // check if info is valid
-//        if (searchHotelInfo.city == nil) {
-//            self.showErrorAlert(message: "You didn't choose the location.")
-//            return
-//        }
+        if (searchHotelInfo.city == nil) {
+            self.showErrorAlert(message: "You didn't choose the location.")
+            return
+        }
         
         gotoResultVC()
     }
@@ -117,6 +117,9 @@ extension HotelSearchVC {
 extension HotelSearchVC: PickCityDelegate {
     func didPickLocation(city: City) {
         searchHotelInfo.city = city
+        viewLocation.lbInfo.text = city.name
+        let country = DBManager.shared.getCountry(fromCity: city)
+        viewLocation.lbSubInfo.text = country?.name
     }
 }
 

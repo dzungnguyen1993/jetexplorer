@@ -146,6 +146,7 @@ class DBManager: NSObject {
     }
     
     func getCountry(fromCity city: City) -> Country? {
+        realm = try! Realm()
         let countryId = city.countryId
         let predicate = NSPredicate(format: "id == %@", countryId)
         let country = realm.objects(Country.self).filter(predicate).first

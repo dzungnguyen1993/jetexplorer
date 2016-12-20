@@ -124,7 +124,7 @@ extension CitySearchVC: UITableViewDataSource, UITableViewDelegate {
         } else {
             cell.lbCity.text = city.name
         }
-        
+        cell.lbAirport.isHidden = true
         return cell
     }
     

@@ -52,7 +52,7 @@ class HotelResultVC: BaseViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-//        self.tableView.register(UINib(nibName: "FlightResultCell", bundle: nil), forCellReuseIdentifier: "FlightResultCell")/
+        self.tableView.register(UINib(nibName: "HotelResultCell", bundle: nil), forCellReuseIdentifier: "HotelResultCell")
         
         self.tableView.separatorStyle = .none
         
@@ -177,7 +177,8 @@ class HotelResultVC: BaseViewController {
 extension HotelResultVC {
     func showHeaderInfo() {
         lbCity.text = searchInfo.city?.name
-        lbCountry.text = ""
+        let country = DBManager.shared.getCountry(fromCity: searchInfo.city!)
+        lbCountry.text = country?.name
         viewDateDepart.lbDate.text = searchInfo.checkinDay?.toDay()
         viewDateDepart.lbMonth.text = searchInfo.checkinDay?.toMonth()
         viewDateReturn.lbDate.text = searchInfo.checkoutDay?.toDay()
@@ -195,15 +196,19 @@ extension HotelResultVC {
 // MARK: Table view
 extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HotelResultCell", for: indexPath) as! HotelResultCell
+        
+        cell.containerView.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
+        cell.containerView.layer.borderWidth = 1.0
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 0
+        return 294
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -211,5 +216,5 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        }
+    }
 }

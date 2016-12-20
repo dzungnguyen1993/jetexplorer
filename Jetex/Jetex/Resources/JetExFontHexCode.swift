@@ -44,4 +44,6 @@ enum JetExFontHexCode : String{
     
     case jetexMapFulfill = "\u{e919}"
     case jetexMap = "\u{e91a}"
+    
+    case jetexStarFulfill = "\u{e927}"
 }
