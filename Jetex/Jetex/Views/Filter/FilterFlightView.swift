@@ -164,8 +164,9 @@ extension FilterFlightView: UITableViewDelegate, UITableViewDataSource {
             cell.airportOrigin = self.arrayOrigin
             cell.airportDestination = self.arrayDestination
             
-            cell.constraintOrigin.constant = CGFloat(44 * cell.airportOrigin.count)
-            cell.constraintDestination.constant = CGFloat(44 * cell.airportDestination.count)
+            // +1 for check all
+            cell.constraintOrigin.constant = CGFloat(44 * (cell.airportOrigin.count + 1))
+            cell.constraintDestination.constant = CGFloat(44 * (cell.airportDestination.count + 1))
             
             cell.tableviewOrigin.reloadData()
             cell.tableviewDestination.reloadData()
@@ -202,7 +203,8 @@ extension FilterFlightView: UITableViewDelegate, UITableViewDataSource {
             }
             return CGFloat(airlinesViewHeight + 44 * (searchResult.carriers.count + 1))
         case 2:
-            return CGFloat(destinationViewHeight + 44 * (arrayOrigin.count + arrayDestination.count))
+            // +2 for check all options (1 for origin, 1 for destination)
+            return CGFloat(destinationViewHeight + 44 * (arrayOrigin.count + arrayDestination.count + 2))
         default: return CGFloat(applyViewHeight)
         }
     }
@@ -261,11 +263,31 @@ extension FilterFlightView: DestinationViewDelegate {
     }
     
     func didCheckDestination(airport: Airport) {
-        if (self.tmpFilterObject.checkedOrigin.contains(airport)) {
+        if (self.tmpFilterObject.checkedDestination.contains(airport)) {
             let index = self.tmpFilterObject.checkedDestination.index(of: airport)
             self.tmpFilterObject.checkedDestination.remove(at: index!)
         } else {
             self.tmpFilterObject.checkedDestination.append(airport)
+        }
+    }
+    
+    // check all origin airports
+    func didCheckAllOrigin(isChecked: Bool) {
+        self.tmpFilterObject.checkedOrigin.removeAll()
+        if isChecked == true {
+            for airport in self.arrayOrigin {
+                self.tmpFilterObject.checkedOrigin.append(airport)
+            }
+        }
+    }
+    
+    // check all destination airports
+    func didCheckAllDestination(isChecked: Bool) {
+        self.tmpFilterObject.checkedDestination.removeAll()
+        if isChecked == true {
+            for airport in self.arrayDestination {
+                self.tmpFilterObject.checkedDestination.append(airport)
+            }
         }
     }
 }

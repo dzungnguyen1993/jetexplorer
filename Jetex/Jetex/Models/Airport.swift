@@ -11,8 +11,16 @@ import RealmSwift
 import ObjectMapper_Realm
 
 class Airport: Object, Mappable {
-    dynamic var id: String = ""
-    dynamic var name: String = ""
+    dynamic var id: String = "" {
+        didSet {
+            compoundKey = compoundKeyValue()
+        }
+    }
+    dynamic var name: String = ""{
+        didSet {
+            compoundKey = compoundKeyValue()
+        }
+    }
     dynamic var cityId: String = ""
     dynamic var countryId: String = ""
     
@@ -21,9 +29,9 @@ class Airport: Object, Mappable {
         self.init()
     }
     
-    override class func primaryKey() -> String? {
-        return "id"
-    }
+//    override class func primaryKey() -> String? {
+//        return "id"
+//    }
     
     func mapping(map: Map) {
         id <- map["Id"]
@@ -32,4 +40,24 @@ class Airport: Object, Mappable {
         countryId <- map["CountryId"]
     }
 
+    
+    public func setCompoundID(id: String) {
+        self.id = id
+        compoundKey = compoundKeyValue()
+    }
+    
+    
+    public func setCompoundType(name: String) {
+        self.name = name
+        compoundKey = compoundKeyValue()
+    }
+    
+    public dynamic var compoundKey: String = "0-"
+    public override static func primaryKey() -> String? {
+        return "compoundKey"
+    }
+    
+    private func compoundKeyValue() -> String {
+        return "\(id)-\(name)"
+    }
 }
