@@ -54,6 +54,8 @@
 		28BAD0161DE18B1E0008032D /* SearchHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BAD0141DE18B1E0008032D /* SearchHistoryVC.swift */; };
 		28BAD0171DE18B1E0008032D /* SearchHistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28BAD0151DE18B1E0008032D /* SearchHistoryVC.xib */; };
 		28C448911DDA24DC00DEBC51 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C448901DDA24DC00DEBC51 /* UserInfoView.swift */; };
+		28DAF8811E0A7064006A2406 /* SelectCabinClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DAF87F1E0A7064006A2406 /* SelectCabinClassVC.swift */; };
+		28DAF8821E0A7064006A2406 /* SelectCabinClassVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DAF8801E0A7064006A2406 /* SelectCabinClassVC.xib */; };
 		28E62C4C1DE597CF00E41D44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E62C4B1DE597CF00E41D44 /* User.swift */; };
 		28E62C4E1DE68ACC00E41D44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E62C4D1DE68ACC00E41D44 /* Constant.swift */; };
 		28E62C531DE6F23D00E41D44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E62C521DE6F23D00E41D44 /* GoogleService-Info.plist */; };
@@ -260,6 +262,8 @@
 		28BAD0141DE18B1E0008032D /* SearchHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryVC.swift; sourceTree = "<group>"; };
 		28BAD0151DE18B1E0008032D /* SearchHistoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchHistoryVC.xib; sourceTree = "<group>"; };
 		28C448901DDA24DC00DEBC51 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoView.swift; path = ../Controllers/UserInfoView.swift; sourceTree = "<group>"; };
+		28DAF87F1E0A7064006A2406 /* SelectCabinClassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCabinClassVC.swift; sourceTree = "<group>"; };
+		28DAF8801E0A7064006A2406 /* SelectCabinClassVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectCabinClassVC.xib; sourceTree = "<group>"; };
 		28E62C4B1DE597CF00E41D44 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28E62C4D1DE68ACC00E41D44 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		28E62C511DE6AC4100E41D44 /* JetEx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JetEx-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -647,6 +651,8 @@
 				B95281E81DD711880041C39B /* PickDateVC.xib */,
 				B98FB6D01DDB1BAA00E615F2 /* FlightResultVC.swift */,
 				B98FB6D11DDB1BAA00E615F2 /* FlightResultVC.xib */,
+				28DAF87F1E0A7064006A2406 /* SelectCabinClassVC.swift */,
+				28DAF8801E0A7064006A2406 /* SelectCabinClassVC.xib */,
 			);
 			name = "Flight VCs";
 			sourceTree = "<group>";
@@ -999,6 +1005,7 @@
 				B9F445E71DD4D6DF00250D6C /* Gotham-Bold.otf in Resources */,
 				B9F445E51DD4D6DF00250D6C /* Gotham-Black.otf in Resources */,
 				B9150B941DD4659C00F825DC /* cancel.png in Resources */,
+				28DAF8821E0A7064006A2406 /* SelectCabinClassVC.xib in Resources */,
 				281114F21DEAEE51008A1A7E /* FlightSearchHistoryVC.xib in Resources */,
 				B9D9A2C41DDB6B27007CAB28 /* right-arrow.png in Resources */,
 				B9F445F21DD4D6DF00250D6C /* Gotham-UltraIta.otf in Resources */,
@@ -1146,6 +1153,7 @@
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
 				B90544AC1DEEE833008FF60D /* Currency.swift in Sources */,
 				B9EE7A781DDDED7000A82AEE /* FlightResultDetailsView.swift in Sources */,
+				28DAF8811E0A7064006A2406 /* SelectCabinClassVC.swift in Sources */,
 				B9BA75CA1DEBCC52003393D7 /* PricingOption.swift in Sources */,
 				B9C197741DE1F4900084B8BF /* DestinationView.swift in Sources */,
 				B9FAA47C1DEB3ED4000F87D7 /* Place.swift in Sources */,
