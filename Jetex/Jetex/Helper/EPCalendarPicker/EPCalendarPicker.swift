@@ -275,16 +275,19 @@ public class EPCalendarPicker: UICollectionViewController, UICollectionViewDeleg
         if indicatorPosition == IndicatorPosition.checkOut{
             guard let cell = collectionView.cellForItem(at: indexPath) as? EPCalendarCell1 else {return false}
             guard let currentDate = cell.currentDate else {return false}
+            if currentDate.compare(startDateCalendar) == .orderedAscending {
+                return false
+            }
             if currentDate.compare(checkInDate) != .orderedAscending{
                 return true
             }
             // if user select the date before depart date, then reset it
             self.indicatorPosition = .checkIn
-            if indexPath.row > 1 {
-                checkInIndexPath.row = indexPath.row - 1
-            } else {
-                checkInIndexPath.row = indexPath.row + 1
-            }
+//            if indexPath.row > 1 {
+//                checkInIndexPath.row = indexPath.row - 1
+//            } else {
+//                checkInIndexPath.row = indexPath.row + 1
+//            }
             self.delegate?.repickCheckinDate()
             return true
         }
@@ -324,9 +327,9 @@ public class EPCalendarPicker: UICollectionViewController, UICollectionViewDeleg
     public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath as IndexPath) as! EPCalendarCell1
         guard let indicatorPosition = indicatorPosition else {return}
-        if indicatorPosition == .checkIn &&
-            (indexPath.section != checkInIndexPath.section ||
-            indexPath.row != checkInIndexPath.row){
+        if indicatorPosition == .checkIn { //&&
+            //(indexPath.section != checkInIndexPath.section ||
+            //indexPath.row != checkInIndexPath.row){
             checkInDate = cell.currentDate
             checkInDateComponents = cell.currentDateComponents
 //            let previousIndexpath = NSIndexPath(forItem: checkInIndexPath.item, inSection: checkInIndexPath.section)
@@ -341,9 +344,9 @@ public class EPCalendarPicker: UICollectionViewController, UICollectionViewDeleg
             collectionView.reloadData()
             checkInIndexPath = indexPath as IndexPath!
         }
-        if indicatorPosition == .checkOut &&
-            (indexPath.section != checkOutIndexPath.section ||
-            indexPath.row != checkOutIndexPath.row){
+        if indicatorPosition == .checkOut {// &&
+            //(indexPath.section != checkOutIndexPath.section ||
+            //indexPath.row != checkOutIndexPath.row){
             checkOutDate = cell.currentDate
             checkOutDateComponents = cell.currentDateComponents
 //            let previousIndexpath = NSIndexPath(forItem: checkOutIndexPath.item, inSection: checkOutIndexPath.section)
