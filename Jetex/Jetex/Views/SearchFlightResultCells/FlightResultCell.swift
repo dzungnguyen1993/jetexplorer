@@ -133,7 +133,7 @@ extension FlightResultCell {
 //            }
 //        }
         
-        // add stop
+        // add stop view (dots) on the line
         for view in self.viewInfoGeneral.subviews {
             if view.isKind(of: StopViewSmall.self) {
                 view.removeFromSuperview()
@@ -154,6 +154,7 @@ extension FlightResultCell {
             minStop = 3
         }
         
+        var lastX: CGFloat = 0
         for i in 0..<minStop! {
 //        for i in 0..<(leg?.stops.count)! {
             let stopId = leg?.stops[i]
@@ -164,11 +165,20 @@ extension FlightResultCell {
             let ratio = CGFloat((segment?.duration)! + sum) / CGFloat(totalDuration)
             sum = sum + (segment?.duration)!
             
-            let rect = CGRect(x: self.viewLine.frame.origin.x + self.viewLine.frame.size.width * ratio , y: self.viewLine.frame.origin.y - 20, width: 34, height: 25)
             
-            let stopView = StopViewSmall(frame: rect, airportName: (place?.code)!)
+            var x = self.viewLine.frame.origin.x + self.viewLine.frame.size.width * ratio - 17
+            if (x - lastX) < 20 {
+                x = x + 20
+            }
+            lastX = x
             
-            self.viewInfoGeneral.addSubview(stopView)
+            if x + 34 < self.viewLine.frame.origin.x + self.viewLine.frame.size.width {
+                let rect = CGRect(x: self.viewLine.frame.origin.x + self.viewLine.frame.size.width * ratio - 17, y: self.viewLine.frame.origin.y - 19, width: 34, height: 25)
+                
+                let stopView = StopViewSmall(frame: rect, airportName: (place?.code)!)
+                
+                self.viewInfoGeneral.addSubview(stopView)
+            }
         }
     }
 }

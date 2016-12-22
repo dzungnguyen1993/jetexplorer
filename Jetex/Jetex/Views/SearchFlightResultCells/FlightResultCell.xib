@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -79,7 +78,7 @@
                                 <rect key="frame" x="16" y="56" width="343" height="46"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSI-gt-FM7">
-                                        <rect key="frame" x="38.5" y="22.5" width="262.5" height="1"/>
+                                        <rect key="frame" x="48.5" y="22.5" width="247" height="1"/>
                                         <color key="backgroundColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.80000000000000004" id="Bnq-ZN-zhZ"/>
@@ -92,7 +91,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAX" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8p-0U-7x7">
-                                        <rect key="frame" x="317" y="17" width="26" height="12"/>
+                                        <rect key="frame" x="317.5" y="17" width="25.5" height="12"/>
                                         <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
                                         <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -117,7 +116,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="dyS-Ff-vaY">
-                                        <rect key="frame" x="291" y="18" width="10" height="10"/>
+                                        <rect key="frame" x="295.5" y="18" width="10" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dyS-Ff-vaY" secondAttribute="height" multiplier="1:1" id="2Rt-ad-eW8"/>
                                         </constraints>
@@ -142,22 +141,22 @@
                                     <constraint firstItem="IW4-ag-8k6" firstAttribute="height" secondItem="JPV-QC-LLb" secondAttribute="height" id="0Cc-m8-y2b"/>
                                     <constraint firstItem="FRa-7K-Igi" firstAttribute="leading" secondItem="ykZ-ek-30o" secondAttribute="leading" id="0fF-sG-O2Q"/>
                                     <constraint firstAttribute="trailing" secondItem="GBb-G1-9Ac" secondAttribute="trailing" id="2uT-xG-dKw"/>
-                                    <constraint firstItem="JSI-gt-FM7" firstAttribute="trailing" secondItem="dyS-Ff-vaY" secondAttribute="trailing" id="DlH-Wv-Wfe"/>
+                                    <constraint firstItem="JSI-gt-FM7" firstAttribute="trailing" secondItem="dyS-Ff-vaY" secondAttribute="trailing" constant="-10" id="DlH-Wv-Wfe"/>
                                     <constraint firstAttribute="bottom" secondItem="GBb-G1-9Ac" secondAttribute="bottom" id="HXO-ir-w0D"/>
-                                    <constraint firstItem="gys-Oe-uGj" firstAttribute="trailing" secondItem="kBM-q9-4wz" secondAttribute="trailing" id="I3t-59-dQd"/>
                                     <constraint firstItem="gys-Oe-uGj" firstAttribute="centerY" secondItem="ykZ-ek-30o" secondAttribute="centerY" id="JJG-kc-W6x"/>
                                     <constraint firstItem="dyS-Ff-vaY" firstAttribute="height" secondItem="gys-Oe-uGj" secondAttribute="height" id="LzM-h9-GV1"/>
                                     <constraint firstItem="JPV-QC-LLb" firstAttribute="leading" secondItem="IW4-ag-8k6" secondAttribute="trailing" constant="3" id="M7U-rN-tGC"/>
-                                    <constraint firstItem="JSI-gt-FM7" firstAttribute="leading" secondItem="gys-Oe-uGj" secondAttribute="leading" id="Ogx-7Q-Oev"/>
-                                    <constraint firstItem="dyS-Ff-vaY" firstAttribute="leading" secondItem="GBb-G1-9Ac" secondAttribute="leading" id="VfM-1C-zEQ"/>
+                                    <constraint firstItem="JSI-gt-FM7" firstAttribute="leading" secondItem="gys-Oe-uGj" secondAttribute="leading" constant="10" id="Ogx-7Q-Oev"/>
                                     <constraint firstAttribute="bottom" secondItem="kBM-q9-4wz" secondAttribute="bottom" id="Ytd-Qg-vvt"/>
                                     <constraint firstAttribute="height" constant="46" id="ZrS-1N-DFv"/>
                                     <constraint firstItem="JSI-gt-FM7" firstAttribute="centerY" secondItem="ykZ-ek-30o" secondAttribute="centerY" id="bzV-XL-oh8"/>
+                                    <constraint firstItem="gys-Oe-uGj" firstAttribute="leading" secondItem="FRa-7K-Igi" secondAttribute="trailing" constant="12" id="gvZ-cp-3Z5"/>
                                     <constraint firstAttribute="trailing" secondItem="p8p-0U-7x7" secondAttribute="trailing" id="h03-Zk-SGY"/>
                                     <constraint firstAttribute="bottom" secondItem="IW4-ag-8k6" secondAttribute="bottom" constant="2" id="jZr-fh-waq"/>
                                     <constraint firstItem="dyS-Ff-vaY" firstAttribute="centerY" secondItem="ykZ-ek-30o" secondAttribute="centerY" id="lca-wA-67R"/>
                                     <constraint firstItem="p8p-0U-7x7" firstAttribute="centerY" secondItem="ykZ-ek-30o" secondAttribute="centerY" id="oza-gO-RHk"/>
                                     <constraint firstItem="JPV-QC-LLb" firstAttribute="centerX" secondItem="ykZ-ek-30o" secondAttribute="centerX" id="qj6-Bf-X90"/>
+                                    <constraint firstItem="p8p-0U-7x7" firstAttribute="leading" secondItem="dyS-Ff-vaY" secondAttribute="trailing" constant="12" id="st7-pG-9e5"/>
                                     <constraint firstItem="FRa-7K-Igi" firstAttribute="centerY" secondItem="ykZ-ek-30o" secondAttribute="centerY" id="tcI-7X-EzR"/>
                                     <constraint firstItem="kBM-q9-4wz" firstAttribute="leading" secondItem="ykZ-ek-30o" secondAttribute="leading" id="u1p-RP-Lsh"/>
                                     <constraint firstAttribute="bottom" secondItem="JPV-QC-LLb" secondAttribute="bottom" id="zvs-As-5VD"/>

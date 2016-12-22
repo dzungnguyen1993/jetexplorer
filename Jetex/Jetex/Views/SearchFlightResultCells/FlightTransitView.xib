@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -78,11 +78,11 @@
                     <rect key="frame" x="0.0" y="62" width="320" height="47"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cc-E0-ZU6">
-                            <rect key="frame" x="116.5" y="13" width="88" height="1"/>
+                            <rect key="frame" x="126.5" y="13" width="10" height="1"/>
                             <color key="backgroundColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="0.80000000000000004" id="2x5-U4-dqk"/>
-                                <constraint firstAttribute="width" constant="88" id="jOJ-c8-Nv9"/>
+                                <constraint firstAttribute="width" constant="10" id="jOJ-c8-Nv9"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLQ-0Q-yZy">
@@ -91,12 +91,9 @@
                             <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfo-rF-Jvs">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfo-rF-Jvs">
                             <rect key="frame" x="16" y="27" width="99.5" height="12"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zJO-zq-nKk"/>
-                            </constraints>
                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                             <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -115,26 +112,26 @@
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="tIz-6B-BjM">
-                            <rect key="frame" x="194.5" y="8" width="10" height="10"/>
+                            <rect key="frame" x="136.5" y="9" width="10" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="tIz-6B-BjM" secondAttribute="height" multiplier="1:1" id="0ZF-IV-zmA"/>
                                 <constraint firstAttribute="width" constant="10" id="kNV-Mp-OJs"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ld4-wb-eHT">
-                            <rect key="frame" x="220.5" y="8" width="49.5" height="12"/>
+                            <rect key="frame" x="162.5" y="8" width="49.5" height="12"/>
                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
                             <color key="textColor" red="0.2784313725" green="0.77647058820000003" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7I-VW-oSC">
-                            <rect key="frame" x="278" y="8" width="27" height="12"/>
+                            <rect key="frame" x="220" y="8" width="27" height="12"/>
                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
                             <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pu8-sT-wpL">
-                            <rect key="frame" x="205.5" y="27" width="99.5" height="12"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pu8-sT-wpL">
+                            <rect key="frame" x="147" y="27" width="100" height="12"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="raz-Cc-eJd"/>
@@ -146,21 +143,23 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="tIz-6B-BjM" firstAttribute="centerY" secondItem="9cc-E0-ZU6" secondAttribute="centerY" id="4Wa-oJ-kI1"/>
                         <constraint firstItem="Ld4-wb-eHT" firstAttribute="leading" secondItem="tIz-6B-BjM" secondAttribute="trailing" constant="16" id="4c4-EO-ypw"/>
                         <constraint firstAttribute="bottom" secondItem="Kfo-rF-Jvs" secondAttribute="bottom" constant="8" id="6lU-gu-Xi4"/>
-                        <constraint firstItem="Pu8-sT-wpL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kfo-rF-Jvs" secondAttribute="trailing" constant="16" id="7Ak-X9-t4O"/>
                         <constraint firstItem="96N-nV-Xpp" firstAttribute="centerY" secondItem="fJA-bz-ggA" secondAttribute="centerY" id="7es-sv-tfe"/>
                         <constraint firstItem="fJA-bz-ggA" firstAttribute="leading" secondItem="pLQ-0Q-yZy" secondAttribute="trailing" constant="8" id="8j9-eV-kkr"/>
+                        <constraint firstItem="Pu8-sT-wpL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kfo-rF-Jvs" secondAttribute="trailing" constant="8" id="9f7-NJ-dqt"/>
                         <constraint firstAttribute="bottom" secondItem="Pu8-sT-wpL" secondAttribute="bottom" constant="8" id="Md9-rv-OIa"/>
+                        <constraint firstItem="Pu8-sT-wpL" firstAttribute="width" relation="lessThanOrEqual" secondItem="Jgg-gQ-DqY" secondAttribute="width" multiplier="3:7" id="Ncn-J2-Zz1"/>
                         <constraint firstItem="96N-nV-Xpp" firstAttribute="leading" secondItem="fJA-bz-ggA" secondAttribute="trailing" constant="16" id="ODm-qg-3xb"/>
                         <constraint firstItem="pLQ-0Q-yZy" firstAttribute="top" secondItem="Jgg-gQ-DqY" secondAttribute="top" constant="8" id="P0a-yI-a0Y"/>
                         <constraint firstItem="Kfo-rF-Jvs" firstAttribute="leading" secondItem="Jgg-gQ-DqY" secondAttribute="leading" constant="16" id="TB4-2z-dmH"/>
+                        <constraint firstItem="tIz-6B-BjM" firstAttribute="centerY" secondItem="96N-nV-Xpp" secondAttribute="centerY" id="TIF-vv-iEv"/>
                         <constraint firstItem="Ld4-wb-eHT" firstAttribute="top" secondItem="Jgg-gQ-DqY" secondAttribute="top" constant="8" id="XsX-iM-Mcy"/>
                         <constraint firstItem="R7I-VW-oSC" firstAttribute="top" secondItem="Jgg-gQ-DqY" secondAttribute="top" constant="8" id="fvk-P3-qBT"/>
-                        <constraint firstItem="9cc-E0-ZU6" firstAttribute="leading" secondItem="96N-nV-Xpp" secondAttribute="leading" id="kNe-gx-X6k"/>
+                        <constraint firstItem="9cc-E0-ZU6" firstAttribute="leading" secondItem="96N-nV-Xpp" secondAttribute="leading" constant="10" id="kNe-gx-X6k"/>
                         <constraint firstItem="9cc-E0-ZU6" firstAttribute="centerY" secondItem="96N-nV-Xpp" secondAttribute="centerY" id="laJ-tK-vq9"/>
-                        <constraint firstItem="tIz-6B-BjM" firstAttribute="trailing" secondItem="9cc-E0-ZU6" secondAttribute="trailing" id="mzD-1t-eo9"/>
+                        <constraint firstItem="tIz-6B-BjM" firstAttribute="trailing" secondItem="9cc-E0-ZU6" secondAttribute="trailing" constant="10" id="mzD-1t-eo9"/>
+                        <constraint firstItem="Kfo-rF-Jvs" firstAttribute="width" relation="lessThanOrEqual" secondItem="Jgg-gQ-DqY" secondAttribute="width" multiplier="3:7" id="nmu-eW-WR4"/>
                         <constraint firstItem="pLQ-0Q-yZy" firstAttribute="leading" secondItem="Jgg-gQ-DqY" secondAttribute="leading" constant="16" id="pmP-JJ-rDY"/>
                         <constraint firstItem="fJA-bz-ggA" firstAttribute="top" secondItem="Jgg-gQ-DqY" secondAttribute="top" constant="8" id="puc-rH-ol6"/>
                         <constraint firstItem="R7I-VW-oSC" firstAttribute="leading" secondItem="Ld4-wb-eHT" secondAttribute="trailing" constant="8" id="wIe-yi-yK2"/>

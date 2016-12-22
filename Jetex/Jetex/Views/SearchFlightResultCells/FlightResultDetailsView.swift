@@ -87,7 +87,7 @@ class FlightResultDetailsView: UIView {
             transitView.showDetails(ofSearchResult: searchResult, forSegment: currentSegment!)
             
             let ratio = CGFloat((currentSegment?.duration)!) / CGFloat(maxDurationSegment)
-            transitView.constraintWidth.constant = ratio * (self.frame.size.width - 230)
+            transitView.constraintWidth.constant = max(ratio * (self.frame.size.width - 250), 5)
         
             self.addSubview(transitView)
             
