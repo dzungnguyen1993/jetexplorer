@@ -356,6 +356,16 @@ extension FlightResultVC: FilterFlightViewDelegate {
         
         loadResultData()
     }
+    
+    func showFilterWarning(message: String) {
+        let popup = PopupDialog(title: message, message: "", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: true, completion: nil)
+        let buttonOne = CancelButton(title: "CANCEL") {
+            popup.dismiss()
+        }
+        
+        popup.addButton(buttonOne)
+        self.present(popup, animated: true, completion: nil)
+    }
 }
 
 // load data

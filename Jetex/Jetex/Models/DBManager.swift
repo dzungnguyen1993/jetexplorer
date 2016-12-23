@@ -74,9 +74,6 @@ class DBManager: NSObject {
             
             let singleAirportCity = cityDict["SingleAirportCity"] as! Bool
             let airportAll = Airport()
-            if city.iataCode == "BKK" {
-                print("ngu")
-            }
             
             if (!singleAirportCity) {
                 airportAll.id = city.iataCode

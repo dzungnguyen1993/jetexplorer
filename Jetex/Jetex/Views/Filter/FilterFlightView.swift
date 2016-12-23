@@ -11,6 +11,7 @@ import UIKit
 protocol FilterFlightViewDelegate: class {
     func hideFilter()
     func applyFilter(filterObject: FilterObject)
+    func showFilterWarning(message: String)
 }
 
 class FilterFlightView: UIView {
@@ -294,6 +295,22 @@ extension FilterFlightView: DestinationViewDelegate {
 
 extension FilterFlightView: ApplyFilterViewDelegate {
     func clickApply() {
+        // check if not check any airlines, or airport
+        if (self.tmpFilterObject.checkedCarriers.count == 0) {
+            self.delegate?.showFilterWarning(message: "You must choose at least 1 carrier!")
+            return
+        }
+        
+        if (self.tmpFilterObject.checkedOrigin.count == 0) {
+            self.delegate?.showFilterWarning(message: "You must choose at least 1 origin airport!")
+            return
+        }
+        
+        if (self.tmpFilterObject.checkedDestination.count == 0) {
+            self.delegate?.showFilterWarning(message: "You must choose at least 1 destination airport!")
+            return
+        }
+        
         applyFilter()
         delegate?.hideFilter()
     }
