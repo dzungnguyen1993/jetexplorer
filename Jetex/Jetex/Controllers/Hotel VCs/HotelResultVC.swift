@@ -35,8 +35,8 @@ class HotelResultVC: BaseViewController {
     
     @IBOutlet weak var viewRoundtrip: UIView!
     
-    var searchFlightResult: SearchFlightResult!
-    var itineraries: [Itinerary]! = nil
+    var searchResult: SearchHotelResult!
+    var hotels: [Hotel]! = nil
     
     var isShowCheapest: Bool!
     var isShowDetailsBefore: Bool!
@@ -68,59 +68,60 @@ class HotelResultVC: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        guard searchFlightResult == nil else {
+        guard searchResult == nil else {
             return
         }
         
-        searchForFlights()
+        searchForHotels()
     }
     
-    func searchForFlights() {
-//        let loadingVC = LoadingPopupVC(nibName: "LoadingPopupVC", bundle: nil)
-//        
-//        let popup = PopupDialog(viewController: loadingVC, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
-//        loadingVC.titleLabel.text = "Please wait, I am searching..."
-//        loadingVC.updateProgress(percent: 0)
-//        
-//        popup.addButton(CancelButton(title: "Cancel", action: {
-//            loadingVC.updateProgress(percent: 0, completion: {
-//                print("cancel")
-//            })
-//            _ = self.navigationController?.popViewController(animated: true)
-//        }))
-//        
-//        self.present(popup, animated: true, completion: nil)
-//        loadingVC.startProgress()
-//        
-//        NetworkManager.shared.requestGetFlightSearchResult(info: passengerInfo) { (isSuccess, data) in
-//            
-//            if (isSuccess) {
-//                loadingVC.updateProgress(percent: 90)
-//                self.searchFlightResult = ResponseParser.shared.parseFlightSearchResponse(data: data as! NSDictionary)
-//                loadingVC.updateProgress(percent: 100, completion: {
-//                    popup.dismiss()
-//                })
-//                
-//                self.loadResult()
-//                
-//                if self.searchFlightResult.itineraries.count != 0 {
-//                    self.viewNoResult.isHidden = true
-//                    //TODO: start checking for session timer here
-//                    
-//                } else {
-//                    self.viewNoResult.isHidden = false
-//                }
-//            } else {
-//                loadingVC.updateProgress(percent: 100, completion: {
-//                    popup.dismiss()
-//                })
-//                self.viewNoResult.isHidden = false
-//            }
-//        }
+    func searchForHotels() {
+        let loadingVC = LoadingPopupVC(nibName: "LoadingPopupVC", bundle: nil)
+        
+        let popup = PopupDialog(viewController: loadingVC, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+        loadingVC.titleLabel.text = "Please wait, I am searching..."
+        loadingVC.updateProgress(percent: 0)
+        
+        popup.addButton(CancelButton(title: "Cancel", action: {
+            loadingVC.updateProgress(percent: 0, completion: {
+                print("cancel")
+            })
+            _ = self.navigationController?.popViewController(animated: true)
+        }))
+        
+        self.present(popup, animated: true, completion: nil)
+        loadingVC.startProgress()
+        
+        NetworkManager.shared.requestGetHotelSearchResult(info: searchInfo) { (isSuccess, data) in
+            
+            if (isSuccess) {
+                loadingVC.updateProgress(percent: 90)
+                self.searchResult = ResponseParser.shared.parseHotelSearchResponse(data: data as! NSDictionary)
+                loadingVC.updateProgress(percent: 100, completion: {
+                    popup.dismiss()
+                })
+                
+                self.loadResult()
+                
+                if self.searchResult.hotels.count != 0 {
+                    self.viewNoResult.isHidden = true
+                    //TODO: start checking for session timer here
+                    
+                } else {
+                    self.viewNoResult.isHidden = false
+                }
+            } else {
+                loadingVC.updateProgress(percent: 100, completion: {
+                    popup.dismiss()
+                })
+                self.viewNoResult.isHidden = false
+            }
+        }
     }
     
     func loadResult() {
-        
+        self.searchResult.initSort()
+        self.loadResultData()
     }
     
     @IBAction func back(_ sender: UIButton) {
@@ -196,7 +197,8 @@ extension HotelResultVC {
 // MARK: Table view
 extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        guard hotels != nil else {return 0}
+        return hotels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -204,11 +206,36 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
         
         cell.containerView.layer.borderColor = UIColor(hex: 0xD6D6D6).cgColor
         cell.containerView.layer.borderWidth = 1.0
+        
+        // set hotel info
+        let hotel = self.hotels[indexPath.row]
+        
+        // set popularity
+        let score = Double(hotel.popularity) / 10
+        cell.lbPopularity.text = score.toString() + " " + hotel.popularityDesc
+        
+        cell.lbHotelName.text = hotel.name
+        cell.lbDistance.text = hotel.distance.toString() + "km to centre"
+        
+        // show stars
+        cell.showStars(star: hotel.star)
+        
+        // set price
+        let agentPrice = self.searchResult.getPrice(ofHotel: hotel)
+        if agentPrice != nil {
+            cell.lbPrice.text = ProfileVC.currentCurrencyType + " " + (agentPrice?.priceTotal.toString())!
+            let pricePerNight = (agentPrice?.priceTotal)! / Double((searchInfo.checkoutDay?.days(fromDate: searchInfo.checkinDay!))!)
+            cell.lbPricePerNight.text = ProfileVC.currentCurrencyType + " " + (pricePerNight.toString()) + "/night"
+            
+        }
+
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 294
+        // height of image (ratio 21:9) + the rest
+        return 120 + self.view.frame.size.width * 9 / 21
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -216,5 +243,27 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = HotelDetailsVC(nibName: "HotelDetailsVC", bundle: nil)
+        vc.searchInfo = self.searchInfo
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+// load data
+extension HotelResultVC {
+    func loadResultData() {
+        if (isShowCheapest == true) {
+            hotels = self.searchResult.cheapestHotels
+        } else {
+            hotels = self.searchResult.bestHotels
+        }
+
+        let sections = NSIndexSet(indexesIn: NSMakeRange(0, tableView.numberOfSections))
+        tableView.reloadSections(sections as IndexSet, with: .automatic)
+        self.tableView.reloadData()
+        
+        guard self.hotels.count > 0 else {return}
+        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
 }

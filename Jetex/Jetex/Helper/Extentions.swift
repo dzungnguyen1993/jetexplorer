@@ -229,6 +229,15 @@ extension Date {
         
         return timeString
     }
+    
+    // Return number of days from date
+    func days(fromDate date: Date) -> Int {
+        let calendar = Calendar.current
+        
+        let components = calendar.dateComponents([.day], from: date, to: self)
+        
+        return components.day!
+    }
 }
 
 @IBDesignable extension UIView {
@@ -372,5 +381,11 @@ extension UIApplication {
             return topViewController(controller: presented)
         }
         return controller
+    }
+}
+
+extension Double {
+    func toString() -> String {
+        return String(format:"%.1f", self)
     }
 }

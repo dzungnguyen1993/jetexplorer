@@ -185,7 +185,7 @@
                                     <rect key="frame" x="307" y="0.0" width="60" height="44"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kam-2N-a6V">
-                                            <rect key="frame" x="0.0" y="0.0" width="60" height="22"/>
+                                            <rect key="frame" x="0.0" y="5" width="60" height="22"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a7f-dt-0YJ">
                                                     <rect key="frame" x="6.5" y="0.0" width="22" height="22"/>
@@ -209,7 +209,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-F2-TWZ">
-                                            <rect key="frame" x="10" y="16" width="39.5" height="12"/>
+                                            <rect key="frame" x="10.5" y="27" width="39.5" height="12"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>

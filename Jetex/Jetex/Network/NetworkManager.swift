@@ -15,6 +15,7 @@ import AlamofireObjectMapper
 enum RequestType: String {
     case getAllAirport = "/flights/api/get/all_airport_sky"
     case getFlightSearchResult = "/flights/api/search-new"
+    case getHotelSearchResult = "/hotels/api/search-sky"
 }
 
 class NetworkManager: NSObject {
@@ -166,4 +167,43 @@ class NetworkManager: NSObject {
         }
     }
 
+    // Search hotel
+    func requestGetHotelSearchResult(info: SearchHotelInfo, completion: @escaping ResponseCompletion) {
+        ///hotels/api/search-sky/:market/:currency/:locale/:place/:dateIn/:dateOut/:adults/:rooms/:imageLimit/:pageSize
+        //http://jetexplorer.com/hotels/api/search-sky/UK/AUD/en-GB/bangkok/2016-12-30/2017-01-04/4/2/1/200
+        
+        // create request string
+        var requestString = hostAddress + RequestType.getHotelSearchResult.rawValue
+        requestString.append("/UK/" +  ProfileVC.currentCurrencyType + "/en-GB")
+        
+        // add place
+        requestString.append("/" + (info.city?.name)!)
+        
+        // add check in
+        requestString.append("/" + (info.checkinDay?.toYYYYMMDDString())!)
+        
+        // add check out
+        requestString.append("/" + (info.checkoutDay?.toYYYYMMDDString())!)
+        
+        // add number of guests
+        requestString.append("/" + info.numberOfGuest.toString())
+        
+        // add rooms
+        requestString.append("/" + info.numberOfRooms.toString())
+        
+        // add image limit
+        requestString.append("/" + "1")
+        
+        // add page size
+        requestString.append("/" + "10")
+        
+        let parameters = Parameters()
+        
+        print(requestString)
+        Alamofire.request(requestString, method: .get, parameters: parameters).responseJSON { (response) in
+            completion(response.result.isSuccess, response.result.value)
+        }
+    }
+    
+    // Hotel details
 }

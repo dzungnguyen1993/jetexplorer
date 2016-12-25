@@ -15,6 +15,8 @@ class SearchHotelInfo: Object, Mappable  {
     dynamic var city: City?
     dynamic var checkinDay: Date?
     dynamic var checkoutDay: Date?
+    dynamic var numberOfGuest: Int = 4
+    dynamic var numberOfRooms: Int = 2
     
     func initialize() {
         self.checkinDay = Utility.initialCheckInDate
