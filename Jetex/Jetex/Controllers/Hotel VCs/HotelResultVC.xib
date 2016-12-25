@@ -353,7 +353,7 @@
                                                 <color key="titleColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
-                                                <action selector="showFastestTrip:" destination="-1" eventType="touchUpInside" id="qGp-BW-cm7"/>
+                                                <action selector="showBestTrip:" destination="-1" eventType="touchUpInside" id="sbK-mf-LUe"/>
                                             </connections>
                                         </button>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PuY-bD-2xo">

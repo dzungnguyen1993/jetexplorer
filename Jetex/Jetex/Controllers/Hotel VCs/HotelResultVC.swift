@@ -138,10 +138,10 @@ class HotelResultVC: BaseViewController {
         // load result
         isShowCheapest = true
         isShowDetailsBefore = false
-//        loadResultData()
+        loadResultData()
     }
     
-    @IBAction func showFastestTrip(_ sender: UIButton) {
+    @IBAction func showBestTrip(_ sender: UIButton) {
         btnCheapest.alpha = 0.6
         viewUnderCheapest.isHidden = true
         
@@ -151,7 +151,7 @@ class HotelResultVC: BaseViewController {
         // load result
         isShowCheapest = false
         isShowDetailsBefore = false
-//        loadResultData()
+        loadResultData()
     }
     
     @IBAction func showFilter(_ sender: UIButton) {

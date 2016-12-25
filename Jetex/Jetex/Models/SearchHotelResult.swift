@@ -38,8 +38,12 @@ class SearchHotelResult: Mappable {
     func sortCheapest(hotels: [Hotel]) {
         self.cheapestHotels = hotels
         
-        self.cheapestHotels.sort { (item1, item2) -> Bool in
-            return true
+        self.cheapestHotels.sort { (hotel1, hotel2) -> Bool in
+            let agentPrice1 = self.getPrice(ofHotel: hotel1)
+            
+            let agentPrice2 = self.getPrice(ofHotel: hotel2)
+            
+            return agentPrice1!.priceTotal < agentPrice2!.priceTotal
         }
     }
     
@@ -47,8 +51,8 @@ class SearchHotelResult: Mappable {
     func sortBest(hotels: [Hotel]) {
         self.bestHotels = hotels
         
-        self.bestHotels.sort { (item1, item2) -> Bool in
-            return true
+        self.bestHotels.sort { (hotel1, hotel2) -> Bool in
+            return hotel1.popularity > hotel2.popularity
         }
     }
     
