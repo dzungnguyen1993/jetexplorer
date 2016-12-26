@@ -46,6 +46,9 @@ class HotelResultVC: BaseViewController {
     @IBOutlet weak var lbGuest: UILabel!
     @IBOutlet weak var lbRoom: UILabel!
     
+    @IBOutlet weak var constraintFilterHeight: NSLayoutConstraint!
+    @IBOutlet weak var viewFilter: FilterHotelView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,8 +74,12 @@ class HotelResultVC: BaseViewController {
         guard searchResult == nil else {
             return
         }
-        
+
         searchForHotels()
+        // setup filter
+   
+        viewFilter.delegate = self
+        constraintFilterHeight.constant = 100
     }
     
     func searchForHotels() {
@@ -156,12 +163,12 @@ class HotelResultVC: BaseViewController {
     
     @IBAction func showFilter(_ sender: UIButton) {
         
-//        UIView.animate(withDuration: 0.25, animations: {
-//            self.viewFilterContainer.isHidden = false
-//            self.viewOptions.isHidden = true
-//            self.tableView.isHidden = true
-//        })
-//        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.viewFilterContainer.isHidden = false
+            self.viewOptions.isHidden = true
+            self.tableView.isHidden = true
+        })
+//
 //        viewFilter.tableView.reloadData()
     }
     
@@ -266,4 +273,23 @@ extension HotelResultVC {
         guard self.hotels.count > 0 else {return}
         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
+}
+
+// MARK: Filter
+extension HotelResultVC: FilterHotelViewDelegate {
+    func hideFilter() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.viewFilterContainer.isHidden = true
+            self.viewOptions.isHidden = false
+            self.tableView.isHidden = false
+        })
+    }
+    
+//    func applyFilter(filterObject: FilterObject) {
+//        searchFlightResult.applyFilter(filterObject: filterObject)
+//        
+//        hideFilter()
+//        
+//        loadResultData()
+//    }
 }
