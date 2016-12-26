@@ -278,15 +278,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Network/NetworkManager.swift"
-            timestampString = "502125582.954727"
+            timestampString = "504457976.268226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "syncHistoryToServer(historyData:atView:showPopup:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/FlightSearchVC.swift"
-            timestampString = "502705022.451128"
+            timestampString = "504455061.379074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "saveSearchingInfoIntoHistory()"
             landmarkType = "7">
          </BreakpointContent>
@@ -358,27 +358,27 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Network/NetworkManager.swift"
-            timestampString = "502125582.954727"
+            timestampString = "504457976.268226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "syncHistoryToServer(historyData:atView:showPopup:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Jetex.NetworkManager.syncHistoryToServer (historyData : Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, atView : Swift.Optional&lt;__ObjC.UIViewController&gt;, showPopup : Swift.Bool, completion : Swift.Optional&lt;(Swift.Bool, Swift.Optional&lt;RealmSwift.List&lt;Jetex.HistorySearch&gt;&gt;) -&gt; ()&gt;) -&gt; ()"
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
-                  timestampString = "504000406.462591"
+                  timestampString = "504169603.538213"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
@@ -386,14 +386,14 @@
                   offsetFromSymbolStart = "1477">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Jetex.NetworkManager.(syncHistoryToServer (historyData : Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, atView : Swift.Optional&lt;__ObjC.UIViewController&gt;, showPopup : Swift.Bool, completion : Swift.Optional&lt;(Swift.Bool, Swift.Optional&lt;RealmSwift.List&lt;Jetex.HistorySearch&gt;&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
-                  timestampString = "504000406.463805"
+                  timestampString = "504169603.539451"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "92"
@@ -518,7 +518,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Models/HistorySearch.swift"
@@ -534,7 +534,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Models/HistorySearch.swift"
@@ -550,15 +550,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/FlightSearchVC.swift"
-            timestampString = "502705022.451128"
+            timestampString = "504455061.379074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "FlightSearchVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -710,47 +710,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/FlightSearchVC.swift"
-            timestampString = "502705022.451128"
+            timestampString = "504455061.379074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "saveSearchingInfoIntoHistory()"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Jetex.FlightSearchVC.saveSearchingInfoIntoHistory () -&gt; ()"
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/FlightSearchVC.swift"
-                  timestampString = "504000406.476794"
+                  timestampString = "504118603.882802"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "156"
                   endingLineNumber = "156"
-                  offsetFromSymbolStart = "323">
+                  offsetFromSymbolStart = "328">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Jetex.FlightSearchVC.(saveSearchingInfoIntoHistory () -&gt; ()).(closure #1)"
                   moduleName = "Jetex"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Controllers/FlightSearchVC.swift"
-                  timestampString = "504000406.478038"
+                  timestampString = "504118603.883941"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "157"
                   endingLineNumber = "157"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -916,15 +916,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/FlightSearchVC.swift"
-            timestampString = "502705022.451128"
+            timestampString = "504455061.379074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "FlightSearchVC"
             landmarkType = "4">
          </BreakpointContent>
@@ -932,15 +932,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/FlightSearchVC.swift"
-            timestampString = "502705022.451128"
+            timestampString = "504455061.379074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "FlightSearchVC"
             landmarkType = "4">
          </BreakpointContent>
@@ -968,45 +968,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Network/NetworkManager.swift"
-            timestampString = "502706097.139193"
+            timestampString = "504457976.268226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "requestGetFlightSearchResult(info:completion:)"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "requestGetFlightSearchResult(info:currentPopUp:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Jetex.NetworkManager.requestGetFlightSearchResult (info : Jetex.PassengerInfo, completion : (Swift.Bool, Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Jetex"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
-                  timestampString = "502847436.119841"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "3114">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Jetex.NetworkManager.(requestGetFlightSearchResult (info : Jetex.PassengerInfo, completion : (Swift.Bool, Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "Jetex"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/NXGieng/Desktop/Games/Freelance/P5/JetExplorer/Jetex/Jetex/Network/NetworkManager.swift"
-                  timestampString = "502847436.120962"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "23">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1284,7 +1252,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Helper/LoadingPopupVC.swift"
@@ -1300,7 +1268,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Helper/AImage/AImageView.swift"
@@ -1316,7 +1284,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Helper/AImage/AImageView.swift"
@@ -1332,16 +1300,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jetex/Controllers/FlightSearchVC.swift"
-            timestampString = "504000275.873307"
+            timestampString = "504452316.277247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Controllers/FlightResultVC.swift"
+            timestampString = "504118596.811024"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "searchForFlights()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Helper/LoadingPopupVC.swift"
+            timestampString = "504118613.341195"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "startProgress()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Network/NetworkManager.swift"
+            timestampString = "504457976.268226"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "requestGetFlightSearchResult(info:currentPopUp:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Network/NetworkManager.swift"
+            timestampString = "504457976.268226"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "requestGetFlightSearchResult(info:currentPopUp:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jetex/Models/HistorySearch.swift"
+            timestampString = "504456384.158725"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "init(info:searchAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

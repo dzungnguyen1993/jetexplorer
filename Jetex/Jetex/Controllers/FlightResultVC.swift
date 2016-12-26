@@ -106,7 +106,7 @@ class FlightResultVC: BaseViewController {
         self.present(popup, animated: true, completion: nil)
         loadingVC.startProgress()
         
-        NetworkManager.shared.requestGetFlightSearchResult(info: passengerInfo) { (isSuccess, data) in
+        NetworkManager.shared.requestGetFlightSearchResult(info: passengerInfo, currentPopUp: popup) { (isSuccess, data) in
             
             if (isSuccess) {
                 loadingVC.updateProgress(percent: 90)

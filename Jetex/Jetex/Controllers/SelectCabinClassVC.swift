@@ -9,14 +9,19 @@
 import UIKit
 import RealmSwift
 
+protocol PickCabinClassVCDelegate : class {
+    func donePickCabinClass(cabinClass: String)
+}
+
 class SelectCabinClassVC: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     
     let cabinClassList     = [("Economy", "Economy"),
                               ("Premium Economy", "PremiumEconomy"),
                               ("Business","Business"),
-                              ("First Class", "First") ]
+                              ("First", "First") ]
     
-    var selectedcabinClass = "Economy"
+    var selectedCabinClass = "Economy"
+    var delegate: PickCabinClassVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,27 +37,24 @@ class SelectCabinClassVC: BaseViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         
         var attributes = [NSForegroundColorAttributeName : UIColor(hex: 0x515151), NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 15)!]
         
-        if cabinClassList[indexPath.row].1 == selectedcabinClass {
+        if cabinClassList[indexPath.row].0 == selectedCabinClass {
             attributes = [NSForegroundColorAttributeName : UIColor(hex: 0x674290), NSFontAttributeName: UIFont(name: GothamFontName.Bold.rawValue, size: 15)!]
         }
         
         cell.textLabel?.attributedText = NSAttributedString(string: cabinClassList[indexPath.row].0, attributes: attributes)
         
-        cell.detailTextLabel?.attributedText = NSAttributedString(string: cabinClassList[indexPath.row].1, attributes:attributes)
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedcabinClass = cabinClassList[indexPath.row].1
+        selectedCabinClass = cabinClassList[indexPath.row].0
         
         // TODO: update it back to searching view here
-        
-        
+        delegate.donePickCabinClass(cabinClass: selectedCabinClass)
         _ = self.navigationController?.popViewController(animated: true)
     }
     

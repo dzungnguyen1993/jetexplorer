@@ -41,9 +41,14 @@ class NetworkManager: NSObject {
         requestGET(typeOf: .getAllAirport, parameters: parameters, completion: completion)
     }
     
-    func requestGetFlightSearchResult(info: PassengerInfo, completion: @escaping ResponseCompletion) {
+    func requestGetFlightSearchResult(info: PassengerInfo, currentPopUp: PopupDialog? = nil, completion: ResponseCompletion? = nil) {
         //:country/:currency/:locale/:originplace/:destinationplace/:outbounddate/:inbounddate/:adults/:children/:infants/:cabinclass
         //UK/USD/en-GB/SGN/HAN/2016-11-10/2016-11-11/1/1/1/Economy
+        
+        guard (info.airportFrom != nil && info.airportTo != nil && info.departDay != nil && info.returnDay != nil) else {
+            completion?(false, nil)
+            return
+        }
         
         // create request string
         var requestString = hostAddress + RequestType.getFlightSearchResult.rawValue
@@ -77,13 +82,14 @@ class NetworkManager: NSObject {
         requestString.append("/" + infant.toString())
         
         // add cabin class
-        requestString.append("/" + "Economy")
+        let cabinClass = info.flightClass.deleteAllSpace()
+        requestString.append("/" + cabinClass)
         
         let parameters = Parameters()
         
         print(requestString)
         Alamofire.request(requestString, method: .get, parameters: parameters).responseJSON { (response) in
-            completion(response.result.isSuccess, response.result.value)
+            completion?(response.result.isSuccess, response.result.value)
         }
     }
     

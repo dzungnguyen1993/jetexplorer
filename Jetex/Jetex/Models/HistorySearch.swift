@@ -130,15 +130,15 @@ class FlightHistorySearch: Object, Mappable {
         self.init()
         self.passengerInfo = info
         
-        departCity = info.airportFrom!.cityId
-        arrivalCity = info.airportTo!.cityId
+        departCity = info.airportFrom!.name
+        arrivalCity = info.airportTo!.name
         departDate = info.departDay!.toYYYYMMDDString()
         returnDate = info.isRoundTrip == true ? info.returnDay!.toYYYYMMDDString() : ""
         adult = info.passengers[0].value
         children = info.passengers[1].value
         infant = info.passengers[2].value
         flightType = info.isRoundTrip == true ? FlightType.RoundTrip.rawValue : FlightType.OneWay.rawValue
-        flightClass = FlightClass.Economy.rawValue
+        flightClass = info.flightClass
         departAirport = info.airportFrom!.id
         arrivalAirport = info.airportTo!.id
         departDateText = info.departDay!.toFullMonthDay()
@@ -177,8 +177,8 @@ class FlightHistorySearch: Object, Mappable {
 
             let realm = try! Realm()
             
-            self.passengerInfo!.airportFrom = realm.object(ofType: Airport.self, forPrimaryKey: departAirport)
-            self.passengerInfo!.airportTo = realm.object(ofType: Airport.self, forPrimaryKey: arrivalAirport)
+            self.passengerInfo!.airportFrom = realm.object(ofType: Airport.self, forPrimaryKey: "\(departAirport)-\(departCity)")
+            self.passengerInfo!.airportTo = realm.object(ofType: Airport.self, forPrimaryKey: "\(arrivalAirport)-\(arrivalCity)")
             
             self.passengerInfo!.departDay = departDate.toYYYYMMDD()
             self.passengerInfo!.isRoundTrip = isRoundTrip
@@ -186,6 +186,7 @@ class FlightHistorySearch: Object, Mappable {
             self.passengerInfo!.passengers[0].value = adult
             self.passengerInfo!.passengers[1].value = children
             self.passengerInfo!.passengers[2].value = infant
+            self.passengerInfo!.flightClass = flightClass
             
             return self.passengerInfo!
         }
@@ -229,5 +230,8 @@ enum FlightType : String {
 
 enum FlightClass : String {
     case Economy = "Economy"
+    case Premium = "Premium Economy"
+    case Business = "Business"
+    case First = "First"
 }
 

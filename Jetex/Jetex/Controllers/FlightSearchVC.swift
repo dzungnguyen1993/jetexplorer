@@ -17,7 +17,10 @@ class FlightSearchVC: BaseViewController {
     @IBOutlet weak var viewDepartDay: PickInfoView!
     @IBOutlet weak var viewReturnDay: PickInfoView!
     @IBOutlet weak var viewPassenger: UIView!
+    @IBOutlet weak var viewCabinClass: UIView!
     @IBOutlet weak var lbNumberPassenger: UILabel!
+    @IBOutlet weak var lbCabinClass: UILabel!
+    
     @IBOutlet weak var segmentFlightType: UISegmentedControl!
     
     var passengerInfo: PassengerInfo!
@@ -66,6 +69,13 @@ class FlightSearchVC: BaseViewController {
         segmentFlightType.selectedSegmentIndex = passengerInfo.isRoundTrip ? 0 : 1
     }
     
+    func updateCabinClassFromPassengerInfo() {
+        let cabinClass = passengerInfo.flightClass
+        UIView.animate(withDuration: 0.2) { 
+            self.lbCabinClass.text = cabinClass
+        }
+    }
+    
     func loadViewDate() {
         viewDepartDay.lbTitle.text = "Depart"
         
@@ -89,6 +99,10 @@ class FlightSearchVC: BaseViewController {
         
         let tapViewPassenger = UITapGestureRecognizer(target: self, action: #selector(pickPassengers(sender:)))
         viewPassenger.addGestureRecognizer(tapViewPassenger)
+        
+        let tapViewCabinClass = UITapGestureRecognizer(target: self, action: #selector(pickCabinClass(sender:)))
+        viewCabinClass.addGestureRecognizer(tapViewCabinClass)
+        
     }
 
     // MARK: Switch round trip or one-way
@@ -286,6 +300,22 @@ extension FlightSearchVC: PickPassengerVCDelegate {
         }
         
         self.lbNumberPassenger.text = String(c) + suffix
+    }
+}
+
+extension FlightSearchVC: PickCabinClassVCDelegate {
+    func pickCabinClass(sender: UITapGestureRecognizer) {
+        let vc = SelectCabinClassVC(nibName: "SelectCabinClassVC", bundle: nil)
+        vc.selectedCabinClass = passengerInfo.flightClass
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func donePickCabinClass(cabinClass: String){
+        UIView.animate(withDuration: 0.2) {
+            self.lbCabinClass.text = cabinClass
+        }
+        passengerInfo.flightClass = cabinClass
     }
 }
 

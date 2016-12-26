@@ -154,7 +154,8 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
                             (vc as! FlightSearchVC).passengerInfo.passengers[2].value = (passengerInfo?.passengers[2].value)!
 //                            (vc as! FlightSearchVC).passengerInfo.passengers[3].value = (passengerInfo?.passengers[3].value)!
 //                            (vc as! FlightSearchVC).passengerInfo.passengers[4].value = (passengerInfo?.passengers[4].value)!
-                            
+                            (vc as! FlightSearchVC).passengerInfo.flightClass = passengerInfo!.flightClass
+                            (vc as! FlightSearchVC).updateCabinClassFromPassengerInfo()
                             (vc as! FlightSearchVC).loadViewLocation()
                             (vc as! FlightSearchVC).showNumberPassenger()
                         }

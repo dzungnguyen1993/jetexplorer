@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,9 +22,11 @@
             <connections>
                 <outlet property="contentView" destination="7h2-EK-n0M" id="2ML-0G-ajL"/>
                 <outlet property="imgPassenger" destination="bvw-ZA-UO9" id="sT3-Cu-1LM"/>
+                <outlet property="lbCabinClass" destination="JgG-cT-7b0" id="Kec-LS-gW2"/>
                 <outlet property="lbNumberPassenger" destination="Go7-Gs-ShP" id="I6k-Hp-dKe"/>
                 <outlet property="segmentFlightType" destination="hAv-FA-4pM" id="4Fe-oI-Xc7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewCabinClass" destination="kia-NX-EZ8" id="yYU-G0-8zn"/>
                 <outlet property="viewDepartDay" destination="QEE-Z9-y7l" id="SGx-JK-mNF"/>
                 <outlet property="viewFrom" destination="4Nm-Qg-kcO" id="DhA-fa-4Rt"/>
                 <outlet property="viewPassenger" destination="I31-Vz-phy" id="gZ2-7u-JMc"/>
@@ -132,7 +133,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I31-Vz-phy">
-                            <rect key="frame" x="16" y="336" width="343" height="60"/>
+                            <rect key="frame" x="16" y="336" width="167.5" height="60"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bvw-ZA-UO9">
                                     <rect key="frame" x="8" y="0.0" width="27" height="27"/>
@@ -141,7 +142,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-vJ-T6V" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
-                                    <rect key="frame" x="45" y="3" width="290" height="21"/>
+                                    <rect key="frame" x="45" y="3" width="114.5" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="Lja-vJ-g9D"/>
                                     </constraints>
@@ -150,7 +151,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Go7-Gs-ShP">
-                                    <rect key="frame" x="8" y="31" width="325" height="21"/>
+                                    <rect key="frame" x="8" y="31" width="151.5" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="Ejv-Ht-M0j"/>
                                     </constraints>
@@ -163,11 +164,11 @@
                                 <constraint firstItem="pz9-vJ-T6V" firstAttribute="leading" secondItem="bvw-ZA-UO9" secondAttribute="trailing" constant="10" id="DcY-cM-qZr"/>
                                 <constraint firstItem="bvw-ZA-UO9" firstAttribute="top" secondItem="I31-Vz-phy" secondAttribute="top" id="Ehs-ZT-RG6"/>
                                 <constraint firstItem="pz9-vJ-T6V" firstAttribute="centerY" secondItem="bvw-ZA-UO9" secondAttribute="centerY" id="MIo-ao-9uK"/>
+                                <constraint firstAttribute="trailing" secondItem="Go7-Gs-ShP" secondAttribute="trailing" constant="8" id="TmK-i7-XhC"/>
                                 <constraint firstItem="bvw-ZA-UO9" firstAttribute="leading" secondItem="I31-Vz-phy" secondAttribute="leading" constant="8" id="btg-9T-Vor"/>
-                                <constraint firstAttribute="trailing" secondItem="pz9-vJ-T6V" secondAttribute="trailing" constant="8" id="gCg-oA-skB"/>
-                                <constraint firstAttribute="trailing" secondItem="Go7-Gs-ShP" secondAttribute="trailing" constant="10" id="l0A-xa-Zsm"/>
                                 <constraint firstItem="Go7-Gs-ShP" firstAttribute="leading" secondItem="I31-Vz-phy" secondAttribute="leading" constant="8" id="skC-U8-Tfh"/>
-                                <constraint firstAttribute="bottom" secondItem="Go7-Gs-ShP" secondAttribute="bottom" constant="8" id="wiv-6b-8pB"/>
+                                <constraint firstAttribute="trailing" secondItem="pz9-vJ-T6V" secondAttribute="trailing" constant="8" id="ukh-8f-fr6"/>
+                                <constraint firstAttribute="bottom" secondItem="Go7-Gs-ShP" secondAttribute="bottom" constant="4" id="wiv-6b-8pB"/>
                                 <constraint firstAttribute="height" constant="60" id="yKN-ku-1km"/>
                             </constraints>
                         </view>
@@ -199,6 +200,47 @@
                                 <action selector="clickSearch:" destination="-1" eventType="touchUpInside" id="cfv-YC-34P"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kia-NX-EZ8" userLabel="View Cabin Class">
+                            <rect key="frame" x="191.5" y="336" width="167.5" height="60"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cabinClass" translatesAutoresizingMaskIntoConstraints="NO" id="zZ0-wM-ue4">
+                                    <rect key="frame" x="8" y="0.0" width="27" height="27"/>
+                                    <color key="tintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="zZ0-wM-ue4" secondAttribute="height" multiplier="1:1" id="dLA-5W-R9L"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cabin Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctO-UE-sZ1" customClass="GothamBook15Label" customModule="Jetex" customModuleProvider="target">
+                                    <rect key="frame" x="45" y="3" width="114.5" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="cb9-Vv-Chw"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
+                                    <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Economy" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JgG-cT-7b0">
+                                    <rect key="frame" x="8" y="31" width="149.5" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="kUh-Z8-nYy"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="24"/>
+                                    <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="ctO-UE-sZ1" firstAttribute="leading" secondItem="zZ0-wM-ue4" secondAttribute="trailing" constant="10" id="8R5-5w-fHZ"/>
+                                <constraint firstItem="zZ0-wM-ue4" firstAttribute="top" secondItem="kia-NX-EZ8" secondAttribute="top" id="ISv-AP-MbS"/>
+                                <constraint firstAttribute="height" constant="60" id="S3G-no-NzC"/>
+                                <constraint firstAttribute="trailing" secondItem="JgG-cT-7b0" secondAttribute="trailing" constant="10" id="ciK-29-cC9"/>
+                                <constraint firstItem="zZ0-wM-ue4" firstAttribute="leading" secondItem="kia-NX-EZ8" secondAttribute="leading" constant="8" id="fDZ-E0-hJm"/>
+                                <constraint firstAttribute="bottom" secondItem="JgG-cT-7b0" secondAttribute="bottom" constant="4" id="fWJ-X8-kkw"/>
+                                <constraint firstAttribute="trailing" secondItem="ctO-UE-sZ1" secondAttribute="trailing" constant="8" id="pet-Hz-SML"/>
+                                <constraint firstItem="ctO-UE-sZ1" firstAttribute="centerY" secondItem="zZ0-wM-ue4" secondAttribute="centerY" id="uqj-UB-Wj6"/>
+                                <constraint firstItem="JgG-cT-7b0" firstAttribute="leading" secondItem="kia-NX-EZ8" secondAttribute="leading" constant="8" id="w36-0O-HUN"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="071-V3-i6B" secondAttribute="trailing" constant="16" id="1iW-4U-5mE"/>
@@ -207,7 +249,6 @@
                         <constraint firstItem="mq1-HX-05A" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="24" id="7A0-s3-XuU"/>
                         <constraint firstAttribute="trailing" secondItem="mq1-HX-05A" secondAttribute="trailing" constant="24" id="8gh-7i-nZ4"/>
                         <constraint firstItem="AdL-IY-5qp" firstAttribute="height" secondItem="pSz-Xt-PPD" secondAttribute="height" id="9mv-Xa-DOB"/>
-                        <constraint firstAttribute="trailing" secondItem="I31-Vz-phy" secondAttribute="trailing" constant="16" id="G2q-Aa-7xq"/>
                         <constraint firstItem="bvw-ZA-UO9" firstAttribute="height" secondItem="wHv-lB-6XW" secondAttribute="height" multiplier="1:3" id="JDT-bM-nAT"/>
                         <constraint firstAttribute="trailing" secondItem="KVC-m9-80O" secondAttribute="trailing" constant="24" id="KVh-Li-1xR"/>
                         <constraint firstItem="Bix-Uf-YvP" firstAttribute="top" secondItem="wHv-lB-6XW" secondAttribute="bottom" constant="15" id="Klm-wy-vMk"/>
@@ -220,10 +261,15 @@
                         <constraint firstItem="wHv-lB-6XW" firstAttribute="top" secondItem="071-V3-i6B" secondAttribute="bottom" constant="32" id="ZkQ-eX-Umc"/>
                         <constraint firstItem="KVC-m9-80O" firstAttribute="top" secondItem="I31-Vz-phy" secondAttribute="bottom" constant="24" id="Zxd-aP-38T"/>
                         <constraint firstItem="AdL-IY-5qp" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" id="a6J-EK-8dd"/>
+                        <constraint firstItem="kia-NX-EZ8" firstAttribute="leading" secondItem="I31-Vz-phy" secondAttribute="trailing" constant="8" id="btc-gJ-g3H"/>
                         <constraint firstItem="pSz-Xt-PPD" firstAttribute="top" secondItem="7h2-EK-n0M" secondAttribute="top" id="dFu-K4-dH5"/>
                         <constraint firstItem="pSz-Xt-PPD" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" id="eLr-ox-p3i"/>
+                        <constraint firstItem="kia-NX-EZ8" firstAttribute="top" secondItem="wHv-lB-6XW" secondAttribute="bottom" constant="32" id="geN-BK-eIL"/>
+                        <constraint firstAttribute="trailing" secondItem="kia-NX-EZ8" secondAttribute="trailing" constant="16" id="gkg-Ub-rti"/>
+                        <constraint firstItem="zZ0-wM-ue4" firstAttribute="height" secondItem="bvw-ZA-UO9" secondAttribute="height" id="i2q-6f-3b2"/>
                         <constraint firstAttribute="trailing" secondItem="Bix-Uf-YvP" secondAttribute="trailing" constant="24" id="neT-ju-m45"/>
                         <constraint firstItem="wHv-lB-6XW" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="16" id="oih-z3-JpU"/>
+                        <constraint firstItem="kia-NX-EZ8" firstAttribute="width" secondItem="I31-Vz-phy" secondAttribute="width" id="phc-ap-1e2"/>
                         <constraint firstItem="Bix-Uf-YvP" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="24" id="pqU-ND-sgt"/>
                         <constraint firstAttribute="trailing" secondItem="AdL-IY-5qp" secondAttribute="trailing" id="ykP-wg-m7m"/>
                         <constraint firstItem="mq1-HX-05A" firstAttribute="top" secondItem="071-V3-i6B" secondAttribute="bottom" constant="15" id="ztw-JM-E0D"/>
@@ -241,7 +287,10 @@
                 <constraint firstItem="7h2-EK-n0M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yOg-Pj-lBz"/>
                 <constraint firstAttribute="trailing" secondItem="dnq-fh-CHQ" secondAttribute="trailing" id="ye9-GZ-J7m"/>
             </constraints>
-            <point key="canvasLocation" x="25" y="50"/>
+            <point key="canvasLocation" x="24.5" y="49.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="cabinClass" width="50" height="50"/>
+    </resources>
 </document>

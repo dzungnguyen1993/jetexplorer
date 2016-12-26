@@ -25,12 +25,14 @@ class PassengerInfo: Object, Mappable {
     dynamic var departDay: Date?
     dynamic var returnDay: Date?
     dynamic var isRoundTrip: Bool = true
+    dynamic var flightClass: String    = ""
     let passengers = List<IntObject>()
     
     func initialize() {
         self.isRoundTrip = true
         self.departDay = Utility.initialCheckInDate
         self.returnDay = Utility.initialCheckOutDate
+        self.flightClass = FlightClass.Economy.rawValue
         
         let adult     = IntObject(); adult.value     = 1; self.passengers.append(adult)
         let children  = IntObject(); children.value  = 0; self.passengers.append(children)
@@ -51,6 +53,7 @@ class PassengerInfo: Object, Mappable {
         self.isRoundTrip = passengerInfo.isRoundTrip
         self.departDay = passengerInfo.departDay
         self.returnDay = passengerInfo.returnDay
+        self.flightClass = passengerInfo.flightClass
         
         for passenger in passengerInfo.passengers {
             let obj = IntObject()
