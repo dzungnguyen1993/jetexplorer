@@ -82,6 +82,7 @@ PODS:
   - Realm/Headers (2.0.3)
   - RealmSwift (2.0.3):
     - Realm (= 2.0.3)
+  - TTRangeSlider (1.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -93,6 +94,7 @@ DEPENDENCIES:
   - Google/SignIn
   - ObjectMapper+Realm
   - PopupDialog (~> 0.5)
+  - TTRangeSlider
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -121,7 +123,8 @@ SPEC CHECKSUMS:
   PopupDialog: 9890441b81105b9076757af2afe2b037be682f3e
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
+  TTRangeSlider: 7c04d9cf84cd5fba96e86b3ded8e5e0b534758b0
 
-PODFILE CHECKSUM: 35b811d9890d2eeef972e8902a600950e5417784
+PODFILE CHECKSUM: b2a76f806c15c9fe86b154ed65e30749090977ac
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.0.1
