@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AmenityCell" customModule="Jetex" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="262" height="96"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="262" height="96"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPd-Tc-9BK">
+                        <rect key="frame" x="48" y="8" width="214" height="80"/>
+                        <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
+                        <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MUf-Y3-vt9">
+                        <rect key="frame" x="0.0" y="28" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="ZWi-IT-tnC"/>
+                            <constraint firstAttribute="width" secondItem="MUf-Y3-vt9" secondAttribute="height" id="nWl-Et-Ycl"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="MUf-Y3-vt9" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="7JN-Hs-ULa"/>
+                <constraint firstAttribute="bottom" secondItem="nPd-Tc-9BK" secondAttribute="bottom" constant="8" id="Af4-Ow-M6Z"/>
+                <constraint firstItem="MUf-Y3-vt9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CAp-IR-PbT"/>
+                <constraint firstItem="nPd-Tc-9BK" firstAttribute="leading" secondItem="MUf-Y3-vt9" secondAttribute="trailing" constant="8" id="MGD-PW-MaD"/>
+                <constraint firstItem="nPd-Tc-9BK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="ew1-0T-ple"/>
+                <constraint firstAttribute="trailing" secondItem="nPd-Tc-9BK" secondAttribute="trailing" id="t3x-FR-zP6"/>
+            </constraints>
+            <size key="customSize" width="262" height="96"/>
+            <connections>
+                <outlet property="imgView" destination="MUf-Y3-vt9" id="qpE-kJ-UAA"/>
+                <outlet property="label" destination="nPd-Tc-9BK" id="rNj-dc-UZj"/>
+            </connections>
+            <point key="canvasLocation" x="3" y="75"/>
+        </collectionViewCell>
+    </objects>
+</document>

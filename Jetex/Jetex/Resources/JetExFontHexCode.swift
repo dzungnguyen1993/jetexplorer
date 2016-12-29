@@ -47,4 +47,20 @@ enum JetExFontHexCode : String{
     
     case jetexStarFulfill = "\u{e927}"
     case jetexStarHalfFulfill = "\u{e928}"
+    
+    case jetexAmenities24h = "\u{e92e}"
+    case jetexAmenitiesLuggage = "\u{e939}"
+    case jetexAmenitiesChildcare = "\u{e933}"
+    case jetexAmenitiesWifi = "\u{e93c}"
+    case jetexAmenitiesCoffee = "\u{e934}"
+    case jetexAmenitiesBreakfast = "\u{e930}"
+    case jetexAmenitiesSpa = "\u{e93b}"
+    case jetexAmenitiesGym = "\u{e936}"
+    case jetexAmenitiesATM = "\u{e92f}"
+    case jetexAmenitiesPool = "\u{e93a}"
+    case jetexAmenitiesCasino = "\u{e943}"
+    case jetexAmenitiesLaundry = "\u{e938}"
+    case jetexAmenitiesCar = "\u{e931}"
+    case jetexAmenitiesElevator = "\u{e935}"
+
 }

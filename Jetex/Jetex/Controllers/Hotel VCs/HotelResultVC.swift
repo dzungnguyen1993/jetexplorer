@@ -79,7 +79,7 @@ class HotelResultVC: BaseViewController {
         // setup filter
    
         viewFilter.delegate = self
-        constraintFilterHeight.constant = 900
+        constraintFilterHeight.constant = 1156
     }
     
     func searchForHotels() {
