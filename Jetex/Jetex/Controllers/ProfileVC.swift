@@ -34,7 +34,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
     let ratingAndFeedback          = "Rating & Feedback"
     
     // MARK: - Hard code for testing UI -> TODO: check it before release
-    static var currentCurrencyType = "SGD"
+    static var currentCurrencyType = "USD"
     static var isUserLogined       = false
     
     

@@ -51,7 +51,11 @@ class FlightTransitView: UIView {
         lbCarrier.text = carrier?.name
         lbFlightNumber.text = segment.flightNumber
         // TODO: set cabin class (maybe)
-        lbCabinClass.text = "Economy"
+        var cabinClass = searchResult.query.cabinClass
+        if cabinClass == "PremiumEconomy" {
+            cabinClass = "Premium"
+        }
+        lbCabinClass.text = cabinClass //"Economy"
         
         // set origin
         let origin = searchResult.getStation(withId: segment.originStation)

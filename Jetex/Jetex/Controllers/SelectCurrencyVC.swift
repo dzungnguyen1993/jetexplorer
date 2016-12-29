@@ -53,6 +53,7 @@ class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDe
                 try! realm.write {
                     currentUser.currency = selectedCurrency
                 }
+                ProfileVC.currentCurrencyType = selectedCurrency
             }
         } else {
             ProfileVC.currentCurrencyType = selectedCurrency

@@ -52,6 +52,7 @@ class FlightResultVC: BaseViewController {
     
     var isShowCheapest: Bool!
     var isShowDetailsBefore: Bool!
+    var currentSearchedCurrency: String = "USD"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,8 +76,10 @@ class FlightResultVC: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        guard searchFlightResult == nil else {
-            return
+        if (searchFlightResult != nil) {
+            if (ProfileVC.currentCurrencyType == currentSearchedCurrency) {
+                return
+            }
         }
         
         if (viewFilter == nil) {
@@ -110,6 +113,7 @@ class FlightResultVC: BaseViewController {
             
             if (isSuccess) {
                 loadingVC.updateProgress(percent: 90)
+                self.currentSearchedCurrency = ProfileVC.currentCurrencyType
                 self.searchFlightResult = ResponseParser.shared.parseFlightSearchResponse(data: data as! NSDictionary)
                 loadingVC.updateProgress(percent: 100, completion: {
                     popup.dismiss()

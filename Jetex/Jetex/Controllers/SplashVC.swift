@@ -27,7 +27,10 @@ class SplashVC: UIViewController {
         
         if (!isInstalled) {
             // Show Loading Pop up view
-            let popup = PopupDialog(title: "Optimising your experience...", message: "Downloading initial data on the first usage. Please wait...", image: UIImage(named: "loading"), buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+            
+            let loadingVC = InitialLoadingPopupVC(nibName: "InitialLoadingPopupVC", bundle: nil)
+            
+            let popup = PopupDialog(viewController: loadingVC, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
             
             self.present(popup, animated: true, completion: nil)
             

@@ -35,6 +35,8 @@
 		28811F871DE9A12C00BB0ADA /* WarningView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28811F861DE9A12C00BB0ADA /* WarningView.xib */; };
 		28811F891DE9A78100BB0ADA /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 28811F881DE9A78100BB0ADA /* triangle.png */; };
 		28811F8B1DE9C5D500BB0ADA /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28811F8A1DE9C5D500BB0ADA /* WarningView.swift */; };
+		2886208C1E150FA100B16601 /* InitialLoadingPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2886208B1E150FA100B16601 /* InitialLoadingPopupVC.xib */; };
+		2886208E1E15147500B16601 /* InitialLoadingPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2886208D1E15147500B16601 /* InitialLoadingPopupVC.swift */; };
 		289192951DDC595C001C064B /* ChangNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289192931DDC595C001C064B /* ChangNameVC.swift */; };
 		289192961DDC595C001C064B /* ChangNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289192941DDC595C001C064B /* ChangNameVC.xib */; };
 		289192991DDDCD7D001C064B /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289192971DDDCD7D001C064B /* ForgotPasswordVC.swift */; };
@@ -243,6 +245,8 @@
 		28811F861DE9A12C00BB0ADA /* WarningView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WarningView.xib; sourceTree = "<group>"; };
 		28811F881DE9A78100BB0ADA /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
 		28811F8A1DE9C5D500BB0ADA /* WarningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
+		2886208B1E150FA100B16601 /* InitialLoadingPopupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InitialLoadingPopupVC.xib; sourceTree = "<group>"; };
+		2886208D1E15147500B16601 /* InitialLoadingPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialLoadingPopupVC.swift; sourceTree = "<group>"; };
 		289192931DDC595C001C064B /* ChangNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangNameVC.swift; sourceTree = "<group>"; };
 		289192941DDC595C001C064B /* ChangNameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangNameVC.xib; sourceTree = "<group>"; };
 		289192971DDDCD7D001C064B /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
@@ -456,6 +460,8 @@
 			children = (
 				2830E42D1DF9D1E300DF3E0A /* LoadingPopupVC.swift */,
 				2830E42E1DF9D1E300DF3E0A /* LoadingPopupVC.xib */,
+				2886208B1E150FA100B16601 /* InitialLoadingPopupVC.xib */,
+				2886208D1E15147500B16601 /* InitialLoadingPopupVC.swift */,
 			);
 			name = "Loading Popup";
 			sourceTree = "<group>";
@@ -1011,6 +1017,7 @@
 				B9F445F21DD4D6DF00250D6C /* Gotham-UltraIta.otf in Resources */,
 				B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */,
 				B9F445F01DD4D6DF00250D6C /* Gotham-ThinIta.otf in Resources */,
+				2886208C1E150FA100B16601 /* InitialLoadingPopupVC.xib in Resources */,
 				B9CAE9CC1DE1973F00A149BD /* FilterFlightView.xib in Resources */,
 				B917BC601DDC022200F2DA57 /* transfer.png in Resources */,
 				B9EE7A841DDE1D8D00A82AEE /* FlightStopView.xib in Resources */,
@@ -1150,6 +1157,7 @@
 				289192991DDDCD7D001C064B /* ForgotPasswordVC.swift in Sources */,
 				289192A41DDDF3C2001C064B /* EditProfileVC.swift in Sources */,
 				2830E42F1DF9D1E300DF3E0A /* LoadingPopupVC.swift in Sources */,
+				2886208E1E15147500B16601 /* InitialLoadingPopupVC.swift in Sources */,
 				B96BAC621DD1BF4B00AE79AD /* TabBarController.swift in Sources */,
 				B90544AC1DEEE833008FF60D /* Currency.swift in Sources */,
 				B9EE7A781DDDED7000A82AEE /* FlightResultDetailsView.swift in Sources */,
