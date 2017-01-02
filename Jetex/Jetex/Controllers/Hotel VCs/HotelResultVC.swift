@@ -48,6 +48,9 @@ class HotelResultVC: BaseViewController {
     
     @IBOutlet weak var constraintFilterHeight: NSLayoutConstraint!
     @IBOutlet weak var viewFilter: FilterHotelView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imgCancel: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +82,7 @@ class HotelResultVC: BaseViewController {
         // setup filter
    
         viewFilter.delegate = self
-        constraintFilterHeight.constant = 1156
+        constraintFilterHeight.constant = 1112
     }
     
     func searchForHotels() {
@@ -129,6 +132,8 @@ class HotelResultVC: BaseViewController {
     func loadResult() {
         self.searchResult.initSort()
         self.loadResultData()
+        
+        self.viewFilter.setFilterInfo(searchResult: self.searchResult)
     }
     
     @IBAction func back(_ sender: UIButton) {
@@ -168,8 +173,8 @@ class HotelResultVC: BaseViewController {
             self.viewOptions.isHidden = true
             self.tableView.isHidden = true
         })
-//
-//        viewFilter.tableView.reloadData()
+        
+        viewFilter.loadData()
     }
     
     @IBAction func backToSearch(_ sender: Any) {
@@ -178,6 +183,10 @@ class HotelResultVC: BaseViewController {
     
     @IBAction func showMap(_ sender: UIButton) {
         
+    }
+    
+    @IBAction func hideFilter(_ sender: Any) {
+        self.hideFilter()
     }
 }
 
@@ -198,6 +207,7 @@ extension HotelResultVC {
         imgPassenger.image = UIImage(fromHex: JetExFontHexCode.jetexPassengers.rawValue, withColor: UIColor.white)
         imgRightArrow.image = UIImage(fromHex: JetExFontHexCode.oneWay.rawValue, withColor: UIColor.white)
         imgMap.image = UIImage(fromHex: JetExFontHexCode.jetexMap.rawValue, withColor: (UIColor(hex: 0x674290)))
+        imgCancel.image = UIImage(fromHex: JetExFontHexCode.jetexCross.rawValue, withColor: UIColor(hex: 0x515151))
     }
 }
 
@@ -283,13 +293,21 @@ extension HotelResultVC: FilterHotelViewDelegate {
             self.viewOptions.isHidden = false
             self.tableView.isHidden = false
         })
+        
+        self.scrollFilterToTop()
     }
     
-//    func applyFilter(filterObject: FilterObject) {
-//        searchFlightResult.applyFilter(filterObject: filterObject)
-//        
-//        hideFilter()
-//        
-//        loadResultData()
-//    }
+    func applyFilter(filterObject: FilterHotelObject) {
+        searchResult.applyFilter(filterObject: filterObject)
+        
+        hideFilter()
+        
+        loadResultData()
+        
+        self.scrollFilterToTop()
+    }
+    
+    func scrollFilterToTop() {
+        self.scrollView.contentOffset = CGPoint.zero
+    }
 }

@@ -65,4 +65,29 @@ class SearchHotelResult: Mappable {
         
         return nil
     }
+    
+    func applyFilter(filterObject: FilterHotelObject) {
+        var result = [Hotel]()
+        
+        for hotel in self.hotels {
+            
+            // filter price
+            let price = (self.getPrice(ofHotel: hotel)?.priceTotal)!
+            let isValidPrice = price >= Double(filterObject.minPrice) && price <= Double(filterObject.maxPrice)
+            
+            // filter star
+            let isValidStar = hotel.star >= Int(filterObject.minStar) && hotel.star <= Int(filterObject.maxStar)
+            
+            // filter rating
+            let score = Float(hotel.popularity) / 10
+            let isValidRating = score >= filterObject.minRating && score <= filterObject.maxRating
+            
+            if isValidPrice && isValidStar && isValidRating {
+                result.append(hotel)
+            }
+        }
+        
+        self.sortCheapest(hotels: result)
+        self.sortBest(hotels: result)
+    }
 }

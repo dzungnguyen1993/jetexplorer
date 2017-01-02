@@ -11,17 +11,17 @@ import TTRangeSlider
 
 protocol FilterHotelViewDelegate: class {
     func hideFilter()
-//    func applyFilter(filterObject: FilterObject)
+    func applyFilter(filterObject: FilterHotelObject)
 }
 
 class FilterHotelView: UIView {
     @IBOutlet var contentView: UIView!
     weak var delegate: FilterHotelViewDelegate?
     @IBOutlet weak var priceSlider: TTRangeSlider!
-    @IBOutlet weak var imgCancel: UIImageView!
     @IBOutlet weak var starSlider: TTRangeSlider!
     @IBOutlet weak var userSlider: TTRangeSlider!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var starView: UIView!
     
     var amenities = [("24-hour front desk", JetExFontHexCode.jetexAmenities24h.rawValue),
                      ("Luggate storage", JetExFontHexCode.jetexAmenitiesLuggage.rawValue),
@@ -37,6 +37,8 @@ class FilterHotelView: UIView {
                      ("Dry cleaning/ laundry service", JetExFontHexCode.jetexAmenitiesLaundry.rawValue),
                      ("Limo or Town Car service available", JetExFontHexCode.jetexAmenitiesCar.rawValue),
                      ("Elevator/lift", JetExFontHexCode.jetexAmenitiesElevator.rawValue)]
+    var filterObject: FilterHotelObject = FilterHotelObject()
+    var tmpFilterObject: FilterHotelObject = FilterHotelObject()
     
     // MARK: Initialization
     required init(coder aDecoder: NSCoder) {
@@ -70,6 +72,38 @@ class FilterHotelView: UIView {
     }
     
     func setupViews() {
+        self.setupSliders()
+        
+        // collection view
+        self.collectionView.register(UINib(nibName: "AmenityCell", bundle: nil), forCellWithReuseIdentifier: "AmenityCell")
+        
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        
+        // add star beyond slider
+        // index 0
+        for i in 0..<5 {
+            var x = i * Int(self.starView.frame.size.width / 4) - 15
+            
+            if i == 0 {
+                x = 0
+            }
+            
+            if i == 4 {
+                x = Int(self.starView.frame.size.width) - 25
+            }
+            
+            let y = 0
+            let star = StarView(frame: CGRect(x: x, y: y, width: 35, height: 30))
+            star.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexStarFulfill.rawValue, withColor: UIColor(hex: 0x515151))
+            
+            star.lbNumber.text = (i + 1).toString()
+            
+            self.starView.addSubview(star)
+        }
+    }
+    
+    func setupSliders() {
         // price slider
         self.priceSlider.delegate = self
         self.priceSlider.minValue = 0
@@ -86,7 +120,7 @@ class FilterHotelView: UIView {
         self.priceSlider.maxLabelColour = UIColor(hex: 0x515151)
         
         let customFormatter = NumberFormatter()
-        customFormatter.positivePrefix = ProfileVC.currentCurrencyType
+        customFormatter.positivePrefix = ProfileVC.currentCurrencyType + " "
         self.priceSlider.numberFormatterOverride = customFormatter
         
         // star slider
@@ -101,7 +135,7 @@ class FilterHotelView: UIView {
         self.starSlider.selectedHandleDiameterMultiplier = 1.3
         self.starSlider.tintColorBetweenHandles = UIColor(hex: 0x674290)
         self.starSlider.tintColor = UIColor(hex: 0xD6D6D6)
-
+        
         // user slider
         self.userSlider.delegate = self
         self.userSlider.minValue = 3
@@ -114,24 +148,64 @@ class FilterHotelView: UIView {
         self.userSlider.selectedHandleDiameterMultiplier = 1.3
         self.userSlider.tintColorBetweenHandles = UIColor(hex: 0x674290)
         self.userSlider.tintColor = UIColor(hex: 0xD6D6D6)
-        
-        imgCancel.image = UIImage(fromHex: JetExFontHexCode.jetexCross.rawValue, withColor: UIColor(hex: 0x515151))
-        
-        // collection view
-        self.collectionView.register(UINib(nibName: "AmenityCell", bundle: nil), forCellWithReuseIdentifier: "AmenityCell")
-        
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        self.userSlider.minLabelColour = UIColor(hex: 0x515151)
+        self.userSlider.maxLabelColour = UIColor(hex: 0x515151)
     }
     
     @IBAction func applyFilter(_ sender: Any) {
+        filterObject = tmpFilterObject.copyFilter()
         
+        self.delegate?.applyFilter(filterObject: filterObject)
+        
+        
+    }
+    
+    func setFilterInfo(searchResult: SearchHotelResult) {
+        self.priceSlider.minValue = 0
+        self.priceSlider.maxValue = 1000
+        self.priceSlider.selectedMinimum = 0
+        self.priceSlider.selectedMaximum = 1000
+        self.priceSlider.step = 50
+        
+        // initialize filter object
+        filterObject.minPrice = 0
+        filterObject.maxPrice = 2000
+        filterObject.minStar = 1
+        filterObject.maxStar = 5
+        filterObject.minRating = 3
+        filterObject.maxRating = 10
+    }
+    
+    func loadData() {
+        self.tmpFilterObject = self.filterObject.copyFilter()
+        
+        priceSlider.selectedMinimum = tmpFilterObject.minPrice
+        priceSlider.selectedMaximum = tmpFilterObject.maxPrice
+        
+        starSlider.selectedMinimum = tmpFilterObject.minStar
+        starSlider.selectedMaximum = tmpFilterObject.maxStar
+        
+        userSlider.selectedMinimum = tmpFilterObject.minRating
+        userSlider.selectedMaximum = tmpFilterObject.maxRating
     }
 }
 
 extension FilterHotelView: TTRangeSliderDelegate {
     func rangeSlider(_ sender: TTRangeSlider!, didChangeSelectedMinimumValue selectedMinimum: Float, andMaximumValue selectedMaximum: Float) {
+        if (sender == self.priceSlider) {
+            self.tmpFilterObject.minPrice = selectedMinimum
+            self.tmpFilterObject.maxPrice = selectedMaximum
+        }
         
+        if (sender == self.starSlider) {
+            self.tmpFilterObject.minStar = selectedMinimum
+            self.tmpFilterObject.maxStar = selectedMaximum
+        }
+        
+        if (sender == self.userSlider) {
+            self.tmpFilterObject.minRating = selectedMinimum
+            self.tmpFilterObject.maxRating = selectedMaximum
+        }
     }
 }
 
@@ -149,6 +223,7 @@ extension FilterHotelView: UICollectionViewDataSource {
         
         let amenity = self.amenities[indexPath.row]
         cell.label.text = amenity.0
+        cell.label.textColor = UIColor(hex: 0x674290)
         cell.imgView.image = UIImage(fromHex: amenity.1, withColor: (UIColor(hex: 0x674290)))
         
         return cell
