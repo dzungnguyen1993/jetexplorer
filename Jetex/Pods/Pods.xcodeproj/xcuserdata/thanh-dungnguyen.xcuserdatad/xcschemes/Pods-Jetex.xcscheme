@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "931010143191EBE25898D9B341C62AA7"
+               BlueprintIdentifier = "409AD9C5E96698158A50B1E7E05F2CA2"
                BuildableName = "Pods_Jetex.framework"
                BlueprintName = "Pods-Jetex"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "931010143191EBE25898D9B341C62AA7"
+            BlueprintIdentifier = "409AD9C5E96698158A50B1E7E05F2CA2"
             BuildableName = "Pods_Jetex.framework"
             BlueprintName = "Pods-Jetex"
             ReferencedContainer = "container:Pods.xcodeproj">

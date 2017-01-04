@@ -26,6 +26,10 @@ const float TEXT_HEIGHT = 14;
 
 @property (nonatomic, strong) NSNumberFormatter *decimalNumberFormatter; // Used to format values if formatType is YLRangeSliderFormatTypeDecimal
 
+// strong reference needed for UIAccessibilityContainer
+// see http://stackoverflow.com/questions/13462046/custom-uiview-not-showing-accessibility-on-voice-over
+@property (nonatomic, strong) NSMutableArray *accessibleElements;
+
 @end
 
 static const CGFloat kLabelsFontSize = 12.0f;
@@ -53,6 +57,11 @@ static const CGFloat kLabelsFontSize = 12.0f;
     
     _lineHeight = 1.0;
     
+    _handleBorderWidth = 0.0;
+    _handleBorderColor = self.tintColor;
+    
+    _labelPadding = 8.0;
+    
     //draw the slider line
     self.sliderLine = [CALayer layer];
     self.sliderLine.backgroundColor = self.tintColor.CGColor;
@@ -67,12 +76,16 @@ static const CGFloat kLabelsFontSize = 12.0f;
     self.leftHandle = [CALayer layer];
     self.leftHandle.cornerRadius = self.handleDiameter / 2;
     self.leftHandle.backgroundColor = self.tintColor.CGColor;
+    self.leftHandle.borderWidth = self.handleBorderWidth;
+    self.leftHandle.borderColor = self.handleBorderColor.CGColor;
     [self.layer addSublayer:self.leftHandle];
 
     //draw the maximum slider handle
     self.rightHandle = [CALayer layer];
     self.rightHandle.cornerRadius = self.handleDiameter / 2;
     self.rightHandle.backgroundColor = self.tintColor.CGColor;
+    self.rightHandle.borderWidth = self.handleBorderWidth;
+    self.rightHandle.borderColor = self.handleBorderColor.CGColor;
     [self.layer addSublayer:self.rightHandle];
 
     self.leftHandle.frame = CGRectMake(0, 0, self.handleDiameter, self.handleDiameter);
@@ -106,6 +119,23 @@ static const CGFloat kLabelsFontSize = 12.0f;
     self.maxLabelFont = [UIFont systemFontOfSize:kLabelsFontSize];
     [self.layer addSublayer:self.maxLabel];
 
+    // TODO Create a bundle that allows localization of default accessibility labels and hints
+    if (!self.minLabelAccessibilityLabel || self.minLabelAccessibilityLabel.length == 0) {
+      self.minLabelAccessibilityLabel = @"Left Handle";
+    }
+  
+    if (!self.minLabelAccessibilityHint || self.minLabelAccessibilityHint.length == 0) {
+      self.minLabelAccessibilityHint = @"Minimum value in slider";
+    }
+  
+    if (!self.maxLabelAccessibilityLabel || self.maxLabelAccessibilityLabel.length == 0) {
+      self.maxLabelAccessibilityLabel = @"Right Handle";
+    }
+  
+    if (!self.maxLabelAccessibilityHint || self.maxLabelAccessibilityHint.length == 0) {
+      self.maxLabelAccessibilityHint = @"Maximum value in slider";
+    }
+  
     [self refresh];
 }
 
@@ -220,6 +250,12 @@ static const CGFloat kLabelsFontSize = 12.0f;
     self.maxLabelTextSize = [self.maxLabel.string sizeWithAttributes:@{NSFontAttributeName:self.maxLabelFont}];
 }
 
+- (void)updateAccessibilityElements {
+  [_accessibleElements removeAllObjects];
+  [_accessibleElements addObject:[self leftHandleAccessibilityElement]];
+  [_accessibleElements addObject:[self rightHandleAccessbilityElement]];
+}
+
 #pragma mark - Set Positions
 - (void)updateHandlePositions {
     CGPoint leftHandleCenter = CGPointMake([self getXPositionAlongLineForValue:self.selectedMinimum], CGRectGetMidY(self.sliderLine.frame));
@@ -234,7 +270,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
 
 - (void)updateLabelPositions {
     //the centre points for the labels are X = the same x position as the relevant handle. Y = the y position of the handle minus half the height of the text label, minus some padding.
-    int padding = 8;
+    float padding = self.labelPadding;
     float minSpacingBetweenLabels = 8.0f;
 
     CGPoint leftHandleCentre = [self getCentreOfRect:self.leftHandle.frame];
@@ -246,6 +282,10 @@ static const CGFloat kLabelsFontSize = 12.0f;
     CGSize minLabelTextSize = self.minLabelTextSize;
     CGSize maxLabelTextSize = self.maxLabelTextSize;
     
+    CGFloat distance = newMaxLabelCenter.x + self.maxLabelTextSize.width / 2 - self.frame.size.width;
+    if (distance > 0) {
+        newMaxLabelCenter.x = newMaxLabelCenter.x - distance;
+    }
     
     self.minLabel.frame = CGRectMake(0, 0, minLabelTextSize.width, minLabelTextSize.height);
     self.maxLabel.frame = CGRectMake(0, 0, maxLabelTextSize.width, maxLabelTextSize.height);
@@ -253,15 +293,38 @@ static const CGFloat kLabelsFontSize = 12.0f;
     float newLeftMostXInMaxLabel = newMaxLabelCenter.x - maxLabelTextSize.width/2;
     float newRightMostXInMinLabel = newMinLabelCenter.x + minLabelTextSize.width/2;
     float newSpacingBetweenTextLabels = newLeftMostXInMaxLabel - newRightMostXInMinLabel;
-
+    
     if (self.disableRange == YES || newSpacingBetweenTextLabels > minSpacingBetweenLabels) {
         self.minLabel.position = newMinLabelCenter;
         self.maxLabel.position = newMaxLabelCenter;
     }
     else {
+        // if the same value for max and min, only display 1
+        if (self.selectedMinimum == self.selectedMaximum) {
+            self.minLabel.position = newMaxLabelCenter;
+            self.maxLabel.position = newMaxLabelCenter;
+            return;
+        }
+        
         float increaseAmount = minSpacingBetweenLabels - newSpacingBetweenTextLabels;
+        
         newMinLabelCenter = CGPointMake(newMinLabelCenter.x - increaseAmount/2, newMinLabelCenter.y);
         newMaxLabelCenter = CGPointMake(newMaxLabelCenter.x + increaseAmount/2, newMaxLabelCenter.y);
+        
+        CGFloat distanceMin = newMinLabelCenter.x - self.minLabelTextSize.width / 2;
+  
+        if (distanceMin < 0) {
+            newMinLabelCenter = CGPointMake(newMinLabelCenter.x - distanceMin, newMinLabelCenter.y);
+            newMaxLabelCenter = CGPointMake(newMaxLabelCenter.x - distanceMin, newMaxLabelCenter.y);
+        }
+        
+        CGFloat distanceMax = newMaxLabelCenter.x + self.maxLabelTextSize.width / 2 - self.frame.size.width;
+        
+        if (distanceMax > 0) {
+            newMinLabelCenter = CGPointMake(newMinLabelCenter.x - distanceMax, newMinLabelCenter.y);
+            newMaxLabelCenter = CGPointMake(newMaxLabelCenter.x - distanceMax, newMaxLabelCenter.y);
+        }
+        
         self.minLabel.position = newMinLabelCenter;
         self.maxLabel.position = newMaxLabelCenter;
 
@@ -348,6 +411,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
     [self updateLabelPositions];
     [CATransaction commit];
     [self updateLabelValues];
+    [self updateAccessibilityElements];
 
     //update the delegate
     if (self.delegate && (self.leftHandleSelected || self.rightHandleSelected)){
@@ -472,6 +536,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
         self.minLabel.hidden = YES;
     } else {
         self.leftHandle.hidden = NO;
+        self.minLabel.hidden = NO;
     }
 }
 
@@ -560,6 +625,18 @@ static const CGFloat kLabelsFontSize = 12.0f;
     self.rightHandle.backgroundColor = [handleColor CGColor];
 }
 
+-(void)setHandleBorderColor:(UIColor *)handleBorderColor{
+    _handleBorderColor = handleBorderColor;
+    self.leftHandle.borderColor = [handleBorderColor CGColor];
+    self.rightHandle.borderColor = [handleBorderColor CGColor];
+}
+
+-(void)setHandleBorderWidth:(CGFloat)handleBorderWidth{
+    _handleBorderWidth = handleBorderWidth;
+    self.leftHandle.borderWidth = handleBorderWidth;
+    self.rightHandle.borderWidth = handleBorderWidth;
+}
+
 -(void)setHandleDiameter:(CGFloat)handleDiameter{
     _handleDiameter = handleDiameter;
     
@@ -579,6 +656,72 @@ static const CGFloat kLabelsFontSize = 12.0f;
 -(void)setLineHeight:(CGFloat)lineHeight{
     _lineHeight = lineHeight;
     [self setNeedsLayout];
+}
+
+-(void)setLabelPadding:(CGFloat)labelPadding {
+    _labelPadding = labelPadding;
+    [self updateLabelPositions];
+}
+
+#pragma mark - UIAccessibility
+
+- (BOOL)isAccessibilityElement
+{
+  return NO;
+}
+
+#pragma mark - UIAccessibilityContainer Protocol
+
+- (NSArray *)accessibleElements
+{
+  if(_accessibleElements != nil) {
+    return _accessibleElements;
+  }
+  
+  _accessibleElements = [[NSMutableArray alloc] init];
+  [_accessibleElements addObject:[self leftHandleAccessibilityElement]];
+  [_accessibleElements addObject:[self rightHandleAccessbilityElement]];
+  
+  return _accessibleElements;
+}
+
+- (NSInteger)accessibilityElementCount
+{
+  return [[self accessibleElements] count];
+}
+
+- (id)accessibilityElementAtIndex:(NSInteger)index
+{
+  return [[self accessibleElements] objectAtIndex:index];
+}
+
+- (NSInteger)indexOfAccessibilityElement:(id)element
+{
+  return [[self accessibleElements] indexOfObject:element];
+}
+
+- (UIAccessibilityElement *)leftHandleAccessibilityElement
+{
+  UIAccessibilityElement *element = [[UIAccessibilityElement alloc] initWithAccessibilityContainer:self];
+  element.isAccessibilityElement = YES;
+  element.accessibilityLabel = self.minLabelAccessibilityLabel;
+  element.accessibilityHint = self.minLabelAccessibilityHint;
+  element.accessibilityValue = self.minLabel.string;
+  element.accessibilityFrame = [self convertRect:self.leftHandle.frame toView:nil];
+  element.accessibilityTraits = UIAccessibilityTraitAdjustable;
+  return element;
+}
+
+- (UIAccessibilityElement *)rightHandleAccessbilityElement
+{
+  UIAccessibilityElement *element = [[UIAccessibilityElement alloc] initWithAccessibilityContainer:self];
+  element.isAccessibilityElement = YES;
+  element.accessibilityLabel = self.maxLabelAccessibilityLabel;
+  element.accessibilityHint = self.maxLabelAccessibilityHint;
+  element.accessibilityValue = self.maxLabel.string;
+  element.accessibilityFrame = [self convertRect:self.rightHandle.frame toView:nil];
+  element.accessibilityTraits = UIAccessibilityTraitAdjustable;
+  return element;
 }
 
 @end

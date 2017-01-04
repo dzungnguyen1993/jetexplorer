@@ -10,5 +10,6 @@
 #define JetEx_Bridging_Header_h
 
 #import <Google/SignIn.h>
+#import "TTRangeSlider.h"
 
 #endif /* JetEx_Bridging_Header_h */

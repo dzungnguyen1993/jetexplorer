@@ -69,6 +69,7 @@
 		B90A63001E06836E007EB3C8 /* HotelResultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90A62FF1E06836E007EB3C8 /* HotelResultVC.xib */; };
 		B90B80841E13CD11009E331F /* AmenityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90B80821E13CD11009E331F /* AmenityCell.swift */; };
 		B90B80851E13CD11009E331F /* AmenityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90B80831E13CD11009E331F /* AmenityCell.xib */; };
+		B90D68E21E1B646700A9D6DF /* TTRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B90D68E01E1B646700A9D6DF /* TTRangeSlider.m */; };
 		B90DDA431DD458AF00AEC1AE /* LocationSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */; };
 		B90DDA441DD458AF00AEC1AE /* LocationSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */; };
 		B9150B941DD4659C00F825DC /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = B9150B921DD4659C00F825DC /* cancel.png */; };
@@ -306,6 +307,9 @@
 		B90A62FF1E06836E007EB3C8 /* HotelResultVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotelResultVC.xib; sourceTree = "<group>"; };
 		B90B80821E13CD11009E331F /* AmenityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenityCell.swift; sourceTree = "<group>"; };
 		B90B80831E13CD11009E331F /* AmenityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmenityCell.xib; sourceTree = "<group>"; };
+		B90D68DF1E1B646700A9D6DF /* TTRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRangeSlider.h; sourceTree = "<group>"; };
+		B90D68E01E1B646700A9D6DF /* TTRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTRangeSlider.m; sourceTree = "<group>"; };
+		B90D68E11E1B646700A9D6DF /* TTRangeSliderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRangeSliderDelegate.h; sourceTree = "<group>"; };
 		B90DDA411DD458AF00AEC1AE /* LocationSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchVC.swift; sourceTree = "<group>"; };
 		B90DDA421DD458AF00AEC1AE /* LocationSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationSearchVC.xib; sourceTree = "<group>"; };
 		B9150B921DD4659C00F825DC /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
@@ -564,6 +568,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B90D68DE1E1B646700A9D6DF /* TTRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				B90D68DF1E1B646700A9D6DF /* TTRangeSlider.h */,
+				B90D68E01E1B646700A9D6DF /* TTRangeSlider.m */,
+				B90D68E11E1B646700A9D6DF /* TTRangeSliderDelegate.h */,
+			);
+			path = TTRangeSlider;
+			sourceTree = "<group>";
+		};
 		B9289B7A1DDC77DA008012E1 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +634,7 @@
 		B96BAC561DD1B3A100AE79AD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B90D68DE1E1B646700A9D6DF /* TTRangeSlider */,
 				2855DF0C1DFFF94000D45883 /* AImage */,
 				2830E42C1DF9D1B200DF3E0A /* Loading Popup */,
 				B9D904361DD8BBB1008C8720 /* EPCalendarPicker */,
@@ -1305,6 +1320,7 @@
 				B9D904641DD8C242008C8720 /* CheckInAndOutDateStyleKit.swift in Sources */,
 				B9F446031DD4E19A00250D6C /* GothamBook15Label.swift in Sources */,
 				B947B2C61DE9FCCD00A794BE /* Carrier.swift in Sources */,
+				B90D68E21E1B646700A9D6DF /* TTRangeSlider.m in Sources */,
 				B9D904661DD8C3F3008C8720 /* EPExtensions.swift in Sources */,
 				B9A813C01E0FCD53007097A6 /* FilterHotelView.swift in Sources */,
 				B9BA75CE1DEBD4D2003393D7 /* Itinerary.swift in Sources */,
@@ -1509,6 +1525,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Platform5.Jetex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JetEx/JetEx-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1526,6 +1543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Platform5.Jetex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JetEx/JetEx-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

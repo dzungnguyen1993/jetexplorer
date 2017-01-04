@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TTRangeSlider
 
 protocol FilterHotelViewDelegate: class {
     func hideFilter()
