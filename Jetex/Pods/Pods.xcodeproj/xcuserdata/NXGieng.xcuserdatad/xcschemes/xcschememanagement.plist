@@ -69,6 +69,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ImageSlideshow-ImageSlideshow.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImageSlideshow.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper+Realm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -117,6 +127,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1FB06C0FBC7FCBC6D7CDCF2BC3FF879B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
 		<dict>
 			<key>primary</key>
@@ -132,7 +147,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>51996488EBD1ABCF761F313321652F55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>593E9479C06FB200807D11AB29EB50BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5A4051433B7F30BDDB1E5A3BFCFABF25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,11 +187,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9609BCEAEF10D0E0ACCEDD7437C88626</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
 		<dict>
 			<key>primary</key>
@@ -187,12 +207,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DDBCFDE490CDFDABF6F16A26F346932D</key>
+		<key>B5DD11EC547EE7A6C9B048CD283312CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E88FCF281C7006E8F58BC0CA588683B5</key>
+		<key>DDBCFDE490CDFDABF6F16A26F346932D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

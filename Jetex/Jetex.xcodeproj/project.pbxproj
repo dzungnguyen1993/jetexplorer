@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		281114F21DEAEE51008A1A7E /* FlightSearchHistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281114F11DEAEE51008A1A7E /* FlightSearchHistoryVC.xib */; };
 		281114F41DEAEE61008A1A7E /* FlightSearchHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281114F31DEAEE61008A1A7E /* FlightSearchHistoryVC.swift */; };
+		283052551E1FC00C00867F4F /* HotelHistorySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283052541E1FC00C00867F4F /* HotelHistorySearch.swift */; };
+		283052571E1FC03C00867F4F /* FlightHistorySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283052561E1FC03C00867F4F /* FlightHistorySearch.swift */; };
 		2830E42F1DF9D1E300DF3E0A /* LoadingPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830E42D1DF9D1E300DF3E0A /* LoadingPopupVC.swift */; };
 		2830E4301DF9D1E300DF3E0A /* LoadingPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2830E42E1DF9D1E300DF3E0A /* LoadingPopupVC.xib */; };
 		2830E9011DE1C7A7001A76F9 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830E8FF1DE1C7A7001A76F9 /* HistoryCell.swift */; };
@@ -16,6 +18,9 @@
 		2830E9041DE1DCE2001A76F9 /* HistorySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830E9031DE1DCE2001A76F9 /* HistorySearch.swift */; };
 		2831EB1F1DE40EA5003EEB07 /* handsomeGieng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2831EB1E1DE40EA5003EEB07 /* handsomeGieng.jpg */; };
 		284350791DF2A07A0002B15E /* FullDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284350781DF2A07A0002B15E /* FullDateTransform.swift */; };
+		284728551E2240DA00C014C0 /* UITabbarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284728541E2240DA00C014C0 /* UITabbarButton.xib */; };
+		284728591E224BDC00C014C0 /* UITabbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284728581E224BDC00C014C0 /* UITabbarButton.swift */; };
+		2847285B1E22C3F800C014C0 /* MenuButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847285A1E22C3F800C014C0 /* MenuButtonType.swift */; };
 		284EC7861DDA1C7F001D0892 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284EC7851DDA1C7F001D0892 /* LoginView.swift */; };
 		284EC7881DDA1C91001D0892 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284EC7871DDA1C91001D0892 /* LoginView.xib */; };
 		284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284EC7891DDA22F5001D0892 /* UserInfoView.xib */; };
@@ -243,6 +248,8 @@
 		281114F11DEAEE51008A1A7E /* FlightSearchHistoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightSearchHistoryVC.xib; sourceTree = "<group>"; };
 		281114F31DEAEE61008A1A7E /* FlightSearchHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchHistoryVC.swift; sourceTree = "<group>"; };
 		281114F51DEEBC3C008A1A7E /* Jetex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jetex.entitlements; sourceTree = "<group>"; };
+		283052541E1FC00C00867F4F /* HotelHistorySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelHistorySearch.swift; sourceTree = "<group>"; };
+		283052561E1FC03C00867F4F /* FlightHistorySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightHistorySearch.swift; sourceTree = "<group>"; };
 		2830E42D1DF9D1E300DF3E0A /* LoadingPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingPopupVC.swift; sourceTree = "<group>"; };
 		2830E42E1DF9D1E300DF3E0A /* LoadingPopupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingPopupVC.xib; sourceTree = "<group>"; };
 		2830E8FF1DE1C7A7001A76F9 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryCell.swift; path = Jetex/Controllers/HistoryCell.swift; sourceTree = SOURCE_ROOT; };
@@ -250,6 +257,9 @@
 		2830E9031DE1DCE2001A76F9 /* HistorySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorySearch.swift; sourceTree = "<group>"; };
 		2831EB1E1DE40EA5003EEB07 /* handsomeGieng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = handsomeGieng.jpg; sourceTree = "<group>"; };
 		284350781DF2A07A0002B15E /* FullDateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullDateTransform.swift; sourceTree = "<group>"; };
+		284728541E2240DA00C014C0 /* UITabbarButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITabbarButton.xib; sourceTree = "<group>"; };
+		284728581E224BDC00C014C0 /* UITabbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabbarButton.swift; sourceTree = "<group>"; };
+		2847285A1E22C3F800C014C0 /* MenuButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButtonType.swift; sourceTree = "<group>"; };
 		284EC7851DDA1C7F001D0892 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ../Controllers/LoginView.swift; sourceTree = "<group>"; };
 		284EC7871DDA1C91001D0892 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginView.xib; path = ../Controllers/LoginView.xib; sourceTree = "<group>"; };
 		284EC7891DDA22F5001D0892 /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoView.xib; path = ../Controllers/UserInfoView.xib; sourceTree = "<group>"; };
@@ -505,6 +515,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		283052531E1FBFEC00867F4F /* History Search */ = {
+			isa = PBXGroup;
+			children = (
+				2830E9031DE1DCE2001A76F9 /* HistorySearch.swift */,
+				283052541E1FC00C00867F4F /* HotelHistorySearch.swift */,
+				283052561E1FC03C00867F4F /* FlightHistorySearch.swift */,
+			);
+			name = "History Search";
+			sourceTree = "<group>";
+		};
+		283052581E1FD10F00867F4F /* Hotel Detail */ = {
+			isa = PBXGroup;
+			children = (
+				284728541E2240DA00C014C0 /* UITabbarButton.xib */,
+				284728581E224BDC00C014C0 /* UITabbarButton.swift */,
+			);
+			name = "Hotel Detail";
+			sourceTree = "<group>";
+		};
 		2830E42C1DF9D1B200DF3E0A /* Loading Popup */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,14 +681,15 @@
 		B96BAC571DD1B3A100AE79AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				283052531E1FBFEC00867F4F /* History Search */,
 				B9D1526F1E03DA5300AFDB1D /* SearchHotel */,
 				B9FAA47A1DEB3E93000F87D7 /* ListAirport */,
 				B9FAA4791DEB3E29000F87D7 /* SearchFlight */,
 				B95281E51DD705610041C39B /* PassengerInfo.swift */,
 				B92507B51DDF0F7D0036866D /* FlightInfo.swift */,
-				2830E9031DE1DCE2001A76F9 /* HistorySearch.swift */,
 				28E62C4B1DE597CF00E41D44 /* User.swift */,
 				B9DC5DA41DE834120025D650 /* DBManager.swift */,
+				2847285A1E22C3F800C014C0 /* MenuButtonType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -675,6 +705,7 @@
 		B96BAC591DD1B3A100AE79AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				283052581E1FD10F00867F4F /* Hotel Detail */,
 				B9A813BE1E0FCD0D007097A6 /* FilterHotel */,
 				B968888B1E07F2A800AA838C /* SearchHotelResult */,
 				B9CAE9C81DE1972400A149BD /* Filter */,
@@ -1133,6 +1164,7 @@
 				B90A63001E06836E007EB3C8 /* HotelResultVC.xib in Resources */,
 				B9150B941DD4659C00F825DC /* cancel.png in Resources */,
 				28DAF8821E0A7064006A2406 /* SelectCabinClassVC.xib in Resources */,
+				284728551E2240DA00C014C0 /* UITabbarButton.xib in Resources */,
 				281114F21DEAEE51008A1A7E /* FlightSearchHistoryVC.xib in Resources */,
 				B9D9A2C41DDB6B27007CAB28 /* right-arrow.png in Resources */,
 				B9F445F21DD4D6DF00250D6C /* Gotham-UltraIta.otf in Resources */,
@@ -1213,7 +1245,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5FE4FABEEAEB1BED74866B89 /* [CP] Copy Pods Resources */ = {
@@ -1268,13 +1300,17 @@
 				B90544AE1DEEEB9B008FF60D /* Query.swift in Sources */,
 				B9D152721E03EC2A00AFDB1D /* CitySearchVC.swift in Sources */,
 				B963E7231DD6BF7400A21548 /* PickPassengerVC.swift in Sources */,
+				283052551E1FC00C00867F4F /* HotelHistorySearch.swift in Sources */,
 				B9F446051DD4E2F400250D6C /* GothamBook12Label.swift in Sources */,
 				B99F82CC1DE1DAC500DA8B37 /* StopCell.swift in Sources */,
 				2830E9011DE1C7A7001A76F9 /* HistoryCell.swift in Sources */,
 				B9FAA4721DEB2713000F87D7 /* Leg.swift in Sources */,
 				B9A1EE721DD782B8005140BC /* DateIndicatorStyleKit.swift in Sources */,
+				284728591E224BDC00C014C0 /* UITabbarButton.swift in Sources */,
 				B9CAE9CA1DE1973300A149BD /* FilterFlightView.swift in Sources */,
+				2847285B1E22C3F800C014C0 /* MenuButtonType.swift in Sources */,
 				B97DC4B71E0EE4F3003B5041 /* AgentPrice.swift in Sources */,
+				283052571E1FC03C00867F4F /* FlightHistorySearch.swift in Sources */,
 				B9E4453F1DD62FEB002946A0 /* PickInfoView.swift in Sources */,
 				28811F8B1DE9C5D500BB0ADA /* WarningView.swift in Sources */,
 				B9EE7A731DDDECB700A82AEE /* FlightResultCell.swift in Sources */,

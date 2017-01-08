@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 import PopupDialog
 
 class HotelSearchVC: BaseViewController {
@@ -69,7 +70,7 @@ class HotelSearchVC: BaseViewController {
     
     func gotoResultVC() {
         // save searching info into history
-//        saveSearchingInfoIntoHistory()
+        saveSearchingInfoIntoHistory()
         
         let vc = HotelResultVC(nibName: "HotelResultVC", bundle: nil)
         vc.searchInfo = self.searchHotelInfo
@@ -85,6 +86,42 @@ class HotelSearchVC: BaseViewController {
         
         let tapCheckout = UITapGestureRecognizer(target: self, action: #selector(pickCheckout(sender:)))
         viewCheckout.addGestureRecognizer(tapCheckout)
+    }
+    
+    func saveSearchingInfoIntoHistory() {
+        let currentSearchHotelInfo = SearchHotelInfo(searchHotelInfo: self.searchHotelInfo)
+        let hotelHistorySearch = HotelHistorySearch(info: currentSearchHotelInfo, searchAt: Date())
+        let searchingHistory = HistorySearch(type: .Hotel, flight: nil, hotel: hotelHistorySearch)
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(searchingHistory)
+        }
+        
+        let historyList = Array(realm.objects(HistorySearch.self))
+        
+        if ProfileVC.isUserLogined {
+            // user login, sync to server and save to current user
+            let JSONlist = HistorySearch.historyListToJSON(historyList: historyList)
+            
+            NetworkManager.shared.syncHistoryToServer(historyData: JSONlist, completion: { (success, result) in
+                if success {
+                    // sync success.
+                    let realm = try! Realm()
+                    try! realm.write {
+                        searchingHistory.isSynced = true
+                    }
+                } else {
+                    // sync fail, saved it to nowhere in local.
+                }
+            })
+        } else {
+            // user is not loged in, save it o nowhere in local
+            try! realm.write {
+                realm.add(searchingHistory)
+            }
+        }
     }
 }
 

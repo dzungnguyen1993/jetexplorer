@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -32,7 +32,7 @@
                     <rect key="frame" x="0.0" y="16" width="375" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9f-lx-Cbz">
-                            <rect key="frame" x="16" y="8" width="39" height="20"/>
+                            <rect key="frame" x="16" y="8" width="43.5" height="17"/>
                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                             <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -60,13 +60,13 @@
                     <rect key="frame" x="0.0" y="132" width="375" height="100"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70v-ZA-Bx1">
-                            <rect key="frame" x="16" y="33" width="343" height="30"/>
+                            <rect key="frame" x="16" y="30" width="343" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="XBh-tJ-DFE"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysl-2S-hiH">
-                            <rect key="frame" x="16" y="8" width="85.5" height="20"/>
+                            <rect key="frame" x="16" y="8" width="97" height="17"/>
                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                             <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                     <rect key="frame" x="0.0" y="248" width="375" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PA-iW-3k6">
-                            <rect key="frame" x="16" y="8" width="89.5" height="20"/>
+                            <rect key="frame" x="16" y="8" width="101" height="17"/>
                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                             <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -123,19 +123,19 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amenities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7o-Uk-I17">
-                    <rect key="frame" x="16" y="364" width="75" height="20"/>
+                    <rect key="frame" x="16" y="364" width="87" height="17"/>
                     <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                     <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Hotel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAI-O4-ifi">
-                    <rect key="frame" x="16" y="948" width="98.5" height="20"/>
+                    <rect key="frame" x="16" y="945" width="110.5" height="17"/>
                     <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                     <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dMg-6e-qdu">
-                    <rect key="frame" x="16" y="976" width="343" height="30"/>
+                    <rect key="frame" x="16" y="970" width="343" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="nSA-Iq-omn"/>
                     </constraints>
@@ -144,7 +144,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jld-tC-IyK" customClass="SmallParagraphButton" customModule="Jetex" customModuleProvider="target">
-                    <rect key="frame" x="16" y="1022" width="343" height="44"/>
+                    <rect key="frame" x="16" y="1016" width="343" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="cJz-Su-Kx1"/>
                     </constraints>
@@ -157,7 +157,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dwD-12-kt5">
-                    <rect key="frame" x="16" y="400" width="343" height="532"/>
+                    <rect key="frame" x="16" y="397" width="343" height="532"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="532" id="RTw-MI-fMZ"/>

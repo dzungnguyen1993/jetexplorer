@@ -34,6 +34,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>Alamofire</string>
 			<key>Type</key>
@@ -61,6 +63,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>AlamofireImage</string>
 			<key>Type</key>
@@ -91,6 +95,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 </string>
+			<key>License</key>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>AlamofireObjectMapper</string>
 			<key>Type</key>
@@ -128,6 +134,8 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</string>
+			<key>License</key>
+			<string>BSD</string>
 			<key>Title</key>
 			<string>Bolts</string>
 			<key>Type</key>
@@ -153,6 +161,8 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>Facebook Platform License</string>
 			<key>Title</key>
 			<string>FBSDKCoreKit</string>
 			<key>Type</key>
@@ -178,6 +188,8 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>Facebook Platform License</string>
 			<key>Title</key>
 			<string>FBSDKLoginKit</string>
 			<key>Type</key>
@@ -203,6 +215,8 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>Facebook Platform License</string>
 			<key>Title</key>
 			<string>FBSDKShareKit</string>
 			<key>Type</key>
@@ -230,6 +244,8 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>Facebook Platform License</string>
 			<key>Title</key>
 			<string>FacebookCore</string>
 			<key>Type</key>
@@ -257,6 +273,8 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>Facebook Platform License</string>
 			<key>Title</key>
 			<string>FacebookLogin</string>
 			<key>Type</key>
@@ -284,6 +302,8 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>Facebook Platform License</string>
 			<key>Title</key>
 			<string>FacebookShare</string>
 			<key>Type</key>
@@ -292,6 +312,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>FirebaseAnalytics</string>
 			<key>Type</key>
@@ -300,6 +322,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>FirebaseCore</string>
 			<key>Type</key>
@@ -308,6 +332,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>FirebaseInstanceID</string>
 			<key>Type</key>
@@ -518,6 +544,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    See the License for the specific language governing permissions and
    limitations under the License.
 </string>
+			<key>License</key>
+			<string>Apache</string>
 			<key>Title</key>
 			<string>GTMOAuth2</string>
 			<key>Type</key>
@@ -728,6 +756,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    See the License for the specific language governing permissions and
    limitations under the License.
 </string>
+			<key>License</key>
+			<string>Apache</string>
 			<key>Title</key>
 			<string>GTMSessionFetcher</string>
 			<key>Type</key>
@@ -736,6 +766,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google Inc.</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>Google</string>
 			<key>Type</key>
@@ -744,6 +776,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>GoogleAppUtilities</string>
 			<key>Type</key>
@@ -752,6 +786,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>GoogleInterchangeUtilities</string>
 			<key>Type</key>
@@ -760,6 +796,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>GoogleSignIn</string>
 			<key>Type</key>
@@ -768,6 +806,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<dict>
 			<key>FooterText</key>
 			<string>Copyright 2016 Google</string>
+			<key>License</key>
+			<string>Copyright</string>
 			<key>Title</key>
 			<string>GoogleSymbolUtilities</string>
 			<key>Type</key>
@@ -978,8 +1018,39 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    See the License for the specific language governing permissions and
    limitations under the License.
 </string>
+			<key>License</key>
+			<string>Apache</string>
 			<key>Title</key>
 			<string>GoogleToolboxForMac</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright (c) 2015 Petr Zvoníček &lt;zvonicek@gmail.com&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</string>
+			<key>License</key>
+			<string>MIT</string>
+			<key>Title</key>
+			<string>ImageSlideshow</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
@@ -994,6 +1065,8 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>ObjectMapper</string>
 			<key>Type</key>
@@ -1023,6 +1096,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>ObjectMapper+Realm</string>
 			<key>Type</key>
@@ -1051,6 +1126,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>PopupDialog</string>
 			<key>Type</key>
@@ -1287,13 +1364,13 @@ EXPORT COMPLIANCE
 You understand that the Software may contain cryptographic functions that may be
 subject to export restrictions, and you represent and warrant that you are not
 (i) located in a jurisdiction that is subject to United States economic
-sanctions (&#8220;Prohibited Jurisdiction&#8221;), including Cuba, Iran, North Korea,
+sanctions (“Prohibited Jurisdiction”), including Cuba, Iran, North Korea,
 Sudan, Syria or the Crimea region, (ii) a person listed on any U.S. government
 blacklist (to include the List of Specially Designated Nationals and Blocked
 Persons or the Consolidated Sanctions List administered by the U.S. Department
-of the Treasury&#8217;s Office of Foreign Assets Control, or the Denied Persons List
+of the Treasury’s Office of Foreign Assets Control, or the Denied Persons List
 or Entity List administered by the U.S. Department of Commerce)
-(&#8220;Sanctioned Person&#8221;), or (iii) controlled or 50% or more owned by a Sanctioned
+(“Sanctioned Person”), or (iii) controlled or 50% or more owned by a Sanctioned
 Person.
 
 You agree to comply with all export, re-export and import restrictions and
@@ -1303,6 +1380,8 @@ or authorize the transfer of, directly or indirectly, of the Software to any
 Prohibited Jurisdiction, or otherwise in violation of any such restrictions or
 regulations.
 </string>
+			<key>License</key>
+			<string>Apache 2.0</string>
 			<key>Title</key>
 			<string>Realm</string>
 			<key>Type</key>
@@ -1539,13 +1618,13 @@ EXPORT COMPLIANCE
 You understand that the Software may contain cryptographic functions that may be
 subject to export restrictions, and you represent and warrant that you are not
 (i) located in a jurisdiction that is subject to United States economic
-sanctions (&#8220;Prohibited Jurisdiction&#8221;), including Cuba, Iran, North Korea,
+sanctions (“Prohibited Jurisdiction”), including Cuba, Iran, North Korea,
 Sudan, Syria or the Crimea region, (ii) a person listed on any U.S. government
 blacklist (to include the List of Specially Designated Nationals and Blocked
 Persons or the Consolidated Sanctions List administered by the U.S. Department
-of the Treasury&#8217;s Office of Foreign Assets Control, or the Denied Persons List
+of the Treasury’s Office of Foreign Assets Control, or the Denied Persons List
 or Entity List administered by the U.S. Department of Commerce)
-(&#8220;Sanctioned Person&#8221;), or (iii) controlled or 50% or more owned by a Sanctioned
+(“Sanctioned Person”), or (iii) controlled or 50% or more owned by a Sanctioned
 Person.
 
 You agree to comply with all export, re-export and import restrictions and
@@ -1555,6 +1634,8 @@ or authorize the transfer of, directly or indirectly, of the Software to any
 Prohibited Jurisdiction, or otherwise in violation of any such restrictions or
 regulations.
 </string>
+			<key>License</key>
+			<string>Apache 2.0</string>
 			<key>Title</key>
 			<string>RealmSwift</string>
 			<key>Type</key>

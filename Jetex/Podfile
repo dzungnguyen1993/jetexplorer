@@ -1,3 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 # Uncomment this line to define a global platform for your project
 platform :ios, ’10.0’
 
@@ -15,7 +17,10 @@ target 'Jetex' do
  pod 'FacebookShare'
  pod 'Google/SignIn'
  pod 'PopupDialog', '~> 0.5'
- pod 'AlamofireImage'
+ pod 'AlamofireImage', '~> 3.1'
+ pod "ImageSlideshow"
+ pod "ImageSlideshow/Alamofire"
+ 
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
