@@ -15,7 +15,7 @@ class FilterHotelObject: NSObject {
     var maxStar: Float = 0
     var minRating: Float = 0
     var maxRating: Float = 0
-
+    var selectedAmenities: [Int] = [Int]()
     
     func copyFilter() -> FilterHotelObject {
         let filterObject = FilterHotelObject()
@@ -26,6 +26,11 @@ class FilterHotelObject: NSObject {
         filterObject.maxStar = self.maxStar
         filterObject.minRating = self.minRating
         filterObject.maxRating = self.maxRating
+        
+        filterObject.selectedAmenities = [Int]()
+        for selectedIndex in self.selectedAmenities {
+            filterObject.selectedAmenities.append(selectedIndex)
+        }
         
         return filterObject
     }

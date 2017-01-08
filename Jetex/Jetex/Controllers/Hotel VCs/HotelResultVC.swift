@@ -247,6 +247,19 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
         }
 
         cell.selectionStyle = .none
+        
+        // download image
+        Alamofire.request(hotel.getImageUrl()).responseImage { response in
+            if let image = response.result.value {
+                let cell = self.tableView.cellForRow(at: indexPath) as? HotelResultCell
+                if cell != nil {
+                    DispatchQueue.main.async {
+                        cell?.hotelImg.image = image
+                    }
+                }
+            }
+        }
+
         return cell
     }
     

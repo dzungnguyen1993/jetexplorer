@@ -39,6 +39,7 @@ class FilterHotelView: UIView {
     var filterObject: FilterHotelObject = FilterHotelObject()
     var tmpFilterObject: FilterHotelObject = FilterHotelObject()
     
+    
     // MARK: Initialization
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -50,7 +51,7 @@ class FilterHotelView: UIView {
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options:NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": self.contentView]))
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options:NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": self.contentView]))
         
-        self.setupViews()
+//        self.setupViews()
     }
     
     override init(frame: CGRect) {
@@ -63,7 +64,7 @@ class FilterHotelView: UIView {
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options:NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": self.contentView]))
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options:NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": self.contentView]))
         
-        self.setupViews()
+//        self.setupViews()
     }
     
     @IBAction func hideFilter(_ sender: UIButton) {
@@ -82,15 +83,15 @@ class FilterHotelView: UIView {
         // add star beyond slider
         // index 0
         for i in 0..<5 {
-            var x = i * Int(self.starView.frame.size.width / 4) - 15
+            let x = i * Int((self.starView.frame.size.width - 16) / 4) - 10
             
-            if i == 0 {
-                x = 0
-            }
-            
-            if i == 4 {
-                x = Int(self.starView.frame.size.width) - 25
-            }
+//            if i == 0 {
+//                x = -10
+//            }
+//            
+//            if i == 4 {
+//                x = Int(self.starView.frame.size.width) - 25
+//            }
             
             let y = 0
             let star = StarView(frame: CGRect(x: x, y: y, width: 35, height: 30))
@@ -155,8 +156,6 @@ class FilterHotelView: UIView {
         filterObject = tmpFilterObject.copyFilter()
         
         self.delegate?.applyFilter(filterObject: filterObject)
-        
-        
     }
     
     func setFilterInfo(searchResult: SearchHotelResult) {
@@ -173,6 +172,8 @@ class FilterHotelView: UIView {
         filterObject.maxStar = 5
         filterObject.minRating = 3
         filterObject.maxRating = 10
+        
+        setupViews()
     }
     
     func loadData() {
@@ -222,8 +223,14 @@ extension FilterHotelView: UICollectionViewDataSource {
         
         let amenity = self.amenities[indexPath.row]
         cell.label.text = amenity.0
-        cell.label.textColor = UIColor(hex: 0x674290)
-        cell.imgView.image = UIImage(fromHex: amenity.1, withColor: (UIColor(hex: 0x674290)))
+        
+        var color = UIColor(hex: 0x999999)
+        if tmpFilterObject.selectedAmenities.contains(indexPath.row) {
+            color = UIColor(hex: 0x674290)
+        }
+        
+        cell.label.textColor = color
+        cell.imgView.image = UIImage(fromHex: amenity.1, withColor: color)
         
         return cell
     }
@@ -231,7 +238,14 @@ extension FilterHotelView: UICollectionViewDataSource {
 
 extension FilterHotelView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (tmpFilterObject.selectedAmenities.contains(indexPath.row)) {
+            let index = tmpFilterObject.selectedAmenities.index(of: indexPath.row)
+            tmpFilterObject.selectedAmenities.remove(at: index!)
+        } else {
+            tmpFilterObject.selectedAmenities.append(indexPath.row)
+        }
         
+        self.collectionView.reloadData()
     }
 }
 

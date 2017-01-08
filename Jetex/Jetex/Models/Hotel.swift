@@ -18,6 +18,8 @@ class Hotel: Mappable {
     dynamic var star: Int = 0
     dynamic var popularity: Int = 0
     dynamic var popularityDesc: String = ""
+    var imageUrls: [String] = [String]()
+    var images: [String: [String: [Int]]] = [:]
     
     required convenience init?(map: Map) {
         self.init()
@@ -35,5 +37,23 @@ class Hotel: Mappable {
         star <- map["star_rating"]
         popularity <- map["popularity"]
         popularityDesc <- map["popularity_desc"]
+        imageUrls <- map["image_urls"]
+        images <- map["images"]
+    }
+    
+    func getImageUrl() -> String {
+        let imageObj = images.first
+        
+        let key = (imageObj?.key)!
+        let values = imageObj?.value
+        
+        let imageItem = values?.first
+        let imageKey = (imageItem?.key)!
+        
+        let imageUrl = imageUrls.first
+        let indexOfBracket = imageUrl?.range(of: "{")
+        let indexBeforeBracket = imageUrl?.index(before: (indexOfBracket?.upperBound)!)
+        let host = (imageUrl?.substring(to: indexBeforeBracket!))!
+        return "https://" + host + key + imageKey
     }
 }
