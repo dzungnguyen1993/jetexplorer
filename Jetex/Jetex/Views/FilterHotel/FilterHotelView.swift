@@ -21,24 +21,27 @@ class FilterHotelView: UIView {
     @IBOutlet weak var userSlider: TTRangeSlider!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var starView: UIView!
-    
-    var amenities = [("24-hour front desk", JetExFontHexCode.jetexAmenities24h.rawValue),
-                     ("Luggate storage", JetExFontHexCode.jetexAmenitiesLuggage.rawValue),
-                     ("Babysitting or childcare", JetExFontHexCode.jetexAmenitiesChildcare.rawValue),
-                     ("Free WiFi", JetExFontHexCode.jetexAmenitiesWifi.rawValue),
-                     ("Coffee shop or café", JetExFontHexCode.jetexAmenitiesCoffee.rawValue),
-                     ("Breakfast available (surcharge)", JetExFontHexCode.jetexAmenitiesBreakfast.rawValue),
-                     ("Full-service spa", JetExFontHexCode.jetexAmenitiesSpa.rawValue),
-                     ("Fitness facilities", JetExFontHexCode.jetexAmenitiesGym.rawValue),
-                     ("ATM/banking", JetExFontHexCode.jetexAmenitiesATM.rawValue),
-                     ("Outdoor pool", JetExFontHexCode.jetexAmenitiesPool.rawValue),
-                     ("Casino", JetExFontHexCode.jetexAmenitiesCasino.rawValue),
-                     ("Dry cleaning/ laundry service", JetExFontHexCode.jetexAmenitiesLaundry.rawValue),
-                     ("Limo or Town Car service available", JetExFontHexCode.jetexAmenitiesCar.rawValue),
-                     ("Elevator/lift", JetExFontHexCode.jetexAmenitiesElevator.rawValue)]
+    @IBOutlet weak var constraintAmenityHeight: NSLayoutConstraint!
+
+    // this is just for demo
+//    var amenities = [("24-hour front desk", JetExFontHexCode.jetexAmenities24h.rawValue),
+//                     ("Luggate storage", JetExFontHexCode.jetexAmenitiesLuggage.rawValue),
+//                     ("Babysitting or childcare", JetExFontHexCode.jetexAmenitiesChildcare.rawValue),
+//                     ("Free WiFi", JetExFontHexCode.jetexAmenitiesWifi.rawValue),
+//                     ("Coffee shop or café", JetExFontHexCode.jetexAmenitiesCoffee.rawValue),
+//                     ("Breakfast available (surcharge)", JetExFontHexCode.jetexAmenitiesBreakfast.rawValue),
+//                     ("Full-service spa", JetExFontHexCode.jetexAmenitiesSpa.rawValue),
+//                     ("Fitness facilities", JetExFontHexCode.jetexAmenitiesGym.rawValue),
+//                     ("ATM/banking", JetExFontHexCode.jetexAmenitiesATM.rawValue),
+//                     ("Outdoor pool", JetExFontHexCode.jetexAmenitiesPool.rawValue),
+//                     ("Casino", JetExFontHexCode.jetexAmenitiesCasino.rawValue),
+//                     ("Dry cleaning/ laundry service", JetExFontHexCode.jetexAmenitiesLaundry.rawValue),
+//                     ("Limo or Town Car service available", JetExFontHexCode.jetexAmenitiesCar.rawValue),
+//                     ("Elevator/lift", JetExFontHexCode.jetexAmenitiesElevator.rawValue)]
+    var amenities: [Amenity] = [Amenity]()
     var filterObject: FilterHotelObject = FilterHotelObject()
     var tmpFilterObject: FilterHotelObject = FilterHotelObject()
-    
+    var searchResult : SearchHotelResult!
     
     // MARK: Initialization
     required init(coder aDecoder: NSCoder) {
@@ -80,27 +83,8 @@ class FilterHotelView: UIView {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        // add star beyond slider
-        // index 0
-        for i in 0..<5 {
-            let x = i * Int((self.starView.frame.size.width - 16) / 4) - 10
-            
-//            if i == 0 {
-//                x = -10
-//            }
-//            
-//            if i == 4 {
-//                x = Int(self.starView.frame.size.width) - 25
-//            }
-            
-            let y = 0
-            let star = StarView(frame: CGRect(x: x, y: y, width: 35, height: 30))
-            star.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexStarFulfill.rawValue, withColor: UIColor(hex: 0x515151))
-            
-            star.lbNumber.text = (i + 1).toString()
-            
-            self.starView.addSubview(star)
-        }
+        // set amenities
+        self.setupAmenities()
     }
     
     func setupSliders() {
@@ -150,6 +134,36 @@ class FilterHotelView: UIView {
         self.userSlider.tintColor = UIColor(hex: 0xD6D6D6)
         self.userSlider.minLabelColour = UIColor(hex: 0x515151)
         self.userSlider.maxLabelColour = UIColor(hex: 0x515151)
+        
+        
+        // add star beyond slider
+        // index 0
+        for i in 0..<5 {
+            let x = i * Int((self.starView.frame.size.width - 16) / 4) - 10
+            
+            //            if i == 0 {
+            //                x = -10
+            //            }
+            //
+            //            if i == 4 {
+            //                x = Int(self.starView.frame.size.width) - 25
+            //            }
+            
+            let y = 0
+            let star = StarView(frame: CGRect(x: x, y: y, width: 35, height: 30))
+            star.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexStarFulfill.rawValue, withColor: UIColor(hex: 0x515151))
+            
+            star.lbNumber.text = (i + 1).toString()
+            
+            self.starView.addSubview(star)
+        }
+    }
+    
+    func setupAmenities() {
+        self.amenities = self.searchResult.amenities
+        
+        // 76 is cell height
+        self.constraintAmenityHeight.constant = CGFloat(76 * (Int(self.amenities.count) + 1)/2)
     }
     
     @IBAction func applyFilter(_ sender: Any) {
@@ -159,6 +173,7 @@ class FilterHotelView: UIView {
     }
     
     func setFilterInfo(searchResult: SearchHotelResult) {
+        self.searchResult = searchResult
         self.priceSlider.minValue = 0
         self.priceSlider.maxValue = 1000
         self.priceSlider.selectedMinimum = 0
@@ -222,15 +237,16 @@ extension FilterHotelView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AmenityCell", for: indexPath) as! AmenityCell
         
         let amenity = self.amenities[indexPath.row]
-        cell.label.text = amenity.0
+//        cell.label.text = amenity.0
+        cell.label.text = amenity.name
         
         var color = UIColor(hex: 0x999999)
-        if tmpFilterObject.selectedAmenities.contains(indexPath.row) {
+        if tmpFilterObject.selectedAmenities.contains(amenity.id) {
             color = UIColor(hex: 0x674290)
         }
         
         cell.label.textColor = color
-        cell.imgView.image = UIImage(fromHex: amenity.1, withColor: color)
+//        cell.imgView.image = UIImage(fromHex: amenity.1, withColor: color)
         
         return cell
     }
@@ -238,11 +254,12 @@ extension FilterHotelView: UICollectionViewDataSource {
 
 extension FilterHotelView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if (tmpFilterObject.selectedAmenities.contains(indexPath.row)) {
-            let index = tmpFilterObject.selectedAmenities.index(of: indexPath.row)
+        let amenity = self.amenities[indexPath.row]
+        if (tmpFilterObject.selectedAmenities.contains(amenity.id)) {
+            let index = tmpFilterObject.selectedAmenities.index(of: (amenity.id))
             tmpFilterObject.selectedAmenities.remove(at: index!)
         } else {
-            tmpFilterObject.selectedAmenities.append(indexPath.row)
+            tmpFilterObject.selectedAmenities.append(amenity.id)
         }
         
         self.collectionView.reloadData()

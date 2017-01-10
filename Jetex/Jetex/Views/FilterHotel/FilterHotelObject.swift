@@ -15,6 +15,7 @@ class FilterHotelObject: NSObject {
     var maxStar: Float = 0
     var minRating: Float = 0
     var maxRating: Float = 0
+    // contains id of selected amenities
     var selectedAmenities: [Int] = [Int]()
     
     func copyFilter() -> FilterHotelObject {

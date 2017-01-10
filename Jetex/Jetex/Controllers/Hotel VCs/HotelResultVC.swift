@@ -82,7 +82,7 @@ class HotelResultVC: BaseViewController {
         // setup filter
    
         viewFilter.delegate = self
-        constraintFilterHeight.constant = 1112
+        constraintFilterHeight.constant = 1022
     }
     
     func searchForHotels() {
@@ -133,6 +133,10 @@ class HotelResultVC: BaseViewController {
         self.searchResult.initSort()
         self.loadResultData()
         
+        // update constraint of collection view of amenity
+        // 76 is cell height
+        // 580 is height of the rest of view
+        self.constraintFilterHeight.constant = 490 + CGFloat(76 * (Int(self.searchResult.amenities.count) + 1)/2)
         self.viewFilter.setFilterInfo(searchResult: self.searchResult)
     }
     

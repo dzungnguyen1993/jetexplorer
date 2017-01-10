@@ -15,6 +15,7 @@ class SearchHotelResult: Mappable {
     var cheapestHotels = [Hotel]()
     var bestHotels = [Hotel]()
     var hotelPrices = [HotelPrice]()
+    var amenities = [Amenity]()
     
     required convenience init?(map: Map) {
         self.init()
@@ -27,6 +28,7 @@ class SearchHotelResult: Mappable {
     func mapping(map: Map) {
         hotels <- map["hotels"]
         hotelPrices <- map["hotels_prices"]
+        amenities <- map["amenities"]
     }
     
     func initSort() {
@@ -82,7 +84,18 @@ class SearchHotelResult: Mappable {
             let score = Float(hotel.popularity) / 10
             let isValidRating = score >= filterObject.minRating && score <= filterObject.maxRating
             
-            if isValidPrice && isValidStar && isValidRating {
+            // filter amenity
+            var isValidAmenity = true
+            for amenityId in filterObject.selectedAmenities {
+                if !self.amenities.contains(where: { (amenity) -> Bool in
+                    return amenity.id == amenityId
+                }) {
+                    isValidAmenity = false
+                    break
+                }
+            }
+            
+            if isValidPrice && isValidStar && isValidRating && isValidAmenity {
                 result.append(hotel)
             }
         }

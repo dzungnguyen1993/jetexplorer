@@ -16,6 +16,7 @@ class HotelSearchVC: BaseViewController {
     @IBOutlet weak var viewLocation: PickInfoView!
     @IBOutlet weak var viewCheckin: PickInfoView!
     @IBOutlet weak var viewCheckout: PickInfoView!
+    @IBOutlet weak var viewGuestRoom: PickInfoView!
     
     var searchHotelInfo: SearchHotelInfo!
     
@@ -46,6 +47,9 @@ class HotelSearchVC: BaseViewController {
         viewCheckout.lbTitle.text = "Check out"
      
         self.showDateInfo()
+        
+        viewGuestRoom.lbTitle.text = "Guests & Rooms"
+        viewGuestRoom.lbInfo.text = "1 people, 1 room"
     }
     
     @IBAction func search(_ sender: Any) {
@@ -86,6 +90,9 @@ class HotelSearchVC: BaseViewController {
         
         let tapCheckout = UITapGestureRecognizer(target: self, action: #selector(pickCheckout(sender:)))
         viewCheckout.addGestureRecognizer(tapCheckout)
+        
+        let tapGuestRoom = UITapGestureRecognizer(target: self, action: #selector(pickGuestRoom(sender:)))
+        viewGuestRoom.addGestureRecognizer(tapGuestRoom)
     }
     
     func saveSearchingInfoIntoHistory() {
@@ -140,6 +147,10 @@ extension HotelSearchVC {
     func pickCheckout(sender: UITapGestureRecognizer) {
         gotoPickDateVC(indicatorPosition: .checkOut)
     }
+    
+    func pickGuestRoom(sender: UITapGestureRecognizer) {
+        gotoPickGuestRoom()
+    }
 }
 
 // setup layout
@@ -148,6 +159,7 @@ extension HotelSearchVC {
         self.viewLocation.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexPin.rawValue, withColor: UIColor(hex: 0x674290))
         self.viewCheckin.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexCheckin.rawValue, withColor: UIColor(hex: 0x674290))
         self.viewCheckout.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexCheckout.rawValue, withColor: UIColor(hex: 0x674290))
+        self.viewGuestRoom.imgView.image = UIImage(fromHex: JetExFontHexCode.jetexPassengers.rawValue, withColor: UIColor(hex: 0x674290))
     }
 }
 
@@ -190,6 +202,28 @@ extension HotelSearchVC: PickDateVCDelegate {
         guard searchHotelInfo.checkoutDay != nil else {return}
         viewCheckout.lbInfo.text = searchHotelInfo.checkoutDay?.toMonthDay()
         viewCheckout.lbSubInfo.text = searchHotelInfo.checkoutDay?.toWeekDay()
+    }
+}
+
+extension HotelSearchVC: PickGuestRoomVCDelegate {
+    func donePickGuestAndRoom(guest: Int, room: Int) {
+        searchHotelInfo.numberOfGuest = guest
+        searchHotelInfo.numberOfRooms = room
+        
+        var text = guest.toString() + " people, "
+        if (room >= 2) {
+            text = text + room.toString() + " rooms"
+        } else {
+            text = text + room.toString() + " room"
+        }
+        viewGuestRoom.lbInfo.text = text
+    }
+    
+    func gotoPickGuestRoom() {
+        let vc = PickGuestRoomVC(nibName: "PickGuestRoomVC", bundle: nil)
+        vc.data = [searchHotelInfo.numberOfGuest, searchHotelInfo.numberOfRooms]
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

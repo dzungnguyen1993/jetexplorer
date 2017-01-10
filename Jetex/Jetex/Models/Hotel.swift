@@ -20,6 +20,7 @@ class Hotel: Mappable {
     dynamic var popularityDesc: String = ""
     var imageUrls: [String] = [String]()
     var images: [String: [String: [Int]]] = [:]
+    var amenities: [Int] = [Int]()
     
     required convenience init?(map: Map) {
         self.init()
@@ -39,6 +40,7 @@ class Hotel: Mappable {
         popularityDesc <- map["popularity_desc"]
         imageUrls <- map["image_urls"]
         images <- map["images"]
+        amenities <- map["amenities"]
     }
     
     func getImageUrl() -> String {

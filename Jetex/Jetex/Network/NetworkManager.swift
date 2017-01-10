@@ -177,7 +177,7 @@ class NetworkManager: NSObject {
         requestString.append("/UK/" +  ProfileVC.currentCurrencyType + "/en-GB")
         
         // add place
-        requestString.append("/" + (info.city?.name)!)
+        requestString.append("/" + (info.city?.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed))!)
         
         // add check in
         requestString.append("/" + (info.checkinDay?.toYYYYMMDDString())!)
