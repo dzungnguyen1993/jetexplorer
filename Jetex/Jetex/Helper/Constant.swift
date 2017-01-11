@@ -39,6 +39,7 @@ struct APIURL {
     struct GoogleAPI {
         static let clientID = "514456118871-qcmqqechijrvbm44jf6nhn83pgh8mt6l.apps.googleusercontent.com"
         static let prelink = "https://www.googleapis.com/oauth2/v3/tokeninfo?id_token="
+        static let mapKey = "AIzaSyAk3oOGFFEXwntr9_QxYQpXkvaPqk6HPN8"
+        static let staticMapBaseURL = "https://maps.googleapis.com/maps/api/staticmap"
     }
-    
 }

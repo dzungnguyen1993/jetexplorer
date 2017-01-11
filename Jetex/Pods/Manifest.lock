@@ -49,6 +49,11 @@ PODS:
     - GoogleSymbolUtilities (~> 1.1)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
+  - GoogleMaps (2.1.1):
+    - GoogleMaps/Maps (= 2.1.1)
+  - GoogleMaps/Base (2.1.1)
+  - GoogleMaps/Maps (2.1.1):
+    - GoogleMaps/Base
   - GoogleSignIn (4.0.1):
     - GoogleAppUtilities (~> 1.1)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
@@ -97,6 +102,7 @@ DEPENDENCIES:
   - FacebookLogin
   - FacebookShare
   - Google/SignIn
+  - GoogleMaps
   - ImageSlideshow
   - ImageSlideshow/Alamofire
   - ObjectMapper+Realm
@@ -119,6 +125,7 @@ SPEC CHECKSUMS:
   Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
   GoogleAppUtilities: a8a552aa74f6597f805e45b5a3962766c3134973
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
+  GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GoogleSignIn: a8694c0a8e6d1b0ec77c58014de5bfd4ba2fa766
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
@@ -131,6 +138,6 @@ SPEC CHECKSUMS:
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
 
-PODFILE CHECKSUM: afe87f28d5f39ec6bccde0f4aae9780220e4971f
+PODFILE CHECKSUM: a1c55e116cd877943ddf05c77370f6144720ec1e
 
 COCOAPODS: 1.2.0.beta.1

@@ -14,6 +14,7 @@ import ImageSlideshow
 protocol HotelDetailsVCDelegate: class {
     func resizeContentViewInScrollViewWithNewComponentHeight(newComponentHeight: CGFloat, complete: (() -> Void)?)
     func adjustDealsViewFrameToFit()
+    func zoomMapToFullScreen()
 }
 
 class HotelDetailsVC: BaseViewController {
@@ -83,8 +84,10 @@ class HotelDetailsVC: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // select deals menu first
-        dealsButtonPressed()
+        // init deals menu first if it wasn't initialized
+        if self.dealsView == nil {
+            dealsButtonPressed()
+        }
     }
     
     // MARK: - Resize menu content scrollview
@@ -180,6 +183,8 @@ class HotelDetailsVC: BaseViewController {
                 // create a dealsview if it is the first time
                 if self.mapView == nil {
                     self.mapView = MapInDetailView(frame: self.menuContentsView.bounds)
+                    self.mapView?.delegate = self
+                    self.mapView?.initMap(withWidth: self.menuContentsView.bounds.width)
                 }
                 
                 // insert deals view in
@@ -293,5 +298,10 @@ extension HotelDetailsVC: HotelDetailsVCDelegate {
             self.amenitiesView?.frame = self.menuContentsView.bounds
             self.amenitiesView?.layoutIfNeeded()
         }
+    }
+    
+    func zoomMapToFullScreen() {
+        let vc = MapFullScreenVC(nibName: "MapFullScreenVC", bundle: nil)
+        _ = self.navigationController?.pushViewController(vc, animated: true)
     }
 }

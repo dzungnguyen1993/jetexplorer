@@ -12,6 +12,7 @@ import GoogleSignIn
 import RealmSwift
 import Realm
 import PopupDialog
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // for Google login
         GIDSignIn.sharedInstance().clientID = APIURL.GoogleAPI.clientID
+        
+        // for Google Map
+        GMSServices.provideAPIKey(APIURL.GoogleAPI.mapKey)
         
         UITabBar.appearance().tintColor = UIColor(hex: 0x674290)
         
