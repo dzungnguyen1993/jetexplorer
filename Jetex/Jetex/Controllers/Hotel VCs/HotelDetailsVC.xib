@@ -20,14 +20,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotelDetailsVC">
             <connections>
-                <outlet property="amenitiesCollectionView" destination="RSa-4B-Qho" id="DiN-ze-tKd"/>
-                <outlet property="descriptionLabel" destination="x0u-Ti-egf" id="Qfq-TH-JGt"/>
+                <outlet property="contentHeightConstraint" destination="eyJ-fI-1sW" id="fJK-EN-IwM"/>
+                <outlet property="detailScrollView" destination="U5r-Nh-feZ" id="ki8-Np-hJ5"/>
                 <outlet property="hotelAddressLabel" destination="7KX-ta-W47" id="baf-K2-qMs"/>
                 <outlet property="hotelNameLabel" destination="0lX-fP-7gc" id="F7h-nl-lrj"/>
                 <outlet property="hotelShortDescriptionLabel" destination="diP-Z6-PEQ" id="hgs-pf-T1A"/>
                 <outlet property="imageSlideShow" destination="sqI-ZN-LHi" id="AW4-gy-O3F"/>
                 <outlet property="imgPassenger" destination="a7f-dt-0YJ" id="msJ-yW-S2a"/>
                 <outlet property="imgRightArrow" destination="caR-uG-OMJ" id="nKg-la-pHN"/>
+                <outlet property="infoView" destination="1Vs-yG-Nkq" id="FWG-YL-Qdi"/>
                 <outlet property="lbCity" destination="jEx-tv-jvV" id="gcv-Cy-ClZ"/>
                 <outlet property="lbCountry" destination="qMJ-T0-jiR" id="tbc-Ru-aul"/>
                 <outlet property="lbGuest" destination="D0I-wZ-JhZ" id="JVT-L1-Ogu"/>
@@ -74,7 +75,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clw-tJ-Zhf">
                                             <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
                                             <connections>
-                                                <action selector="back:" destination="-1" eventType="touchUpInside" id="Imp-km-RRr"/>
+                                                <action selector="backNavigationController:" destination="-1" eventType="touchUpInside" id="jb7-5H-1Gh"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -99,7 +100,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indonesia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMJ-T0-jiR">
-                                            <rect key="frame" x="0.0" y="27" width="58" height="12"/>
+                                            <rect key="frame" x="0.0" y="27" width="57.5" height="12"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -176,7 +177,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-F2-TWZ">
-                                            <rect key="frame" x="10" y="27" width="40" height="12"/>
+                                            <rect key="frame" x="10.5" y="27" width="39.5" height="12"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -245,7 +246,7 @@
                             <rect key="frame" x="0.0" y="44" width="375" height="554"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlH-Ln-2eB" userLabel="Content View">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1316"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1154"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-Y0-H7V" userLabel="Hero View">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
@@ -371,7 +372,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n68-MU-5mN" userLabel="Main View">
-                                            <rect key="frame" x="0.0" y="473" width="375" height="250"/>
+                                            <rect key="frame" x="0.0" y="473" width="375" height="843"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xE-xb-eIB" userLabel="Menu View">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -380,25 +381,28 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="94" height="48"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="Deals"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N15-Ja-Pj6" userLabel="Reviews Tabbar Button" customClass="UITabbarButton" customModule="Jetex" customModuleProvider="target">
                                                             <rect key="frame" x="94" y="0.0" width="93.5" height="48"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="Reviews"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sH1-Gv-a7b" userLabel="Map Tabbar Button" customClass="UITabbarButton" customModule="Jetex" customModuleProvider="target">
-                                                            <rect key="frame" x="187.5" y="0.0" width="94" height="48"/>
+                                                            <rect key="frame" x="187" y="0.0" width="94" height="48"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="Map"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H98-xP-us8" userLabel="Amenities Tabbar Button" customClass="UITabbarButton" customModule="Jetex" customModuleProvider="target">
-                                                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="48"/>
+                                                            <rect key="frame" x="281" y="0.0" width="93.5" height="48"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="Amenities"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
@@ -424,7 +428,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFc-te-TIP" userLabel="Content View">
-                                                    <rect key="frame" x="0.0" y="48" width="375" height="202"/>
+                                                    <rect key="frame" x="0.0" y="48" width="375" height="795"/>
                                                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="deviceRGB"/>
                                                 </view>
                                             </subviews>
@@ -437,77 +441,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="EFc-te-TIP" secondAttribute="trailing" id="ibQ-DE-Rua"/>
                                                 <constraint firstAttribute="bottom" secondItem="EFc-te-TIP" secondAttribute="bottom" id="ndv-UC-rrU"/>
                                                 <constraint firstItem="EFc-te-TIP" firstAttribute="leading" secondItem="n68-MU-5mN" secondAttribute="leading" id="tbB-y3-IXp"/>
-                                                <constraint firstAttribute="height" constant="250" id="yKM-B6-ukJ"/>
-                                            </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzD-qe-D9i" userLabel="Description View">
-                                            <rect key="frame" x="0.0" y="723" width="375" height="188"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkM-8y-hY6">
-                                                    <rect key="frame" x="16" y="32" width="343" height="17"/>
-                                                    <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
-                                                    <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0u-Ti-egf">
-                                                    <rect key="frame" x="16" y="65" width="343" height="107"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment>
-                                                            <string key="content">Located in Hoan Kiem, this hotel is within a 10-minute walk of Bach Ma Temple and Thang Long Water Puppet Theatre. Hoan Kiem Lake and Ho Chi Minh Mausoleum are also within 2 mi (3 km).</string>
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
-                                                                <font key="NSFont" size="15" name="Gotham-Book"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="pkM-8y-hY6" firstAttribute="leading" secondItem="mzD-qe-D9i" secondAttribute="leading" constant="16" id="HM2-Ja-hBQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="pkM-8y-hY6" secondAttribute="trailing" constant="16" id="JTf-f4-45C"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="e7t-bz-u3G"/>
-                                                <constraint firstItem="x0u-Ti-egf" firstAttribute="leading" secondItem="mzD-qe-D9i" secondAttribute="leading" constant="16" id="fRy-UX-E9h"/>
-                                                <constraint firstItem="x0u-Ti-egf" firstAttribute="top" secondItem="pkM-8y-hY6" secondAttribute="bottom" constant="16" id="g54-ij-cKe"/>
-                                                <constraint firstAttribute="trailing" secondItem="x0u-Ti-egf" secondAttribute="trailing" constant="16" id="hxJ-sC-v1W"/>
-                                                <constraint firstAttribute="bottom" secondItem="x0u-Ti-egf" secondAttribute="bottom" constant="16" id="io2-MK-nDo"/>
-                                                <constraint firstItem="pkM-8y-hY6" firstAttribute="top" secondItem="mzD-qe-D9i" secondAttribute="top" constant="32" id="tgu-OF-YzR"/>
-                                            </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXB-OL-fOs" userLabel="Amenities View">
-                                            <rect key="frame" x="0.0" y="911" width="375" height="601"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amenities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXS-TD-VwX">
-                                                    <rect key="frame" x="16" y="16" width="343" height="17"/>
-                                                    <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
-                                                    <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RSa-4B-Qho">
-                                                    <rect key="frame" x="16" y="49" width="359" height="532"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="532" id="gUa-aE-mG8"/>
-                                                    </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nHV-sK-bmJ">
-                                                        <size key="itemSize" width="50" height="50"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                </collectionView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="hXS-TD-VwX" firstAttribute="leading" secondItem="JXB-OL-fOs" secondAttribute="leading" constant="16" id="3Um-7Q-s38"/>
-                                                <constraint firstAttribute="trailing" secondItem="RSa-4B-Qho" secondAttribute="trailing" id="BNY-GD-X8Y"/>
-                                                <constraint firstItem="RSa-4B-Qho" firstAttribute="top" secondItem="hXS-TD-VwX" secondAttribute="bottom" constant="16" id="F2H-Ol-sc1"/>
-                                                <constraint firstItem="RSa-4B-Qho" firstAttribute="leading" secondItem="JXB-OL-fOs" secondAttribute="leading" constant="16" id="GJC-MX-eP4"/>
-                                                <constraint firstAttribute="trailing" secondItem="hXS-TD-VwX" secondAttribute="trailing" constant="16" id="OxU-BZ-m9E"/>
-                                                <constraint firstItem="hXS-TD-VwX" firstAttribute="top" secondItem="JXB-OL-fOs" secondAttribute="top" constant="16" id="VTz-K5-G8M"/>
-                                                <constraint firstAttribute="height" constant="601" id="YO4-r6-RAj"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -516,26 +449,21 @@
                                         <constraint firstItem="Oea-Y0-H7V" firstAttribute="top" secondItem="dlH-Ln-2eB" secondAttribute="top" id="1wT-z9-eGy"/>
                                         <constraint firstItem="Oea-Y0-H7V" firstAttribute="leading" secondItem="dlH-Ln-2eB" secondAttribute="leading" id="5ew-K8-wm5"/>
                                         <constraint firstAttribute="trailing" secondItem="Oea-Y0-H7V" secondAttribute="trailing" id="7Fw-wy-C3B"/>
-                                        <constraint firstItem="mzD-qe-D9i" firstAttribute="leading" secondItem="dlH-Ln-2eB" secondAttribute="leading" id="8gf-hU-nf8"/>
                                         <constraint firstAttribute="trailing" secondItem="n68-MU-5mN" secondAttribute="trailing" id="90C-Fd-oti"/>
-                                        <constraint firstItem="mzD-qe-D9i" firstAttribute="top" secondItem="n68-MU-5mN" secondAttribute="bottom" id="9rd-s4-827"/>
                                         <constraint firstItem="n68-MU-5mN" firstAttribute="top" secondItem="1Vs-yG-Nkq" secondAttribute="bottom" id="By4-T2-ybQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="JXB-OL-fOs" secondAttribute="trailing" id="C8E-jz-bA3"/>
+                                        <constraint firstAttribute="bottom" secondItem="n68-MU-5mN" secondAttribute="bottom" id="GwB-7h-o9h"/>
                                         <constraint firstAttribute="trailing" secondItem="1Vs-yG-Nkq" secondAttribute="trailing" id="HA6-Ke-cGe"/>
                                         <constraint firstItem="n68-MU-5mN" firstAttribute="leading" secondItem="dlH-Ln-2eB" secondAttribute="leading" id="Q3S-1H-qtE"/>
-                                        <constraint firstItem="JXB-OL-fOs" firstAttribute="top" secondItem="mzD-qe-D9i" secondAttribute="bottom" id="QQ3-YA-zzF"/>
-                                        <constraint firstItem="JXB-OL-fOs" firstAttribute="leading" secondItem="dlH-Ln-2eB" secondAttribute="leading" id="ZYh-lw-f4u"/>
                                         <constraint firstItem="1Vs-yG-Nkq" firstAttribute="top" secondItem="Oea-Y0-H7V" secondAttribute="bottom" id="aFK-1a-V4f"/>
                                         <constraint firstAttribute="height" constant="1316" id="eyJ-fI-1sW"/>
                                         <constraint firstItem="1Vs-yG-Nkq" firstAttribute="leading" secondItem="dlH-Ln-2eB" secondAttribute="leading" id="m3A-E3-YDo"/>
-                                        <constraint firstAttribute="trailing" secondItem="mzD-qe-D9i" secondAttribute="trailing" id="mcJ-Rw-18C"/>
                                     </constraints>
                                 </view>
                             </subviews>
                             <constraints>
+                                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="dlH-Ln-2eB" secondAttribute="bottom" constant="-762" id="1Fl-zg-pgE"/>
                                 <constraint firstItem="dlH-Ln-2eB" firstAttribute="top" secondItem="U5r-Nh-feZ" secondAttribute="top" id="9OQ-zf-0sC"/>
                                 <constraint firstItem="dlH-Ln-2eB" firstAttribute="leading" secondItem="U5r-Nh-feZ" secondAttribute="leading" id="BXa-Kh-Vjb"/>
-                                <constraint firstAttribute="bottom" secondItem="dlH-Ln-2eB" secondAttribute="bottom" constant="131" id="DIN-do-4mo"/>
                                 <constraint firstItem="dlH-Ln-2eB" firstAttribute="width" secondItem="U5r-Nh-feZ" secondAttribute="width" id="Hcm-XE-KNS"/>
                                 <constraint firstAttribute="trailing" secondItem="dlH-Ln-2eB" secondAttribute="trailing" id="hZZ-uY-oEg"/>
                             </constraints>

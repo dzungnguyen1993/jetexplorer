@@ -11,10 +11,27 @@ import PopupDialog
 import Alamofire
 import ImageSlideshow
 
+protocol HotelDetailsVCDelegate: class {
+    func resizeContentViewInScrollViewWithNewComponentHeight(newComponentHeight: CGFloat, complete: (() -> Void)?)
+    func adjustDealsViewFrameToFit()
+}
+
 class HotelDetailsVC: BaseViewController {
     
     var searchInfo: SearchHotelInfo!
     var searchResult: SearchHotelResult!
+    
+    // Height of content's scrollview
+    @IBOutlet weak var contentHeightConstraint: NSLayoutConstraint!
+    
+    //let heroViewHeight = 220
+    //let mainViewMenuHeight = 48
+    // calculate main based view based on heroViewheight and mainViewMenuHeight
+    lazy var mainBasedViewHeight : CGFloat = {
+        return 220.0 + self.infoView.bounds.height + 48.0
+    }()
+    
+    @IBOutlet weak var detailScrollView: UIScrollView!
     
     // Header
     @IBOutlet weak var imgPassenger: UIImageView!
@@ -35,6 +52,7 @@ class HotelDetailsVC: BaseViewController {
     
     
     // Info View
+    @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var starsCountLabel: UILabel!
     @IBOutlet weak var hotelNameLabel: UILabel!
     @IBOutlet weak var hotelAddressLabel: UILabel!
@@ -46,71 +64,147 @@ class HotelDetailsVC: BaseViewController {
         // - Content
     @IBOutlet weak var menuContentsView: UIView!
     
-    // Description
-    @IBOutlet weak var descriptionLabel: UILabel!
+    // cache views
+    var dealsView: DealsView?
+    var reviewsView: ReviewsView?
+    var mapView: MapInDetailView?
+    var amenitiesView : AmenitiesView?
     
-    // Amenities
-    @IBOutlet weak var amenitiesCollectionView: UICollectionView!
-        // - Mock up
-    var amenities = [("24-hour front desk", JetExFontHexCode.jetexAmenities24h.rawValue),
-                     ("Luggate storage", JetExFontHexCode.jetexAmenitiesLuggage.rawValue),
-                     ("Babysitting or childcare", JetExFontHexCode.jetexAmenitiesChildcare.rawValue),
-                     ("Free WiFi", JetExFontHexCode.jetexAmenitiesWifi.rawValue),
-                     ("Coffee shop or café", JetExFontHexCode.jetexAmenitiesCoffee.rawValue),
-                     ("Breakfast available (surcharge)", JetExFontHexCode.jetexAmenitiesBreakfast.rawValue),
-                     ("Full-service spa", JetExFontHexCode.jetexAmenitiesSpa.rawValue),
-                     ("Fitness facilities", JetExFontHexCode.jetexAmenitiesGym.rawValue),
-                     ("ATM/banking", JetExFontHexCode.jetexAmenitiesATM.rawValue),
-                     ("Outdoor pool", JetExFontHexCode.jetexAmenitiesPool.rawValue),
-                     ("Casino", JetExFontHexCode.jetexAmenitiesCasino.rawValue),
-                     ("Dry cleaning/ laundry service", JetExFontHexCode.jetexAmenitiesLaundry.rawValue),
-                     ("Limo or Town Car service available", JetExFontHexCode.jetexAmenitiesCar.rawValue),
-                     ("Elevator/lift", JetExFontHexCode.jetexAmenitiesElevator.rawValue)]
-    
+    // MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupHeroSection()
         setUpMenuInMainViewSection()
-        setUpAnemitiesSection()
-        
         
         // show header info
         showHeaderInfo()
         setupImagesInHeader()
     }
     
-    @IBAction func back(_ sender: UIButton) {
-        self.navigationController!.popViewController(animated: true)
+    override func viewDidAppear(_ animated: Bool) {
+        // select deals menu first
+        dealsButtonPressed()
     }
     
-    func menuButtonPressed(_ title: String) {
+    // MARK: - Resize menu content scrollview
+    func resizeMenuContentScrollView(newHeight: CGFloat, complete: (() -> Void)?) {
+        // set scrollview's content to new height
+        self.contentHeightConstraint.constant = newHeight
+        
+        // animate
+        UIView.animate(withDuration: 0.1, animations: {
+            self.menuContentsView.layoutIfNeeded()
+        }, completion: { (completed) in
+            // resize the content of scrollview
+            var contentRect = CGRect.zero
+            for view in self.detailScrollView.subviews[0].subviews {
+                contentRect = contentRect.union(view.frame)
+            }
+            
+            self.detailScrollView.contentSize = contentRect.size;
+            
+            // do the complete steps
+            complete?()
+        })
+    
+    }
+    
+    // MARK:- Menu Button Pressed functions
+    func menuButtonPressed(_ title: String) -> Bool{
         for button in menuButtons {
             if button.title != title {
                 button.isSelected = false
             } else {
+                if button.isSelected == true {
+                    return false
+                }
                 button.isSelected = true
             }
         }
+        
+        // remove all the subviews in content view
+        for subview in self.menuContentsView.subviews {
+            subview.removeFromSuperview()
+        }
+        
+        return true
     }
     
     func dealsButtonPressed() {
-        self.menuButtonPressed(MenuButtonType.Deals.getString())
+        if self.menuButtonPressed(MenuButtonType.Deals.getString()) {
+            // resize the size (the height) of menuContentView for fitting with the dealsView
+            let newHeight = mainBasedViewHeight + DealsView.height
+            
+            self.resizeMenuContentScrollView(newHeight: newHeight, complete: { 
+                // create a dealsview if it is the first time
+                if self.dealsView == nil {
+                    self.dealsView = DealsView(frame: self.menuContentsView.bounds)
+                    self.dealsView?.delegate = self
+                } else {
+                    // adjust the size if needed
+                    self.adjustDealsViewFrameToFit()
+                }
+                
+                // insert deals view in
+                self.menuContentsView.addSubview(self.dealsView!)
+            })
+        }
     }
     
     func reviewsButtonPressed() {
-        self.menuButtonPressed(MenuButtonType.Reviews.getString())
-        
+        if self.menuButtonPressed(MenuButtonType.Reviews.getString()) {
+            // resize the size (the height) of menuContentView for fitting with the dealsView
+            let newHeight = mainBasedViewHeight + ReviewsView.height
+            
+            self.resizeMenuContentScrollView(newHeight: newHeight, complete: {
+                // create a dealsview if it is the first time
+                if self.reviewsView == nil {
+                    self.reviewsView = ReviewsView(frame: self.menuContentsView.bounds)
+                } else {
+                    self.adjustReviewsViewFrameToFit()
+                }
+                
+                // insert deals view in
+                self.menuContentsView.addSubview(self.reviewsView!)
+            })
+        }
     }
     
     func mapButtonPressed() {
-        self.menuButtonPressed(MenuButtonType.Map.getString())
-        
+        if self.menuButtonPressed(MenuButtonType.Map.getString()) {
+            // resize the size (the height) of menuContentView for fitting with the dealsView
+            let newHeight = mainBasedViewHeight + MapInDetailView.height
+            
+            self.resizeMenuContentScrollView(newHeight: newHeight, complete: {
+                // create a dealsview if it is the first time
+                if self.mapView == nil {
+                    self.mapView = MapInDetailView(frame: self.menuContentsView.bounds)
+                }
+                
+                // insert deals view in
+                self.menuContentsView.addSubview(self.mapView!)
+            })
+        }
     }
     
     func amenitiesButtonPressed() {
-        self.menuButtonPressed(MenuButtonType.Amenities.getString())
-        
+        if self.menuButtonPressed(MenuButtonType.Amenities.getString()) {
+            // resize the size (the height) of menuContentView for fitting with the dealsView
+            let newHeight = mainBasedViewHeight + AmenitiesView.height
+            
+            self.resizeMenuContentScrollView(newHeight: newHeight, complete: {
+                // create a dealsview if it is the first time
+                if self.amenitiesView == nil {
+                    self.amenitiesView = AmenitiesView(frame: self.menuContentsView.bounds)
+                } else {
+                    self.adjustAmenitiesViewFrameToFit()
+                }
+                
+                // insert deals view in
+                self.menuContentsView.addSubview(self.amenitiesView!)
+            })
+        }
     }
 }
 
@@ -148,7 +242,6 @@ extension HotelDetailsVC {
     }
     
     func didTapTheImageInHero() {
-        
         let vc = imageSlideShow.presentFullScreenController(from: self)
         let screnSize = UIScreen.main.bounds.size
         
@@ -172,59 +265,33 @@ extension HotelDetailsVC {
         menuButtons[MenuButtonType.Map.rawValue].addGestureRecognizer(mapGestureRecognizer)
         menuButtons[MenuButtonType.Amenities.rawValue].addGestureRecognizer(amenitiesGestureRecognizer)
     }
-    
-    func setUpAnemitiesSection() {
-        
-        // collection view
-        self.amenitiesCollectionView.register(UINib(nibName: "AmenityCell", bundle: nil), forCellWithReuseIdentifier: "AmenityCell")
-        self.amenitiesCollectionView.delegate = self
-        self.amenitiesCollectionView.dataSource = self
-    }
 }
 
-// MARK: Set up Collection of Amenities
 
-extension HotelDetailsVC: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+extension HotelDetailsVC: HotelDetailsVCDelegate {
+    func resizeContentViewInScrollViewWithNewComponentHeight(newComponentHeight: CGFloat, complete: (() -> Void)?){
+        let newActualHeight = self.mainBasedViewHeight + newComponentHeight
+        self.resizeMenuContentScrollView(newHeight: newActualHeight, complete: complete)
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return amenities.count
+    func adjustDealsViewFrameToFit() {
+        UIView.animate(withDuration: 0.1) {
+            self.dealsView?.frame = self.menuContentsView.bounds
+            self.dealsView?.layoutIfNeeded()
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AmenityCell", for: indexPath) as! AmenityCell
-        
-        let amenity = self.amenities[indexPath.row]
-        cell.label.text = amenity.0
-        cell.label.textColor = UIColor(hex: 0x674290)
-        cell.imgView.image = UIImage(fromHex: amenity.1, withColor: (UIColor(hex: 0x674290)))
-        
-        return cell
-    }
-}
-
-extension HotelDetailsVC: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-}
-
-extension HotelDetailsVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width/2, height: 76)
+    func adjustReviewsViewFrameToFit() {
+        UIView.animate(withDuration: 0.1) {
+            self.reviewsView?.frame = self.menuContentsView.bounds
+            self.reviewsView?.layoutIfNeeded()
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+    func adjustAmenitiesViewFrameToFit() {
+        UIView.animate(withDuration: 0.1) { 
+            self.amenitiesView?.frame = self.menuContentsView.bounds
+            self.amenitiesView?.layoutIfNeeded()
+        }
     }
 }

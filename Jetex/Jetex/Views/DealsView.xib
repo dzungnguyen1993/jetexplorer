@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DealsView" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Iyi-ty-enm"/>
+                <outlet property="dealsTableView" destination="jxG-0K-w4D" id="wiD-TX-WuP"/>
+                <outlet property="seeMoreView" destination="8bE-yC-e9F" id="IDp-Lx-N3n"/>
+                <outlet property="seeMoreViewHeightConstraint" destination="q0b-Cg-j9S" id="h48-s2-Mu2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="448"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="142" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="jxG-0K-w4D">
+                    <rect key="frame" x="8" y="0.0" width="359" height="339"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <inset key="scrollIndicatorInsets" minX="8" minY="8" maxX="8" maxY="0.0"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bE-yC-e9F">
+                    <rect key="frame" x="0.0" y="339" width="375" height="109"/>
+                    <subviews>
+                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sud-RA-VVj">
+                            <rect key="frame" x="32" y="32" width="311" height="44"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="FLA-G5-wCk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
+                            <color key="tintColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="View more deals">
+                                <color key="titleColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="viewMoreDealsButtonPressed:" destination="-1" eventType="touchUpInside" id="PZJ-Di-ikY"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Sud-RA-VVj" secondAttribute="bottom" constant="33" id="9SC-px-OWS"/>
+                        <constraint firstAttribute="trailing" secondItem="Sud-RA-VVj" secondAttribute="trailing" constant="32" id="DEE-kf-NUA"/>
+                        <constraint firstItem="Sud-RA-VVj" firstAttribute="top" secondItem="8bE-yC-e9F" secondAttribute="top" constant="32" id="S1s-wY-oLs"/>
+                        <constraint firstItem="Sud-RA-VVj" firstAttribute="leading" secondItem="8bE-yC-e9F" secondAttribute="leading" constant="32" id="cr1-Ay-XjK"/>
+                        <constraint firstAttribute="height" constant="109" id="q0b-Cg-j9S"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="jxG-0K-w4D" secondAttribute="trailing" constant="8" id="Kav-jp-YKB"/>
+                <constraint firstAttribute="bottom" secondItem="8bE-yC-e9F" secondAttribute="bottom" id="Q0V-pC-tO2"/>
+                <constraint firstItem="8bE-yC-e9F" firstAttribute="top" secondItem="jxG-0K-w4D" secondAttribute="bottom" id="Wbv-a4-BIi"/>
+                <constraint firstItem="jxG-0K-w4D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="bhk-aV-R9f"/>
+                <constraint firstAttribute="trailing" secondItem="8bE-yC-e9F" secondAttribute="trailing" id="dAd-Df-T88"/>
+                <constraint firstItem="8bE-yC-e9F" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hSq-WO-4hN"/>
+                <constraint firstItem="jxG-0K-w4D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uIg-uk-cPZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="24.5" y="-58"/>
+        </view>
+    </objects>
+</document>

@@ -24,8 +24,6 @@ enum MenuButtonType : Int {
             return "Map"
         case .Amenities:
             return "Amenities"
-        default:
-            return ""
         }
     }
 }

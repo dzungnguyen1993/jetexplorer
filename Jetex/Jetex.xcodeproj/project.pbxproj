@@ -21,6 +21,18 @@
 		284728551E2240DA00C014C0 /* UITabbarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284728541E2240DA00C014C0 /* UITabbarButton.xib */; };
 		284728591E224BDC00C014C0 /* UITabbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284728581E224BDC00C014C0 /* UITabbarButton.swift */; };
 		2847285B1E22C3F800C014C0 /* MenuButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847285A1E22C3F800C014C0 /* MenuButtonType.swift */; };
+		2847285E1E23F90D00C014C0 /* DealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847285C1E23F90D00C014C0 /* DealTableViewCell.swift */; };
+		2847285F1E23F90D00C014C0 /* DealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2847285D1E23F90D00C014C0 /* DealTableViewCell.xib */; };
+		284728611E23FD0800C014C0 /* DealsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284728601E23FD0800C014C0 /* DealsView.xib */; };
+		284728631E23FE4F00C014C0 /* DealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284728621E23FE4F00C014C0 /* DealsView.swift */; };
+		284728651E24E44000C014C0 /* ReviewsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284728641E24E44000C014C0 /* ReviewsView.xib */; };
+		284728671E24E46600C014C0 /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284728661E24E46600C014C0 /* ReviewsView.swift */; };
+		2847286A1E24E80F00C014C0 /* ReviewTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284728681E24E80F00C014C0 /* ReviewTableCellTableViewCell.swift */; };
+		2847286B1E24E80F00C014C0 /* ReviewTableCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284728691E24E80F00C014C0 /* ReviewTableCellTableViewCell.xib */; };
+		2847286D1E25399600C014C0 /* AmenitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847286C1E25399600C014C0 /* AmenitiesView.swift */; };
+		2847286F1E25399F00C014C0 /* AmenitiesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2847286E1E25399F00C014C0 /* AmenitiesView.xib */; };
+		284728711E25418900C014C0 /* MapInDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284728701E25418900C014C0 /* MapInDetailView.xib */; };
+		284728731E25419400C014C0 /* MapInDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284728721E25419400C014C0 /* MapInDetailView.swift */; };
 		284EC7861DDA1C7F001D0892 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284EC7851DDA1C7F001D0892 /* LoginView.swift */; };
 		284EC7881DDA1C91001D0892 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284EC7871DDA1C91001D0892 /* LoginView.xib */; };
 		284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284EC7891DDA22F5001D0892 /* UserInfoView.xib */; };
@@ -263,6 +275,18 @@
 		284728541E2240DA00C014C0 /* UITabbarButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITabbarButton.xib; sourceTree = "<group>"; };
 		284728581E224BDC00C014C0 /* UITabbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabbarButton.swift; sourceTree = "<group>"; };
 		2847285A1E22C3F800C014C0 /* MenuButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButtonType.swift; sourceTree = "<group>"; };
+		2847285C1E23F90D00C014C0 /* DealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealTableViewCell.swift; sourceTree = "<group>"; };
+		2847285D1E23F90D00C014C0 /* DealTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealTableViewCell.xib; sourceTree = "<group>"; };
+		284728601E23FD0800C014C0 /* DealsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealsView.xib; sourceTree = "<group>"; };
+		284728621E23FE4F00C014C0 /* DealsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealsView.swift; sourceTree = "<group>"; };
+		284728641E24E44000C014C0 /* ReviewsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewsView.xib; sourceTree = "<group>"; };
+		284728661E24E46600C014C0 /* ReviewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
+		284728681E24E80F00C014C0 /* ReviewTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableCellTableViewCell.swift; sourceTree = "<group>"; };
+		284728691E24E80F00C014C0 /* ReviewTableCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewTableCellTableViewCell.xib; sourceTree = "<group>"; };
+		2847286C1E25399600C014C0 /* AmenitiesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenitiesView.swift; sourceTree = "<group>"; };
+		2847286E1E25399F00C014C0 /* AmenitiesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmenitiesView.xib; sourceTree = "<group>"; };
+		284728701E25418900C014C0 /* MapInDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapInDetailView.xib; sourceTree = "<group>"; };
+		284728721E25419400C014C0 /* MapInDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInDetailView.swift; sourceTree = "<group>"; };
 		284EC7851DDA1C7F001D0892 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ../Controllers/LoginView.swift; sourceTree = "<group>"; };
 		284EC7871DDA1C91001D0892 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginView.xib; path = ../Controllers/LoginView.xib; sourceTree = "<group>"; };
 		284EC7891DDA22F5001D0892 /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoView.xib; path = ../Controllers/UserInfoView.xib; sourceTree = "<group>"; };
@@ -536,6 +560,18 @@
 			children = (
 				284728541E2240DA00C014C0 /* UITabbarButton.xib */,
 				284728581E224BDC00C014C0 /* UITabbarButton.swift */,
+				2847285C1E23F90D00C014C0 /* DealTableViewCell.swift */,
+				2847285D1E23F90D00C014C0 /* DealTableViewCell.xib */,
+				284728601E23FD0800C014C0 /* DealsView.xib */,
+				284728621E23FE4F00C014C0 /* DealsView.swift */,
+				284728641E24E44000C014C0 /* ReviewsView.xib */,
+				284728661E24E46600C014C0 /* ReviewsView.swift */,
+				284728681E24E80F00C014C0 /* ReviewTableCellTableViewCell.swift */,
+				284728691E24E80F00C014C0 /* ReviewTableCellTableViewCell.xib */,
+				2847286C1E25399600C014C0 /* AmenitiesView.swift */,
+				2847286E1E25399F00C014C0 /* AmenitiesView.xib */,
+				284728701E25418900C014C0 /* MapInDetailView.xib */,
+				284728721E25419400C014C0 /* MapInDetailView.swift */,
 			);
 			name = "Hotel Detail";
 			sourceTree = "<group>";
@@ -1131,12 +1167,15 @@
 				284EC7881DDA1C91001D0892 /* LoginView.xib in Resources */,
 				B96BAC5D1DD1B4AC00AE79AD /* FlightSearchVC.xib in Resources */,
 				B9D152731E03EC2A00AFDB1D /* CitySearchVC.xib in Resources */,
+				2847286F1E25399F00C014C0 /* AmenitiesView.xib in Resources */,
 				B95281EA1DD711880041C39B /* PickDateVC.xib in Resources */,
+				284728651E24E44000C014C0 /* ReviewsView.xib in Resources */,
 				289192961DDC595C001C064B /* ChangNameVC.xib in Resources */,
 				B9D9045E1DD8C103008C8720 /* EPCalendarHeaderView.xib in Resources */,
 				B9150B951DD4659C00F825DC /* search.png in Resources */,
 				2831EB1F1DE40EA5003EEB07 /* handsomeGieng.jpg in Resources */,
 				B9EE7A7C1DDDEF4400A82AEE /* black-plane.png in Resources */,
+				284728711E25418900C014C0 /* MapInDetailView.xib in Resources */,
 				B9AB82411DF08424009F6603 /* StopViewSmall.xib in Resources */,
 				B99F82C41DE1C99100DA8B37 /* check rect.png in Resources */,
 				B9A813C21E0FCD8E007097A6 /* FilterHotelView.xib in Resources */,
@@ -1153,6 +1192,8 @@
 				B9EE7A7A1DDDED8100A82AEE /* FlightResultDetailsView.xib in Resources */,
 				B963E72B1DD6D3A800A21548 /* add.png in Resources */,
 				B9D9A2BE1DDB628F007CAB28 /* users.png in Resources */,
+				2847285F1E23F90D00C014C0 /* DealTableViewCell.xib in Resources */,
+				284728611E23FD0800C014C0 /* DealsView.xib in Resources */,
 				2891929E1DDDD358001C064B /* ChangePasswordVC.xib in Resources */,
 				B9F445E81DD4D6DF00250D6C /* Gotham-BoldIta.otf in Resources */,
 				2830E9021DE1C7A7001A76F9 /* HistoryCell.xib in Resources */,
@@ -1167,6 +1208,7 @@
 				284EC78A1DDA22F5001D0892 /* UserInfoView.xib in Resources */,
 				B9E4FC6F1DD18BAB000468EC /* Assets.xcassets in Resources */,
 				B99F82D51DE1E82E00DA8B37 /* AirlinesCell.xib in Resources */,
+				2847286B1E24E80F00C014C0 /* ReviewTableCellTableViewCell.xib in Resources */,
 				B99F82C11DE1C7FF00DA8B37 /* uncheck round.png in Resources */,
 				B9F445E71DD4D6DF00250D6C /* Gotham-Bold.otf in Resources */,
 				B9F445E51DD4D6DF00250D6C /* Gotham-Black.otf in Resources */,
@@ -1326,12 +1368,15 @@
 				28811F8B1DE9C5D500BB0ADA /* WarningView.swift in Sources */,
 				B9EE7A731DDDECB700A82AEE /* FlightResultCell.swift in Sources */,
 				B9FFD12F1DE6C43A0040F6DB /* Continent.swift in Sources */,
+				284728631E23FE4F00C014C0 /* DealsView.swift in Sources */,
+				284728731E25419400C014C0 /* MapInDetailView.swift in Sources */,
 				2830E9041DE1DCE2001A76F9 /* HistorySearch.swift in Sources */,
 				B9F445F61DD4DA1B00250D6C /* GothamFontName.swift in Sources */,
 				B9D9A2C01DDB672C007CAB28 /* SearchResultDateView.swift in Sources */,
 				B9F7D3591E22714900506217 /* Amenity.swift in Sources */,
 				B97DC4B41E0EDABC003B5041 /* HotelDetailsVC.swift in Sources */,
 				289192991DDDCD7D001C064B /* ForgotPasswordVC.swift in Sources */,
+				2847286D1E25399600C014C0 /* AmenitiesView.swift in Sources */,
 				289192A41DDDF3C2001C064B /* EditProfileVC.swift in Sources */,
 				2830E42F1DF9D1E300DF3E0A /* LoadingPopupVC.swift in Sources */,
 				2886208E1E15147500B16601 /* InitialLoadingPopupVC.swift in Sources */,
@@ -1340,6 +1385,7 @@
 				B9EE7A781DDDED7000A82AEE /* FlightResultDetailsView.swift in Sources */,
 				28DAF8811E0A7064006A2406 /* SelectCabinClassVC.swift in Sources */,
 				B9D1526E1E03DA4400AFDB1D /* SearchHotelInfo.swift in Sources */,
+				2847286A1E24E80F00C014C0 /* ReviewTableCellTableViewCell.swift in Sources */,
 				B9BA75CA1DEBCC52003393D7 /* PricingOption.swift in Sources */,
 				B964C80D1E0D075000B40773 /* SearchHotelResult.swift in Sources */,
 				B964C8111E0D2EAC00B40773 /* PaddingLabel.swift in Sources */,
@@ -1354,6 +1400,7 @@
 				B9FFD1311DE6C4490040F6DB /* Country.swift in Sources */,
 				B96BAC661DD1E68B00AE79AD /* BaseViewController.swift in Sources */,
 				B90B80841E13CD11009E331F /* AmenityCell.swift in Sources */,
+				2847285E1E23F90D00C014C0 /* DealTableViewCell.swift in Sources */,
 				B92507B61DDF0F7D0036866D /* FlightInfo.swift in Sources */,
 				289192951DDC595C001C064B /* ChangNameVC.swift in Sources */,
 				28BAD0161DE18B1E0008032D /* SearchHistoryVC.swift in Sources */,
@@ -1379,6 +1426,7 @@
 				B96BAC5C1DD1B4AC00AE79AD /* FlightSearchVC.swift in Sources */,
 				B956E2371DE0C20E000A86A0 /* FlightCellUtils.swift in Sources */,
 				28BAD00D1DE0DFCA0008032D /* PickPassengerCell.swift in Sources */,
+				284728671E24E46600C014C0 /* ReviewsView.swift in Sources */,
 				B99F82C81DE1D73300DA8B37 /* RoundCheckCell.swift in Sources */,
 				B9F445FD1DD4E16B00250D6C /* GothamBold17Label.swift in Sources */,
 				B9AB823F1DF08410009F6603 /* StopViewSmall.swift in Sources */,

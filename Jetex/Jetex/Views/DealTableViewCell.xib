@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Bold.otf">
+            <string>Gotham-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="DealTableViewCell" customModule="Jetex" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="407" height="142"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="407" height="141.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel Na Balam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWJ-kg-LYp">
+                        <rect key="frame" x="24" y="24" width="134" height="17"/>
+                        <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
+                        <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD 1190" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hh4-KN-zlS">
+                        <rect key="frame" x="283" y="48" width="100" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="cYO-yD-ENw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
+                        <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hp-SF-n1p">
+                        <rect key="frame" x="24" y="49" width="100.5" height="15"/>
+                        <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
+                        <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTg-ah-wNZ" customClass="SmallParagraphButton" customModule="Jetex" customModuleProvider="target">
+                        <rect key="frame" x="24" y="81" width="359" height="44"/>
+                        <color key="backgroundColor" red="0.2784313725" green="0.77647058820000003" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="qGp-l4-wTj"/>
+                        </constraints>
+                        <state key="normal" title="Go to Booking.com">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD 250" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-AI-wkd">
+                        <rect key="frame" x="303" y="28" width="80" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="NIu-ck-qTc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
+                        <color key="textColor" red="0.90980392160000001" green="0.3803921569" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="SaW-AI-wkd" secondAttribute="trailing" constant="16" id="2Md-VD-fxv"/>
+                    <constraint firstItem="sWJ-kg-LYp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="90g-6y-Qtt"/>
+                    <constraint firstItem="SaW-AI-wkd" firstAttribute="baseline" secondItem="sWJ-kg-LYp" secondAttribute="baseline" id="Eon-Sd-2aU"/>
+                    <constraint firstItem="Hh4-KN-zlS" firstAttribute="top" secondItem="SaW-AI-wkd" secondAttribute="bottom" constant="8" id="Gdr-eJ-Ljz"/>
+                    <constraint firstItem="kTg-ah-wNZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="Jyh-oR-8xo"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Hh4-KN-zlS" secondAttribute="trailing" constant="16" id="LoU-HP-Qic"/>
+                    <constraint firstItem="Hh4-KN-zlS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Hp-SF-n1p" secondAttribute="trailing" constant="8" id="PAr-FS-NhB"/>
+                    <constraint firstItem="SaW-AI-wkd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sWJ-kg-LYp" secondAttribute="trailing" constant="8" id="U5N-5B-RTB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kTg-ah-wNZ" secondAttribute="trailing" constant="16" id="a9W-lu-Lb0"/>
+                    <constraint firstItem="sWJ-kg-LYp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="fOo-B1-qUf"/>
+                    <constraint firstItem="kTg-ah-wNZ" firstAttribute="top" secondItem="Hh4-KN-zlS" secondAttribute="bottom" constant="16" id="rFF-mY-mrl"/>
+                    <constraint firstItem="3Hp-SF-n1p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="uKg-Fg-orY"/>
+                    <constraint firstItem="3Hp-SF-n1p" firstAttribute="top" secondItem="sWJ-kg-LYp" secondAttribute="bottom" constant="8" id="zAX-9d-mpt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="68.5" y="101"/>
+        </tableViewCell>
+    </objects>
+</document>

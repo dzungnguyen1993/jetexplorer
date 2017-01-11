@@ -29,14 +29,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hE-Y4-Gus">
                         <rect key="frame" x="0.0" y="0.0" width="405" height="285.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vD2-zh-zTy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vD2-zh-zTy">
                                 <rect key="frame" x="0.0" y="0.0" width="405" height="173.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vD2-zh-zTy" secondAttribute="height" multiplier="21:9" id="8zt-hR-fNw"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0 - Superb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeU-JU-zWc" customClass="PaddingLabel" customModule="Jetex" customModuleProvider="target">
-                                <rect key="frame" x="8" y="137.5" width="92" height="28"/>
+                                <rect key="frame" x="8" y="153.5" width="76" height="12"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

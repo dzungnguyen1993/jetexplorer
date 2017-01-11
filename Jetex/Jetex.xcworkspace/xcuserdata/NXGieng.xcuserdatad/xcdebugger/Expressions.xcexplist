@@ -114,6 +114,14 @@
          contextName = "ProfileVC.signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ():ProfileVC.swift">
       </ContextState>
       <ContextState
+         contextName = "HotelDetailsVC.resizeMenuContentScrollView() -&gt; ():HotelDetailsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.detailScrollView.subviews[0].subviews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "EditProfileVC.(tableView(UITableView, didSelectRowAt : IndexPath) -&gt; ()).(closure #1).(closure #1):EditProfileVC.swift">
       </ContextState>
       <ContextState
@@ -129,6 +137,23 @@
       </ContextState>
       <ContextState
          contextName = "Mapper.map(JSONObject : Any?) -&gt; A?:Mapper.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HotelDetailsVC.dealsButtonPressed() -&gt; ():HotelDetailsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame">
+            </PersistentString>
+            <PersistentString
+               value = "dealsView">
+            </PersistentString>
+            <PersistentString
+               value = "imageSlideShow.frame">
+            </PersistentString>
+            <PersistentString
+               value = "self.menuContentsView.frame">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "ListTransform.transformFromJSON(Any?) -&gt; List&lt;A&gt;?:ListTransform.swift">
