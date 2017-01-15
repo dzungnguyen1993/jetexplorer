@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -177,7 +177,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-F2-TWZ">
-                                            <rect key="frame" x="11" y="27" width="39.5" height="12"/>
+                                            <rect key="frame" x="10.5" y="27" width="39.5" height="12"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -319,7 +319,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Vs-yG-Nkq" userLabel="Info View">
-                                            <rect key="frame" x="0.0" y="220" width="375" height="253"/>
+                                            <rect key="frame" x="0.0" y="220" width="375" height="242"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★★★★★" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlL-CD-jLU">
                                                     <rect key="frame" x="16" y="16" width="343" height="21"/>
@@ -340,13 +340,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diP-Z6-PEQ">
-                                                    <rect key="frame" x="16" y="114" width="343" height="107"/>
+                                                    <rect key="frame" x="16" y="114" width="343" height="96"/>
                                                     <attributedString key="attributedText">
                                                         <fragment>
                                                             <string key="content">Located in Hoan Kiem, this hotel is within a 10-minute walk of Bach Ma Temple and Thang Long Water Puppet Theatre. Hoan Kiem Lake and Ho Chi Minh Mausoleum are also within 2 mi (3 km).</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
-                                                                <font key="NSFont" size="15" name="Gotham-Book"/>
+                                                                <font key="NSFont" metaFont="system" size="15"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -372,7 +372,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n68-MU-5mN" userLabel="Main View">
-                                            <rect key="frame" x="0.0" y="473" width="375" height="843"/>
+                                            <rect key="frame" x="0.0" y="462" width="375" height="854"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xE-xb-eIB" userLabel="Menu View">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -428,7 +428,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFc-te-TIP" userLabel="Content View">
-                                                    <rect key="frame" x="0.0" y="48" width="375" height="795"/>
+                                                    <rect key="frame" x="0.0" y="48" width="375" height="806"/>
                                                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="deviceRGB"/>
                                                 </view>
                                             </subviews>

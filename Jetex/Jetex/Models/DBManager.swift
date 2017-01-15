@@ -69,6 +69,7 @@ class DBManager: NSObject {
             city.name = cityDict["Name"] as! String
             city.iataCode = cityDict["IataCode"] as! String
             city.countryId = cityDict["CountryId"] as! String
+            city.location = cityDict["Location"] as! String
             
             let airportsDict = cityDict["Airports"] as! [NSDictionary]
             

@@ -44,6 +44,9 @@ class Hotel: Mappable {
     }
     
     func getImageUrl() -> String {
+        guard images.count > 0 else {
+            return ""
+        }
         let imageObj = images.first
         
         let key = (imageObj?.key)!
@@ -53,6 +56,9 @@ class Hotel: Mappable {
         let imageKey = (imageItem?.key)!
         
         let imageUrl = imageUrls.first
+        guard imageUrls.count > 0 else {
+            return ""
+        }
         let indexOfBracket = imageUrl?.range(of: "{")
         let indexBeforeBracket = imageUrl?.index(before: (indexOfBracket?.upperBound)!)
         let host = (imageUrl?.substring(to: indexBeforeBracket!))!

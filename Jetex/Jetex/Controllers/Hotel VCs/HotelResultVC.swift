@@ -186,7 +186,9 @@ class HotelResultVC: BaseViewController {
     }
     
     @IBAction func showMap(_ sender: UIButton) {
-        
+        let vc = MapFullScreenVC(nibName: "MapFullScreenVC", bundle: nil)
+        vc.searchInfo = self.searchInfo
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func hideFilter(_ sender: Any) {
@@ -253,6 +255,7 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         
         // download image
+        cell.hotelImg.image = nil
         Alamofire.request(hotel.getImageUrl()).responseImage { response in
             if let image = response.result.value {
                 let cell = self.tableView.cellForRow(at: indexPath) as? HotelResultCell
