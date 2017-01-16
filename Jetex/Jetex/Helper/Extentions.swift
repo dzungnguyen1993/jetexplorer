@@ -359,6 +359,9 @@ extension String {
         return components(separatedBy: .whitespaces).joined(separator: "")
     }
     
+    func toDouble() -> Double {
+        return Double(self)!
+    }
 }
 
 extension List{

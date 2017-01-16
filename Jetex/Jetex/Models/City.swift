@@ -26,6 +26,7 @@ class City: Object, Mappable {
     dynamic var name: String = ""
     dynamic var iataCode: String = ""
     dynamic var countryId: String = ""
+    dynamic var location: String = ""
     var airports = List<Airport>()
     
     required convenience init?(map: Map) {
@@ -42,6 +43,16 @@ class City: Object, Mappable {
         airports <- map["Airport"]
         iataCode <- map["IataCode"]
         countryId <- map["CountryId"]
+        location <- map["Location"]
     }
 
+    func getLatLong() -> (Double, Double) {
+        let listString = location.components(separatedBy: ", ")
+        
+        // fuck the order, fuck server guy
+        let longitude = listString[0].toDouble()
+        let latitude = listString[1].toDouble()
+        
+        return  (latitude, longitude)
+    }
 }

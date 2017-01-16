@@ -195,7 +195,7 @@ class NetworkManager: NSObject {
         requestString.append("/" + "1")
         
         // add page size
-        requestString.append("/" + "10")
+        requestString.append("/" + "50")
         
         let parameters = Parameters()
         

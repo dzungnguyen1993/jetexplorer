@@ -313,6 +313,7 @@ extension HotelDetailsVC: HotelDetailsVCDelegate {
     
     func zoomMapToFullScreen() {
         let vc = MapFullScreenVC(nibName: "MapFullScreenVC", bundle: nil)
+        vc.searchInfo = self.searchInfo
         _ = self.navigationController?.pushViewController(vc, animated: true)
     }
 }
