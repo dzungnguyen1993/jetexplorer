@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280612AF1E260EB2004B3AB6 /* ZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280612AE1E260EB2004B3AB6 /* ZoomTransition.swift */; };
 		281114F21DEAEE51008A1A7E /* FlightSearchHistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281114F11DEAEE51008A1A7E /* FlightSearchHistoryVC.xib */; };
 		281114F41DEAEE61008A1A7E /* FlightSearchHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281114F31DEAEE61008A1A7E /* FlightSearchHistoryVC.swift */; };
 		283052551E1FC00C00867F4F /* HotelHistorySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283052541E1FC00C00867F4F /* HotelHistorySearch.swift */; };
@@ -262,6 +263,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		280612AE1E260EB2004B3AB6 /* ZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomTransition.swift; path = EPCalendarPicker/ZoomTransition.swift; sourceTree = "<group>"; };
 		281114F11DEAEE51008A1A7E /* FlightSearchHistoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightSearchHistoryVC.xib; sourceTree = "<group>"; };
 		281114F31DEAEE61008A1A7E /* FlightSearchHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightSearchHistoryVC.swift; sourceTree = "<group>"; };
 		281114F51DEEBC3C008A1A7E /* Jetex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jetex.entitlements; sourceTree = "<group>"; };
@@ -718,6 +720,7 @@
 				2830E42C1DF9D1B200DF3E0A /* Loading Popup */,
 				B9D904361DD8BBB1008C8720 /* EPCalendarPicker */,
 				B9A1EE711DD782B8005140BC /* DateIndicatorStyleKit.swift */,
+				280612AE1E260EB2004B3AB6 /* ZoomTransition.swift */,
 				B9F445F71DD4DA9700250D6C /* Extentions.swift */,
 				B98EB1DC1DDACBA500783FB1 /* Utility.swift */,
 				28E62C4D1DE68ACC00E41D44 /* Constant.swift */,
@@ -1378,6 +1381,7 @@
 				284728631E23FE4F00C014C0 /* DealsView.swift in Sources */,
 				284728731E25419400C014C0 /* MapInDetailView.swift in Sources */,
 				2830E9041DE1DCE2001A76F9 /* HistorySearch.swift in Sources */,
+				280612AF1E260EB2004B3AB6 /* ZoomTransition.swift in Sources */,
 				B9F445F61DD4DA1B00250D6C /* GothamFontName.swift in Sources */,
 				B9D9A2C01DDB672C007CAB28 /* SearchResultDateView.swift in Sources */,
 				B9F7D3591E22714900506217 /* Amenity.swift in Sources */,

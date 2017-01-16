@@ -64,6 +64,8 @@ class HotelDetailsVC: BaseViewController {
     @IBOutlet var menuButtons: [UITabbarButton]!
         // - Content
     @IBOutlet weak var menuContentsView: UIView!
+        // For animation
+    var animationController : ZoomTransition?
     
     // cache views
     var dealsView: DealsView?
@@ -76,7 +78,7 @@ class HotelDetailsVC: BaseViewController {
         super.viewDidLoad()
         
         setupHeroSection()
-        setUpMenuInMainViewSection()
+        setUpMainViewSection()
         
         // show header info
         showHeaderInfo()
@@ -257,6 +259,7 @@ extension HotelDetailsVC {
     
     func setUpMainViewSection() {
         setUpMenuInMainViewSection()
+        setUpMapViewInMainViewSection()
     }
     
     func setUpMenuInMainViewSection() {
@@ -269,6 +272,14 @@ extension HotelDetailsVC {
         menuButtons[MenuButtonType.Reviews.rawValue].addGestureRecognizer(reviewsGestureRecognizer)
         menuButtons[MenuButtonType.Map.rawValue].addGestureRecognizer(mapGestureRecognizer)
         menuButtons[MenuButtonType.Amenities.rawValue].addGestureRecognizer(amenitiesGestureRecognizer)
+    }
+    
+    func setUpMapViewInMainViewSection() {
+        if let navigationController = self.navigationController {
+            animationController = ZoomTransition(navigationController: navigationController)
+        }
+        
+        self.navigationController?.delegate = animationController
     }
 }
 
@@ -303,5 +314,11 @@ extension HotelDetailsVC: HotelDetailsVCDelegate {
     func zoomMapToFullScreen() {
         let vc = MapFullScreenVC(nibName: "MapFullScreenVC", bundle: nil)
         _ = self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension HotelDetailsVC: ZoomTransitionProtocol, UINavigationControllerDelegate {
+    func viewForTransition() -> UIView {
+        return (mapView != nil ? mapView! : menuContentsView)
     }
 }

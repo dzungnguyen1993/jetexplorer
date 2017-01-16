@@ -35,3 +35,9 @@ class MapFullScreenVC: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
 }
+
+extension MapFullScreenVC : ZoomTransitionProtocol {
+    func viewForTransition() -> UIView {
+        return self.mapView
+    }
+}
