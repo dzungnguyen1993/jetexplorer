@@ -188,7 +188,9 @@ class HotelResultVC: BaseViewController {
     @IBAction func showMap(_ sender: UIButton) {
         let vc = MapFullScreenVC(nibName: "MapFullScreenVC", bundle: nil)
         vc.searchInfo = self.searchInfo
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.mapType = .cityMap
+//        self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func hideFilter(_ sender: Any) {
@@ -206,6 +208,13 @@ extension HotelResultVC {
         viewDateDepart.lbMonth.text = searchInfo.checkinDay?.toMonth()
         viewDateReturn.lbDate.text = searchInfo.checkoutDay?.toDay()
         viewDateReturn.lbMonth.text = searchInfo.checkoutDay?.toMonth()
+        lbGuest.text = searchInfo.numberOfGuest.toString()
+        if (searchInfo.numberOfRooms == 1) {
+            lbRoom.text = searchInfo.numberOfRooms.toString() + "room"
+        } else {
+            lbRoom.text = searchInfo.numberOfRooms.toString() + "rooms"
+        }
+        
     }
     
     func setupImages() {
@@ -282,6 +291,7 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = HotelDetailsVC(nibName: "HotelDetailsVC", bundle: nil)
         vc.searchInfo = self.searchInfo
+        vc.pickedHotel = hotels[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

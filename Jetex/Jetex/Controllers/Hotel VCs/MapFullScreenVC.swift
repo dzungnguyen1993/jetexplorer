@@ -9,12 +9,17 @@
 import UIKit
 import GoogleMaps
 
+enum MapType {
+    case cityMap, hotelMap
+}
+
 class MapFullScreenVC: BaseViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     
     // Header
     var searchInfo: SearchHotelInfo!
+    var hotel: Hotel!
     
     @IBOutlet weak var imgPassenger: UIImageView!
     @IBOutlet weak var imgRightArrow: UIImageView!
@@ -25,6 +30,9 @@ class MapFullScreenVC: BaseViewController {
     @IBOutlet weak var lbCountry: UILabel!
     @IBOutlet weak var lbGuest: UILabel!
     @IBOutlet weak var lbRoom: UILabel!
+    
+    var mapType: MapType!
+    @IBOutlet weak var imgCancel: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +47,12 @@ class MapFullScreenVC: BaseViewController {
         
         // Creates a marker in the center of the map.
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!)
+        if (self.mapType == .cityMap) {
+            marker.position = CLLocationCoordinate2D(latitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!)
+        } else {
+            marker.position = CLLocationCoordinate2D(latitude: hotel.latitude, longitude: hotel.longitude)
+        }
+        
         marker.title = searchInfo.city?.name//"Sydney"
         let country = DBManager.shared.getCountry(fromCity: searchInfo.city!)
         marker.snippet = country?.name//"Australia"
@@ -53,6 +66,10 @@ class MapFullScreenVC: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func exitMap(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -69,6 +86,14 @@ extension MapFullScreenVC : ZoomTransitionProtocol {
         viewDateDepart.lbMonth.text = searchInfo.checkinDay?.toMonth()
         viewDateReturn.lbDate.text = searchInfo.checkoutDay?.toDay()
         viewDateReturn.lbMonth.text = searchInfo.checkoutDay?.toMonth()
+        lbGuest.text = searchInfo.numberOfGuest.toString()
+        if (searchInfo.numberOfRooms == 1) {
+            lbRoom.text = searchInfo.numberOfRooms.toString() + "room"
+        } else {
+            lbRoom.text = searchInfo.numberOfRooms.toString() + "rooms"
+        }
+        
+        imgCancel.image = UIImage(fromHex: JetExFontHexCode.jetexCross.rawValue, withColor: UIColor(hex: 0x515151))
     }
     
     func setupImagesInHeader() {
