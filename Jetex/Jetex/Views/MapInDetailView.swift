@@ -20,6 +20,7 @@ class MapInDetailView: UIView {
     @IBOutlet weak var staticMapImageView: UIImageView!
     
     var delegate : HotelDetailsVCDelegate?
+    var width : CGFloat = 0.0
     
     func initView() {
         Bundle.main.loadNibNamed("MapInDetailView", owner: self, options: nil)
@@ -35,12 +36,17 @@ class MapInDetailView: UIView {
     
     // using static picture to boost the perfomance
     func initMap(withWidth: CGFloat) {
+        width = withWidth
+        self.staticMapImageView.image = UIImage(named: "staticMap")
+    }
+    
+    func bindingData(hotelInfo: HotelinDetail) {
         // create URL
         var staticMapUrl: String = APIURL.GoogleAPI.staticMapBaseURL + "?"
-        staticMapUrl += "center=\(63.259591),\(-144.667969)" + "&"
-        staticMapUrl += "zoom=6" + "&"
-        staticMapUrl += "size=\(Int(withWidth))x\(Int(MapInDetailView.height))" + "&"
-        staticMapUrl += "markers=color:blue|label:H|\(63.259591),\(-144.667969)" + "&"
+        staticMapUrl += "center=\(hotelInfo.latitude),\(hotelInfo.longitude)" + "&"
+        staticMapUrl += "zoom=12" + "&"
+        staticMapUrl += "size=\(Int(width))x\(Int(MapInDetailView.height))" + "&"
+        staticMapUrl += "markers=color:blue|label:\(hotelInfo.name.characters.first!)|\(hotelInfo.latitude),\(hotelInfo.longitude)" + "&"
         staticMapUrl += "key=\(APIURL.GoogleAPI.mapKey)"
         
         let mapUrl = URL(string: staticMapUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!

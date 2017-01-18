@@ -26,6 +26,7 @@ struct APIURL {
         static let createSubscribe = "/api/subscribe-email"
         static let checkSubscribe = "/api/check-subscribed-email"
         static let editSubscribe = "/api/edit-status-subscribe-email"
+        static let getHotelDetailInfo = "/hotels/api/hotel-detail-sky"
         
         // TODO: update the appId here
         static let appId = 1159421121

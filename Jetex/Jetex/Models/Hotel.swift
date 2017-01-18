@@ -64,4 +64,28 @@ class Hotel: Mappable {
         let host = (imageUrl?.substring(to: indexBeforeBracket!))!
         return "https://" + host + key + imageKey
     }
+    
+    func getImageUrlsList() -> [String] {
+        var result : [String] = []
+        
+        let imageUrl = imageUrls.first
+        guard imageUrls.count > 0 else {
+            return result
+        }
+        
+        let indexOfBracket = imageUrl?.range(of: "{")
+        let indexBeforeBracket = imageUrl?.index(before: (indexOfBracket?.upperBound)!)
+        let host = "https://" + (imageUrl?.substring(to: indexBeforeBracket!))!
+        
+        for (folder, values) in images {
+            for (fileName, _) in values {
+                if fileName.contains(".") {
+                    result.append(host + folder + fileName)
+                }
+            }
+        }
+        return result
+        
+    }
+    
 }

@@ -30,14 +30,12 @@ class MapFullScreenVC: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        // coordinate -33.86,151.20 at zoom level 6.
         let cityLocation = searchInfo.city?.getLatLong()
-        
-        let camera = GMSCameraPosition.camera(withLatitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!, zoom: 6.0)
-        
+        let camera = GMSCameraPosition.camera(withLatitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!, zoom: 13.0)
         mapView.camera = camera
         
         // Creates a marker in the center of the map.
+        // TODO: create marker with hotel info
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!)
         marker.title = searchInfo.city?.name//"Sydney"

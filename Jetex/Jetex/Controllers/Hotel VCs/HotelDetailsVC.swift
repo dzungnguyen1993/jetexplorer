@@ -21,6 +21,8 @@ class HotelDetailsVC: BaseViewController {
     
     var searchInfo: SearchHotelInfo!
     var searchResult: SearchHotelResult!
+    var hotel: Hotel!
+    var hotelInDetailResult: HotelinDetailResult?
     
     // Height of content's scrollview
     @IBOutlet weak var contentHeightConstraint: NSLayoutConstraint!
@@ -83,6 +85,10 @@ class HotelDetailsVC: BaseViewController {
         // show header info
         showHeaderInfo()
         setupImagesInHeader()
+        
+        //
+        bindDataForHeroSection(isViewLoaded: true, initHotelInfo: nil, loadedHotelInfo: self.hotelInDetailResult)
+        bindDataForInfoSection(isViewLoaded: true, initHotelInfo: nil, loadedHotelInfo: self.hotelInDetailResult?.hotels.first)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -166,6 +172,7 @@ class HotelDetailsVC: BaseViewController {
                 // create a dealsview if it is the first time
                 if self.reviewsView == nil {
                     self.reviewsView = ReviewsView(frame: self.menuContentsView.bounds)
+                    self.bindDataForReviewsInMainSection(isViewLoaded: true, loadedHotelInfo: self.hotelInDetailResult)
                 } else {
                     self.adjustReviewsViewFrameToFit()
                 }
@@ -187,6 +194,7 @@ class HotelDetailsVC: BaseViewController {
                     self.mapView = MapInDetailView(frame: self.menuContentsView.bounds)
                     self.mapView?.delegate = self
                     self.mapView?.initMap(withWidth: self.menuContentsView.bounds.width)
+                    self.mapView?.bindingData(hotelInfo: self.hotelInDetailResult!.hotels.first!)
                 }
                 
                 // insert deals view in
@@ -237,15 +245,12 @@ extension HotelDetailsVC {
         self.imageSlideShow.slideshowInterval = 10 // 3 seconds
         self.imageSlideShow.contentScaleMode = .scaleAspectFill // fill mode
         self.imageSlideShow.pageControlPosition = .hidden
-        
-        // mock data
-        self.imageSlideShow.setImageInputs([
-            AlamofireSource(urlString: "https://cdn-image.travelandleisure.com/sites/default/files/styles/destination_guide_tout/public/1445965295/hotel-muse-bangkok-bk1015.jpg")!,
-            AlamofireSource(urlString: "https://r-ec.bstatic.com/images/hotel/max500/630/63070696.jpg")!,
-            AlamofireSource(urlString: "https://www.kayak.com.hk/rimg/himg/d5/5c/48/leonardo-1118279-BTTHBK_SN_0711_Pool_S-image.jpg")!])
        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HotelDetailsVC.didTapTheImageInHero))
         imageSlideShow.addGestureRecognizer(gestureRecognizer)
+        
+        // bind initial data
+        bindDataForHeroSection(isViewLoaded: false, initHotelInfo: self.hotel, loadedHotelInfo: nil)
     }
     
     func didTapTheImageInHero() {
@@ -278,9 +283,86 @@ extension HotelDetailsVC {
         if let navigationController = self.navigationController {
             animationController = ZoomTransition(navigationController: navigationController)
         }
-        
         self.navigationController?.delegate = animationController
     }
+    
+    //MARK: - Binding Data
+    func bindDataForHeroSection(isViewLoaded: Bool, initHotelInfo: Hotel? = nil, loadedHotelInfo: HotelinDetailResult? = nil) {
+        if isViewLoaded {
+            // view loaded, use detail info
+            var imagesInput : [AlamofireSource] = []
+            
+            for urlString in loadedHotelInfo!.hotels.first!.getImageUrlsList(withHost: loadedHotelInfo!.imageHostUrl) {
+                imagesInput.append(AlamofireSource(urlString: urlString)!)
+            }
+            
+            self.imageSlideShow.setImageInputs(imagesInput)
+            self.imageSlideShow.slideshowInterval = 10.0
+            
+            //self.rateScoreInHeroLabel.text = loadedHotelInfo!.score
+            self.rateScoreInHeroLabel.text = "\(Float(loadedHotelInfo!.hotels.first!.popularity) / 10.0)/10"
+            self.rateDescriptionInHeroLabel.text = loadedHotelInfo!.hotels.first!.popularityDesc
+            if let reviews = loadedHotelInfo?.hotelPrices.first?.reviews {
+                self.rateCountInHeroLabel.text = "Based on \(reviews.count) reviews"
+            }
+            
+            
+        } else {
+            // view is not done loading yet, use info from previous view
+            // load image, stop sliding
+            self.imageSlideShow.setImageInputs([AlamofireSource(urlString: initHotelInfo!.getImageUrl())!])
+            self.imageSlideShow.slideshowInterval = 0.0
+            
+            self.rateScoreInHeroLabel.text = "\(Float(initHotelInfo!.popularity) / 10.0)/10"
+            self.rateDescriptionInHeroLabel.text = initHotelInfo!.popularityDesc
+            self.rateCountInHeroLabel.text = "Based on reviews"
+        }
+    }
+    
+    func bindDataForInfoSection(isViewLoaded: Bool, initHotelInfo: Hotel? = nil, loadedHotelInfo: HotelinDetail? = nil) {
+        if isViewLoaded {
+            // view loaded, use detail info
+            var stars = ""
+            for _ in 1...loadedHotelInfo!.star {
+                stars += "★"
+            }
+            
+            self.starsCountLabel.text = stars
+            self.hotelAddressLabel.text = loadedHotelInfo!.address
+            self.hotelShortDescriptionLabel.text = loadedHotelInfo!.description
+            
+        } else {
+            // view is not done loading yet, use info from previous view
+            // load info
+            var stars = ""
+            for _ in 1...initHotelInfo!.star {
+                stars += "★"
+            }
+            
+            self.starsCountLabel.text = stars
+            self.hotelNameLabel.text = initHotelInfo!.name
+            self.hotelAddressLabel.text = initHotelInfo!.address
+        }
+    }
+    
+    func bindDataForReviewsInMainSection(isViewLoaded: Bool, loadedHotelInfo: HotelinDetailResult? = nil) {
+        if isViewLoaded {
+            // view loaded, use detail info
+            self.reviewsView!.bindingData(score: loadedHotelInfo!.hotels.first!.popularity, summary: loadedHotelInfo!.hotels.first!.popularityDesc, reviews: loadedHotelInfo!.hotelPrices.first!.reviews!)
+        } else {
+            // view is not done loading yet, use info from previous view
+        }
+    }
+    
+    func bindDataForMapInMainSection(isViewLoaded: Bool, loadedHotelInfo: HotelinDetailResult? = nil) {
+        if isViewLoaded {
+            // view loaded, use detail info
+            self.mapView?.bindingData(hotelInfo: loadedHotelInfo!.hotels.first!)
+        } else {
+            // view is not done loading yet, use info from previous view
+        }
+    }
+
 }
 
 
@@ -315,6 +397,27 @@ extension HotelDetailsVC: HotelDetailsVCDelegate {
         let vc = MapFullScreenVC(nibName: "MapFullScreenVC", bundle: nil)
         vc.searchInfo = self.searchInfo
         _ = self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+// MARK: - Database for Detail
+extension HotelDetailsVC {
+    func getHotelInfoInDetail() {
+        let url = "\(APIURL.JetExAPI.base)\(APIURL.JetExAPI.getHotelDetailInfo)/\(hotel.id)"
+        
+        Alamofire.request(url, method: .get, parameters: nil).responseJSON { (response) in
+            if let data = response.result.value as? [String: Any] {
+                self.hotelInDetailResult = HotelinDetailResult(JSON: data)!
+                
+                self.bindDataForHeroSection(isViewLoaded: true, initHotelInfo: nil, loadedHotelInfo: self.hotelInDetailResult)
+                self.bindDataForInfoSection(isViewLoaded: true, initHotelInfo: nil, loadedHotelInfo: self.hotelInDetailResult?.hotels.first)
+                
+                //TODO:
+                // 1. show the info that we have from previous scence. if we don't have that info, blur it
+                // 2. get the info in detail, update it when data is received.
+            }
+        }
+
     }
 }
 

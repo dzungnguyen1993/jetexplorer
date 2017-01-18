@@ -16,6 +16,7 @@ class SearchHotelResult: Mappable {
     var bestHotels = [Hotel]()
     var hotelPrices = [HotelPrice]()
     var amenities = [Amenity]()
+    var imageHostURL = ""
     
     required convenience init?(map: Map) {
         self.init()
@@ -29,6 +30,7 @@ class SearchHotelResult: Mappable {
         hotels <- map["hotels"]
         hotelPrices <- map["hotels_prices"]
         amenities <- map["amenities"]
+        imageHostURL <- map["image_host_url"]
     }
     
     func initSort() {

@@ -280,9 +280,25 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = HotelDetailsVC(nibName: "HotelDetailsVC", bundle: nil)
-        vc.searchInfo = self.searchInfo
-        self.navigationController?.pushViewController(vc, animated: true)
+        // show popup
+        let popUpVC = PopupDialog(title: "Loading", message: "Loading detail information for the hotel...")
+        self.present(popUpVC, animated: true, completion: nil)
+        
+        //load detail first
+        self.getHotelInfoInDetail(hotelId: self.hotels[indexPath.row].id) { (result) in
+            popUpVC.dismiss()
+            if let result = result {
+                let vc = HotelDetailsVC(nibName: "HotelDetailsVC", bundle: nil)
+                vc.searchInfo = self.searchInfo
+                vc.hotel = self.hotels[indexPath.row]
+                vc.hotelInDetailResult = result
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let popUpVC = PopupDialog(title: "Fail", message: "Couldn't load detail information for the hotel, please try again!")
+                popUpVC.addButton(CancelButton(title: "Cancel", dismissOnTap: true, action: nil))
+                self.present(popUpVC, animated: true, completion: nil)
+            }
+        }
     }
 }
 
@@ -302,6 +318,18 @@ extension HotelResultVC {
         
         guard self.hotels.count > 0 else {return}
         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+    }
+    
+    func getHotelInfoInDetail(hotelId: Int, completion: ((HotelinDetailResult?) -> Void)? = nil) {
+        let url = "\(APIURL.JetExAPI.base)\(APIURL.JetExAPI.getHotelDetailInfo)/\(hotelId)"
+        
+        Alamofire.request(url, method: .get, parameters: nil).responseJSON { (response) in
+            if let data = response.result.value as? [String: Any] {
+                let hotelInDetailResult = HotelinDetailResult(JSON: data)
+                completion?(hotelInDetailResult)
+            }
+        }
+        
     }
 }
 

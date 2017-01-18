@@ -41,13 +41,13 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5430 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiK-7f-58O">
-                            <rect key="frame" x="16" y="28" width="105" height="15"/>
+                            <rect key="frame" x="16" y="27.5" width="104.5" height="15"/>
                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                             <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Very good" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBe-ch-Owz">
-                            <rect key="frame" x="281" y="27" width="78" height="15"/>
+                            <rect key="frame" x="281" y="27.5" width="78" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="0GO-Bp-AOI"/>
                             </constraints>
@@ -56,7 +56,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0/10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAJ-Kp-2Uv">
-                            <rect key="frame" x="223" y="28" width="50" height="15"/>
+                            <rect key="frame" x="223" y="27.5" width="50" height="15"/>
                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
                             <color key="textColor" red="0.28201574089999998" green="0.82799667119999998" blue="0.62904578450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>

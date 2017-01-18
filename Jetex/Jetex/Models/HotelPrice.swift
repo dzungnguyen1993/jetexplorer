@@ -10,9 +10,10 @@ import ObjectMapper
 import RealmSwift
 import ObjectMapper_Realm
 
-class HotelPrice: Mappable {
+class HotelPrice: Object, Mappable {
     dynamic var id: Int = 0
     var agentPrices = [AgentPrice]()
+    var reviews: Reviews? = nil
     
     required convenience init?(map: Map) {
         self.init()
@@ -25,5 +26,6 @@ class HotelPrice: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         agentPrices <- map["agent_prices"]
+        reviews <- map["reviews"]
     }
 }

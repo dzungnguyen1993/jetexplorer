@@ -19,6 +19,18 @@ class ReviewsView: UIView {
     
     @IBOutlet weak var reviewsTableView: UITableView!
     
+    var numberOfReviews : Int = 0 {
+        didSet {
+            self.numberOfReviewsLabel.text = "\(numberOfReviews) Reviews"
+        }
+    }
+    
+    var reviewScore: Int = 0 {
+        didSet {
+            self.reviewScoreLabel.text = "\(Float(reviewScore) / 10.0)/10"
+        }
+    }
+    
     //mock data
     var reviewsList = [("Cleanliness", 10.0) ,
                        ("Dining", 9.0 ),
@@ -46,6 +58,19 @@ class ReviewsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
+    }
+    
+    func bindingData(score: Int, summary: String , reviews: Reviews) {
+        numberOfReviews = reviews.count
+        reviewScore = score
+        reviewsDescriptionLabel.text = summary
+        
+        self.reviewsList = []
+        for category in reviews.categories {
+            self.reviewsList.append((category.name, (Double(category.score) / 10.0)))
+        }
+        
+        self.reviewsTableView.reloadData()
     }
 }
 
