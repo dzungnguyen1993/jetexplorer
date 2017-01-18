@@ -23,6 +23,8 @@ class HotelDetailsVC: BaseViewController {
     var searchResult: SearchHotelResult!
     var hotel: Hotel!
     var hotelInDetailResult: HotelinDetailResult?
+    var pickedHotel: Hotel!
+
     
     // Height of content's scrollview
     @IBOutlet weak var contentHeightConstraint: NSLayoutConstraint!
@@ -233,6 +235,12 @@ extension HotelDetailsVC {
         viewDateDepart.lbMonth.text = searchInfo.checkinDay?.toMonth()
         viewDateReturn.lbDate.text = searchInfo.checkoutDay?.toDay()
         viewDateReturn.lbMonth.text = searchInfo.checkoutDay?.toMonth()
+        lbGuest.text = searchInfo.numberOfGuest.toString()
+        if (searchInfo.numberOfRooms == 1) {
+            lbRoom.text = searchInfo.numberOfRooms.toString() + "room"
+        } else {
+            lbRoom.text = searchInfo.numberOfRooms.toString() + "rooms"
+        }
     }
     
     func setupImagesInHeader() {
@@ -396,7 +404,10 @@ extension HotelDetailsVC: HotelDetailsVCDelegate {
     func zoomMapToFullScreen() {
         let vc = MapFullScreenVC(nibName: "MapFullScreenVC", bundle: nil)
         vc.searchInfo = self.searchInfo
-        _ = self.navigationController?.pushViewController(vc, animated: true)
+        vc.mapType = .hotelMap
+        vc.hotel = self.pickedHotel
+//        _ = self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

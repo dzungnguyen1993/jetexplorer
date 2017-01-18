@@ -21,6 +21,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapFullScreenVC" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="Ene-dH-JN0" id="ajS-d4-MAW"/>
+                <outlet property="imgCancel" destination="XJl-Bf-qRh" id="g5b-2z-UJV"/>
                 <outlet property="imgPassenger" destination="qOq-j5-6oR" id="tY7-ro-Iou"/>
                 <outlet property="imgRightArrow" destination="lcY-B8-Dso" id="URp-Gn-esV"/>
                 <outlet property="lbCity" destination="ERz-9n-K4Z" id="LXK-fG-N8G"/>
@@ -46,9 +47,9 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ene-dH-JN0">
-                    <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpW-KL-GDK">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpW-KL-GDK">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKu-pw-QHJ">
@@ -228,8 +229,38 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMo-CU-Fhz" customClass="GMSMapView">
-                            <rect key="frame" x="0.0" y="44" width="375" height="554"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5RC-ed-3UB">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJl-Bf-qRh">
+                                    <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="HAG-LG-krV"/>
+                                        <constraint firstAttribute="width" secondItem="XJl-Bf-qRh" secondAttribute="height" multiplier="1:1" id="zHe-4V-BMi"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3G-LL-rw1">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="d2N-bt-nNu"/>
+                                        <constraint firstAttribute="width" constant="50" id="jAC-Ui-rne"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="exitMap:" destination="-1" eventType="touchUpInside" id="4SI-zW-TfA"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="v3G-LL-rw1" firstAttribute="leading" secondItem="5RC-ed-3UB" secondAttribute="leading" id="BIM-BW-5Mr"/>
+                                <constraint firstAttribute="width" constant="50" id="Wmy-kf-boJ"/>
+                                <constraint firstAttribute="height" constant="50" id="cdl-V0-okb"/>
+                                <constraint firstItem="v3G-LL-rw1" firstAttribute="top" secondItem="5RC-ed-3UB" secondAttribute="top" id="maP-xS-3kP"/>
+                                <constraint firstItem="XJl-Bf-qRh" firstAttribute="top" secondItem="5RC-ed-3UB" secondAttribute="top" constant="8" id="qcm-uX-OgA"/>
+                                <constraint firstItem="XJl-Bf-qRh" firstAttribute="leading" secondItem="5RC-ed-3UB" secondAttribute="leading" constant="8" id="rtP-zl-2c9"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -237,19 +268,21 @@
                         <constraint firstItem="OpW-KL-GDK" firstAttribute="top" secondItem="Ene-dH-JN0" secondAttribute="top" id="2oG-Ti-rVD"/>
                         <constraint firstAttribute="bottom" secondItem="NMo-CU-Fhz" secondAttribute="bottom" id="AQx-zm-O6j"/>
                         <constraint firstAttribute="trailing" secondItem="NMo-CU-Fhz" secondAttribute="trailing" id="LiP-pR-9vj"/>
-                        <constraint firstItem="NMo-CU-Fhz" firstAttribute="top" secondItem="OpW-KL-GDK" secondAttribute="bottom" id="Ria-rH-gYU"/>
+                        <constraint firstItem="5RC-ed-3UB" firstAttribute="top" secondItem="Ene-dH-JN0" secondAttribute="top" id="NaE-oe-JDA"/>
                         <constraint firstItem="OpW-KL-GDK" firstAttribute="leading" secondItem="Ene-dH-JN0" secondAttribute="leading" id="Yzf-J4-k1y"/>
                         <constraint firstItem="NMo-CU-Fhz" firstAttribute="leading" secondItem="Ene-dH-JN0" secondAttribute="leading" id="css-oV-KfD"/>
+                        <constraint firstItem="5RC-ed-3UB" firstAttribute="leading" secondItem="Ene-dH-JN0" secondAttribute="leading" id="fKh-lC-0Gp"/>
                         <constraint firstAttribute="trailing" secondItem="OpW-KL-GDK" secondAttribute="trailing" id="vkO-GX-YfN"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Ene-dH-JN0" secondAttribute="bottom" constant="49" id="3xC-Cu-JzE"/>
+                <constraint firstAttribute="bottom" secondItem="Ene-dH-JN0" secondAttribute="bottom" id="3xC-Cu-JzE"/>
                 <constraint firstItem="L2v-FH-0R4" firstAttribute="leading" secondItem="Je9-FP-1h9" secondAttribute="leading" id="DuR-mU-xVt"/>
                 <constraint firstAttribute="trailing" secondItem="L2v-FH-0R4" secondAttribute="trailing" id="GDq-Yb-Rll"/>
                 <constraint firstItem="Ene-dH-JN0" firstAttribute="leading" secondItem="Je9-FP-1h9" secondAttribute="leading" id="U3h-Vr-jqi"/>
+                <constraint firstItem="NMo-CU-Fhz" firstAttribute="top" secondItem="L2v-FH-0R4" secondAttribute="bottom" id="Ubq-UL-FgE"/>
                 <constraint firstItem="Ene-dH-JN0" firstAttribute="top" secondItem="L2v-FH-0R4" secondAttribute="bottom" id="cR7-Bh-RL6"/>
                 <constraint firstAttribute="trailing" secondItem="Ene-dH-JN0" secondAttribute="trailing" id="eqd-1N-c9w"/>
                 <constraint firstItem="L2v-FH-0R4" firstAttribute="top" secondItem="Je9-FP-1h9" secondAttribute="top" id="uYn-d6-0fg"/>

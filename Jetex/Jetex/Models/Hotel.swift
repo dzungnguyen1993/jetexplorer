@@ -21,6 +21,8 @@ class Hotel: Mappable {
     var imageUrls: [String] = [String]()
     var images: [String: [String: [Int]]] = [:]
     var amenities: [Int] = [Int]()
+    dynamic var latitude: Double = 0
+    dynamic var longitude: Double = 0
     
     required convenience init?(map: Map) {
         self.init()
@@ -41,6 +43,8 @@ class Hotel: Mappable {
         imageUrls <- map["image_urls"]
         images <- map["images"]
         amenities <- map["amenities"]
+        latitude <- map["latitude"]
+        longitude <- map["longitude"]
     }
     
     func getImageUrl() -> String {
