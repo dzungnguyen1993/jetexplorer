@@ -37,23 +37,27 @@ class MapFullScreenVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         let cityLocation = searchInfo.city?.getLatLong()
-        let camera = GMSCameraPosition.camera(withLatitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!, zoom: 13.0)
-        mapView.camera = camera
+        var camera : GMSCameraPosition?
         
         // Creates a marker in the center of the map.
-        // TODO: create marker with hotel info
         let marker = GMSMarker()
         if (self.mapType == .cityMap) {
             marker.position = CLLocationCoordinate2D(latitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!)
+            camera = GMSCameraPosition.camera(withLatitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!, zoom: 13.0)
+            
+            marker.title = searchInfo.city?.name
+            let country = DBManager.shared.getCountry(fromCity: searchInfo.city!)
+            marker.snippet = country?.name
         } else {
             marker.position = CLLocationCoordinate2D(latitude: hotel.latitude, longitude: hotel.longitude)
+            camera = GMSCameraPosition.camera(withLatitude: hotel.latitude, longitude: hotel.longitude, zoom: 16.0)
+            
+            marker.title = hotel.name
+            marker.snippet = searchInfo.city?.name
         }
         
-        marker.title = searchInfo.city?.name//"Sydney"
-        let country = DBManager.shared.getCountry(fromCity: searchInfo.city!)
-        marker.snippet = country?.name//"Australia"
+        mapView.camera = camera!
         marker.map = mapView
         
         // set up header
