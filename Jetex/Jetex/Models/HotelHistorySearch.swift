@@ -11,25 +11,30 @@ import RealmSwift
 import ObjectMapper_Realm
 
 class HotelHistorySearch : Object, Mappable {
-    dynamic var searchHotelInfo: SearchHotelInfo? = nil
+    dynamic var searchHotelInfo: SearchHotelInfo?  = nil
     
-    dynamic var hotelName: String      = ""
-    dynamic var adult: Int             = 1
-    dynamic var children: Int          = 0
-    dynamic var infant: Int            = 0
-    
-    convenience init(hotelName: String, passengers: [Int], checkInOn startDay: Date, checkOutOn endDay: Date?, searchAt searchTime: Date? = nil) {
-        self.init()
-        self.hotelName  = hotelName
-        self.adult      = passengers[0]
-        self.children   = passengers[1]
-        self.infant     = passengers[2]
-    }
+    dynamic var cityId : String                    = ""
+    dynamic var hotelName: String                  = "" // or City
+    dynamic var numberOfRooms: Int                 = 1
+    dynamic var numberOfGuests: Int                = 0
+    dynamic var checkinDate: String                = ""
+    dynamic var checkoutDate: String               = ""
+    dynamic var checkinDateText: String            = ""
+    dynamic var checkoutDateText: String           = ""
     
     convenience init(info: SearchHotelInfo, searchAt searchTime: Date? = nil) {
         self.init()
+        
         self.searchHotelInfo = info
         
+        self.cityId = info.city!.id
+        self.hotelName  = info.city!.name
+        self.numberOfRooms = info.numberOfRooms
+        self.numberOfGuests = info.numberOfGuest
+        self.checkinDate = info.checkinDay!.toYYYYMMDDString()
+        self.checkoutDate = info.checkoutDay!.toYYYYMMDDString()
+        self.checkinDateText = info.checkinDay!.toFullMonthDay()
+        self.checkoutDateText = info.checkoutDay!.toFullMonthDay()
     }
     
     required convenience init?(map: Map) {
@@ -46,20 +51,13 @@ class HotelHistorySearch : Object, Mappable {
             return self.searchHotelInfo!
         } else {
             self.searchHotelInfo = SearchHotelInfo()
-            self.searchHotelInfo!.initialize()
+            let realm = try! Realm()
             
-//            let realm = try! Realm()
-//            
-//            self.passengerInfo!.airportFrom = realm.object(ofType: Airport.self, forPrimaryKey: "\(departAirport)-\(departCity)")
-//            self.passengerInfo!.airportTo = realm.object(ofType: Airport.self, forPrimaryKey: "\(arrivalAirport)-\(arrivalCity)")
-//            
-//            self.passengerInfo!.departDay = departDate.toYYYYMMDD()
-//            self.passengerInfo!.isRoundTrip = isRoundTrip
-//            self.passengerInfo!.returnDay = isRoundTrip ? returnDate.toYYYYMMDD() : nil
-//            self.passengerInfo!.passengers[0].value = adult
-//            self.passengerInfo!.passengers[1].value = children
-//            self.passengerInfo!.passengers[2].value = infant
-//            self.passengerInfo!.flightClass = flightClass
+            self.searchHotelInfo?.city = realm.object(ofType: City.self, forPrimaryKey: "\(self.cityId)")
+            self.searchHotelInfo?.checkinDay = self.checkinDate.toYYYYMMDD()
+            self.searchHotelInfo?.checkoutDay = self.checkoutDate.toYYYYMMDD()
+            self.searchHotelInfo?.numberOfGuest = self.numberOfGuests
+            self.searchHotelInfo?.numberOfRooms = self.numberOfRooms
             
             return self.searchHotelInfo!
         }

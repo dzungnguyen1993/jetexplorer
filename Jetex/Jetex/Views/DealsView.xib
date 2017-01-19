@@ -27,12 +27,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="142" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="jxG-0K-w4D">
-                    <rect key="frame" x="8" y="0.0" width="359" height="339"/>
+                    <rect key="frame" x="8" y="0.0" width="359" height="340"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <inset key="scrollIndicatorInsets" minX="8" minY="8" maxX="8" maxY="0.0"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bE-yC-e9F">
-                    <rect key="frame" x="0.0" y="339" width="375" height="109"/>
+                    <rect key="frame" x="0.0" y="340" width="375" height="108"/>
                     <subviews>
                         <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sud-RA-VVj">
                             <rect key="frame" x="32" y="32" width="311" height="44"/>
@@ -59,11 +59,11 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="Sud-RA-VVj" secondAttribute="bottom" constant="33" id="9SC-px-OWS"/>
+                        <constraint firstAttribute="bottom" secondItem="Sud-RA-VVj" secondAttribute="bottom" constant="32" id="9SC-px-OWS"/>
                         <constraint firstAttribute="trailing" secondItem="Sud-RA-VVj" secondAttribute="trailing" constant="32" id="DEE-kf-NUA"/>
                         <constraint firstItem="Sud-RA-VVj" firstAttribute="top" secondItem="8bE-yC-e9F" secondAttribute="top" constant="32" id="S1s-wY-oLs"/>
                         <constraint firstItem="Sud-RA-VVj" firstAttribute="leading" secondItem="8bE-yC-e9F" secondAttribute="leading" constant="32" id="cr1-Ay-XjK"/>
-                        <constraint firstAttribute="height" constant="109" id="q0b-Cg-j9S"/>
+                        <constraint firstAttribute="height" constant="108" id="q0b-Cg-j9S"/>
                     </constraints>
                 </view>
             </subviews>

@@ -14,6 +14,7 @@ class Amenity: Mappable {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     dynamic var key: String = ""
+    dynamic var parentId: Int = -1
     
     required convenience init?(map: Map) {
         self.init()
@@ -27,5 +28,9 @@ class Amenity: Mappable {
         id <- map["id"]
         name <- map["name"]
         key <- map["key"]
+        
+        if map.JSON.keys.contains("parent") {
+            parentId <- map["parent"]
+        }
     }
 }

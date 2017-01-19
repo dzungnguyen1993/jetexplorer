@@ -30,6 +30,7 @@ class AmenitiesView: UIView {
                      ("Limo or Town Car service available", JetExFontHexCode.jetexAmenitiesCar.rawValue),
                      ("Elevator/lift", JetExFontHexCode.jetexAmenitiesElevator.rawValue)]
     
+   
     
     func initView() {
         Bundle.main.loadNibNamed("AmenitiesView", owner: self, options: nil)
@@ -54,11 +55,25 @@ class AmenitiesView: UIView {
     
     
     func setUpAnemitiesSection() {
-        
         // collection view
         self.amenitiesCollectionView.register(UINib(nibName: "AmenityCell", bundle: nil), forCellWithReuseIdentifier: "AmenityCell")
         self.amenitiesCollectionView.delegate = self
         self.amenitiesCollectionView.dataSource = self
+    }
+    
+    func bindingData(hotelInfo: HotelinDetailResult) {
+        amenities = []
+        for amenityId in hotelInfo.hotels.first!.amenities {
+            if let ameniti = hotelInfo.findAmenityFromId(amenityId: amenityId) {
+                if !amenities.contains(where: { (name, _) -> Bool in
+                    return name == ameniti.name
+                }) {
+                    amenities.append((ameniti.name, JetExFontHexCode.amenityCodeFromKey(key: ameniti.key)))
+                }
+            }
+        }
+        
+        self.amenitiesCollectionView.reloadData()
     }
 }
 

@@ -14,6 +14,7 @@ class AgentPrice: Mappable {
     dynamic var id: Int = 0
     dynamic var priceTotal: Double = 0
     dynamic var pricePerRoomNight: Double = 0
+    dynamic var availableRooms : Int = 0
     dynamic var deepLink : String = ""
     dynamic var bookingDeepLink: String = ""
     var roomOffers: [RoomOffer] = []
@@ -30,6 +31,7 @@ class AgentPrice: Mappable {
         id <- map["id"]
         priceTotal <- map["price_total"]
         pricePerRoomNight <- map["price_per_room_night"]
+        availableRooms <- map["available_rooms"]
         deepLink <- map["deeplink"]
         bookingDeepLink <- map["booking_deeplink"]
         roomOffers <- map["room_offers"]

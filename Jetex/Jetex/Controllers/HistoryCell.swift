@@ -72,15 +72,11 @@ class HistoryCell: UITableViewCell {
             timeLabel.text = "\(Date.shorterlizeFullMonthDay(data.departDateText))"
         }
         
-        // TODO: show options
+        // options
         var option = ""
         let passenger = data.adult + data.children + data.infant
         option += ", \(passenger) \(passenger > 1 ? "people" : "person")"
-//        option += (data.adult > 0 ? ", \(data.adult) adult\(data.adult > 1 ? "s" : "")" : "")
-//        option += (data.children > 0 ? ", \(data.children) child\(data.adult > 1 ? "ren" : "")" : "")
-//        option += (data.infant > 0 ? ", \(data.infant) infrant\(data.infant > 1 ? "s" : "")" : "")
         option += (data.flightClass != "" ? ", \(data.flightClass)" : "")
-//        option += (data.flightType != "" ? ", \(data.flightType)" : "")
         
         optionsLabel.text = option
         optionsLabel.resizeToFitText()
@@ -92,6 +88,19 @@ class HistoryCell: UITableViewCell {
         fromLabel.text = data.hotelName
         exchangeLabel.text = ""
         toLabel.text = ""
+        
+        //show start - end day
+        timeLabel.resizeToFitText()
+        exchangeLabel.text = ""
+        timeLabel.text = "\(Date.shorterlizeFullMonthDay(data.checkinDateText)) - \(Date.shorterlizeFullMonthDay(data.checkoutDateText))"
+        
+        // options
+        var option = ""
+        option += ", \(data.numberOfGuests) \(data.numberOfGuests > 1 ? "guests" : "guest")"
+        option += ", \(data.numberOfRooms) \(data.numberOfRooms > 1 ? "rooms" : "room")"
+        
+        optionsLabel.text = option
+        optionsLabel.resizeToFitText()
     }
     
 }

@@ -53,18 +53,23 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
         setupTableView()
         realm = try! Realm()
         
-        // set the currency based on the location
-        let locale = Locale.current
-        if let region = locale.regionCode {
-            switch region {
-            case "SG":
-                ProfileVC.currentCurrencyType = "SGD"
-                break
-            case "AU":
-                ProfileVC.currentCurrencyType = "AUD"
-                break
-            default:
-                ProfileVC.currentCurrencyType = "USD"
+        // set the currency based on the location only if this is the first time user uses the app
+        let nsDefault = UserDefaults()
+        if let currency = nsDefault.value(forKey: "currentCurrency") as? String {
+            ProfileVC.currentCurrencyType = currency
+        } else {
+            let locale = Locale.current
+            if let region = locale.regionCode {
+                switch region {
+                case "SG":
+                    ProfileVC.currentCurrencyType = "SGD"
+                    break
+                case "AU":
+                    ProfileVC.currentCurrencyType = "AUD"
+                    break
+                default:
+                    ProfileVC.currentCurrencyType = "USD"
+                }
             }
         }
     }

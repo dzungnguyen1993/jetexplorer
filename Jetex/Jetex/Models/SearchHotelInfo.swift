@@ -29,6 +29,11 @@ class SearchHotelInfo: Object, Mappable  {
     
     convenience init (searchHotelInfo: SearchHotelInfo) {
         self.init()
+        self.city = searchHotelInfo.city
+        self.checkinDay = searchHotelInfo.checkinDay
+        self.checkoutDay = searchHotelInfo.checkoutDay
+        self.numberOfRooms = searchHotelInfo.numberOfRooms
+        self.numberOfGuest = searchHotelInfo.numberOfGuest
     }
     
     func mapping(map: Map) {

@@ -154,6 +154,7 @@ class HotelDetailsVC: BaseViewController {
                 if self.dealsView == nil {
                     self.dealsView = DealsView(frame: self.menuContentsView.bounds)
                     self.dealsView?.delegate = self
+                    self.bindDataForVouncherInMainSection(isViewLoaded: true, loadedHotelInfo: self.hotelInDetailResult)
                 } else {
                     // adjust the size if needed
                     self.adjustDealsViewFrameToFit()
@@ -214,6 +215,7 @@ class HotelDetailsVC: BaseViewController {
                 // create a dealsview if it is the first time
                 if self.amenitiesView == nil {
                     self.amenitiesView = AmenitiesView(frame: self.menuContentsView.bounds)
+                    self.bindDataForAmenitiesInMainSection(isViewLoaded: true, loadedHotelInfo: self.hotelInDetailResult)
                 } else {
                     self.adjustAmenitiesViewFrameToFit()
                 }
@@ -370,7 +372,24 @@ extension HotelDetailsVC {
             // view is not done loading yet, use info from previous view
         }
     }
-
+    
+    func bindDataForVouncherInMainSection(isViewLoaded: Bool, loadedHotelInfo: HotelinDetailResult? = nil) {
+        if isViewLoaded {
+            // view loaded, use detail info
+            self.dealsView?.bindingData(hotelInfo: loadedHotelInfo!)
+        } else {
+            // view is not done loading yet, use info from previous view
+        }
+    }
+    
+    func bindDataForAmenitiesInMainSection(isViewLoaded: Bool, loadedHotelInfo: HotelinDetailResult? = nil) {
+        if isViewLoaded {
+            // view loaded, use detail info
+            self.amenitiesView?.bindingData(hotelInfo: loadedHotelInfo!)
+        } else {
+            // view is not done loading yet, use info from previous view
+        }
+    }
 }
 
 
@@ -422,10 +441,6 @@ extension HotelDetailsVC {
                 
                 self.bindDataForHeroSection(isViewLoaded: true, initHotelInfo: nil, loadedHotelInfo: self.hotelInDetailResult)
                 self.bindDataForInfoSection(isViewLoaded: true, initHotelInfo: nil, loadedHotelInfo: self.hotelInDetailResult?.hotels.first)
-                
-                //TODO:
-                // 1. show the info that we have from previous scence. if we don't have that info, blur it
-                // 2. get the info in detail, update it when data is received.
             }
         }
 

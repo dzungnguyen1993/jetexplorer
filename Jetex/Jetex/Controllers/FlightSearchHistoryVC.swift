@@ -170,7 +170,35 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
                 _ = self.navigationController?.pushViewController(vc, animated: true)
             }
         } else if selectedCell.dataType == .Hotel {
+            var searchHotelInfo : SearchHotelInfo? = nil
             
+            try! realm.write {
+                searchHotelInfo = selectedCell.hotelHistory!.requestInfoFromSearch()
+            }
+            
+            if searchHotelInfo?.checkinDay?.compare(Date().dateByAddingDays(days: -1)) == ComparisonResult.orderedAscending {
+                // depart day is overdue. session expired.
+                let popup = PopupDialog(title: "Your search is too old!", message: "", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+                let cancel = CancelButton(title: "Okay", dismissOnTap: true, action: nil)
+                popup.addButton(cancel)
+                let search = DefaultButton(title: "Update the dates", dismissOnTap: true, action: {
+                    // go to searching vc
+                    (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 1, needResetToRootView: true, completion: { vc in
+                        if vc is HotelSearchVC {
+                            (vc as! HotelSearchVC).searchHotelInfo.city = searchHotelInfo!.city
+                            (vc as! HotelSearchVC).searchHotelInfo.numberOfGuest = searchHotelInfo!.numberOfGuest
+                            (vc as! HotelSearchVC).searchHotelInfo.numberOfRooms = searchHotelInfo!.numberOfRooms
+                            (vc as! HotelSearchVC).refreshViewSinceNewSearchingInfo()
+                        }
+                    })
+                })
+                popup.addButton(search)
+                self.present(popup, animated: true, completion: nil)
+            } else {
+                let vc = HotelResultVC(nibName: "HotelResultVC", bundle: nil)
+                vc.searchInfo = searchHotelInfo!
+                _ = self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }

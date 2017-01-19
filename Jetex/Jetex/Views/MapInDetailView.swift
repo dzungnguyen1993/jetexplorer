@@ -13,7 +13,7 @@ import AlamofireImage
 
 class MapInDetailView: UIView {
 
-    static let height : CGFloat = 300.0
+    static let height : CGFloat = 370.0
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mapView: MKMapView!

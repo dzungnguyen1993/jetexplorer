@@ -17,7 +17,10 @@ class DealsView: UIView {
     @IBOutlet weak var seeMoreView: UIView!
     @IBOutlet weak var seeMoreViewHeightConstraint: NSLayoutConstraint!
     
-    var dealsList: [String]! = ["1", "2", "3", "4", "5", "6", "7"]
+    //var dealsList: [String]! = ["1", "2", "3", "4", "5", "6", "7"]
+    
+    var hotelInfo: HotelinDetail?
+    var dealsList: [(AgentPrice, HotelAgent)] = []
     var minimumElementsShouldBeShown = 3
     var delegate : HotelDetailsVCDelegate?
     
@@ -42,6 +45,31 @@ class DealsView: UIView {
         initView()
     }
 
+    func bindingData(hotelInfo: HotelinDetailResult) {
+        self.hotelInfo = hotelInfo.hotels.first
+        dealsList = []
+        for price in hotelInfo.hotelPrices.first!.agentPrices {
+            // only show available-room deals
+            if price.availableRooms > 0 {
+                if let itsAgent = hotelInfo.findAgentForProvidedPrice(agentId: price.id) {
+                    dealsList.append((price, itsAgent))
+                }
+            }
+        }
+        self.dealsTableView.reloadData()
+        
+        if dealsList.count <= 3 {
+            // hide the see more button
+            self.seeMoreViewHeightConstraint.constant = 0
+            self.seeMoreView.alpha = 0
+            self.seeMoreView.layoutIfNeeded()
+            
+            let newHeight = dealsList.count * (142 + 8) + 16 // 16 is space to bottom
+            self.delegate?.resizeContentViewInScrollViewWithNewComponentHeight(newComponentHeight: CGFloat(newHeight)) {
+                self.delegate?.adjustDealsViewFrameToFit()
+            }
+        }
+    }
 
     @IBAction func viewMoreDealsButtonPressed(_ sender: Any) {
         // show all the elements
@@ -90,6 +118,8 @@ extension DealsView : UITableViewDelegate, UITableViewDataSource {
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dealsTableView.dequeueReusableCell(withIdentifier: "DealTableViewCell", for: indexPath) as! DealTableViewCell
+        
+        cell.bindData(of: self.hotelInfo!, withPrice: self.dealsList[indexPath.row].0, fromAgent: self.dealsList[indexPath.row].1)
         
         return cell
     }

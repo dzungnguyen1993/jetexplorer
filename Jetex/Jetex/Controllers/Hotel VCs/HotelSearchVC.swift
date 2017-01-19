@@ -38,7 +38,9 @@ class HotelSearchVC: BaseViewController {
         viewLocation.lbTitle.text = "Where ?"
         
         if (searchHotelInfo.city != nil) {
-            viewLocation.lbInfo.text = searchHotelInfo.city?.name
+            viewLocation.lbInfo.text = searchHotelInfo.city!.name
+            let country = DBManager.shared.getCountry(fromCity: searchHotelInfo.city!)
+            viewLocation.lbSubInfo.text = country?.name
         } else {
             viewLocation.lbInfo.text = "--"
         }
@@ -49,7 +51,11 @@ class HotelSearchVC: BaseViewController {
         self.showDateInfo()
         
         viewGuestRoom.lbTitle.text = "Guests & Rooms"
-        viewGuestRoom.lbInfo.text = "1 people, 1 room"
+        if searchHotelInfo != nil {
+            self.updateGuestAndRoomView()
+        } else {
+            viewGuestRoom.lbInfo.text = "1 person, 1 room"
+        }
     }
     
     @IBAction func search(_ sender: Any) {
@@ -93,6 +99,10 @@ class HotelSearchVC: BaseViewController {
         
         let tapGuestRoom = UITapGestureRecognizer(target: self, action: #selector(pickGuestRoom(sender:)))
         viewGuestRoom.addGestureRecognizer(tapGuestRoom)
+    }
+    
+    func refreshViewSinceNewSearchingInfo() {
+        initViews()
     }
     
     func saveSearchingInfoIntoHistory() {
@@ -206,16 +216,30 @@ extension HotelSearchVC: PickDateVCDelegate {
 }
 
 extension HotelSearchVC: PickGuestRoomVCDelegate {
+    
     func donePickGuestAndRoom(guest: Int, room: Int) {
         searchHotelInfo.numberOfGuest = guest
         searchHotelInfo.numberOfRooms = room
         
-        var text = guest.toString() + " people, "
-        if (room >= 2) {
-            text = text + room.toString() + " rooms"
+        updateGuestAndRoomView()
+    }
+    
+    func updateGuestAndRoomView() {
+        guard searchHotelInfo != nil else { return }
+        
+        var text = ""
+        if searchHotelInfo.numberOfGuest >= 2 {
+            text = text + searchHotelInfo.numberOfGuest.toString() + " people, "
         } else {
-            text = text + room.toString() + " room"
+            text = text + searchHotelInfo.numberOfGuest.toString() + " person, "
         }
+        
+        if (searchHotelInfo.numberOfRooms >= 2) {
+            text = text + searchHotelInfo.numberOfRooms.toString() + " rooms"
+        } else {
+            text = text + searchHotelInfo.numberOfRooms.toString() + " room"
+        }
+        
         viewGuestRoom.lbInfo.text = text
     }
     

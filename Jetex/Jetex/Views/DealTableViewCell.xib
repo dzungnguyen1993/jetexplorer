@@ -35,13 +35,7 @@
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="cYO-yD-ENw"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
-                        <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hp-SF-n1p">
-                        <rect key="frame" x="24" y="49" width="100.5" height="15"/>
-                        <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
-                        <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.32156862749999998" green="0.2156862745" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTg-ah-wNZ" customClass="SmallParagraphButton" customModule="Jetex" customModuleProvider="target">
@@ -53,6 +47,9 @@
                         <state key="normal" title="Go to Booking.com">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="goToBookingAgentButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CTK-1b-6Af"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD 250" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-AI-wkd">
                         <rect key="frame" x="303" y="28" width="80" height="12"/>
@@ -63,6 +60,12 @@
                         <color key="textColor" red="0.90980392160000001" green="0.3803921569" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ove-Ry-jp3">
+                        <rect key="frame" x="24" y="49" width="150" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="Tp6-o2-B1h"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="SaW-AI-wkd" secondAttribute="trailing" constant="16" id="2Md-VD-fxv"/>
@@ -71,15 +74,22 @@
                     <constraint firstItem="Hh4-KN-zlS" firstAttribute="top" secondItem="SaW-AI-wkd" secondAttribute="bottom" constant="8" id="Gdr-eJ-Ljz"/>
                     <constraint firstItem="kTg-ah-wNZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="Jyh-oR-8xo"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Hh4-KN-zlS" secondAttribute="trailing" constant="16" id="LoU-HP-Qic"/>
-                    <constraint firstItem="Hh4-KN-zlS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Hp-SF-n1p" secondAttribute="trailing" constant="8" id="PAr-FS-NhB"/>
+                    <constraint firstItem="Ove-Ry-jp3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="N88-qd-gTS"/>
+                    <constraint firstItem="Ove-Ry-jp3" firstAttribute="top" secondItem="sWJ-kg-LYp" secondAttribute="bottom" constant="8" id="RZr-4A-gOD"/>
                     <constraint firstItem="SaW-AI-wkd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sWJ-kg-LYp" secondAttribute="trailing" constant="8" id="U5N-5B-RTB"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kTg-ah-wNZ" secondAttribute="trailing" constant="16" id="a9W-lu-Lb0"/>
                     <constraint firstItem="sWJ-kg-LYp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="fOo-B1-qUf"/>
+                    <constraint firstItem="kTg-ah-wNZ" firstAttribute="top" secondItem="Ove-Ry-jp3" secondAttribute="bottom" constant="8" id="qKv-Yh-0dg"/>
                     <constraint firstItem="kTg-ah-wNZ" firstAttribute="top" secondItem="Hh4-KN-zlS" secondAttribute="bottom" constant="16" id="rFF-mY-mrl"/>
-                    <constraint firstItem="3Hp-SF-n1p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="uKg-Fg-orY"/>
-                    <constraint firstItem="3Hp-SF-n1p" firstAttribute="top" secondItem="sWJ-kg-LYp" secondAttribute="bottom" constant="8" id="zAX-9d-mpt"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="agentImageView" destination="Ove-Ry-jp3" id="bbf-ME-GZu"/>
+                <outlet property="goToAgentLinkButton" destination="kTg-ah-wNZ" id="k8b-KT-xMg"/>
+                <outlet property="hotelNameLabel" destination="sWJ-kg-LYp" id="Q8V-U5-Nsd"/>
+                <outlet property="hotelTotalPriceLabel" destination="Hh4-KN-zlS" id="Qu5-Xp-gJ9"/>
+                <outlet property="promoPriceLabel" destination="SaW-AI-wkd" id="LWN-uM-zAU"/>
+            </connections>
             <point key="canvasLocation" x="68.5" y="101"/>
         </tableViewCell>
     </objects>

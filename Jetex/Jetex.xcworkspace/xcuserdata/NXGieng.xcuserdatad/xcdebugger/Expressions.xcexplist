@@ -72,6 +72,9 @@
          contextName = "User.mapping(map : Map) -&gt; ():User.swift">
       </ContextState>
       <ContextState
+         contextName = "HotelHistorySearch.init(info : SearchHotelInfo, searchAt : Date?) -&gt; HotelHistorySearch:HotelHistorySearch.swift">
+      </ContextState>
+      <ContextState
          contextName = "ProfileVC.(signInUsingAccessToken(accessToken : String, atAPI : String, withPreLink : String) -&gt; ()).(closure #1):ProfileVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -105,10 +108,18 @@
          contextName = "FlightSearchHistoryVC.viewWillAppear(Bool) -&gt; ():FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "unSyncHistoryList[0]">
+               value = "unSyncHistoryList.count">
             </PersistentString>
             <PersistentString
-               value = "unSyncHistoryList.count">
+               value = "unSyncHistoryList[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.applicationDidBecomeActive(UIApplication) -&gt; ():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " ProfileVC.currentCurrencyType">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -181,13 +192,13 @@
          contextName = "FlightSearchHistoryVC.(viewWillAppear(Bool) -&gt; ()).(closure #1).(closure #1):FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.unSyncHistoryList[0]">
+               value = "self.historyList.count">
             </PersistentString>
             <PersistentString
                value = "searchesHistory.count">
             </PersistentString>
             <PersistentString
-               value = "self.historyList.count">
+               value = "self.unSyncHistoryList[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -201,6 +212,22 @@
       </ContextState>
       <ContextState
          contextName = "HistorySearch.toJSON() -&gt; [String : Any]:HistorySearch.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.applicationDidEnterBackground(UIApplication) -&gt; ():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " ProfileVC.currentCurrencyType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ProfileVC.imagePickerController(UIImagePickerController, didFinishPickingMediaWithInfo : [String : Any]) -&gt; ():ProfileVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "mainView.subviews">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "Map.subscript.getter:Map.swift">
@@ -221,14 +248,6 @@
          <PersistentStrings>
             <PersistentString
                value = "response.result.value">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ProfileVC.imagePickerController(UIImagePickerController, didFinishPickingMediaWithInfo : [String : Any]) -&gt; ():ProfileVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "mainView.subviews">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -314,10 +333,10 @@
                value = "(self.tabBarController as? TabBarController)?.selectedViewController as? BaseViewController">
             </PersistentString>
             <PersistentString
-               value = "resultVC.isKind(of: FlightSearchHistoryVC.self)">
+               value = "resultVC.navigationController?">
             </PersistentString>
             <PersistentString
-               value = "resultVC.navigationController?">
+               value = "resultVC.isKind(of: FlightSearchHistoryVC.self)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -328,12 +347,15 @@
                value = "response.header">
             </PersistentString>
             <PersistentString
-               value = "value as! [String: Any]">
-            </PersistentString>
-            <PersistentString
                value = "currentUser as! [String: Any]">
             </PersistentString>
+            <PersistentString
+               value = "value as! [String: Any]">
+            </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HotelSearchVC.saveSearchingInfoIntoHistory() -&gt; ():HotelSearchVC.swift">
       </ContextState>
       <ContextState
          contextName = "ProfileVC.(signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ()).(closure #1):ProfileVC.swift">
