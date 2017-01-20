@@ -265,10 +265,9 @@ extension HotelDetailsVC {
     
     func didTapTheImageInHero() {
         let vc = imageSlideShow.presentFullScreenController(from: self)
-        let screnSize = UIScreen.main.bounds.size
-        
+//        let screnSize = UIScreen.main.bounds.size
         UIView.animate(withDuration: 0.0) {
-            vc.closeButton.center = CGPoint(x: screnSize.width - 32, y: 48)
+            vc.closeButton.center = CGPoint(x: 24, y: 48)
         }
     }
     

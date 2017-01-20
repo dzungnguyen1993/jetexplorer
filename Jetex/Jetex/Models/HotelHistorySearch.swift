@@ -21,6 +21,8 @@ class HotelHistorySearch : Object, Mappable {
     dynamic var checkoutDate: String               = ""
     dynamic var checkinDateText: String            = ""
     dynamic var checkoutDateText: String           = ""
+    dynamic var countryId: String                  = ""
+    dynamic var countryName: String                = ""
     
     convenience init(info: SearchHotelInfo, searchAt searchTime: Date? = nil) {
         self.init()
@@ -35,6 +37,11 @@ class HotelHistorySearch : Object, Mappable {
         self.checkoutDate = info.checkoutDay!.toYYYYMMDDString()
         self.checkinDateText = info.checkinDay!.toFullMonthDay()
         self.checkoutDateText = info.checkoutDay!.toFullMonthDay()
+        self.countryId = info.city!.countryId
+        
+        if let countryName = DBManager.shared.getCountry(fromCity: info.city!) {
+            self.countryName = countryName.name
+        }
     }
     
     required convenience init?(map: Map) {
@@ -43,7 +50,16 @@ class HotelHistorySearch : Object, Mappable {
     }
     
     func mapping(map: Map) {
-        
+        hotelName <- map["hotelName"]
+        checkinDate <- map["dateIn"]
+        checkoutDate <- map["dateOut"]
+        numberOfRooms <- map["numRoom"]
+        numberOfGuests <- map["adult"]
+        checkinDateText <- map["dateInText"]
+        checkoutDateText <- map["dateoutText"]
+        cityId <- map["cityId"]
+        countryId <- map["country"]
+        countryName <- map["countryName"]
     }
     
     func requestInfoFromSearch() -> SearchHotelInfo {

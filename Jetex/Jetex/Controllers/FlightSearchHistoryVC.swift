@@ -102,7 +102,7 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
 //        _ = self.navigationController?.pushViewController(vc, animated: true)
         
         // go to profile vc
-        _ = (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 2)
+        _ = (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 3)
     }
     
     // MARK: - result table
@@ -152,8 +152,7 @@ class FlightSearchHistoryVC: BaseViewController, UITableViewDelegate, UITableVie
                             (vc as! FlightSearchVC).passengerInfo.passengers[0].value = (passengerInfo?.passengers[0].value)!
                             (vc as! FlightSearchVC).passengerInfo.passengers[1].value = (passengerInfo?.passengers[1].value)!
                             (vc as! FlightSearchVC).passengerInfo.passengers[2].value = (passengerInfo?.passengers[2].value)!
-//                            (vc as! FlightSearchVC).passengerInfo.passengers[3].value = (passengerInfo?.passengers[3].value)!
-//                            (vc as! FlightSearchVC).passengerInfo.passengers[4].value = (passengerInfo?.passengers[4].value)!
+
                             (vc as! FlightSearchVC).passengerInfo.flightClass = passengerInfo!.flightClass
                             (vc as! FlightSearchVC).updateCabinClassFromPassengerInfo()
                             (vc as! FlightSearchVC).loadViewLocation()

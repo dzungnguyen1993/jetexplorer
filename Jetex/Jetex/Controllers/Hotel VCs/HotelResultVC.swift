@@ -291,7 +291,7 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // show popup
         let loadingVC = InitialLoadingPopupVC(nibName: "InitialLoadingPopupVC", bundle: nil)
-        loadingVC.initView(title: "Loading", message: "Loading detail information for the hotel...")
+        loadingVC.initView(title: "Loading...", message: "Loading detail information for the hotel")
         
         let popUpVC = PopupDialog(viewController: loadingVC, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
         self.present(popUpVC, animated: true, completion: nil)

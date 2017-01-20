@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
+import Alamofire
+import PopupDialog
 
 class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,8 +20,11 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
     
     // MARK: - Data lists
     var allHistory: [HistorySearch]!
-    var flightHistory: [FlightHistorySearch]!
-    var hotelHistory: [HotelHistorySearch]!
+    var flightHistory: [HistorySearch]!
+    var hotelHistory: [HistorySearch]!
+    
+    var unSyncHistoryList : Results<HistorySearch>!
+    let realm = try! Realm()
     
     // MARK: - Filter
     enum HistorySearchingFilter {
@@ -39,28 +45,81 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
         
         // register cell prototype
         self.resultTableView.register(UINib(nibName: "HistoryCell", bundle: nil), forCellReuseIdentifier: "HistoryCell")
-        
-        // init mock data
-        initMockData()
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        if (!Utility.isConnectedToNetwork()) {
+            // no network
+            let vc = NetworkErrorVC(nibName: "NetworkErrorVC", bundle: nil)
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
+        
         // edit segment control font
         let attributes = [NSFontAttributeName: UIFont(name: GothamFontName.Book.rawValue, size: 12)!]
         self.historyTypeSegmentControl.setTitleTextAttributes(attributes, for: .normal)
         
+        // load data from local that is unsynced
+        unSyncHistoryList = realm.objects(HistorySearch.self).filter("isSynced == false")
+        
+        // load all data
+        allHistory = Array(realm.objects(HistorySearch.self))
+
         if ProfileVC.isUserLogined {
+            // User is loged in
             signInViewHeightConstraint.constant = 0.0
+            
+            // check if there is any searchHistory in nowhere, then sync
+            if unSyncHistoryList.count > 0 {
+                let dict = HistorySearch.historyListToJSON(historyList: self.allHistory)
+                NetworkManager.shared.syncHistoryToServer(historyData: dict, atView: self, showPopup: true, completion: { (success, searchesHistory) in
+                    if success {
+                        // delete all local history
+                        let realm = try! Realm()
+                        try! realm.write {
+                            for unsyncedSearch in self.unSyncHistoryList {
+                                unsyncedSearch.isSynced = true
+                            }
+                        }
+                        
+                        // reload data
+                        for search in searchesHistory! {
+                            if self.allHistory.contains(search) {
+                                continue
+                            } else {
+                                self.allHistory.append(search)
+                            }
+                        }
+                        
+                        self.allHistory = self.allHistory.sorted(by: { $0.id > $1.id })
+                        self.processHistoryData()
+                        self.resultTableView.reloadData()
+                    }
+                })
+            }
+            
         } else {
+            // User is not loged in, ask them to login
             signInViewHeightConstraint.constant = 120.0
+            //            // show the unsynced ones
+            //            allHistory = Array(unSyncHistoryList)
         }
         
+        // do a simple animation
         UIView.animate(withDuration: 0.25) {
             self.signInView.layoutIfNeeded()
             self.signInView.isHidden = ProfileVC.isUserLogined
+            self.signInView.alpha = ProfileVC.isUserLogined ? 0.0 : 1.0
         }
+        
+        // reload table view
+        self.allHistory = self.allHistory.sorted(by: { $0.id > $1.id })
+        self.processHistoryData()
+        self.resultTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,8 +130,11 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
     
     // MARK: - Sign In if dont login yet.
     @IBAction func signInButtonPressed(_ sender: AnyObject) {
-        let vc = SignInVC(nibName: "SignInVC", bundle: nil)
-        _ = self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = SignInVC(nibName: "SignInVC", bundle: nil)
+//        _ = self.navigationController?.pushViewController(vc, animated: true)
+        
+        // go to profile vc
+        _ = (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 3)
     }
     
     // MARK: - Segment functions
@@ -98,43 +160,23 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
     }
     
     // MARK: - result table
-    
-    func initMockData() {
-    /*
-        // mock up flights
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [2, 0, 1, 0, 0], departAt: Date().addingTimeInterval(-10000), returnAt: Date()))
+    func processHistoryData() {
+        self.flightHistory = []
+        self.hotelHistory = []
         
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Bangkok", countryName: "Thailand"), isRoundTrip: true, passengers: [1, 0, 1, 0, 0], departAt: Date().addingTimeInterval(-8000), returnAt: Date()))
-        
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Sysney", countryName: "Australia"), isRoundTrip: true, passengers: [1, 1, 1, 0, 0], departAt: Date().addingTimeInterval(-6000), returnAt: Date()))
-        
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [1, 0, 0, 0, 0], departAt: Date().addingTimeInterval(-4000), returnAt: Date()))
-        
-        flightHistory.append(FlightHistorySearch(from: City.init(cityName: "Ho Chi Minh", countryName: "Viet Name"), to: City.init(cityName: "Singapore", countryName: "Singapore"), isRoundTrip: true, passengers: [2, 0, 0, 0, 0], departAt: Date().addingTimeInterval(-2000), returnAt: Date()))
-        
-        // mock up hotels
-        hotelHistory.append(HotelHistorySearch(hotelName: "The Imperial", passengers: [2,0], checkInOn: Date().addingTimeInterval(-40000), checkOutOn: Date()))
-        
-        hotelHistory.append(HotelHistorySearch(hotelName: "The Romeliess", passengers: [2,0], checkInOn: Date().addingTimeInterval(-20000), checkOutOn: Date()))
-        
-        hotelHistory.append(HotelHistorySearch(hotelName: "Intercontinetal", passengers: [2,0], checkInOn: Date().addingTimeInterval(-10000), checkOutOn: Date()))
-        
-        hotelHistory.append(HotelHistorySearch(hotelName: "Diamond", passengers: [1,0], checkInOn: Date().addingTimeInterval(-2000), checkOutOn: Date()))
-        
-        // sum up to all
-        for flight in flightHistory {
-            allHistory.append(flight as HistorySearch)
+        for search in self.allHistory {
+            if search.dataType == .Flight {
+                self.flightHistory.append(search)
+            } else if search.dataType == .Hotel {
+                self.hotelHistory.append(search)
+            }
         }
-        for hotel in hotelHistory {
-            allHistory.append(hotel as HistorySearch)
-        }
-      */
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if filter == .All {
             // all searches
@@ -155,18 +197,18 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
         
         let cell = self.resultTableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryCell
         
-//        if filter == .All {
-//            // all searches
-//            cell.fillData(data: allHistory[indexPath.row])
-//        }
-//        if filter == .Flights {
-//            // flights searches
-//            cell.fillData(data: flightHistory[indexPath.row])
-//        }
-//        if filter == .Hotels {
-//            // hotels searches
-//            cell.fillData(data: hotelHistory[indexPath.row])
-//        }
+        if filter == .All {
+            // all searches
+            cell.fillData(data: allHistory[indexPath.row])
+        }
+        if filter == .Flights {
+            // flights searches
+            cell.fillData(data: flightHistory[indexPath.row])
+        }
+        if filter == .Hotels {
+            // hotels searches
+            cell.fillData(data: hotelHistory[indexPath.row])
+        }
         
         return cell
     }
@@ -176,30 +218,109 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        var selectedCell: HistorySearch!
+        var selectedCell: HistorySearch!
         
-//        if filter == .All {
-//            // all searches
-//            selectedCell = allHistory[indexPath.row]
-//        }
-//        else if filter == .Flights {
-//            // flights searches
-//            selectedCell = flightHistory[indexPath.row]
-//        }
-//        else if filter == .Hotels {
-//            // hotels searches
-//            selectedCell = hotelHistory[indexPath.row]
-//        }
-//        else {
-//            return
-//        }
-//        
-//        // Configure the view for the selected state
-//        if selectedCell.searchType == .Flight {
-//            let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
-//            _ = self.navigationController?.pushViewController(vc, animated: true)
-//        } else if selectedCell.searchType == .Hotel {
-//            
-//        }
+        if filter == .All {
+            // all searches
+            selectedCell = allHistory[indexPath.row]
+        }
+        else if filter == .Flights {
+            // flights searches
+            selectedCell = flightHistory[indexPath.row]
+        }
+        else if filter == .Hotels {
+            // hotels searches
+            selectedCell = hotelHistory[indexPath.row]
+        }
+        else {
+            return
+        }
+        
+        // Configure the view for the selected state
+        if selectedCell.dataType == .Flight {
+            var passengerInfo : PassengerInfo? = nil
+            
+            try! realm.write {
+                passengerInfo = selectedCell.flightHistory!.requestInfoFromPassenger()
+            }
+            
+            if passengerInfo?.departDay?.compare(Date().dateByAddingDays(days: -1)) == ComparisonResult.orderedAscending {
+                // depart day is overdue. session expired.
+                let popup = PopupDialog(title: "Your search is too old!", message: "", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+                let cancel = CancelButton(title: "Okay", dismissOnTap: true, action: nil)
+                popup.addButton(cancel)
+                let search = DefaultButton(title: "Update the dates", dismissOnTap: true, action: {
+                    // go to searching vc
+                    (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 0, needResetToRootView: true, completion: { vc in
+                        if vc is FlightSearchVC {
+                            (vc as! FlightSearchVC).passengerInfo.airportFrom = passengerInfo?.airportFrom
+                            (vc as! FlightSearchVC).passengerInfo.airportTo = passengerInfo?.airportTo
+                            (vc as! FlightSearchVC).passengerInfo.isRoundTrip = (passengerInfo?.isRoundTrip)!
+                            (vc as! FlightSearchVC).passengerInfo.passengers[0].value = (passengerInfo?.passengers[0].value)!
+                            (vc as! FlightSearchVC).passengerInfo.passengers[1].value = (passengerInfo?.passengers[1].value)!
+                            (vc as! FlightSearchVC).passengerInfo.passengers[2].value = (passengerInfo?.passengers[2].value)!
+                            
+                            (vc as! FlightSearchVC).passengerInfo.flightClass = passengerInfo!.flightClass
+                            (vc as! FlightSearchVC).updateCabinClassFromPassengerInfo()
+                            (vc as! FlightSearchVC).loadViewLocation()
+                            (vc as! FlightSearchVC).showNumberPassenger()
+                        }
+                    })
+                })
+                popup.addButton(search)
+                self.present(popup, animated: true, completion: nil)
+                
+            } else {
+                let vc = FlightResultVC(nibName: "FlightResultVC", bundle: nil)
+                vc.passengerInfo = passengerInfo!
+                _ = self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else if selectedCell.dataType == .Hotel {
+            var searchHotelInfo : SearchHotelInfo? = nil
+            
+            try! realm.write {
+                searchHotelInfo = selectedCell.hotelHistory!.requestInfoFromSearch()
+            }
+            
+            if !(searchHotelInfo != nil && searchHotelInfo!.city != nil && searchHotelInfo!.checkinDay != nil && searchHotelInfo!.checkoutDay != nil) {
+                
+                let popup = PopupDialog(title: "Your search is too old!", message: "", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+                let cancel = CancelButton(title: "Okay", dismissOnTap: true, action: nil)
+                popup.addButton(cancel)
+                let search = DefaultButton(title: "Make a new search", dismissOnTap: true, action: {
+                    // go to searching vc
+                    (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 1, needResetToRootView: true, completion: nil)
+                })
+                
+                popup.addButton(search)
+                self.present(popup, animated: true, completion: nil)
+                
+                return
+            }
+            
+            if searchHotelInfo?.checkinDay?.compare(Date().dateByAddingDays(days: -1)) == ComparisonResult.orderedAscending {
+                // depart day is overdue. session expired.
+                let popup = PopupDialog(title: "Your search is too old!", message: "", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+                let cancel = CancelButton(title: "Okay", dismissOnTap: true, action: nil)
+                popup.addButton(cancel)
+                let search = DefaultButton(title: "Update the dates", dismissOnTap: true, action: {
+                    // go to searching vc
+                    (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 1, needResetToRootView: true, completion: { vc in
+                        if vc is HotelSearchVC {
+                            (vc as! HotelSearchVC).searchHotelInfo.city = searchHotelInfo!.city
+                            (vc as! HotelSearchVC).searchHotelInfo.numberOfGuest = searchHotelInfo!.numberOfGuest
+                            (vc as! HotelSearchVC).searchHotelInfo.numberOfRooms = searchHotelInfo!.numberOfRooms
+                            (vc as! HotelSearchVC).refreshViewSinceNewSearchingInfo()
+                        }
+                    })
+                })
+                popup.addButton(search)
+                self.present(popup, animated: true, completion: nil)
+            } else {
+                let vc = HotelResultVC(nibName: "HotelResultVC", bundle: nil)
+                vc.searchInfo = searchHotelInfo!
+                _ = self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
