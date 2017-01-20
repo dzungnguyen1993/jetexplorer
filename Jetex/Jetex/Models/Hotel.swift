@@ -56,8 +56,25 @@ class Hotel: Mappable {
         let key = (imageObj?.key)!
         let values = imageObj?.value
         
-        let imageItem = values?.first
-        let imageKey = (imageItem?.key)!
+//        let imageItem = values?.first
+//        let imageKey = (imageItem?.key)!
+//        
+        // find image with highest resolution
+        var imageKey: String = ""
+        var highestResolution: Int = 0
+        for imageInfo in values! {
+            let resArr = imageInfo.value
+            var res = 1
+            
+            for number in resArr {
+                res = res * number
+            }
+            
+            if res > highestResolution {
+                highestResolution = res
+                imageKey = imageInfo.key
+            }
+        }
         
         let imageUrl = imageUrls.first
         guard imageUrls.count > 0 else {
