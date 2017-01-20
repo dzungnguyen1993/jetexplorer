@@ -22,7 +22,7 @@ struct APIURL {
         static let changePassword = "/api/users/password"
         static let forgotPassword = "/api/auth/forgot"
         static let changeAvatar = "/api/users/picture"
-        static let changeCurrency = "/api/users/currency"
+        static let updateCurrency = "/api/users/currency"
         static let createSubscribe = "/api/subscribe-email"
         static let checkSubscribe = "/api/check-subscribed-email"
         static let editSubscribe = "/api/edit-status-subscribe-email"

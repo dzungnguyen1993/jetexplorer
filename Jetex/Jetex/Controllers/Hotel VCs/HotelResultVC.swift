@@ -40,6 +40,7 @@ class HotelResultVC: BaseViewController {
     
     var isShowCheapest: Bool!
     var isShowDetailsBefore: Bool!
+    var currentSearchedCurrency: String = "USD"
     
     @IBOutlet weak var lbCity: UILabel!
     @IBOutlet weak var lbCountry: UILabel!
@@ -74,10 +75,12 @@ class HotelResultVC: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        guard searchResult == nil else {
-            return
+        if (searchResult != nil) {
+            if (ProfileVC.currentCurrencyType == currentSearchedCurrency) {
+                return
+            }
         }
-
+        
         searchForHotels()
         // setup filter
    
@@ -106,6 +109,7 @@ class HotelResultVC: BaseViewController {
             
             if (isSuccess) {
                 loadingVC.updateProgress(percent: 90)
+                self.currentSearchedCurrency = ProfileVC.currentCurrencyType
                 self.searchResult = ResponseParser.shared.parseHotelSearchResponse(data: data as! NSDictionary)
                 loadingVC.updateProgress(percent: 100, completion: {
                     popup.dismiss()

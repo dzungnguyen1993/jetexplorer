@@ -31,8 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Restore current currency
         let nsDefault = UserDefaults()
+        
         if let currentCurrency = nsDefault.value(forKey: "currentCurrency") as? String {
             ProfileVC.currentCurrencyType = currentCurrency
+        }
+        
+        if let isUserLogedIn = nsDefault.value(forKey: "isUserLogedin") as? Bool {
+            ProfileVC.isUserLogined = isUserLogedIn
         }
         
         // set up pop up appearance
@@ -88,6 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Save the current currency
         let nsDefault = UserDefaults()
         nsDefault.set(ProfileVC.currentCurrencyType, forKey: "currentCurrency")
+        nsDefault.set(ProfileVC.isUserLogined, forKey: "isUserLogedin")
         nsDefault.synchronize()
     }
 
@@ -102,6 +108,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let currentCurrency = nsDefault.value(forKey: "currentCurrency") as? String {
             ProfileVC.currentCurrencyType = currentCurrency
         }
+        if let isUserLogedIn = nsDefault.value(forKey: "isUserLogedin") as? Bool {
+            ProfileVC.isUserLogined = isUserLogedIn
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -110,6 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Save the current currency
         let nsDefault = UserDefaults()
         nsDefault.set(ProfileVC.currentCurrencyType, forKey: "currentCurrency")
+        nsDefault.set(ProfileVC.isUserLogined, forKey: "isUserLogedin")
         nsDefault.synchronize()
     }
 

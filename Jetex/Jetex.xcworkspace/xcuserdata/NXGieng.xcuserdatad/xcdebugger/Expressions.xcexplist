@@ -63,6 +63,14 @@
          contextName = "HistorySearch.init(type : HistorySearchType, flight : FlightHistorySearch?, hotel : HotelHistorySearch?) -&gt; HistorySearch:HistorySearch.swift">
       </ContextState>
       <ContextState
+         contextName = "CitySearchVC.textFieldDidChanged(UITextField) -&gt; ():CitySearchVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lastTimeTextChanged.timeIntervalSinceNow">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "FlightSearchHistoryVC.viewDidLoad() -&gt; ():FlightSearchHistoryVC.swift">
       </ContextState>
       <ContextState
@@ -108,10 +116,10 @@
          contextName = "FlightSearchHistoryVC.viewWillAppear(Bool) -&gt; ():FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "unSyncHistoryList.count">
+               value = "unSyncHistoryList[0]">
             </PersistentString>
             <PersistentString
-               value = "unSyncHistoryList[0]">
+               value = "unSyncHistoryList.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -192,13 +200,13 @@
          contextName = "FlightSearchHistoryVC.(viewWillAppear(Bool) -&gt; ()).(closure #1).(closure #1):FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.historyList.count">
+               value = "self.unSyncHistoryList[0]">
             </PersistentString>
             <PersistentString
                value = "searchesHistory.count">
             </PersistentString>
             <PersistentString
-               value = "self.unSyncHistoryList[0]">
+               value = "self.historyList.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -220,6 +228,9 @@
                value = " ProfileVC.currentCurrencyType">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HotelResultVC.showHeaderInfo() -&gt; ():HotelResultVC.swift">
       </ContextState>
       <ContextState
          contextName = "ProfileVC.imagePickerController(UIImagePickerController, didFinishPickingMediaWithInfo : [String : Any]) -&gt; ():ProfileVC.swift">
@@ -327,18 +338,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "FlightSearchHistoryVC.(tableView(UITableView, didSelectRowAt : IndexPath) -&gt; ()).(closure #2).(closure #1):FlightSearchHistoryVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "(self.tabBarController as? TabBarController)?.selectedViewController as? BaseViewController">
-            </PersistentString>
-            <PersistentString
-               value = "resultVC.navigationController?">
-            </PersistentString>
-            <PersistentString
-               value = "resultVC.isKind(of: FlightSearchHistoryVC.self)">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "HotelSearchVC.saveSearchingInfoIntoHistory() -&gt; ():HotelSearchVC.swift">
       </ContextState>
       <ContextState
          contextName = "SignInVC.(signInButtonPressed(AnyObject) -&gt; ()).(closure #1):SignInVCViewController.swift">
@@ -347,15 +347,26 @@
                value = "response.header">
             </PersistentString>
             <PersistentString
-               value = "currentUser as! [String: Any]">
+               value = "value as! [String: Any]">
             </PersistentString>
             <PersistentString
-               value = "value as! [String: Any]">
+               value = "currentUser as! [String: Any]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HotelSearchVC.saveSearchingInfoIntoHistory() -&gt; ():HotelSearchVC.swift">
+         contextName = "FlightSearchHistoryVC.(tableView(UITableView, didSelectRowAt : IndexPath) -&gt; ()).(closure #2).(closure #1):FlightSearchHistoryVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(self.tabBarController as? TabBarController)?.selectedViewController as? BaseViewController">
+            </PersistentString>
+            <PersistentString
+               value = "resultVC.isKind(of: FlightSearchHistoryVC.self)">
+            </PersistentString>
+            <PersistentString
+               value = "resultVC.navigationController?">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "ProfileVC.(signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ()).(closure #1):ProfileVC.swift">

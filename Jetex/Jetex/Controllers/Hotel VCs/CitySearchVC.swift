@@ -28,6 +28,8 @@ class CitySearchVC: BaseViewController {
     var realm : Realm!
     var allCities: Results<City>! = nil
     
+    var lastTimeTextChanged = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,6 +69,12 @@ class CitySearchVC: BaseViewController {
         if sender.text == "" {
             citiesSearchResult.removeAll()
         } else {
+//            
+//            if lastTimeTextChanged.timeIntervalSinceNow > -1.0 {
+//                lastTimeTextChanged = Date()
+//                return
+//            }
+//            
             self.citiesSearchResult = allCities.filter { (city) -> Bool in
                 
                 let name = city.name

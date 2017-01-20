@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Alamofire
 
 class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -54,11 +55,22 @@ class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDe
                     currentUser.currency = selectedCurrency
                 }
                 ProfileVC.currentCurrencyType = selectedCurrency
+                
+                // update it to server
+                let param = [
+                    "currency" : selectedCurrency
+                ]
+                
+                let url = APIURL.JetExAPI.base + APIURL.JetExAPI.updateCurrency
+                Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).responseJSON { (data) in
+                    if let res = data.result.value as? [String : String] {
+                        print(res)
+                    }
+                }
             }
         } else {
             ProfileVC.currentCurrencyType = selectedCurrency
         }
-        // update it to server
         
         _ = self.navigationController?.popViewController(animated: true)
     }
