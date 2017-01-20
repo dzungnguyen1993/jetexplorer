@@ -193,7 +193,9 @@ class HotelResultVC: BaseViewController {
         let vc = MapFullScreenVC(nibName: "MapFullScreenVC", bundle: nil)
         vc.searchInfo = self.searchInfo
         vc.mapType = .cityMap
-//        self.navigationController?.pushViewController(vc, animated: true)
+        vc.searchHotelResult = self.searchResult
+        vc.delegate = self
+        
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -301,14 +303,13 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
         self.present(popUpVC, animated: true, completion: nil)
         
         //load detail first
-        self.getHotelInfoInDetail(hotelId: self.hotels[indexPath.row].id) { (result) in
+        HotelResultVC.getHotelInfoInDetail(hotelId: self.hotels[indexPath.row].id) { (result) in
             popUpVC.dismiss()
             if let result = result {
                 let vc = HotelDetailsVC(nibName: "HotelDetailsVC", bundle: nil)
                 vc.searchInfo = self.searchInfo
-                vc.hotel = self.hotels[indexPath.row]
-                vc.hotelInDetailResult = result
                 vc.pickedHotel = self.hotels[indexPath.row]
+                vc.hotelInDetailResult = result
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {
                 let popUpVC = PopupDialog(title: "Fail", message: "Couldn't load detail information for the hotel, please try again!")
@@ -319,9 +320,12 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+protocol HotelResultVCDelegate {
+    func goToViewController(viewController: BaseViewController)
+}
 
 // load data
-extension HotelResultVC {
+extension HotelResultVC : HotelResultVCDelegate {
     func loadResultData() {
         if (isShowCheapest == true) {
             hotels = self.searchResult.cheapestHotels
@@ -337,7 +341,7 @@ extension HotelResultVC {
         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
-    func getHotelInfoInDetail(hotelId: Int, completion: ((HotelinDetailResult?) -> Void)? = nil) {
+    class func getHotelInfoInDetail(hotelId: Int, completion: ((HotelinDetailResult?) -> Void)? = nil) {
         let url = "\(APIURL.JetExAPI.base)\(APIURL.JetExAPI.getHotelDetailInfo)/\(hotelId)"
         
         Alamofire.request(url, method: .get, parameters: nil).responseJSON { (response) in
@@ -346,7 +350,10 @@ extension HotelResultVC {
                 completion?(hotelInDetailResult)
             }
         }
-        
+    }
+    
+    func goToViewController(viewController: BaseViewController) {
+        _ = self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

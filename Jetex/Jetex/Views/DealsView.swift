@@ -48,14 +48,20 @@ class DealsView: UIView {
     func bindingData(hotelInfo: HotelinDetailResult) {
         self.hotelInfo = hotelInfo.hotels.first
         dealsList = []
-        for price in hotelInfo.hotelPrices.first!.agentPrices {
-            // only show available-room deals
-            if price.availableRooms > 0 {
-                if let itsAgent = hotelInfo.findAgentForProvidedPrice(agentId: price.id) {
-                    dealsList.append((price, itsAgent))
+        
+        for prices in hotelInfo.hotelPrices {
+            for price in prices.agentPrices {
+                // only show available-room deals
+                if price.availableRooms > 0 {
+                    if let itsAgent = hotelInfo.findAgentForProvidedPrice(agentId: price.id) {
+                        dealsList.append((price, itsAgent))
+                    }
                 }
             }
         }
+        
+        // sort increasing
+        self.dealsList.sort {$0.0.priceTotal < $1.0.priceTotal}
         self.dealsTableView.reloadData()
         
         if dealsList.count <= 3 {
@@ -119,7 +125,7 @@ extension DealsView : UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dealsTableView.dequeueReusableCell(withIdentifier: "DealTableViewCell", for: indexPath) as! DealTableViewCell
         
-        cell.bindData(of: self.hotelInfo!, withPrice: self.dealsList[indexPath.row].0, fromAgent: self.dealsList[indexPath.row].1)
+        cell.bindData(of: self.hotelInfo!, withPrice: self.dealsList[indexPath.section].0, fromAgent: self.dealsList[indexPath.section].1)
         
         return cell
     }

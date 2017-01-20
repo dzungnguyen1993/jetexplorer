@@ -21,7 +21,6 @@ class HotelDetailsVC: BaseViewController {
     
     var searchInfo: SearchHotelInfo!
     var searchResult: SearchHotelResult!
-    var hotel: Hotel!
     var hotelInDetailResult: HotelinDetailResult?
     var pickedHotel: Hotel!
 
@@ -260,7 +259,7 @@ extension HotelDetailsVC {
         imageSlideShow.addGestureRecognizer(gestureRecognizer)
         
         // bind initial data
-        bindDataForHeroSection(isViewLoaded: false, initHotelInfo: self.hotel, loadedHotelInfo: nil)
+        bindDataForHeroSection(isViewLoaded: false, initHotelInfo: self.pickedHotel, loadedHotelInfo: nil)
     }
     
     func didTapTheImageInHero() {
@@ -337,6 +336,7 @@ extension HotelDetailsVC {
             }
             
             self.starsCountLabel.text = stars
+            self.hotelNameLabel.text = loadedHotelInfo!.name
             self.hotelAddressLabel.text = loadedHotelInfo!.address
             self.hotelShortDescriptionLabel.text = loadedHotelInfo!.description
             
@@ -432,7 +432,7 @@ extension HotelDetailsVC: HotelDetailsVCDelegate {
 // MARK: - Database for Detail
 extension HotelDetailsVC {
     func getHotelInfoInDetail() {
-        let url = "\(APIURL.JetExAPI.base)\(APIURL.JetExAPI.getHotelDetailInfo)/\(hotel.id)"
+        let url = "\(APIURL.JetExAPI.base)\(APIURL.JetExAPI.getHotelDetailInfo)/\(pickedHotel.id)"
         
         Alamofire.request(url, method: .get, parameters: nil).responseJSON { (response) in
             if let data = response.result.value as? [String: Any] {

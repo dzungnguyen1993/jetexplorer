@@ -18,6 +18,7 @@ class MapInDetailView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var staticMapImageView: UIImageView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     var delegate : HotelDetailsVCDelegate?
     var width : CGFloat = 0.0
@@ -50,9 +51,14 @@ class MapInDetailView: UIView {
         staticMapUrl += "key=\(APIURL.GoogleAPI.mapKey)"
         
         let mapUrl = URL(string: staticMapUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+        loadingIndicator.startAnimating()
         
         // load image
         Alamofire.request(mapUrl).responseImage { response in
+            // stop then hide the indicator
+            self.loadingIndicator.stopAnimating()
+            self.loadingIndicator.isHidden = true
+            
             if let image = response.result.value {
                 self.staticMapImageView.image = image
             } else {

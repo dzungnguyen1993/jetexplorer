@@ -63,6 +63,9 @@
          contextName = "HistorySearch.init(type : HistorySearchType, flight : FlightHistorySearch?, hotel : HotelHistorySearch?) -&gt; HistorySearch:HistorySearch.swift">
       </ContextState>
       <ContextState
+         contextName = "DealTableViewCell.bindData(of : HotelinDetail, withPrice : AgentPrice, fromAgent : HotelAgent) -&gt; ():DealTableViewCell.swift">
+      </ContextState>
+      <ContextState
          contextName = "CitySearchVC.textFieldDidChanged(UITextField) -&gt; ():CitySearchVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -75,6 +78,14 @@
       </ContextState>
       <ContextState
          contextName = "ProfileVC.signInWithFacebook() -&gt; ():ProfileVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DealsView.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:DealsView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "User.mapping(map : Map) -&gt; ():User.swift">
@@ -90,6 +101,14 @@
             </PersistentString>
             <PersistentString
                value = "response.result.value as? [String:Any]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MapFullScreenVC.(mapView(GMSMapView, didTapInfoWindowOf : GMSMarker) -&gt; ()).(closure #1).(closure #1):MapFullScreenVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController?">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -116,10 +135,10 @@
          contextName = "FlightSearchHistoryVC.viewWillAppear(Bool) -&gt; ():FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "unSyncHistoryList[0]">
+               value = "unSyncHistoryList.count">
             </PersistentString>
             <PersistentString
-               value = "unSyncHistoryList.count">
+               value = "unSyncHistoryList[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -147,6 +166,17 @@
                value = "self.detailScrollView.subviews[0].subviews">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Utility.distance(lat1 : Double, lon1 : Double, lat2 : Double, lon2 : Double) -&gt; Double:Utility.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "12742 * asin(sqrt(a))">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DealsView.bindingData(hotelInfo : HotelinDetailResult) -&gt; ():DealsView.swift">
       </ContextState>
       <ContextState
          contextName = "EditProfileVC.(tableView(UITableView, didSelectRowAt : IndexPath) -&gt; ()).(closure #1).(closure #1):EditProfileVC.swift">
@@ -200,13 +230,13 @@
          contextName = "FlightSearchHistoryVC.(viewWillAppear(Bool) -&gt; ()).(closure #1).(closure #1):FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.unSyncHistoryList[0]">
+               value = "self.historyList.count">
             </PersistentString>
             <PersistentString
                value = "searchesHistory.count">
             </PersistentString>
             <PersistentString
-               value = "self.historyList.count">
+               value = "self.unSyncHistoryList[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -347,10 +377,10 @@
                value = "response.header">
             </PersistentString>
             <PersistentString
-               value = "value as! [String: Any]">
+               value = "currentUser as! [String: Any]">
             </PersistentString>
             <PersistentString
-               value = "currentUser as! [String: Any]">
+               value = "value as! [String: Any]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -361,10 +391,10 @@
                value = "(self.tabBarController as? TabBarController)?.selectedViewController as? BaseViewController">
             </PersistentString>
             <PersistentString
-               value = "resultVC.isKind(of: FlightSearchHistoryVC.self)">
+               value = "resultVC.navigationController?">
             </PersistentString>
             <PersistentString
-               value = "resultVC.navigationController?">
+               value = "resultVC.isKind(of: FlightSearchHistoryVC.self)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
