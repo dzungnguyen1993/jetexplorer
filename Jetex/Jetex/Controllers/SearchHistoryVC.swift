@@ -253,8 +253,18 @@ class SearchHistoryVC: BaseViewController, UITableViewDelegate, UITableViewDataS
                     // go to searching vc
                     (self.tabBarController as? TabBarController)?.animateToTab(toIndex: 0, needResetToRootView: true, completion: { vc in
                         if vc is FlightSearchVC {
-                            (vc as! FlightSearchVC).passengerInfo.airportFrom = passengerInfo?.airportFrom
-                            (vc as! FlightSearchVC).passengerInfo.airportTo = passengerInfo?.airportTo
+                            if let airportFrom = passengerInfo?.airportFrom, let airportTo = passengerInfo?.airportTo {
+                                (vc as! FlightSearchVC).passengerInfo.airportFrom = airportFrom
+                                (vc as! FlightSearchVC).passengerInfo.airportTo = airportTo
+                            } else {
+                                (vc as! FlightSearchVC).passengerInfo.airportFrom = nil
+                                (vc as! FlightSearchVC).passengerInfo.airportTo = nil
+                                let popup = PopupDialog(title: "Oops!", message: "Due to the changes of database. Please choose where you wanna go again.", image: nil, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+                                let cancel = CancelButton(title: "Okay", dismissOnTap: true, action: nil)
+                                popup.addButton(cancel)
+                                vc.present(popup, animated: true, completion: nil)
+                            }
+                            
                             (vc as! FlightSearchVC).passengerInfo.isRoundTrip = (passengerInfo?.isRoundTrip)!
                             (vc as! FlightSearchVC).passengerInfo.passengers[0].value = (passengerInfo?.passengers[0].value)!
                             (vc as! FlightSearchVC).passengerInfo.passengers[1].value = (passengerInfo?.passengers[1].value)!

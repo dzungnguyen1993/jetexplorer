@@ -52,7 +52,7 @@ class MapFullScreenVC: BaseViewController {
         let marker = GMSMarker()
         if (self.mapType == .cityMap) {
             // list all hotels in city
-            marker.position = CLLocationCoordinate2D(latitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!)
+//            marker.position = CLLocationCoordinate2D(latitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!)
             camera = GMSCameraPosition.camera(withLatitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!, zoom: 14.0)
             markersList = generateMarkersForHotelsAroundCenter(hotels: self.searchHotelResult!.hotels, for: mapView, centerLatitude: cityLocation!.0, centerLongitude: cityLocation!.1)
         } else {
