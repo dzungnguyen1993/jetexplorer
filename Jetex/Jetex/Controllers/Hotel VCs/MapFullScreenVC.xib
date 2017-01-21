@@ -29,6 +29,7 @@
                 <outlet property="lbGuest" destination="W3g-54-2pU" id="3BK-Nt-j9x"/>
                 <outlet property="lbRoom" destination="riZ-oY-zvK" id="jIE-h8-W27"/>
                 <outlet property="mapView" destination="NMo-CU-Fhz" id="L8x-fQ-quS"/>
+                <outlet property="searchHereButton" destination="ZMH-cA-jqS" id="EFP-ay-bwc"/>
                 <outlet property="view" destination="Je9-FP-1h9" id="juo-7U-lvL"/>
                 <outlet property="viewDateDepart" destination="fTU-QB-Rpa" id="wqr-Ev-Kkv"/>
                 <outlet property="viewDateReturn" destination="8oa-00-hxE" id="CvZ-uP-AzG"/>

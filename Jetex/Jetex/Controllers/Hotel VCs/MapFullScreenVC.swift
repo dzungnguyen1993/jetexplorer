@@ -39,6 +39,7 @@ class MapFullScreenVC: BaseViewController {
     @IBOutlet weak var lbRoom: UILabel!
     
     @IBOutlet weak var imgCancel: UIImageView!
+    @IBOutlet weak var searchHereButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +52,17 @@ class MapFullScreenVC: BaseViewController {
         // Creates a marker in the center of the map.
         let marker = GMSMarker()
         if (self.mapType == .cityMap) {
+            // show search here button
+            self.searchHereButton.isHidden = false
+            
             // list all hotels in city
 //            marker.position = CLLocationCoordinate2D(latitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!)
             camera = GMSCameraPosition.camera(withLatitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!, zoom: 14.0)
             markersList = generateMarkersForHotelsAroundCenter(hotels: self.searchHotelResult!.hotels, for: mapView, centerLatitude: cityLocation!.0, centerLongitude: cityLocation!.1)
         } else {
+            // hide search here button
+            self.searchHereButton.isHidden = true
+            
             // show only hotel that is selected
             marker.position = CLLocationCoordinate2D(latitude: hotel!.latitude, longitude: hotel!.longitude)
             camera = GMSCameraPosition.camera(withLatitude: hotel!.latitude, longitude: hotel!.longitude, zoom: 18.0)
