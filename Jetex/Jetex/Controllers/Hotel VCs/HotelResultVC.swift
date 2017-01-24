@@ -216,9 +216,9 @@ extension HotelResultVC {
         viewDateReturn.lbMonth.text = searchInfo.checkoutDay?.toMonth()
         lbGuest.text = searchInfo.numberOfGuest.toString()
         if (searchInfo.numberOfRooms == 1) {
-            lbRoom.text = searchInfo.numberOfRooms.toString() + "room"
+            lbRoom.text = searchInfo.numberOfRooms.toString() + " room"
         } else {
-            lbRoom.text = searchInfo.numberOfRooms.toString() + "rooms"
+            lbRoom.text = searchInfo.numberOfRooms.toString() + " rooms"
         }
         
     }
@@ -270,7 +270,7 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         
         // download image
-        cell.hotelImg.image = nil
+        cell.hotelImg.image = UIImage(named: "placeholder")
         Alamofire.request(hotel.getImageUrl()).responseImage { response in
             if let image = response.result.value {
                 let cell = self.tableView.cellForRow(at: indexPath) as? HotelResultCell

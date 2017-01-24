@@ -172,6 +172,7 @@
 		B9BF3F341DF7F26100FFE064 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BF3F331DF7F26100FFE064 /* dot.png */; };
 		B9C197741DE1F4900084B8BF /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C197721DE1F4900084B8BF /* DestinationView.swift */; };
 		B9C197751DE1F4900084B8BF /* DestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C197731DE1F4900084B8BF /* DestinationView.xib */; };
+		B9C959C61E374002009B81F8 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C959C51E374002009B81F8 /* placeholder.png */; };
 		B9CAE9CA1DE1973300A149BD /* FilterFlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CAE9C91DE1973300A149BD /* FilterFlightView.swift */; };
 		B9CAE9CC1DE1973F00A149BD /* FilterFlightView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9CAE9CB1DE1973F00A149BD /* FilterFlightView.xib */; };
 		B9CAE9CE1DE197D600A149BD /* letter-x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9CAE9CD1DE197D600A149BD /* letter-x.png */; };
@@ -441,6 +442,7 @@
 		B9BF3F331DF7F26100FFE064 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		B9C197721DE1F4900084B8BF /* DestinationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		B9C197731DE1F4900084B8BF /* DestinationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationView.xib; sourceTree = "<group>"; };
+		B9C959C51E374002009B81F8 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		B9CAE9C91DE1973300A149BD /* FilterFlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterFlightView.swift; sourceTree = "<group>"; };
 		B9CAE9CB1DE1973F00A149BD /* FilterFlightView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterFlightView.xib; sourceTree = "<group>"; };
 		B9CAE9CD1DE197D600A149BD /* letter-x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "letter-x.png"; sourceTree = "<group>"; };
@@ -814,6 +816,7 @@
 		B96BAC641DD1C4AA00AE79AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9C959C51E374002009B81F8 /* placeholder.png */,
 				B9BF3F331DF7F26100FFE064 /* dot.png */,
 				2831EB1E1DE40EA5003EEB07 /* handsomeGieng.jpg */,
 				B92F8BCD1DE20A810039C153 /* filter.png */,
@@ -1223,6 +1226,7 @@
 				28BAD00B1DE0DFCA0008032D /* PickPassengerCell.xib in Resources */,
 				B9D9045B1DD8C102008C8720 /* EPCalendarCell1.xib in Resources */,
 				B9C197751DE1F4900084B8BF /* DestinationView.xib in Resources */,
+				B9C959C61E374002009B81F8 /* placeholder.png in Resources */,
 				B9F445EE1DD4D6DF00250D6C /* Gotham-MediumIta.otf in Resources */,
 				B9F445EC1DD4D6DF00250D6C /* Gotham-LightIta.otf in Resources */,
 				B9EE7A7A1DDDED8100A82AEE /* FlightResultDetailsView.xib in Resources */,
