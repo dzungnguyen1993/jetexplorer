@@ -16,6 +16,7 @@ class DealsView: UIView {
     @IBOutlet weak var dealsTableView: UITableView!
     @IBOutlet weak var seeMoreView: UIView!
     @IBOutlet weak var seeMoreViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var outOfRoomLabel: UILabel!
     
     //var dealsList: [String]! = ["1", "2", "3", "4", "5", "6", "7"]
     
@@ -70,7 +71,14 @@ class DealsView: UIView {
             self.seeMoreView.alpha = 0
             self.seeMoreView.layoutIfNeeded()
             
-            let newHeight = dealsList.count * (142 + 8) + 16 // 16 is space to bottom
+            var newHeight = dealsList.count * (142 + 8) + 16 // 16 is space to bottom
+            
+            if dealsList.count <= 0 {
+                // empty room
+                self.outOfRoomLabel.isHidden = false
+                newHeight = 224
+            }
+            
             DealsView.height = CGFloat(newHeight)
             self.delegate?.resizeContentViewInScrollViewWithNewComponentHeight(newComponentHeight: CGFloat(newHeight)) {
                 self.delegate?.adjustDealsViewFrameToFit()

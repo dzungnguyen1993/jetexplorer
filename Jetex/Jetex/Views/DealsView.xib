@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Gotham-Bold.otf">
+            <string>Gotham-Bold</string>
+        </array>
         <array key="Gotham-Book.otf">
             <string>Gotham-Book</string>
         </array>
@@ -17,6 +20,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Iyi-ty-enm"/>
                 <outlet property="dealsTableView" destination="jxG-0K-w4D" id="wiD-TX-WuP"/>
+                <outlet property="outOfRoomLabel" destination="wzT-oa-ZCn" id="6JA-WH-65X"/>
                 <outlet property="seeMoreView" destination="8bE-yC-e9F" id="IDp-Lx-N3n"/>
                 <outlet property="seeMoreViewHeightConstraint" destination="q0b-Cg-j9S" id="h48-s2-Mu2"/>
             </connections>
@@ -66,15 +70,23 @@
                         <constraint firstAttribute="height" constant="108" id="q0b-Cg-j9S"/>
                     </constraints>
                 </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This hotel is out of room!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzT-oa-ZCn">
+                    <rect key="frame" x="79" y="215" width="216.5" height="17"/>
+                    <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
+                    <color key="textColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
+                <constraint firstItem="wzT-oa-ZCn" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="58k-wg-vHe"/>
                 <constraint firstAttribute="trailing" secondItem="jxG-0K-w4D" secondAttribute="trailing" constant="8" id="Kav-jp-YKB"/>
                 <constraint firstAttribute="bottom" secondItem="8bE-yC-e9F" secondAttribute="bottom" id="Q0V-pC-tO2"/>
                 <constraint firstItem="8bE-yC-e9F" firstAttribute="top" secondItem="jxG-0K-w4D" secondAttribute="bottom" id="Wbv-a4-BIi"/>
                 <constraint firstItem="jxG-0K-w4D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="bhk-aV-R9f"/>
                 <constraint firstAttribute="trailing" secondItem="8bE-yC-e9F" secondAttribute="trailing" id="dAd-Df-T88"/>
                 <constraint firstItem="8bE-yC-e9F" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hSq-WO-4hN"/>
+                <constraint firstItem="wzT-oa-ZCn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="l1B-j6-fGP"/>
                 <constraint firstItem="jxG-0K-w4D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uIg-uk-cPZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
