@@ -32,7 +32,7 @@ public class AlamofireSource: NSObject, InputSource {
     }
 
     public func load(to imageView: UIImageView, with callback: @escaping (UIImage) -> ()) {
-        imageView.af_setImage(withURL: self.url, placeholderImage: nil, filter: nil, progress: nil) { (response) in
+        imageView.af_setImage(withURL: self.url, placeholderImage: UIImage(named: "placeholder"), filter: nil, progress: nil) { (response) in
             imageView.image = response.result.value
             if let value = response.result.value {
                 callback(value)

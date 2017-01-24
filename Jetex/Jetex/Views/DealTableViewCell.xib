@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel Na Balam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWJ-kg-LYp">
-                        <rect key="frame" x="24" y="24" width="134" height="17"/>
+                        <rect key="frame" x="24" y="16" width="134" height="17"/>
                         <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                         <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD 250" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-AI-wkd">
-                        <rect key="frame" x="303" y="28" width="80" height="12"/>
+                        <rect key="frame" x="303" y="20" width="80" height="12"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="NIu-ck-qTc"/>
                         </constraints>
@@ -61,9 +61,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ove-Ry-jp3">
-                        <rect key="frame" x="24" y="49" width="150" height="24"/>
+                        <rect key="frame" x="24" y="45" width="150" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="150" id="Tp6-o2-B1h"/>
+                            <constraint firstAttribute="height" constant="24" id="ktH-k7-diE"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -71,16 +72,15 @@
                     <constraint firstAttribute="trailingMargin" secondItem="SaW-AI-wkd" secondAttribute="trailing" constant="16" id="2Md-VD-fxv"/>
                     <constraint firstItem="sWJ-kg-LYp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="90g-6y-Qtt"/>
                     <constraint firstItem="SaW-AI-wkd" firstAttribute="baseline" secondItem="sWJ-kg-LYp" secondAttribute="baseline" id="Eon-Sd-2aU"/>
-                    <constraint firstItem="Hh4-KN-zlS" firstAttribute="top" secondItem="SaW-AI-wkd" secondAttribute="bottom" constant="8" id="Gdr-eJ-Ljz"/>
+                    <constraint firstItem="Hh4-KN-zlS" firstAttribute="top" secondItem="SaW-AI-wkd" secondAttribute="bottom" constant="16" id="Gdr-eJ-Ljz"/>
                     <constraint firstItem="kTg-ah-wNZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="Jyh-oR-8xo"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Hh4-KN-zlS" secondAttribute="trailing" constant="16" id="LoU-HP-Qic"/>
                     <constraint firstItem="Ove-Ry-jp3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="N88-qd-gTS"/>
-                    <constraint firstItem="Ove-Ry-jp3" firstAttribute="top" secondItem="sWJ-kg-LYp" secondAttribute="bottom" constant="8" id="RZr-4A-gOD"/>
+                    <constraint firstItem="Ove-Ry-jp3" firstAttribute="top" secondItem="sWJ-kg-LYp" secondAttribute="bottom" constant="12" id="RZr-4A-gOD"/>
                     <constraint firstItem="SaW-AI-wkd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sWJ-kg-LYp" secondAttribute="trailing" constant="8" id="U5N-5B-RTB"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kTg-ah-wNZ" secondAttribute="trailing" constant="16" id="a9W-lu-Lb0"/>
-                    <constraint firstItem="sWJ-kg-LYp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="fOo-B1-qUf"/>
-                    <constraint firstItem="kTg-ah-wNZ" firstAttribute="top" secondItem="Ove-Ry-jp3" secondAttribute="bottom" constant="8" id="qKv-Yh-0dg"/>
-                    <constraint firstItem="kTg-ah-wNZ" firstAttribute="top" secondItem="Hh4-KN-zlS" secondAttribute="bottom" constant="16" id="rFF-mY-mrl"/>
+                    <constraint firstItem="sWJ-kg-LYp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="fOo-B1-qUf"/>
+                    <constraint firstItem="kTg-ah-wNZ" firstAttribute="top" secondItem="Ove-Ry-jp3" secondAttribute="bottom" constant="12" id="qKv-Yh-0dg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

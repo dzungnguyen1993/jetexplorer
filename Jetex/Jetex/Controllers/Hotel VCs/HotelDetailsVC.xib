@@ -94,13 +94,13 @@
                                     <rect key="frame" x="54" y="0.0" width="139" height="44"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEx-tv-jvV">
-                                            <rect key="frame" x="0.0" y="10" width="131" height="17"/>
+                                            <rect key="frame" x="0.0" y="5" width="131" height="20"/>
                                             <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indonesia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMJ-T0-jiR">
-                                            <rect key="frame" x="0.0" y="27" width="57.5" height="12"/>
+                                            <rect key="frame" x="0.0" y="25" width="52.5" height="14"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -153,7 +153,7 @@
                                     <rect key="frame" x="307" y="0.0" width="60" height="44"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kam-2N-a6V">
-                                            <rect key="frame" x="0.0" y="5" width="60" height="22"/>
+                                            <rect key="frame" x="0.0" y="3" width="60" height="22"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a7f-dt-0YJ">
                                                     <rect key="frame" x="7" y="0.0" width="22" height="22"/>
@@ -162,7 +162,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0I-wZ-JhZ">
-                                                    <rect key="frame" x="31" y="4" width="11" height="17"/>
+                                                    <rect key="frame" x="31" y="2.5" width="9.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -177,7 +177,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-F2-TWZ">
-                                            <rect key="frame" x="10.5" y="27" width="39.5" height="12"/>
+                                            <rect key="frame" x="11.5" y="25" width="38" height="14"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -319,7 +319,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Vs-yG-Nkq" userLabel="Info View">
-                                            <rect key="frame" x="0.0" y="220" width="375" height="275"/>
+                                            <rect key="frame" x="0.0" y="220" width="375" height="269"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★★★★★" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlL-CD-jLU">
                                                     <rect key="frame" x="16" y="16" width="343" height="21"/>
@@ -328,13 +328,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel Na Balam Beach Resort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lX-fP-7gc">
-                                                    <rect key="frame" x="16" y="53" width="343" height="17"/>
+                                                    <rect key="frame" x="16" y="53" width="343" height="20"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                                     <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KX-ta-W47">
-                                                    <rect key="frame" x="16" y="86" width="343" height="34"/>
+                                                    <rect key="frame" x="16" y="89" width="343" height="38"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="16/18BIS Nguyen Thi Minh Khai, Dakao W., D.1 ">
                                                             <attributes>
@@ -354,7 +354,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diP-Z6-PEQ">
-                                                    <rect key="frame" x="16" y="136" width="343" height="107"/>
+                                                    <rect key="frame" x="16" y="143" width="343" height="94"/>
                                                     <attributedString key="attributedText">
                                                         <fragment>
                                                             <string key="content">Located in Hoan Kiem, this hotel is within a 10-minute walk of Bach Ma Temple and Thang Long Water Puppet Theatre. Hoan Kiem Lake and Ho Chi Minh Mausoleum are also within 2 mi (3 km).</string>
@@ -378,7 +378,7 @@
                                                 <constraint firstItem="KlL-CD-jLU" firstAttribute="leading" secondItem="1Vs-yG-Nkq" secondAttribute="leading" constant="16" id="jBb-p4-NM5"/>
                                                 <constraint firstItem="KlL-CD-jLU" firstAttribute="top" secondItem="1Vs-yG-Nkq" secondAttribute="top" constant="16" id="nJf-PD-Hub"/>
                                                 <constraint firstItem="7KX-ta-W47" firstAttribute="leading" secondItem="1Vs-yG-Nkq" secondAttribute="leading" constant="16" id="oIE-l8-TGH"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="rvd-Qy-NgG"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="rvd-Qy-NgG"/>
                                                 <constraint firstItem="0lX-fP-7gc" firstAttribute="leading" secondItem="1Vs-yG-Nkq" secondAttribute="leading" constant="16" id="sl6-gA-XbL"/>
                                                 <constraint firstItem="diP-Z6-PEQ" firstAttribute="top" secondItem="7KX-ta-W47" secondAttribute="bottom" constant="16" id="ta8-i5-JYj"/>
                                                 <constraint firstAttribute="trailing" secondItem="diP-Z6-PEQ" secondAttribute="trailing" constant="16" id="vxR-sa-v2a"/>
@@ -386,7 +386,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n68-MU-5mN" userLabel="Main View">
-                                            <rect key="frame" x="0.0" y="495" width="375" height="821"/>
+                                            <rect key="frame" x="0.0" y="489" width="375" height="827"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xE-xb-eIB" userLabel="Menu View">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -442,7 +442,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFc-te-TIP" userLabel="Content View">
-                                                    <rect key="frame" x="0.0" y="48" width="375" height="773"/>
+                                                    <rect key="frame" x="0.0" y="48" width="375" height="779"/>
                                                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="deviceRGB"/>
                                                 </view>
                                             </subviews>

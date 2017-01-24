@@ -164,7 +164,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riZ-oY-zvK">
-                                            <rect key="frame" x="10.5" y="27" width="39.5" height="12"/>
+                                            <rect key="frame" x="11" y="27" width="39.5" height="12"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -263,15 +263,16 @@
                                 <constraint firstItem="XJl-Bf-qRh" firstAttribute="leading" secondItem="5RC-ed-3UB" secondAttribute="leading" constant="8" id="rtP-zl-2c9"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMH-cA-jqS">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMH-cA-jqS">
                             <rect key="frame" x="112.5" y="571" width="150" height="44"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="150" id="EKW-SZ-RMT"/>
+                                <constraint firstAttribute="width" constant="170" id="EKW-SZ-RMT"/>
                                 <constraint firstAttribute="height" constant="44" id="s99-ba-jJG"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
-                            <state key="normal" title="Search here!">
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="Search This Area">
                                 <color key="titleColor" red="0.2784313725" green="0.77647058820000003" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>

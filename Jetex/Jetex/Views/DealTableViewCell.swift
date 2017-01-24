@@ -70,7 +70,10 @@ class DealTableViewCell: UITableViewCell {
         
         hotelNameLabel.text = showingText
         agentName = agent.name
-        hotelTotalPriceLabel.text = "\(ProfileVC.currentCurrencyType) \(price.priceTotal)"
+        
+        let roundedPrice = Int(price.priceTotal + 0.5)
+        
+        hotelTotalPriceLabel.text = "\(ProfileVC.currentCurrencyType) \(roundedPrice)"
         bookingDeepLink = price.bookingDeepLink
         
         // image

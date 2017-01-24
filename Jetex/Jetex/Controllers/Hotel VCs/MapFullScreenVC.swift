@@ -46,19 +46,31 @@ class MapFullScreenVC: BaseViewController {
 
         mapView.delegate = self
         
-        let cityLocation = searchInfo.city?.getLatLong()
+        var cityLocation = searchInfo.city?.getLatLong()
         var camera : GMSCameraPosition?
         
         // Creates a marker in the center of the map.
         let marker = GMSMarker()
         if (self.mapType == .cityMap) {
             // show search here button
-            self.searchHereButton.isHidden = false
+             self.searchHereButton.isHidden = false
+            
+            let loadingVC = InitialLoadingPopupVC(nibName: "InitialLoadingPopupVC", bundle: nil)
+            loadingVC.initView(title: "Processing...", message: "Please wait")
+            
+            let popUpVC = PopupDialog(viewController: loadingVC, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
+            self.present(popUpVC, animated: true, completion: nil)
+            
+            // currently, select first hotel appear as center of the map
+            if let firstHotel = self.searchHotelResult?.hotels.first {
+                cityLocation = (firstHotel.latitude, firstHotel.longitude)
+            }
             
             // list all hotels in city
-//            marker.position = CLLocationCoordinate2D(latitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!)
             camera = GMSCameraPosition.camera(withLatitude: (cityLocation?.0)!, longitude: (cityLocation?.1)!, zoom: 14.0)
             markersList = generateMarkersForHotelsAroundCenter(hotels: self.searchHotelResult!.hotels, for: mapView, centerLatitude: cityLocation!.0, centerLongitude: cityLocation!.1)
+            
+            popUpVC.dismiss()
         } else {
             // hide search here button
             self.searchHereButton.isHidden = true
@@ -82,6 +94,7 @@ class MapFullScreenVC: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func searchHereButtonPressed(_ sender: Any) {
@@ -100,7 +113,13 @@ class MapFullScreenVC: BaseViewController {
         // search then add more marker around this center
         markersList = generateMarkersForHotelsAroundCenter(hotels: self.searchHotelResult!.hotels, for: self.mapView, centerLatitude: center.target.latitude, centerLongitude: center.target.longitude)
         
+        // hide popup
         popUpVC.dismiss()
+        
+        // move center of map to the median element
+        let medianIndex = markersList.count / 2
+        let medianMarker = self.markersList[medianIndex]
+        self.mapView.animate(toLocation: medianMarker.position)
     }
     
     @IBAction func exitMap(_ sender: Any) {
@@ -110,9 +129,16 @@ class MapFullScreenVC: BaseViewController {
     func generateMarkersForHotelsAroundCenter(hotels: [Hotel], for mapView: GMSMapView, centerLatitude: Double, centerLongitude: Double) -> [GMSMarker] {
         var result : [GMSMarker] = []
         
-        let aroundHotels = hotels.filter { (hotel) -> Bool in
-            return Utility.distance(lat1: hotel.latitude, lon1: hotel.longitude, lat2: centerLatitude, lon2: centerLongitude) < 10.0 // < 10km
+        var aroundHotels = hotels.filter { (hotel) -> Bool in
+            return Utility.distance(lat1: hotel.latitude, lon1: hotel.longitude, lat2: centerLatitude, lon2: centerLongitude) < 5.0 // < 5km
         }
+
+        // limit <= 50 markers
+        if aroundHotels.count >= 50 {
+            aroundHotels.removeLast(aroundHotels.count - 50)
+        }
+        
+//        let aroundHotels = hotels
         
         for hotel in aroundHotels {
             let marker = GMSMarker()
@@ -189,9 +215,9 @@ extension MapFullScreenVC : ZoomTransitionProtocol {
         viewDateReturn.lbMonth.text = searchInfo.checkoutDay?.toMonth()
         lbGuest.text = searchInfo.numberOfGuest.toString()
         if (searchInfo.numberOfRooms == 1) {
-            lbRoom.text = searchInfo.numberOfRooms.toString() + "room"
+            lbRoom.text = searchInfo.numberOfRooms.toString() + " room"
         } else {
-            lbRoom.text = searchInfo.numberOfRooms.toString() + "rooms"
+            lbRoom.text = searchInfo.numberOfRooms.toString() + " rooms"
         }
         
         imgCancel.image = UIImage(fromHex: JetExFontHexCode.jetexCross.rawValue, withColor: UIColor(hex: 0x515151))

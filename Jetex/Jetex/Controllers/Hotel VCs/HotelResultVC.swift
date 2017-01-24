@@ -346,6 +346,7 @@ extension HotelResultVC : HotelResultVCDelegate {
         
         Alamofire.request(url, method: .get, parameters: nil).responseJSON { (response) in
             if let data = response.result.value as? [String: Any] {
+                print(data)
                 let hotelInDetailResult = HotelinDetailResult(JSON: data)
                 completion?(hotelInDetailResult)
             }

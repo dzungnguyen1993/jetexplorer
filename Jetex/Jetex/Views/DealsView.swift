@@ -71,6 +71,7 @@ class DealsView: UIView {
             self.seeMoreView.layoutIfNeeded()
             
             let newHeight = dealsList.count * (142 + 8) + 16 // 16 is space to bottom
+            DealsView.height = CGFloat(newHeight)
             self.delegate?.resizeContentViewInScrollViewWithNewComponentHeight(newComponentHeight: CGFloat(newHeight)) {
                 self.delegate?.adjustDealsViewFrameToFit()
             }
@@ -97,6 +98,7 @@ class DealsView: UIView {
         // =     self.dealsTableView.frame.size.height // (count * 8 + count * 142)
         //        + 16.0 // space at the bottom
         let newHeight = dealsList.count * (142 + 8) + 16
+        DealsView.height = CGFloat(newHeight)
         self.delegate?.resizeContentViewInScrollViewWithNewComponentHeight(newComponentHeight: CGFloat(newHeight)) {
             self.delegate?.adjustDealsViewFrameToFit()
         }

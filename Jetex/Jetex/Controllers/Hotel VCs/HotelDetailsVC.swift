@@ -238,9 +238,9 @@ extension HotelDetailsVC {
         viewDateReturn.lbMonth.text = searchInfo.checkoutDay?.toMonth()
         lbGuest.text = searchInfo.numberOfGuest.toString()
         if (searchInfo.numberOfRooms == 1) {
-            lbRoom.text = searchInfo.numberOfRooms.toString() + "room"
+            lbRoom.text = searchInfo.numberOfRooms.toString() + " room"
         } else {
-            lbRoom.text = searchInfo.numberOfRooms.toString() + "rooms"
+            lbRoom.text = searchInfo.numberOfRooms.toString() + " rooms"
         }
     }
     
