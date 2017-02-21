@@ -16,10 +16,12 @@ protocol PickCityDelegate: class {
 class CitySearchVC: BaseViewController {
 
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
-    
     @IBOutlet weak var topNavigationItem: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchingIndicator: UIActivityIndicatorView!
+    
     weak var delegate: PickCityDelegate?
     weak var currentCity: City?
     
@@ -27,8 +29,6 @@ class CitySearchVC: BaseViewController {
     
     var realm : Realm!
     var allCities: Results<City>! = nil
-    
-    var lastTimeTextChanged = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,8 @@ class CitySearchVC: BaseViewController {
      
         realm = try! Realm()
         self.allCities = realm.objects(City.self)
+        
+        hideIndicator()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,37 +67,54 @@ class CitySearchVC: BaseViewController {
         searchTextField.resignFirstResponder()
     }
     
-    @IBAction func textFieldDidChanged(_ sender: UITextField) {
-        if sender.text == "" {
-            citiesSearchResult.removeAll()
-        } else {
-//            
-//            if lastTimeTextChanged.timeIntervalSinceNow > -1.0 {
-//                lastTimeTextChanged = Date()
-//                return
-//            }
-//            
-            self.citiesSearchResult = allCities.filter { (city) -> Bool in
+    func showIndicator() {
+        searchingIndicator.startAnimating()
+        searchButton.isHidden = true
+    }
+    
+    func hideIndicator() {
+        searchingIndicator.stopAnimating()
+        searchButton.isHidden = false
+    }
+    
+    func searchForResult(_ text: String) {
+        self.citiesSearchResult = allCities.filter { (city) -> Bool in
+            
+            let name = city.name
+            
+            if ((text.characters.count) <= name.characters.count) {
+                let startIndex = name.startIndex
+                let endIndex = name.index(startIndex, offsetBy: (text.characters.count))
                 
-                let name = city.name
+                let substr = name.substring(to: endIndex)
                 
-                if ((sender.text?.characters.count)! <= name.characters.count) {
-                    let startIndex = name.startIndex
-                    let endIndex = name.index(startIndex, offsetBy: (sender.text?.characters.count)!)
-                    
-                    let substr = name.substring(to: endIndex)
-                    
-                    if (substr.lowercased() == sender.text?.lowercased()) {
-                        return true
-                    }
+                if (substr.lowercased() == text.lowercased()) {
+                    return true
                 }
-                
-                return false
             }
+            
+            return false
         }
-        
         tableView.separatorStyle = citiesSearchResult.count == 0 ? .none : .singleLine
         tableView.reloadData()
+        hideIndicator()
+    }
+    
+    @IBAction func textFieldDidChanged(_ sender: UITextField) {
+        // cancel previous request
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        
+        if sender.text == "" {
+            citiesSearchResult.removeAll()
+            tableView.separatorStyle = .none
+            tableView.reloadData()
+            hideIndicator()
+        } else {
+            // create new request
+            self.perform(#selector(CitySearchVC.searchForResult(_:)), with: sender.text!, afterDelay: 1)
+            showIndicator()
+        }
+        
     }
     
     @IBAction func searchCity(_ sender: UIButton) {

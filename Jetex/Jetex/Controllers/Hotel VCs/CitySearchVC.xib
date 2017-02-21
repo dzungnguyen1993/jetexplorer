@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CitySearchVC" customModule="Jetex" customModuleProvider="target">
             <connections>
                 <outlet property="leftBarButton" destination="aSD-sE-JDY" id="Z1t-cm-0we"/>
+                <outlet property="searchButton" destination="GLj-zC-rlR" id="YTf-UV-Jrn"/>
                 <outlet property="searchTextField" destination="dqt-Ee-aev" id="tte-MM-na4"/>
+                <outlet property="searchingIndicator" destination="5sD-Af-bl7" id="5NG-6O-KYX"/>
                 <outlet property="tableView" destination="WbV-eq-YHD" id="azq-Um-Jep"/>
                 <outlet property="topNavigationItem" destination="Hea-VC-dpp" id="Rp5-iC-yWz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -66,7 +68,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                     <connections>
                                         <action selector="textFieldDidChanged:" destination="-1" eventType="editingChanged" id="gZQ-YJ-wX2"/>
                                     </connections>
@@ -82,13 +84,18 @@
                                         <action selector="searchCity:" destination="-1" eventType="touchUpInside" id="RhC-M4-rHT"/>
                                     </connections>
                                 </button>
+                                <activityIndicatorView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5sD-Af-bl7">
+                                    <rect key="frame" x="339" y="11" width="20" height="20"/>
+                                </activityIndicatorView>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="GLj-zC-rlR" firstAttribute="centerY" secondItem="HK2-Nx-7c7" secondAttribute="centerY" id="62Y-e0-kBw"/>
                                 <constraint firstAttribute="height" constant="44" id="9am-dU-c7Q"/>
                                 <constraint firstAttribute="trailing" secondItem="GLj-zC-rlR" secondAttribute="trailing" constant="13" id="Ssy-ej-aOY"/>
                                 <constraint firstAttribute="trailing" secondItem="dqt-Ee-aev" secondAttribute="trailing" constant="40" id="YsL-bn-Pfv"/>
+                                <constraint firstItem="5sD-Af-bl7" firstAttribute="centerX" secondItem="GLj-zC-rlR" secondAttribute="centerX" id="dKH-sq-wMa"/>
                                 <constraint firstItem="dqt-Ee-aev" firstAttribute="leading" secondItem="HK2-Nx-7c7" secondAttribute="leading" constant="16" id="n75-vq-hY2"/>
+                                <constraint firstItem="5sD-Af-bl7" firstAttribute="centerY" secondItem="GLj-zC-rlR" secondAttribute="centerY" id="u6L-D2-NfD"/>
                                 <constraint firstItem="dqt-Ee-aev" firstAttribute="centerY" secondItem="HK2-Nx-7c7" secondAttribute="centerY" constant="-1" id="zzu-II-tmj"/>
                             </constraints>
                         </view>

@@ -20,6 +20,8 @@ class LocationSearchVC: BaseViewController {
     @IBOutlet weak var topNavigationItem: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchingIndicator: UIActivityIndicatorView!
     weak var delegate: PickLocationDelegate?
     weak var currentAirPort: Airport?
     
@@ -55,6 +57,7 @@ class LocationSearchVC: BaseViewController {
      
         realm = try! Realm()
         self.allAirports = realm.objects(Airport.self)
+        hideIndicator()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,39 +71,62 @@ class LocationSearchVC: BaseViewController {
         searchTextField.resignFirstResponder()
     }
     
-    @IBAction func textFieldDidChanged(_ sender: UITextField) {
-        if sender.text == "" {
-            airportsSearchResult.removeAll()
-        } else {
-            self.airportsSearchResult = allAirports.filter { (airport) -> Bool in
+    func showIndicator() {
+        searchingIndicator.startAnimating()
+        searchButton.isHidden = true
+    }
+    
+    func hideIndicator() {
+        searchingIndicator.stopAnimating()
+        searchButton.isHidden = false
+    }
+    
+    func searchForResult(_ text: String) {
+        self.airportsSearchResult = allAirports.filter { (airport) -> Bool in
+            
+            let name = airport.name
+            
+            let id = airport.id
+            
+            if ((text.characters.count) <= name.characters.count) {
+                let startIndex = name.startIndex
+                let endIndex = name.index(startIndex, offsetBy: (text.characters.count))
                 
-                let name = airport.name
+                let substr = name.substring(to: endIndex)
                 
-                let id = airport.id
-                
-                if ((sender.text?.characters.count)! <= name.characters.count) {
-                    let startIndex = name.startIndex
-                    let endIndex = name.index(startIndex, offsetBy: (sender.text?.characters.count)!)
-                    
-                    let substr = name.substring(to: endIndex)
-                    
-                    if (substr.lowercased() == sender.text?.lowercased()) {
-                        return true
-                    }
+                if (substr.lowercased() == text.lowercased()) {
+                    return true
                 }
-                
-                if ((sender.text?.characters.count)! <= id.characters.count) {
-                    if (id.lowercased().contains(sender.text!.lowercased())) {
-                        return true
-                    }
-                }
-                
-                return false
             }
+            
+            if ((text.characters.count) <= id.characters.count) {
+                if (id.lowercased().contains(text.lowercased())) {
+                    return true
+                }
+            }
+            
+            return false
         }
         
         tableView.separatorStyle = airportsSearchResult.count == 0 ? .none : .singleLine
         tableView.reloadData()
+        hideIndicator()
+    }
+
+
+    @IBAction func textFieldDidChanged(_ sender: UITextField) {
+        // cancel previous request
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        
+        if sender.text == "" {
+            airportsSearchResult.removeAll()
+            tableView.separatorStyle = .none
+            tableView.reloadData()
+            hideIndicator()
+        } else {
+            self.perform(#selector(LocationSearchVC.searchForResult(_:)), with: sender.text!, afterDelay: 1)
+            showIndicator()
+        }
     }
     
     @IBAction func searchCity(_ sender: UIButton) {
