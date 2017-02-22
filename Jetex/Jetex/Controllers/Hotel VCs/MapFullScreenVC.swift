@@ -116,10 +116,16 @@ class MapFullScreenVC: BaseViewController {
         // hide popup
         popUpVC.dismiss()
         
-        // move center of map to the median element
-        let medianIndex = markersList.count / 2
-        let medianMarker = self.markersList[medianIndex]
-        self.mapView.animate(toLocation: medianMarker.position)
+        if (self.markersList.count > 0) {
+            // move center of map to the median element
+            let medianIndex = markersList.count / 2
+            let medianMarker = self.markersList[medianIndex]
+            self.mapView.animate(toLocation: medianMarker.position)
+        } else {
+            let warningVC = PopupDialog.init(title: "No properties found at this location", message: "")
+            warningVC.addButton(PopupDialogButton.init(title: "Okay", dismissOnTap: true, action: nil))
+            self.present(warningVC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func exitMap(_ sender: Any) {
@@ -168,7 +174,7 @@ extension MapFullScreenVC : GMSMapViewDelegate {
             if mapType == .cityMap {
                 // show popup
                 let loadingVC = InitialLoadingPopupVC(nibName: "InitialLoadingPopupVC", bundle: nil)
-                loadingVC.initView(title: "Loading...", message: "Loading detail information for the hotel")
+                loadingVC.initView(title: "Loading...", message: "Loading hotel information")
                 
                 let popUpVC = PopupDialog(viewController: loadingVC, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
                 self.present(popUpVC, animated: true, completion: nil)

@@ -236,6 +236,11 @@ extension HotelResultVC {
 extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard hotels != nil else {return 0}
+        
+        if hotels.count <= 0 {
+            viewNoResult.isHidden = false
+        }
+        
         return hotels.count
     }
     
@@ -264,19 +269,20 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
             cell.lbPrice.text = ProfileVC.currentCurrencyType + " " + (agentPrice?.priceTotal.toString())!
             let pricePerNight = (agentPrice?.priceTotal)! / Double((searchInfo.checkoutDay?.days(fromDate: searchInfo.checkinDay!))!)
             cell.lbPricePerNight.text = ProfileVC.currentCurrencyType + " " + (pricePerNight.toString()) + "/night"
-            
         }
 
         cell.selectionStyle = .none
         
         // download image
         cell.hotelImg.image = UIImage(named: "placeholder")
+        cell.hotelImg.contentMode = .scaleAspectFill
         Alamofire.request(hotel.getImageUrl()).responseImage { response in
             if let image = response.result.value {
                 let cell = self.tableView.cellForRow(at: indexPath) as? HotelResultCell
                 if cell != nil {
                     DispatchQueue.main.async {
                         cell?.hotelImg.image = image
+                        cell?.hotelImg.contentMode = .scaleAspectFill
                     }
                 }
             }
@@ -287,7 +293,8 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // height of image (ratio 21:9) + the rest
-        return 120 + self.view.frame.size.width * 9 / 21
+        return 300
+        //return 120 + self.view.frame.size.width / 2
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -297,7 +304,7 @@ extension HotelResultVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // show popup
         let loadingVC = InitialLoadingPopupVC(nibName: "InitialLoadingPopupVC", bundle: nil)
-        loadingVC.initView(title: "Loading...", message: "Loading detail information for the hotel")
+        loadingVC.initView(title: "Loading...", message: "Loading hotel information")
         
         let popUpVC = PopupDialog(viewController: loadingVC, buttonAlignment: .vertical, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
         self.present(popUpVC, animated: true, completion: nil)

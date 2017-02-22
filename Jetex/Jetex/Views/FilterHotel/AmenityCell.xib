@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,13 +24,14 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPd-Tc-9BK">
-                        <rect key="frame" x="48" y="8" width="214" height="80"/>
+                        <rect key="frame" x="48" y="8" width="206" height="80"/>
                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
                         <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MUf-Y3-vt9">
                         <rect key="frame" x="0.0" y="28" width="40" height="40"/>
+                        <color key="tintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="ZWi-IT-tnC"/>
                             <constraint firstAttribute="width" secondItem="MUf-Y3-vt9" secondAttribute="height" id="nWl-Et-Ycl"/>
@@ -44,7 +45,7 @@
                 <constraint firstItem="MUf-Y3-vt9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CAp-IR-PbT"/>
                 <constraint firstItem="nPd-Tc-9BK" firstAttribute="leading" secondItem="MUf-Y3-vt9" secondAttribute="trailing" constant="8" id="MGD-PW-MaD"/>
                 <constraint firstItem="nPd-Tc-9BK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="ew1-0T-ple"/>
-                <constraint firstAttribute="trailing" secondItem="nPd-Tc-9BK" secondAttribute="trailing" id="t3x-FR-zP6"/>
+                <constraint firstAttribute="trailing" secondItem="nPd-Tc-9BK" secondAttribute="trailing" constant="8" id="t3x-FR-zP6"/>
             </constraints>
             <size key="customSize" width="262" height="96"/>
             <connections>

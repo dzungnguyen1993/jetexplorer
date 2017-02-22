@@ -325,6 +325,28 @@ extension HotelDetailsVC {
             self.rateDescriptionInHeroLabel.text = initHotelInfo!.popularityDesc
             self.rateCountInHeroLabel.text = "Based on reviews"
         }
+        
+        self.rateScoreInHeroLabel.sizeToFit()
+        //self.rateDescriptionInHeroLabel.sizeToFit()
+        //self.rateCountInHeroLabel.sizeToFit()
+    }
+    
+    func readMoreButtonPressed() {
+        let oldHeight = self.hotelShortDescriptionLabel.frame.height
+        
+        UIView.animate(withDuration: 0.25, animations: { 
+            self.hotelShortDescriptionLabel.text = self.hotelInDetailResult!.hotels.first!.description.description
+            self.hotelShortDescriptionLabel.sizeToFit()
+        }) { (completed) in
+            let changes = self.hotelShortDescriptionLabel.frame.height - oldHeight
+            var newSize = self.detailScrollView.contentSize
+            newSize.height += changes
+            
+            UIView.animate(withDuration: 0.25, animations: { 
+                self.detailScrollView.contentSize = newSize
+            })
+        }
+        
     }
     
     func bindDataForInfoSection(isViewLoaded: Bool, initHotelInfo: Hotel? = nil, loadedHotelInfo: HotelinDetail? = nil) {
@@ -338,8 +360,31 @@ extension HotelDetailsVC {
             self.starsCountLabel.text = stars
             self.hotelNameLabel.text = loadedHotelInfo!.name
             self.hotelAddressLabel.text = loadedHotelInfo!.address
-            self.hotelShortDescriptionLabel.text = loadedHotelInfo!.description
             
+            
+            if loadedHotelInfo!.description.characters.count > 400 {
+                
+                let shortDesc = loadedHotelInfo!.description.substring(to: loadedHotelInfo!.description.index(loadedHotelInfo!.description.startIndex, offsetBy: 400)) + "...  "
+                
+                let textAtt = NSMutableAttributedString.init(string: shortDesc, attributes: [NSFontAttributeName: UIFont.init(name: GothamFontName.Book.rawValue, size: 15.0)!, NSForegroundColorAttributeName: UIColor(hex: 0x515151)])
+                
+                let readMore = NSAttributedString.init(string: "Read more", attributes:
+                    [NSFontAttributeName: UIFont.init(name: GothamFontName.BoldItalic.rawValue, size: 15.0)!, NSForegroundColorAttributeName: UIColor(hex: 0x674290)])
+                
+                textAtt.append(readMore)
+                
+                self.hotelShortDescriptionLabel.attributedText = textAtt
+                
+                let readMoreGesture = UITapGestureRecognizer.init(target: self, action: #selector(HotelDetailsVC.readMoreButtonPressed))
+                readMoreGesture.numberOfTapsRequired = 1
+                self.hotelShortDescriptionLabel.addGestureRecognizer(readMoreGesture)
+                self.hotelShortDescriptionLabel.isUserInteractionEnabled = true
+                
+            } else {
+                self.hotelShortDescriptionLabel.text = loadedHotelInfo!.description
+            }
+            
+//          self.hotelShortDescriptionLabel.text = loadedHotelInfo!.description
         } else {
             // view is not done loading yet, use info from previous view
             // load info

@@ -45,7 +45,7 @@ enum JetExFontHexCode : String{
     case jetexStarFulfill        = "\u{e927}"
     case jetexStarHalfFulfill    = "\u{e928}"
     
-    case jetexAmenitiesDefault   = "\u{e910}"
+    case jetexAmenitiesDefault   = "" //"\u{e947}"
     case jetexAmenities24h       = "\u{e92e}"
     case jetexAmenitiesLuggage   = "\u{e939}"
     case jetexAmenitiesChildcare = "\u{e933}"

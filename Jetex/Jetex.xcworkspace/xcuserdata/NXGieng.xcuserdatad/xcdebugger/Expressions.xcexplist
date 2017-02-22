@@ -157,10 +157,10 @@
          contextName = "FlightSearchHistoryVC.viewWillAppear(Bool) -&gt; ():FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "unSyncHistoryList.count">
+               value = "unSyncHistoryList[0]">
             </PersistentString>
             <PersistentString
-               value = "unSyncHistoryList[0]">
+               value = "unSyncHistoryList.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -182,15 +182,15 @@
          contextName = "ProfileVC.signInUsingAccessToken(accessToken : String, atAPI : String) -&gt; ():ProfileVC.swift">
       </ContextState>
       <ContextState
+         contextName = "DealsView.bindingData(hotelInfo : HotelinDetailResult) -&gt; ():DealsView.swift">
+      </ContextState>
+      <ContextState
          contextName = "HotelDetailsVC.resizeMenuContentScrollView() -&gt; ():HotelDetailsVC.swift">
          <PersistentStrings>
             <PersistentString
                value = "self.detailScrollView.subviews[0].subviews">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DealsView.bindingData(hotelInfo : HotelinDetailResult) -&gt; ():DealsView.swift">
       </ContextState>
       <ContextState
          contextName = "static Utility.distance(lat1 : Double, lon1 : Double, lat2 : Double, lon2 : Double) -&gt; Double:Utility.swift">
@@ -252,13 +252,13 @@
          contextName = "FlightSearchHistoryVC.(viewWillAppear(Bool) -&gt; ()).(closure #1).(closure #1):FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.historyList.count">
+               value = "self.unSyncHistoryList[0]">
             </PersistentString>
             <PersistentString
                value = "searchesHistory.count">
             </PersistentString>
             <PersistentString
-               value = "self.unSyncHistoryList[0]">
+               value = "self.historyList.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -399,10 +399,10 @@
                value = "response.header">
             </PersistentString>
             <PersistentString
-               value = "currentUser as! [String: Any]">
+               value = "value as! [String: Any]">
             </PersistentString>
             <PersistentString
-               value = "value as! [String: Any]">
+               value = "currentUser as! [String: Any]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -413,10 +413,10 @@
                value = "(self.tabBarController as? TabBarController)?.selectedViewController as? BaseViewController">
             </PersistentString>
             <PersistentString
-               value = "resultVC.navigationController?">
+               value = "resultVC.isKind(of: FlightSearchHistoryVC.self)">
             </PersistentString>
             <PersistentString
-               value = "resultVC.isKind(of: FlightSearchHistoryVC.self)">
+               value = "resultVC.navigationController?">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -514,6 +514,14 @@
       </ContextState>
       <ContextState
          contextName = "HotelDetailsVC.bindDataForReviewsInMainSection(isViewLoaded : Bool, loadedHotelInfo : HotelinDetailResult?) -&gt; ():HotelDetailsVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HotelResultVC.tableView(UITableView, heightForRowAt : IndexPath) -&gt; CGFloat:HotelResultVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "120 + self.view.frame.size.width * 40 / 81">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "TabBarController.(animateToTab(toIndex : Int, completion : () -&gt; ()?) -&gt; ()).(closure #2):TabBarController.swift">

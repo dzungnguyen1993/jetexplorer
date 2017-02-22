@@ -114,7 +114,7 @@ class SignInVC: BaseViewController {
                     // hide pop up
                     print(message)
                     popup.dismiss({
-                        let newPopup = PopupDialog(title: "Email/Password is incorrent", message: "Please check your information again.", image: nil)
+                        let newPopup = PopupDialog(title: "Email or Password incorrent", message: "Please check your information.", image: nil)
                         newPopup.addButton(DefaultButton(title: "Try again", action: nil))
                         self.present(newPopup, animated: true, completion: nil)
                     })

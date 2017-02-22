@@ -94,8 +94,11 @@ extension AmenitiesView: UICollectionViewDataSource {
         let amenity = self.amenities[indexPath.row]
         cell.label.text = amenity.0
         cell.label.textColor = UIColor(hex: 0x674290)
-        cell.imgView.image = UIImage(fromHex: amenity.1, withColor: (UIColor(hex: 0x674290)))
-        
+        if amenity.1 != "" {
+            cell.imgView.image = UIImage(fromHex: amenity.1, withColor: (UIColor(hex: 0x674290)))
+        } else {
+            cell.imgView.image = UIImage(named: "amenityTick")
+        }
         return cell
     }
 }
