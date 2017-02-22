@@ -46,25 +46,25 @@ class SignUpVC: BaseViewController, UITextFieldDelegate, UICheckBoxButtonDelegat
     // MARK: - IBActions - sign up
     @IBAction func signUpButtonPressed(_ sender: AnyObject) {
         guard (emailTextField.text != nil && emailTextField.text!.contains("@")) else {
-            print("email is not right!")
+            //print("email is not right!")
             self.emailWarning.showWarning(animated: true, autoHide: true, after: 10)
             return
         }
             
         guard (passwordTextField.text != nil && passwordTextField.text!.characters.count >= 6) else {
-            print("password 1 is not valid")
+            //print("password 1 is not valid")
             self.passwordWarning.showWarning(animated: true, autoHide: true, after: 10)
             return
         }
             
         guard (confirmPasswordTextField.text != nil && confirmPasswordTextField.text!.characters.count >= 6) else {
-            print("password 2 is not valid")
+            //print("password 2 is not valid")
             self.confirmPasswordWarning.showWarning(animated: true, autoHide: true, after: 10)
             return
         }
             
         guard (passwordTextField.text! == confirmPasswordTextField.text!) else {
-            print("the password are not same")
+            //print("the password are not same")
             self.confirmPasswordWarning.showWarning(animated: true, autoHide: true, after: 10)
             return
         }
@@ -93,7 +93,7 @@ class SignUpVC: BaseViewController, UITextFieldDelegate, UICheckBoxButtonDelegat
                     
                     // update this user is current user
                     user.isCurrentUser = true
-                    print(user)
+                    //print(user)
                     
                     // save it to Realm
                     
@@ -118,7 +118,7 @@ class SignUpVC: BaseViewController, UITextFieldDelegate, UICheckBoxButtonDelegat
                         
                         Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).response(completionHandler: { (response) in
                             if response.error != nil {
-                                print(response.error!)
+                                //print(response.error!)
                             }
                         })
                     }

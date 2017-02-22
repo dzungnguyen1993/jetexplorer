@@ -50,7 +50,7 @@ class EditProfileVC: UITableViewController, UITextFieldDelegate {
             // set unsubscribed as default
             emailSubscriptionSwitch.setOn(false, animated: true)
             Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
-                print(response.result)
+                //print(response.result)
             })
             
             Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseString(completionHandler: { response in
@@ -71,7 +71,7 @@ class EditProfileVC: UITableViewController, UITextFieldDelegate {
                 
                 Alamofire.request(request, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).response(completionHandler: { (response) in
                     if response.error != nil {
-                        print(response.error!)
+                        //print(response.error!)
                     }
                 })
                 
@@ -219,19 +219,19 @@ class EditProfileVC: UITableViewController, UITextFieldDelegate {
             _ = self.navigationController?.pushViewController(vc, animated: true)
             break
         case 2:
-            print("email")
+            //print("email")
 //            emailUpdateTextField.becomeFirstResponder()
 //            saveNavButton.isEnabled = true
 //            needToUpdateEmail = true
             break
         case 3:
-            print("subscription")
+            //print("subscription")
             emailSubscriptionSwitch.setOn(!emailSubscriptionSwitch.isOn, animated: true)
             saveNavButton.isEnabled = true
             needToUpdateSubscribe = true
             break
         case 4:
-            print("sign out")
+            //print("sign out")
             let newPopup = PopupDialog(title: "Are you sure?", message: "You are about to log out...", image: nil, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: false, completion: nil)
             
             newPopup.addButton(CancelButton(title: "No", action: nil))
@@ -265,7 +265,7 @@ class EditProfileVC: UITableViewController, UITextFieldDelegate {
         textFieldResign()
         
         guard (emailUpdateTextField.text != nil && emailUpdateTextField.text!.contains("@")) else {
-            print("email is not valid!")
+            //print("email is not valid!")
             // resize the cell
             needToResizeEmailTextField = true
             self.tableView.reloadData()
@@ -313,7 +313,7 @@ class EditProfileVC: UITableViewController, UITextFieldDelegate {
                             self.needToUpdateSubscribe = false
                         })
                         if response.error != nil {
-                            print(response.error!)
+                            //print(response.error!)
                         }
                     })
                 } else {
@@ -333,8 +333,8 @@ class EditProfileVC: UITableViewController, UITextFieldDelegate {
         Alamofire.request(requestURL, method: .post, parameters: newInfo, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
             if let value = response.result.value as? NSDictionary {
                 if let id = value.value(forKey: "_id") as? String, id != "" {
-                    if let user = User(JSON: value as! [String: Any]) {
-                        print(user)
+                    if let _ = User(JSON: value as! [String: Any]) {
+                        //print(user)
                         
                         let realm = try! Realm()
                         // save & update email
@@ -353,7 +353,7 @@ class EditProfileVC: UITableViewController, UITextFieldDelegate {
                     }
                 } else if let message = value.value(forKey: "message") as? String {
                     // hide pop up
-                    print(message)
+                    //print(message)
                     popup.dismiss({
                         let newPopup = PopupDialog(title: "Cannot Update", message: message, image: nil)
                         newPopup.addButton(CancelButton(title: "Try again", action: {

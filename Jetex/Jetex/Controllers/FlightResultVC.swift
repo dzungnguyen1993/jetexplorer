@@ -101,7 +101,7 @@ class FlightResultVC: BaseViewController {
         
         popup.addButton(CancelButton(title: "Cancel", action: {
             loadingVC.updateProgress(percent: 0, completion: {
-                print("cancel")
+                //print("cancel")
             })
             _ = self.navigationController?.popViewController(animated: true)
         }))

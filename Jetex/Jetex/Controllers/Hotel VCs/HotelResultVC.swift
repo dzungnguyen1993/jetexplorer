@@ -97,7 +97,7 @@ class HotelResultVC: BaseViewController {
         
         popup.addButton(CancelButton(title: "Cancel", action: {
             loadingVC.updateProgress(percent: 0, completion: {
-                print("cancel")
+                //print("cancel")
             })
             _ = self.navigationController?.popViewController(animated: true)
         }))
@@ -353,7 +353,7 @@ extension HotelResultVC : HotelResultVCDelegate {
         
         Alamofire.request(url, method: .get, parameters: nil).responseJSON { (response) in
             if let data = response.result.value as? [String: Any] {
-                print(data)
+                //print(data)
                 let hotelInDetailResult = HotelinDetailResult(JSON: data)
                 completion?(hotelInDetailResult)
             }

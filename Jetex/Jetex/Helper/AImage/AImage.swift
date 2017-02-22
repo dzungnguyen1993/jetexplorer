@@ -25,7 +25,7 @@ public extension UIImage {
         self.m_ = image_storage()
         m_!.imageSource = CGImageSourceCreateWithData(AImageData, nil)
         if(Clarity<=0||Clarity>1){
-            print("Warning.Illegal input parameter 'Clarity',request >0&&<=1.Using default clarity.")
+            //print("Warning.Illegal input parameter 'Clarity',request >0&&<=1.Using default clarity.")
             CalculateFrameDelay(delaysArray: CalcuDelayTimes(imageSource: m_!.imageSource),Clarity: DEFAULT_CLARITY)
         }else{
             CalculateFrameDelay(delaysArray: CalcuDelayTimes(imageSource: m_!.imageSource),Clarity: Clarity)

@@ -36,7 +36,7 @@ class ForgotPasswordVC: BaseViewController {
     // MARK:- send
     @IBAction func sendButtonPressed(_ sender: AnyObject) {
         guard (emailTextField.text != nil && emailTextField.text!.contains("@")) else {
-            print("email is not right!")
+            //print("email is not right!")
             self.emailWarning.showWarning(animated: true, autoHide: true, after: 5)
             return
         }

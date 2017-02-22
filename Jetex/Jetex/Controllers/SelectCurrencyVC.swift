@@ -63,8 +63,8 @@ class SelectCurrencyVC: BaseViewController, UITableViewDataSource, UITableViewDe
                 
                 let url = APIURL.JetExAPI.base + APIURL.JetExAPI.updateCurrency
                 Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).responseJSON { (data) in
-                    if let res = data.result.value as? [String : String] {
-                        print(res)
+                    if let _ = data.result.value as? [String : String] {
+                        //print(res)
                     }
                 }
             }

@@ -169,7 +169,7 @@ class MapFullScreenVC: BaseViewController {
 extension MapFullScreenVC : GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        print(marker.userData ?? "")
+        //print(marker.userData ?? "")
         if let selectedHotel = marker.userData as? Hotel {
             if mapType == .cityMap {
                 // show popup

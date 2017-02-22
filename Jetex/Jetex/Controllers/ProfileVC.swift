@@ -161,7 +161,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             if let value = response.result.value as? NSDictionary {
                 if let id = value.value(forKey: "_id") as? String, id != "" {
                     if let user = User(JSON: value as! [String: Any]) {
-                        print(user)
+                        //print(user)
                         // update this user is current user
                         user.isCurrentUser = true
                         
@@ -233,7 +233,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
                     self.present(popup, animated: true, completion: nil)
                     break
                 case .success(_, _, let accessToken):
-                    print("Logged in! accessToken: \(accessToken)")
+                    //print("Logged in! accessToken: \(accessToken)")
                     self.signInUsingAccessToken(accessToken: accessToken.authenticationToken, atAPI: APIURL.JetExAPI.signInWithFacebook, withPreLink: APIURL.FacebookAPI.prelink)
                     break
                 }
@@ -255,7 +255,7 @@ class ProfileVC: BaseViewController, LoginViewDelegate, UserInfoViewDelegate, UI
             let idToken = user.authentication.idToken
             self.signInUsingAccessToken(accessToken: idToken!, atAPI: APIURL.JetExAPI.signInWithGoogle, withPreLink: APIURL.GoogleAPI.prelink)
         } else {
-            print("\(error.localizedDescription)")
+            //print("\(error.localizedDescription)")
             let popup = PopupDialog(title: "Can't Sign In!", message: "Cannot connect your Google account.")
             popup.addButton(CancelButton(title: "Try again", action: nil))
                 self.present(popup, animated: true, completion: nil)

@@ -10,7 +10,7 @@ import UIKit
 
 class DealsView: UIView {
 
-    static var height : CGFloat = 558.0
+    static var height : CGFloat = 418.0
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var dealsTableView: UITableView!
@@ -65,7 +65,7 @@ class DealsView: UIView {
         self.dealsList.sort {$0.0.priceTotal < $1.0.priceTotal}
         self.dealsTableView.reloadData()
         
-        if dealsList.count <= 3 {
+        if dealsList.count <= minimumElementsShouldBeShown {
             // hide the see more button
             self.seeMoreViewHeightConstraint.constant = 0
             self.seeMoreView.alpha = 0
@@ -80,9 +80,14 @@ class DealsView: UIView {
             }
             
             DealsView.height = CGFloat(newHeight)
-            self.delegate?.resizeContentViewInScrollViewWithNewComponentHeight(newComponentHeight: CGFloat(newHeight)) {
-                self.delegate?.adjustDealsViewFrameToFit()
-            }
+            
+        } else {
+            // 2 * (148 + 8) + 110 + 8
+            DealsView.height = 418.0
+        }
+        
+        self.delegate?.resizeContentViewInScrollViewWithNewComponentHeight(newComponentHeight: DealsView.height) {
+            self.delegate?.adjustDealsViewFrameToFit()
         }
     }
 
@@ -107,6 +112,7 @@ class DealsView: UIView {
         //        + 16.0 // space at the bottom
         let newHeight = dealsList.count * (142 + 8) + 16
         DealsView.height = CGFloat(newHeight)
+        
         self.delegate?.resizeContentViewInScrollViewWithNewComponentHeight(newComponentHeight: CGFloat(newHeight)) {
             self.delegate?.adjustDealsViewFrameToFit()
         }

@@ -41,19 +41,19 @@ class ChangePasswordVC: BaseViewController {
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
         
         guard (oldPasswordTextField.text != nil && oldPasswordTextField.text!.characters.count >= 6) else {
-            print("password old is not valid")
+            //print("password old is not valid")
             self.oldPasswordWarning.showWarning(animated: true, autoHide: true, after: 5)
             return
         }
         
         guard (newPasswordTextField.text != nil && newPasswordTextField.text!.characters.count >= 6) else {
-            print("password new is not valid")
+            //print("password new is not valid")
             self.newPasswordWarning.showWarning(animated: true, autoHide: true, after: 5)
             return
         }
         
         guard (newPasswordTextField.text! == confirmNewPasswordTextField.text!) else {
-            print("the passwords are not same")
+            //print("the passwords are not same")
             self.confirmNewPasswordWarning.showWarning(animated: true, autoHide: true, after: 5)
             return
         }

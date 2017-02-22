@@ -53,7 +53,7 @@ class SplashVC: UIViewController {
                     if (isSuccess) {
                         DBManager.shared.parseListAirportJSON(data: response as! NSDictionary)
                         defaults.set(true, forKey: "isInstalled")
-                        print("Finish sync")
+                        //print("Finish sync")
                         popup.dismiss({
 //                            self.timer?.invalidate()
 //                            self.timer = nil
@@ -103,7 +103,7 @@ class SplashVC: UIViewController {
         let request = APIURL.JetExAPI.base + APIURL.JetExAPI.getUserInfo
         Alamofire.request(request).responseObject { (response: DataResponse<User>) in
             if let currentUser = response.result.value {
-                print(currentUser)
+                //print(currentUser)
                 // update this user is current user
                 currentUser.isCurrentUser = true
                 

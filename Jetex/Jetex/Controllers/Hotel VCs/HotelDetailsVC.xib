@@ -100,7 +100,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indonesia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMJ-T0-jiR">
-                                            <rect key="frame" x="0.0" y="27" width="58" height="12"/>
+                                            <rect key="frame" x="0.0" y="27" width="57.5" height="12"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -177,7 +177,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-F2-TWZ">
-                                            <rect key="frame" x="10" y="27" width="40" height="12"/>
+                                            <rect key="frame" x="10.5" y="27" width="39.5" height="12"/>
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -383,7 +383,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n68-MU-5mN" userLabel="Main View">
-                                            <rect key="frame" x="0.0" y="495" width="375" height="821"/>
+                                            <rect key="frame" x="0.0" y="495" width="375" height="466"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xE-xb-eIB" userLabel="Menu View">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -439,7 +439,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFc-te-TIP" userLabel="Content View">
-                                                    <rect key="frame" x="0.0" y="48" width="375" height="773"/>
+                                                    <rect key="frame" x="0.0" y="48" width="375" height="418"/>
                                                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="deviceRGB"/>
                                                 </view>
                                             </subviews>
@@ -466,7 +466,7 @@
                                         <constraint firstAttribute="trailing" secondItem="1Vs-yG-Nkq" secondAttribute="trailing" id="HA6-Ke-cGe"/>
                                         <constraint firstItem="n68-MU-5mN" firstAttribute="leading" secondItem="dlH-Ln-2eB" secondAttribute="leading" id="Q3S-1H-qtE"/>
                                         <constraint firstItem="1Vs-yG-Nkq" firstAttribute="top" secondItem="Oea-Y0-H7V" secondAttribute="bottom" id="aFK-1a-V4f"/>
-                                        <constraint firstAttribute="height" constant="1316" id="eyJ-fI-1sW"/>
+                                        <constraint firstAttribute="height" constant="961" id="eyJ-fI-1sW"/>
                                         <constraint firstItem="1Vs-yG-Nkq" firstAttribute="leading" secondItem="dlH-Ln-2eB" secondAttribute="leading" id="m3A-E3-YDo"/>
                                     </constraints>
                                 </view>

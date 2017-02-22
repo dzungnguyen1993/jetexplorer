@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yVe-FP-Pqf">
-                    <rect key="frame" x="16" y="16" width="343" height="431"/>
+                    <rect key="frame" x="16" y="16" width="343" height="447"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yhv-TS-PYD">
                         <size key="itemSize" width="50" height="50"/>
@@ -35,7 +35,7 @@
                 <constraint firstItem="yVe-FP-Pqf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="6mQ-Ue-xAw"/>
                 <constraint firstAttribute="trailing" secondItem="yVe-FP-Pqf" secondAttribute="trailing" constant="16" id="LdT-1H-zDq"/>
                 <constraint firstItem="yVe-FP-Pqf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="Ltc-Ro-hR5"/>
-                <constraint firstAttribute="bottom" secondItem="yVe-FP-Pqf" secondAttribute="bottom" constant="16" id="Tft-U1-Pa5"/>
+                <constraint firstAttribute="bottom" secondItem="yVe-FP-Pqf" secondAttribute="bottom" id="Tft-U1-Pa5"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="25.5" y="-50.5"/>

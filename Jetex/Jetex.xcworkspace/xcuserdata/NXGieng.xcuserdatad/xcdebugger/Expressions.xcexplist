@@ -91,6 +91,9 @@
          contextName = "HotelinDetail.mapping(map : Map) -&gt; ():HotelinDetail.swift">
       </ContextState>
       <ContextState
+         contextName = "HotelDetailsVC.mainBasedViewHeight.getter:HotelDetailsVC.swift">
+      </ContextState>
+      <ContextState
          contextName = "DealsView.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:DealsView.swift">
          <PersistentStrings>
             <PersistentString
@@ -154,13 +157,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "HotelDetailsVC.mapButtonPressed() -&gt; ():HotelDetailsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "mainBasedViewHeight">
+            </PersistentString>
+            <PersistentString
+               value = "self.infoView.bounds.height">
+            </PersistentString>
+            <PersistentString
+               value = "MapInDetailView.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "FlightSearchHistoryVC.viewWillAppear(Bool) -&gt; ():FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "unSyncHistoryList[0]">
+               value = "unSyncHistoryList.count">
             </PersistentString>
             <PersistentString
-               value = "unSyncHistoryList.count">
+               value = "unSyncHistoryList[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -230,6 +247,9 @@
                value = "imageSlideShow.frame">
             </PersistentString>
             <PersistentString
+               value = "mainBasedViewHeight + 766">
+            </PersistentString>
+            <PersistentString
                value = "self.menuContentsView.frame">
             </PersistentString>
          </PersistentStrings>
@@ -252,13 +272,13 @@
          contextName = "FlightSearchHistoryVC.(viewWillAppear(Bool) -&gt; ()).(closure #1).(closure #1):FlightSearchHistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.unSyncHistoryList[0]">
+               value = "self.historyList.count">
             </PersistentString>
             <PersistentString
                value = "searchesHistory.count">
             </PersistentString>
             <PersistentString
-               value = "self.historyList.count">
+               value = "self.unSyncHistoryList[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -364,6 +384,14 @@
          contextName = "HistoryCell.fillData(data : HistorySearch) -&gt; ():HistoryCell.swift">
       </ContextState>
       <ContextState
+         contextName = "HotelDetailsVC.resizeMenuContentScrollView(newHeight : CGFloat, complete : () -&gt; ()?) -&gt; ():HotelDetailsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.contentHeightConstraint.constant">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ChangNameVC.(saveButtonPressed(AnyObject) -&gt; ()).(closure #2):ChangNameVC.swift">
       </ContextState>
       <ContextState
@@ -399,10 +427,10 @@
                value = "response.header">
             </PersistentString>
             <PersistentString
-               value = "value as! [String: Any]">
+               value = "currentUser as! [String: Any]">
             </PersistentString>
             <PersistentString
-               value = "currentUser as! [String: Any]">
+               value = "value as! [String: Any]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -413,10 +441,10 @@
                value = "(self.tabBarController as? TabBarController)?.selectedViewController as? BaseViewController">
             </PersistentString>
             <PersistentString
-               value = "resultVC.isKind(of: FlightSearchHistoryVC.self)">
+               value = "resultVC.navigationController?">
             </PersistentString>
             <PersistentString
-               value = "resultVC.navigationController?">
+               value = "resultVC.isKind(of: FlightSearchHistoryVC.self)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

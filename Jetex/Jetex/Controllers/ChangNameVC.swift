@@ -79,7 +79,7 @@ class ChangNameVC: BaseViewController {
                 self.view.isUserInteractionEnabled = true
             })
         } else {
-                print("error: no user!")
+                //print("error: no user!")
         }
     }
 }

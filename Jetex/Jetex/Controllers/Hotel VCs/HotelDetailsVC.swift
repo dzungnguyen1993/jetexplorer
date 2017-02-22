@@ -31,9 +31,9 @@ class HotelDetailsVC: BaseViewController {
     //let heroViewHeight = 220
     //let mainViewMenuHeight = 48
     // calculate main based view based on heroViewheight and mainViewMenuHeight
-    lazy var mainBasedViewHeight : CGFloat = {
+    var mainBasedViewHeight : CGFloat {
         return 220.0 + self.infoView.bounds.height + 48.0
-    }()
+    }
     
     @IBOutlet weak var detailScrollView: UIScrollView!
     
@@ -342,9 +342,10 @@ extension HotelDetailsVC {
             var newSize = self.detailScrollView.contentSize
             newSize.height += changes
             
-            UIView.animate(withDuration: 0.25, animations: { 
-                self.detailScrollView.contentSize = newSize
-            })
+            self.resizeMenuContentScrollView(newHeight: newSize.height, complete: nil)
+//            UIView.animate(withDuration: 0.25, animations: { 
+//                self.detailScrollView.contentSize = newSize
+//            })
         }
         
     }
@@ -364,11 +365,26 @@ extension HotelDetailsVC {
             
             if loadedHotelInfo!.description.characters.count > 400 {
                 
-                let shortDesc = loadedHotelInfo!.description.substring(to: loadedHotelInfo!.description.index(loadedHotelInfo!.description.startIndex, offsetBy: 400)) + "...  "
+                var shortDesc = loadedHotelInfo!.description.substring(to: loadedHotelInfo!.description.index(loadedHotelInfo!.description.startIndex, offsetBy: 400))
+                
+                if let firstNPos = shortDesc.characters.index(of: "\n") {
+                    
+                    // find the second \n
+                    var i = 2
+                    var index = shortDesc.characters.index(firstNPos, offsetBy: i)
+                    while (index < shortDesc.characters.endIndex && shortDesc.characters[index] != "\n") {
+                        i += 1
+                        index = shortDesc.characters.index(firstNPos, offsetBy: i)
+                    }
+                    
+                    // substring
+                    shortDesc = shortDesc.substring(to: shortDesc.characters.index(firstNPos, offsetBy: i))
+                    shortDesc = shortDesc + "\n\n"
+                }
                 
                 let textAtt = NSMutableAttributedString.init(string: shortDesc, attributes: [NSFontAttributeName: UIFont.init(name: GothamFontName.Book.rawValue, size: 15.0)!, NSForegroundColorAttributeName: UIColor(hex: 0x515151)])
                 
-                let readMore = NSAttributedString.init(string: "Read more", attributes:
+                let readMore = NSAttributedString.init(string: "... Read more", attributes:
                     [NSFontAttributeName: UIFont.init(name: GothamFontName.BoldItalic.rawValue, size: 15.0)!, NSForegroundColorAttributeName: UIColor(hex: 0x674290)])
                 
                 textAtt.append(readMore)

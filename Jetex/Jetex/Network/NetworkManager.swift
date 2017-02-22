@@ -88,7 +88,7 @@ class NetworkManager: NSObject {
         
         let parameters = Parameters()
         
-        print(requestString)
+        //print(requestString)
         Alamofire.request(requestString, method: .get, parameters: parameters).responseJSON { (response) in
             completion?(response.result.isSuccess, response.result.value)
         }
@@ -120,7 +120,7 @@ class NetworkManager: NSObject {
         
         Alamofire.request(request, method: .post, parameters: parameter, encoding: JSONEncoding.default).responseObject { (response: DataResponse<User>) in
             if let currentUser = response.result.value {
-                print(currentUser)
+                //print(currentUser)
                 // update this user is current user
                 currentUser.isCurrentUser = true
                 
@@ -199,7 +199,7 @@ class NetworkManager: NSObject {
         
         let parameters = Parameters()
         
-        print(requestString)
+        //print(requestString)
         Alamofire.request(requestString, method: .get, parameters: parameters).responseJSON { (response) in
             completion(response.result.isSuccess, response.result.value)
         }

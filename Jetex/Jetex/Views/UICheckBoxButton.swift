@@ -47,11 +47,11 @@ class UICheckBoxButton: UIView {
         if isChecked {
             // change image
             checkBoxLabel.text = "\(NSString.init(utf8String: "\u{e907}")!)"
-            print("checked")
+            //print("checked")
         } else {
             // change image
             checkBoxLabel.text = "\(NSString.init(utf8String: "\u{e906}")!)"
-            print("un checked")
+            //print("un checked")
         }
         delegate?.checkboxPressed()
     }

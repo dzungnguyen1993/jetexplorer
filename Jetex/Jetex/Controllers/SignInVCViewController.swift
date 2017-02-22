@@ -44,13 +44,13 @@ class SignInVC: BaseViewController {
     // MARK: - Sign In
     @IBAction func signInButtonPressed(_ sender: AnyObject) {
         guard (emailTextField.text != nil && emailTextField.text!.contains("@")) else {
-            print("email is not right!")
+            //print("email is not right!")
             self.emailWarning.showWarning(animated: true, autoHide: true, after: 5)
             return
         }
         
         guard (passwordTextField.text != nil && passwordTextField.text!.characters.count >= 6) else {
-            print("password is not valid")
+            //print("password is not valid")
             self.passwordWarning.showWarning(animated: true, autoHide: true, after: 5)
             return
         }
@@ -74,7 +74,7 @@ class SignInVC: BaseViewController {
             if let value = response.result.value as? NSDictionary {
                 if let id = value.value(forKey: "_id") as? String, id != "" {
                     if let user = User(JSON: value as! [String: Any]) {
-                        print(user)
+                        //print(user)
                         // update this user is current user
                         user.isCurrentUser = true
                         
@@ -110,9 +110,9 @@ class SignInVC: BaseViewController {
                         })
                         return
                     }
-                } else if let message = value.value(forKey: "message") as? String {
+                } else if let _ = value.value(forKey: "message") as? String {
                     // hide pop up
-                    print(message)
+                    //print(message)
                     popup.dismiss({
                         let newPopup = PopupDialog(title: "Email or Password incorrent", message: "Please check your information.", image: nil)
                         newPopup.addButton(DefaultButton(title: "Try again", action: nil))
