@@ -1150,7 +1150,7 @@
 				TargetAttributes = {
 					B9E4FC631DD18BAB000468EC = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 96B6Z275Y6;
+						DevelopmentTeam = 5ZGBRE4V3L;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -1658,12 +1658,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Jetex/Jetex.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 96B6Z275Y6;
+				DEVELOPMENT_TEAM = 5ZGBRE4V3L;
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Jetex/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Platform5.Jetex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jetExplorer.fullfeatures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JetEx/JetEx-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1677,11 +1677,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Jetex/Jetex.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 96B6Z275Y6;
+				DEVELOPMENT_TEAM = 5ZGBRE4V3L;
 				INFOPLIST_FILE = Jetex/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Platform5.Jetex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jetExplorer.fullfeatures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JetEx/JetEx-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
