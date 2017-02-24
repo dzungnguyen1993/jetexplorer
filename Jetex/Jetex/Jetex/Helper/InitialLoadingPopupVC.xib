@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Bold.otf">
+            <string>Gotham-Bold</string>
+        </array>
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InitialLoadingPopupVC" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="loadingIndicator" destination="APX-mE-7LS" id="d3P-mF-wCk"/>
+                <outlet property="messageLabel" destination="XLb-TW-Mnc" id="Inb-eX-sS6"/>
+                <outlet property="titleLabel" destination="5tz-2g-VyA" id="F45-jp-fRe"/>
+                <outlet property="view" destination="FzD-o0-xha" id="Vko-Fv-qIu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="FzD-o0-xha">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hl-Ye-xUK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optimising your experience..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tz-2g-VyA">
+                            <rect key="frame" x="16" y="82.5" width="343" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="32" id="6gG-Sd-ZQh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="15"/>
+                            <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="APX-mE-7LS">
+                            <rect key="frame" x="169" y="21.5" width="37" height="37"/>
+                            <color key="color" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading initial data on the first usage. Please wait..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLb-TW-Mnc">
+                            <rect key="frame" x="16" y="105.5" width="343" height="30"/>
+                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
+                            <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="375" id="2yZ-NV-24G"/>
+                        <constraint firstItem="APX-mE-7LS" firstAttribute="centerY" secondItem="8hl-Ye-xUK" secondAttribute="centerY" constant="-40" id="CIh-1V-MHs"/>
+                        <constraint firstItem="XLb-TW-Mnc" firstAttribute="leading" secondItem="8hl-Ye-xUK" secondAttribute="leading" constant="16" id="Wqo-RF-7YU"/>
+                        <constraint firstItem="5tz-2g-VyA" firstAttribute="leading" secondItem="8hl-Ye-xUK" secondAttribute="leading" constant="16" id="bev-Ye-UpF"/>
+                        <constraint firstItem="APX-mE-7LS" firstAttribute="centerX" secondItem="8hl-Ye-xUK" secondAttribute="centerX" id="d4i-6H-Trk"/>
+                        <constraint firstItem="XLb-TW-Mnc" firstAttribute="top" secondItem="5tz-2g-VyA" secondAttribute="bottom" constant="8" id="dp5-tf-SWv"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="XLb-TW-Mnc" secondAttribute="bottom" constant="16" id="fMf-mZ-Lhq"/>
+                        <constraint firstAttribute="height" constant="160" id="kVQ-ar-fDD"/>
+                        <constraint firstAttribute="trailing" secondItem="XLb-TW-Mnc" secondAttribute="trailing" constant="16" id="rCs-Xa-vN6"/>
+                        <constraint firstAttribute="trailing" secondItem="5tz-2g-VyA" secondAttribute="trailing" constant="16" id="ttV-DX-Z8U"/>
+                        <constraint firstItem="5tz-2g-VyA" firstAttribute="top" secondItem="APX-mE-7LS" secondAttribute="bottom" constant="24" id="yKe-dv-W1c"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8hl-Ye-xUK" secondAttribute="trailing" id="Jgg-y9-FLT"/>
+                <constraint firstItem="8hl-Ye-xUK" firstAttribute="top" secondItem="FzD-o0-xha" secondAttribute="top" id="Tfe-DO-gvb"/>
+                <constraint firstItem="8hl-Ye-xUK" firstAttribute="leading" secondItem="FzD-o0-xha" secondAttribute="leading" id="fnE-u9-aEf"/>
+                <constraint firstAttribute="bottom" secondItem="8hl-Ye-xUK" secondAttribute="bottom" id="pCE-4C-3Kl"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25.5" y="271"/>
+        </view>
+    </objects>
+</document>

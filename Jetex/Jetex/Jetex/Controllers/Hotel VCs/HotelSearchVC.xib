@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotelSearchVC" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewCheckin" destination="QEE-Z9-y7l" id="qQK-7r-bsx"/>
+                <outlet property="viewCheckout" destination="Rac-BR-woo" id="ubn-4x-xWn"/>
+                <outlet property="viewGuestRoom" destination="l0r-uY-4cz" id="yaE-FK-CUB"/>
+                <outlet property="viewLocation" destination="4Nm-Qg-kcO" id="4XD-Qy-eiS"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnq-fh-CHQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                    <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7h2-EK-n0M">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSz-Xt-PPD">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="fXB-RM-Adx"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="barTintColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </textAttributes>
+                            <items>
+                                <navigationItem title="Hotel Search" id="A3j-Df-yyK"/>
+                            </items>
+                        </navigationBar>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="071-V3-i6B">
+                            <rect key="frame" x="16" y="68" width="343" height="80"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-Qg-kcO" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="4Nm-Qg-kcO" firstAttribute="leading" secondItem="071-V3-i6B" secondAttribute="leading" id="23Q-Kj-r1e"/>
+                                <constraint firstItem="4Nm-Qg-kcO" firstAttribute="top" secondItem="071-V3-i6B" secondAttribute="top" id="6hs-gQ-hfT"/>
+                                <constraint firstAttribute="height" constant="80" id="i3z-Qq-NQa"/>
+                                <constraint firstItem="4Nm-Qg-kcO" firstAttribute="width" secondItem="071-V3-i6B" secondAttribute="width" id="kFv-0B-SNM"/>
+                                <constraint firstAttribute="bottom" secondItem="4Nm-Qg-kcO" secondAttribute="bottom" id="oCp-j7-oF7"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-HX-05A">
+                            <rect key="frame" x="24" y="163" width="327" height="1"/>
+                            <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="qFb-TT-wBd"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-lB-6XW">
+                            <rect key="frame" x="16" y="180" width="343" height="80"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEE-Z9-y7l" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="171.5" height="80"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rac-BR-woo" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
+                                    <rect key="frame" x="171.5" y="0.0" width="171.5" height="80"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="QEE-Z9-y7l" firstAttribute="leading" secondItem="wHv-lB-6XW" secondAttribute="leading" id="0gn-zG-gf8"/>
+                                <constraint firstItem="Rac-BR-woo" firstAttribute="width" secondItem="QEE-Z9-y7l" secondAttribute="width" id="6ci-Ag-MzO"/>
+                                <constraint firstItem="Rac-BR-woo" firstAttribute="leading" secondItem="QEE-Z9-y7l" secondAttribute="trailing" id="IgN-fd-RxD"/>
+                                <constraint firstAttribute="bottom" secondItem="Rac-BR-woo" secondAttribute="bottom" id="hDs-8P-GQq"/>
+                                <constraint firstAttribute="bottom" secondItem="QEE-Z9-y7l" secondAttribute="bottom" id="hQu-nG-eaV"/>
+                                <constraint firstAttribute="height" constant="80" id="j1O-LD-vG2"/>
+                                <constraint firstItem="Rac-BR-woo" firstAttribute="top" secondItem="wHv-lB-6XW" secondAttribute="top" id="kBK-WZ-3BT"/>
+                                <constraint firstItem="QEE-Z9-y7l" firstAttribute="top" secondItem="wHv-lB-6XW" secondAttribute="top" id="r8k-d7-KQH"/>
+                                <constraint firstAttribute="trailing" secondItem="Rac-BR-woo" secondAttribute="trailing" id="uoi-Sj-2uZ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wha-DF-uGA">
+                            <rect key="frame" x="24" y="275" width="327" height="1"/>
+                            <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="2TC-lI-QkB"/>
+                                <constraint firstAttribute="height" constant="1" id="sRY-SS-Elc"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsP-Fg-E2D">
+                            <rect key="frame" x="16" y="292" width="343" height="80"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0r-uY-4cz" customClass="PickInfoView" customModule="Jetex" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="4Wj-54-EWz"/>
+                                <constraint firstAttribute="bottom" secondItem="l0r-uY-4cz" secondAttribute="bottom" id="6qp-aY-gkl"/>
+                                <constraint firstItem="l0r-uY-4cz" firstAttribute="leading" secondItem="ZsP-Fg-E2D" secondAttribute="leading" id="QdS-jq-bIg"/>
+                                <constraint firstItem="l0r-uY-4cz" firstAttribute="width" secondItem="ZsP-Fg-E2D" secondAttribute="width" id="UrC-sG-fEJ"/>
+                                <constraint firstItem="l0r-uY-4cz" firstAttribute="top" secondItem="ZsP-Fg-E2D" secondAttribute="top" id="YMR-Oh-8AW"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVC-m9-80O" customClass="SmallParagraphButton" customModule="Jetex" customModuleProvider="target">
+                            <rect key="frame" x="24" y="396" width="327" height="44"/>
+                            <color key="backgroundColor" red="0.27843137254901962" green="0.77647058823529413" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="40B-VE-WHR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="SEARCH">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="search:" destination="-1" eventType="touchUpInside" id="cDJ-xc-D4V"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="071-V3-i6B" secondAttribute="trailing" constant="16" id="1iW-4U-5mE"/>
+                        <constraint firstItem="KVC-m9-80O" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="24" id="2X7-Ju-1jb"/>
+                        <constraint firstItem="mq1-HX-05A" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="24" id="7A0-s3-XuU"/>
+                        <constraint firstAttribute="trailing" secondItem="mq1-HX-05A" secondAttribute="trailing" constant="24" id="8gh-7i-nZ4"/>
+                        <constraint firstItem="ZsP-Fg-E2D" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="16" id="DlO-E9-og4"/>
+                        <constraint firstItem="Wha-DF-uGA" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="24" id="GNf-PC-yWC"/>
+                        <constraint firstItem="Wha-DF-uGA" firstAttribute="top" secondItem="wHv-lB-6XW" secondAttribute="bottom" constant="15" id="JRE-qg-oLH"/>
+                        <constraint firstAttribute="trailing" secondItem="KVC-m9-80O" secondAttribute="trailing" constant="24" id="KVh-Li-1xR"/>
+                        <constraint firstAttribute="trailing" secondItem="pSz-Xt-PPD" secondAttribute="trailing" id="Kmt-U7-Znz"/>
+                        <constraint firstAttribute="trailing" secondItem="wHv-lB-6XW" secondAttribute="trailing" constant="16" id="TzY-rX-b1H"/>
+                        <constraint firstItem="ZsP-Fg-E2D" firstAttribute="top" secondItem="wHv-lB-6XW" secondAttribute="bottom" constant="32" id="VbF-91-Afr"/>
+                        <constraint firstItem="071-V3-i6B" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="16" id="YmL-hx-hAt"/>
+                        <constraint firstItem="wHv-lB-6XW" firstAttribute="top" secondItem="071-V3-i6B" secondAttribute="bottom" constant="32" id="ZkQ-eX-Umc"/>
+                        <constraint firstItem="pSz-Xt-PPD" firstAttribute="top" secondItem="7h2-EK-n0M" secondAttribute="top" id="dFu-K4-dH5"/>
+                        <constraint firstItem="pSz-Xt-PPD" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" id="eLr-ox-p3i"/>
+                        <constraint firstAttribute="trailing" secondItem="Wha-DF-uGA" secondAttribute="trailing" constant="24" id="f57-Xd-moF"/>
+                        <constraint firstItem="wHv-lB-6XW" firstAttribute="leading" secondItem="7h2-EK-n0M" secondAttribute="leading" constant="16" id="oih-z3-JpU"/>
+                        <constraint firstAttribute="trailing" secondItem="ZsP-Fg-E2D" secondAttribute="trailing" constant="16" id="v6O-LM-zdy"/>
+                        <constraint firstItem="071-V3-i6B" firstAttribute="top" secondItem="pSz-Xt-PPD" secondAttribute="bottom" constant="24" id="xFH-k7-CbP"/>
+                        <constraint firstItem="KVC-m9-80O" firstAttribute="top" secondItem="ZsP-Fg-E2D" secondAttribute="bottom" constant="24" id="xKP-X3-d8f"/>
+                        <constraint firstItem="mq1-HX-05A" firstAttribute="top" secondItem="071-V3-i6B" secondAttribute="bottom" constant="15" id="ztw-JM-E0D"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="7h2-EK-n0M" secondAttribute="bottom" id="1WF-W3-6Jp"/>
+                <constraint firstAttribute="trailing" secondItem="7h2-EK-n0M" secondAttribute="trailing" id="Emu-Oe-fm1"/>
+                <constraint firstItem="dnq-fh-CHQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RdT-DP-eeD"/>
+                <constraint firstItem="7h2-EK-n0M" firstAttribute="top" secondItem="dnq-fh-CHQ" secondAttribute="bottom" id="Wpu-dr-FQE"/>
+                <constraint firstItem="dnq-fh-CHQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bsY-oS-d0k"/>
+                <constraint firstItem="7h2-EK-n0M" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="i0M-QL-HiF"/>
+                <constraint firstItem="7h2-EK-n0M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yOg-Pj-lBz"/>
+                <constraint firstAttribute="trailing" secondItem="dnq-fh-CHQ" secondAttribute="trailing" id="ye9-GZ-J7m"/>
+            </constraints>
+            <point key="canvasLocation" x="25" y="50"/>
+        </view>
+    </objects>
+</document>

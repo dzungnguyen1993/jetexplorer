@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UITabbarButton" customModule="Jetex" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomLine" destination="wBJ-64-Frg" id="VfJ-kP-jX3"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Rp7-FN-lDz"/>
+                <outlet property="titleLable" destination="BPT-z8-HZv" id="Qa2-Vu-xEd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="122" height="48"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jo5-fv-B8g">
+                    <rect key="frame" x="0.0" y="0.0" width="122" height="1"/>
+                    <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="b2S-fh-oh8"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bx7-aQ-rrR">
+                    <rect key="frame" x="0.0" y="47" width="122" height="1"/>
+                    <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="MBS-7f-tl5"/>
+                        <constraint firstAttribute="height" constant="1" id="h0i-ad-ZAp"/>
+                    </constraints>
+                </view>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBJ-64-Frg">
+                    <rect key="frame" x="0.0" y="46" width="122" height="2"/>
+                    <color key="backgroundColor" red="0.4039215686" green="0.25882352939999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="j7c-wn-MqU"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPT-z8-HZv">
+                    <rect key="frame" x="4" y="4" width="114" height="40"/>
+                    <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
+                    <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstItem="jo5-fv-B8g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4AL-6d-sWL"/>
+                <constraint firstItem="BPT-z8-HZv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="C2a-Tn-6ZE"/>
+                <constraint firstAttribute="bottom" secondItem="Bx7-aQ-rrR" secondAttribute="bottom" id="FbO-RW-Pa0"/>
+                <constraint firstAttribute="bottom" secondItem="BPT-z8-HZv" secondAttribute="bottom" constant="4" id="Ns7-8I-xPF"/>
+                <constraint firstAttribute="bottom" secondItem="wBJ-64-Frg" secondAttribute="bottom" id="PVX-HX-Jpo"/>
+                <constraint firstAttribute="trailing" secondItem="Bx7-aQ-rrR" secondAttribute="trailing" id="Riv-6o-k5h"/>
+                <constraint firstAttribute="trailing" secondItem="wBJ-64-Frg" secondAttribute="trailing" id="W8h-2A-TEp"/>
+                <constraint firstAttribute="trailing" secondItem="BPT-z8-HZv" secondAttribute="trailing" constant="4" id="WP7-Co-ssW"/>
+                <constraint firstItem="BPT-z8-HZv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="XPr-gr-nbw"/>
+                <constraint firstItem="Bx7-aQ-rrR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ef5-P3-Dle"/>
+                <constraint firstItem="jo5-fv-B8g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="h7F-uV-pms"/>
+                <constraint firstItem="wBJ-64-Frg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kIJ-4y-vfz"/>
+                <constraint firstAttribute="trailing" secondItem="jo5-fv-B8g" secondAttribute="trailing" id="kLS-cl-wXV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-121" y="-224"/>
+        </view>
+    </objects>
+</document>
